@@ -5,6 +5,8 @@ Static staging build for Sun Ray Cleaning Services.
 ## Pages
 
 - `index.html`
+- `about.html`
+- `services.html`
 - `service-location/park-city.html`
 - `service-location/heber-city.html`
 - `service-location/midway.html`
