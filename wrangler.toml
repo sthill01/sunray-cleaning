@@ -1,6 +1,9 @@
-name = "sunray-cleaning-preview"
+name = "sunray-cleaning"
 compatibility_date = "2026-04-28"
 pages_build_output_dir = "cloudflare-preview"
+
+[assets]
+directory = "cloudflare-preview"
 
 # Add these bindings when the admin system is ready for live content edits.
 # [[kv_namespaces]]
