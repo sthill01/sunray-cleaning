@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "import:google-reviews": "node scripts/import-google-reviews.mjs",
+    "build:cloudflare": "python tools/build-cloudflare-preview.py",
+    "deploy:preview": "npx wrangler pages deploy cloudflare-preview --project-name sunray-cleaning-preview"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

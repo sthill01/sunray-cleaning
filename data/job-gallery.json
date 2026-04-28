@@ -1,0 +1,74 @@
+﻿[
+  {
+    "asset": "assets/sunray-real-kitchen-island.jpg",
+    "alt": "Detailed kitchen island cleaning for a Park City vacation rental by Sun Ray Cleaning Services",
+    "caption": "Kitchen reset for a guest-ready mountain home.",
+    "location": "Park City, UT",
+    "service": "Airbnb and VRBO turnover cleaning",
+    "keywords": ["Park City Airbnb cleaning", "vacation rental kitchen cleaning", "guest-ready turnover"],
+    "routes": ["/", "/services/", "/services/short-term-rental-cleaning/", "/service-location/park-city/", "/service-location/deer-valley/", "/service-location/canyons-village/", "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/", "/blog/how-much-does-airbnb-cleaning-cost-park-city/"]
+  },
+  {
+    "asset": "assets/sunray-real-living-room.jpg",
+    "alt": "Clean living room prepared for short-term rental guests in Park City Utah",
+    "caption": "Living room detail work for hosts and second-home owners.",
+    "location": "Park City, UT",
+    "service": "Short-term rental cleaning",
+    "keywords": ["VRBO cleaning", "Park City rental turnover", "living room cleaning"],
+    "routes": ["/", "/services/short-term-rental-cleaning/", "/service-location/park-city/", "/service-location/old-town/", "/service-location/park-meadows/", "/blog/getting-park-city-home-ready-for-summer-guests/"]
+  },
+  {
+    "asset": "assets/sunray-team-shower-cleaning.jpg",
+    "alt": "Sun Ray cleaner detailing a shower for a deep cleaning service in the Wasatch Back",
+    "caption": "Bathroom and shower detail cleaning for deep cleans.",
+    "location": "Summit County and Wasatch County, UT",
+    "service": "Deep cleaning",
+    "keywords": ["deep cleaning", "bathroom cleaning", "shower detail cleaning"],
+    "routes": ["/services/deep-cleaning/", "/service-location/summit-county/", "/service-location/wasatch-county/", "/blog/post-ski-season-deep-clean-park-city-rental-owners/"]
+  },
+  {
+    "asset": "assets/sunray-real-bathroom-vanity.jpg",
+    "alt": "Clean bathroom vanity after residential deep cleaning in Heber City Utah",
+    "caption": "Polished bathroom vanity for residential and move cleaning.",
+    "location": "Heber City, UT",
+    "service": "Deep cleaning and move cleaning",
+    "keywords": ["Heber City deep cleaning", "move-out bathroom cleaning", "residential cleaning"],
+    "routes": ["/services/deep-cleaning/", "/services/move-in-move-out-cleaning/", "/service-location/heber-city/", "/blog/heber-city-move-in-move-out-cleaning/"]
+  },
+  {
+    "asset": "assets/sunray-real-bedroom.jpg",
+    "alt": "Fresh bedroom cleaned for recurring residential cleaning in Midway Utah",
+    "caption": "Bedroom reset for recurring home cleaning.",
+    "location": "Midway, UT",
+    "service": "Recurring cleaning",
+    "keywords": ["Midway house cleaning", "recurring cleaning", "bedroom cleaning"],
+    "routes": ["/services/recurring-cleaning/", "/service-location/midway/", "/service-location/homestead/", "/service-location/interlaken/"]
+  },
+  {
+    "asset": "assets/sunray-real-entry-kitchen.jpg",
+    "alt": "Entry and kitchen cleaned before move-in service in Heber Valley Utah",
+    "caption": "Move-ready entry and kitchen cleaning.",
+    "location": "Heber Valley, UT",
+    "service": "Move-in and move-out cleaning",
+    "keywords": ["move-in cleaning", "move-out cleaning", "Heber Valley cleaning"],
+    "routes": ["/services/move-in-move-out-cleaning/", "/service-location/heber-valley/", "/service-location/red-ledges/", "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/"]
+  },
+  {
+    "asset": "assets/sunray-real-kitchen-cleaned.jpg",
+    "alt": "Residential kitchen cleaned by Sun Ray Cleaning Services for a recurring house cleaning visit",
+    "caption": "Recurring kitchen maintenance for busy homes.",
+    "location": "Summit County, UT",
+    "service": "Recurring cleaning",
+    "keywords": ["recurring house cleaning", "kitchen cleaning", "Summit County cleaning"],
+    "routes": ["/", "/services/recurring-cleaning/", "/service-location/summit-county/", "/service-location/kamas/", "/service-location/oakley/"]
+  },
+  {
+    "asset": "assets/sunray-real-family-room.jpg",
+    "alt": "Bright family room cleaned for a Sun Ray residential cleaning client in northern Utah",
+    "caption": "Family room cleaning for everyday comfort and guest visits.",
+    "location": "Northern Utah",
+    "service": "Residential house cleaning",
+    "keywords": ["residential cleaning", "family room cleaning", "local house cleaners"],
+    "routes": ["*", "/about/", "/contact/", "/service-areas/"]
+  }
+]
