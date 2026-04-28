@@ -1009,6 +1009,10 @@ p {
   text-align: center;
 }
 
+.cta-band .cta-actions {
+  justify-content: center;
+}
+
 .cta-band p {
   max-width: 680px;
   margin-inline: auto;
