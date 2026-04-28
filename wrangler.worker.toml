@@ -1,0 +1,5 @@
+name = "sunray-cleaning"
+compatibility_date = "2026-04-28"
+
+[assets]
+directory = "cloudflare-preview"
