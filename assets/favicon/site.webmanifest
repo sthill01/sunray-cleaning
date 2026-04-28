@@ -1,0 +1,19 @@
+{
+  "name": "Sun Ray Cleaning Services",
+  "short_name": "Sun Ray",
+  "icons": [
+    {
+      "src": "/assets/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1f3a68",
+  "background_color": "#f8f1df",
+  "display": "standalone"
+}
