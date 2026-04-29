@@ -713,6 +713,10 @@ p {
   text-align: center;
 }
 
+.cta-band .cta-actions {
+  justify-content: center;
+}
+
 .cta-band p {
   max-width: 650px;
   margin-inline: auto;
