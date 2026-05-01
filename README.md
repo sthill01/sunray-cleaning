@@ -16,8 +16,15 @@ Cloudflare Pages settings:
 - Build command: `npm run build:cloudflare`
 - Build output directory: `cloudflare-preview`
 - Preview project name: `sunray-cleaning-preview`
+- Quote form webhook variable: `SUNRAY_QUOTE_WEBHOOK_URL`
 
 The generated preview intentionally uses `noindex` headers and robots rules until it is promoted from preview to production.
+
+## Quote form routing
+
+Cloudflare preview forms post to `/api/quote`. The form only forwards submissions to email/CRM automation after `SUNRAY_QUOTE_WEBHOOK_URL` is added in Cloudflare Pages environment variables. Use a Make or Zapier webhook that sends the submitted JSON payload to the preferred Sun Ray email inbox.
+
+If the webhook is missing or unavailable, the form shows an error and keeps the phone/SMS fallback visible: `(801) 604-2189`.
 
 ## Google review automation
 

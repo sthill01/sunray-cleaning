@@ -18,6 +18,16 @@ function required(name) {
   return value;
 }
 
+function numberEnv(name, fallback, { min = 1, max = Number.POSITIVE_INFINITY } = {}) {
+  const raw = process.env[name];
+  if (!raw) return fallback;
+  const value = Number(raw);
+  if (!Number.isFinite(value) || value < min) {
+    throw new Error(`${name} must be a number greater than or equal to ${min}.`);
+  }
+  return Math.min(value, max);
+}
+
 async function getAccessToken() {
   if (process.env.GOOGLE_BUSINESS_PROFILE_ACCESS_TOKEN) {
     return process.env.GOOGLE_BUSINESS_PROFILE_ACCESS_TOKEN;
@@ -118,10 +128,10 @@ async function main() {
   const accountId = required("GBP_ACCOUNT_ID");
   const locationId = required("GBP_LOCATION_ID");
   const profileUrl = process.env.GBP_PROFILE_URL || "";
-  const pageSize = Math.min(Number(process.env.GBP_PAGE_SIZE || 50), 50);
-  const maxPages = Number(process.env.GBP_MAX_PAGES || 5);
-  const featuredLimit = Number(process.env.GBP_FEATURED_REVIEW_LIMIT || 12);
-  const minRating = Number(process.env.GBP_FEATURED_MIN_RATING || 5);
+  const pageSize = numberEnv("GBP_PAGE_SIZE", 50, { min: 1, max: 50 });
+  const maxPages = numberEnv("GBP_MAX_PAGES", 5, { min: 1 });
+  const featuredLimit = numberEnv("GBP_FEATURED_REVIEW_LIMIT", 12, { min: 1 });
+  const minRating = numberEnv("GBP_FEATURED_MIN_RATING", 5, { min: 1, max: 5 });
   const token = await getAccessToken();
   const { reviews, averageRating, totalReviewCount } = await listAllReviews({ token, accountId, locationId, pageSize, maxPages });
 
@@ -139,7 +149,7 @@ async function main() {
     worstRating: 1,
     profileUrl,
     lastImported: new Date().toISOString(),
-    displayNote: "Imported from Google Business Profile Reviews API. Anonymous reviewers are displayed without names or profile photos.",
+    displayNote: "Imported from the official Google Business Profile Reviews API. Anonymous reviewers are displayed without names or profile photos; exact excerpts come only from imported review text.",
     featuredReviews,
     allReviews: normalized,
   };

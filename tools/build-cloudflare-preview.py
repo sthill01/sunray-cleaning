@@ -577,6 +577,23 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     content = content.replace("GPT preview", "Preview")
     content = content.replace("Preview for ", "")
     content = content.replace('method="post" action="#"', 'method="post" action="/api/quote"')
+    content = content.replace(
+        "Webflow-ready form markup. In this static preview, call or text (801) 604-2189 for live scheduling.",
+        "Prefer to talk now? Call or text (801) 604-2189.",
+    )
+    content = content.replace(
+        'aria-label="Stylized map of Sun Ray Cleaning service areas"',
+        'aria-label="Sun Ray Cleaning service area map for Summit County and Wasatch County"',
+    )
+    content = content.replace(
+        "<title id=\"map-title\">Sun Ray Cleaning service area map</title>",
+        "<title id=\"map-title\">Sun Ray Cleaning service area map for Summit County and Wasatch County</title>",
+    )
+    content = re.sub(
+        r'<text x="58" y="394" fill="#6b6558" font-family="Open Sans, Arial" font-size="13">Stylized service map for planning and Webflow preview\.</text>',
+        "",
+        content,
+    )
     content = re.sub(r'<meta name="robots" content="[^"]+">', '<meta name="robots" content="noindex, follow">', content)
     return content
 

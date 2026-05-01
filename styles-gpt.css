@@ -1195,8 +1195,9 @@ p {
   color: var(--yellow);
 }
 
-.quote-modal-copy p {
-  color: var(--navy-soft);
+.quote-modal-copy p,
+.quote-modal-copy .check-list span {
+  color: rgba(255, 255, 255, 0.84);
 }
 
 .quote-modal-form {
