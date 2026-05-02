@@ -1,0 +1,42 @@
+﻿name: Import Google Business Profile Reviews
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "18 9 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  import-google-reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Import Google Business Profile reviews
+        env:
+          GBP_ACCOUNT_ID: ${{ secrets.GBP_ACCOUNT_ID }}
+          GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
+          GBP_PROFILE_URL: ${{ secrets.GBP_PROFILE_URL }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GBP_FEATURED_REVIEW_LIMIT: 12
+          GBP_FEATURED_MIN_RATING: 5
+        run: node scripts/import-google-reviews.mjs
+
+      - name: Build Cloudflare preview
+        run: python tools/build-cloudflare-preview.py
+
+      - name: Commit review updates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update Google Business Profile reviews"
+          file_pattern: data/reviews.json

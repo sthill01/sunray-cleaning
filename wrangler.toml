@@ -1,0 +1,14 @@
+name = "sunray-cleaning"
+compatibility_date = "2026-04-28"
+pages_build_output_dir = "cloudflare-preview"
+
+# Add these bindings when the admin system is ready for live content edits.
+# [[kv_namespaces]]
+# binding = "SUNRAY_CONTENT"
+# id = "replace-with-production-kv-id"
+# preview_id = "replace-with-preview-kv-id"
+#
+# [[d1_databases]]
+# binding = "SUNRAY_DB"
+# database_name = "sunray-content"
+# database_id = "replace-with-d1-database-id"
