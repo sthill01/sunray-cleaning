@@ -12,6 +12,6 @@ Use these with caution:
 
 - `robots.txt` - recommended robots content
 - `redirects.csv` - redirect rows from the SEO strategy
+- `google-tag.html` - Google tag snippet for Webflow site-wide head code
 - `webflow-quick-wins-claude-prompt.md` - prompt for Webflow Claude
 - `sitewide-localbusiness-schema.html` - starter schema block with placeholders
-

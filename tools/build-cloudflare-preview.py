@@ -14,6 +14,16 @@ DATA = ROOT / "data"
 BASE_URL = "https://sunray-cleaning-preview.pages.dev"
 PHONE = "+18016042189"
 PHONE_DISPLAY = "(801) 604-2189"
+GOOGLE_TAG_ID = "G-EKVGVL5YVC"
+GOOGLE_TAG = f"""<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={GOOGLE_TAG_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+
+    gtag('config', '{GOOGLE_TAG_ID}');
+  </script>"""
 
 CORE_AREAS = [
     "Park City UT",
@@ -577,6 +587,8 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
     llms = '<link rel="alternate" type="text/plain" href="/llms.txt" title="Sun Ray Cleaning LLM summary">'
     if 'rel="canonical"' not in content:
         content = content.replace("</head>", f"  {canonical}\n  {llms}\n</head>", 1)
+    if GOOGLE_TAG_ID not in content:
+        content = content.replace("</head>", f"  {GOOGLE_TAG}\n</head>", 1)
     schema = build_structured_data(content, route)
     content = content.replace("</head>", f"  {schema}\n</head>", 1)
     if "review-proof" not in content and "</main>" in content:
