@@ -242,6 +242,49 @@ def selected_gallery_items(route: str, limit: int = 4) -> list[dict[str, object]
     return picked[:limit]
 
 
+def photo_place_schema(item: dict[str, object]) -> dict[str, object]:
+    city = str(item.get("city", "")).strip()
+    county = str(item.get("county", "")).strip()
+    region = str(item.get("region", "Utah")).strip() or "Utah"
+    location = str(item.get("location", "")).strip() or ", ".join(value for value in [city, region] if value)
+    address: dict[str, object] = {
+        "@type": "PostalAddress",
+        "addressRegion": region,
+        "addressCountry": "US",
+    }
+    if city:
+        address["addressLocality"] = city
+    place: dict[str, object] = {
+        "@type": "Place",
+        "name": location,
+        "address": address,
+    }
+    if county:
+        place["containedInPlace"] = {
+            "@type": "AdministrativeArea",
+            "name": f"{county}, {region}",
+        }
+    return place
+
+
+def photo_mentions(item: dict[str, object]) -> list[dict[str, object]]:
+    mentions: list[dict[str, object]] = []
+    room = str(item.get("room", "")).strip()
+    service = str(item.get("service", "")).strip()
+    city = str(item.get("city", "")).strip()
+    county = str(item.get("county", "")).strip()
+    region = str(item.get("region", "Utah")).strip() or "Utah"
+    if room:
+        mentions.append({"@type": "Thing", "name": room})
+    if service:
+        mentions.append({"@type": "Service", "name": service})
+    if city:
+        mentions.append({"@type": "City", "name": f"{city}, {region}"})
+    if county:
+        mentions.append({"@type": "AdministrativeArea", "name": f"{county}, {region}"})
+    return mentions
+
+
 def build_reviews_section() -> str:
     source = REVIEWS.get("sourceName", "Google Business Profile")
     rating = float(REVIEWS.get("ratingValue", 5.0))
@@ -257,7 +300,7 @@ def build_reviews_section() -> str:
             photo_markup = ""
             if photo:
                 photo_markup = f'<img class="reviewer-photo" src="{html.escape(photo)}" alt="{author} Google review profile photo" loading="lazy">'
-            review_cards += f'<article class="review-proof-card">{photo_markup}<div class="review-stars" aria-label="{rating} out of 5 stars">★★★★★</div><blockquote>{text}</blockquote><cite>{author}</cite></article>'
+            review_cards += f'<article class="review-proof-card">{photo_markup}<div class="review-stars" aria-label="{rating} out of 5 stars">?????</div><blockquote>{text}</blockquote><cite>{author}</cite></article>'
     else:
         review_cards = """
         <article class="review-proof-card"><h3>Import exact review excerpts next</h3><p>This preview uses aggregate Google Business Profile proof without inventing customer quotes. Add approved public excerpts in <code>data/reviews.json</code> for named review cards.</p></article>
@@ -275,7 +318,7 @@ def build_reviews_section() -> str:
       </div>
       <div class="rating-badge" aria-label="{rating:.1f} out of 5 average Google rating">
         <strong>{rating:.1f}</strong>
-        <span>★★★★★</span>
+        <span>?????</span>
         <small>{count}+ Google reviews</small>
       </div>
     </div>
@@ -297,11 +340,12 @@ def build_gallery_section(route: str) -> str:
         caption = html.escape(str(item.get("caption", "Recent Sun Ray Cleaning job photo.")))
         location = html.escape(str(item.get("location", "Northern Utah")))
         service = html.escape(str(item.get("service", "Residential cleaning")))
+        room = html.escape(str(item.get("room", "Home")))
         keywords = ", ".join(str(keyword) for keyword in item.get("keywords", [])[:3])
         cards += f"""
         <figure class="job-photo-card">
           <img src="{html.escape(asset_src)}" alt="{alt}" loading="lazy">
-          <figcaption><strong>{caption}</strong><span>{service} · {location}</span><small>{html.escape(keywords)}</small></figcaption>
+          <figcaption><strong>{caption}</strong><span>{room} · {service} · {location}</span><small>{html.escape(keywords)}</small></figcaption>
         </figure>
         """
     return f"""
@@ -362,6 +406,12 @@ def build_structured_data(content: str, route: str) -> str:
     page_url = absolute_url(route)
     organization_id = absolute_url("/#organization")
     page_id = page_url + "#webpage"
+    gallery_items = selected_gallery_items(route)
+    primary_image = (
+        absolute_url("/" + str(gallery_items[0].get("asset", "")).lstrip("/"))
+        if gallery_items
+        else absolute_url("/assets/wasatch-county-residential-family-room-cleaning-sun-ray.jpg")
+    )
     graph: list[dict[str, object]] = [
         {
             "@type": ["LocalBusiness", "HouseCleaningService"],
@@ -407,7 +457,12 @@ def build_structured_data(content: str, route: str) -> str:
             "description": description,
             "isPartOf": {"@id": absolute_url("/#website")},
             "about": {"@id": organization_id},
-            "primaryImageOfPage": {"@type": "ImageObject", "url": absolute_url("/assets/sunray-real-family-room.jpg")},
+            "primaryImageOfPage": {"@type": "ImageObject", "url": primary_image},
+            **(
+                {"image": [{"@id": page_url + f"#job-photo-{index}"} for index, _ in enumerate(gallery_items, start=1)]}
+                if gallery_items
+                else {}
+            ),
         },
         {
             "@type": "BreadcrumbList",
@@ -428,21 +483,31 @@ def build_structured_data(content: str, route: str) -> str:
                 "url": page_url,
             }
         )
-    gallery_items = selected_gallery_items(route)
     for index, item in enumerate(gallery_items, start=1):
+        asset_url = absolute_url("/" + str(item.get("asset", "")).lstrip("/"))
         graph.append(
             {
                 "@type": "ImageObject",
                 "@id": page_url + f"#job-photo-{index}",
-                "url": absolute_url("/" + str(item.get("asset", "")).lstrip("/")),
+                "name": str(item.get("name", item.get("caption", "Sun Ray Cleaning job photo"))),
+                "url": asset_url,
+                "contentUrl": asset_url,
+                "thumbnailUrl": asset_url,
                 "caption": str(item.get("caption", "")),
                 "description": str(item.get("alt", "")),
-                "contentLocation": {"@type": "Place", "name": str(item.get("location", ""))},
+                "encodingFormat": "image/jpeg",
+                "inLanguage": "en-US",
+                "contentLocation": photo_place_schema(item),
                 "keywords": item.get("keywords", []),
                 "about": [
-                    {"@type": "Thing", "name": str(item.get("service", "Residential cleaning"))},
+                    {"@type": "Thing", "name": str(item.get("room", "Home"))},
+                    {"@type": "Service", "name": str(item.get("service", "Residential cleaning"))},
                     {"@id": organization_id},
                 ],
+                "mentions": photo_mentions(item),
+                "creator": {"@id": organization_id},
+                "creditText": "Sun Ray Cleaning Services",
+                "copyrightNotice": "Sun Ray Cleaning Services",
             }
         )
     if page_type(route) == "blog":
