@@ -306,11 +306,12 @@ def build_reviews_section() -> str:
             text = html.escape(str(review.get("text", "")))
             author = html.escape(str(review.get("author", "Google reviewer")))
             photo = str(review.get("profilePhotoUrl", ""))
-            rating = review.get("rating", 5)
+            review_rating = review.get("rating", 5)
+            star_markup = "&#9733;" * int(review_rating)
             photo_markup = ""
             if photo:
                 photo_markup = f'<img class="reviewer-photo" src="{html.escape(photo)}" alt="{author} Google review profile photo" loading="lazy">'
-            review_cards += f'<article class="review-proof-card">{photo_markup}<div class="review-stars" aria-label="{rating} out of 5 stars">?????</div><blockquote>{text}</blockquote><cite>{author}</cite></article>'
+            review_cards += f'<article class="review-proof-card">{photo_markup}<div class="review-stars" aria-label="{review_rating} out of 5 stars">{star_markup}</div><blockquote>{text}</blockquote><cite>{author}</cite></article>'
     else:
         review_cards = """
         <article class="review-proof-card"><h3>Import exact review excerpts next</h3><p>This preview uses aggregate Google Business Profile proof without inventing customer quotes. Add approved public excerpts in <code>data/reviews.json</code> for named review cards.</p></article>
