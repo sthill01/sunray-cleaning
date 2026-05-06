@@ -118,8 +118,7 @@ def route_to_relpath(from_route: str, target_route: str) -> str:
 
 
 def asset_rel(from_route: str, asset_path: str) -> str:
-    from_parts = [] if from_route == "/" else from_route.strip("/").split("/")
-    return "/".join([".."] * len(from_parts) + [asset_path])
+    return "/" + asset_path.lstrip("/")
 
 
 def absolute_url(route: str) -> str:
@@ -318,9 +317,9 @@ def build_reviews_section() -> str:
             review_cards += f'<article class="review-proof-card">{photo_markup}<div class="review-stars" aria-label="{review_rating} out of 5 stars">{star_markup}</div><blockquote>{text}</blockquote><cite>{author}</cite></article>'
     else:
         review_cards = """
-        <article class="review-proof-card"><h3>Import exact review excerpts next</h3><p>This preview uses aggregate Google Business Profile proof without inventing customer quotes. Add approved public excerpts in <code>data/reviews.json</code> for named review cards.</p></article>
-        <article class="review-proof-card"><h3>Strong conversion signal</h3><p>Use the 5-star Google rating near quote CTAs, service pages, location pages, and FAQs so visitors see social proof before they contact Sun Ray.</p></article>
-        <article class="review-proof-card"><h3>Local trust signal</h3><p>Pair reviews with service-area names like Park City, Deer Valley, Heber City, Midway, Summit County, and Wasatch County.</p></article>
+        <article class="review-proof-card"><h3>Trusted by local customers</h3><p>Sun Ray Cleaning is proud to help homeowners, hosts, and property managers keep their homes clean, comfortable, and ready for the next visit.</p></article>
+        <article class="review-proof-card"><h3>Clear communication</h3><p>Customers choose Sun Ray for friendly updates, no-surprise quotes, and cleaning plans that match each home.</p></article>
+        <article class="review-proof-card"><h3>Consistent home care</h3><p>From Park City rentals to Heber City and Midway homes, the team focuses on reliable work and thoughtful details.</p></article>
         """
     return f"""
 <section class="section section-cream review-proof" aria-labelledby="review-proof-title">
@@ -329,7 +328,7 @@ def build_reviews_section() -> str:
       <div>
         <p class="eyebrow">Google review proof</p>
         <h2 id="review-proof-title">{rating:.1f}-star average from {count}+ Google reviews.</h2>
-        <p>Sun Ray Cleaning can use its {source} rating as a high-trust signal across cleaning service pages, location pages, quote CTAs, and AI-search-ready structured data.</p>
+        <p>Customers count on Sun Ray Cleaning for dependable service, clear communication, and homes that feel ready to enjoy again.</p>
       </div>
       <div class="rating-badge" aria-label="{rating:.1f} out of 5 average Google rating">
         <strong>{rating:.1f}</strong>
@@ -356,11 +355,10 @@ def build_gallery_section(route: str) -> str:
         location = html.escape(str(item.get("location", "Northern Utah")))
         service = html.escape(str(item.get("service", "Residential cleaning")))
         room = html.escape(str(item.get("room", "Home")))
-        keywords = ", ".join(str(keyword) for keyword in item.get("keywords", [])[:3])
         cards += f"""
         <figure class="job-photo-card">
           <img src="{html.escape(asset_src)}" alt="{alt}" loading="lazy">
-          <figcaption><strong>{caption}</strong><span>{room} · {service} · {location}</span><small>{html.escape(keywords)}</small></figcaption>
+          <figcaption><strong>{caption}</strong><span>{room} - {service} - {location}</span></figcaption>
         </figure>
         """
     return f"""
@@ -368,8 +366,8 @@ def build_gallery_section(route: str) -> str:
   <div class="container">
     <div class="section-head center">
       <p class="eyebrow">Recent cleaning photos</p>
-      <h2 id="local-gallery-title">Real Sun Ray job photos with local SEO context.</h2>
-      <p>Each photo uses descriptive alt text, service context, and location context so the gallery supports trust, conversion, Google image search, and AI search entity understanding.</p>
+      <h2 id="local-gallery-title">See the kind of clean Sun Ray brings into real homes.</h2>
+      <p>These recent photos show kitchens, living rooms, bedrooms, bathrooms, and guest spaces after Sun Ray Cleaning visits around Park City, Heber City, Midway, Summit County, and Wasatch County.</p>
     </div>
     <div class="job-photo-grid">{cards}</div>
   </div>
@@ -387,25 +385,25 @@ def build_answer_network(content: str, route: str, route_map: dict[str, str]) ->
     )
     kind = page_type(route)
     if kind == "location":
-        lead = f"Sun Ray Cleaning Services is a local fit for {focus}. Homeowners, second-home owners, and hosts can compare services, read local FAQs, and request a quote from one crawlable page."
+        lead = f"If you have a home, rental, or second property that needs {focus}, Sun Ray can help you choose the right cleaning plan and request a quote quickly."
     elif kind == "service":
-        lead = f"Sun Ray Cleaning Services provides {focus}. This page connects the service, service areas, pricing questions, FAQs, and booking path so people and AI search tools can understand the best next step quickly."
+        lead = f"Sun Ray Cleaning Services provides {focus}. Use this page to understand what is included, where the team works, and how to request a quote."
     elif kind == "blog":
-        lead = f"This guide answers {focus} and connects readers to Sun Ray Cleaning Services pages for booking, pricing context, and local service-area details."
+        lead = f"This guide helps with {focus}. When you want help with the cleaning itself, Sun Ray can match the work to your home, timing, and priorities."
     else:
-        lead = f"Sun Ray Cleaning Services helps people compare {focus}. The page structure connects core services, local areas, FAQs, testimonials, and the quote path in one clear crawlable network."
+        lead = f"Sun Ray Cleaning Services helps with {focus}. Compare services, nearby areas, customer feedback, and quote options in one place."
     return f"""
 <section class="section seo-answer-network" aria-labelledby="seo-answer-title">
   <div class="container">
     <div class="section-head center">
-      <p class="eyebrow">Quick answer for search</p>
-      <h2 id="seo-answer-title">Sun Ray is built for {html.escape(focus)}.</h2>
+      <p class="eyebrow">How Sun Ray helps</p>
+      <h2 id="seo-answer-title">Reliable cleaning support for {html.escape(focus)}.</h2>
       <p>{html.escape(lead)}</p>
     </div>
     <div class="seo-answer-grid">
-      <article class="seo-answer-card"><h3>Best-fit searches</h3><p>Residential cleaning, short-term rental turnovers, deep cleaning, recurring maid service, and move cleaning across the Wasatch Back.</p></article>
-      <article class="seo-answer-card"><h3>Fast quote path</h3><p>Call or text {PHONE_DISPLAY}, or send bedrooms, bathrooms, square footage, timing, pets, and service type through the quote form.</p></article>
-      <article class="seo-answer-card"><h3>Local relevance</h3><p>Content is organized by service, county, city, and neighborhood so Google and AI search can connect Sun Ray to specific local intent.</p></article>
+      <article class="seo-answer-card"><h3>Cleaning options</h3><p>Choose recurring home care, deep cleaning, move-in and move-out cleaning, or Airbnb and VRBO turnover support.</p></article>
+      <article class="seo-answer-card"><h3>Easy quote process</h3><p>Call or text {PHONE_DISPLAY}, or send bedrooms, bathrooms, square footage, timing, pets, and service type through the quote form.</p></article>
+      <article class="seo-answer-card"><h3>Local team</h3><p>Friendly, locally operated cleaning support for Park City, Heber City, Midway, Summit County, and Wasatch County.</p></article>
     </div>
     <nav class="seo-link-cluster" aria-label="Related Sun Ray Cleaning pages">{link_markup}</nav>
   </div>
@@ -658,6 +656,9 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     content = content.replace("GPT Preview ", "")
     content = content.replace("GPT preview", "Preview")
     content = content.replace("Preview for ", "")
+    content = content.replace("this preview page", "this page")
+    content = content.replace("Not on this page.", "Not as a fixed coupon amount online.")
+    content = content.replace("local SEO posts", "local cleaning guides")
     content = content.replace('method="post" action="#"', 'method="post" action="/api/quote"')
     content = content.replace(
         "Webflow-ready form markup. In this static preview, call or text (801) 604-2189 for live scheduling.",
