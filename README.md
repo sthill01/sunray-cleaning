@@ -20,6 +20,23 @@ Cloudflare Pages settings:
 
 The generated preview intentionally uses `noindex` headers and robots rules until it is promoted from preview to production.
 
+## Cloudflare production launch build
+
+Use the production build only for the live Cloudflare Pages project after QA passes:
+
+```powershell
+npm run build:production
+```
+
+Production Cloudflare Pages settings:
+
+- Build command: `npm run build:production`
+- Build output directory: `cloudflare-preview`
+- Production canonical base URL: `https://www.sunray-cleaning.com`
+- Required environment variable for quote forwarding: `SUNRAY_QUOTE_WEBHOOK_URL`
+
+The production build sets crawlable robots metadata, removes the preview `X-Robots-Tag: noindex` header, writes a crawlable `robots.txt`, and generates sitemap/canonical URLs for `https://www.sunray-cleaning.com`. Attach `www.sunray-cleaning.com` as the primary Cloudflare Pages custom domain and redirect `sunray-cleaning.com` to `www.sunray-cleaning.com`.
+
 ## Quote form routing
 
 Cloudflare preview forms post to `/api/quote`. The form only forwards submissions to email/CRM automation after `SUNRAY_QUOTE_WEBHOOK_URL` is added in Cloudflare Pages environment variables. Use a Make or Zapier webhook that sends the submitted JSON payload to the preferred Sun Ray email inbox.

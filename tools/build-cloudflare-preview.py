@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import re
 import shutil
 from datetime import date
@@ -11,7 +12,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "cloudflare-preview"
 DATA = ROOT / "data"
-BASE_URL = "https://sunray-cleaning-preview.pages.dev"
+DEFAULT_BASE_URL = "https://sunray-cleaning-preview.pages.dev"
+BASE_URL = os.environ.get("SUNRAY_SITE_BASE_URL", DEFAULT_BASE_URL).rstrip("/")
+ALLOW_INDEXING = os.environ.get("SUNRAY_ALLOW_INDEXING", "").strip().lower() in {"1", "true", "yes", "index"}
+ROBOTS_META = "index, follow" if ALLOW_INDEXING else "noindex, follow"
 PHONE = "+18016042189"
 PHONE_DISPLAY = "(801) 604-2189"
 GOOGLE_TAG_ID = "G-EKVGVL5YVC"
@@ -672,7 +676,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         "",
         content,
     )
-    content = re.sub(r'<meta name="robots" content="[^"]+">', '<meta name="robots" content="noindex, follow">', content)
+    content = re.sub(r'<meta name="robots" content="[^"]+">', f'<meta name="robots" content="{ROBOTS_META}">', content)
     return content
 
 
@@ -683,28 +687,36 @@ def copy_static_assets() -> None:
 
 
 def write_platform_files(routes: list[str]) -> None:
-    (OUT / "_headers").write_text(
-        """/*
+    headers = """/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-  X-Robots-Tag: noindex, follow
+  Permissions-Policy: camera=(), microphone=(), geolocation=()"""
+    if not ALLOW_INDEXING:
+        headers += "\n  X-Robots-Tag: noindex, follow"
+    headers += """
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
-""",
+"""
+    (OUT / "_headers").write_text(
+        headers,
         encoding="utf-8",
     )
+    host_redirect = ""
+    if ALLOW_INDEXING and BASE_URL == "https://www.sunray-cleaning.com":
+        host_redirect = "https://sunray-cleaning.com/ https://www.sunray-cleaning.com/ 301\nhttps://sunray-cleaning.com/* https://www.sunray-cleaning.com/:splat 301\n"
     (OUT / "_redirects").write_text(
-        """# Clean URL redirects for Cloudflare Pages preview
+        f"""# Clean URL redirects for Cloudflare Pages
+{host_redirect}
 /*.html /:splat/ 301
 /index.html / 301
 """,
         encoding="utf-8",
     )
+    robots_rules = "Allow: /" if ALLOW_INDEXING else "Disallow: /"
     (OUT / "robots.txt").write_text(
         f"""User-agent: *
-Disallow: /
+{robots_rules}
 
 Sitemap: {BASE_URL}/sitemap.xml
 """,
