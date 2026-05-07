@@ -121,3 +121,5 @@ The workflow commits updates to `data/social-gallery.json` and `assets/social/`.
 ```text
 npm run build:cloudflare
 ```
+
+If the workflow says `Object with ID ... does not exist, cannot be loaded due to missing permissions`, regenerate the Meta token from Graph API Explorer with the Sun Ray app selected and these permissions: `pages_show_list`, `pages_read_engagement`, `instagram_basic`, and `business_management` if available. The importer can use `META_ACCESS_TOKEN` to discover the Page access token from `/me/accounts`, but the token still needs permission to see the Sun Ray Page and its connected Instagram business account.
