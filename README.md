@@ -20,6 +20,23 @@ Cloudflare Pages settings:
 
 The generated preview intentionally uses `noindex` headers and robots rules until it is promoted from preview to production.
 
+## Cloudflare production launch build
+
+Use the production build only for the live Cloudflare Pages project after QA passes:
+
+```powershell
+npm run build:production
+```
+
+Production Cloudflare Pages settings:
+
+- Build command: `npm run build:production`
+- Build output directory: `cloudflare-preview`
+- Production canonical base URL: `https://www.sunray-cleaning.com`
+- Required environment variable for quote forwarding: `SUNRAY_QUOTE_WEBHOOK_URL`
+
+The production build sets crawlable robots metadata, removes the preview `X-Robots-Tag: noindex` header, writes a crawlable `robots.txt`, and generates sitemap/canonical URLs for `https://www.sunray-cleaning.com`. Attach `www.sunray-cleaning.com` as the primary Cloudflare Pages custom domain and redirect `sunray-cleaning.com` to `www.sunray-cleaning.com`.
+
 ## Quote form routing
 
 Cloudflare preview forms post to `/api/quote`. The form only forwards submissions to email/CRM automation after `SUNRAY_QUOTE_WEBHOOK_URL` is added in Cloudflare Pages environment variables. Use a Make or Zapier webhook that sends the submitted JSON payload to the preferred Sun Ray email inbox.
@@ -46,19 +63,52 @@ Optional:
 
 - `GBP_PROFILE_URL`
 
+## Instagram and Facebook photo import
+
+The Meta photo importer downloads approved Sun Ray Instagram/Facebook images into `assets/social/`, writes local SEO metadata to `data/social-gallery.json`, and lets the build reuse those photos in gallery sections and image schema.
+
+```powershell
+npm run import:social-gallery -- --source=all --limit=24
+npm run build:cloudflare
+```
+
+Setup details are in `social-gallery-import.md`.
+
+GitHub Actions can also run the importer from the repo after these Actions secrets are saved:
+
+- `META_ACCESS_TOKEN`
+- `INSTAGRAM_BUSINESS_ACCOUNT_ID`
+- `FACEBOOK_PAGE_ID`
+
+Run **Actions > Import Instagram and Facebook Gallery Photos** to import draft photos, then approve selected records in `data/social-gallery.json`.
+
 ## Pages
 
-- `index.html`
-- `about.html`
-- `services.html`
-- `service-location/park-city.html`
-- `service-location/heber-city.html`
-- `service-location/midway.html`
-- `service-location/salt-lake-county.html`
-- `services/short-term-rental-cleaning.html`
-- `services/deep-cleaning.html`
-- `services/recurring-cleaning.html`
-- `services/move-in-move-out-cleaning.html`
+- `/`
+- `/about/`
+- `/services/`
+- `/specials/`
+- `/discounts/`
+- `/service-areas/`
+- `/service-location/park-city/`
+- `/service-location/snyderville/`
+- `/service-location/deer-valley/`
+- `/service-location/canyons-village/`
+- `/service-location/old-town-park-city/`
+- `/service-location/heber-city/`
+- `/service-location/midway/`
+- `/service-location/kamas/`
+- `/service-location/oakley/`
+- `/service-location/daniel/`
+- `/service-location/coalville/`
+- `/service-location/summit-county/`
+- `/service-location/wasatch-county/`
+- `/services/short-term-rental-cleaning/`
+- `/services/deep-cleaning/`
+- `/services/recurring-cleaning/`
+- `/services/move-in-move-out-cleaning/`
+
+`/service-location/old-town/` is a legacy Cloudflare redirect alias for `/service-location/old-town-park-city/`.
 
 ## Cloudflare Pages staging
 

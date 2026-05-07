@@ -51,6 +51,25 @@
     if (type === "error" && error && message) error.textContent = message;
   }
 
+  function sendLeadConversionEvent() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "sunray_lead_form_submit",
+      form_name: "Sun Ray Quote Request",
+      lead_type: "quote_form",
+    });
+
+    if (window.google_tag_manager || typeof window.gtag !== "function") return;
+
+    try {
+      window.gtag("event", "conversion_event_submit_lead_form_1", {
+        event_timeout: 2000,
+      });
+    } catch (error) {
+      // Tracking should never interrupt the quote form experience.
+    }
+  }
+
   function handleQuoteSubmit(event) {
     var form = event.currentTarget;
     var action = form.getAttribute("action");
@@ -83,6 +102,7 @@
       })
       .then(function (payload) {
         setFormState(form, "success", payload.message || "Thanks. Your quote request was received.");
+        sendLeadConversionEvent();
         form.reset();
       })
       .catch(function (error) {

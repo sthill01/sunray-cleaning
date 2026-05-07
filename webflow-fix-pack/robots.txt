@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sunray-cleaning.com/sitemap.xml
-
+# NOTE: Keep this domain consistent with Webflow's canonical domain (www vs non-www).
+Sitemap: https://www.sunray-cleaning.com/sitemap.xml

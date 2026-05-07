@@ -1,11 +1,149 @@
-﻿{
+{
   "sourceName": "Google Business Profile",
-  "reviewCount": 50,
+  "reviewCount": 49,
   "ratingValue": 5.0,
   "bestRating": 5,
   "worstRating": 1,
   "profileUrl": "",
-  "lastVerified": "2026-04-28",
-  "displayNote": "Use aggregate Google Business Profile proof now; add approved public review excerpts only after export or owner approval.",
-  "featuredReviews": []
+  "lastVerified": "2026-05-06",
+  "displayNote": "Manual transcription from Google Business Profile owner-dashboard and testimonials-widget screenshots while official Business Profile API access is pending. Dates are approximate because the screenshots show relative review ages.",
+  "summaryHighlights": [
+    "Highly praised for thorough and detailed cleaning.",
+    "Known for excellent customer service and responsiveness.",
+    "Clients appreciate Sun Ray's ability to handle last-minute requests effectively."
+  ],
+  "featuredReviews": [
+    {
+      "reviewId": "manual-larkin-dent-2026-05-04",
+      "author": "Larkin Dent",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "Cyntya and her team do excellent work, and are super efficient as well. They were polite, professional and up front about what is included in a standard vs. deep cleaning. Sun Ray charges a very reasonable price considering the quality and efficiency of their work, plus they bring all their own cleaning supplies and tools (vacuum, etc.). I would recommend this crew to anyone needing help cleaning their home!",
+      "createTime": "2026-05-04",
+      "dateText": "2 days ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-robyn-bergesen-2026-05-01",
+      "author": "Robyn Bergesen",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "Cyntya and her team are fantastic. She is our trusted eyes on the ground for our remotely managed rental property. Always thorough, helpful, and very pleasant to work with! We constantly get notes in Airbnb reviews about how clean the property is. They're the best!",
+      "createTime": "2026-05-01",
+      "dateText": "5 days ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-scott-nomfret-2026-04-01",
+      "author": "scott nomfret",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "Terrific cleaning job that left the unit smelling and looking like it was brand new. But what really made the experience especially terrific was the unparalleled communication and flexibility working with my schedule. Bonus points for the friendliness and reasonable rates. I'd absolutely use Sun-Ray again! Highly recommended.",
+      "createTime": "2026-04-01",
+      "dateText": "5 weeks ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-sharron-error-2026-05-01",
+      "author": "Sharron Error",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "SunRay is absolutely awesome to work with. Excellent work every time. Makes corrections if any issues are encountered immediately. Always willing to go the extra mile if asked. I have enjoyed working with Cyntya!",
+      "createTime": "2026-05-01",
+      "dateText": "5 days ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-glenn-herwig-2026-04-22",
+      "author": "Glenn Herwig",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "Cyntya and Raquel were fabulous at cleaning our entire home. They are the best home cleaners in all of SLC! Don't hesitate to reach out to them.",
+      "createTime": "2026-04-22",
+      "dateText": "2 weeks ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-neil-mckenna-2026-03-11",
+      "author": "Neil McKenna",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "We hired Sun Ray from the east coast coming into town and it was a pleasure dealing with them. Excellent, clear communication which is very appreciated and terrific price for a job well done!",
+      "createTime": "2026-03-11",
+      "dateText": "8 weeks ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-rachael-letendre-2025-11-19",
+      "author": "Rachael Letendre",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "Great price. We have used Sun Ray Cleaning services twice now and LOVE how clean and fresh our home feels after! They do such an amazing job\u2014 thank you Cyntia, Steve, and Raquel!",
+      "createTime": "2025-11-19",
+      "dateText": "24 weeks ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-jill-moorcroft-2026-05-01",
+      "author": "Jill Moorcroft",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "Amazingly thorough cleaning! Great communication! Always trying to please and make things easy!",
+      "createTime": "2026-05-01",
+      "dateText": "5 days ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-chelsea-terentiev-2026-04-08",
+      "author": "Chelsea Terentiev",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "Excellent communication. Professional and thorough!",
+      "createTime": "2026-04-08",
+      "dateText": "4 weeks ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-andrew-harrington-2026-04-08",
+      "author": "Andrew Harrington",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "Highly recommend! They did a great job at our home.",
+      "createTime": "2026-04-08",
+      "dateText": "4 weeks ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-rachel-dzurilla-2026-05-01",
+      "author": "Rachel Dzurilla",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "Excellent cleaning. The house was very welled cleaned. Highly recommend.",
+      "createTime": "2026-05-01",
+      "dateText": "5 days ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    },
+    {
+      "reviewId": "manual-raquel-medina-2026-03-25",
+      "author": "Raquel Medina",
+      "isAnonymous": false,
+      "rating": 5,
+      "text": "they did an amazing job!! \ud83d\ude4c \u2728",
+      "createTime": "2026-03-25",
+      "dateText": "6 weeks ago",
+      "profilePhotoUrl": "",
+      "sourceUrl": ""
+    }
+  ]
 }

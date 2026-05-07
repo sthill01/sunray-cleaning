@@ -1,0 +1,7 @@
+{
+  "sourceName": "Sun Ray Instagram and Facebook photos",
+  "importNote": "Imported with the official Meta Graph API. New records default to approved=false so captions, routes, alt text, and local SEO metadata can be reviewed before publishing.",
+  "lastImportedAt": "",
+  "graphVersion": "v24.0",
+  "items": []
+}
