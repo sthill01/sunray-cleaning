@@ -94,12 +94,18 @@ function pickLargestFacebookImage(images = []) {
   })[0];
 }
 
-async function fetchJson(url, token) {
+function maskedId(value) {
+  const text = String(value || "");
+  if (text.length <= 6) return "***";
+  return `${text.slice(0, 3)}...${text.slice(-3)}`;
+}
+
+async function fetchJson(url, token, context = "Meta Graph API request") {
   const response = await fetch(url, {
     headers: { authorization: `Bearer ${token}` },
   });
   if (!response.ok) {
-    throw new Error(`Meta Graph API request failed: ${response.status} ${await response.text()}`);
+    throw new Error(`${context} failed: ${response.status} ${await response.text()}`);
   }
   return response.json();
 }
@@ -107,7 +113,7 @@ async function fetchJson(url, token) {
 async function discoverMetaAssets(token) {
   const fields = "id,name,access_token,instagram_business_account{id,username,name}";
   const url = `${GRAPH_BASE}/me/accounts?${new URLSearchParams({ fields, limit: "50" })}`;
-  const payload = await fetchJson(url, token);
+  const payload = await fetchJson(url, token, "Discover Facebook Pages and connected Instagram accounts");
   const pages = payload.data ?? [];
   if (!pages.length) {
     console.log("No Facebook Pages returned for this token.");
@@ -119,6 +125,23 @@ async function discoverMetaAssets(token) {
       console.log(`  Instagram business account: @${page.instagram_business_account.username || "unknown"} (${page.instagram_business_account.id})`);
     }
   }
+}
+
+async function pageAccessTokenFor({ userToken, pageId }) {
+  if (!userToken || !pageId) return "";
+  const fields = "id,name,access_token,instagram_business_account{id,username,name}";
+  const url = `${GRAPH_BASE}/me/accounts?${new URLSearchParams({ fields, limit: "100" })}`;
+  const payload = await fetchJson(url, userToken, "Find Page access token from /me/accounts");
+  const page = (payload.data ?? []).find((item) => String(item.id) === String(pageId));
+  return page?.access_token || "";
+}
+
+async function instagramAccountForPage({ token, pageId }) {
+  if (!token || !pageId) return null;
+  const fields = "instagram_business_account{id,username,name}";
+  const url = `${GRAPH_BASE}/${pageId}?${new URLSearchParams({ fields })}`;
+  const payload = await fetchJson(url, token, `Load connected Instagram account for Facebook Page ${maskedId(pageId)}`);
+  return payload.instagram_business_account || null;
 }
 
 async function listInstagramMedia({ token, instagramId, limit }) {
@@ -134,7 +157,11 @@ async function listInstagramMedia({ token, instagramId, limit }) {
     "children{media_type,media_url,thumbnail_url,permalink}",
   ].join(",");
   const params = new URLSearchParams({ fields, limit: String(limit) });
-  const payload = await fetchJson(`${GRAPH_BASE}/${instagramId}/media?${params}`, token);
+  const payload = await fetchJson(
+    `${GRAPH_BASE}/${instagramId}/media?${params}`,
+    token,
+    `Import Instagram media for IG business account ${maskedId(instagramId)}`
+  );
   const photos = [];
   for (const media of payload.data ?? []) {
     if (media.media_type === "IMAGE") {
@@ -171,7 +198,11 @@ async function listInstagramMedia({ token, instagramId, limit }) {
 async function listFacebookPhotos({ token, pageId, limit }) {
   const fields = "id,created_time,name,link,images,album{name},place";
   const params = new URLSearchParams({ type: "uploaded", fields, limit: String(limit) });
-  const payload = await fetchJson(`${GRAPH_BASE}/${pageId}/photos?${params}`, token);
+  const payload = await fetchJson(
+    `${GRAPH_BASE}/${pageId}/photos?${params}`,
+    token,
+    `Import Facebook Page photos for Page ${maskedId(pageId)}`
+  );
   return (payload.data ?? [])
     .map((photo) => {
       const image = pickLargestFacebookImage(photo.images ?? []);
@@ -349,16 +380,36 @@ async function main() {
   const existingData = await readJson(OUTPUT_PATH, { items: [] });
   const existingById = new Map((existingData.items ?? []).map((item) => [item.id, item]));
   const imported = [];
+  const metaAccessToken = process.env.META_ACCESS_TOKEN || "";
+  const pageId = process.env.FACEBOOK_PAGE_ID || "";
+  const explicitPageToken = process.env.FACEBOOK_PAGE_ACCESS_TOKEN || "";
+  const discoveredPageToken = explicitPageToken || (metaAccessToken && pageId ? await pageAccessTokenFor({ userToken: metaAccessToken, pageId }) : "");
+  const pageCapableToken = discoveredPageToken || explicitPageToken || metaAccessToken;
 
   if (source === "all" || source === "instagram") {
-    const instagramToken = process.env.INSTAGRAM_ACCESS_TOKEN || process.env.META_ACCESS_TOKEN || required("META_ACCESS_TOKEN");
-    const instagramId = required("INSTAGRAM_BUSINESS_ACCOUNT_ID");
+    let instagramToken = process.env.INSTAGRAM_ACCESS_TOKEN || pageCapableToken || required("META_ACCESS_TOKEN");
+    let instagramId = process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID || "";
+    if (!instagramId && pageId) {
+      const connectedInstagram = await instagramAccountForPage({ token: pageCapableToken, pageId });
+      instagramId = connectedInstagram?.id || "";
+      if (instagramId) {
+        console.log(`Discovered connected Instagram account @${connectedInstagram.username || "unknown"} (${maskedId(instagramId)}).`);
+      }
+    }
+    if (!instagramId) {
+      throw new Error("Missing required environment variable: INSTAGRAM_BUSINESS_ACCOUNT_ID. You can also provide FACEBOOK_PAGE_ID with a token that can read the connected Instagram business account.");
+    }
+    if (discoveredPageToken && !process.env.INSTAGRAM_ACCESS_TOKEN) {
+      instagramToken = discoveredPageToken;
+    }
     imported.push(...await listInstagramMedia({ token: instagramToken, instagramId, limit }));
   }
 
   if (source === "all" || source === "facebook") {
-    const facebookToken = process.env.FACEBOOK_PAGE_ACCESS_TOKEN || process.env.META_ACCESS_TOKEN || required("META_ACCESS_TOKEN");
-    const pageId = required("FACEBOOK_PAGE_ID");
+    const facebookToken = pageCapableToken || required("META_ACCESS_TOKEN");
+    if (!pageId) {
+      throw new Error("Missing required environment variable: FACEBOOK_PAGE_ID.");
+    }
     imported.push(...await listFacebookPhotos({ token: facebookToken, pageId, limit }));
   }
 
