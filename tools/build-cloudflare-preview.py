@@ -283,7 +283,34 @@ REVIEWS = load_json(
         "featuredReviews": [],
     },
 )
-JOB_GALLERY = load_json(DATA / "job-gallery.json", [])
+BASE_JOB_GALLERY = load_json(DATA / "job-gallery.json", [])
+SOCIAL_GALLERY = load_json(DATA / "social-gallery.json", {"items": []})
+
+
+def approved_social_gallery_items() -> list[dict[str, object]]:
+    items = SOCIAL_GALLERY.get("items", []) if isinstance(SOCIAL_GALLERY, dict) else []
+    approved = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        if not item.get("approved") or not item.get("asset"):
+            continue
+        normalized = dict(item)
+        normalized.setdefault("routes", ["*"])
+        normalized.setdefault("room", "Home")
+        normalized.setdefault("service", "Residential house cleaning")
+        normalized.setdefault("location", "Park City, UT")
+        normalized.setdefault("city", "Park City")
+        normalized.setdefault("county", "Summit County")
+        normalized.setdefault("region", "Utah")
+        normalized.setdefault("alt", "Sun Ray Cleaning Services job photo")
+        normalized.setdefault("caption", "Recent Sun Ray Cleaning Services job photo.")
+        normalized.setdefault("keywords", ["Sun Ray Cleaning Services photos"])
+        approved.append(normalized)
+    return approved
+
+
+JOB_GALLERY = BASE_JOB_GALLERY + approved_social_gallery_items()
 
 
 def clean_route_for(source: Path) -> str:
@@ -581,6 +608,16 @@ def photo_mentions(item: dict[str, object]) -> list[dict[str, object]]:
     return mentions
 
 
+def image_encoding_format(asset_path: str) -> str:
+    suffix = Path(asset_path).suffix.lower()
+    return {
+        ".png": "image/png",
+        ".webp": "image/webp",
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+    }.get(suffix, "image/jpeg")
+
+
 REVIEW_DISPLAY_ORDER = [
     "manual-sharron-error-2026-05-01",
     "manual-jill-moorcroft-2026-05-01",
@@ -837,6 +874,8 @@ def build_structured_data(content: str, route: str) -> str:
         )
     for index, item in enumerate(gallery_items, start=1):
         asset_url = absolute_url("/" + str(item.get("asset", "")).lstrip("/"))
+        source_url = str(item.get("sourceUrl", "")).strip()
+        published_at = str(item.get("publishedAt", "")).strip()
         graph.append(
             {
                 "@type": "ImageObject",
@@ -847,7 +886,7 @@ def build_structured_data(content: str, route: str) -> str:
                 "thumbnailUrl": asset_url,
                 "caption": str(item.get("caption", "")),
                 "description": str(item.get("alt", "")),
-                "encodingFormat": "image/jpeg",
+                "encodingFormat": image_encoding_format(str(item.get("asset", ""))),
                 "inLanguage": "en-US",
                 "contentLocation": photo_place_schema(item),
                 "keywords": item.get("keywords", []),
@@ -860,6 +899,8 @@ def build_structured_data(content: str, route: str) -> str:
                 "creator": {"@id": organization_id},
                 "creditText": "Sun Ray Cleaning Services",
                 "copyrightNotice": "Sun Ray Cleaning Services",
+                **({"sameAs": source_url, "isBasedOn": source_url} if source_url else {}),
+                **({"datePublished": published_at} if published_at else {}),
             }
         )
     if route == "/blog/" and blog_cards:

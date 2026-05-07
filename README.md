@@ -63,6 +63,25 @@ Optional:
 
 - `GBP_PROFILE_URL`
 
+## Instagram and Facebook photo import
+
+The Meta photo importer downloads approved Sun Ray Instagram/Facebook images into `assets/social/`, writes local SEO metadata to `data/social-gallery.json`, and lets the build reuse those photos in gallery sections and image schema.
+
+```powershell
+npm run import:social-gallery -- --source=all --limit=24
+npm run build:cloudflare
+```
+
+Setup details are in `social-gallery-import.md`.
+
+GitHub Actions can also run the importer from the repo after these Actions secrets are saved:
+
+- `META_ACCESS_TOKEN`
+- `INSTAGRAM_BUSINESS_ACCOUNT_ID`
+- `FACEBOOK_PAGE_ID`
+
+Run **Actions > Import Instagram and Facebook Gallery Photos** to import draft photos, then approve selected records in `data/social-gallery.json`.
+
 ## Pages
 
 - `/`
