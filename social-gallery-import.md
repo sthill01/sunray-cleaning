@@ -47,6 +47,7 @@ Optional:
 
 ```powershell
 $env:META_GRAPH_VERSION="v24.0"
+$env:SOCIAL_GALLERY_ALLOW_PARTIAL="1"
 $env:SOCIAL_GALLERY_DEFAULT_CITY="Park City"
 $env:SOCIAL_GALLERY_DEFAULT_COUNTY="Summit County"
 $env:SOCIAL_GALLERY_DEFAULT_REGION="Utah"
@@ -123,3 +124,9 @@ npm run build:cloudflare
 ```
 
 If the workflow says `Object with ID ... does not exist, cannot be loaded due to missing permissions`, regenerate the Meta token from Graph API Explorer with the Sun Ray app selected and these permissions: `pages_show_list`, `pages_read_engagement`, `instagram_basic`, and `business_management` if available. The importer can use `META_ACCESS_TOKEN` to discover the Page access token from `/me/accounts`, but the token still needs permission to see the Sun Ray Page and its connected Instagram business account.
+
+If Instagram media fails but Facebook media works, run the workflow with `source=facebook` to validate the site pipeline while you fix the Instagram permission. To test Instagram directly in Graph API Explorer, use:
+
+```text
+17841474426769699/media?fields=id,caption,media_type,media_url,permalink,timestamp
+```

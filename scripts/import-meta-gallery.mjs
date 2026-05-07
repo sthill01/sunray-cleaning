@@ -35,6 +35,7 @@ Facebook Page photo import:
 
 Optional:
   META_GRAPH_VERSION=v24.0
+  SOCIAL_GALLERY_ALLOW_PARTIAL=1
   SOCIAL_GALLERY_APPROVED=1
   SOCIAL_GALLERY_DEFAULT_CITY=Park City
   SOCIAL_GALLERY_DEFAULT_COUNTY=Summit County
@@ -44,6 +45,7 @@ Notes:
   Imported records are written to ${OUTPUT_PATH}.
   Images are downloaded into ${ASSET_DIR}/ with SEO filenames.
   New photos default to approved=false unless --approve or SOCIAL_GALLERY_APPROVED=1 is used.
+  When importing --source=all, SOCIAL_GALLERY_ALLOW_PARTIAL=1 lets Facebook photos import even if Instagram needs another permission fix.
 `);
 }
 
@@ -377,9 +379,11 @@ async function main() {
   const source = argValue("source", process.env.SOCIAL_GALLERY_SOURCE || "all").toLowerCase();
   const limit = optionalNumber("SOCIAL_GALLERY_LIMIT", DEFAULT_LIMIT, { min: 1, max: 100 });
   const approvedByDefault = hasFlag("approve") || process.env.SOCIAL_GALLERY_APPROVED === "1";
+  const allowPartial = process.env.SOCIAL_GALLERY_ALLOW_PARTIAL !== "0";
   const existingData = await readJson(OUTPUT_PATH, { items: [] });
   const existingById = new Map((existingData.items ?? []).map((item) => [item.id, item]));
   const imported = [];
+  const sourceErrors = [];
   const metaAccessToken = process.env.META_ACCESS_TOKEN || "";
   const pageId = process.env.FACEBOOK_PAGE_ID || "";
   const explicitPageToken = process.env.FACEBOOK_PAGE_ACCESS_TOKEN || "";
@@ -387,30 +391,46 @@ async function main() {
   const pageCapableToken = discoveredPageToken || explicitPageToken || metaAccessToken;
 
   if (source === "all" || source === "instagram") {
-    let instagramToken = process.env.INSTAGRAM_ACCESS_TOKEN || pageCapableToken || required("META_ACCESS_TOKEN");
-    let instagramId = process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID || "";
-    if (!instagramId && pageId) {
-      const connectedInstagram = await instagramAccountForPage({ token: pageCapableToken, pageId });
-      instagramId = connectedInstagram?.id || "";
-      if (instagramId) {
-        console.log(`Discovered connected Instagram account @${connectedInstagram.username || "unknown"} (${maskedId(instagramId)}).`);
+    try {
+      let instagramToken = process.env.INSTAGRAM_ACCESS_TOKEN || pageCapableToken || required("META_ACCESS_TOKEN");
+      let instagramId = process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID || "";
+      if (!instagramId && pageId) {
+        const connectedInstagram = await instagramAccountForPage({ token: pageCapableToken, pageId });
+        instagramId = connectedInstagram?.id || "";
+        if (instagramId) {
+          console.log(`Discovered connected Instagram account @${connectedInstagram.username || "unknown"} (${maskedId(instagramId)}).`);
+        }
       }
+      if (!instagramId) {
+        throw new Error("Missing required environment variable: INSTAGRAM_BUSINESS_ACCOUNT_ID. You can also provide FACEBOOK_PAGE_ID with a token that can read the connected Instagram business account.");
+      }
+      if (discoveredPageToken && !process.env.INSTAGRAM_ACCESS_TOKEN) {
+        instagramToken = discoveredPageToken;
+      }
+      imported.push(...await listInstagramMedia({ token: instagramToken, instagramId, limit }));
+    } catch (error) {
+      if (source !== "all" || !allowPartial) throw error;
+      sourceErrors.push(`Instagram import skipped: ${error.message}`);
+      console.warn(`WARNING: Instagram import skipped: ${error.message}`);
     }
-    if (!instagramId) {
-      throw new Error("Missing required environment variable: INSTAGRAM_BUSINESS_ACCOUNT_ID. You can also provide FACEBOOK_PAGE_ID with a token that can read the connected Instagram business account.");
-    }
-    if (discoveredPageToken && !process.env.INSTAGRAM_ACCESS_TOKEN) {
-      instagramToken = discoveredPageToken;
-    }
-    imported.push(...await listInstagramMedia({ token: instagramToken, instagramId, limit }));
   }
 
   if (source === "all" || source === "facebook") {
-    const facebookToken = pageCapableToken || required("META_ACCESS_TOKEN");
-    if (!pageId) {
-      throw new Error("Missing required environment variable: FACEBOOK_PAGE_ID.");
+    try {
+      const facebookToken = pageCapableToken || required("META_ACCESS_TOKEN");
+      if (!pageId) {
+        throw new Error("Missing required environment variable: FACEBOOK_PAGE_ID.");
+      }
+      imported.push(...await listFacebookPhotos({ token: facebookToken, pageId, limit }));
+    } catch (error) {
+      if (source !== "all" || !allowPartial) throw error;
+      sourceErrors.push(`Facebook import skipped: ${error.message}`);
+      console.warn(`WARNING: Facebook import skipped: ${error.message}`);
     }
-    imported.push(...await listFacebookPhotos({ token: facebookToken, pageId, limit }));
+  }
+
+  if (!imported.length && sourceErrors.length) {
+    throw new Error(`No photos imported. ${sourceErrors.join(" ")}`);
   }
 
   const normalized = [];
@@ -429,6 +449,7 @@ async function main() {
     importNote: "Imported with the official Meta Graph API. New records default to approved=false so captions, routes, alt text, and local SEO metadata can be reviewed before publishing.",
     lastImportedAt: new Date().toISOString(),
     graphVersion: GRAPH_VERSION,
+    sourceWarnings: sourceErrors,
     items,
   };
 
