@@ -65,17 +65,31 @@ Optional:
 
 ## Pages
 
-- `index.html`
-- `about.html`
-- `services.html`
-- `service-location/park-city.html`
-- `service-location/heber-city.html`
-- `service-location/midway.html`
-- `service-location/salt-lake-county.html`
-- `services/short-term-rental-cleaning.html`
-- `services/deep-cleaning.html`
-- `services/recurring-cleaning.html`
-- `services/move-in-move-out-cleaning.html`
+- `/`
+- `/about/`
+- `/services/`
+- `/specials/`
+- `/discounts/`
+- `/service-areas/`
+- `/service-location/park-city/`
+- `/service-location/snyderville/`
+- `/service-location/deer-valley/`
+- `/service-location/canyons-village/`
+- `/service-location/old-town-park-city/`
+- `/service-location/heber-city/`
+- `/service-location/midway/`
+- `/service-location/kamas/`
+- `/service-location/oakley/`
+- `/service-location/daniel/`
+- `/service-location/coalville/`
+- `/service-location/summit-county/`
+- `/service-location/wasatch-county/`
+- `/services/short-term-rental-cleaning/`
+- `/services/deep-cleaning/`
+- `/services/recurring-cleaning/`
+- `/services/move-in-move-out-cleaning/`
+
+`/service-location/old-town/` is a legacy Cloudflare redirect alias for `/service-location/old-town-park-city/`.
 
 ## Cloudflare Pages staging
 

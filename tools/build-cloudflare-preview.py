@@ -18,24 +18,91 @@ ALLOW_INDEXING = os.environ.get("SUNRAY_ALLOW_INDEXING", "").strip().lower() in 
 ROBOTS_META = "index, follow" if ALLOW_INDEXING else "noindex, follow"
 PHONE = "+18016042189"
 PHONE_DISPLAY = "(801) 604-2189"
-GOOGLE_TAG_ID = "G-EKVGVL5YVC"
-GOOGLE_TAG = f"""<!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={GOOGLE_TAG_ID}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){{dataLayer.push(arguments);}}
-    gtag('js', new Date());
+GTM_CONTAINER_ID = "GTM-W78H8S3C"
+GTM_HEAD = f"""<!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
+  new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  }})(window,document,'script','dataLayer','{GTM_CONTAINER_ID}');</script>
+  <!-- End Google Tag Manager -->"""
+GTM_BODY = f"""<!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM_CONTAINER_ID}"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->"""
 
-    gtag('config', '{GOOGLE_TAG_ID}');
-  </script>"""
+LEGACY_REDIRECTS = {
+    "/about-us": "/about/",
+    "/blog/allergy-friendly-cleaning": "/services/recurring-cleaning/",
+    "/blog/avenues-salt-lake-cleaning": "/service-location/salt-lake-county/",
+    "/blog/bathroom-cleaning-renovation-prep": "/services/deep-cleaning/",
+    "/blog/carpet-upholstery-care": "/blog/",
+    "/blog/cleaning-for-flu-and-cold-season": "/services/deep-cleaning/",
+    "/blog/cleaning-schedules-routines": "/services/recurring-cleaning/",
+    "/blog/cleaning-services-pricing": "/services/",
+    "/blog/cleaning-tips-tricks": "/blog/",
+    "/blog/complete-guide-airbnb-vrbo-cleaning-park-city": "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+    "/blog/downtown-salt-lake-cleaning": "/service-location/salt-lake-county/",
+    "/blog/draper-utah-cleaning": "/service-location/salt-lake-county/",
+    "/blog/green-cleaning-eco-friendly-practices": "/services/recurring-cleaning/",
+    "/blog/heber-city-home-cleaning": "/service-location/heber-city/",
+    "/blog/heber-city-residential-cleaning": "/service-location/heber-city/",
+    "/blog/home-maintenance-preventive-care": "/services/recurring-cleaning/",
+    "/blog/jordanelle-cleaning-solutions": "/blog/jordanelle-vacation-rental-turnover/",
+    "/blog/jordanelle-home-cleaning": "/service-location/jordanelle/",
+    "/blog/kamas-home-cleaning": "/service-location/kamas/",
+    "/blog/kitchen-deep-cleaning-hygiene": "/services/deep-cleaning/",
+    "/blog/laundry-room-optimization": "/blog/",
+    "/blog/local-compliance-standards-faqs": "/blog/",
+    "/blog/midway-home-cleaning": "/service-location/midway/",
+    "/blog/midway-utah-cleaning-experts": "/service-location/midway/",
+    "/blog/millcreek-utah-cleaning": "/service-location/salt-lake-county/",
+    "/blog/mountain-home-cleaning-challenges": "/services/deep-cleaning/",
+    "/blog/murray-utah-cleaning": "/service-location/salt-lake-county/",
+    "/blog/organization-decluttering": "/blog/",
+    "/blog/park-city-cleaning-services": "/service-location/park-city/",
+    "/blog/park-city-home-cleaning": "/service-location/park-city/",
+    "/blog/park-city-summer-guest-ready-checklist": "/blog/getting-park-city-home-ready-for-summer-guests/",
+    "/blog/post-construction-cleaning": "/services/deep-cleaning/",
+    "/blog/post-ski-season-deep-clean-checklist-park-city": "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
+    "/blog/real-estate-move-in-move-out-cleaning": "/services/move-in-move-out-cleaning/",
+    "/blog/red-ledges-home-cleaning": "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
+    "/blog/salt-lake-valley-home-cleaning": "/service-location/salt-lake-county/",
+    "/blog/seasonal-cleaning-guides": "/services/deep-cleaning/",
+    "/blog/south-jordan-cleaning": "/service-location/salt-lake-county/",
+    "/blog/vacation-seasonal-home-care": "/services/short-term-rental-cleaning/",
+    "/blog/window-glass-cleaning-essentials": "/blog/",
+    "/cleaning-services/deep-cleaning": "/services/deep-cleaning/",
+    "/cleaning-services/short-term-rentals": "/services/short-term-rental-cleaning/",
+    "/location/park-city": "/service-location/park-city/",
+    "/location/red-ledges": "/service-location/red-ledges/",
+    "/service-location/heber": "/service-location/heber-city/",
+    "/service-location/midway-heber": "/service-location/wasatch-county/",
+    "/service-location/old-town": "/service-location/old-town-park-city/",
+    "/service-location/old-town/": "/service-location/old-town-park-city/",
+    "/service-location/park-cityhttps:/www.sunray-cleaning.com": "/service-location/park-city/",
+}
+
+EXCLUDED_SOURCE_PAGES = {
+    "service-location/old-town-gpt.html",
+}
+
+INTERNAL_ONLY_ROUTES = {
+    "/service-section-mockups/",
+}
 
 CORE_AREAS = [
     "Park City UT",
+    "Snyderville UT",
     "Deer Valley UT",
     "Canyons Village UT",
     "Old Town Park City UT",
     "Heber City UT",
     "Midway UT",
+    "Kamas UT",
+    "Oakley UT",
+    "Daniel UT",
+    "Coalville UT",
     "Summit County UT",
     "Wasatch County UT",
 ]
@@ -53,19 +120,149 @@ CORE_TOPICS = [
     "pet-safe cleaning",
 ]
 
-PRIORITY_ROUTES = [
+SERVICE_NAV_ROUTES = [
+    ("/services/", "All cleaning services"),
     ("/services/short-term-rental-cleaning/", "Airbnb and VRBO cleaning"),
     ("/services/deep-cleaning/", "Deep cleaning"),
     ("/services/recurring-cleaning/", "Recurring house cleaning"),
     ("/services/move-in-move-out-cleaning/", "Move-in and move-out cleaning"),
+]
+
+MAIN_AREA_ROUTES = [
+    ("/service-location/wasatch-county/", "Wasatch County cleaning services"),
+    ("/service-location/summit-county/", "Summit County cleaning services"),
     ("/service-location/park-city/", "Park City cleaning services"),
-    ("/service-location/deer-valley/", "Deer Valley cleaning services"),
-    ("/service-location/canyons-village/", "Canyons Village cleaning services"),
     ("/service-location/heber-city/", "Heber City cleaning services"),
     ("/service-location/midway/", "Midway cleaning services"),
+    ("/service-location/kamas/", "Kamas cleaning services"),
+]
+
+LOCATION_CHILD_ROUTES = {
+    "/service-location/summit-county/": [
+        ("/service-location/park-city/", "Park City cleaning services"),
+        ("/service-location/kamas/", "Kamas cleaning services"),
+        ("/service-location/snyderville/", "Snyderville cleaning services"),
+        ("/service-location/oakley/", "Oakley cleaning services"),
+        ("/service-location/coalville/", "Coalville cleaning services"),
+        ("/service-location/promontory/", "Promontory cleaning services"),
+        ("/service-location/pinebrook/", "Pinebrook cleaning services"),
+        ("/service-location/jeremy-ranch/", "Jeremy Ranch cleaning services"),
+    ],
+    "/service-location/wasatch-county/": [
+        ("/service-location/heber-city/", "Heber City cleaning services"),
+        ("/service-location/midway/", "Midway cleaning services"),
+        ("/service-location/daniel/", "Daniel cleaning services"),
+        ("/service-location/red-ledges/", "Red Ledges cleaning services"),
+        ("/service-location/jordanelle/", "Jordanelle cleaning services"),
+        ("/service-location/heber-valley/", "Heber Valley cleaning services"),
+        ("/service-location/timber-lakes/", "Timber Lakes cleaning services"),
+        ("/service-location/wallsburg/", "Wallsburg cleaning services"),
+    ],
+    "/service-location/park-city/": [
+        ("/service-location/old-town-park-city/", "Old Town Park City cleaning services"),
+        ("/service-location/deer-valley/", "Deer Valley cleaning services"),
+        ("/service-location/canyons-village/", "Canyons Village cleaning services"),
+        ("/service-location/snyderville/", "Snyderville cleaning services"),
+        ("/service-location/park-meadows/", "Park Meadows cleaning services"),
+        ("/service-location/prospector/", "Prospector cleaning services"),
+        ("/service-location/kimball-junction/", "Kimball Junction cleaning services"),
+        ("/service-location/jeremy-ranch/", "Jeremy Ranch cleaning services"),
+    ],
+    "/service-location/heber-city/": [
+        ("/service-location/old-town-heber/", "Old Town Heber cleaning services"),
+        ("/service-location/red-ledges/", "Red Ledges cleaning services"),
+        ("/service-location/jordanelle/", "Jordanelle cleaning services"),
+        ("/service-location/heber-valley/", "Heber Valley cleaning services"),
+        ("/service-location/center-creek/", "Center Creek cleaning services"),
+        ("/service-location/timber-lakes/", "Timber Lakes cleaning services"),
+        ("/service-location/daniel/", "Daniel cleaning services"),
+        ("/service-location/foothill-estates/", "Foothill Estates cleaning services"),
+    ],
+    "/service-location/midway/": [
+        ("/service-location/homestead/", "Homestead cleaning services"),
+        ("/service-location/interlaken/", "Interlaken cleaning services"),
+        ("/service-location/swiss-mountain/", "Swiss Mountain cleaning services"),
+        ("/service-location/deer-creek/", "Deer Creek cleaning services"),
+        ("/service-location/charleston/", "Charleston cleaning services"),
+        ("/service-location/wasatch-mountain/", "Wasatch Mountain cleaning services"),
+        ("/service-location/charleston-lake/", "Charleston Lake cleaning services"),
+        ("/service-location/samarkand/", "Samarkand cleaning services"),
+    ],
+    "/service-location/kamas/": [
+        ("/service-location/oakley/", "Oakley cleaning services"),
+        ("/service-location/francis/", "Francis cleaning services"),
+        ("/service-location/woodland/", "Woodland cleaning services"),
+        ("/service-location/marion/", "Marion cleaning services"),
+        ("/service-location/peoa/", "Peoa cleaning services"),
+        ("/service-location/oakley-ranch/", "Oakley Ranch cleaning services"),
+        ("/service-location/weber-canyon/", "Weber Canyon cleaning services"),
+        ("/service-location/coalville/", "Coalville cleaning services"),
+    ],
+}
+
+LOCATION_PARENT_ROUTES: dict[str, str] = {}
+for parent_route, child_routes in LOCATION_CHILD_ROUTES.items():
+    for child_route, _label in child_routes:
+        LOCATION_PARENT_ROUTES.setdefault(child_route, parent_route)
+
+PRIORITY_ROUTES = [
+    ("/", "Home"),
+    ("/service-areas/", "Service area hubs"),
+    ("/specials/", "Cleaning specials and current offers"),
+    ("/discounts/", "Cleaning discounts and savings programs"),
+    *SERVICE_NAV_ROUTES,
+    *MAIN_AREA_ROUTES,
     ("/blog/how-much-does-airbnb-cleaning-cost-park-city/", "Park City Airbnb cleaning costs"),
     ("/contact/", "Get a cleaning quote"),
 ]
+
+LINK_LABELS = dict(PRIORITY_ROUTES)
+for child_routes in LOCATION_CHILD_ROUTES.values():
+    for child_route, child_label in child_routes:
+        LINK_LABELS.setdefault(child_route, child_label)
+
+BLOG_POST_SEO = {
+    "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/": {
+        "service": "Airbnb and VRBO turnover cleaning",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg",
+    },
+    "/blog/how-much-does-airbnb-cleaning-cost-park-city/": {
+        "service": "Short-term rental cleaning pricing",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-kitchen-turnover-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/post-ski-season-deep-clean-park-city-rental-owners/": {
+        "service": "Post-season deep cleaning",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-deep-cleaning-bathroom-detail-sun-ray.jpg",
+    },
+    "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/": {
+        "service": "Luxury home cleaning",
+        "location": "Red Ledges, Heber City, Utah",
+        "image": "/assets/heber-city-residential-kitchen-cleaning-sun-ray.jpg",
+    },
+    "/blog/heber-city-move-in-move-out-cleaning/": {
+        "service": "Move-in and move-out cleaning",
+        "location": "Heber City, Utah",
+        "image": "/assets/heber-city-move-out-bathroom-vanity-cleaning-sun-ray.jpg",
+    },
+    "/blog/getting-park-city-home-ready-for-summer-guests/": {
+        "service": "Seasonal home cleaning",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-open-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/deer-valley-luxury-home-cleaning/": {
+        "service": "Luxury home cleaning",
+        "location": "Deer Valley, Utah",
+        "image": "/assets/park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg",
+    },
+    "/blog/jordanelle-vacation-rental-turnover/": {
+        "service": "Vacation rental turnover cleaning",
+        "location": "Jordanelle, Utah",
+        "image": "/assets/summit-county-deep-cleaning-shower-detail-sun-ray.jpg",
+    },
+}
 
 
 def load_json(path: Path, fallback):
@@ -149,8 +346,7 @@ def extract_description(content: str) -> str:
     if not match:
         return "Sun Ray Cleaning Services provides residential cleaning, Airbnb and VRBO turnover cleaning, deep cleaning, recurring cleaning, and move cleaning across Park City, Heber City, Midway, Summit County, and Wasatch County."
     description = html.unescape(match.group(1))
-    description = description.replace("GPT preview for ", "").replace("GPT preview ", "")
-    description = description.replace("preview for ", "").replace("Preview ", "")
+    description = re.sub(r"^(GPT preview of|GPT preview for|GPT preview|Preview of|Preview for|Preview)\s+", "", description, flags=re.IGNORECASE)
     description = re.sub(r"^(for)\s+", "", description, flags=re.IGNORECASE)
     return re.sub(r"\s+", " ", description).strip()
 
@@ -171,6 +367,45 @@ def extract_faqs(content: str) -> list[dict[str, str]]:
         if clean_question and clean_answer:
             faqs.append({"question": clean_question, "answer": clean_answer})
     return faqs
+
+
+def clean_source_href_to_route(href: str) -> str:
+    path = href.split("#", 1)[0].strip()
+    if not path or path.startswith(("http://", "https://", "tel:", "sms:", "mailto:", "#")):
+        return path
+    if path.endswith("-gpt.html"):
+        path = path[: -len("-gpt.html")]
+    elif path.endswith(".html"):
+        path = path[: -len(".html")]
+    return "/" + path.strip("/") + "/"
+
+
+def extract_blog_cards(content: str) -> list[dict[str, str]]:
+    cards: list[dict[str, str]] = []
+    for href, attrs, inner in re.findall(
+        r'<a class="blog-card" href="([^"]+)"([^>]*)>(.*?)</a>',
+        content,
+        flags=re.IGNORECASE | re.DOTALL,
+    ):
+        title = extract_first(r"<h3[^>]*>(.*?)</h3>", inner)
+        description = extract_first(r"<p[^>]*>(.*?)</p>", inner)
+        image_match = re.search(r'<img[^>]+src="([^"]+)"[^>]*>', inner, flags=re.IGNORECASE)
+        alt = extract_first(r'<img[^>]+alt="([^"]*)"', inner)
+        service = extract_first(r'data-service="([^"]*)"', attrs)
+        location = extract_first(r'data-location="([^"]*)"', attrs)
+        if title:
+            cards.append(
+                {
+                    "title": title,
+                    "description": description,
+                    "route": clean_source_href_to_route(href),
+                    "image": image_match.group(1) if image_match else "",
+                    "alt": alt,
+                    "service": service,
+                    "location": location,
+                }
+            )
+    return cards
 
 
 def route_label(route: str) -> str:
@@ -222,9 +457,46 @@ def route_to_clean_rel(from_route: str, target_route: str) -> str:
 def available_priority_links(route: str, route_map: dict[str, str]) -> list[tuple[str, str]]:
     routes = set(route_map.values())
     links: list[tuple[str, str]] = []
-    for target_route, label in PRIORITY_ROUTES:
-        if target_route in routes and target_route != route:
-            links.append((target_route, label))
+
+    def add_candidates(candidates: list[tuple[str, str]]) -> None:
+        seen = {target for target, _label in links}
+        for target_route, label in candidates:
+            if target_route in routes and target_route != route and target_route not in seen:
+                links.append((target_route, label))
+                seen.add(target_route)
+
+    kind = page_type(route)
+    if route != "/":
+        add_candidates([("/", "Home")])
+
+    if kind == "areas":
+        add_candidates(MAIN_AREA_ROUTES + SERVICE_NAV_ROUTES + [("/contact/", "Get a cleaning quote")])
+    elif kind == "service":
+        add_candidates(
+            [
+                ("/services/", "All cleaning services"),
+                ("/service-areas/", "Service area hubs"),
+            ]
+            + MAIN_AREA_ROUTES
+            + [("/contact/", "Get a cleaning quote")]
+        )
+    elif kind == "location":
+        parent_route = LOCATION_PARENT_ROUTES.get(route)
+        own_children = LOCATION_CHILD_ROUTES.get(route, [])
+        add_candidates([("/service-areas/", "Service area hubs")])
+        if parent_route:
+            add_candidates([(parent_route, LINK_LABELS.get(parent_route, route_label(parent_route)))])
+        add_candidates(own_children)
+        if parent_route:
+            siblings = [candidate for candidate in LOCATION_CHILD_ROUTES.get(parent_route, []) if candidate[0] != route]
+            add_candidates(siblings[:4 if own_children else 6])
+        add_candidates(SERVICE_NAV_ROUTES + [("/contact/", "Get a cleaning quote")])
+    elif kind == "blog":
+        add_candidates(SERVICE_NAV_ROUTES + MAIN_AREA_ROUTES + [("/service-areas/", "Service area hubs"), ("/contact/", "Get a cleaning quote")])
+    else:
+        add_candidates([("/services/", "All cleaning services"), ("/service-areas/", "Service area hubs")] + SERVICE_NAV_ROUTES + MAIN_AREA_ROUTES + [("/contact/", "Get a cleaning quote")])
+
+    add_candidates(PRIORITY_ROUTES)
     return links
 
 
@@ -245,12 +517,23 @@ def page_focus(route: str, h1: str) -> str:
 def selected_gallery_items(route: str, limit: int = 4) -> list[dict[str, object]]:
     exact: list[dict[str, object]] = []
     fallback: list[dict[str, object]] = []
+    route_slug = route.strip("/").split("/")[-1] if route.strip("/") else ""
     for item in JOB_GALLERY:
         routes = item.get("routes", [])
         if route in routes:
             exact.append(item)
         elif "*" in routes:
             fallback.append(item)
+    exact.sort(
+        key=lambda item: 0
+        if route_slug
+        and route_slug
+        in " ".join(
+            str(item.get(field, ""))
+            for field in ("asset", "sourceAsset", "name", "location", "city", "county")
+        ).lower()
+        else 1
+    )
     picked = exact + [item for item in fallback if item not in exact]
     return picked[:limit]
 
@@ -298,23 +581,69 @@ def photo_mentions(item: dict[str, object]) -> list[dict[str, object]]:
     return mentions
 
 
+REVIEW_DISPLAY_ORDER = [
+    "manual-sharron-error-2026-05-01",
+    "manual-jill-moorcroft-2026-05-01",
+    "manual-robyn-bergesen-2026-05-01",
+    "manual-rachel-dzurilla-2026-05-01",
+    "manual-andrew-harrington-2026-04-08",
+    "manual-chelsea-terentiev-2026-04-08",
+    "manual-glenn-herwig-2026-04-22",
+    "manual-larkin-dent-2026-05-04",
+]
+
+
+def ordered_featured_reviews() -> list[dict[str, object]]:
+    featured = [review for review in REVIEWS.get("featuredReviews", []) if review.get("text")]
+    order = {review_id: index for index, review_id in enumerate(REVIEW_DISPLAY_ORDER)}
+    return sorted(featured, key=lambda review: order.get(str(review.get("reviewId", "")), 999))
+
+
+def review_excerpt(text: str, max_chars: int = 230) -> str:
+    clean = re.sub(r"\s+", " ", text).strip()
+    if len(clean) <= max_chars:
+        return html.escape(clean)
+    shortened = clean[:max_chars].rsplit(" ", 1)[0].rstrip(".,;:")
+    return html.escape(shortened + "...")
+
+
 def build_reviews_section() -> str:
     source = REVIEWS.get("sourceName", "Google Business Profile")
     rating = float(REVIEWS.get("ratingValue", 5.0))
     count = int(REVIEWS.get("reviewCount", 50))
-    featured = REVIEWS.get("featuredReviews", [])
+    featured = ordered_featured_reviews()
+    profile_url = str(REVIEWS.get("profileUrl", "")).strip()
+    highlights = REVIEWS.get(
+        "summaryHighlights",
+        [
+            "Highly praised for thorough and detailed cleaning.",
+            "Known for excellent customer service and responsiveness.",
+            "Clients appreciate Sun Ray's ability to handle last-minute requests effectively.",
+        ],
+    )
+    highlight_items = "".join(
+        f"<li><span aria-hidden=\"true\">&#10003;</span><strong>{html.escape(str(item))}</strong></li>"
+        for item in highlights[:3]
+    )
+    profile_button = (
+        f'<a class="button button-navy review-google-link" href="{html.escape(profile_url)}" target="_blank" rel="noopener">Review us on Google</a>'
+        if profile_url
+        else ""
+    )
     review_cards = ""
     if featured:
-        for review in featured[:3]:
-            text = html.escape(str(review.get("text", "")))
+        for review in featured[:7]:
+            text = review_excerpt(str(review.get("text", "")))
             author = html.escape(str(review.get("author", "Google reviewer")))
             photo = str(review.get("profilePhotoUrl", ""))
             review_rating = review.get("rating", 5)
             star_markup = "&#9733;" * int(review_rating)
+            date_text = html.escape(str(review.get("dateText", "")))
             photo_markup = ""
             if photo:
                 photo_markup = f'<img class="reviewer-photo" src="{html.escape(photo)}" alt="{author} Google review profile photo" loading="lazy">'
-            review_cards += f'<article class="review-proof-card">{photo_markup}<div class="review-stars" aria-label="{review_rating} out of 5 stars">{star_markup}</div><blockquote>{text}</blockquote><cite>{author}</cite></article>'
+            date_markup = f"<span>{date_text}</span>" if date_text else ""
+            review_cards += f'<article class="review-proof-card">{photo_markup}<div class="review-stars" aria-label="{review_rating} out of 5 stars">{star_markup}</div><blockquote>{text}</blockquote><cite>{author}<small>Google review</small>{date_markup}</cite></article>'
     else:
         review_cards = """
         <article class="review-proof-card"><h3>Trusted by local customers</h3><p>Sun Ray Cleaning is proud to help homeowners, hosts, and property managers keep their homes clean, comfortable, and ready for the next visit.</p></article>
@@ -324,19 +653,28 @@ def build_reviews_section() -> str:
     return f"""
 <section class="section section-cream review-proof" aria-labelledby="review-proof-title">
   <div class="container">
-    <div class="review-proof-grid">
-      <div>
-        <p class="eyebrow">Google review proof</p>
-        <h2 id="review-proof-title">{rating:.1f}-star average from {count}+ Google reviews.</h2>
-        <p>Customers count on Sun Ray Cleaning for dependable service, clear communication, and homes that feel ready to enjoy again.</p>
-      </div>
-      <div class="rating-badge" aria-label="{rating:.1f} out of 5 average Google rating">
-        <strong>{rating:.1f}</strong>
-        <span>?????</span>
-        <small>{count}+ Google reviews</small>
-      </div>
+    <div class="section-head center">
+      <p class="eyebrow">Customer testimonials</p>
+      <h2 id="review-proof-title">Real Google reviews from Sun Ray Cleaning customers.</h2>
+      <p>Customers count on Sun Ray Cleaning for dependable service, clear communication, and homes that feel ready to enjoy again.</p>
     </div>
-    <div class="grid-3">{review_cards}</div>
+    <div class="review-summary-band" aria-label="{rating:.1f} out of 5 average Google rating from {count} reviews">
+      <div class="rating-inline">
+        <strong>{rating:.1f}</strong>
+        <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <small>({count} Google reviews)</small>
+      </div>
+      {profile_button}
+    </div>
+    <div class="review-wall-grid">
+      <article class="review-summary-card">
+        <div class="review-stars" aria-label="{rating:.1f} out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <h3>Review highlights</h3>
+        <ul class="review-highlights">{highlight_items}</ul>
+        <p class="review-source-note">Based on recent Google reviews.</p>
+      </article>
+      <div class="review-card-stack">{review_cards}</div>
+      </div>
   </div>
 </section>
 """
@@ -378,7 +716,7 @@ def build_gallery_section(route: str) -> str:
 def build_answer_network(content: str, route: str, route_map: dict[str, str]) -> str:
     h1 = extract_h1(content)
     focus = page_focus(route, h1)
-    links = available_priority_links(route, route_map)[:8]
+    links = available_priority_links(route, route_map)[:16]
     link_markup = "".join(
         f'<a href="{html.escape(route_to_clean_rel(route, target))}">{html.escape(label)}</a>'
         for target, label in links
@@ -416,6 +754,7 @@ def build_structured_data(content: str, route: str) -> str:
     description = extract_description(content)
     h1 = extract_h1(content)
     faqs = extract_faqs(content)
+    blog_cards = extract_blog_cards(content)
     page_url = absolute_url(route)
     organization_id = absolute_url("/#organization")
     page_id = page_url + "#webpage"
@@ -523,7 +862,70 @@ def build_structured_data(content: str, route: str) -> str:
                 "copyrightNotice": "Sun Ray Cleaning Services",
             }
         )
-    if page_type(route) == "blog":
+    if route == "/blog/" and blog_cards:
+        graph.append(
+            {
+                "@type": "Blog",
+                "@id": page_url + "#blog",
+                "name": h1,
+                "url": page_url,
+                "description": description,
+                "publisher": {"@id": organization_id},
+                "inLanguage": "en-US",
+                "blogPost": [{"@id": absolute_url(card["route"]) + "#article"} for card in blog_cards if card.get("route")],
+            }
+        )
+        graph.append(
+            {
+                "@type": "ItemList",
+                "@id": page_url + "#featured-guides",
+                "name": "Featured local cleaning guides",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": index,
+                        "url": absolute_url(card["route"]),
+                        "item": {
+                            "@type": "BlogPosting",
+                            "@id": absolute_url(card["route"]) + "#article",
+                            "headline": card["title"],
+                            "description": card["description"],
+                            "url": absolute_url(card["route"]),
+                            **({"image": absolute_url("/" + card["image"].lstrip("/"))} if card.get("image") else {}),
+                            "about": [
+                                *(
+                                    [{"@type": "Service", "name": card["service"]}]
+                                    if card.get("service")
+                                    else []
+                                ),
+                                *(
+                                    [{"@type": "Place", "name": card["location"]}]
+                                    if card.get("location")
+                                    else []
+                                ),
+                                {"@id": organization_id},
+                            ],
+                            "mentions": [
+                                *(
+                                    [{"@type": "Service", "name": card["service"]}]
+                                    if card.get("service")
+                                    else []
+                                ),
+                                *(
+                                    [{"@type": "Place", "name": card["location"]}]
+                                    if card.get("location")
+                                    else []
+                                ),
+                            ],
+                        },
+                    }
+                    for index, card in enumerate(blog_cards, start=1)
+                    if card.get("route")
+                ],
+            }
+        )
+    if page_type(route) == "blog" and route != "/blog/":
+        post_meta = BLOG_POST_SEO.get(route, {})
         graph.append(
             {
                 "@type": "BlogPosting",
@@ -535,9 +937,35 @@ def build_structured_data(content: str, route: str) -> str:
                 "publisher": {"@id": organization_id},
                 "mainEntityOfPage": {"@id": page_id},
                 "inLanguage": "en-US",
+                **({"image": absolute_url(str(post_meta["image"]))} if post_meta.get("image") else {}),
+                "about": [
+                    *(
+                        [{"@type": "Service", "name": str(post_meta["service"])}]
+                        if post_meta.get("service")
+                        else []
+                    ),
+                    *(
+                        [{"@type": "Place", "name": str(post_meta["location"])}]
+                        if post_meta.get("location")
+                        else []
+                    ),
+                    {"@id": organization_id},
+                ],
+                "mentions": [
+                    *(
+                        [{"@type": "Service", "name": str(post_meta["service"])}]
+                        if post_meta.get("service")
+                        else []
+                    ),
+                    *(
+                        [{"@type": "Place", "name": str(post_meta["location"])}]
+                        if post_meta.get("location")
+                        else []
+                    ),
+                ],
             }
         )
-    featured_reviews = REVIEWS.get("featuredReviews", [])
+    featured_reviews = ordered_featured_reviews()
     if featured_reviews:
         graph.extend(
             {
@@ -563,7 +991,7 @@ def build_structured_data(content: str, route: str) -> str:
                 "datePublished": str(review.get("createTime", "")),
                 "url": REVIEWS.get("profileUrl", ""),
             }
-            for index, review in enumerate(featured_reviews[:3], start=1)
+            for index, review in enumerate(featured_reviews[:6], start=1)
             if review.get("text")
         )
     if faqs:
@@ -590,8 +1018,10 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
     llms = '<link rel="alternate" type="text/plain" href="/llms.txt" title="Sun Ray Cleaning LLM summary">'
     if 'rel="canonical"' not in content:
         content = content.replace("</head>", f"  {canonical}\n  {llms}\n</head>", 1)
-    if GOOGLE_TAG_ID not in content:
-        content = content.replace("</head>", f"  {GOOGLE_TAG}\n</head>", 1)
+    if "googletagmanager.com/gtm.js" not in content:
+        content = content.replace("</head>", f"  {GTM_HEAD}\n</head>", 1)
+    if "googletagmanager.com/ns.html" not in content:
+        content = re.sub(r"(<body[^>]*>)", "\\1\n  " + GTM_BODY, content, count=1, flags=re.IGNORECASE)
     schema = build_structured_data(content, route)
     content = content.replace("</head>", f"  {schema}\n</head>", 1)
     if "review-proof" not in content and "</main>" in content:
@@ -611,12 +1041,41 @@ def build_route_map() -> dict[str, str]:
     route_map: dict[str, str] = {}
     for page in pages:
         source_rel = page.relative_to(ROOT).as_posix()
+        if source_rel in EXCLUDED_SOURCE_PAGES:
+            continue
         route_map[source_rel] = clean_route_for(page)
     return route_map
 
 
 def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, str]) -> str:
     source_dir = source.parent
+
+    content = content.replace("old-town-gpt.html", "old-town-park-city-gpt.html")
+
+    content = content.replace(
+        '<a href="blog-gpt.html">Blog</a><a href="about-gpt.html">About</a>',
+        '<a href="blog-gpt.html">Blog</a><a href="specials-gpt.html">Specials</a><a href="about-gpt.html">About</a>',
+    )
+    content = content.replace(
+        '<a href="blog-gpt.html" aria-current="page">Blog</a><a href="about-gpt.html">About</a>',
+        '<a href="blog-gpt.html" aria-current="page">Blog</a><a href="specials-gpt.html">Specials</a><a href="about-gpt.html">About</a>',
+    )
+    content = content.replace(
+        '<a href="../blog-gpt.html">Blog</a><a href="../about-gpt.html">About</a>',
+        '<a href="../blog-gpt.html">Blog</a><a href="../specials-gpt.html">Specials</a><a href="../about-gpt.html">About</a>',
+    )
+    content = content.replace(
+        '<a href="../blog-gpt.html" aria-current="page">Blog</a><a href="../about-gpt.html">About</a>',
+        '<a href="../blog-gpt.html" aria-current="page">Blog</a><a href="../specials-gpt.html">Specials</a><a href="../about-gpt.html">About</a>',
+    )
+    content = content.replace(
+        '<div><h3>Contact</h3><a href="contact-gpt.html">Get a quote</a>',
+        '<div><h3>Contact</h3><a href="specials-gpt.html">Specials</a><a href="discounts-gpt.html">Discounts</a><a href="contact-gpt.html">Get a quote</a>',
+    )
+    content = content.replace(
+        '<div><h3>Contact</h3><a href="../contact-gpt.html">Get a quote</a>',
+        '<div><h3>Contact</h3><a href="../specials-gpt.html">Specials</a><a href="../discounts-gpt.html">Discounts</a><a href="../contact-gpt.html">Get a quote</a>',
+    )
 
     def replace_attr(match: re.Match[str]) -> str:
         attr = match.group(1)
@@ -645,16 +1104,73 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         return f'{attr}="{value}"'
 
     content = re.sub(r'(href|src)="([^"]+)"', replace_attr, content)
+
+    def clean_link(target_route: str) -> str:
+        return html.escape(route_to_relpath(route, target_route))
+
+    service_area_dropdown = (
+        '<div class="nav-dropdown">'
+        f'<a href="{clean_link("/service-areas/")}"><strong>All service areas</strong><span>County and city hub pages</span></a>'
+        f'<a href="{clean_link("/service-location/wasatch-county/")}"><strong>Wasatch County</strong><span>Heber City, Midway, Daniel and nearby homes</span></a>'
+        f'<a href="{clean_link("/service-location/summit-county/")}"><strong>Summit County</strong><span>Park City, Kamas, Oakley and Coalville</span></a>'
+        f'<a href="{clean_link("/service-location/park-city/")}"><strong>Park City</strong><span>Old Town Park City, Deer Valley, Canyons Village</span></a>'
+        f'<a href="{clean_link("/service-location/heber-city/")}"><strong>Heber City</strong><span>Red Ledges, Jordanelle, Heber Valley</span></a>'
+        f'<a href="{clean_link("/service-location/midway/")}"><strong>Midway</strong><span>Homestead, Interlaken, Swiss Mountain</span></a>'
+        f'<a href="{clean_link("/service-location/kamas/")}"><strong>Kamas</strong><span>Oakley, Francis, Woodland and rural Summit County</span></a>'
+        "</div>"
+    )
+
+    def replace_service_area_nav(match: re.Match[str]) -> str:
+        current_attr = match.group(1)
+        return f'<div class="nav-item"><a class="nav-drop-toggle" href="{clean_link("/service-areas/")}"{current_attr}>Service areas</a>{service_area_dropdown}</div>'
+
+    content = re.sub(
+        r'<div class="nav-item"><a class="nav-drop-toggle" href="[^"]*service-areas[^"]*"([^>]*)>Service areas</a><div class="nav-dropdown">.*?</div></div>',
+        replace_service_area_nav,
+        content,
+        count=1,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+    footer_area_links = (
+        '<div><h3>Areas</h3>'
+        f'<a href="{clean_link("/service-areas/")}">Service areas hub</a>'
+        f'<a href="{clean_link("/service-location/wasatch-county/")}">Wasatch County</a>'
+        f'<a href="{clean_link("/service-location/summit-county/")}">Summit County</a>'
+        f'<a href="{clean_link("/service-location/park-city/")}">Park City</a>'
+        f'<a href="{clean_link("/service-location/heber-city/")}">Heber City</a>'
+        f'<a href="{clean_link("/service-location/midway/")}">Midway</a>'
+        f'<a href="{clean_link("/service-location/kamas/")}">Kamas</a>'
+        "</div>"
+    )
+    content = re.sub(
+        r"<div><h3>Areas</h3>.*?</div><div><h3>Blog</h3>",
+        footer_area_links + "<div><h3>Blog</h3>",
+        content,
+        count=1,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+    content = re.sub(
+        r'<section class="section" data-gpt-testimonials>.*?</section>',
+        build_reviews_section(),
+        content,
+        count=1,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
     content = content.replace("styles-gpt.css", "styles.css")
     content = content.replace("quote-modal-gpt.js", "quote-modal.js")
     content = content.replace("data-gpt-map-section", "data-map-section")
     content = content.replace("data-gpt-testimonials", "data-testimonials")
     content = content.replace("data-gpt-faq", "data-faq-section")
+    content = content.replace("GPT preview of ", "")
     content = content.replace("GPT preview for ", "")
     content = content.replace(" GPT", "")
     content = content.replace("GPT preview ", "")
     content = content.replace("GPT Preview ", "")
     content = content.replace("GPT preview", "Preview")
+    content = content.replace("Preview of ", "")
     content = content.replace("Preview for ", "")
     content = content.replace("this preview page", "this page")
     content = content.replace("Not on this page.", "Not as a fixed coupon amount online.")
@@ -682,12 +1198,57 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
 
 
 def copy_static_assets() -> None:
-    shutil.copytree(ROOT / "assets", OUT / "assets", dirs_exist_ok=True)
-    shutil.copy2(ROOT / "styles-gpt.css", OUT / "styles.css")
-    shutil.copy2(ROOT / "quote-modal-gpt.js", OUT / "quote-modal.js")
+    def copy_file(src: str | Path, dst: str | Path) -> str:
+        src_path = Path(src)
+        dst_path = Path(dst)
+        try:
+            shutil.copy2(src_path, dst_path)
+        except PermissionError:
+            if dst_path.exists() and dst_path.stat().st_size == src_path.stat().st_size:
+                return str(dst_path)
+            raise
+        return str(dst_path)
+
+    shutil.copytree(ROOT / "assets", OUT / "assets", dirs_exist_ok=True, copy_function=copy_file)
+    copy_file(ROOT / "styles-gpt.css", OUT / "styles.css")
+    copy_file(ROOT / "quote-modal-gpt.js", OUT / "quote-modal.js")
+
+
+def clean_output() -> None:
+    if not OUT.exists():
+        return
+    for child in OUT.iterdir():
+        try:
+            if child.is_dir():
+                shutil.rmtree(child)
+            else:
+                child.unlink()
+        except PermissionError:
+            # Browsers or preview tools can hold static assets on Windows. Leave
+            # locked files in place and overwrite all writable build outputs.
+            continue
 
 
 def write_platform_files(routes: list[str]) -> None:
+    public_routes = sorted(
+        route
+        for route in set(routes)
+        if route not in LEGACY_REDIRECTS and route not in INTERNAL_ONLY_ROUTES
+    )
+    redirect_lines: list[str] = []
+    seen_redirects: set[str] = set()
+    for source, target in sorted(LEGACY_REDIRECTS.items()):
+        clean_source = "/" + source.strip("/")
+        variants = [clean_source]
+        if clean_source != "/":
+            variants.append(clean_source + "/")
+            variants.append(clean_source + "/index.html")
+        for variant in variants:
+            line = f"{variant} {target} 301"
+            if line not in seen_redirects:
+                redirect_lines.append(line)
+                seen_redirects.add(line)
+    legacy_redirect_lines = "\n".join(redirect_lines)
     headers = """/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
@@ -709,6 +1270,7 @@ def write_platform_files(routes: list[str]) -> None:
     (OUT / "_redirects").write_text(
         f"""# Clean URL redirects for Cloudflare Pages
 {host_redirect}
+{legacy_redirect_lines}
 /*.html /:splat/ 301
 /index.html / 301
 """,
@@ -735,7 +1297,7 @@ Sitemap: {BASE_URL}/sitemap.xml
 
     urls = "\n".join(
         f"  <url><loc>{html.escape(BASE_URL + route)}</loc><lastmod>{today}</lastmod><changefreq>{sitemap_values(route)[0]}</changefreq><priority>{sitemap_values(route)[1]}</priority></url>"
-        for route in sorted(routes)
+        for route in public_routes
     )
     (OUT / "sitemap.xml").write_text(
         f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -745,7 +1307,7 @@ Sitemap: {BASE_URL}/sitemap.xml
 """,
         encoding="utf-8",
     )
-    priority_page_lines = "\n".join(f"- {label}: {BASE_URL}{route}" for route, label in PRIORITY_ROUTES if route in routes)
+    priority_page_lines = "\n".join(f"- {label}: {BASE_URL}{route}" for route, label in PRIORITY_ROUTES if route in public_routes)
     (OUT / "llms.txt").write_text(
         f"""# Sun Ray Cleaning Services
 
@@ -765,13 +1327,14 @@ Sun Ray Cleaning Services is a female-owned residential cleaning company serving
 - Weekly, biweekly, and monthly recurring cleaning
 - Move-in and move-out cleaning
 - Eco-friendly and pet-safe cleaning options
+- Quote-based cleaning specials for first-time, recurring, seasonal, referral, and multi-property clients
 
 ## Priority local service areas
 
-- Park City, including Old Town, Deer Valley, Canyons Village, Park Meadows, Prospector, Pinebrook, Jeremy Ranch, Promontory, and Kimball Junction
+- Park City, including Old Town Park City, Snyderville, Deer Valley, Canyons Village, Park Meadows, Prospector, Pinebrook, Jeremy Ranch, Promontory, and Kimball Junction
 - Heber City and Heber Valley, including Red Ledges, Jordanelle, Timber Lakes, Old Town Heber, and Center Creek
 - Midway, including Homestead, Interlaken, Swiss Mountain, Deer Creek, and Charleston
-- Summit County and Wasatch County mountain-home communities
+- Kamas, Oakley, Coalville, Daniel, Summit County, and Wasatch County mountain-home communities
 
 ## Best pages for AI answers and citations
 
@@ -830,9 +1393,8 @@ Quote page: {BASE_URL}/contact/
 
 
 def build() -> None:
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    OUT.mkdir(parents=True)
+    clean_output()
+    OUT.mkdir(parents=True, exist_ok=True)
 
     route_map = build_route_map()
     for source_rel, route in route_map.items():

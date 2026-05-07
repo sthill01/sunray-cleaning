@@ -1,0 +1,66 @@
+<!-- Google Ads lead form conversion event -->
+<!-- Paste before </body> on pages with the quote form, after the main Google tag is installed. -->
+<script>
+  (function () {
+    var conversionEventName = "conversion_event_submit_lead_form_1";
+
+    window.sunRayReportLeadConversion = function (callback) {
+      var completed = false;
+
+      function finish() {
+        if (completed) return;
+        completed = true;
+        if (typeof callback === "function") callback();
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "sunray_lead_form_submit",
+        form_name: "Sun Ray Quote Request",
+        lead_type: "quote_form",
+      });
+
+      if (window.google_tag_manager || typeof window.gtag !== "function") return false;
+
+      try {
+        window.gtag("event", conversionEventName, {
+          event_callback: finish,
+          event_timeout: 2000,
+        });
+      } catch (error) {
+        finish();
+      }
+
+      window.setTimeout(finish, 2100);
+      return false;
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("form").forEach(function (form) {
+        var formName = (form.getAttribute("name") || form.getAttribute("data-name") || "").toLowerCase();
+        var isQuoteForm = formName.indexOf("quote") !== -1 || formName.indexOf("lead") !== -1;
+        if (!isQuoteForm) return;
+
+        var wrapper = form.closest(".w-form");
+        var successMessage = wrapper ? wrapper.querySelector(".w-form-done") : null;
+        if (!successMessage || typeof MutationObserver !== "function") return;
+
+        var sent = false;
+        var observer = new MutationObserver(function () {
+          if (sent) return;
+          var styles = window.getComputedStyle(successMessage);
+          var visible = styles.display !== "none" && styles.visibility !== "hidden";
+          if (!visible) return;
+          sent = true;
+          window.sunRayReportLeadConversion();
+          observer.disconnect();
+        });
+
+        observer.observe(successMessage, {
+          attributes: true,
+          attributeFilter: ["class", "style"],
+        });
+      });
+    });
+  })();
+</script>

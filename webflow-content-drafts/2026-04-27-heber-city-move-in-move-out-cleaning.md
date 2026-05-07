@@ -19,7 +19,7 @@ Secondary keywords:
 - new home cleaning checklist Heber Valley
 - move out cleaning Heber Utah
 
-Internal links:
+Internal links (verify in Webflow):
 
 - `/service-location/heber-city`
 - `/services/move-in-move-out-cleaning`
@@ -29,19 +29,21 @@ Internal links:
 Image ideas:
 
 - Hero: clean entry/kitchen or bright move-ready home
-- Alt text: `Move-in ready Heber City kitchen cleaned by Sun Ray Cleaning Services`
+- Alt text: `Move-in ready Heber City kitchen cleaned by Sun Ray Cleaning`
 
 ---
 
 ## Intro
 
-Moving into or out of a Heber City home is easier when the cleaning is handled before boxes, furniture, and final walkthroughs get in the way. Sun Ray Cleaning Services provides move-in and move-out cleaning across Heber City, Red Ledges, Jordanelle-area homes, Daniel, Charleston, and nearby Heber Valley communities.
+Moving into or out of a Heber City home is easier when the cleaning is handled before boxes, furniture, and final walkthroughs get in the way. Sun Ray Cleaning provides move-in and move-out cleaning across Heber City, Red Ledges, Jordanelle-area homes, Daniel, Charleston, and nearby Heber Valley communities.
 
 For new residents, sellers, renters, landlords, and real estate professionals, a move clean is more detailed than a normal maintenance visit. The goal is simple: leave the home fresh, reset, and ready for the next person who opens the door.
 
-## What Is Included In A Heber City Move-Out Clean?
+---
 
-A move-out clean focuses on the rooms and surfaces that matter most during a final walkthrough. In Heber City homes, that often means dust from moving, hard-water buildup in bathrooms, appliance interiors, cabinet shelves, floors, baseboards, and high-touch details.
+## What is included in a Heber City move-out clean?
+
+A move-out clean focuses on the rooms and surfaces that matter most during a final walkthrough. In Heber City homes, that often means dust from moving, hard-water buildup in bathrooms, appliance details, cabinet shelves, floors, baseboards, and high-touch details.
 
 Typical move-out cleaning can include:
 
@@ -55,7 +57,9 @@ Typical move-out cleaning can include:
 
 For renters, this helps support a stronger security deposit return. For sellers and landlords, it helps the home show better for buyers, tenants, and agents.
 
-## Move-In Cleaning Before You Unpack
+---
+
+## Move-in cleaning before you unpack
 
 Move-in cleaning is best done before furniture and boxes arrive. It gives the team access to cabinets, closets, appliance interiors, floors, and corners that are difficult to reach after the home is full.
 
@@ -70,15 +74,19 @@ A move-in clean can help with:
 - Kitchen reset before food storage
 - Floor cleaning before rugs and furniture arrive
 
-## Why Heber City Homes Need Local Cleaning Experience
+---
+
+## Why Heber City homes need local cleaning experience
 
 Heber City and the surrounding valley have a mix of full-time family homes, luxury communities, new builds, and second homes. That mix creates different cleaning needs than a generic city apartment or suburban starter home.
 
-Red Ledges and Jordanelle-area homes may need a detail-oriented reset before seasonal use. New developments often need post-project dust removal. Family homes may need pet, mudroom, garage-entry, and outdoor-debris attention after a busy move week.
+Red Ledges and Jordanelle-area homes may need a detail-oriented reset before seasonal use. New developments often need post-project dust removal. Family homes may need mudroom, garage-entry, and outdoor-debris attention after a busy move week.
 
 Sun Ray Cleaning builds each move clean around the home condition, not a one-size checklist.
 
-## When Should You Schedule A Move Clean?
+---
+
+## When should you schedule a move clean?
 
 For a move-out clean, schedule after furniture and boxes are removed but before the final walkthrough. For a move-in clean, schedule before movers arrive whenever possible.
 
@@ -86,7 +94,9 @@ The ideal window is 24-72 hours before the handoff, walkthrough, or move-in date
 
 Texting photos, square footage, bedroom/bathroom count, and must-clean areas helps Sun Ray provide a faster, clearer quote.
 
-## Heber City Move Cleaning Checklist
+---
+
+## Heber City move cleaning checklist
 
 Use this as a quick planning checklist:
 
@@ -96,7 +106,9 @@ Use this as a quick planning checklist:
 - Tell the cleaner about pets, hard-water buildup, or construction dust
 - Provide access instructions for lockbox, smart lock, or agent entry
 - Schedule after movers leave when possible
-- Share walkthrough deadline and any landlord or seller requirements
+- Share the walkthrough deadline and any landlord or seller requirements
+
+---
 
 ## FAQs
 
@@ -120,9 +132,13 @@ Yes. Sun Ray Cleaning serves Heber City, Red Ledges, Jordanelle-area homes, Dani
 
 Yes. Sun Ray Cleaning can work with homeowners, renters, landlords, sellers, buyers, and real estate professionals who need a home cleaned before a handoff or showing.
 
+---
+
 ## Call To Action
 
-Need move-in or move-out cleaning in Heber City? Call or text Sun Ray Cleaning Services at `(801) 604-2189` with the home size, rooms, condition, timing, and priority areas for a clear quote.
+Need move-in or move-out cleaning in Heber City? Call or text Sun Ray Cleaning at `(801) 604-2189` with the home size, rooms, condition, timing, and priority areas for a clear quote.
+
+---
 
 ## Webflow Claude Prompt
 
@@ -131,9 +147,8 @@ Create or update a Webflow CMS blog draft for Sun Ray Cleaning using this markdo
 Do not publish production.
 Use the slug heber-city-move-in-move-out-cleaning.
 Preserve the H1, H2s, FAQs, internal links, and phone CTA.
-Add SEO title and meta description from the draft.
+Add the SEO title and meta description from the draft.
 Add FAQ schema based only on the visible FAQ content.
 Suggest one hero image and alt text.
 After staging, report any missing Webflow fields, broken links, or manual review items.
 ```
-

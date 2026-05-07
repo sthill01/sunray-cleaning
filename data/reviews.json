@@ -6,7 +6,12 @@
   "worstRating": 1,
   "profileUrl": "",
   "lastVerified": "2026-05-06",
-  "displayNote": "Manual transcription from Google Business Profile owner-dashboard screenshots while official Business Profile API access is pending. Dates are approximate because the screenshots show relative review ages.",
+  "displayNote": "Manual transcription from Google Business Profile owner-dashboard and testimonials-widget screenshots while official Business Profile API access is pending. Dates are approximate because the screenshots show relative review ages.",
+  "summaryHighlights": [
+    "Highly praised for thorough and detailed cleaning.",
+    "Known for excellent customer service and responsiveness.",
+    "Clients appreciate Sun Ray's ability to handle last-minute requests effectively."
+  ],
   "featuredReviews": [
     {
       "reviewId": "manual-larkin-dent-2026-05-04",

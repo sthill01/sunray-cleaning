@@ -27,7 +27,7 @@
     "alt": "Clean living room prepared for short-term rental guests in Park City Utah by Sun Ray Cleaning",
     "caption": "Living room detail work for Park City hosts and second-home owners.",
     "keywords": ["Park City VRBO cleaning", "living room turnover cleaning", "short-term rental cleaning", "Summit County vacation rental cleaning"],
-    "routes": ["/", "/services/short-term-rental-cleaning/", "/service-location/park-city/", "/service-location/old-town/", "/service-location/park-meadows/", "/blog/getting-park-city-home-ready-for-summer-guests/"]
+    "routes": ["/", "/services/short-term-rental-cleaning/", "/service-location/park-city/", "/service-location/old-town-park-city/", "/service-location/park-meadows/", "/blog/getting-park-city-home-ready-for-summer-guests/"]
   },
   {
     "asset": "assets/summit-county-deep-cleaning-shower-detail-sun-ray.jpg",
@@ -102,7 +102,7 @@
     "alt": "Residential kitchen cleaned during recurring house cleaning in Summit County Utah by Sun Ray Cleaning",
     "caption": "Recurring kitchen maintenance for busy Summit County homes.",
     "keywords": ["Summit County recurring cleaning", "kitchen cleaning", "Kamas house cleaning", "Oakley residential cleaners"],
-    "routes": ["/", "/services/recurring-cleaning/", "/service-location/summit-county/", "/service-location/kamas/", "/service-location/oakley/"]
+    "routes": ["/", "/services/recurring-cleaning/", "/service-location/summit-county/", "/service-location/snyderville/", "/service-location/kamas/", "/service-location/oakley/", "/service-location/coalville/"]
   },
   {
     "asset": "assets/wasatch-county-residential-family-room-cleaning-sun-ray.jpg",
@@ -117,7 +117,7 @@
     "alt": "Bright family room cleaned for a Wasatch County residential cleaning client by Sun Ray Cleaning",
     "caption": "Family room cleaning for everyday comfort and guest visits.",
     "keywords": ["Wasatch County residential cleaning", "family room cleaning", "Midway house cleaners", "local home cleaning"],
-    "routes": ["*", "/about/", "/contact/", "/service-areas/", "/service-location/wasatch-county/"]
+    "routes": ["*", "/about/", "/contact/", "/service-areas/", "/service-location/wasatch-county/", "/service-location/daniel/"]
   },
   {
     "asset": "assets/park-city-deep-cleaning-bathroom-detail-sun-ray.jpg",
