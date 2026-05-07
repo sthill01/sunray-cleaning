@@ -50,6 +50,7 @@ jobs:
           SOCIAL_GALLERY_DEFAULT_REGION: ${{ vars.SOCIAL_GALLERY_DEFAULT_REGION || 'Utah' }}
           SOCIAL_GALLERY_SOURCE: ${{ inputs.source }}
           SOCIAL_GALLERY_LIMIT: ${{ inputs.limit }}
+          SOCIAL_GALLERY_ALLOW_PARTIAL: "1"
           SOCIAL_GALLERY_APPROVED: ${{ inputs.approve && '1' || '0' }}
         run: node scripts/import-meta-gallery.mjs
 
