@@ -576,6 +576,122 @@ def selected_gallery_items(route: str, limit: int | None = None) -> list[dict[st
     return picked[:limit]
 
 
+def filter_slug(value: object) -> str:
+    text = str(value or "").strip().lower()
+    text = re.sub(r"&", " and ", text)
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    return re.sub(r"^-+|-+$", "", text) or "all"
+
+
+def gallery_filter_button(label: str, category: str, value: str, count: int | None = None, active: bool = False) -> str:
+    count_markup = f" <span>{count}</span>" if count is not None else ""
+    active_attr = ' aria-pressed="true"' if active else ' aria-pressed="false"'
+    active_class = " is-active" if active else ""
+    return (
+        f'<button class="gallery-filter-chip{active_class}" type="button" '
+        f'data-gallery-filter="{html.escape(category)}" data-filter-value="{html.escape(value)}"{active_attr}>'
+        f'{html.escape(label)}{count_markup}</button>'
+    )
+
+
+def gallery_filter_controls(items: list[dict[str, object]]) -> str:
+    total = len(items)
+
+    def option_counts(field: str, fallback: str = "") -> list[tuple[str, str, int]]:
+        counts: dict[str, int] = {}
+        labels: dict[str, str] = {}
+        for item in items:
+            label = str(item.get(field, "") or fallback).strip()
+            if not label:
+                continue
+            slug = filter_slug(label)
+            counts[slug] = counts.get(slug, 0) + 1
+            labels.setdefault(slug, label)
+        return sorted(((labels[slug], slug, count) for slug, count in counts.items()), key=lambda row: (-row[2], row[0]))
+
+    location_counts: dict[str, int] = {}
+    location_labels: dict[str, str] = {}
+    for item in items:
+        for field in ("city", "county"):
+            label = str(item.get(field, "")).strip()
+            if not label:
+                continue
+            slug = filter_slug(label)
+            location_counts[slug] = location_counts.get(slug, 0) + 1
+            location_labels.setdefault(slug, label)
+    locations = sorted(
+        ((location_labels[slug], slug, count) for slug, count in location_counts.items()),
+        key=lambda row: (0 if row[0] in {"Park City", "Heber City", "Midway"} else 1, -row[2], row[0]),
+    )
+
+    groups = [
+        ("service", "Cleaning category", option_counts("service")),
+        ("location", "Location category", locations),
+        ("room", "Room type", option_counts("room")),
+    ]
+    group_markup = ""
+    for category, label, options in groups:
+        buttons = gallery_filter_button("All", category, "all", total, True)
+        buttons += "".join(gallery_filter_button(option_label, category, slug, count) for option_label, slug, count in options)
+        group_markup += f"""
+        <div class="gallery-filter-group" data-filter-group="{html.escape(category)}">
+          <span>{html.escape(label)}</span>
+          <div class="gallery-filter-options">{buttons}</div>
+        </div>
+        """
+    return f"""
+    <div class="gallery-filter-panel" data-gallery-filters>
+      <div class="gallery-filter-head">
+        <div>
+          <p class="eyebrow">Filter photos</p>
+          <h3>View by cleaning category, location, or room.</h3>
+        </div>
+        <p class="gallery-filter-count"><strong data-gallery-count>{total}</strong> photos shown</p>
+      </div>
+      {group_markup}
+    </div>
+    <script>
+      (() => {{
+        const panel = document.currentScript.previousElementSibling;
+        if (!panel || !panel.matches("[data-gallery-filters]")) return;
+        const section = panel.closest(".local-photo-gallery");
+        const cards = Array.from(section.querySelectorAll("[data-gallery-card]"));
+        const count = panel.querySelector("[data-gallery-count]");
+        const state = {{ service: "all", location: "all", room: "all" }};
+        const matches = (card, category, value) => {{
+          if (value === "all") return true;
+          if (category === "location") {{
+            return [card.dataset.city, card.dataset.county, card.dataset.location].includes(value);
+          }}
+          return card.dataset[category] === value;
+        }};
+        const applyFilters = () => {{
+          let visible = 0;
+          cards.forEach((card) => {{
+            const show = Object.entries(state).every(([category, value]) => matches(card, category, value));
+            card.hidden = !show;
+            card.classList.toggle("is-hidden", !show);
+            if (show) visible += 1;
+          }});
+          if (count) count.textContent = String(visible);
+        }};
+        panel.addEventListener("click", (event) => {{
+          const button = event.target.closest("[data-gallery-filter]");
+          if (!button) return;
+          const category = button.dataset.galleryFilter;
+          state[category] = button.dataset.filterValue || "all";
+          panel.querySelectorAll(`[data-gallery-filter="${{category}}"]`).forEach((peer) => {{
+            const active = peer === button;
+            peer.classList.toggle("is-active", active);
+            peer.setAttribute("aria-pressed", active ? "true" : "false");
+          }});
+          applyFilters();
+        }});
+      }})();
+    </script>
+    """
+
+
 def photo_place_schema(item: dict[str, object]) -> dict[str, object]:
     city = str(item.get("city", "")).strip()
     county = str(item.get("county", "")).strip()
@@ -751,15 +867,38 @@ def build_gallery_section(route: str) -> str:
         asset_src = asset_rel(route, asset)
         alt = html.escape(str(item.get("alt", "Sun Ray Cleaning Services job photo")))
         caption = html.escape(str(item.get("caption", "Recent Sun Ray Cleaning job photo.")))
-        location = html.escape(str(item.get("location", "Northern Utah")))
-        service = html.escape(str(item.get("service", "Residential cleaning")))
-        room = html.escape(str(item.get("room", "Home")))
+        raw_location = str(item.get("location", "Northern Utah"))
+        raw_service = str(item.get("service", "Residential cleaning"))
+        raw_room = str(item.get("room", "Home"))
+        raw_city = str(item.get("city", "")).strip()
+        raw_county = str(item.get("county", "")).strip()
+        location = html.escape(raw_location)
+        service = html.escape(raw_service)
+        room = html.escape(raw_room)
+        location_tag = raw_city or raw_county or raw_location
+        card_attrs = (
+            f'data-gallery-card data-service="{html.escape(filter_slug(raw_service))}" '
+            f'data-room="{html.escape(filter_slug(raw_room))}" '
+            f'data-city="{html.escape(filter_slug(raw_city))}" '
+            f'data-county="{html.escape(filter_slug(raw_county))}" '
+            f'data-location="{html.escape(filter_slug(raw_location))}"'
+        )
+        tags = "".join(
+            f"<span>{html.escape(value)}</span>"
+            for value in [raw_room, raw_service, location_tag]
+            if value
+        )
         cards += f"""
-        <figure class="job-photo-card">
+        <figure class="job-photo-card" {card_attrs}>
           <img src="{html.escape(asset_src)}" alt="{alt}" loading="lazy">
-          <figcaption><strong>{caption}</strong><span>{room} - {service} - {location}</span></figcaption>
+          <figcaption>
+            <strong>{caption}</strong>
+            <span>{room} - {service} - {location}</span>
+            <div class="job-photo-tags" aria-label="Photo tags">{tags}</div>
+          </figcaption>
         </figure>
         """
+    filters = gallery_filter_controls(items) if is_gallery_page else ""
     actions = "" if is_gallery_page else f"""
     <div class="section-actions center">
       <a class="button button-outline" href="{gallery_link}">View full photo gallery</a>
@@ -774,6 +913,7 @@ def build_gallery_section(route: str) -> str:
       <h2 id="local-gallery-title">{title}</h2>
       <p>{description}</p>
     </div>
+    {filters}
     <div class="job-photo-grid">{cards}</div>
     {actions}
   </div>

@@ -1473,6 +1473,10 @@ p {
   box-shadow: var(--shadow-soft);
 }
 
+.job-photo-card.is-hidden {
+  display: none;
+}
+
 .job-photo-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -1494,8 +1498,108 @@ p {
   color: var(--stone-600);
 }
 
+.job-photo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.job-photo-card .job-photo-tags span {
+  padding: 6px 10px;
+  color: var(--navy);
+  background: var(--cream);
+  border: 1px solid var(--stone-100);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
 .full-gallery-section .job-photo-grid {
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.gallery-filter-panel {
+  display: grid;
+  gap: 18px;
+  margin: 0 auto 30px;
+  padding: 22px;
+  border: 1px solid var(--stone-100);
+  border-radius: 28px;
+  background: color-mix(in srgb, var(--white) 84%, var(--cream));
+  box-shadow: var(--shadow-soft);
+}
+
+.gallery-filter-head {
+  display: flex;
+  gap: 18px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.gallery-filter-head h3 {
+  margin: 4px 0 0;
+}
+
+.gallery-filter-count {
+  min-width: max-content;
+  margin: 0;
+  padding: 10px 14px;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--stone-100);
+  border-radius: 999px;
+  font-family: var(--display);
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-filter-group {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery-filter-group > span {
+  color: var(--navy);
+  font-family: var(--display);
+  font-size: 0.92rem;
+  font-weight: 900;
+}
+
+.gallery-filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gallery-filter-chip {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  min-height: 38px;
+  padding: 8px 14px;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--stone-100);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  font-family: var(--display);
+  font-weight: 800;
+}
+
+.gallery-filter-chip span {
+  color: var(--stone-600);
+  font-family: var(--body);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.gallery-filter-chip:hover,
+.gallery-filter-chip.is-active {
+  color: var(--navy);
+  background: var(--yellow);
+  border-color: var(--yellow-deep);
 }
 
 .section-actions {
@@ -2092,6 +2196,10 @@ p {
   .page-hero-media img,
   .gallery-feature-card img {
     height: 430px;
+  }
+
+  .gallery-filter-head {
+    display: grid;
   }
 
   .trust-grid {
