@@ -47,8 +47,8 @@ export async function onRequestPost(context) {
   });
 }
 
-export async function onRequestGet() {
-  return Response.redirect("/", 302);
+export async function onRequestGet(context) {
+  return Response.redirect(new URL("/", context.request.url).toString(), 302);
 }
 
 function quoteResponse({ wantsJson, status, ok, title, message }) {

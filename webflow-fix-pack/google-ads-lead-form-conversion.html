@@ -2,7 +2,7 @@
 <!-- Paste before </body> on pages with the quote form, after the main Google tag is installed. -->
 <script>
   (function () {
-    var conversionEventName = "conversion_event_submit_lead_form_1";
+    var conversionEventName = "conversion_event_submit_lead_form_2";
 
     window.sunRayReportLeadConversion = function (callback) {
       var completed = false;
@@ -20,7 +20,10 @@
         lead_type: "quote_form",
       });
 
-      if (window.google_tag_manager || typeof window.gtag !== "function") return false;
+      if (typeof window.gtag !== "function") {
+        finish();
+        return false;
+      }
 
       try {
         window.gtag("event", conversionEventName, {

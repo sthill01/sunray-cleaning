@@ -207,6 +207,7 @@ for parent_route, child_routes in LOCATION_CHILD_ROUTES.items():
 
 PRIORITY_ROUTES = [
     ("/", "Home"),
+    ("/gallery/", "Recent cleaning photo gallery"),
     ("/service-areas/", "Service area hubs"),
     ("/specials/", "Cleaning specials and current offers"),
     ("/discounts/", "Cleaning discounts and savings programs"),
@@ -249,6 +250,11 @@ BLOG_POST_SEO = {
     },
     "/blog/getting-park-city-home-ready-for-summer-guests/": {
         "service": "Seasonal home cleaning",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-open-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/spring-cleaning-guide-park-city-mountain-homes/": {
+        "service": "Spring cleaning deep clean checklist",
         "location": "Park City, Utah",
         "image": "/assets/park-city-open-kitchen-cleaning-may-6-sun-ray.jpg",
     },
@@ -532,6 +538,8 @@ def page_focus(route: str, h1: str) -> str:
     kind = page_type(route)
     if route == "/":
         return "house cleaning, Airbnb cleaning, deep cleaning, recurring cleaning, and move cleaning in Park City, Heber City, Midway, Summit County, and Wasatch County"
+    if route == "/gallery/":
+        return "recent cleaning photos from Park City, Heber City, Midway, Summit County, and Wasatch County homes"
     if kind == "service":
         return f"{slug.lower()} in Park City, Heber City, Midway, Summit County, and Wasatch County"
     if kind == "location":
@@ -541,7 +549,10 @@ def page_focus(route: str, h1: str) -> str:
     return h1.rstrip(".").lower()
 
 
-def selected_gallery_items(route: str, limit: int = 4) -> list[dict[str, object]]:
+def selected_gallery_items(route: str, limit: int | None = None) -> list[dict[str, object]]:
+    if limit is None:
+        limit = 48 if route == "/gallery/" else 6
+
     exact: list[dict[str, object]] = []
     fallback: list[dict[str, object]] = []
     route_slug = route.strip("/").split("/")[-1] if route.strip("/") else ""
@@ -721,6 +732,19 @@ def build_gallery_section(route: str) -> str:
     items = selected_gallery_items(route)
     if not items:
         return ""
+    is_gallery_page = route == "/gallery/"
+    gallery_link = html.escape(route_to_clean_rel(route, "/gallery/"))
+    eyebrow = "Full photo gallery" if is_gallery_page else "Recent cleaning photos"
+    title = (
+        "Real Sun Ray cleaning photos from local homes."
+        if is_gallery_page
+        else "See the kind of clean Sun Ray brings into real homes."
+    )
+    description = (
+        "Browse recent kitchens, bathrooms, bedrooms, living rooms, turnover resets and deep-clean details prepared for Park City, Heber City, Midway, Summit County and Wasatch County homes."
+        if is_gallery_page
+        else "These recent photos show kitchens, living rooms, bedrooms, bathrooms, and guest spaces after Sun Ray Cleaning visits around Park City, Heber City, Midway, Summit County, and Wasatch County."
+    )
     cards = ""
     for item in items:
         asset = str(item.get("asset", ""))
@@ -736,15 +760,22 @@ def build_gallery_section(route: str) -> str:
           <figcaption><strong>{caption}</strong><span>{room} - {service} - {location}</span></figcaption>
         </figure>
         """
+    actions = "" if is_gallery_page else f"""
+    <div class="section-actions center">
+      <a class="button button-outline" href="{gallery_link}">View full photo gallery</a>
+    </div>
+    """
+    section_class = "section local-photo-gallery full-gallery-section" if is_gallery_page else "section local-photo-gallery"
     return f"""
-<section class="section local-photo-gallery" aria-labelledby="local-gallery-title">
+<section class="{section_class}" aria-labelledby="local-gallery-title">
   <div class="container">
     <div class="section-head center">
-      <p class="eyebrow">Recent cleaning photos</p>
-      <h2 id="local-gallery-title">See the kind of clean Sun Ray brings into real homes.</h2>
-      <p>These recent photos show kitchens, living rooms, bedrooms, bathrooms, and guest spaces after Sun Ray Cleaning visits around Park City, Heber City, Midway, Summit County, and Wasatch County.</p>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 id="local-gallery-title">{title}</h2>
+      <p>{description}</p>
     </div>
     <div class="job-photo-grid">{cards}</div>
+    {actions}
   </div>
 </section>
 """
@@ -1068,7 +1099,11 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
     if "review-proof" not in content and "</main>" in content:
         content = content.replace("</main>", build_reviews_section() + "\n</main>", 1)
     if "local-photo-gallery" not in content and "</main>" in content:
-        content = content.replace("</main>", build_gallery_section(route) + "\n</main>", 1)
+        gallery_section = build_gallery_section(route)
+        if route == "/gallery/" and '<section class="section section-navy cta-band"' in content:
+            content = content.replace('<section class="section section-navy cta-band"', gallery_section + '\n<section class="section section-navy cta-band"', 1)
+        else:
+            content = content.replace("</main>", gallery_section + "\n</main>", 1)
     if "seo-answer-network" not in content and "</main>" in content:
         content = content.replace("</main>", build_answer_network(content, route, route_map) + "\n</main>", 1)
     return content
@@ -1095,27 +1130,27 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
 
     content = content.replace(
         '<a href="blog-gpt.html">Blog</a><a href="about-gpt.html">About</a>',
-        '<a href="blog-gpt.html">Blog</a><a href="specials-gpt.html">Specials</a><a href="about-gpt.html">About</a>',
+        '<a href="blog-gpt.html">Blog</a><a href="gallery-gpt.html">Gallery</a><a href="specials-gpt.html">Specials</a><a href="about-gpt.html">About</a>',
     )
     content = content.replace(
         '<a href="blog-gpt.html" aria-current="page">Blog</a><a href="about-gpt.html">About</a>',
-        '<a href="blog-gpt.html" aria-current="page">Blog</a><a href="specials-gpt.html">Specials</a><a href="about-gpt.html">About</a>',
+        '<a href="blog-gpt.html" aria-current="page">Blog</a><a href="gallery-gpt.html">Gallery</a><a href="specials-gpt.html">Specials</a><a href="about-gpt.html">About</a>',
     )
     content = content.replace(
         '<a href="../blog-gpt.html">Blog</a><a href="../about-gpt.html">About</a>',
-        '<a href="../blog-gpt.html">Blog</a><a href="../specials-gpt.html">Specials</a><a href="../about-gpt.html">About</a>',
+        '<a href="../blog-gpt.html">Blog</a><a href="../gallery-gpt.html">Gallery</a><a href="../specials-gpt.html">Specials</a><a href="../about-gpt.html">About</a>',
     )
     content = content.replace(
         '<a href="../blog-gpt.html" aria-current="page">Blog</a><a href="../about-gpt.html">About</a>',
-        '<a href="../blog-gpt.html" aria-current="page">Blog</a><a href="../specials-gpt.html">Specials</a><a href="../about-gpt.html">About</a>',
+        '<a href="../blog-gpt.html" aria-current="page">Blog</a><a href="../gallery-gpt.html">Gallery</a><a href="../specials-gpt.html">Specials</a><a href="../about-gpt.html">About</a>',
     )
     content = content.replace(
         '<div><h3>Contact</h3><a href="contact-gpt.html">Get a quote</a>',
-        '<div><h3>Contact</h3><a href="specials-gpt.html">Specials</a><a href="discounts-gpt.html">Discounts</a><a href="contact-gpt.html">Get a quote</a>',
+        '<div><h3>Contact</h3><a href="gallery-gpt.html">Photo gallery</a><a href="specials-gpt.html">Specials</a><a href="discounts-gpt.html">Discounts</a><a href="contact-gpt.html">Get a quote</a>',
     )
     content = content.replace(
         '<div><h3>Contact</h3><a href="../contact-gpt.html">Get a quote</a>',
-        '<div><h3>Contact</h3><a href="../specials-gpt.html">Specials</a><a href="../discounts-gpt.html">Discounts</a><a href="../contact-gpt.html">Get a quote</a>',
+        '<div><h3>Contact</h3><a href="../gallery-gpt.html">Photo gallery</a><a href="../specials-gpt.html">Specials</a><a href="../discounts-gpt.html">Discounts</a><a href="../contact-gpt.html">Get a quote</a>',
     )
 
     def replace_attr(match: re.Match[str]) -> str:
