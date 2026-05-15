@@ -1,26 +1,51 @@
-export async function onRequestPost(context) {
-  const wantsJson = context.request.headers.get("accept")?.includes("application/json");
-  const formData = await context.request.formData();
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (url.pathname === "/api/quote") {
+      if (request.method === "GET" || request.method === "HEAD") {
+        return Response.redirect(new URL("/", request.url).toString(), 302);
+      }
+
+      if (request.method === "POST") {
+        return handleQuotePost(request, env);
+      }
+
+      return new Response("Method not allowed", {
+        status: 405,
+        headers: {
+          allow: "GET, HEAD, POST",
+        },
+      });
+    }
+
+    return env.ASSETS.fetch(request);
+  },
+};
+
+async function handleQuotePost(request, env) {
+  const wantsJson = request.headers.get("accept")?.includes("application/json");
+  const formData = await request.formData();
   const quote = Object.fromEntries(formData.entries());
   const payload = {
     ...quote,
     submittedAt: new Date().toISOString(),
-    source: "sunray-cloudflare-preview",
-    pageUrl: context.request.headers.get("referer") || "",
+    source: "sunray-cloudflare-worker-preview",
+    pageUrl: request.headers.get("referer") || "",
   };
 
-  if (!context.env.SUNRAY_QUOTE_WEBHOOK_URL) {
+  if (!env.SUNRAY_QUOTE_WEBHOOK_URL) {
     return quoteResponse({
       wantsJson,
       status: 503,
       ok: false,
       title: "Quote forwarding is not configured yet",
       message:
-        "This preview form is ready, but email forwarding needs SUNRAY_QUOTE_WEBHOOK_URL in Cloudflare Pages. Please call or text (801) 604-2189 for live scheduling.",
+        "This preview form is ready, but email forwarding needs SUNRAY_QUOTE_WEBHOOK_URL in Cloudflare. Please call or text (801) 604-2189 for live scheduling.",
     });
   }
 
-  const webhookResponse = await fetch(context.env.SUNRAY_QUOTE_WEBHOOK_URL, {
+  const webhookResponse = await fetch(env.SUNRAY_QUOTE_WEBHOOK_URL, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(payload),
@@ -45,10 +70,6 @@ export async function onRequestPost(context) {
     message:
       "Thanks. Sun Ray has your cleaning details and will follow up using the contact information you shared.",
   });
-}
-
-export async function onRequestGet(context) {
-  return Response.redirect(new URL("/", context.request.url).toString(), 302);
 }
 
 function quoteResponse({ wantsJson, status, ok, title, message }) {

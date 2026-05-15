@@ -1,5 +1,7 @@
 name = "sunray-cleaning"
 compatibility_date = "2026-04-28"
+main = "worker.js"
 
 [assets]
 directory = "cloudflare-preview"
+binding = "ASSETS"
