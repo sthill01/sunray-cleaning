@@ -207,7 +207,7 @@ for parent_route, child_routes in LOCATION_CHILD_ROUTES.items():
 
 PRIORITY_ROUTES = [
     ("/", "Home"),
-    ("/gallery/", "Recent cleaning photo gallery"),
+    ("/gallery/", "Photo gallery and portfolio"),
     ("/service-areas/", "Service area hubs"),
     ("/specials/", "Cleaning specials and current offers"),
     ("/discounts/", "Cleaning discounts and savings programs"),
@@ -539,7 +539,7 @@ def page_focus(route: str, h1: str) -> str:
     if route == "/":
         return "house cleaning, Airbnb cleaning, deep cleaning, recurring cleaning, and move cleaning in Park City, Heber City, Midway, Summit County, and Wasatch County"
     if route == "/gallery/":
-        return "recent cleaning photos from Park City, Heber City, Midway, Summit County, and Wasatch County homes"
+        return "photo gallery and cleaning portfolio for Park City, Heber City, Midway, Summit County, and Wasatch County homes"
     if kind == "service":
         return f"{slug.lower()} in Park City, Heber City, Midway, Summit County, and Wasatch County"
     if kind == "location":
@@ -551,7 +551,7 @@ def page_focus(route: str, h1: str) -> str:
 
 def selected_gallery_items(route: str, limit: int | None = None) -> list[dict[str, object]]:
     if limit is None:
-        limit = 48 if route == "/gallery/" else 6
+        limit = len(JOB_GALLERY) if route == "/gallery/" else 6
 
     exact: list[dict[str, object]] = []
     fallback: list[dict[str, object]] = []
@@ -734,14 +734,14 @@ def build_gallery_section(route: str) -> str:
         return ""
     is_gallery_page = route == "/gallery/"
     gallery_link = html.escape(route_to_clean_rel(route, "/gallery/"))
-    eyebrow = "Full photo gallery" if is_gallery_page else "Recent cleaning photos"
+    eyebrow = "Photo gallery and portfolio" if is_gallery_page else "Recent cleaning photos"
     title = (
-        "Real Sun Ray cleaning photos from local homes."
+        "All approved Sun Ray cleaning photos in one local portfolio."
         if is_gallery_page
         else "See the kind of clean Sun Ray brings into real homes."
     )
     description = (
-        "Browse recent kitchens, bathrooms, bedrooms, living rooms, turnover resets and deep-clean details prepared for Park City, Heber City, Midway, Summit County and Wasatch County homes."
+        "Browse kitchens, bathrooms, bedrooms, living rooms, turnover resets and deep-clean details prepared for Park City, Heber City, Midway, Summit County and Wasatch County homes."
         if is_gallery_page
         else "These recent photos show kitchens, living rooms, bedrooms, bathrooms, and guest spaces after Sun Ray Cleaning visits around Park City, Heber City, Midway, Summit County, and Wasatch County."
     )
@@ -869,7 +869,7 @@ def build_structured_data(content: str, route: str) -> str:
             "inLanguage": "en-US",
         },
         {
-            "@type": "WebPage",
+            "@type": ["CollectionPage", "ImageGallery"] if route == "/gallery/" else "WebPage",
             "@id": page_id,
             "url": page_url,
             "name": title,

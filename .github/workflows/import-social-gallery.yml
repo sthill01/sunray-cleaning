@@ -1,6 +1,9 @@
-name: Import Instagram and Facebook Gallery Photos
+name: Import Website Gallery Photos
 
 on:
+  schedule:
+    - cron: "0 8 * * 5"
+    - cron: "0 9 * * 5"
   workflow_dispatch:
     inputs:
       source:
@@ -37,7 +40,43 @@ jobs:
         with:
           node-version: 22
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install gallery image tooling
+        run: python -m pip install --upgrade pillow pillow-heif
+
+      - name: Check Friday 2 AM Mountain Time
+        id: timeguard
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          node - <<'NODE'
+          const fs = require("node:fs");
+          const parts = Object.fromEntries(
+            new Intl.DateTimeFormat("en-US", {
+              timeZone: "America/Denver",
+              weekday: "short",
+              hour: "2-digit",
+              minute: "2-digit",
+              hourCycle: "h23",
+            }).formatToParts(new Date()).map((part) => [part.type, part.value])
+          );
+          const shouldRun = parts.weekday === "Fri" && parts.hour === "02" && parts.minute === "00";
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `run=${shouldRun ? "true" : "false"}\n`);
+          console.log(`America/Denver time guard: ${parts.weekday} ${parts.hour}:${parts.minute}; run=${shouldRun}`);
+          NODE
+
+      - name: Import local incoming photos
+        if: steps.timeguard.outputs.run == 'true'
+        run: python scripts/import-local-gallery.py
+
       - name: Import Instagram and Facebook photos
+        if: steps.timeguard.outputs.run == 'true'
         env:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
@@ -48,17 +87,24 @@ jobs:
           SOCIAL_GALLERY_DEFAULT_CITY: ${{ vars.SOCIAL_GALLERY_DEFAULT_CITY || 'Park City' }}
           SOCIAL_GALLERY_DEFAULT_COUNTY: ${{ vars.SOCIAL_GALLERY_DEFAULT_COUNTY || 'Summit County' }}
           SOCIAL_GALLERY_DEFAULT_REGION: ${{ vars.SOCIAL_GALLERY_DEFAULT_REGION || 'Utah' }}
-          SOCIAL_GALLERY_SOURCE: ${{ inputs.source }}
-          SOCIAL_GALLERY_LIMIT: ${{ inputs.limit }}
+          SOCIAL_GALLERY_SOURCE: ${{ github.event_name == 'schedule' && 'all' || inputs.source || 'all' }}
+          SOCIAL_GALLERY_LIMIT: ${{ github.event_name == 'schedule' && '48' || inputs.limit || '24' }}
           SOCIAL_GALLERY_ALLOW_PARTIAL: "1"
-          SOCIAL_GALLERY_APPROVED: ${{ inputs.approve && '1' || '0' }}
-        run: node scripts/import-meta-gallery.mjs
+          SOCIAL_GALLERY_APPROVED: ${{ github.event_name == 'schedule' && '1' || (inputs.approve && '1' || '0') }}
+        run: |
+          if [ -z "$META_ACCESS_TOKEN$INSTAGRAM_ACCESS_TOKEN$FACEBOOK_PAGE_ACCESS_TOKEN" ]; then
+            echo "No Meta access token configured; skipping Instagram and Facebook import."
+            exit 0
+          fi
+          node scripts/import-meta-gallery.mjs
 
       - name: Build Cloudflare preview
+        if: steps.timeguard.outputs.run == 'true'
         run: python tools/build-cloudflare-preview.py
 
       - name: Commit social gallery updates
+        if: steps.timeguard.outputs.run == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update Instagram and Facebook gallery photos"
-          file_pattern: data/social-gallery.json assets/social
+          commit_message: "Update Sun Ray photo gallery"
+          file_pattern: data/social-gallery.json data/job-gallery.json assets/social assets/job-gallery-*
