@@ -34,6 +34,7 @@ Production Cloudflare Pages settings:
 - Build output directory: `cloudflare-preview`
 - Production canonical base URL: `https://www.sunray-cleaning.com`
 - Required environment variable for quote forwarding: `SUNRAY_QUOTE_WEBHOOK_URL`
+- Google Tag Manager container: `GTM-W78H8S3C`
 
 The production build sets crawlable robots metadata, removes the preview `X-Robots-Tag: noindex` header, writes a crawlable `robots.txt`, and generates sitemap/canonical URLs for `https://www.sunray-cleaning.com`. Attach `www.sunray-cleaning.com` as the primary Cloudflare Pages custom domain and redirect `sunray-cleaning.com` to `www.sunray-cleaning.com`.
 
@@ -42,6 +43,12 @@ The production build sets crawlable robots metadata, removes the preview `X-Robo
 Cloudflare preview forms post to `/api/quote`. The form only forwards submissions to email/CRM automation after `SUNRAY_QUOTE_WEBHOOK_URL` is added in Cloudflare Pages environment variables. Use a Make or Zapier webhook that sends the submitted JSON payload to the preferred Sun Ray email inbox.
 
 If the webhook is missing or unavailable, the form shows an error and keeps the phone/SMS fallback visible: `(801) 604-2189`.
+
+## Google Tag Manager conversion tracking
+
+The Cloudflare Pages build injects GTM sitewide from `tools/build-cloudflare-preview.py`. The runtime quote/CTA script pushes `dataLayer` events for quote opens, call clicks, text clicks, submit clicks, and successful lead form submissions. Keep GA4 and Google Ads conversion tags inside GTM so reporting and conversion changes can be managed in one place.
+
+Setup details are in `tracking/google-tag-manager-conversions.md`.
 
 ## Google review automation
 

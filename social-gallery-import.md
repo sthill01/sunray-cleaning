@@ -2,6 +2,17 @@
 
 This repo now supports an official Meta Graph API import path for Sun Ray social photos. It does not scrape Instagram or Facebook.
 
+## Manual job-photo gallery batch
+
+The May 2026 uploaded job-photo batch is staged in two website/social-ready locations:
+
+- Website gallery images: `assets/job-gallery-2026-05/`
+- Social crops: `assets/social-ready-2026-05/square/` and `assets/social-ready-2026-05/portrait/`
+- Website metadata and local SEO schema source: `data/job-gallery.json`
+- Draft Facebook, Instagram, and Google Business Profile posting queue: `data/photo-post-queue.json`
+
+Keep new real-job photos as drafts first. Review each photo for privacy, customer approval, room/service/location accuracy, and caption quality before publishing it on the website or pushing it to Facebook, Instagram, or Google Business Profile.
+
 ## What the importer does
 
 - Pulls recent Instagram business media and Facebook Page uploaded photos.

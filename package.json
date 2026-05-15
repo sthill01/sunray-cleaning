@@ -1,4 +1,6 @@
 {
+  "name": "sunray-cleaning",
+  "private": true,
   "scripts": {
     "build": "python tools/build-cloudflare-preview.py",
     "import:google-reviews": "node scripts/import-google-reviews.mjs",

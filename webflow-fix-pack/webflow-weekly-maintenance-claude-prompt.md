@@ -148,3 +148,38 @@ For the current page/CMS item:
 
 Do not publish production unless I explicitly approve it.
 ```
+
+---
+
+## Prompt I - Draft a dedicated Park City STR landing page (city + service match)
+
+```text
+Help me draft a new dedicated landing page for Park City short-term rental turnover cleaning.
+
+Before making changes:
+- Confirm the Webflow site you are connected to and whether you are creating a new page or editing an existing draft page.
+- Work only in draft/staging first.
+- Do not publish production unless I explicitly approve it.
+
+Page goal: capture non-brand "Airbnb cleaning Park City" / "VRBO turnover cleaning Park City" intent.
+
+Requested slug (draft): /park-city-airbnb-vrbo-turnover-cleaning
+
+1) Propose a simple, conversion-first section outline (H1 + H2s), including:
+   - Above-the-fold hero with clear CTA
+   - What’s included checklist (arrival-ready turnover)
+   - What’s different about Park City STR turnovers (dust, hard water, fast windows)
+   - Service areas (Park City + nearby)
+   - Pricing anchors section (use these as anchors, not binding quotes): Recurring from $149; Deep clean from $289; STR turnover from $119
+   - FAQs (5–8 STR-specific FAQs)
+   - Final CTA block (Call/text + quote)
+2) Check for heading hygiene (exactly one H1) and suggest internal links:
+   - link to STR service page
+   - link to Park City location page
+   - link to pricing page if/when it exists
+3) Propose SEO title (<60 chars when practical) + meta description (~140–160 chars) + OG fields.
+4) If there is an FAQ section on-page, propose FAQ schema for only those visible FAQs (ask before inserting).
+
+Ask before applying any edits or creating the page.
+Return a concise change log and a manual review checklist.
+```

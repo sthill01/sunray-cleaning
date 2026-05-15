@@ -1,0 +1,1007 @@
+{
+  "sourceName": "Sun Ray prepared photo post queue",
+  "preparedAt": "2026-05-14",
+  "workflowNote": "Draft photo queue for website gallery, Facebook, Instagram, and Google Business Profile posts. Publish only after reviewing captions and deployed public image URLs.",
+  "publicBaseUrl": "https://sunray-cleaning.sthill01.workers.dev/",
+  "items": [
+    {
+      "id": "sun-ray-team-deep-cleaning-kitchen-park-city-01",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-team-deep-cleaning-kitchen-park-city-01.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-team-deep-cleaning-kitchen-park-city-01-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-team-deep-cleaning-kitchen-park-city-01.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-team-deep-cleaning-kitchen-park-city-01.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Kitchen deep-cleaning in progress with Sun Ray's local cleaning team. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Kitchen",
+      "location": "Park City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-cleaning-team-modern-kitchen-island-02",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-cleaning-team-modern-kitchen-island-02.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-cleaning-team-modern-kitchen-island-02-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-cleaning-team-modern-kitchen-island-02.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-cleaning-team-modern-kitchen-island-02.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Sun Ray's team resetting a bright kitchen for a cleaner, calmer home. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Residential cleaning",
+      "room": "Kitchen",
+      "location": "Summit County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-kitchen-island-polish-after-cleaning-03",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-kitchen-island-polish-after-cleaning-03.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-kitchen-island-polish-after-cleaning-03-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-kitchen-island-polish-after-cleaning-03.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-kitchen-island-polish-after-cleaning-03.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Kitchen island polish for a guest-ready short-term rental reset. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Airbnb and VRBO turnover cleaning",
+      "room": "Kitchen",
+      "location": "Park City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-team-kitchen-turnover-cleaning-04",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-team-kitchen-turnover-cleaning-04.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-team-kitchen-turnover-cleaning-04-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-team-kitchen-turnover-cleaning-04.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-team-kitchen-turnover-cleaning-04.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Team kitchen turnover cleaning for a guest-ready Park City service-area home. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Airbnb and VRBO turnover cleaning",
+      "room": "Kitchen",
+      "location": "Park City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-elegant-living-room-after-cleaning-05",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-elegant-living-room-after-cleaning-05.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-elegant-living-room-after-cleaning-05-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-elegant-living-room-after-cleaning-05.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-elegant-living-room-after-cleaning-05.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Elegant living room reset for a homeowner or second-home owner. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Residential cleaning",
+      "room": "Living room",
+      "location": "Summit County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-warm-kitchen-after-cleaning-06",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-warm-kitchen-after-cleaning-06.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-warm-kitchen-after-cleaning-06-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-warm-kitchen-after-cleaning-06.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-warm-kitchen-after-cleaning-06.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Warm kitchen reset after a detailed recurring cleaning visit. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Recurring cleaning",
+      "room": "Kitchen",
+      "location": "Wasatch County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-bathroom-vanity-detail-cleaning-07",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-detail-cleaning-07.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-bathroom-vanity-detail-cleaning-07-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-detail-cleaning-07.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-detail-cleaning-07.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Bathroom vanity detail work for a fresher, polished space. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Bathroom",
+      "location": "Heber City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-team-bathroom-vanity-cleaning-08",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-team-bathroom-vanity-cleaning-08.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-team-bathroom-vanity-cleaning-08-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-team-bathroom-vanity-cleaning-08.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-team-bathroom-vanity-cleaning-08.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Sun Ray cleaners detailing a bathroom vanity and mirror area. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Bathroom",
+      "location": "Wasatch County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-living-room-fireplace-after-cleaning-09",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-living-room-fireplace-after-cleaning-09.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-living-room-fireplace-after-cleaning-09-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-living-room-fireplace-after-cleaning-09.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-living-room-fireplace-after-cleaning-09.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: A calm living room and fireplace area after residential cleaning. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Residential cleaning",
+      "room": "Living room",
+      "location": "Park City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-bright-white-kitchen-after-cleaning-10",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-bright-white-kitchen-after-cleaning-10.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-bright-white-kitchen-after-cleaning-10-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-bright-white-kitchen-after-cleaning-10.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-bright-white-kitchen-after-cleaning-10.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Bright white kitchen ready for a move, guest stay, or fresh start. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Move-in and move-out cleaning",
+      "room": "Kitchen",
+      "location": "Summit County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-living-room-detail-after-cleaning-11",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-living-room-detail-after-cleaning-11.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-living-room-detail-after-cleaning-11-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-living-room-detail-after-cleaning-11.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-living-room-detail-after-cleaning-11.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Living room detail work that helps a home feel ready to relax in. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Recurring cleaning",
+      "room": "Living room",
+      "location": "Wasatch County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-bedroom-reset-after-cleaning-12",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-bedroom-reset-after-cleaning-12.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-bedroom-reset-after-cleaning-12-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-bedroom-reset-after-cleaning-12.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-bedroom-reset-after-cleaning-12.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Bedroom reset for a guest-ready short-term rental or second home. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Airbnb and VRBO turnover cleaning",
+      "room": "Bedroom",
+      "location": "Park City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-guest-bedroom-turnover-detail-13",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-guest-bedroom-turnover-detail-13.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-guest-bedroom-turnover-detail-13-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-guest-bedroom-turnover-detail-13.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-guest-bedroom-turnover-detail-13.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Guest bedroom detail prepared for arriving visitors. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Airbnb and VRBO turnover cleaning",
+      "room": "Bedroom",
+      "location": "Midway, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-luxury-bedroom-cleaning-after-14",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-luxury-bedroom-cleaning-after-14.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-luxury-bedroom-cleaning-after-14-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-luxury-bedroom-cleaning-after-14.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-luxury-bedroom-cleaning-after-14.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Luxury bedroom reset for a clean and restful home. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Residential cleaning",
+      "room": "Bedroom",
+      "location": "Heber City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-clean-cooktop-white-kitchen-detail-15",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-clean-cooktop-white-kitchen-detail-15.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-clean-cooktop-white-kitchen-detail-15-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-clean-cooktop-white-kitchen-detail-15.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-clean-cooktop-white-kitchen-detail-15.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: White kitchen cooktop detail after a careful clean. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Kitchen",
+      "location": "Summit County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-polished-kitchen-sink-after-cleaning-16",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-polished-kitchen-sink-after-cleaning-16.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-polished-kitchen-sink-after-cleaning-16-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-polished-kitchen-sink-after-cleaning-16.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-polished-kitchen-sink-after-cleaning-16.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Polished kitchen sink detail after a Sun Ray cleaning visit. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Recurring cleaning",
+      "room": "Kitchen",
+      "location": "Park City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-cleaner-wiping-whiteboard-detail-17",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-cleaner-wiping-whiteboard-detail-17.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-cleaner-wiping-whiteboard-detail-17-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-cleaner-wiping-whiteboard-detail-17.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-cleaner-wiping-whiteboard-detail-17.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Detail dusting and surface cleaning for work-from-home spaces. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Recurring cleaning",
+      "room": "Home office",
+      "location": "Summit County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-stovetop-detail-cleaning-action-18",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-stovetop-detail-cleaning-action-18.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-stovetop-detail-cleaning-action-18-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-stovetop-detail-cleaning-action-18.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-stovetop-detail-cleaning-action-18.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Stovetop detail cleaning in progress during a kitchen reset. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Kitchen",
+      "location": "Park City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-team-kitchen-stovetop-cleaning-19",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-team-kitchen-stovetop-cleaning-19.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-team-kitchen-stovetop-cleaning-19-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-team-kitchen-stovetop-cleaning-19.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-team-kitchen-stovetop-cleaning-19.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Hands-on kitchen detail work from the Sun Ray cleaning team. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Kitchen",
+      "location": "Summit County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-bedroom-vacuuming-cleaning-action-20",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-bedroom-vacuuming-cleaning-action-20.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-bedroom-vacuuming-cleaning-action-20-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-bedroom-vacuuming-cleaning-action-20.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-bedroom-vacuuming-cleaning-action-20.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Bedroom vacuuming and reset for a cleaner everyday home. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Recurring cleaning",
+      "room": "Bedroom",
+      "location": "Wasatch County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-shower-cleaning-action-21",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-shower-cleaning-action-21.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-shower-cleaning-action-21-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-shower-cleaning-action-21.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-shower-cleaning-action-21.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Shower detail cleaning to remove buildup and restore the space. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Bathroom",
+      "location": "Park City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-sofa-vacuuming-living-room-22",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-sofa-vacuuming-living-room-22.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-sofa-vacuuming-living-room-22-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-sofa-vacuuming-living-room-22.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-sofa-vacuuming-living-room-22.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Sofa and living room detail work during a recurring cleaning visit. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Recurring cleaning",
+      "room": "Living room",
+      "location": "Summit County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-bedroom-dresser-dusting-cleaning-23",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-bedroom-dresser-dusting-cleaning-23.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-bedroom-dresser-dusting-cleaning-23-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-bedroom-dresser-dusting-cleaning-23.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-bedroom-dresser-dusting-cleaning-23.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Bedroom furniture dusting and detail work for a polished room. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Recurring cleaning",
+      "room": "Bedroom",
+      "location": "Midway, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-stovetop-cleaning-modern-kitchen-24",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-stovetop-cleaning-modern-kitchen-24.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-stovetop-cleaning-modern-kitchen-24-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-stovetop-cleaning-modern-kitchen-24.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-stovetop-cleaning-modern-kitchen-24.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Modern kitchen stovetop cleaning for a short-term rental reset. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Airbnb and VRBO turnover cleaning",
+      "room": "Kitchen",
+      "location": "Park City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-clean-cooktop-detail-after-cleaning-25",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-clean-cooktop-detail-after-cleaning-25.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-clean-cooktop-detail-after-cleaning-25-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-clean-cooktop-detail-after-cleaning-25.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-clean-cooktop-detail-after-cleaning-25.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Cooktop detail after a focused kitchen deep clean. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Kitchen",
+      "location": "Heber City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-stovetop-detail-cleaning-closeup-26",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-stovetop-detail-cleaning-closeup-26.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-stovetop-detail-cleaning-closeup-26-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-stovetop-detail-cleaning-closeup-26.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-stovetop-detail-cleaning-closeup-26.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Close-up stovetop detail work during a kitchen cleaning. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Kitchen",
+      "location": "Wasatch County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-kitchen-sink-floral-detail-27",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-kitchen-sink-floral-detail-27.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-kitchen-sink-floral-detail-27-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-kitchen-sink-floral-detail-27.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-kitchen-sink-floral-detail-27.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Kitchen sink and floral detail after a polished home clean. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Residential cleaning",
+      "room": "Kitchen",
+      "location": "Summit County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-modern-white-kitchen-polished-counters-28",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-modern-white-kitchen-polished-counters-28.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-modern-white-kitchen-polished-counters-28-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-modern-white-kitchen-polished-counters-28.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-modern-white-kitchen-polished-counters-28.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Modern white kitchen with counters polished and ready. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Move-in and move-out cleaning",
+      "room": "Kitchen",
+      "location": "Park City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-cozy-living-room-after-cleaning-29",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-cozy-living-room-after-cleaning-29.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-cozy-living-room-after-cleaning-29-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-cozy-living-room-after-cleaning-29.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-cozy-living-room-after-cleaning-29.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Cozy living room reset after home cleaning. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Residential cleaning",
+      "room": "Living room",
+      "location": "Heber City, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-sectional-living-room-after-cleaning-30",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-sectional-living-room-after-cleaning-30.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-sectional-living-room-after-cleaning-30-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-sectional-living-room-after-cleaning-30.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-sectional-living-room-after-cleaning-30.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Sectional living room cleaned and ready for everyday use. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Residential cleaning",
+      "room": "Living room",
+      "location": "Midway, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-bathroom-vanity-after-cleaning-31",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-after-cleaning-31.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-bathroom-vanity-after-cleaning-31-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-after-cleaning-31.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-after-cleaning-31.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Bathroom vanity cleaned and polished for a simple daily reset. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Residential cleaning",
+      "room": "Bathroom",
+      "location": "Wasatch County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-white-kitchen-after-cleaning-32",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-white-kitchen-after-cleaning-32.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-white-kitchen-after-cleaning-32-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-white-kitchen-after-cleaning-32.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-white-kitchen-after-cleaning-32.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Bright white kitchen reset after a polished residential clean. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Residential cleaning",
+      "room": "Kitchen",
+      "location": "Summit County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-bathroom-vanity-and-tub-detail-33",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-and-tub-detail-33.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-bathroom-vanity-and-tub-detail-33-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-and-tub-detail-33.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-and-tub-detail-33.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Bathroom vanity and tub detail for a clean, polished reset. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Bathroom",
+      "location": "Wasatch County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-modern-kitchen-deep-cleaning-34",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-modern-kitchen-deep-cleaning-34.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-modern-kitchen-deep-cleaning-34-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-modern-kitchen-deep-cleaning-34.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-modern-kitchen-deep-cleaning-34.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Modern kitchen reset after a focused deep cleaning visit. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Kitchen",
+      "location": "Park City service area, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-bright-bathroom-after-cleaning-35",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-bright-bathroom-after-cleaning-35.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-bright-bathroom-after-cleaning-35-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-bright-bathroom-after-cleaning-35.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-bright-bathroom-after-cleaning-35.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Bright bathroom after a detailed Sun Ray residential clean. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Residential cleaning",
+      "room": "Bathroom",
+      "location": "Heber City service area, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-luxury-kitchen-cleaning-36",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-luxury-kitchen-cleaning-36.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-luxury-kitchen-cleaning-36-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-luxury-kitchen-cleaning-36.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-luxury-kitchen-cleaning-36.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Luxury kitchen detail prepared for a guest-ready home. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Airbnb and VRBO turnover cleaning",
+      "room": "Kitchen",
+      "location": "Park City service area, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    },
+    {
+      "id": "sun-ray-luxury-bathtub-detail-cleaning-37",
+      "status": "draft",
+      "websiteAsset": "assets/job-gallery-2026-05/sun-ray-luxury-bathtub-detail-cleaning-37.jpg",
+      "instagramAsset": "assets/social-ready-2026-05/square/sun-ray-luxury-bathtub-detail-cleaning-37-square.jpg",
+      "facebookAsset": "assets/job-gallery-2026-05/sun-ray-luxury-bathtub-detail-cleaning-37.jpg",
+      "googleBusinessProfileAsset": "assets/job-gallery-2026-05/sun-ray-luxury-bathtub-detail-cleaning-37.jpg",
+      "caption": "Recent Sun Ray Cleaning photo: Luxury bathtub detail for a more polished bathroom clean. Serving Park City, Heber City, Midway, Summit County, and Wasatch County. Call or text (801) 604-2189 for a quote.",
+      "hashtags": [
+        "#SunRayCleaning",
+        "#ParkCityCleaning",
+        "#HeberCityCleaning",
+        "#MidwayUtah",
+        "#HouseCleaning",
+        "#VacationRentalCleaning"
+      ],
+      "recommendedChannels": [
+        "facebook",
+        "instagram",
+        "googleBusinessProfile"
+      ],
+      "suggestedPostType": "photo_update",
+      "service": "Deep cleaning",
+      "room": "Bathroom",
+      "location": "Wasatch County, UT",
+      "notes": "Review photo and caption before publishing. Use exact public URL after Cloudflare deploy for API-based posting."
+    }
+  ]
+}
