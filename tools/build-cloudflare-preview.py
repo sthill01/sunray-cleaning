@@ -650,44 +650,51 @@ def gallery_filter_controls(items: list[dict[str, object]]) -> str:
       </div>
       {group_markup}
     </div>
+    """
+
+
+def gallery_filter_script() -> str:
+    return """
     <script>
-      (() => {{
-        const panel = document.currentScript.previousElementSibling;
-        if (!panel || !panel.matches("[data-gallery-filters]")) return;
-        const section = panel.closest(".local-photo-gallery");
+      (() => {
+        const section = document.currentScript.closest(".local-photo-gallery");
+        if (!section) return;
+        const panel = section.querySelector("[data-gallery-filters]");
+        if (!panel) return;
         const cards = Array.from(section.querySelectorAll("[data-gallery-card]"));
         const count = panel.querySelector("[data-gallery-count]");
-        const state = {{ service: "all", location: "all", room: "all" }};
-        const matches = (card, category, value) => {{
+        const state = { service: "all", location: "all", room: "all" };
+        const matches = (card, category, value) => {
           if (value === "all") return true;
-          if (category === "location") {{
+          if (category === "location") {
             return [card.dataset.city, card.dataset.county, card.dataset.location].includes(value);
-          }}
+          }
           return card.dataset[category] === value;
-        }};
-        const applyFilters = () => {{
+        };
+        const applyFilters = () => {
           let visible = 0;
-          cards.forEach((card) => {{
+          cards.forEach((card) => {
             const show = Object.entries(state).every(([category, value]) => matches(card, category, value));
             card.hidden = !show;
             card.classList.toggle("is-hidden", !show);
             if (show) visible += 1;
-          }});
+          });
           if (count) count.textContent = String(visible);
-        }};
-        panel.addEventListener("click", (event) => {{
+        };
+        panel.addEventListener("click", (event) => {
           const button = event.target.closest("[data-gallery-filter]");
           if (!button) return;
           const category = button.dataset.galleryFilter;
           state[category] = button.dataset.filterValue || "all";
-          panel.querySelectorAll(`[data-gallery-filter="${{category}}"]`).forEach((peer) => {{
+          panel.querySelectorAll(`[data-gallery-filter="${category}"]`).forEach((peer) => {
             const active = peer === button;
             peer.classList.toggle("is-active", active);
             peer.setAttribute("aria-pressed", active ? "true" : "false");
-          }});
+          });
           applyFilters();
-        }});
-      }})();
+        });
+        applyFilters();
+      })();
     </script>
     """
 
@@ -899,6 +906,7 @@ def build_gallery_section(route: str) -> str:
         </figure>
         """
     filters = gallery_filter_controls(items) if is_gallery_page else ""
+    filter_script = gallery_filter_script() if is_gallery_page else ""
     actions = "" if is_gallery_page else f"""
     <div class="section-actions center">
       <a class="button button-outline" href="{gallery_link}">View full photo gallery</a>
@@ -916,6 +924,7 @@ def build_gallery_section(route: str) -> str:
     {filters}
     <div class="job-photo-grid">{cards}</div>
     {actions}
+    {filter_script}
   </div>
 </section>
 """
