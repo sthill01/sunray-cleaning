@@ -504,44 +504,19 @@ p {
   right: 20px;
   top: 20px;
   z-index: 4;
-  width: 176px;
-  height: 58px;
-  max-width: none;
+  max-width: min(88%, 360px);
   padding: 0;
   border: 0;
   background: transparent;
   box-shadow: none;
-  overflow: hidden;
-  transform: none;
-}
-
-.hero-trustindex-badge > div:not(.trustindex-badge-fallback) {
-  width: 352px !important;
-  max-width: 352px !important;
-  transform: scale(0.5);
-  transform-origin: top left;
-}
-
-.hero-trustindex-badge > div:not(.trustindex-badge-fallback) iframe {
-  width: 100% !important;
-  max-width: 100% !important;
-  transform: none;
-}
-
-.hero-trustindex-badge > iframe {
-  width: 352px !important;
-  max-width: 352px !important;
-  height: 116px !important;
-  transform: scale(0.5);
-  transform-origin: top left;
+  transform: scale(0.56);
+  transform-origin: top right;
 }
 
 .hero-trustindex-badge-inline {
   position: static;
   margin-top: 18px;
-  width: 176px;
-  height: 58px;
-  max-width: none;
+  max-width: 360px;
 }
 
 .trustindex-badge-fallback[hidden] {
@@ -557,9 +532,7 @@ p {
 }
 
 .hero-trustindex-badge .trustindex-badge-fallback {
-  min-width: 176px;
-  height: 58px;
-  padding: 7px 10px;
+  padding: 10px 14px;
   border: 1px solid rgba(31, 58, 104, 0.12);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.96);
