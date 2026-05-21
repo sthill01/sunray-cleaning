@@ -2,6 +2,11 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    if (url.hostname === "sunray-cleaning.com") {
+      url.hostname = "www.sunray-cleaning.com";
+      return Response.redirect(url.toString(), 301);
+    }
+
     if (url.pathname === "/api/quote") {
       if (request.method === "GET" || request.method === "HEAD") {
         return Response.redirect(new URL("/", request.url).toString(), 302);
