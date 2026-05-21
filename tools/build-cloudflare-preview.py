@@ -13,8 +13,16 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "cloudflare-preview"
 DATA = ROOT / "data"
 DEFAULT_BASE_URL = "https://sunray-cleaning-preview.pages.dev"
-BASE_URL = os.environ.get("SUNRAY_SITE_BASE_URL", DEFAULT_BASE_URL).rstrip("/")
-ALLOW_INDEXING = os.environ.get("SUNRAY_ALLOW_INDEXING", "").strip().lower() in {"1", "true", "yes", "index"}
+IS_CLOUDFLARE_MAIN = os.environ.get("CF_PAGES_BRANCH", "").strip() == "main"
+PRODUCTION_BASE_URL = "https://www.sunray-cleaning.com"
+BASE_URL = os.environ.get(
+    "SUNRAY_SITE_BASE_URL",
+    PRODUCTION_BASE_URL if IS_CLOUDFLARE_MAIN else DEFAULT_BASE_URL,
+).rstrip("/")
+ALLOW_INDEXING = (
+    os.environ.get("SUNRAY_ALLOW_INDEXING", "").strip().lower() in {"1", "true", "yes", "index"}
+    or IS_CLOUDFLARE_MAIN
+)
 ROBOTS_META = "index, follow" if ALLOW_INDEXING else "noindex, follow"
 PHONE = "+18016042189"
 PHONE_DISPLAY = "(801) 604-2189"
