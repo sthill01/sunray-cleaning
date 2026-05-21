@@ -5,6 +5,7 @@
     "build": "python tools/build-cloudflare-preview.py",
     "import:google-reviews": "node scripts/import-google-reviews.mjs",
     "import:social-gallery": "node scripts/import-meta-gallery.mjs",
+    "import:local-gallery": "python scripts/import-local-gallery.py",
     "build:cloudflare": "python tools/build-cloudflare-preview.py",
     "build:production": "node -e \"process.env.SUNRAY_SITE_BASE_URL='https://www.sunray-cleaning.com';process.env.SUNRAY_ALLOW_INDEXING='1';require('child_process').spawnSync('python',['tools/build-cloudflare-preview.py'],{stdio:'inherit',env:process.env});\"",
     "deploy:preview": "npx wrangler pages deploy cloudflare-preview --project-name sunray-cleaning-preview"

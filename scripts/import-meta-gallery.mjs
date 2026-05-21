@@ -265,7 +265,7 @@ function inferLocation(text) {
 }
 
 function routesFor({ service, city, county }) {
-  const routes = new Set(["/"]);
+  const routes = new Set(["/", "/gallery/"]);
   if (service.includes("Airbnb") || service.includes("VRBO")) routes.add("/services/short-term-rental-cleaning/");
   if (service.includes("Move-in")) routes.add("/services/move-in-move-out-cleaning/");
   if (service.includes("Deep")) routes.add("/services/deep-cleaning/");

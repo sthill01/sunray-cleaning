@@ -30,6 +30,9 @@ GTM_BODY = f"""<!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM_CONTAINER_ID}"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->"""
+TRUSTINDEX_HERO_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?6cd0f19720d6425ad7461ea011a"
+TRUSTINDEX_REVIEWS_LIST_SCRIPT = "https://cdn.trustindex.io/loader.js?d4ea3017201f425a6276a60d5ef"
+TRUSTINDEX_FORM_TRUSTMARK_SCRIPT = "https://cdn.trustindex.io/loader-cert.js?6d94b5a7228542333c86bb33560"
 
 LEGACY_REDIRECTS = {
     "/about-us": "/about/",
@@ -207,7 +210,8 @@ for parent_route, child_routes in LOCATION_CHILD_ROUTES.items():
 
 PRIORITY_ROUTES = [
     ("/", "Home"),
-    ("/gallery/", "Recent cleaning photo gallery"),
+    ("/gallery/", "Photo gallery and portfolio"),
+    ("/reviews/", "Google reviews"),
     ("/service-areas/", "Service area hubs"),
     ("/specials/", "Cleaning specials and current offers"),
     ("/discounts/", "Cleaning discounts and savings programs"),
@@ -268,6 +272,92 @@ BLOG_POST_SEO = {
         "location": "Jordanelle, Utah",
         "image": "/assets/summit-county-deep-cleaning-shower-detail-sun-ray.jpg",
     },
+    "/blog/airbnb-same-day-turnover-cleaning-park-city/": {
+        "service": "Same-day Airbnb and VRBO turnover cleaning",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-kitchen-turnover-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/canyons-village-kimball-junction-rental-cleaning/": {
+        "service": "Short-term rental turnover cleaning",
+        "location": "Canyons Village / Kimball Junction (Park City), Utah",
+        "image": "/assets/park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg",
+    },
+    "/blog/eco-friendly-cleaning-park-city-heber-valley/": {
+        "service": "Eco-friendly recurring cleaning",
+        "location": "Park City / Heber Valley, Utah",
+        "image": "/assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/hard-water-cleaning-tips-summit-wasatch-county/": {
+        "service": "Hard water stain removal and descaling",
+        "location": "Summit County / Wasatch County, Utah",
+        "image": "/assets/park-city-deep-cleaning-bathroom-detail-sun-ray.jpg",
+    },
+    "/blog/hard-water-cleaning-tips-park-city-mountain-homes/": {
+        "service": "Hard water stain removal and descaling",
+        "location": "Park City / Summit County, Utah",
+        "image": "/assets/park-city-deep-cleaning-bathroom-detail-sun-ray.jpg",
+    },
+    "/blog/how-to-choose-recurring-cleaning-service-park-city/": {
+        "service": "Recurring house cleaning service selection",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/jordanelle-deer-creek-cabin-cleaning-weekend-owners/": {
+        "service": "Cabin and second-home cleaning",
+        "location": "Jordanelle / Deer Creek, Utah",
+        "image": "/assets/heber-city-residential-kitchen-cleaning-sun-ray.jpg",
+    },
+    "/blog/kamas-oakley-home-cleaning-eastern-summit-county/": {
+        "service": "Local home cleaning services",
+        "location": "Kamas / Oakley (Summit County), Utah",
+        "image": "/assets/summit-county-deep-cleaning-shower-detail-sun-ray.jpg",
+    },
+    "/blog/local-cleaning-services-vs-national-apps-park-city/": {
+        "service": "Local cleaning services vs national apps",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/midway-cleaning-services-heber-valley-homeowners/": {
+        "service": "Midway home cleaning services",
+        "location": "Midway / Heber Valley, Utah",
+        "image": "/assets/midway-recurring-bedroom-cleaning-sun-ray.jpg",
+    },
+    "/blog/move-in-cleaning-checklist-heber-city-midway/": {
+        "service": "Move-in cleaning checklist",
+        "location": "Heber City / Midway, Utah",
+        "image": "/assets/heber-city-move-out-bathroom-vanity-cleaning-sun-ray.jpg",
+    },
+    "/blog/post-construction-cleaning-new-builds-heber-valley/": {
+        "service": "Post-construction cleaning",
+        "location": "Heber Valley, Utah",
+        "image": "/assets/park-city-move-clean-empty-room-may-6-sun-ray.jpg",
+    },
+    "/blog/prepare-park-city-home-winter-rental-season/": {
+        "service": "Winter rental season prep and deep cleaning",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-kitchen-turnover-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/recurring-vs-deep-cleaning-which-service-need/": {
+        "service": "Recurring vs deep cleaning comparison",
+        "location": "Park City / Heber City / Midway, Utah",
+        "image": "/assets/park-city-bathroom-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/summer-entertaining-prep-mountain-home-guest-ready/": {
+        "service": "Summer guest-ready home cleaning",
+        "location": "Park City / Heber City / Midway, Utah",
+        "image": "/assets/park-city-open-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/vacation-rental-cleaning-checklist-utah-mountain-properties/": {
+        "service": "Vacation rental turnover cleaning checklist",
+        "location": "Park City / Heber City / Midway, Utah",
+        "image": "/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg",
+    },
+    "/blog/what-does-deep-clean-include-room-by-room/": {
+        "service": "Deep cleaning scope by room",
+        "location": "Park City / Heber City / Midway, Utah",
+        "image": "/assets/park-city-deep-cleaning-bathroom-detail-sun-ray.jpg",
+    },
+
 }
 
 
@@ -539,7 +629,9 @@ def page_focus(route: str, h1: str) -> str:
     if route == "/":
         return "house cleaning, Airbnb cleaning, deep cleaning, recurring cleaning, and move cleaning in Park City, Heber City, Midway, Summit County, and Wasatch County"
     if route == "/gallery/":
-        return "recent cleaning photos from Park City, Heber City, Midway, Summit County, and Wasatch County homes"
+        return "photo gallery and cleaning portfolio for Park City, Heber City, Midway, Summit County, and Wasatch County homes"
+    if route == "/reviews/":
+        return "Google reviews and customer testimonials for Sun Ray Cleaning Services"
     if kind == "service":
         return f"{slug.lower()} in Park City, Heber City, Midway, Summit County, and Wasatch County"
     if kind == "location":
@@ -551,7 +643,7 @@ def page_focus(route: str, h1: str) -> str:
 
 def selected_gallery_items(route: str, limit: int | None = None) -> list[dict[str, object]]:
     if limit is None:
-        limit = 48 if route == "/gallery/" else 6
+        limit = len(JOB_GALLERY) if route == "/gallery/" else 6
 
     exact: list[dict[str, object]] = []
     fallback: list[dict[str, object]] = []
@@ -574,6 +666,129 @@ def selected_gallery_items(route: str, limit: int | None = None) -> list[dict[st
     )
     picked = exact + [item for item in fallback if item not in exact]
     return picked[:limit]
+
+
+def filter_slug(value: object) -> str:
+    text = str(value or "").strip().lower()
+    text = re.sub(r"&", " and ", text)
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    return re.sub(r"^-+|-+$", "", text) or "all"
+
+
+def gallery_filter_button(label: str, category: str, value: str, count: int | None = None, active: bool = False) -> str:
+    count_markup = f" <span>{count}</span>" if count is not None else ""
+    active_attr = ' aria-pressed="true"' if active else ' aria-pressed="false"'
+    active_class = " is-active" if active else ""
+    return (
+        f'<button class="gallery-filter-chip{active_class}" type="button" '
+        f'data-gallery-filter="{html.escape(category)}" data-filter-value="{html.escape(value)}"{active_attr}>'
+        f'{html.escape(label)}{count_markup}</button>'
+    )
+
+
+def gallery_filter_controls(items: list[dict[str, object]]) -> str:
+    total = len(items)
+
+    def option_counts(field: str, fallback: str = "") -> list[tuple[str, str, int]]:
+        counts: dict[str, int] = {}
+        labels: dict[str, str] = {}
+        for item in items:
+            label = str(item.get(field, "") or fallback).strip()
+            if not label:
+                continue
+            slug = filter_slug(label)
+            counts[slug] = counts.get(slug, 0) + 1
+            labels.setdefault(slug, label)
+        return sorted(((labels[slug], slug, count) for slug, count in counts.items()), key=lambda row: (-row[2], row[0]))
+
+    location_counts: dict[str, int] = {}
+    location_labels: dict[str, str] = {}
+    for item in items:
+        for field in ("city", "county"):
+            label = str(item.get(field, "")).strip()
+            if not label:
+                continue
+            slug = filter_slug(label)
+            location_counts[slug] = location_counts.get(slug, 0) + 1
+            location_labels.setdefault(slug, label)
+    locations = sorted(
+        ((location_labels[slug], slug, count) for slug, count in location_counts.items()),
+        key=lambda row: (0 if row[0] in {"Park City", "Heber City", "Midway"} else 1, -row[2], row[0]),
+    )
+
+    groups = [
+        ("service", "Cleaning category", option_counts("service")),
+        ("location", "Location category", locations),
+        ("room", "Room type", option_counts("room")),
+    ]
+    group_markup = ""
+    for category, label, options in groups:
+        buttons = gallery_filter_button("All", category, "all", total, True)
+        buttons += "".join(gallery_filter_button(option_label, category, slug, count) for option_label, slug, count in options)
+        group_markup += f"""
+        <div class="gallery-filter-group" data-filter-group="{html.escape(category)}">
+          <span>{html.escape(label)}</span>
+          <div class="gallery-filter-options">{buttons}</div>
+        </div>
+        """
+    return f"""
+    <div class="gallery-filter-panel" data-gallery-filters>
+      <div class="gallery-filter-head">
+        <div>
+          <p class="eyebrow">Filter photos</p>
+          <h3>View by cleaning category, location, or room.</h3>
+        </div>
+        <p class="gallery-filter-count"><strong data-gallery-count>{total}</strong> photos shown</p>
+      </div>
+      {group_markup}
+    </div>
+    """
+
+
+def gallery_filter_script() -> str:
+    return """
+    <script>
+      (() => {
+        const section = document.currentScript.closest(".local-photo-gallery");
+        if (!section) return;
+        const panel = section.querySelector("[data-gallery-filters]");
+        if (!panel) return;
+        const cards = Array.from(section.querySelectorAll("[data-gallery-card]"));
+        const count = panel.querySelector("[data-gallery-count]");
+        const state = { service: "all", location: "all", room: "all" };
+        const matches = (card, category, value) => {
+          if (value === "all") return true;
+          if (category === "location") {
+            return [card.dataset.city, card.dataset.county, card.dataset.location].includes(value);
+          }
+          return card.dataset[category] === value;
+        };
+        const applyFilters = () => {
+          let visible = 0;
+          cards.forEach((card) => {
+            const show = Object.entries(state).every(([category, value]) => matches(card, category, value));
+            card.hidden = !show;
+            card.classList.toggle("is-hidden", !show);
+            if (show) visible += 1;
+          });
+          if (count) count.textContent = String(visible);
+        };
+        panel.addEventListener("click", (event) => {
+          const button = event.target.closest("[data-gallery-filter]");
+          if (!button) return;
+          const category = button.dataset.galleryFilter;
+          state[category] = button.dataset.filterValue || "all";
+          panel.querySelectorAll(`[data-gallery-filter="${category}"]`).forEach((peer) => {
+            const active = peer === button;
+            peer.classList.toggle("is-active", active);
+            peer.setAttribute("aria-pressed", active ? "true" : "false");
+          });
+          applyFilters();
+        });
+        applyFilters();
+      })();
+    </script>
+    """
 
 
 def photo_place_schema(item: dict[str, object]) -> dict[str, object]:
@@ -655,12 +870,32 @@ def review_excerpt(text: str, max_chars: int = 230) -> str:
     return html.escape(shortened + "...")
 
 
-def build_reviews_section() -> str:
-    source = REVIEWS.get("sourceName", "Google Business Profile")
-    rating = float(REVIEWS.get("ratingValue", 5.0))
-    count = int(REVIEWS.get("reviewCount", 50))
+def build_review_cards(limit: int | None = 3) -> str:
     featured = ordered_featured_reviews()
-    profile_url = str(REVIEWS.get("profileUrl", "")).strip()
+    selected = featured if limit is None else featured[:limit]
+    if not selected:
+        return """
+        <article class="review-proof-card"><h3>Trusted by local customers</h3><p>Sun Ray Cleaning is proud to help homeowners, hosts, and property managers keep their homes clean, comfortable, and ready for the next visit.</p></article>
+        <article class="review-proof-card"><h3>Clear communication</h3><p>Customers choose Sun Ray for friendly updates, no-surprise quotes, and cleaning plans that match each home.</p></article>
+        <article class="review-proof-card"><h3>Consistent home care</h3><p>From Park City rentals to Heber City and Midway homes, the team focuses on reliable work and thoughtful details.</p></article>
+        """
+    review_cards = ""
+    for review in selected:
+        text = review_excerpt(str(review.get("text", "")))
+        author = html.escape(str(review.get("author", "Google reviewer")))
+        photo = str(review.get("profilePhotoUrl", ""))
+        review_rating = review.get("rating", 5)
+        star_markup = "&#9733;" * int(review_rating)
+        date_text = html.escape(str(review.get("dateText", "")))
+        photo_markup = ""
+        if photo:
+            photo_markup = f'<img class="reviewer-photo" src="{html.escape(photo)}" alt="{author} Google review profile photo" loading="lazy">'
+        date_markup = f"<span>{date_text}</span>" if date_text else ""
+        review_cards += f'<article class="review-proof-card">{photo_markup}<div class="review-stars" aria-label="{review_rating} out of 5 stars">{star_markup}</div><blockquote>{text}</blockquote><cite>{author}<small>Google review</small>{date_markup}</cite></article>'
+    return review_cards
+
+
+def build_review_highlight_items() -> str:
     highlights = REVIEWS.get(
         "summaryHighlights",
         [
@@ -669,42 +904,70 @@ def build_reviews_section() -> str:
             "Clients appreciate Sun Ray's ability to handle last-minute requests effectively.",
         ],
     )
-    highlight_items = "".join(
+    return "".join(
         f"<li><span aria-hidden=\"true\">&#10003;</span><strong>{html.escape(str(item))}</strong></li>"
         for item in highlights[:3]
     )
+
+
+def build_reviews_section(route: str) -> str:
+    rating = float(REVIEWS.get("ratingValue", 5.0))
+    count = int(REVIEWS.get("reviewCount", 50))
+    profile_url = str(REVIEWS.get("profileUrl", "")).strip()
+    highlight_items = build_review_highlight_items()
+    reviews_url = html.escape(route_to_clean_rel(route, "/reviews/"))
     profile_button = (
         f'<a class="button button-navy review-google-link" href="{html.escape(profile_url)}" target="_blank" rel="noopener">Review us on Google</a>'
         if profile_url
         else ""
     )
-    review_cards = ""
-    if featured:
-        for review in featured[:7]:
-            text = review_excerpt(str(review.get("text", "")))
-            author = html.escape(str(review.get("author", "Google reviewer")))
-            photo = str(review.get("profilePhotoUrl", ""))
-            review_rating = review.get("rating", 5)
-            star_markup = "&#9733;" * int(review_rating)
-            date_text = html.escape(str(review.get("dateText", "")))
-            photo_markup = ""
-            if photo:
-                photo_markup = f'<img class="reviewer-photo" src="{html.escape(photo)}" alt="{author} Google review profile photo" loading="lazy">'
-            date_markup = f"<span>{date_text}</span>" if date_text else ""
-            review_cards += f'<article class="review-proof-card">{photo_markup}<div class="review-stars" aria-label="{review_rating} out of 5 stars">{star_markup}</div><blockquote>{text}</blockquote><cite>{author}<small>Google review</small>{date_markup}</cite></article>'
-    else:
-        review_cards = """
-        <article class="review-proof-card"><h3>Trusted by local customers</h3><p>Sun Ray Cleaning is proud to help homeowners, hosts, and property managers keep their homes clean, comfortable, and ready for the next visit.</p></article>
-        <article class="review-proof-card"><h3>Clear communication</h3><p>Customers choose Sun Ray for friendly updates, no-surprise quotes, and cleaning plans that match each home.</p></article>
-        <article class="review-proof-card"><h3>Consistent home care</h3><p>From Park City rentals to Heber City and Midway homes, the team focuses on reliable work and thoughtful details.</p></article>
-        """
     return f"""
-<section class="section section-cream review-proof" aria-labelledby="review-proof-title">
+<section class="section section-cream review-proof review-proof-compact" aria-labelledby="review-proof-title">
   <div class="container">
     <div class="section-head center">
       <p class="eyebrow">Customer testimonials</p>
-      <h2 id="review-proof-title">Real Google reviews from Sun Ray Cleaning customers.</h2>
+      <h2 id="review-proof-title">5-star Google reviews from Sun Ray Cleaning customers.</h2>
       <p>Customers count on Sun Ray Cleaning for dependable service, clear communication, and homes that feel ready to enjoy again.</p>
+    </div>
+    <div class="review-summary-band" aria-label="{rating:.1f} out of 5 average Google rating from {count} reviews">
+      <div class="rating-inline">
+        <strong>{rating:.1f}</strong>
+        <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <small>({count} Google reviews)</small>
+      </div>
+      <a class="button button-yellow review-google-link" href="{reviews_url}">Read customer reviews</a>
+      {profile_button}
+    </div>
+    <div class="review-wall-grid review-proof-grid-compact">
+      <article class="review-summary-card">
+        <div class="review-stars" aria-label="{rating:.1f} out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <h3>Review highlights</h3>
+        <ul class="review-highlights">{highlight_items}</ul>
+        <p class="review-source-note">Based on recent Google reviews.</p>
+      </article>
+      <div class="review-card-stack">{build_review_cards(3)}</div>
+    </div>
+  </div>
+</section>
+"""
+
+
+def build_full_reviews_section(route: str) -> str:
+    rating = float(REVIEWS.get("ratingValue", 5.0))
+    count = int(REVIEWS.get("reviewCount", 50))
+    profile_url = str(REVIEWS.get("profileUrl", "")).strip()
+    profile_button = (
+        f'<a class="button button-navy review-google-link" href="{html.escape(profile_url)}" target="_blank" rel="noopener">Review us on Google</a>'
+        if profile_url
+        else ""
+    )
+    return f"""
+<section class="section section-cream review-proof reviews-list-section" aria-labelledby="reviews-list-title">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Customer testimonials</p>
+      <h2 id="reviews-list-title">Sun Ray Cleaning Google reviews.</h2>
+      <p>Real customer feedback helps homeowners and hosts see what it is like to work with Sun Ray before they request a quote.</p>
     </div>
     <div class="review-summary-band" aria-label="{rating:.1f} out of 5 average Google rating from {count} reviews">
       <div class="rating-inline">
@@ -714,18 +977,198 @@ def build_reviews_section() -> str:
       </div>
       {profile_button}
     </div>
-    <div class="review-wall-grid">
+    <div class="trustindex-widget-shell trustindex-review-list-widget" data-trustindex-widget aria-label="Sun Ray Cleaning Google reviews powered by Trustindex">
+      <script defer async src="{TRUSTINDEX_REVIEWS_LIST_SCRIPT}"></script>
+    </div>
+    <div class="review-wall-grid review-fallback-static reviews-page-fallback" data-review-fallback hidden>
       <article class="review-summary-card">
         <div class="review-stars" aria-label="{rating:.1f} out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <h3>Review highlights</h3>
-        <ul class="review-highlights">{highlight_items}</ul>
+        <ul class="review-highlights">{build_review_highlight_items()}</ul>
         <p class="review-source-note">Based on recent Google reviews.</p>
       </article>
-      <div class="review-card-stack">{review_cards}</div>
+      <div class="review-card-stack review-card-stack-wide">{build_review_cards(None)}</div>
+    </div>
+    <noscript>
+      <div class="review-wall-grid reviews-page-fallback">
+        <article class="review-summary-card">
+          <div class="review-stars" aria-label="{rating:.1f} out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h3>Review highlights</h3>
+          <ul class="review-highlights">{build_review_highlight_items()}</ul>
+          <p class="review-source-note">Based on recent Google reviews.</p>
+        </article>
+        <div class="review-card-stack review-card-stack-wide">{build_review_cards(None)}</div>
       </div>
+    </noscript>
+    <script>
+      (() => {{
+        const section = document.currentScript.closest(".reviews-list-section");
+        const widget = section?.querySelector("[data-trustindex-widget]");
+        const fallback = section?.querySelector("[data-review-fallback]");
+        const hasWidgetContent = () => {{
+          if (!widget) return false;
+          return Array.from(widget.children).some((child) => {{
+            if (child.tagName === "SCRIPT" || child.tagName === "NOSCRIPT") return false;
+            if (child.querySelector("iframe")) return true;
+            return child.getBoundingClientRect().height > 80 && child.textContent.trim().length > 20;
+          }});
+        }};
+        const syncFallback = () => {{
+          if (fallback) fallback.hidden = hasWidgetContent();
+        }};
+        if (widget && fallback && "MutationObserver" in window) {{
+          new MutationObserver(syncFallback).observe(widget, {{ childList: true, subtree: true }});
+        }}
+        window.setTimeout(syncFallback, 2500);
+        window.setTimeout(syncFallback, 5500);
+        window.setTimeout(syncFallback, 11000);
+      }})();
+    </script>
   </div>
 </section>
 """
+
+
+def build_trustindex_badge(extra_class: str = "") -> str:
+    classes = "trustindex-badge-embed"
+    if extra_class:
+        classes += f" {extra_class}"
+    return f"""
+<div class="{classes}" data-trustindex-badge aria-label="5 star Google reviews verified by Trustindex">
+  <script defer async src="{TRUSTINDEX_HERO_BADGE_SCRIPT}"></script>
+  <div class="trustindex-badge-fallback" data-trustindex-fallback hidden>
+    <span class="trustindex-fallback-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+    <strong>5.0 Google Reviews</strong>
+    <small>Verified by Trustindex</small>
+  </div>
+</div>
+"""
+
+
+def build_form_trustmark() -> str:
+    return f"""
+<div class="quote-trustmark" aria-label="Sun Ray Cleaning trustmark powered by Trustindex">
+  <script defer async src="{TRUSTINDEX_FORM_TRUSTMARK_SCRIPT}"></script>
+</div>
+"""
+
+
+def build_prominent_trust_section(route: str) -> str:
+    reviews_url = html.escape(route_to_clean_rel(route, "/reviews/"))
+    return f"""
+<section class="section trustindex-feature-band" aria-label="Sun Ray Cleaning Google review proof">
+  <div class="container trustindex-feature-panel">
+    <div>
+      <p class="eyebrow">Google review proof</p>
+      <h2>5-star reviews from homeowners and hosts.</h2>
+      <p>Sun Ray Cleaning customers mention thorough work, clear communication, and reliable help for homes, rentals, and move-ready spaces.</p>
+      <a class="button button-outline" href="{reviews_url}">Read reviews</a>
+    </div>
+    {build_trustindex_badge("trustindex-feature-badge")}
+  </div>
+</section>
+"""
+
+
+def trustindex_fallback_script() -> str:
+    return """
+<script data-trustindex-fallback-script>
+  (() => {
+    const syncTrustindexBadgeFallbacks = () => {
+      document.querySelectorAll("[data-trustindex-badge]").forEach((shell) => {
+        const fallback = shell.querySelector("[data-trustindex-fallback]");
+        if (!fallback) return;
+        const hasRenderedWidget = Array.from(shell.children).some((child) => {
+          if (child.tagName === "SCRIPT" || child.hasAttribute("data-trustindex-fallback")) return false;
+          if (child.querySelector("iframe")) return true;
+          return child.getBoundingClientRect().height > 20 && child.textContent.trim().length > 5;
+        });
+        fallback.hidden = hasRenderedWidget;
+      });
+    };
+    window.setTimeout(syncTrustindexBadgeFallbacks, 2500);
+    window.setTimeout(syncTrustindexBadgeFallbacks, 5500);
+    window.setTimeout(syncTrustindexBadgeFallbacks, 11000);
+    window.setTimeout(syncTrustindexBadgeFallbacks, 18000);
+  })();
+</script>
+"""
+
+
+def inject_hero_review_badge(content: str) -> str:
+    if "hero-trustindex-badge" in content:
+        return content
+    badge = build_trustindex_badge("hero-trustindex-badge")
+    media_count = 0
+    for pattern in (
+        r'(<div class="page-hero-media">\s*<img\b[^>]*>)',
+        r'(<div class="hero-media">\s*<img\b[^>]*>)',
+    ):
+        content, count = re.subn(
+            pattern,
+            lambda match: match.group(1) + badge,
+            content,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+        media_count += count
+    if media_count:
+        return content
+    inline_badge = build_trustindex_badge("hero-trustindex-badge hero-trustindex-badge-inline")
+    content, _count = re.subn(
+        r'(<div class="hero-actions">.*?</div>)',
+        lambda match: match.group(1) + inline_badge,
+        content,
+        count=1,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    return content
+
+
+def inject_quote_form_trustmarks(content: str) -> str:
+    if "quote-trustmark" in content:
+        return content
+    return re.sub(
+        r'(<div class="form-actions">.*?</div>)',
+        lambda match: match.group(1) + build_form_trustmark(),
+        content,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+
+def inject_footer_trust_badge(content: str) -> str:
+    if "footer-trustindex-badge" in content:
+        return content
+    return re.sub(
+        r'(<footer class="site-footer"><div class="container footer-grid"><div>.*?<p>.*?</p>)',
+        lambda match: match.group(1) + build_trustindex_badge("footer-trustindex-badge"),
+        content,
+        count=1,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+
+def inject_prominent_trust_section(content: str, route: str) -> str:
+    if route not in {"/about/", "/contact/"} or "trustindex-feature-band" in content:
+        return content
+    return re.sub(
+        r'(<section class="page-hero">.*?</section>)',
+        lambda match: match.group(1) + build_prominent_trust_section(route),
+        content,
+        count=1,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+
+def inject_trustindex_enhancements(content: str, route: str) -> str:
+    if route == "/reviews/":
+        content = content.replace('<div data-sunray-full-reviews></div>', build_full_reviews_section(route))
+    content = inject_hero_review_badge(content)
+    content = inject_prominent_trust_section(content, route)
+    content = inject_quote_form_trustmarks(content)
+    content = inject_footer_trust_badge(content)
+    if "data-trustindex-badge" in content and "data-trustindex-fallback-script" not in content and "</body>" in content:
+        content = content.replace("</body>", trustindex_fallback_script() + "\n</body>", 1)
+    return content
 
 
 def build_gallery_section(route: str) -> str:
@@ -734,14 +1177,14 @@ def build_gallery_section(route: str) -> str:
         return ""
     is_gallery_page = route == "/gallery/"
     gallery_link = html.escape(route_to_clean_rel(route, "/gallery/"))
-    eyebrow = "Full photo gallery" if is_gallery_page else "Recent cleaning photos"
+    eyebrow = "Photo gallery and portfolio" if is_gallery_page else "Recent cleaning photos"
     title = (
-        "Real Sun Ray cleaning photos from local homes."
+        "All approved Sun Ray cleaning photos in one local portfolio."
         if is_gallery_page
         else "See the kind of clean Sun Ray brings into real homes."
     )
     description = (
-        "Browse recent kitchens, bathrooms, bedrooms, living rooms, turnover resets and deep-clean details prepared for Park City, Heber City, Midway, Summit County and Wasatch County homes."
+        "Browse kitchens, bathrooms, bedrooms, living rooms, turnover resets and deep-clean details prepared for Park City, Heber City, Midway, Summit County and Wasatch County homes."
         if is_gallery_page
         else "These recent photos show kitchens, living rooms, bedrooms, bathrooms, and guest spaces after Sun Ray Cleaning visits around Park City, Heber City, Midway, Summit County, and Wasatch County."
     )
@@ -751,15 +1194,39 @@ def build_gallery_section(route: str) -> str:
         asset_src = asset_rel(route, asset)
         alt = html.escape(str(item.get("alt", "Sun Ray Cleaning Services job photo")))
         caption = html.escape(str(item.get("caption", "Recent Sun Ray Cleaning job photo.")))
-        location = html.escape(str(item.get("location", "Northern Utah")))
-        service = html.escape(str(item.get("service", "Residential cleaning")))
-        room = html.escape(str(item.get("room", "Home")))
+        raw_location = str(item.get("location", "Northern Utah"))
+        raw_service = str(item.get("service", "Residential cleaning"))
+        raw_room = str(item.get("room", "Home"))
+        raw_city = str(item.get("city", "")).strip()
+        raw_county = str(item.get("county", "")).strip()
+        location = html.escape(raw_location)
+        service = html.escape(raw_service)
+        room = html.escape(raw_room)
+        location_tag = raw_city or raw_county or raw_location
+        card_attrs = (
+            f'data-gallery-card data-service="{html.escape(filter_slug(raw_service))}" '
+            f'data-room="{html.escape(filter_slug(raw_room))}" '
+            f'data-city="{html.escape(filter_slug(raw_city))}" '
+            f'data-county="{html.escape(filter_slug(raw_county))}" '
+            f'data-location="{html.escape(filter_slug(raw_location))}"'
+        )
+        tags = "".join(
+            f"<span>{html.escape(value)}</span>"
+            for value in [raw_room, raw_service, location_tag]
+            if value
+        )
         cards += f"""
-        <figure class="job-photo-card">
+        <figure class="job-photo-card" {card_attrs}>
           <img src="{html.escape(asset_src)}" alt="{alt}" loading="lazy">
-          <figcaption><strong>{caption}</strong><span>{room} - {service} - {location}</span></figcaption>
+          <figcaption>
+            <strong>{caption}</strong>
+            <span>{room} - {service} - {location}</span>
+            <div class="job-photo-tags" aria-label="Photo tags">{tags}</div>
+          </figcaption>
         </figure>
         """
+    filters = gallery_filter_controls(items) if is_gallery_page else ""
+    filter_script = gallery_filter_script() if is_gallery_page else ""
     actions = "" if is_gallery_page else f"""
     <div class="section-actions center">
       <a class="button button-outline" href="{gallery_link}">View full photo gallery</a>
@@ -774,8 +1241,10 @@ def build_gallery_section(route: str) -> str:
       <h2 id="local-gallery-title">{title}</h2>
       <p>{description}</p>
     </div>
+    {filters}
     <div class="job-photo-grid">{cards}</div>
     {actions}
+    {filter_script}
   </div>
 </section>
 """
@@ -869,7 +1338,7 @@ def build_structured_data(content: str, route: str) -> str:
             "inLanguage": "en-US",
         },
         {
-            "@type": "WebPage",
+            "@type": ["CollectionPage", "ImageGallery"] if route == "/gallery/" else "WebPage",
             "@id": page_id,
             "url": page_url,
             "name": title,
@@ -1097,7 +1566,7 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
     schema = build_structured_data(content, route)
     content = content.replace("</head>", f"  {schema}\n</head>", 1)
     if "review-proof" not in content and "</main>" in content:
-        content = content.replace("</main>", build_reviews_section() + "\n</main>", 1)
+        content = content.replace("</main>", build_reviews_section(route) + "\n</main>", 1)
     if "local-photo-gallery" not in content and "</main>" in content:
         gallery_section = build_gallery_section(route)
         if route == "/gallery/" and '<section class="section section-navy cta-band"' in content:
@@ -1146,11 +1615,11 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     )
     content = content.replace(
         '<div><h3>Contact</h3><a href="contact-gpt.html">Get a quote</a>',
-        '<div><h3>Contact</h3><a href="gallery-gpt.html">Photo gallery</a><a href="specials-gpt.html">Specials</a><a href="discounts-gpt.html">Discounts</a><a href="contact-gpt.html">Get a quote</a>',
+        '<div><h3>Contact</h3><a href="gallery-gpt.html">Photo gallery</a><a href="reviews-gpt.html">Reviews</a><a href="specials-gpt.html">Specials</a><a href="discounts-gpt.html">Discounts</a><a href="contact-gpt.html">Get a quote</a>',
     )
     content = content.replace(
         '<div><h3>Contact</h3><a href="../contact-gpt.html">Get a quote</a>',
-        '<div><h3>Contact</h3><a href="../gallery-gpt.html">Photo gallery</a><a href="../specials-gpt.html">Specials</a><a href="../discounts-gpt.html">Discounts</a><a href="../contact-gpt.html">Get a quote</a>',
+        '<div><h3>Contact</h3><a href="../gallery-gpt.html">Photo gallery</a><a href="../reviews-gpt.html">Reviews</a><a href="../specials-gpt.html">Specials</a><a href="../discounts-gpt.html">Discounts</a><a href="../contact-gpt.html">Get a quote</a>',
     )
 
     def replace_attr(match: re.Match[str]) -> str:
@@ -1229,7 +1698,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
 
     content = re.sub(
         r'<section class="section" data-gpt-testimonials>.*?</section>',
-        build_reviews_section(),
+        build_reviews_section(route),
         content,
         count=1,
         flags=re.IGNORECASE | re.DOTALL,
@@ -1270,6 +1739,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         content,
     )
     content = re.sub(r'<meta name="robots" content="[^"]+">', f'<meta name="robots" content="{ROBOTS_META}">', content)
+    content = inject_trustindex_enhancements(content, route)
     return content
 
 

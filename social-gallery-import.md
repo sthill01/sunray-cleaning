@@ -1,17 +1,51 @@
-# Sun Ray Instagram and Facebook Gallery Import
+# Sun Ray Photo Gallery and Social Import
 
 This repo now supports an official Meta Graph API import path for Sun Ray social photos. It does not scrape Instagram or Facebook.
 
-## Manual job-photo gallery batch
+## Website photo gallery
 
-The May 2026 uploaded job-photo batch is staged in two website/social-ready locations:
+The public website gallery route is `/gallery/`. It is generated from approved local job photos and approved Instagram/Facebook imports.
 
-- Website gallery images: `assets/job-gallery-2026-05/`
-- Social crops: `assets/social-ready-2026-05/square/` and `assets/social-ready-2026-05/portrait/`
-- Website metadata and local SEO schema source: `data/job-gallery.json`
+- Gallery page source: `gallery-gpt.html`
+- Website route after build: `cloudflare-preview/gallery/index.html`
+- Website gallery images: `assets/job-gallery-2026-05/` and future `assets/job-gallery-YYYY-MM/` folders
+- Social imports: `assets/social/`
+- Local website metadata and schema source: `data/job-gallery.json`
+- Social import metadata and approval source: `data/social-gallery.json`
 - Draft Facebook, Instagram, and Google Business Profile posting queue: `data/photo-post-queue.json`
 
-Keep new real-job photos as drafts first. Review each photo for privacy, customer approval, room/service/location accuracy, and caption quality before publishing it on the website or pushing it to Facebook, Instagram, or Google Business Profile.
+## Local incoming photo folder
+
+Drop new approved cleaning photos into:
+
+```text
+incoming-sunray-photos/
+```
+
+Recommended filename pattern:
+
+```text
+park-city-kitchen-deep-clean-2026-05-15.jpg
+heber-city-bathroom-recurring-cleaning.jpg
+midway-airbnb-turnover-bedroom.jpg
+```
+
+Run the local importer:
+
+```powershell
+python -m pip install pillow pillow-heif
+npm run import:local-gallery
+```
+
+The importer copies supported images into `assets/job-gallery-YYYY-MM/`, converts them to optimized JPEGs, appends SEO metadata to `data/job-gallery.json`, and treats committed incoming photos as approved for website display. GitHub Actions cannot read photos from your PC directly, so photos must be committed or uploaded into this repo folder before the weekly automation can process them.
+
+## Manual job-photo gallery batch
+
+The May 2026 uploaded job-photo batch is staged in these website/social-ready locations:
+
+- Social crops: `assets/social-ready-2026-05/square/` and `assets/social-ready-2026-05/portrait/`
+
+For customer/job photos that are not already public or pre-approved, review each photo for privacy, customer approval, room/service/location accuracy, and caption quality before publishing it on the website or pushing it to Facebook, Instagram, or Google Business Profile.
 
 ## What the importer does
 
@@ -123,12 +157,14 @@ After the secrets are saved in GitHub, you can run the import without opening VS
 4. Optional, if you use separate tokens:
    - `INSTAGRAM_ACCESS_TOKEN`
    - `FACEBOOK_PAGE_ACCESS_TOKEN`
-5. Open **Actions > Import Instagram and Facebook Gallery Photos**.
+5. Open **Actions > Import Website Gallery Photos**.
 6. Click **Run workflow**.
 7. Choose `all`, `instagram`, or `facebook`.
-8. Keep `approve` off for the first run so imported photos are saved as drafts.
+8. Keep `approve` off for manual test runs if you want imported photos saved as drafts.
 
-The workflow commits updates to `data/social-gallery.json` and `assets/social/`. Cloudflare Pages can then deploy from the GitHub branch using the repo build command:
+The workflow also runs every Friday at 2:00 AM Mountain Time. Because GitHub schedules use UTC, the workflow triggers at both 08:00 and 09:00 UTC and uses an America/Denver time guard so only the true 2:00 AM run imports photos. Scheduled runs auto-approve public Sun Ray Instagram/Facebook photos for the website gallery and process any committed files in `incoming-sunray-photos/`.
+
+The workflow commits updates to `data/social-gallery.json`, `data/job-gallery.json`, `assets/social/`, and `assets/job-gallery-YYYY-MM/`. Cloudflare Pages can then deploy from the GitHub branch using the repo build command:
 
 ```text
 npm run build:cloudflare
