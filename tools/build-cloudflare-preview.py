@@ -13,7 +13,13 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "cloudflare-preview"
 DATA = ROOT / "data"
 DEFAULT_BASE_URL = "https://sunray-cleaning-preview.pages.dev"
-IS_CLOUDFLARE_MAIN = os.environ.get("CF_PAGES_BRANCH", "").strip() == "main"
+BUILD_BRANCH = (
+    os.environ.get("CF_PAGES_BRANCH")
+    or os.environ.get("WORKERS_CI_BRANCH")
+    or os.environ.get("CF_BRANCH")
+    or ""
+).strip()
+IS_CLOUDFLARE_MAIN = BUILD_BRANCH == "main"
 PRODUCTION_BASE_URL = "https://www.sunray-cleaning.com"
 BASE_URL = os.environ.get(
     "SUNRAY_SITE_BASE_URL",
@@ -1818,12 +1824,8 @@ def write_platform_files(routes: list[str]) -> None:
         headers,
         encoding="utf-8",
     )
-    host_redirect = ""
-    if ALLOW_INDEXING and BASE_URL == "https://www.sunray-cleaning.com":
-        host_redirect = "https://sunray-cleaning.com/ https://www.sunray-cleaning.com/ 301\nhttps://sunray-cleaning.com/* https://www.sunray-cleaning.com/:splat 301\n"
     (OUT / "_redirects").write_text(
         f"""# Clean URL redirects for Cloudflare Pages
-{host_redirect}
 {legacy_redirect_lines}
 /*.html /:splat/ 301
 /index.html / 301
