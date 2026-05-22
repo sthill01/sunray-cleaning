@@ -504,19 +504,19 @@ p {
   right: 20px;
   top: 20px;
   z-index: 4;
-  max-width: min(86%, 330px);
+  max-width: min(88%, 360px);
   padding: 0;
   border: 0;
   background: transparent;
   box-shadow: none;
-  transform: scale(0.5);
+  transform: scale(0.575);
   transform-origin: top right;
 }
 
 .hero-trustindex-badge-inline {
   position: static;
   margin-top: 18px;
-  max-width: 330px;
+  max-width: 360px;
 }
 
 .trustindex-badge-fallback[hidden] {
@@ -1498,13 +1498,30 @@ p {
 }
 
 .footer-trustindex-badge {
-  align-items: flex-start;
-  justify-content: flex-start;
+  display: block;
   margin-top: 18px;
-  padding: 8px;
-  max-width: 290px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
+  width: min(100%, 380px);
+  min-height: 118px;
+  padding: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.footer-trustindex-badge img {
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  filter: none;
+}
+
+.footer-trustindex-badge a {
+  display: inline-flex;
+  margin: 0;
+  color: inherit;
+}
+
+.footer-trustindex-badge span {
+  color: inherit;
 }
 
 .footer-trustindex-badge .trustindex-badge-fallback strong {
@@ -1850,34 +1867,34 @@ p {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(240px, 1.5fr) repeat(4, minmax(135px, 1fr));
+  grid-template-columns: minmax(340px, 1.5fr) repeat(4, minmax(130px, 1fr));
   gap: 30px;
 }
 
-.site-footer img {
+.footer-grid > div > img {
   width: 190px;
   margin-bottom: 16px;
   filter: brightness(0) invert(1);
 }
 
-.site-footer p,
-.site-footer span {
+.footer-grid > div > p,
+.footer-grid > div > span {
   color: var(--stone-400);
 }
 
-.site-footer h3 {
+.footer-grid > div > h3 {
   color: var(--white);
   font-size: 1rem;
 }
 
-.site-footer a {
+.footer-grid > div > a {
   display: block;
   margin: 7px 0;
   color: var(--navy-soft);
   text-decoration: none;
 }
 
-.site-footer a:hover {
+.footer-grid > div > a:hover {
   color: var(--yellow);
 }
 

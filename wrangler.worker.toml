@@ -1,6 +1,10 @@
 name = "sunray-cleaning"
 compatibility_date = "2026-04-28"
 main = "worker.js"
+routes = [
+  { pattern = "sunray-cleaning.com/*", zone_name = "sunray-cleaning.com" },
+  { pattern = "www.sunray-cleaning.com/*", zone_name = "sunray-cleaning.com" },
+]
 
 [assets]
 directory = "cloudflare-preview"
