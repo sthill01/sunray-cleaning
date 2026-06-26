@@ -17,6 +17,7 @@ Cloudflare Pages settings:
 - Build output directory: `cloudflare-preview`
 - Preview project name: `sunray-cleaning-preview`
 - Quote form webhook variable: `SUNRAY_QUOTE_WEBHOOK_URL`
+- Optional Google Sheets export webhook variable: `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
 
 The generated preview intentionally uses `noindex` headers and robots rules until it is promoted from preview to production.
 
@@ -33,16 +34,25 @@ Production Cloudflare Pages settings:
 - Build command: `npm run build:production`
 - Build output directory: `cloudflare-preview`
 - Production canonical base URL: `https://www.sunray-cleaning.com`
-- Required environment variable for quote forwarding: `SUNRAY_QUOTE_WEBHOOK_URL`
+- Required environment variable for quote forwarding: `RESEND_API_KEY`, `SUNRAY_QUOTE_WEBHOOK_URL`, or `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
+- Optional Google Sheets export webhook variable: `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
 - Google Tag Manager container: `GTM-W78H8S3C`
 
 The production build sets crawlable robots metadata, removes the preview `X-Robots-Tag: noindex` header, writes a crawlable `robots.txt`, and generates sitemap/canonical URLs for `https://www.sunray-cleaning.com`. Attach `www.sunray-cleaning.com` as the primary Cloudflare Pages custom domain and redirect `sunray-cleaning.com` to `www.sunray-cleaning.com`.
 
 ## Quote form routing
 
-Cloudflare preview forms post to `/api/quote`. The form only forwards submissions to email/CRM automation after `SUNRAY_QUOTE_WEBHOOK_URL` is added in Cloudflare Pages environment variables. Use a Make or Zapier webhook that sends the submitted JSON payload to the preferred Sun Ray email inbox.
+Cloudflare preview forms post to `/api/quote`. The form forwards valid submissions through the configured delivery paths:
 
-If the webhook is missing or unavailable, the form shows an error and keeps the phone/SMS fallback visible: `(801) 604-2189`.
+- `RESEND_API_KEY` sends the quote notification email.
+- `SUNRAY_QUOTE_WEBHOOK_URL` sends the full JSON payload to CRM or automation.
+- `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` sends the same JSON payload to the Google Sheets lead log webhook.
+
+Webhook delivery is additive, so a Sheets export can run alongside inbox notifications.
+
+If all delivery paths are missing or unavailable, the form shows an error and keeps the phone/SMS fallback visible: `(801) 604-2189`.
+
+The runtime quote script captures `gclid`, `gbraid`, `wbraid`, `msclkid`, `fbclid`, `ttclid`, `li_fat_id`, UTM fields, landing page, first landing page and referrer into hidden form fields. The Google Sheets Apps Script template lives at `integrations/google-sheets-lead-webhook.gs`; paste it into the Apps Script editor for the lead log spreadsheet, deploy it as a web app, and save the deployment URL as `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` in Cloudflare.
 
 ## Google Tag Manager conversion tracking
 

@@ -47,47 +47,20 @@ export async function onRequestPost(context) {
     pageUrl: context.request.headers.get("referer") || "",
   };
 
-  if (context.env.SUNRAY_QUOTE_WEBHOOK_URL) {
-    const webhookResponse = await fetch(context.env.SUNRAY_QUOTE_WEBHOOK_URL, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+  const delivery = await deliverQuote(context.env, payload);
 
-    if (!webhookResponse.ok) {
-      return quoteResponse({
-        wantsJson,
-        status: 502,
-        ok: false,
-        title: "Quote request could not be forwarded",
-        message: FORWARDING_ERROR_MESSAGE,
-      });
-    }
-
-    return quoteResponse({
-      wantsJson,
-      status: 200,
-      ok: true,
-      title: "Quote request received",
-      message: SUCCESS_MESSAGE,
-    });
-  }
-
-  if (!context.env.RESEND_API_KEY) {
+  if (delivery.missingConfig) {
     return quoteResponse({
       wantsJson,
       status: 503,
       ok: false,
       title: "Quote forwarding is not configured yet",
       message:
-        "This form is ready, but email forwarding needs RESEND_API_KEY or SUNRAY_QUOTE_WEBHOOK_URL in Cloudflare Pages. Please call or text (801) 604-2189 for live scheduling.",
+        "This form is ready, but quote forwarding needs RESEND_API_KEY, SUNRAY_QUOTE_WEBHOOK_URL, or SUNRAY_QUOTE_SHEETS_WEBHOOK_URL in Cloudflare Pages. Please call or text (801) 604-2189 for live scheduling.",
     });
   }
 
-  const emailResponse = await sendQuoteEmail(context.env, payload);
-
-  if (!emailResponse.ok) {
-    console.error("Sun Ray quote email failed", emailResponse.status, await safeResponseText(emailResponse));
+  if (!delivery.ok) {
     return quoteResponse({
       wantsJson,
       status: 502,
@@ -197,6 +170,68 @@ async function sendQuoteEmail(env, payload) {
     },
     body: JSON.stringify(body),
   });
+}
+
+async function deliverQuote(env, payload) {
+  const webhookTargets = getWebhookTargets(env);
+  const webhookResults = [];
+  let emailOk = false;
+  let emailConfigured = Boolean(env.RESEND_API_KEY);
+
+  if (emailConfigured) {
+    const emailResponse = await sendQuoteEmail(env, payload);
+    emailOk = emailResponse.ok;
+
+    if (!emailResponse.ok) {
+      console.error("Sun Ray quote email failed", emailResponse.status, await safeResponseText(emailResponse));
+    }
+  }
+
+  for (const target of webhookTargets) {
+    webhookResults.push(await sendQuoteWebhook(target, payload));
+  }
+
+  const webhookOk = webhookResults.some((result) => result.ok);
+  webhookResults
+    .filter((result) => !result.ok)
+    .forEach((result) => {
+      console.error("Sun Ray quote webhook failed", result.name, result.status || "", result.error || "");
+    });
+
+  return {
+    ok: emailOk || webhookOk,
+    missingConfig: !emailConfigured && webhookTargets.length === 0,
+  };
+}
+
+function getWebhookTargets(env) {
+  const seen = new Set();
+  return [
+    { name: "SUNRAY_QUOTE_WEBHOOK_URL", url: env.SUNRAY_QUOTE_WEBHOOK_URL },
+    { name: "SUNRAY_QUOTE_SHEETS_WEBHOOK_URL", url: env.SUNRAY_QUOTE_SHEETS_WEBHOOK_URL },
+  ].filter((target) => {
+    const url = String(target.url || "").trim();
+    if (!url || seen.has(url)) return false;
+    seen.add(url);
+    target.url = url;
+    return true;
+  });
+}
+
+async function sendQuoteWebhook(target, payload) {
+  try {
+    const response = await fetch(target.url, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    return response.ok
+      ? { ok: true, name: target.name, status: response.status }
+      : { ok: false, name: target.name, status: response.status, error: await safeResponseText(response) };
+  } catch (error) {
+    return { ok: false, name: target.name, error: error?.message || String(error) };
+  }
 }
 
 async function evaluateQuoteRequest(request, env, quote) {
@@ -463,6 +498,23 @@ function buildEmailBody(payload) {
     "preferred-timing": "Preferred timing",
     notes: "Notes",
     message: "Message",
+    gclid: "GCLID",
+    gbraid: "GBRAID",
+    wbraid: "WBRAID",
+    msclkid: "Microsoft Click ID",
+    fbclid: "Facebook Click ID",
+    ttclid: "TikTok Click ID",
+    li_fat_id: "LinkedIn Click ID",
+    utm_source: "UTM source",
+    utm_medium: "UTM medium",
+    utm_campaign: "UTM campaign",
+    utm_term: "UTM term",
+    utm_content: "UTM content",
+    utm_id: "UTM ID",
+    first_landing_page: "First landing page",
+    landing_page: "Landing page",
+    referrer: "Referrer",
+    attribution_updated_at: "Attribution updated at",
     pageUrl: "Page URL",
     submittedAt: "Submitted at",
   };

@@ -5,8 +5,18 @@
     text: "sunray_text_cta_click",
     submit: "sunray_quote_submit_click",
   };
+  var attributionStorageKey = "sunray_attribution_v1";
+  var clickIdFieldNames = ["gclid", "gbraid", "wbraid", "msclkid", "fbclid", "ttclid", "li_fat_id"];
+  var utmFieldNames = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_id"];
+  var attributionFieldNames = clickIdFieldNames.concat(utmFieldNames, [
+    "first_landing_page",
+    "landing_page",
+    "referrer",
+    "attribution_updated_at",
+  ]);
   var modal;
   var lastFocused;
+  var currentAttribution = {};
 
   function getFocusable(container) {
     return Array.prototype.slice.call(
@@ -67,6 +77,57 @@
     return prefix + "_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
   }
 
+  function sanitizeAttributionValue(value, maxLength) {
+    return String(value || "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, maxLength || 1000);
+  }
+
+  function readStoredAttribution() {
+    try {
+      return JSON.parse(window.localStorage.getItem(attributionStorageKey) || "{}") || {};
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function writeStoredAttribution(attribution) {
+    try {
+      window.localStorage.setItem(attributionStorageKey, JSON.stringify(attribution));
+    } catch (error) {
+      // Storage can be unavailable in private or restricted browser contexts.
+    }
+  }
+
+  function updateAttributionFromPage() {
+    var stored = readStoredAttribution();
+    var params = new URLSearchParams(window.location.search || "");
+    var hasNewClickData = false;
+
+    clickIdFieldNames.concat(utmFieldNames).forEach(function (fieldName) {
+      var value = sanitizeAttributionValue(params.get(fieldName), 500);
+      if (value) {
+        stored[fieldName] = value;
+        hasNewClickData = true;
+      }
+    });
+
+    if (!stored.first_landing_page || hasNewClickData) {
+      stored.first_landing_page = sanitizeAttributionValue(window.location.href, 1000);
+    }
+
+    if (!stored.referrer && document.referrer) {
+      stored.referrer = sanitizeAttributionValue(document.referrer, 1000);
+    }
+
+    stored.landing_page = sanitizeAttributionValue(window.location.href, 1000);
+    stored.attribution_updated_at = new Date().toISOString();
+    currentAttribution = stored;
+    writeStoredAttribution(stored);
+    return stored;
+  }
+
   function isQuoteForm(form) {
     if (!form) return false;
     var formName = [
@@ -114,6 +175,35 @@
       elapsed.setAttribute("name", "submission-elapsed-ms");
       form.appendChild(elapsed);
     }
+  }
+
+  function ensureHiddenField(form, fieldName) {
+    var field = form.querySelector('input[name="' + fieldName + '"]');
+    if (!field) {
+      field = document.createElement("input");
+      field.setAttribute("type", "hidden");
+      field.setAttribute("name", fieldName);
+      form.appendChild(field);
+    }
+    return field;
+  }
+
+  function ensureAttributionFields(form) {
+    if (!isQuoteForm(form)) return;
+    attributionFieldNames.forEach(function (fieldName) {
+      ensureHiddenField(form, fieldName);
+    });
+    populateAttributionFields(form);
+  }
+
+  function populateAttributionFields(form) {
+    if (!isQuoteForm(form)) return;
+    var attribution = currentAttribution && Object.keys(currentAttribution).length ? currentAttribution : updateAttributionFromPage();
+
+    attributionFieldNames.forEach(function (fieldName) {
+      var field = ensureHiddenField(form, fieldName);
+      field.value = sanitizeAttributionValue(attribution[fieldName], 1000);
+    });
   }
 
   function updateSpamTrapTiming(form) {
@@ -201,15 +291,23 @@
     trackCtaClick(element, ctaType);
   }
 
-  function sendLeadConversionEvent() {
-    pushTrackingEvent("sunray_lead_form_submit", {
+  function sendLeadConversionEvent(form) {
+    var payload = {
       form_name: "Sun Ray Quote Request",
       lead_type: "quote_form",
       page_location: window.location.href,
       page_title: document.title,
       conversion_value: 1,
       currency: "USD",
+    };
+
+    clickIdFieldNames.concat(utmFieldNames).forEach(function (fieldName) {
+      var field = form ? form.querySelector('input[name="' + fieldName + '"]') : null;
+      var value = field ? field.value : currentAttribution[fieldName];
+      if (value) payload[fieldName] = value;
     });
+
+    pushTrackingEvent("sunray_lead_form_submit", payload);
   }
 
   function handleQuoteSubmit(event) {
@@ -219,7 +317,9 @@
 
     event.preventDefault();
     ensureSpamTrapFields(form);
+    ensureAttributionFields(form);
     updateSpamTrapTiming(form);
+    populateAttributionFields(form);
     var submitButton = form.querySelector('button[type="submit"]');
     var previousText = submitButton ? submitButton.textContent : "";
     setFormState(form, "", "");
@@ -247,11 +347,12 @@
       .then(function (payload) {
         setFormState(form, "success", payload.message || "Thanks. Your quote request was received.");
         if (payload.trackConversion !== false) {
-          sendLeadConversionEvent();
+          sendLeadConversionEvent(form);
         }
         form.reset();
         var startedAt = form.querySelector('input[name="form-started-at"]');
         if (startedAt) startedAt.value = String(Date.now());
+        populateAttributionFields(form);
       })
       .catch(function (error) {
         setFormState(form, "error", error.message || "Something went wrong. Please call or text (801) 604-2189.");
@@ -265,11 +366,13 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    updateAttributionFromPage();
     document.addEventListener("click", handleCtaClick, true);
 
     modal = document.querySelector("[data-quote-modal]");
     document.querySelectorAll(".quote-form").forEach(function (form) {
       ensureSpamTrapFields(form);
+      ensureAttributionFields(form);
       form.addEventListener("submit", handleQuoteSubmit);
     });
 
