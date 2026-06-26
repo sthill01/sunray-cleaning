@@ -82,6 +82,55 @@
     return formName.indexOf("quote") !== -1 || formName.indexOf("lead") !== -1;
   }
 
+  function ensureSpamTrapFields(form) {
+    if (!isQuoteForm(form)) return;
+
+    if (!form.querySelector('input[name="website"]')) {
+      var trap = document.createElement("label");
+      trap.setAttribute("aria-hidden", "true");
+      trap.style.cssText = "position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;";
+      trap.textContent = "Website";
+
+      var trapInput = document.createElement("input");
+      trapInput.setAttribute("type", "text");
+      trapInput.setAttribute("name", "website");
+      trapInput.setAttribute("tabindex", "-1");
+      trapInput.setAttribute("autocomplete", "off");
+      trap.appendChild(trapInput);
+      form.appendChild(trap);
+    }
+
+    if (!form.querySelector('input[name="form-started-at"]')) {
+      var startedAt = document.createElement("input");
+      startedAt.setAttribute("type", "hidden");
+      startedAt.setAttribute("name", "form-started-at");
+      startedAt.value = String(Date.now());
+      form.appendChild(startedAt);
+    }
+
+    if (!form.querySelector('input[name="submission-elapsed-ms"]')) {
+      var elapsed = document.createElement("input");
+      elapsed.setAttribute("type", "hidden");
+      elapsed.setAttribute("name", "submission-elapsed-ms");
+      form.appendChild(elapsed);
+    }
+  }
+
+  function updateSpamTrapTiming(form) {
+    var startedAt = form.querySelector('input[name="form-started-at"]');
+    var elapsed = form.querySelector('input[name="submission-elapsed-ms"]');
+    if (!startedAt || !elapsed) return;
+
+    var startedAtMs = Number.parseInt(startedAt.value || "0", 10);
+    if (!startedAtMs) {
+      startedAt.value = String(Date.now());
+      elapsed.value = "";
+      return;
+    }
+
+    elapsed.value = String(Math.max(0, Date.now() - startedAtMs));
+  }
+
   function getSectionLabel(element) {
     var section = element.closest("header, footer, section, nav, [data-section], .hero-actions, .cta-actions, .form-actions");
     if (!section) return "";
@@ -169,6 +218,8 @@
     if (!action || action === "#") return;
 
     event.preventDefault();
+    ensureSpamTrapFields(form);
+    updateSpamTrapTiming(form);
     var submitButton = form.querySelector('button[type="submit"]');
     var previousText = submitButton ? submitButton.textContent : "";
     setFormState(form, "", "");
@@ -195,8 +246,12 @@
       })
       .then(function (payload) {
         setFormState(form, "success", payload.message || "Thanks. Your quote request was received.");
-        sendLeadConversionEvent();
+        if (payload.trackConversion !== false) {
+          sendLeadConversionEvent();
+        }
         form.reset();
+        var startedAt = form.querySelector('input[name="form-started-at"]');
+        if (startedAt) startedAt.value = String(Date.now());
       })
       .catch(function (error) {
         setFormState(form, "error", error.message || "Something went wrong. Please call or text (801) 604-2189.");
@@ -214,6 +269,7 @@
 
     modal = document.querySelector("[data-quote-modal]");
     document.querySelectorAll(".quote-form").forEach(function (form) {
+      ensureSpamTrapFields(form);
       form.addEventListener("submit", handleQuoteSubmit);
     });
 
