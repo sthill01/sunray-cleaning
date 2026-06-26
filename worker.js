@@ -28,11 +28,50 @@ export default {
   },
 };
 
+const SUCCESS_MESSAGE =
+  "Thanks. Sun Ray has your cleaning details and will follow up using the contact information you shared.";
+const FORWARDING_ERROR_MESSAGE =
+  "Something went wrong while forwarding your request. Please call or text (801) 604-2189 and we will help right away.";
+
 async function handleQuotePost(request, env) {
   const wantsJson = request.headers.get("accept")?.includes("application/json");
-  const quote = await parseQuoteRequest(request);
+  let quote;
+
+  try {
+    quote = await parseQuoteRequest(request);
+  } catch (error) {
+    console.warn("Sun Ray quote parse failed", error?.message || error);
+    return quoteResponse({
+      wantsJson,
+      status: 400,
+      ok: false,
+      title: "Quote request is missing details",
+      message:
+        "Please check the form details and try again, or call or text (801) 604-2189 and we will help right away.",
+    });
+  }
+
+  const spamCheck = await evaluateQuoteRequest(request, env, quote);
+  if (!spamCheck.ok) {
+    console.warn("Sun Ray quote blocked", {
+      reasons: spamCheck.reasons,
+      score: spamCheck.score,
+      ip: getClientIp(request) ? "present" : "missing",
+    });
+
+    return quoteResponse({
+      wantsJson,
+      status: 200,
+      ok: true,
+      title: "Quote request received",
+      message: SUCCESS_MESSAGE,
+      trackConversion: false,
+    });
+  }
+
+  const cleanQuote = cleanQuotePayload(quote);
   const payload = {
-    ...quote,
+    ...cleanQuote,
     submittedAt: new Date().toISOString(),
     source: "sunray-cloudflare-worker",
     pageUrl: request.headers.get("referer") || "",
@@ -51,8 +90,7 @@ async function handleQuotePost(request, env) {
         status: 502,
         ok: false,
         title: "Quote request could not be forwarded",
-        message:
-          "Something went wrong while forwarding your request. Please call or text (801) 604-2189 and we will help right away.",
+        message: FORWARDING_ERROR_MESSAGE,
       });
     }
 
@@ -61,8 +99,7 @@ async function handleQuotePost(request, env) {
       status: 200,
       ok: true,
       title: "Quote request received",
-      message:
-        "Thanks. Sun Ray has your cleaning details and will follow up using the contact information you shared.",
+      message: SUCCESS_MESSAGE,
     });
   }
 
@@ -86,8 +123,7 @@ async function handleQuotePost(request, env) {
       status: 502,
       ok: false,
       title: "Quote request could not be forwarded",
-      message:
-        "Something went wrong while forwarding your request. Please call or text (801) 604-2189 and we will help right away.",
+      message: FORWARDING_ERROR_MESSAGE,
     });
   }
 
@@ -96,8 +132,7 @@ async function handleQuotePost(request, env) {
     status: 200,
     ok: true,
     title: "Quote request received",
-    message:
-      "Thanks. Sun Ray has your cleaning details and will follow up using the contact information you shared.",
+    message: SUCCESS_MESSAGE,
   });
 }
 
@@ -141,6 +176,252 @@ async function sendQuoteEmail(env, payload) {
     },
     body: JSON.stringify(body),
   });
+}
+
+async function evaluateQuoteRequest(request, env, quote) {
+  const reasons = [];
+  let score = 0;
+
+  if (hasFilledHoneypot(quote)) {
+    return { ok: false, score: 10, reasons: ["honeypot"] };
+  }
+
+  if (!hasTrustedReferer(request)) {
+    score += 2;
+    reasons.push("untrusted_referer");
+  }
+
+  const turnstile = await verifyTurnstileIfConfigured(request, env, quote);
+  if (!turnstile.ok) {
+    return { ok: false, score: 10, reasons: [turnstile.reason] };
+  }
+
+  const rateLimit = await checkRateLimit(request, env);
+  if (!rateLimit.ok) {
+    return { ok: false, score: 10, reasons: [rateLimit.reason] };
+  }
+
+  const content = scoreQuoteContent(quote);
+  score += content.score;
+  reasons.push(...content.reasons);
+
+  return {
+    ok: score < 4,
+    score,
+    reasons,
+  };
+}
+
+function cleanQuotePayload(quote) {
+  const internalFields = new Set([
+    "_gotcha",
+    "bot-field",
+    "business-url",
+    "cf-turnstile-response",
+    "company-website",
+    "form-started-at",
+    "submission-elapsed-ms",
+    "turnstileToken",
+    "url",
+    "website",
+  ]);
+
+  return Object.fromEntries(Object.entries(quote).filter(([key]) => !internalFields.has(key)));
+}
+
+function hasFilledHoneypot(quote) {
+  return ["_gotcha", "bot-field", "business-url", "company-website", "url", "website"].some((key) =>
+    String(quote[key] || "").trim(),
+  );
+}
+
+function hasTrustedReferer(request) {
+  const referer = request.headers.get("referer") || "";
+  if (!referer) return true;
+
+  try {
+    const hostname = new URL(referer).hostname.toLowerCase();
+    return (
+      hostname === "sunray-cleaning.com" ||
+      hostname === "www.sunray-cleaning.com" ||
+      hostname.endsWith(".pages.dev") ||
+      hostname === "localhost" ||
+      hostname === "127.0.0.1"
+    );
+  } catch {
+    return false;
+  }
+}
+
+async function verifyTurnstileIfConfigured(request, env, quote) {
+  if (!env.TURNSTILE_SECRET_KEY) {
+    return { ok: true };
+  }
+
+  const token = String(quote["cf-turnstile-response"] || quote.turnstileToken || "").trim();
+  if (!token) {
+    return { ok: false, reason: "missing_turnstile" };
+  }
+
+  const formData = new FormData();
+  formData.append("secret", env.TURNSTILE_SECRET_KEY);
+  formData.append("response", token);
+
+  const clientIp = getClientIp(request);
+  if (clientIp) {
+    formData.append("remoteip", clientIp);
+  }
+
+  try {
+    const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: formData,
+    });
+    const result = await response.json();
+    return result.success ? { ok: true } : { ok: false, reason: "failed_turnstile" };
+  } catch (error) {
+    console.error("Sun Ray Turnstile verification failed", error?.message || error);
+    return { ok: false, reason: "turnstile_error" };
+  }
+}
+
+async function checkRateLimit(request, env) {
+  const store = env.SUNRAY_QUOTE_RATE_LIMIT;
+  if (!store || typeof store.get !== "function" || typeof store.put !== "function") {
+    return { ok: true };
+  }
+
+  const clientIp = getClientIp(request);
+  if (!clientIp) {
+    return { ok: true };
+  }
+
+  const bucket = Math.floor(Date.now() / 3600000);
+  const key = `quote:${bucket}:${await sha256(clientIp)}`;
+  const current = Number.parseInt((await store.get(key)) || "0", 10);
+
+  if (current >= 3) {
+    return { ok: false, reason: "rate_limited" };
+  }
+
+  await store.put(key, String(current + 1), { expirationTtl: 7200 });
+  return { ok: true };
+}
+
+function getClientIp(request) {
+  return request.headers.get("cf-connecting-ip") || request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "";
+}
+
+async function sha256(value) {
+  const input = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", input);
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("")
+    .slice(0, 24);
+}
+
+function scoreQuoteContent(quote) {
+  const reasons = [];
+  let score = 0;
+  const serviceArea = normalizedValue(quote["service-area"] || quote.city || quote.location);
+  const notes = normalizedValue(quote.notes || quote.message);
+  const homeSize = normalizedValue(quote["home-size"]);
+  const combinedText = normalizedValue(Object.values(quote).join(" "));
+  const marketingHits = [
+    "ai visibility",
+    "backlink",
+    "digital marketing",
+    "guest post",
+    "hire seo geek",
+    "lead generation",
+    "more leads",
+    "quick seo questionnaire",
+    "rank higher",
+    "sales",
+    "search traffic",
+    "seo",
+    "supersupportstaff",
+    "traffic growth",
+    "visibility and targeting",
+  ].filter((term) => combinedText.includes(term));
+
+  if (hasUrl(notes) || hasUrl(homeSize) || hasUrl(serviceArea)) {
+    score += 4;
+    reasons.push("url_in_quote");
+  }
+
+  if (marketingHits.length >= 2) {
+    score += 4;
+    reasons.push("marketing_pitch");
+  } else if (marketingHits.length === 1) {
+    score += 1;
+    reasons.push("marketing_keyword");
+  }
+
+  if (serviceArea && !isLikelyServiceArea(serviceArea) && (marketingHits.length || hasUrl(notes))) {
+    score += 2;
+    reasons.push("non_local_marketing");
+  }
+
+  if (notes.length > 1200) {
+    score += 1;
+    reasons.push("long_notes");
+  }
+
+  const elapsedMs = Number.parseInt(String(quote["submission-elapsed-ms"] || ""), 10);
+  if (Number.isFinite(elapsedMs) && elapsedMs > 0 && elapsedMs < 2000) {
+    score += 2;
+    reasons.push("fast_submit");
+  }
+
+  const email = String(quote.email || "").trim();
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    score += 2;
+    reasons.push("invalid_email");
+  }
+
+  const phoneDigits = String(quote.phone || "").replace(/\D/g, "");
+  if (phoneDigits && phoneDigits.length < 7) {
+    score += 1;
+    reasons.push("short_phone");
+  }
+
+  return { score, reasons };
+}
+
+function normalizedValue(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function hasUrl(value) {
+  return /https?:\/\/|www\.|[a-z0-9-]+\.(com|net|org|io|co|biz|info|ru|cn|xyz|top|site|online|click|link|me)(\/|\b)/i.test(
+    value,
+  );
+}
+
+function isLikelyServiceArea(value) {
+  return [
+    "canyons",
+    "coalville",
+    "deer valley",
+    "heber",
+    "hideout",
+    "jordanelle",
+    "kamas",
+    "kimball junction",
+    "midway",
+    "oakley",
+    "park city",
+    "salt lake",
+    "snyderville",
+    "summit",
+    "utah",
+    "wasatch",
+  ].some((area) => value.includes(area));
 }
 
 function buildSubject(payload) {
@@ -203,12 +484,13 @@ function toTitleCase(value) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
-function quoteResponse({ wantsJson, status, ok, title, message }) {
+function quoteResponse({ wantsJson, status, ok, title, message, trackConversion = ok }) {
   if (wantsJson) {
     return Response.json(
       {
         ok,
         message,
+        trackConversion,
       },
       {
         status,
