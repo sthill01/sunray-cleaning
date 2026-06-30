@@ -391,6 +391,14 @@
     "image_heber-city-residential-kitchen-cleaning-sun-ray": {
       "label": "heber-city-residential-kitchen-cleaning-sun-ray.jpg",
       "type": "Image"
+    },
+    "image_park-city-residential-kitchen-cleaning-may-6-sun-ray": {
+      "label": "park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+      "type": "Image"
+    },
+    "image_park-city-move-clean-empty-room-may-6-sun-ray": {
+      "label": "park-city-move-clean-empty-room-may-6-sun-ray.jpg",
+      "type": "Image"
     }
   },
   "edges": [
@@ -830,6 +838,36 @@
       "depicts"
     ],
     [
+      "image_park-city-move-clean-empty-room-may-6-sun-ray",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_park-city-move-clean-empty-room-may-6-sun-ray",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_park-city-move-clean-empty-room-may-6-sun-ray",
+      "service_move-in-out",
+      "depicts"
+    ],
+    [
+      "image_park-city-residential-kitchen-cleaning-may-6-sun-ray",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_park-city-residential-kitchen-cleaning-may-6-sun-ray",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_park-city-residential-kitchen-cleaning-may-6-sun-ray",
+      "service_residential",
+      "depicts"
+    ],
+    [
       "image_park-city-vrbo-living-room-turnover-cleaning-sun-ray",
       "location_park-city",
       "depicts"
@@ -977,6 +1015,16 @@
     [
       "proof",
       "image_park-city-deep-cleaning-bathroom-detail-sun-ray",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_park-city-move-clean-empty-room-may-6-sun-ray",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_park-city-residential-kitchen-cleaning-may-6-sun-ray",
       "contains"
     ],
     [

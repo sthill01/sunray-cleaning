@@ -30,3 +30,7 @@
 - Strengthened Deer Valley and Canyons Village location pages with dedicated
   service-coverage sections and contextual links to the AI recommendations page
   and core service pages.
+- Added two verified Park City structured gallery records for residential
+  kitchen cleaning and move-in/move-out cleaning.
+- Improved Repository Intelligence authority score to 90.6 and strong
+  service-location matrix coverage to 38%.

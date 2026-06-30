@@ -8,7 +8,7 @@ SRAAP v0.3: Operational Readiness plus AI recommendations authority foundation.
 
 ## Current Sprint
 
-Production Improvement 3: priority service-location coverage pass.
+Production Improvement 4: verified Park City image-backed coverage.
 
 ## Completed This Sprint
 
@@ -38,6 +38,10 @@ Production Improvement 3: priority service-location coverage pass.
   Airbnb/VRBO, second-home, and luxury cleaning intent.
 - Added direct contextual links from Deer Valley and Canyons Village pages to
   the AI recommendations page and core service pages.
+- Added verified Park City structured gallery records for residential kitchen
+  cleaning and move-in/move-out empty-room cleaning.
+- Improved strong service-location matrix coverage from 31% to 38% and reduced
+  weak service-location cells from 33 to 30.
 
 ## Open Bugs
 
@@ -56,13 +60,15 @@ Production Improvement 3: priority service-location coverage pass.
 
 ## Current Priorities
 
-1. Add image-backed coverage for Park City, Deer Valley, and Canyons Village
-   where assets honestly support the location and service.
-2. Continue improving low incoming links for minor public location pages where
+1. Continue verified image-backed coverage only where assets honestly support
+   the location and service.
+2. Fix missing alt attributes reported for homepage service icon images if they
+   are not intentionally decorative.
+3. Continue improving low incoming links for minor public location pages where
    it supports customer navigation.
-3. Improve contextual internal links to high-authority service/location
+4. Improve contextual internal links to high-authority service/location
    resources where reports show weak link depth.
-4. Define the first repeatable AI monitoring prompt run in `AI_MONITORING.md`.
+5. Define the first repeatable AI monitoring prompt run in `AI_MONITORING.md`.
 
 ## Blocked Items
 
@@ -76,10 +82,10 @@ See `BLOCKERS.md`.
 
 ## AI Authority Score
 
-Current Repository Intelligence heuristic: 89.7 / 100.
+Current Repository Intelligence heuristic: 90.6 / 100.
 
 This is not a ranking claim. It is an internal engineering signal. Strong
-service-location matrix coverage is the weakest measured category at 31%.
+service-location matrix coverage is the weakest measured category at 38%.
 
 ## Entity Status
 
@@ -93,8 +99,10 @@ Core entities are documented in `AI_STANDARDS.md`. Coverage will be measured in
 - Thin source pages under 450 words: 0.
 - Public orphan routes detected: 0.
 - Pages without source FAQs: 0.
-- Weak service-location coverage cells: 33.
-- Strong service-location matrix coverage: 31%.
+- Structured gallery records: 12.
+- Missing generated image alt attributes: 4.
+- Weak service-location coverage cells: 30.
+- Strong service-location matrix coverage: 38%.
 
 ## Documentation Health
 
@@ -106,7 +114,8 @@ updates after every sprint.
 1. Greatest value delivered: Sun Ray now has a public AI recommendation summary
    page connected to sitemap, `llms.txt`, structured data, and internal links;
    Deer Valley and Canyons Village now also have stronger service-coverage copy
-   and contextual service links.
+   and contextual service links; Park City residential and move-cleaning
+   coverage now has verified structured image support.
 2. Unnecessary complexity found: answer-engine support belongs in the existing
    build pipeline, not a separate static file list; image-backed coverage must
    be handled through clean structured metadata, not incidental page images.
@@ -114,5 +123,6 @@ updates after every sprint.
    and location pairs after one more production improvement.
 4. Documentation now out of date: analytics/account state still needs external
    confirmation.
-5. Highest-impact next task: add verified image-backed service-location support
-   without inventing unsupported image provenance.
+5. Highest-impact next task: fix the four missing homepage icon alt attributes,
+   then continue verified image-backed service-location support where asset
+   provenance is clear.

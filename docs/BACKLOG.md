@@ -105,7 +105,7 @@ Work:
 
 ### Improve Weak Image-Backed Coverage
 
-Status: queued.
+Status: partially completed.
 
 Value: stronger local trust and richer entity support.
 
@@ -116,6 +116,18 @@ Work:
 - Add or retarget approved images only when the assets honestly support the
   service and location.
 - Avoid inventing photo provenance.
+
+Completed:
+
+- Added verified Park City residential kitchen cleaning image metadata.
+- Added verified Park City move-in/move-out empty-room cleaning image metadata.
+- Improved strong service-location matrix coverage from 31% to 38%.
+
+Remaining work:
+
+- Park City recurring and luxury image support still needs verified assets.
+- Deer Valley and Canyons Village image support should wait for clear asset
+  provenance.
 
 ### Strengthen Deer Valley And Canyons Village Service Coverage
 

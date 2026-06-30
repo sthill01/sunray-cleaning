@@ -28,7 +28,7 @@ Generated: 2026-06-30
 | /service-location/hideout/ | Hideout |  | 755 | 3 | 9 |
 | /service-location/homestead/ | Homestead | /service-location/midway/ | 745 | 3 | 6 |
 | /service-location/interlaken/ | Interlaken | /service-location/midway/ | 745 | 3 | 6 |
-| /service-location/jeremy-ranch/ | Jeremy Ranch | /service-location/summit-county/ | 754 | 3 | 5 |
+| /service-location/jeremy-ranch/ | Jeremy Ranch | /service-location/summit-county/ | 754 | 3 | 6 |
 | /service-location/jordanelle/ | Jordanelle | /service-location/wasatch-county/ | 748 | 3 | 5 |
 | /service-location/kamas/ | Kamas | /service-location/summit-county/ | 899 | 3 | 21 |
 | /service-location/kimball-junction/ | Kimball Junction | /service-location/park-city/ | 754 | 3 | 5 |
@@ -40,7 +40,7 @@ Generated: 2026-06-30
 | /service-location/old-town-heber/ | Old Town Heber | /service-location/heber-city/ | 760 | 3 | 5 |
 | /service-location/old-town-park-city/ | Old Town Park City | /service-location/park-city/ | 817 | 3 | 9 |
 | /service-location/park-city/ | Park City | /service-location/summit-county/ | 916 | 3 | 22 |
-| /service-location/park-meadows/ | Park Meadows | /service-location/park-city/ | 754 | 3 | 6 |
+| /service-location/park-meadows/ | Park Meadows | /service-location/park-city/ | 754 | 3 | 7 |
 | /service-location/peoa/ | Peoa | /service-location/kamas/ | 745 | 3 | 5 |
 | /service-location/pinebrook/ | Pinebrook | /service-location/summit-county/ | 748 | 3 | 5 |
 | /service-location/promontory/ | Promontory | /service-location/summit-county/ | 748 | 3 | 5 |

@@ -2,7 +2,7 @@
 
 Generated: 2026-06-30
 
-Internal heuristic score: 89.7 / 100
+Internal heuristic score: 90.6 / 100
 
 This score is not a ranking claim. It is a local engineering heuristic for prioritizing work.
 
@@ -13,4 +13,4 @@ This score is not a ranking claim. It is a local engineering heuristic for prior
 | Internal link coverage | 100% | 15 |
 | Source FAQ coverage | 100% | 15 |
 | Generated image coverage | 100% | 15 |
-| Strong service-location matrix coverage | 31% | 15 |
+| Strong service-location matrix coverage | 38% | 15 |

@@ -148,5 +148,35 @@
     "caption": "Kitchen cleaning proof for Heber City residential clients.",
     "keywords": ["Heber City house cleaning", "residential kitchen cleaning", "Wasatch County cleaners", "Sun Ray Cleaning"],
     "routes": ["/contact/", "/service-location/heber-city/", "/service-location/wasatch-county/", "/services/recurring-cleaning/"]
+  },
+  {
+    "asset": "assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+    "sourceAsset": "assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+    "name": "Park City residential kitchen cleaning",
+    "room": "Kitchen",
+    "service": "Residential house cleaning",
+    "location": "Park City, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Residential kitchen cleaned for a Park City client by Sun Ray Cleaning Services",
+    "caption": "Kitchen cleaning detail for Park City residential homes.",
+    "keywords": ["Park City residential cleaning", "Park City house cleaning", "kitchen cleaning", "Summit County home cleaning"],
+    "routes": ["/", "/services/", "/service-location/park-city/", "/service-location/park-meadows/", "/service-location/summit-county/"]
+  },
+  {
+    "asset": "assets/park-city-move-clean-empty-room-may-6-sun-ray.jpg",
+    "sourceAsset": "assets/park-city-move-clean-empty-room-may-6-sun-ray.jpg",
+    "name": "Park City move cleaning empty room",
+    "room": "Empty room",
+    "service": "Move-in and move-out cleaning",
+    "location": "Park City, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Empty room cleaned for Park City move-in and move-out cleaning by Sun Ray Cleaning Services",
+    "caption": "Move-ready room cleaning for Park City property transitions.",
+    "keywords": ["Park City move-out cleaning", "Park City move-in cleaning", "empty room cleaning", "Summit County move cleaning"],
+    "routes": ["/services/move-in-move-out-cleaning/", "/service-location/park-city/", "/service-location/jeremy-ranch/", "/service-location/summit-county/"]
   }
 ]

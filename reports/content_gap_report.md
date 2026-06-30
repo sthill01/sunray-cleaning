@@ -6,9 +6,7 @@ Generated: 2026-06-30
 
 | Location | Service | Status | Pages | Images |
 | --- | --- | --- | --- | --- |
-| Park City | Residential | weak | 28 | 0 |
 | Park City | Recurring | weak | 28 | 0 |
-| Park City | Move-in/out | weak | 28 | 0 |
 | Park City | Luxury | weak | 6 | 0 |
 | Heber City | Airbnb/VRBO | weak | 20 | 0 |
 | Heber City | Deep cleaning | weak | 20 | 0 |
@@ -34,7 +32,6 @@ Generated: 2026-06-30
 | Canyons Village | Recurring | weak | 3 | 0 |
 | Canyons Village | Move-in/out | weak | 3 | 0 |
 | Canyons Village | Luxury | weak | 2 | 0 |
-| Summit County | Move-in/out | weak | 8 | 0 |
 | Summit County | Luxury | weak | 2 | 0 |
 | Wasatch County | Airbnb/VRBO | weak | 63 | 0 |
 | Wasatch County | Deep cleaning | weak | 63 | 0 |

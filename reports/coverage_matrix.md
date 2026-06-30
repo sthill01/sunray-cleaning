@@ -6,13 +6,13 @@ Cells show supporting page count and structured image count. `GAP` means no supp
 
 | Location | Residential | Airbnb/VRBO | Deep cleaning | Recurring | Move-in/out | Luxury |
 | --- | --- | --- | --- | --- | --- | --- |
-| Park City | 28p/0i WEAK | 28p/2i | 28p/2i | 28p/0i WEAK | 28p/0i WEAK | 6p/0i WEAK |
+| Park City | 28p/1i | 28p/2i | 28p/2i | 28p/0i WEAK | 28p/1i | 6p/0i WEAK |
 | Heber City | 20p/2i | 20p/0i WEAK | 20p/0i WEAK | 20p/0i WEAK | 20p/2i | 4p/0i WEAK |
 | Midway | 18p/2i | 18p/0i WEAK | 18p/0i WEAK | 18p/1i | 18p/0i WEAK | 3p/0i WEAK |
 | Kamas | 9p/1i | 9p/0i WEAK | 9p/0i WEAK | 9p/1i | 9p/0i WEAK | 2p/0i WEAK |
 | Deer Valley | 5p/0i WEAK | 5p/0i WEAK | 5p/0i WEAK | 5p/0i WEAK | 5p/0i WEAK | 5p/0i WEAK |
 | Canyons Village | 3p/0i WEAK | 3p/0i WEAK | 3p/0i WEAK | 3p/0i WEAK | 3p/0i WEAK | 2p/0i WEAK |
-| Summit County | 8p/1i | 8p/2i | 8p/2i | 8p/1i | 8p/0i WEAK | 2p/0i WEAK |
+| Summit County | 8p/2i | 8p/2i | 8p/2i | 8p/1i | 8p/1i | 2p/0i WEAK |
 | Wasatch County | 63p/4i | 63p/0i WEAK | 63p/0i WEAK | 63p/1i | 63p/2i | 6p/0i WEAK |
 
 ## Detected Gaps
@@ -23,9 +23,7 @@ No rows.
 
 | Location | Service | Pages | Images |
 | --- | --- | --- | --- |
-| Park City | Residential | 28 | 0 |
 | Park City | Recurring | 28 | 0 |
-| Park City | Move-in/out | 28 | 0 |
 | Park City | Luxury | 6 | 0 |
 | Heber City | Airbnb/VRBO | 20 | 0 |
 | Heber City | Deep cleaning | 20 | 0 |
@@ -51,7 +49,6 @@ No rows.
 | Canyons Village | Recurring | 3 | 0 |
 | Canyons Village | Move-in/out | 3 | 0 |
 | Canyons Village | Luxury | 2 | 0 |
-| Summit County | Move-in/out | 8 | 0 |
 | Summit County | Luxury | 2 | 0 |
 | Wasatch County | Airbnb/VRBO | 63 | 0 |
 | Wasatch County | Deep cleaning | 63 | 0 |
