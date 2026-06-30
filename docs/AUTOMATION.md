@@ -17,10 +17,16 @@ Package scripts:
 - `npm run build:cloudflare`
 - `npm run build:production`
 - `npm run deploy:preview`
+- `npm run deploy:production`
 - `npm run import:google-reviews`
 - `npm run import:social-gallery`
 - `npm run check:internal-links`
 - `npm run reports:generate`
+
+Production deploys must use `npm run build:production` before upload so the
+generated site uses the canonical `https://www.sunray-cleaning.com` base URL and
+allows indexing. `npm run build:cloudflare` is the preview/local build path and
+must not be used as the final production artifact.
 
 GitHub workflows:
 

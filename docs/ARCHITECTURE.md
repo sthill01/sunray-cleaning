@@ -46,6 +46,18 @@ The production command sets:
 - `SUNRAY_SITE_BASE_URL=https://www.sunray-cleaning.com`
 - `SUNRAY_ALLOW_INDEXING=1`
 
+Production deploy command:
+
+```powershell
+npm run deploy:production
+```
+
+Preview deploy command:
+
+```powershell
+npm run deploy:preview
+```
+
 Generated output directory:
 
 ```text

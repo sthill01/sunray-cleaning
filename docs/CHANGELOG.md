@@ -44,3 +44,5 @@
   Jordanelle, Heber City, and Wasatch County pages.
 - Improved incoming links for the Deer Valley luxury guide from 2 to 4 and the
   Jordanelle turnover guide from 2 to 5.
+- Added `npm run deploy:production` to build with the canonical production
+  domain and indexing enabled before deploying to Cloudflare Pages.

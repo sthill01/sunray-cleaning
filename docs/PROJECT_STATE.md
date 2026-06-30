@@ -53,6 +53,8 @@ Production Improvement 7: authority article link-depth improvement.
   to the Jordanelle vacation rental turnover guide.
 - Improved incoming links for the Deer Valley luxury guide from 2 to 4 and the
   Jordanelle turnover guide from 2 to 5.
+- Added `npm run deploy:production` so production deploys build with the
+  canonical domain and indexing enabled before Wrangler uploads.
 
 ## Open Bugs
 
@@ -73,9 +75,9 @@ Production Improvement 7: authority article link-depth improvement.
 
 1. Continue verified image-backed coverage only where assets honestly support
    the location and service.
-2. Continue verified image-backed coverage where assets honestly support the
-   location and service.
-3. Define the first repeatable AI monitoring prompt run in `AI_MONITORING.md`.
+2. Define the first repeatable AI monitoring prompt run in `AI_MONITORING.md`.
+3. Keep production deploys on `npm run build:production` /
+   `npm run deploy:production`.
 
 ## Blocked Items
 
