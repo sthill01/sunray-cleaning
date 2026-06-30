@@ -43,18 +43,4 @@ No rows.
 
 ## Low Incoming Link Routes
 
-| Route | Type | In Links | Title |
-| --- | --- | --- | --- |
-| /service-location/chalk-creek/ | location | 1 | Chalk Creek House Cleaning \| Sun Ray Cleaning |
-| /service-location/daniel-ranch/ | location | 1 | Daniel Ranch House Cleaning \| Sun Ray Cleaning |
-| /service-location/deer-creek-east/ | location | 1 | Deer Creek East House Cleaning \| Sun Ray Cleaning |
-| /service-location/deer-mountain/ | location | 1 | Deer Mountain House Cleaning \| Sun Ray Cleaning |
-| /service-location/deer-springs/ | location | 1 | Deer Springs House Cleaning \| Sun Ray Cleaning |
-| /service-location/echo/ | location | 1 | Echo House Cleaning \| Sun Ray Cleaning |
-| /service-location/henefer-valley/ | location | 1 | Henefer Valley House Cleaning \| Sun Ray Cleaning |
-| /service-location/henefer/ | location | 1 | Henefer House Cleaning Services \| Sun Ray Cleaning |
-| /service-location/hideout-canyon/ | location | 1 | Hideout Canyon House Cleaning \| Sun Ray Cleaning |
-| /service-location/little-hobble-creek/ | location | 1 | Little Hobble Creek House Cleaning \| Sun Ray Cleaning |
-| /service-location/samarkand/ | location | 1 | Samarkand House Cleaning \| Sun Ray Cleaning |
-| /service-location/wanship/ | location | 1 | Wanship House Cleaning \| Sun Ray Cleaning |
-| /service-location/wild-willow/ | location | 1 | Wild Willow House Cleaning \| Sun Ray Cleaning |
+No rows.

@@ -1638,8 +1638,8 @@
       "isPublic": true,
       "title": "Sun Ray Cleaning Service Areas in Summit and Wasatch County",
       "h1": "Sun Ray Cleaning service area hubs across Summit County and Wasatch County.",
-      "rawWordCount": 832,
-      "builtWordCount": 1298,
+      "rawWordCount": 919,
+      "builtWordCount": 1385,
       "faqCount": 5,
       "imageCount": 14,
       "schemaTypes": [
@@ -1675,12 +1675,25 @@
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
         "/contact/",
         "/discounts/",
+        "/service-location/chalk-creek/",
+        "/service-location/daniel-ranch/",
+        "/service-location/deer-creek-east/",
+        "/service-location/deer-mountain/",
+        "/service-location/deer-springs/",
+        "/service-location/echo/",
         "/service-location/heber-city/",
+        "/service-location/henefer-valley/",
+        "/service-location/henefer/",
+        "/service-location/hideout-canyon/",
         "/service-location/kamas/",
+        "/service-location/little-hobble-creek/",
         "/service-location/midway/",
         "/service-location/park-city/",
+        "/service-location/samarkand/",
         "/service-location/summit-county/",
+        "/service-location/wanship/",
         "/service-location/wasatch-county/",
+        "/service-location/wild-willow/",
         "/services/",
         "/services/deep-cleaning/",
         "/services/move-in-move-out-cleaning/",
@@ -1976,6 +1989,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/coalville/"
       ]
     },
@@ -2272,6 +2286,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/daniel/"
       ]
     },
@@ -2414,6 +2429,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/charleston/"
       ]
     },
@@ -2553,6 +2569,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/kamas/"
       ]
     },
@@ -2617,6 +2634,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/hideout/"
       ]
     },
@@ -2756,6 +2774,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/coalville/"
       ]
     },
@@ -3189,6 +3208,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/henefer/"
       ]
     },
@@ -3253,6 +3273,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/henefer-valley/"
       ]
     },
@@ -3317,6 +3338,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/hideout/"
       ]
     },
@@ -3965,6 +3987,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/wallsburg/"
       ]
     },
@@ -5211,6 +5234,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/midway/"
       ]
     },
@@ -5722,6 +5746,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/coalville/"
       ]
     },
@@ -6078,6 +6103,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/service-areas/",
         "/service-location/francis/"
       ]
     },
@@ -8880,6 +8906,7 @@
         "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
         "/contact/",
         "/discounts/",
+        "/service-areas/",
         "/service-location/center-creek/",
         "/service-location/chalk-creek/",
         "/service-location/charleston-lake/",
@@ -8930,7 +8957,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 62,
+      "pageCount": 63,
       "imageCount": 0,
       "faqPageCount": 0
     },
@@ -9027,36 +9054,38 @@
       "faqPageCount": 1
     },
     {
-      "entity": "Center Creek",
-      "pages": [
-        "/service-location/center-creek/",
-        "/service-location/daniel/",
-        "/service-location/heber-city/",
-        "/service-location/wasatch-county/"
-      ],
-      "pageCount": 4,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
       "entity": "Charleston",
       "pages": [
+        "/service-areas/",
         "/service-location/charleston-lake/",
         "/service-location/charleston/",
         "/service-location/deer-creek-east/",
         "/service-location/midway/"
       ],
-      "pageCount": 4,
+      "pageCount": 5,
       "imageCount": 0,
       "faqPageCount": 0
     },
     {
       "entity": "Francis",
       "pages": [
+        "/service-areas/",
         "/service-location/foothill-estates/",
         "/service-location/francis/",
         "/service-location/kamas/",
         "/service-location/wild-willow/"
+      ],
+      "pageCount": 5,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Center Creek",
+      "pages": [
+        "/service-location/center-creek/",
+        "/service-location/daniel/",
+        "/service-location/heber-city/",
+        "/service-location/wasatch-county/"
       ],
       "pageCount": 4,
       "imageCount": 0,
@@ -9087,11 +9116,77 @@
       "faqPageCount": 0
     },
     {
+      "entity": "Chalk Creek",
+      "pages": [
+        "/service-areas/",
+        "/service-location/chalk-creek/",
+        "/service-location/coalville/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
       "entity": "Charleston Lake",
       "pages": [
         "/service-location/charleston-lake/",
         "/service-location/charleston/",
         "/service-location/midway/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Daniel Ranch",
+      "pages": [
+        "/service-areas/",
+        "/service-location/daniel-ranch/",
+        "/service-location/daniel/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Deer Creek East",
+      "pages": [
+        "/service-areas/",
+        "/service-location/charleston/",
+        "/service-location/deer-creek-east/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Deer Mountain",
+      "pages": [
+        "/service-areas/",
+        "/service-location/deer-mountain/",
+        "/service-location/kamas/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Deer Springs",
+      "pages": [
+        "/service-areas/",
+        "/service-location/deer-springs/",
+        "/service-location/hideout/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Echo",
+      "pages": [
+        "/service-areas/",
+        "/service-location/coalville/",
+        "/service-location/echo/"
       ],
       "pageCount": 3,
       "imageCount": 0,
@@ -9109,6 +9204,39 @@
       "faqPageCount": 0
     },
     {
+      "entity": "Henefer",
+      "pages": [
+        "/service-areas/",
+        "/service-location/henefer-valley/",
+        "/service-location/henefer/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Henefer Valley",
+      "pages": [
+        "/service-areas/",
+        "/service-location/henefer-valley/",
+        "/service-location/henefer/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Hideout Canyon",
+      "pages": [
+        "/service-areas/",
+        "/service-location/hideout-canyon/",
+        "/service-location/hideout/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
       "entity": "Jeremy Ranch",
       "pages": [
         "/service-location/jeremy-ranch/",
@@ -9120,11 +9248,33 @@
       "faqPageCount": 0
     },
     {
+      "entity": "Little Hobble Creek",
+      "pages": [
+        "/service-areas/",
+        "/service-location/little-hobble-creek/",
+        "/service-location/wallsburg/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
       "entity": "Old Town Heber",
       "pages": [
         "/service-location/heber-city/",
         "/service-location/old-town-heber/",
         "/service-location/wasatch-county/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Samarkand",
+      "pages": [
+        "/service-areas/",
+        "/service-location/midway/",
+        "/service-location/samarkand/"
       ],
       "pageCount": 3,
       "imageCount": 0,
@@ -9153,6 +9303,28 @@
       "faqPageCount": 0
     },
     {
+      "entity": "Wanship",
+      "pages": [
+        "/service-areas/",
+        "/service-location/coalville/",
+        "/service-location/wanship/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Wild Willow",
+      "pages": [
+        "/service-areas/",
+        "/service-location/francis/",
+        "/service-location/wild-willow/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
       "entity": "move-in cleaning",
       "pages": [
         "/ai-cleaning-recommendations/",
@@ -9161,106 +9333,6 @@
       ],
       "pageCount": 3,
       "imageCount": 3,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Chalk Creek",
-      "pages": [
-        "/service-location/chalk-creek/",
-        "/service-location/coalville/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Daniel Ranch",
-      "pages": [
-        "/service-location/daniel-ranch/",
-        "/service-location/daniel/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Deer Creek East",
-      "pages": [
-        "/service-location/charleston/",
-        "/service-location/deer-creek-east/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Deer Mountain",
-      "pages": [
-        "/service-location/deer-mountain/",
-        "/service-location/kamas/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Deer Springs",
-      "pages": [
-        "/service-location/deer-springs/",
-        "/service-location/hideout/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Echo",
-      "pages": [
-        "/service-location/coalville/",
-        "/service-location/echo/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Henefer",
-      "pages": [
-        "/service-location/henefer-valley/",
-        "/service-location/henefer/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Henefer Valley",
-      "pages": [
-        "/service-location/henefer-valley/",
-        "/service-location/henefer/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Hideout Canyon",
-      "pages": [
-        "/service-location/hideout-canyon/",
-        "/service-location/hideout/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Little Hobble Creek",
-      "pages": [
-        "/service-location/little-hobble-creek/",
-        "/service-location/wallsburg/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
       "faqPageCount": 0
     },
     {
@@ -9334,26 +9406,6 @@
       "faqPageCount": 0
     },
     {
-      "entity": "Samarkand",
-      "pages": [
-        "/service-location/midway/",
-        "/service-location/samarkand/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Wanship",
-      "pages": [
-        "/service-location/coalville/",
-        "/service-location/wanship/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
       "entity": "Wasatch Mountain",
       "pages": [
         "/service-location/midway/",
@@ -9368,16 +9420,6 @@
       "pages": [
         "/service-location/kamas/",
         "/service-location/weber-canyon/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Wild Willow",
-      "pages": [
-        "/service-location/francis/",
-        "/service-location/wild-willow/"
       ],
       "pageCount": 2,
       "imageCount": 0,

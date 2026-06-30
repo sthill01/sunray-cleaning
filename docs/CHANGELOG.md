@@ -36,3 +36,5 @@
   service-location matrix coverage to 38%.
 - Added descriptive alt text to homepage service icons and reduced missing
   generated image alt attributes to 0.
+- Added service-area hub links to 13 smaller community pages and cleared the
+  low incoming public location route report.

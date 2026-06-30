@@ -29,7 +29,7 @@ Validation:
 
 ### Fix Orphan And Low-Link Routes
 
-Status: partially completed.
+Status: completed.
 
 Value: direct website quality and AI authority improvement.
 
@@ -40,11 +40,8 @@ Completed:
 - Daniel now links to Daniel Ranch.
 - Kamas now links to Deer Mountain.
 - `/service-section-mockups/` is treated as an internal-only route in reports.
-
-Remaining work:
-
-- Improve low incoming links for minor pages where it supports customer
-  navigation.
+- The service-area hub now links to 13 smaller public community pages.
+- Low incoming public location routes reduced from 13 to 0.
 
 ### Verify AI Recommendations Page Status
 
@@ -154,6 +151,20 @@ Completed:
 - Added descriptive alt text to the four homepage service icon images.
 - Reduced missing generated image alt attributes from 4 to 0.
 - Regenerated Repository Intelligence from a clean staged-index export.
+
+### Strengthen Minor Community Link Depth
+
+Status: completed.
+
+Value: public service-area navigation and crawl support.
+
+Completed:
+
+- Added a smaller-community section to `service-areas-gpt.html`.
+- Linked Chalk Creek, Echo, Wanship, Henefer, Henefer Valley, Daniel Ranch,
+  Little Hobble Creek, Deer Mountain, Deer Springs, Hideout Canyon, Deer Creek
+  East, Samarkand, and Wild Willow from the service-area hub.
+- Reduced low incoming public location routes to 0 in `content_gap_report.md`.
 
 ### Coverage Matrix Refinement
 
