@@ -1,0 +1,27 @@
+# Changelog
+
+All notable SRAAP governance and platform changes should be recorded here.
+
+## 2026-06-30
+
+### Phase 0 Operational Readiness
+
+- Added Phase 0 Operational Readiness cockpit files under `docs/`.
+- Initialized `PROJECT_STATE.md`, `NEXT_ACTION.md`, `BLOCKERS.md`, `IDEAS.md`, `TECH_DEBT.md`, `OPPORTUNITIES.md`, `AI_MONITORING.md`, and `ENGINEERING_REVIEW.md`.
+- Updated `docs/README.md` so future sessions start from the flat operating cockpit.
+
+### Constitution Version 2
+
+- Commit: `1f7fcef`
+- Expanded the SRAAP Constitution into a multi-volume handbook.
+- Added standards for engineering, AI optimization, local SEO, content, analytics, automation, roadmap, architecture, and autonomous playbooks.
+
+### Program Alpha Governance Foundation
+
+- Commit: `c417086`
+- Added the initial repo-owned governance handbook for Program Alpha.
+
+### AI Authority Foundation
+
+- Commit: `a03ff41`
+- Added `/ai-cleaning-recommendations/`, route support, sitemap and `llms.txt` coverage, structured data support, internal links, build validation, and commit.
