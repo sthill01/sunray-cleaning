@@ -2312,8 +2312,14 @@ p {
   }
 
   .nav-links {
+    align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: min(100%, 560px);
   }
 
   .nav-dropdown {
@@ -2332,6 +2338,7 @@ p {
   .nav-item:hover .nav-dropdown,
   .nav-item:focus-within .nav-dropdown {
     display: grid;
+    transform: none;
   }
 
   .hero-grid,
@@ -2432,6 +2439,16 @@ p {
   .nav-links {
     gap: 12px 16px;
     font-size: 0.9rem;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-dropdown {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 100%;
+    padding: 14px;
   }
 
   .button {
