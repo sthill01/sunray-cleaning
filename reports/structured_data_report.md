@@ -1,0 +1,87 @@
+# Structured Data Report
+
+Generated: 2026-06-30
+
+Every generated public route should include JSON-LD from the build pipeline.
+
+| Route | Has Schema | FAQPage | Service | BlogPosting | ImageObject | Review |
+| --- | --- | --- | --- | --- | --- | --- |
+| / | True | True | True | False | True | True |
+| /about/ | True | True | True | False | True | True |
+| /blog/ | True | True | True | True | True | True |
+| /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/ | True | True | True | True | True | True |
+| /blog/deer-valley-luxury-home-cleaning/ | True | True | True | True | True | True |
+| /blog/getting-park-city-home-ready-for-summer-guests/ | True | True | True | True | True | True |
+| /blog/heber-city-move-in-move-out-cleaning/ | True | True | True | True | True | True |
+| /blog/how-much-does-airbnb-cleaning-cost-park-city/ | True | True | True | True | True | True |
+| /blog/jordanelle-vacation-rental-turnover/ | True | True | True | True | True | True |
+| /blog/post-ski-season-deep-clean-park-city-rental-owners/ | True | True | True | True | True | True |
+| /blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/ | True | True | True | True | True | True |
+| /contact/ | True | True | True | False | True | True |
+| /discounts/ | True | True | True | False | True | True |
+| /gallery/ | True | False | True | False | True | True |
+| /privacy-policy/ | True | False | True | False | True | True |
+| /service-areas/ | True | True | True | False | True | True |
+| /service-location/canyons-village/ | True | True | True | False | True | True |
+| /service-location/center-creek/ | True | True | True | False | True | True |
+| /service-location/chalk-creek/ | True | True | True | False | True | True |
+| /service-location/charleston-lake/ | True | True | True | False | True | True |
+| /service-location/charleston/ | True | True | True | False | True | True |
+| /service-location/coalville/ | True | True | True | False | True | True |
+| /service-location/daniel-ranch/ | True | True | True | False | True | True |
+| /service-location/daniel/ | True | True | True | False | True | True |
+| /service-location/deer-creek-east/ | True | True | True | False | True | True |
+| /service-location/deer-creek/ | True | True | True | False | True | True |
+| /service-location/deer-mountain/ | True | True | True | False | True | True |
+| /service-location/deer-springs/ | True | True | True | False | True | True |
+| /service-location/deer-valley/ | True | True | True | False | True | True |
+| /service-location/echo/ | True | True | True | False | True | True |
+| /service-location/foothill-estates/ | True | True | True | False | True | True |
+| /service-location/francis/ | True | True | True | False | True | True |
+| /service-location/heber-city/ | True | True | True | False | True | True |
+| /service-location/heber-valley/ | True | True | True | False | True | True |
+| /service-location/henefer-valley/ | True | True | True | False | True | True |
+| /service-location/henefer/ | True | True | True | False | True | True |
+| /service-location/hideout-canyon/ | True | True | True | False | True | True |
+| /service-location/hideout/ | True | True | True | False | True | True |
+| /service-location/homestead/ | True | True | True | False | True | True |
+| /service-location/interlaken/ | True | True | True | False | True | True |
+| /service-location/jeremy-ranch/ | True | True | True | False | True | True |
+| /service-location/jordanelle/ | True | True | True | False | True | True |
+| /service-location/kamas/ | True | True | True | False | True | True |
+| /service-location/kimball-junction/ | True | True | True | False | True | True |
+| /service-location/little-hobble-creek/ | True | True | True | False | True | True |
+| /service-location/marion/ | True | True | True | False | True | True |
+| /service-location/midway/ | True | True | True | False | True | True |
+| /service-location/oakley-ranch/ | True | True | True | False | True | True |
+| /service-location/oakley/ | True | True | True | False | True | True |
+| /service-location/old-town-heber/ | True | True | True | False | True | True |
+| /service-location/old-town-park-city/ | True | True | True | False | True | True |
+| /service-location/park-city/ | True | True | True | False | True | True |
+| /service-location/park-meadows/ | True | True | True | False | True | True |
+| /service-location/peoa/ | True | True | True | False | True | True |
+| /service-location/pinebrook/ | True | True | True | False | True | True |
+| /service-location/promontory/ | True | True | True | False | True | True |
+| /service-location/prospector/ | True | True | True | False | True | True |
+| /service-location/red-ledges/ | True | True | True | False | True | True |
+| /service-location/salt-lake-county/ | True | True | True | False | True | True |
+| /service-location/samarkand/ | True | True | True | False | True | True |
+| /service-location/snyderville/ | True | True | True | False | True | True |
+| /service-location/summit-county/ | True | True | True | False | True | True |
+| /service-location/swiss-mountain/ | True | True | True | False | True | True |
+| /service-location/timber-lakes/ | True | True | True | False | True | True |
+| /service-location/wallsburg/ | True | True | True | False | True | True |
+| /service-location/wanship/ | True | True | True | False | True | True |
+| /service-location/wasatch-county/ | True | True | True | False | True | True |
+| /service-location/wasatch-mountain/ | True | True | True | False | True | True |
+| /service-location/weber-canyon/ | True | True | True | False | True | True |
+| /service-location/wild-willow/ | True | True | True | False | True | True |
+| /service-location/woodland/ | True | True | True | False | True | True |
+| /service-section-mockups/ | True | False | True | False | True | True |
+| /services/ | True | True | True | False | True | True |
+| /services/deep-cleaning/ | True | True | True | False | True | True |
+| /services/move-in-move-out-cleaning/ | True | True | True | False | True | True |
+| /services/recurring-cleaning/ | True | True | True | False | True | True |
+| /services/short-term-rental-cleaning/ | True | True | True | False | True | True |
+| /specials/ | True | True | True | False | True | True |
+| /terms-and-conditions/ | True | False | True | False | True | True |

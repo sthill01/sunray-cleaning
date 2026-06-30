@@ -1,0 +1,25 @@
+# Build Report
+
+Generated: 2026-06-30
+
+- Source route count: 79
+- Existing build output route files: 80
+- Cloudflare output directory exists: True
+- Git status entries at report time: 96
+
+## Package Scripts
+
+| Script | Command |
+| --- | --- |
+| build | python tools/build-cloudflare-preview.py |
+| import:google-reviews | node scripts/import-google-reviews.mjs |
+| import:social-gallery | node scripts/import-meta-gallery.mjs |
+| build:cloudflare | python tools/build-cloudflare-preview.py |
+| build:production | node -e "process.env.SUNRAY_SITE_BASE_URL='https://www.sunray-cleaning.com';process.env.SUNRAY_ALLOW_INDEXING='1';require('child_process').spawnSync('python',['tools/build-cloudflare-preview.py'],{stdio:'inherit',env:process.env});" |
+| deploy:preview | npx wrangler pages deploy cloudflare-preview --project-name sunray-cleaning-preview |
+| check:internal-links | python seo-automation/scripts/run_internal_link_check.py --root cloudflare-preview |
+| reports:generate | python tools/generate-repository-intelligence.py |
+
+## Page Build Simulation Errors
+
+No rows.

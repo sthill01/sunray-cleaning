@@ -1,0 +1,61 @@
+# Image Inventory
+
+Generated: 2026-06-30
+
+- Structured gallery records: 47
+- Image tags in generated pages: 634
+- Missing alt attributes in generated pages: 4
+- Missing gallery source assets: 0
+
+## Gallery Route Coverage
+
+| Route | Structured Image Records |
+| --- | --- |
+| /gallery/ | 37 |
+| /service-location/wasatch-county/ | 6 |
+| /service-location/park-city/ | 4 |
+| /service-location/summit-county/ | 4 |
+| / | 3 |
+| /services/deep-cleaning/ | 3 |
+| /service-location/heber-city/ | 3 |
+| /services/recurring-cleaning/ | 3 |
+| /services/short-term-rental-cleaning/ | 2 |
+| /services/move-in-move-out-cleaning/ | 2 |
+| /about/ | 2 |
+| /contact/ | 2 |
+| /services/ | 1 |
+| /service-location/deer-valley/ | 1 |
+| /service-location/canyons-village/ | 1 |
+| /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/ | 1 |
+| /blog/how-much-does-airbnb-cleaning-cost-park-city/ | 1 |
+| /service-location/old-town-park-city/ | 1 |
+| /service-location/park-meadows/ | 1 |
+| /blog/getting-park-city-home-ready-for-summer-guests/ | 1 |
+| /blog/post-ski-season-deep-clean-park-city-rental-owners/ | 1 |
+| /blog/heber-city-move-in-move-out-cleaning/ | 1 |
+| /service-location/midway/ | 1 |
+| /service-location/homestead/ | 1 |
+| /service-location/interlaken/ | 1 |
+| /service-location/heber-valley/ | 1 |
+| /service-location/red-ledges/ | 1 |
+| /blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/ | 1 |
+| /service-location/snyderville/ | 1 |
+| /service-location/kamas/ | 1 |
+| /service-location/oakley/ | 1 |
+| /service-location/coalville/ | 1 |
+| * | 1 |
+| /service-areas/ | 1 |
+| /service-location/daniel/ | 1 |
+
+## Missing Alt Attributes
+
+| Route | Image |
+| --- | --- |
+| / | /assets/icon-short-term.svg |
+| / | /assets/icon-recurring.svg |
+| / | /assets/icon-broom.svg |
+| / | /assets/icon-move.svg |
+
+## Missing Gallery Assets
+
+No rows.

@@ -2,6 +2,18 @@
 
 Static staging build for Sun Ray Cleaning Services.
 
+## Project operating manual
+
+The long-term Sun Ray AI Authority Platform operating manual lives in `docs/`.
+Start with `docs/README.md`, `docs/CONSTITUTION.md`, `docs/PROJECT_STATE.md`,
+and `docs/NEXT_ACTION.md` before making major changes.
+
+Repository Intelligence reports live in `reports/` and can be regenerated with:
+
+```powershell
+npm run reports:generate
+```
+
 ## Cloudflare preview build
 
 This repo now includes a Cloudflare-ready preview build pipeline. Source pages use the GPT-suffixed static preview files, then the build script generates clean extensionless URLs into `cloudflare-preview/`.
