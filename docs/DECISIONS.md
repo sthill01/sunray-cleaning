@@ -57,6 +57,12 @@ Status: Accepted
 
 Codex must run the startup check in `docs/INITIALIZATION_PROTOCOL.md` before major new features, sprints, automation, or architecture changes. Full Phase 0 repository intelligence does not need to be repeated unless architecture, hosting, build, or operating model changes materially.
 
+### DEC-0006: Repository Intelligence Serves The Website
+
+Status: Accepted
+
+The repository is the authoritative digital representation of Sun Ray Cleaning, and the Repository Intelligence Layer should make that representation measurable and machine-readable. However, intelligence is an internal steering capability, not the primary product. The website remains the product, and every reporting sprint must connect to at least one production-facing improvement.
+
 ## Pending Decisions
 
 - Whether to add CI checks for build, link validation, and schema coverage.

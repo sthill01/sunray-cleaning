@@ -6,7 +6,7 @@ This file tells the next Codex session what to do first.
 
 ## Highest-ROI Next Action
 
-Build a route and content inventory automation report for the current Cloudflare static site.
+Use the first Repository Intelligence reports to choose the next production website improvement.
 
 Start by running the initialization check in `docs/INITIALIZATION_PROTOCOL.md`, then proceed if this next action is still valid.
 
@@ -26,30 +26,29 @@ Route inventory is the foundation for nearly every SRAAP improvement:
 
 Without this inventory, future work depends too much on manual inspection.
 
+The new guardrail is that reporting must translate into website quality. The next cycle should start with `reports/` and select a production improvement from the highest-value gap.
+
 ## Suggested Implementation
 
-Create or extend a script that can inspect source files and/or generated `cloudflare-preview/` output and produce a durable report.
+Run:
 
-The first version should capture:
+```powershell
+cmd /c npm run reports:intelligence
+```
 
-- Public route.
-- Source file.
-- Page family.
-- Title.
-- Meta description.
-- Canonical URL.
-- Sitemap inclusion.
-- `llms.txt` inclusion.
-- JSON-LD types found.
-- H1 or primary heading.
-- Internal link count.
-- Quote/contact path presence.
-- Notes for missing or weak coverage.
+Then inspect:
+
+- `reports/README.md`
+- `reports/content_gap_report.md`
+- `reports/authority_report.md`
+- `reports/internal_links.md`
+- `reports/technical_debt.md`
+
+Choose one production improvement that advances website quality or AI authority before expanding internal tooling.
 
 ## Acceptance Criteria
 
-- The report runs locally.
-- Output is committed in a sensible reporting location or documented if generated reports should stay untracked.
+- One production improvement is selected from report findings.
 - Findings are summarized in `PROJECT_STATE.md`, `BACKLOG.md`, `TECH_DEBT.md`, and `OPPORTUNITIES.md` as needed.
 - Relevant validation runs successfully.
 

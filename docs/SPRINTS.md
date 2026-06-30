@@ -21,15 +21,16 @@ Every sprint should follow:
 
 ## Next Sprint
 
-Name: Phase 1 - Route and Content Inventory Automation
+Name: Phase 1 - Repository Intelligence Layer
 
-Goal: Build the first route and content inventory report so future schema, metadata, internal-link, sitemap, `llms.txt`, content, and AI authority audits can be automated.
+Goal: Build the first repository intelligence reports so future schema, metadata, internal-link, sitemap, `llms.txt`, content, and AI authority audits can be data-driven while also shipping a production website improvement.
 
 Definition of done:
 
 - Inventory script or equivalent repeatable workflow exists.
 - Report captures route, source file, page family, title, description, canonical, sitemap status, `llms.txt` status, JSON-LD types, heading, internal-link count, and quote/contact path presence where practical.
 - Findings update `PROJECT_STATE.md`, `BACKLOG.md`, `TECH_DEBT.md`, and `OPPORTUNITIES.md` as needed.
+- At least one production page is improved or one production improvement is made implementation-ready from report findings.
 - Relevant validation runs.
 - Changes are committed without unrelated dirty files.
 

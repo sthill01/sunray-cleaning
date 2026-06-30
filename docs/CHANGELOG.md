@@ -4,6 +4,12 @@ All notable SRAAP governance and platform changes should be recorded here.
 
 ## 2026-06-30
 
+### Repository Intelligence Layer
+
+- Accepted the Continuous Engineering directive and added the rule that repository intelligence must serve the production website.
+- Added the first repository intelligence generator entry point.
+- Improved the AI cleaning recommendations page with review, gallery, and quote trust signals.
+
 ### Initialization Protocol Adoption
 
 - Added `docs/INITIALIZATION_PROTOCOL.md` from Steve's initialization protocol PDF.

@@ -39,13 +39,15 @@ Validation: Docs-only diff review and commit.
 
 ### P1: Route and Content Inventory Automation
 
-Status: Planned
+Status: In progress
 
 Outcome: A repeatable report listing public routes, source files, page family, title, description, canonical, sitemap status, schema presence, `llms.txt` inclusion, and key internal-link relationships.
 
 Why it matters: This becomes the substrate for automated AI authority, SEO, content, and technical audits.
 
 Validation: Run against current repo and commit the script plus first report.
+
+Production improvement requirement: Each reporting sprint must also improve at least one production page or create an implementation-ready production improvement from report findings.
 
 ### P1: Schema and Metadata Coverage Report
 

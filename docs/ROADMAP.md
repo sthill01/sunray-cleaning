@@ -32,6 +32,7 @@ Operational Readiness is Phase 0. It is complete when:
 - Improve route, sitemap, robots, canonical, and `llms.txt` confidence.
 - Create route and content inventory automation.
 - Add schema, metadata, link, and image coverage reporting.
+- Keep every reporting sprint connected to a production website improvement.
 
 ### Phase 2: Entity Authority
 
@@ -88,8 +89,8 @@ Operational Readiness is Phase 0. It is complete when:
 
 ## Near-Term Priority Stack
 
-1. Finish Operational Readiness docs and commit the cockpit.
-2. Build route and content inventory automation.
+1. Build the first Repository Intelligence Layer reports.
+2. Use those reports to choose and ship one production website improvement.
 3. Build schema, metadata, and internal-link coverage reports.
 4. Create an entity taxonomy for services, locations, property types, and prompt families.
 5. Create the first AI monitoring prompt set and baseline report.

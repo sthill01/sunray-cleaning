@@ -6,7 +6,7 @@ This file is SRAAP's live project memory. Update it at the end of every sprint a
 
 ## Current Version
 
-SRAAP Version 2.2 - Initialization Protocol adopted.
+SRAAP Version 2.3 - Repository Intelligence Layer in progress.
 
 ## Current Branch
 
@@ -14,11 +14,11 @@ SRAAP Version 2.2 - Initialization Protocol adopted.
 
 ## Current Sprint
 
-Phase 1 - Route and Content Inventory Automation, planned next.
+Phase 1 - Repository Intelligence Layer and production improvement.
 
 ## Current Objective
 
-Build the route and content inventory automation report described in `NEXT_ACTION.md`.
+Build the first Repository Intelligence Layer reports and pair them with a production-facing AI recommendations page improvement.
 
 ## Completed Features
 
@@ -27,6 +27,7 @@ Build the route and content inventory automation report described in `NEXT_ACTIO
 - Constitution Version 2 expanded operating manual.
 - Phase 0 flat docs cockpit.
 - Mandatory Initialization Protocol converted from PDF into repo-owned documentation and verified against the Word source file.
+- Continuous Engineering directive accepted: repository intelligence must serve the production website.
 
 ## Open Bugs
 
@@ -51,7 +52,7 @@ Build the route and content inventory automation report described in `NEXT_ACTIO
 
 ## Blocked Items
 
-- No active blocker prevents the Phase 1 route and content inventory work.
+- No active blocker prevents the Phase 1 Repository Intelligence work.
 - Future analytics and external monitoring work may require Google Search Console, GA4, Cloudflare, Google Business Profile, or third-party API credentials.
 
 ## Upcoming Work
@@ -86,6 +87,8 @@ Current coverage includes service pages, location pages, blog guides, and the AI
 ## Documentation Health
 
 Operational cockpit is in place, and the mandatory initialization protocol has been added. Future sprints should keep the flat files and expanded handbook volumes aligned.
+
+Repository Intelligence must remain balanced against production website improvements.
 
 ## Repo Safety Notes
 

@@ -20,6 +20,12 @@ If a task does not move one of those goals forward, it should be deprioritized.
 
 SRAAP is not only an SEO effort. It is a website, a platform, and an operating system for continuous authority growth.
 
+The repository is the authoritative digital representation of Sun Ray Cleaning. Every meaningful aspect of the business that can be documented, structured, measured, or automated should eventually exist in the repository in a reusable, machine-readable form.
+
+The Repository Intelligence Layer is an internal capability. It exists to improve the production website. It is not the primary product.
+
+Continuous Engineering replaces isolated sprint thinking. The project does not end; it continuously improves the website, the platform, and the operating system.
+
 ## Success Definition
 
 Within 12 to 18 months, Sun Ray should become:
@@ -71,14 +77,29 @@ Everything else should be handled autonomously.
 
 When priorities conflict, use this order:
 
-1. Business trust and factual accuracy.
-2. AI authority and entity clarity.
-3. Technical quality.
-4. Automation leverage.
-5. Revenue potential.
-6. Performance.
-7. Content scale.
-8. Cosmetic polish.
+1. Website quality.
+2. AI authority.
+3. Automation.
+4. Engineering efficiency.
+5. Internal reporting.
+
+If two tasks have similar value, prefer the task that improves the production website.
+
+Within that order, business trust and factual accuracy remain non-negotiable.
+
+## Engineering Balance
+
+Maintain an approximate long-term balance:
+
+- 70% production website improvements.
+- 20% automation.
+- 10% documentation and reporting.
+
+Do not spend multiple consecutive sprints improving internal tooling without also improving the production website.
+
+Every reporting sprint should produce at least one production improvement.
+
+Repository intelligence should answer whether a feature is needed before Codex builds it when the data is available. Engineering judgment should override raw metrics when appropriate.
 
 ## Always Do
 

@@ -10,6 +10,8 @@ This is the daily-read automation standard. Expanded automation notes live in `d
 
 Reduce manual coordination by automating repeated, inspectable, rule-based work while preserving factual safety and Cloudflare compatibility.
 
+Automation exists to improve the production website. Reporting and internal tools should not become the primary product.
+
 ## Automation Bias
 
 If something can be safely automated, automate it.
@@ -69,3 +71,5 @@ Codex should operate like a senior engineer:
 ## Next Automation Build
 
 The next automation milestone should be a route and content inventory report that supports later schema, metadata, link, content, and AI-authority coverage checks.
+
+Every reporting sprint should also produce or directly schedule a production website improvement.
