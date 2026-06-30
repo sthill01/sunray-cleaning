@@ -4,9 +4,12 @@ Version: 1.0
 
 Last Updated: 2026-06-30
 
-Source: `C:\Users\sthil\Downloads\Initialization Protocol.pdf`
+Sources:
 
-This protocol is mandatory before implementing any major new SRAAP feature, sprint, automation, or architecture change.
+- `C:\Users\sthil\Downloads\Initialization Protocol.pdf`
+- `C:\Users\sthil\Downloads\Initialization Protocol.docx`
+
+This protocol is mandatory before implementing any new SRAAP feature, sprint, automation, or architecture change.
 
 It exists to keep Codex from jumping straight into feature work before understanding the repository, project state, current priorities, known blockers, and long-term operating system.
 
@@ -27,7 +30,7 @@ Evidence lives in:
 - `docs/TECH_DEBT.md`
 - `docs/OPPORTUNITIES.md`
 
-Future sessions do not need to repeat the full Phase 0 audit unless the repository architecture, hosting model, build pipeline, or operating model materially changes. They must still run the initialization check below.
+Future sessions do not need to repeat the full Phase 0 audit unless the repository architecture, hosting model, build pipeline, or operating model materially changes. They must still run the initialization check below exactly once per session before implementation work.
 
 ## Mandatory Session Initialization Check
 
@@ -86,6 +89,8 @@ Documentation is not optional handoff material. It is the project's memory.
 While auditing or implementing, Codex must record:
 
 - Technical debt in `TECH_DEBT.md`.
+- Duplicate code in `TECH_DEBT.md`.
+- Manual workflows in `AUTOMATION.md`, `TECH_DEBT.md`, or `OPPORTUNITIES.md`.
 - Automation opportunities in `AUTOMATION.md`, `BACKLOG.md`, or `OPPORTUNITIES.md`.
 - AI optimization opportunities in `OPPORTUNITIES.md` or `AI_MONITORING.md`.
 - Performance opportunities in `OPPORTUNITIES.md` or `BACKLOG.md`.
@@ -147,7 +152,7 @@ At the end of every sprint, Codex must answer:
 6. What technical debt remains?
 7. What should be built next?
 
-Update `ENGINEERING_REVIEW.md`, `PROJECT_STATE.md`, and `NEXT_ACTION.md` using these answers.
+Update `PROJECT_STATE.md` using these answers. When the answers change future work, also update `ENGINEERING_REVIEW.md`, `NEXT_ACTION.md`, and `BACKLOG.md`.
 
 ## Never Lose Context
 

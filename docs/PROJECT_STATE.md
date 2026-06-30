@@ -26,7 +26,7 @@ Build the route and content inventory automation report described in `NEXT_ACTIO
 - Program Alpha governance handbook.
 - Constitution Version 2 expanded operating manual.
 - Phase 0 flat docs cockpit.
-- Mandatory Initialization Protocol converted from PDF into repo-owned documentation.
+- Mandatory Initialization Protocol converted from PDF into repo-owned documentation and verified against the Word source file.
 
 ## Open Bugs
 
