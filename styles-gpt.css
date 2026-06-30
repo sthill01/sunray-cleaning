@@ -2515,14 +2515,15 @@ p {
   }
 
   .hero-trustindex-badge {
-    position: relative;
+    position: absolute;
+    left: 50%;
     right: auto;
     top: auto;
-    margin-top: 14px;
-    margin-left: auto;
-    max-width: none;
+    bottom: calc(100% - 306px);
+    max-width: min(92vw, 360px);
     width: max-content;
-    transform-origin: top right;
+    transform: translateX(-50%) scale(0.52);
+    transform-origin: bottom center;
   }
 
   .trustindex-badge-fallback {
