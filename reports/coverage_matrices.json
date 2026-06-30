@@ -102,7 +102,7 @@
     "Heber City": {
       "articles": 27,
       "faqs": 244,
-      "images": 104,
+      "images": 100,
       "pages": 97,
       "reviews": 0,
       "schema_pages": 97
@@ -142,7 +142,7 @@
     "Midway": {
       "articles": 27,
       "faqs": 244,
-      "images": 43,
+      "images": 41,
       "pages": 97,
       "reviews": 0,
       "schema_pages": 97
@@ -166,7 +166,7 @@
     "Park City": {
       "articles": 27,
       "faqs": 244,
-      "images": 263,
+      "images": 259,
       "pages": 97,
       "reviews": 0,
       "schema_pages": 97
@@ -214,7 +214,7 @@
     "Wasatch County": {
       "articles": 27,
       "faqs": 244,
-      "images": 188,
+      "images": 177,
       "pages": 97,
       "reviews": 0,
       "schema_pages": 97
@@ -471,7 +471,7 @@
     },
     "deep cleaning": {
       "faqs": 244,
-      "images": 1123,
+      "images": 1112,
       "pages": 97,
       "reviews": 1
     },
@@ -507,7 +507,7 @@
     },
     "recurring cleaning": {
       "faqs": 244,
-      "images": 263,
+      "images": 225,
       "pages": 97,
       "reviews": 0
     },

@@ -2,14 +2,14 @@
 
 | Location | Pages | Articles | FAQs | Images | Schema Pages | Review Mentions |
 | --- | --- | --- | --- | --- | --- | --- |
-| Park City | 97 | 27 | 244 | 263 | 97 | 0 |
-| Heber City | 97 | 27 | 244 | 104 | 97 | 0 |
-| Midway | 97 | 27 | 244 | 43 | 97 | 0 |
+| Park City | 97 | 27 | 244 | 259 | 97 | 0 |
+| Heber City | 97 | 27 | 244 | 100 | 97 | 0 |
+| Midway | 97 | 27 | 244 | 41 | 97 | 0 |
 | Kamas | 97 | 27 | 244 | 8 | 97 | 0 |
 | Deer Valley | 97 | 27 | 244 | 4 | 97 | 0 |
 | Canyons Village | 97 | 27 | 244 | 4 | 97 | 0 |
 | Summit County | 97 | 27 | 244 | 125 | 97 | 0 |
-| Wasatch County | 97 | 27 | 244 | 188 | 97 | 0 |
+| Wasatch County | 97 | 27 | 244 | 177 | 97 | 0 |
 | Old Town Park City | 15 | 0 | 48 | 2 | 15 | 0 |
 | Snyderville | 14 | 0 | 44 | 3 | 14 | 0 |
 | Jordanelle | 97 | 27 | 244 | 8 | 97 | 0 |

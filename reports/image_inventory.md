@@ -1,35 +1,35 @@
 # Image Inventory
 
-Total public-page image references: 1161
+Total public-page image references: 1166
 
 Missing alt attributes: 8
 
 | Route | Image | Alt |
 | --- | --- | --- |
 | /about/ | /assets/logo-nav.png | Sun Ray Cleaning Services |
-| /about/ | /assets/sunray-team-bathroom-cleaning.jpg | Sun Ray Cleaning team member working inside a Utah home |
+| /about/ | /assets/team-action-2026-06/sun-ray-team-kitchen-cleaning-service.jpg | Sun Ray Cleaning team members preparing kitchen surfaces during a residential cleaning visit |
+| /about/ | /assets/team-action-2026-06/sun-ray-employee-stovetop-detail-cleaning.jpg | Sun Ray Cleaning employee wiping a stovetop grate during kitchen detail cleaning in a Park City area home |
+| /about/ | /assets/team-action-2026-06/sun-ray-employee-kitchen-cabinet-cleaning.jpg | Sun Ray Cleaning employee wiping kitchen cabinets during residential cleaning in a Summit County home |
+| /about/ | /assets/team-action-2026-06/sun-ray-team-kitchen-cleaning-service.jpg | Sun Ray Cleaning team members preparing kitchen surfaces and stovetop parts during a home cleaning visit |
+| /about/ | /assets/team-action-2026-06/sun-ray-employee-sofa-detail-cleaning.jpg | Sun Ray Cleaning employee wiping a sofa during living room detail cleaning in a Wasatch Back home |
+| /about/ | /assets/team-action-2026-06/sun-ray-employee-shower-glass-cleaning.jpg | Sun Ray Cleaning employee cleaning shower glass and tile during a bathroom deep clean in a Park City area home |
 | /about/ | /assets/job-gallery-2026-05/sun-ray-team-deep-cleaning-kitchen-park-city-01.jpg | Kitchen deep cleaning photo for Park City homes by Sun Ray Cleaning Services |
-| /about/ | /assets/job-gallery-2026-05/sun-ray-cleaning-team-modern-kitchen-island-02.jpg | Kitchen residential cleaning photo for Summit County homes by Sun Ray Cleaning Services |
-| /about/ | /assets/job-gallery-2026-05/sun-ray-kitchen-island-polish-after-cleaning-03.jpg | Kitchen airbnb and vrbo turnover cleaning photo for Park City homes by Sun Ray Cleaning Services |
-| /about/ | /assets/job-gallery-2026-05/sun-ray-team-kitchen-turnover-cleaning-04.jpg | Kitchen airbnb and vrbo turnover cleaning photo for Park City homes by Sun Ray Cleaning Services |
-| /about/ | /assets/job-gallery-2026-05/sun-ray-elegant-living-room-after-cleaning-05.jpg | Living room residential cleaning photo for Summit County homes by Sun Ray Cleaning Services |
-| /about/ | /assets/job-gallery-2026-05/sun-ray-warm-kitchen-after-cleaning-06.jpg | Kitchen recurring cleaning photo for Wasatch County homes by Sun Ray Cleaning Services |
 | /about/ | /assets/logo-nav.png | Sun Ray Cleaning Services |
 | /ai-cleaning-recommendations/ | /assets/logo-nav.png | Sun Ray Cleaning Services |
-| /ai-cleaning-recommendations/ | /assets/sun-ray-luxury-kitchen-cleaning-09-hero-16x9.jpg | Luxury kitchen cleaned by Sun Ray Cleaning Services for Park City and Heber Valley homes |
+| /ai-cleaning-recommendations/ | /assets/team-action-2026-06/sun-ray-team-kitchen-cleaning-service.jpg | Sun Ray Cleaning team members working through a kitchen cleaning checklist for Park City and Heber Valley homes |
 | /ai-cleaning-recommendations/ | /assets/icon-short-term.svg | MISSING |
 | /ai-cleaning-recommendations/ | /assets/icon-recurring.svg | MISSING |
 | /ai-cleaning-recommendations/ | /assets/icon-broom.svg | MISSING |
 | /ai-cleaning-recommendations/ | /assets/icon-move.svg | MISSING |
-| /ai-cleaning-recommendations/ | /assets/sun-ray-elegant-living-room-cleaning-summit-wasatch-01.jpg | Elegant living room cleaned for a Summit and Wasatch County mountain home |
-| /ai-cleaning-recommendations/ | /assets/sun-ray-vacation-rental-living-room-turnover-03.jpg | Vacation rental living room prepared for guests by Sun Ray Cleaning Services |
-| /ai-cleaning-recommendations/ | /assets/sun-ray-double-vanity-bathroom-cleaning-16.jpg | Double vanity bathroom cleaning detail for a luxury mountain home |
+| /ai-cleaning-recommendations/ | /assets/team-action-2026-06/sun-ray-employee-stovetop-detail-cleaning.jpg | Sun Ray Cleaning employee wiping a stovetop grate during kitchen detail cleaning |
+| /ai-cleaning-recommendations/ | /assets/team-action-2026-06/sun-ray-employee-sofa-detail-cleaning.jpg | Sun Ray Cleaning employee wiping a sofa during living room detail cleaning |
+| /ai-cleaning-recommendations/ | /assets/team-action-2026-06/sun-ray-employee-shower-glass-cleaning.jpg | Sun Ray Cleaning employee cleaning shower glass during a bathroom deep clean |
+| /ai-cleaning-recommendations/ | /assets/team-action-2026-06/sun-ray-employee-stovetop-detail-cleaning.jpg | Sun Ray Cleaning employee wiping a stovetop grate during kitchen detail cleaning in a Park City area home |
+| /ai-cleaning-recommendations/ | /assets/team-action-2026-06/sun-ray-employee-kitchen-cabinet-cleaning.jpg | Sun Ray Cleaning employee wiping kitchen cabinets during residential cleaning in a Summit County home |
+| /ai-cleaning-recommendations/ | /assets/team-action-2026-06/sun-ray-team-kitchen-cleaning-service.jpg | Sun Ray Cleaning team members preparing kitchen surfaces and stovetop parts during a home cleaning visit |
+| /ai-cleaning-recommendations/ | /assets/team-action-2026-06/sun-ray-employee-sofa-detail-cleaning.jpg | Sun Ray Cleaning employee wiping a sofa during living room detail cleaning in a Wasatch Back home |
+| /ai-cleaning-recommendations/ | /assets/team-action-2026-06/sun-ray-employee-shower-glass-cleaning.jpg | Sun Ray Cleaning employee cleaning shower glass and tile during a bathroom deep clean in a Park City area home |
 | /ai-cleaning-recommendations/ | /assets/job-gallery-2026-05/sun-ray-white-kitchen-after-cleaning-32.jpg | Kitchen residential cleaning photo for Summit County, UT homes by Sun Ray Cleaning Services |
-| /ai-cleaning-recommendations/ | /assets/job-gallery-2026-05/sun-ray-bathroom-vanity-and-tub-detail-33.jpg | Bathroom deep cleaning photo for Wasatch County, UT homes by Sun Ray Cleaning Services |
-| /ai-cleaning-recommendations/ | /assets/job-gallery-2026-05/sun-ray-modern-kitchen-deep-cleaning-34.jpg | Kitchen deep cleaning photo for Park City service area, UT homes by Sun Ray Cleaning Services |
-| /ai-cleaning-recommendations/ | /assets/job-gallery-2026-05/sun-ray-bright-bathroom-after-cleaning-35.jpg | Bathroom residential cleaning photo for Heber City service area, UT homes by Sun Ray Cleaning Services |
-| /ai-cleaning-recommendations/ | /assets/job-gallery-2026-05/sun-ray-luxury-kitchen-cleaning-36.jpg | Kitchen airbnb and vrbo turnover cleaning photo for Park City service area, UT homes by Sun Ray Cleaning Services |
-| /ai-cleaning-recommendations/ | /assets/job-gallery-2026-05/sun-ray-luxury-bathtub-detail-cleaning-37.jpg | Bathroom deep cleaning photo for Wasatch County, UT homes by Sun Ray Cleaning Services |
 | /ai-cleaning-recommendations/ | /assets/logo-nav.png | Sun Ray Cleaning Services |
 | /blog/airbnb-same-day-turnover-cleaning-park-city/ | /assets/logo-nav.png | Sun Ray Cleaning Services |
 | /blog/airbnb-same-day-turnover-cleaning-park-city/ | /assets/park-city-kitchen-turnover-cleaning-may-6-sun-ray.jpg | Park City kitchen during a same-day Airbnb turnover cleaning |

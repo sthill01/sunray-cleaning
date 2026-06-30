@@ -4,7 +4,7 @@
     "date": "2026-06-30",
     "returncode": 0,
     "stderr_tail": "",
-    "stdout_tail": "\n> build:cloudflare\n> python tools/build-cloudflare-preview.py\n\nBuilt 97 clean routes into C:\\Users\\sthil\\AppData\\Local\\Temp\\sunray-intelligence-clean-1311854115154c728404ac2e681badaa\\cloudflare-preview"
+    "stdout_tail": "\n> build:cloudflare\n> python tools/build-cloudflare-preview.py\n\nBuilt 97 clean routes into C:\\Users\\sthil\\AppData\\Local\\Temp\\sunray-cleaning-validate-07abd66\\cloudflare-preview"
   },
   "coverage_matrices": {
     "ai_prompt_coverage": {
@@ -110,7 +110,7 @@
       "Heber City": {
         "articles": 27,
         "faqs": 244,
-        "images": 104,
+        "images": 100,
         "pages": 97,
         "reviews": 0,
         "schema_pages": 97
@@ -150,7 +150,7 @@
       "Midway": {
         "articles": 27,
         "faqs": 244,
-        "images": 43,
+        "images": 41,
         "pages": 97,
         "reviews": 0,
         "schema_pages": 97
@@ -174,7 +174,7 @@
       "Park City": {
         "articles": 27,
         "faqs": 244,
-        "images": 263,
+        "images": 259,
         "pages": 97,
         "reviews": 0,
         "schema_pages": 97
@@ -222,7 +222,7 @@
       "Wasatch County": {
         "articles": 27,
         "faqs": 244,
-        "images": 188,
+        "images": 177,
         "pages": 97,
         "reviews": 0,
         "schema_pages": 97
@@ -479,7 +479,7 @@
       },
       "deep cleaning": {
         "faqs": 244,
-        "images": 1123,
+        "images": 1112,
         "pages": 97,
         "reviews": 1
       },
@@ -515,7 +515,7 @@
       },
       "recurring cleaning": {
         "faqs": 244,
-        "images": 263,
+        "images": 225,
         "pages": 97,
         "reviews": 0
       },
@@ -8558,7 +8558,7 @@
       }
     }
   },
-  "root": "C:\\Users\\sthil\\AppData\\Local\\Temp\\sunray-intelligence-clean-1311854115154c728404ac2e681badaa",
+  "root": "C:\\Users\\sthil\\AppData\\Local\\Temp\\sunray-cleaning-validate-07abd66",
   "routes": [
     {
       "canonical": "https://sunray-cleaning-preview.pages.dev/about/",
@@ -9740,7 +9740,7 @@
       "description": "Browse the Sun Ray Cleaning photo gallery and portfolio with kitchens, bathrooms, living rooms, bedrooms, Airbnb turnovers, deep cleans and recurring home cleaning in Summit and Wasatch County.",
       "family": "core",
       "faq_count": 0,
-      "image_count": 41,
+      "image_count": 46,
       "in_llms": true,
       "in_sitemap": true,
       "inbound_links": 96,
@@ -12239,7 +12239,7 @@
   "totals": {
     "article_pages": 27,
     "faq_items": 244,
-    "images": 1161,
+    "images": 1166,
     "location_pages": 55,
     "missing_image_alt": 8,
     "orphan_pages": 5,

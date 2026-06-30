@@ -4,14 +4,14 @@
 
 | Location | Pages | Images | FAQs | Review Mentions |
 | --- | --- | --- | --- | --- |
-| Park City | 97 | 263 | 244 | 0 |
-| Heber City | 97 | 104 | 244 | 0 |
-| Midway | 97 | 43 | 244 | 0 |
+| Park City | 97 | 259 | 244 | 0 |
+| Heber City | 97 | 100 | 244 | 0 |
+| Midway | 97 | 41 | 244 | 0 |
 | Kamas | 97 | 8 | 244 | 0 |
 | Deer Valley | 97 | 4 | 244 | 0 |
 | Canyons Village | 97 | 4 | 244 | 0 |
 | Summit County | 97 | 125 | 244 | 0 |
-| Wasatch County | 97 | 188 | 244 | 0 |
+| Wasatch County | 97 | 177 | 244 | 0 |
 | Old Town Park City | 15 | 2 | 48 | 0 |
 | Snyderville | 14 | 3 | 44 | 0 |
 | Jordanelle | 97 | 8 | 244 | 0 |
@@ -27,8 +27,8 @@
 
 | Service | Pages | Images | FAQs | Review Mentions |
 | --- | --- | --- | --- | --- |
-| recurring cleaning | 97 | 263 | 244 | 0 |
-| deep cleaning | 97 | 1123 | 244 | 1 |
+| recurring cleaning | 97 | 225 | 244 | 0 |
+| deep cleaning | 97 | 1112 | 244 | 1 |
 | move-in cleaning | 6 | 0 | 13 | 0 |
 | move-out cleaning | 64 | 336 | 193 | 0 |
 | move-in and move-out cleaning | 62 | 10 | 187 | 0 |

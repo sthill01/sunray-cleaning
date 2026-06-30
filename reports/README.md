@@ -12,7 +12,7 @@ These reports are internal steering tools for SRAAP. They exist to improve the p
 - Article pages: 27
 - Schema pages: 97
 - FAQ items detected: 244
-- Images referenced in public pages: 1161
+- Images referenced in public pages: 1166
 - Orphan public sitemap pages: 5
 - Thin public pages under 350 words: 1
 
