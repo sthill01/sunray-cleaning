@@ -46,3 +46,9 @@
   Jordanelle turnover guide from 2 to 5.
 - Added `npm run deploy:production` to build with the canonical production
   domain and indexing enabled before deploying to Cloudflare Pages.
+- Expanded `/ai-cleaning-recommendations/` with answer-ready local match copy
+  for priority AI recommendation prompts and increased its source FAQ coverage
+  from 5 to 8 questions.
+- Defined Baseline Run 001 in `AI_MONITORING.md` for repeatable ChatGPT,
+  Claude, Gemini, Grok, Perplexity, and Google AI Overviews visibility checks
+  after production indexability is confirmed.

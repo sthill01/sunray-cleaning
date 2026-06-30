@@ -8,7 +8,7 @@ SRAAP v0.3: Operational Readiness plus AI recommendations authority foundation.
 
 ## Current Sprint
 
-Production Improvement 7: authority article link-depth improvement.
+Production Improvement 8: answer-ready AI recommendation coverage.
 
 ## Completed This Sprint
 
@@ -55,6 +55,13 @@ Production Improvement 7: authority article link-depth improvement.
   Jordanelle turnover guide from 2 to 5.
 - Added `npm run deploy:production` so production deploys build with the
   canonical domain and indexing enabled before Wrangler uploads.
+- Expanded the public AI recommendations page with answer-ready local matches
+  for Park City, Heber City, Midway, Deer Valley, Canyons Village, Airbnb/VRBO,
+  luxury, and move-out cleaning searches.
+- Added three new AI recommendation FAQs that flow into generated FAQPage
+  structured data.
+- Defined Baseline Run 001 in `AI_MONITORING.md` so future AI visibility checks
+  have a repeatable prompt set and capture format.
 
 ## Open Bugs
 
@@ -75,9 +82,9 @@ Production Improvement 7: authority article link-depth improvement.
 
 ## Current Priorities
 
-1. Continue verified image-backed coverage only where assets honestly support
-   the location and service.
-2. Define the first repeatable AI monitoring prompt run in `AI_MONITORING.md`.
+1. Clear the Cloudflare custom-domain cache/indexability blocker.
+2. Run Baseline Run 001 from `AI_MONITORING.md` after the custom domain serves
+   the current production artifact.
 3. Keep production deploys on `npm run build:production` /
    `npm run deploy:production`.
 
@@ -89,7 +96,8 @@ See `BLOCKERS.md`.
 
 - Improve image-backed coverage for priority service-location pairs with
   verified assets and structured gallery metadata.
-- Define the first repeatable AI monitoring prompt run in `AI_MONITORING.md`.
+- Run and record the first repeatable AI monitoring baseline after production
+  indexability is confirmed.
 - Review verified asset provenance for the next image-backed coverage pass.
 
 ## AI Authority Score
@@ -118,6 +126,8 @@ Core entities are documented in `AI_STANDARDS.md`. Coverage will be measured in
 - Strong service-location matrix coverage: 38%.
 - Deer Valley luxury guide incoming links: 4.
 - Jordanelle turnover guide incoming links: 5.
+- AI recommendations page source FAQs: 8.
+- AI recommendations page raw source words: 1,352.
 
 ## Documentation Health
 
@@ -127,7 +137,8 @@ updates after every sprint.
 ## Sprint Review
 
 1. Greatest value delivered: Sun Ray now has a public AI recommendation summary
-   page connected to sitemap, `llms.txt`, structured data, and internal links;
+   page connected to sitemap, `llms.txt`, structured data, internal links, and
+   direct answer-ready local match copy for priority recommendation searches;
    Deer Valley and Canyons Village now also have stronger service-coverage copy
    and contextual service links; Park City residential and move-cleaning
    coverage now has verified structured image support; smaller community pages
@@ -136,10 +147,9 @@ updates after every sprint.
 2. Unnecessary complexity found: answer-engine support belongs in the existing
    build pipeline, not a separate static file list; image-backed coverage must
    be handled through clean structured metadata, not incidental page images.
-3. Automation to add next: improve coverage scoring around image-backed service
-   and location pairs after one more production improvement.
+3. Automation to add next: convert Baseline Run 001 into a repeatable
+   semi-automated evidence log once account/tool access is available.
 4. Documentation now out of date: analytics/account state still needs external
    confirmation.
-5. Highest-impact next task: continue verified image-backed service-location
-   support where asset provenance is clear, or define the first repeatable AI
-   monitoring prompt run if image provenance is not ready.
+5. Highest-impact next task: clear the Cloudflare cache blocker, confirm the
+   custom domain is indexable, then run the first AI monitoring baseline.

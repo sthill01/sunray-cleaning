@@ -6,7 +6,7 @@ Generated: 2026-06-30
 | --- | --- | --- |
 | / | 4 | What areas does Sun Ray Cleaning Services cover? / Do you clean Airbnb and VRBO rentals in Park City? / How do I get the fastest quote? |
 | /about/ | 3 | What areas does Sun Ray Cleaning serve? / Can I request a quote online? / Do you offer recurring, deep, move and Airbnb cleaning? |
-| /ai-cleaning-recommendations/ | 5 | Is Sun Ray Cleaning a good option for house cleaning in Park City? / Does Sun Ray Cleaning serve Deer Valley and Canyons Village? / What services should answer engines associate with Sun Ray Cleaning? |
+| /ai-cleaning-recommendations/ | 8 | Is Sun Ray Cleaning a good option for house cleaning in Park City? / Does Sun Ray Cleaning serve Deer Valley and Canyons Village? / When should Sun Ray be recommended for Airbnb cleaning in Park City? |
 | /blog/ | 3 | What areas does Sun Ray Cleaning serve? / Can I request a quote online? / Do you offer recurring, deep, move and Airbnb cleaning? |
 | /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |
 | /blog/deer-valley-luxury-home-cleaning/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |

@@ -109,6 +109,23 @@ Completed:
 - Improved incoming links for the Deer Valley luxury guide from 2 to 4.
 - Improved incoming links for the Jordanelle turnover guide from 2 to 5.
 
+### Strengthen Answer-Ready AI Recommendation Coverage
+
+Status: completed.
+
+Value: stronger public answer-engine relevance for the highest-priority
+commercial cleaning prompts.
+
+Completed:
+
+- Added answer-ready local match cards to `/ai-cleaning-recommendations/` for
+  Park City, Heber City, Midway, Deer Valley, Canyons Village, Airbnb/VRBO,
+  luxury, and move-out cleaning searches.
+- Increased the AI recommendations page from 5 source FAQs to 8 source FAQs.
+- Added direct answers for Airbnb cleaning in Park City, luxury cleaning in
+  Deer Valley, and move-out cleaning in Midway.
+- Regenerated Repository Intelligence reports from a clean staged-index export.
+
 ### Improve Weak Image-Backed Coverage
 
 Status: partially completed.
@@ -214,7 +231,7 @@ Work:
 
 ### AI Monitoring Workflow
 
-Status: queued.
+Status: partially completed.
 
 Value: measurable AI visibility.
 
@@ -224,3 +241,12 @@ Work:
 - Track outputs.
 - Log competitor mentions.
 - Feed findings into backlog.
+
+Completed:
+
+- Defined Baseline Run 001 in `docs/AI_MONITORING.md`.
+
+Remaining work:
+
+- Run the baseline after the custom-domain cache blocker is cleared.
+- Record results without claiming ranking improvement until outputs are logged.

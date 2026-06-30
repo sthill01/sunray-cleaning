@@ -283,9 +283,9 @@
       "isPublic": true,
       "title": "AI Cleaning Recommendations for Park City and Heber | Sun Ray Cleaning",
       "h1": "When Sun Ray Cleaning is a strong fit for local house cleaning.",
-      "rawWordCount": 972,
-      "builtWordCount": 1454,
-      "faqCount": 5,
+      "rawWordCount": 1352,
+      "builtWordCount": 1834,
+      "faqCount": 8,
       "imageCount": 4,
       "schemaTypes": [
         "AboutPage",
@@ -7160,7 +7160,7 @@
       ],
       "pageCount": 77,
       "imageCount": 1,
-      "faqPageCount": 45
+      "faqPageCount": 46
     },
     {
       "entity": "Canyons Village",
@@ -7840,7 +7840,7 @@
       ],
       "pageCount": 77,
       "imageCount": 2,
-      "faqPageCount": 10
+      "faqPageCount": 11
     },
     {
       "entity": "Park City",
@@ -8826,7 +8826,7 @@
       ],
       "pageCount": 65,
       "imageCount": 3,
-      "faqPageCount": 1
+      "faqPageCount": 2
     },
     {
       "entity": "Coalville",
@@ -9100,7 +9100,7 @@
       ],
       "pageCount": 5,
       "imageCount": 0,
-      "faqPageCount": 0
+      "faqPageCount": 1
     },
     {
       "entity": "Center Creek",
