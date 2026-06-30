@@ -58,7 +58,9 @@ Production Improvement 7: authority article link-depth improvement.
 
 ## Open Bugs
 
-- No open bug has been confirmed in this sprint.
+- The latest `sunray-cleaning-staging` Pages production deployment is correct,
+  but `www.sunray-cleaning.com` is still serving an older cached preview-style
+  artifact at the Cloudflare zone layer. See `BLOCKERS.md`.
 
 ## Known Technical Debt
 

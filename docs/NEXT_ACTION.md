@@ -4,20 +4,28 @@ Last updated: 2026-06-30
 
 ## Immediate Next Step
 
-Continue verified image-backed service-location coverage where asset provenance
-is clear, or define the first repeatable AI monitoring prompt run if image
-provenance is not ready.
+Clear the Cloudflare custom-domain cache/indexability blocker before doing more
+production SEO work. The latest Pages production deployment is correct, but
+`www.sunray-cleaning.com` is still serving an older cached preview-style
+artifact with `noindex` headers and preview-domain canonicals.
 
 Recommended next task:
 
-1. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
+1. In Cloudflare, purge cache for `sunray-cleaning.com` or provide a token with
+   Zone Cache Purge permission.
+2. Recheck `https://www.sunray-cleaning.com/service-location/deer-valley/` for
+   `x-robots-tag`, canonical URL, and the Deer Valley luxury guide link.
+3. Recheck `https://www.sunray-cleaning.com/service-location/jordanelle/` for
+   canonical URL and the Jordanelle turnover guide link.
+4. After the custom domain serves the production artifact, review
+   `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
    tracked assets.
-2. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
+5. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
    gaps only where the source asset and metadata honestly support the location
    and service.
-3. If provenance is unclear, define the first repeatable AI monitoring prompt
+6. If provenance is unclear, define the first repeatable AI monitoring prompt
    run in `AI_MONITORING.md` instead of adding unsupported image metadata.
-4. Run `npm run reports:generate`, `npm run build:cloudflare`, and
+7. Run `npm run reports:generate`, `npm run build:cloudflare`, and
    `npm run check:internal-links`.
 
 ## Session Startup Protocol
