@@ -8,7 +8,7 @@ SRAAP v0.3: Operational Readiness plus AI recommendations authority foundation.
 
 ## Current Sprint
 
-Production Improvement 6: service-area hub link-depth improvement.
+Production Improvement 7: authority article link-depth improvement.
 
 ## Completed This Sprint
 
@@ -47,6 +47,12 @@ Production Improvement 6: service-area hub link-depth improvement.
 - Added a "smaller communities and neighborhood service areas" section to the
   service-area hub linking to 13 low-incoming public location pages.
 - Reduced low incoming public location routes from 13 to 0.
+- Added contextual links from Deer Valley and Park City pages to the Deer
+  Valley luxury home cleaning guide.
+- Added contextual links from Jordanelle, Heber City, and Wasatch County pages
+  to the Jordanelle vacation rental turnover guide.
+- Improved incoming links for the Deer Valley luxury guide from 2 to 4 and the
+  Jordanelle turnover guide from 2 to 5.
 
 ## Open Bugs
 
@@ -67,8 +73,8 @@ Production Improvement 6: service-area hub link-depth improvement.
 
 1. Continue verified image-backed coverage only where assets honestly support
    the location and service.
-2. Improve contextual internal links to high-authority service/location
-   resources where reports show weak link depth.
+2. Continue verified image-backed coverage where assets honestly support the
+   location and service.
 3. Define the first repeatable AI monitoring prompt run in `AI_MONITORING.md`.
 
 ## Blocked Items
@@ -79,7 +85,8 @@ See `BLOCKERS.md`.
 
 - Improve image-backed coverage for priority service-location pairs with
   verified assets and structured gallery metadata.
-- Improve contextual internal links to low-link authority articles.
+- Define the first repeatable AI monitoring prompt run in `AI_MONITORING.md`.
+- Review verified asset provenance for the next image-backed coverage pass.
 
 ## AI Authority Score
 
@@ -105,6 +112,8 @@ Core entities are documented in `AI_STANDARDS.md`. Coverage will be measured in
 - Missing generated image alt attributes: 0.
 - Weak service-location coverage cells: 30.
 - Strong service-location matrix coverage: 38%.
+- Deer Valley luxury guide incoming links: 4.
+- Jordanelle turnover guide incoming links: 5.
 
 ## Documentation Health
 
@@ -118,7 +127,8 @@ updates after every sprint.
    Deer Valley and Canyons Village now also have stronger service-coverage copy
    and contextual service links; Park City residential and move-cleaning
    coverage now has verified structured image support; smaller community pages
-   now have service-area hub links.
+   now have service-area hub links; and two under-linked authority articles now
+   have stronger contextual paths from matching location pages.
 2. Unnecessary complexity found: answer-engine support belongs in the existing
    build pipeline, not a separate static file list; image-backed coverage must
    be handled through clean structured metadata, not incidental page images.
@@ -126,6 +136,6 @@ updates after every sprint.
    and location pairs after one more production improvement.
 4. Documentation now out of date: analytics/account state still needs external
    confirmation.
-5. Highest-impact next task: improve contextual links to low-link authority
-   articles, or continue verified image-backed service-location support where
-   asset provenance is clear.
+5. Highest-impact next task: continue verified image-backed service-location
+   support where asset provenance is clear, or define the first repeatable AI
+   monitoring prompt run if image provenance is not ready.

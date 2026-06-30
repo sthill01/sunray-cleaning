@@ -38,3 +38,9 @@
   generated image alt attributes to 0.
 - Added service-area hub links to 13 smaller community pages and cleared the
   low incoming public location route report.
+- Added contextual links to the Deer Valley luxury home cleaning guide from
+  Deer Valley and Park City pages.
+- Added contextual links to the Jordanelle vacation rental turnover guide from
+  Jordanelle, Heber City, and Wasatch County pages.
+- Improved incoming links for the Deer Valley luxury guide from 2 to 4 and the
+  Jordanelle turnover guide from 2 to 5.

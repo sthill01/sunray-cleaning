@@ -759,7 +759,9 @@
       ],
       "incomingInternalLinks": [
         "/ai-cleaning-recommendations/",
-        "/blog/"
+        "/blog/",
+        "/service-location/deer-valley/",
+        "/service-location/park-city/"
       ]
     },
     {
@@ -1094,7 +1096,10 @@
       ],
       "incomingInternalLinks": [
         "/ai-cleaning-recommendations/",
-        "/blog/"
+        "/blog/",
+        "/service-location/heber-city/",
+        "/service-location/jordanelle/",
+        "/service-location/wasatch-county/"
       ]
     },
     {
@@ -2645,8 +2650,8 @@
       "isPublic": true,
       "title": "Deer Valley Luxury Home Cleaning and Turnovers | Sun Ray Cleaning",
       "h1": "Detailed Deer Valley cleaning for luxury homes and ski stays.",
-      "rawWordCount": 905,
-      "builtWordCount": 1405,
+      "rawWordCount": 909,
+      "builtWordCount": 1409,
       "faqCount": 3,
       "imageCount": 9,
       "schemaTypes": [
@@ -2678,6 +2683,7 @@
         "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+        "/blog/deer-valley-luxury-home-cleaning/",
         "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
         "/contact/",
@@ -2934,8 +2940,8 @@
       "isPublic": true,
       "title": "Heber City House Cleaning, Move Cleaning and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Heber City house cleaning for family homes, moves, and guest-ready spaces.",
-      "rawWordCount": 890,
-      "builtWordCount": 1421,
+      "rawWordCount": 906,
+      "builtWordCount": 1437,
       "faqCount": 3,
       "imageCount": 22,
       "schemaTypes": [
@@ -2968,6 +2974,7 @@
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
+        "/blog/jordanelle-vacation-rental-turnover/",
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
         "/contact/",
         "/discounts/",
@@ -3635,8 +3642,8 @@
       "isPublic": true,
       "title": "Jordanelle House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Jordanelle in Heber City.",
-      "rawWordCount": 748,
-      "builtWordCount": 1139,
+      "rawWordCount": 751,
+      "builtWordCount": 1142,
       "faqCount": 3,
       "imageCount": 5,
       "schemaTypes": [
@@ -3669,6 +3676,7 @@
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
+        "/blog/jordanelle-vacation-rental-turnover/",
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
         "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
         "/contact/",
@@ -4518,8 +4526,8 @@
       "isPublic": true,
       "title": "Park City House Cleaning, Airbnb Turnovers and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Park City house cleaning for homes, rentals, and second homes.",
-      "rawWordCount": 916,
-      "builtWordCount": 1447,
+      "rawWordCount": 934,
+      "builtWordCount": 1465,
       "faqCount": 3,
       "imageCount": 22,
       "schemaTypes": [
@@ -4551,6 +4559,7 @@
         "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+        "/blog/deer-valley-luxury-home-cleaning/",
         "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
         "/contact/",
@@ -5757,8 +5766,8 @@
       "isPublic": true,
       "title": "Wasatch County House Cleaning, Move Cleaning and Vacation Home Cleaning | Sun Ray Cleaning",
       "h1": "Wasatch County cleaning for Heber City, Midway, Daniel, and nearby homes.",
-      "rawWordCount": 907,
-      "builtWordCount": 1436,
+      "rawWordCount": 926,
+      "builtWordCount": 1455,
       "faqCount": 3,
       "imageCount": 22,
       "schemaTypes": [
@@ -5791,6 +5800,7 @@
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
+        "/blog/jordanelle-vacation-rental-turnover/",
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
         "/contact/",
         "/discounts/",
@@ -9080,6 +9090,19 @@
       "faqPageCount": 0
     },
     {
+      "entity": "luxury home cleaning",
+      "pages": [
+        "/ai-cleaning-recommendations/",
+        "/blog/",
+        "/blog/deer-valley-luxury-home-cleaning/",
+        "/service-location/deer-valley/",
+        "/service-location/park-city/"
+      ],
+      "pageCount": 5,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
       "entity": "Center Creek",
       "pages": [
         "/service-location/center-creek/",
@@ -9102,18 +9125,6 @@
       "pageCount": 4,
       "imageCount": 0,
       "faqPageCount": 1
-    },
-    {
-      "entity": "luxury home cleaning",
-      "pages": [
-        "/ai-cleaning-recommendations/",
-        "/blog/",
-        "/blog/deer-valley-luxury-home-cleaning/",
-        "/service-location/deer-valley/"
-      ],
-      "pageCount": 4,
-      "imageCount": 0,
-      "faqPageCount": 0
     },
     {
       "entity": "Chalk Creek",

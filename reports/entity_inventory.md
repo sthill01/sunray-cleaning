@@ -33,9 +33,9 @@ Generated: 2026-06-30
 | Snyderville | 14 | 1 | 1 | /service-areas/, /service-location/canyons-village/, /service-location/coalville/, /service-location/daniel/, /service-location/deer-valley/, /service-location/heber-city/, /service-location/kamas/, /service-location/midway/ |
 | Charleston | 5 | 0 | 0 | /service-areas/, /service-location/charleston-lake/, /service-location/charleston/, /service-location/deer-creek-east/, /service-location/midway/ |
 | Francis | 5 | 0 | 0 | /service-areas/, /service-location/foothill-estates/, /service-location/francis/, /service-location/kamas/, /service-location/wild-willow/ |
+| luxury home cleaning | 5 | 0 | 0 | /ai-cleaning-recommendations/, /blog/, /blog/deer-valley-luxury-home-cleaning/, /service-location/deer-valley/, /service-location/park-city/ |
 | Center Creek | 4 | 0 | 0 | /service-location/center-creek/, /service-location/daniel/, /service-location/heber-city/, /service-location/wasatch-county/ |
 | Kimball Junction | 4 | 0 | 1 | /service-location/canyons-village/, /service-location/kimball-junction/, /service-location/park-city/, /service-location/snyderville/ |
-| luxury home cleaning | 4 | 0 | 0 | /ai-cleaning-recommendations/, /blog/, /blog/deer-valley-luxury-home-cleaning/, /service-location/deer-valley/ |
 | Chalk Creek | 3 | 0 | 0 | /service-areas/, /service-location/chalk-creek/, /service-location/coalville/ |
 | Charleston Lake | 3 | 0 | 0 | /service-location/charleston-lake/, /service-location/charleston/, /service-location/midway/ |
 | Daniel Ranch | 3 | 0 | 0 | /service-areas/, /service-location/daniel-ranch/, /service-location/daniel/ |

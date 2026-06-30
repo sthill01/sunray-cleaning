@@ -89,7 +89,7 @@ Work:
 
 ### Improve Low Incoming Links For Authority Articles
 
-Status: queued.
+Status: completed.
 
 Value: stronger AI citation paths and better crawl support.
 
@@ -99,6 +99,15 @@ Work:
   vacation rental turnover articles.
 - Prefer contextual links from related location and service pages.
 - Validate with Repository Intelligence reports.
+
+Completed:
+
+- Linked the Deer Valley luxury home cleaning guide from the Deer Valley and
+  Park City location pages.
+- Linked the Jordanelle vacation rental turnover guide from the Jordanelle,
+  Heber City, and Wasatch County location pages.
+- Improved incoming links for the Deer Valley luxury guide from 2 to 4.
+- Improved incoming links for the Jordanelle turnover guide from 2 to 5.
 
 ### Improve Weak Image-Backed Coverage
 

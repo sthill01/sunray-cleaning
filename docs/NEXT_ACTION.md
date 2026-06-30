@@ -4,24 +4,20 @@ Last updated: 2026-06-30
 
 ## Immediate Next Step
 
-Improve contextual links to low-link authority articles, or continue verified
-image-backed service-location coverage where asset provenance is clear.
+Continue verified image-backed service-location coverage where asset provenance
+is clear, or define the first repeatable AI monitoring prompt run if image
+provenance is not ready.
 
 Recommended next task:
 
-1. Review `reports/internal_links.md` for authority articles with low incoming
-   links, especially Deer Valley luxury cleaning and Jordanelle vacation rental
-   turnover.
-2. Add contextual links from relevant service and location pages where they help
-   customers navigate to the right resource.
-3. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
+1. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
    tracked assets.
-4. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
+2. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
    gaps only where the source asset and metadata honestly support the location
    and service.
-5. If provenance is unclear, improve customer-facing copy or internal links
-   instead of adding unsupported image metadata.
-6. Run `npm run reports:generate`, `npm run build:cloudflare`, and
+3. If provenance is unclear, define the first repeatable AI monitoring prompt
+   run in `AI_MONITORING.md` instead of adding unsupported image metadata.
+4. Run `npm run reports:generate`, `npm run build:cloudflare`, and
    `npm run check:internal-links`.
 
 ## Session Startup Protocol
@@ -57,3 +53,6 @@ inventory reports 0 missing generated image alt attributes.
 
 The service-area hub now links to 13 smaller community pages, and the content
 gap report shows no low incoming public location routes.
+
+The Deer Valley luxury cleaning guide now has 4 incoming links, and the
+Jordanelle vacation rental turnover guide now has 5 incoming links.
