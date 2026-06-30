@@ -117,6 +117,20 @@ Work:
   service and location.
 - Avoid inventing photo provenance.
 
+### Strengthen Deer Valley And Canyons Village Service Coverage
+
+Status: completed.
+
+Value: direct public website quality and AI authority support.
+
+Completed:
+
+- Added dedicated service-coverage copy to Deer Valley and Canyons Village.
+- Covered residential, recurring, deep, move, second-home, and Airbnb/VRBO
+  cleaning intent where relevant.
+- Added contextual links to the AI recommendations page and core service pages.
+- Regenerated Repository Intelligence from a clean staged-index export.
+
 ### Coverage Matrix Refinement
 
 Status: queued.

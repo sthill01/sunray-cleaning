@@ -73,3 +73,18 @@ structured data, internal answer-network links, and `llms.txt` in
 `tools/build-cloudflare-preview.py`. Keeping AI recommendation support in that
 pipeline prevents a second source of truth and makes future authority pages
 easier to validate.
+
+## Decision 0006: Image-Backed Authority Requires Provenance
+
+Status: accepted.
+
+Service-location image coverage should only be added when the asset and
+structured metadata honestly support the location and service being claimed. If
+provenance is unclear, improve customer-facing copy, FAQs, internal links, or
+route structure instead of inflating image coverage.
+
+Reason:
+
+AI authority depends on trust. Unsupported image metadata may improve an
+internal metric temporarily but weakens the repository as a durable source of
+truth.

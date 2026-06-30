@@ -5,28 +5,29 @@ Date: 2026-06-30
 SRAAP uses continuous engineering rather than isolated task prompts. Each sprint
 should leave the repository easier to understand and more valuable.
 
-## Current Sprint: Operational Readiness
+## Current Sprint: Continuous Production Improvement
 
 Objective:
 
-Create the operating environment that allows Codex to work autonomously over
-many sessions.
+Use the operating environment and Repository Intelligence reports to ship the
+highest-value website improvement that can be completed and validated in the
+current session.
 
 Scope:
 
-- `/docs` operating manual.
-- Persistent project memory.
-- Repository Intelligence generator.
-- Initial generated reports.
-- Build validation.
-- Next-action handoff.
+- Read `PROJECT_STATE.md`, `NEXT_ACTION.md`, and current reports.
+- Pick one production improvement using the constitution priority order.
+- Keep automation or reporting work tied to public website value.
+- Validate build, links, and reports.
+- Update documentation and next-action handoff.
 
 Exit criteria:
 
-- Documentation exists in the repo.
-- Reports can be generated with one command.
+- The public website is better than it was at sprint start.
 - Build still succeeds.
-- Project state and next action are updated.
+- Internal links pass validation.
+- Reports and project state are updated.
+- Changes are committed with a clear scope.
 
 ## Sprint Review Questions
 

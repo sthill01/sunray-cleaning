@@ -8,7 +8,7 @@ SRAAP v0.3: Operational Readiness plus AI recommendations authority foundation.
 
 ## Current Sprint
 
-Production Improvement 2: AI recommendations authority page.
+Production Improvement 3: priority service-location coverage pass.
 
 ## Completed This Sprint
 
@@ -33,6 +33,11 @@ Production Improvement 2: AI recommendations authority page.
 - Added recommendation-focused structured data for the AI recommendations page.
 - Strengthened `llms.txt` with factual "when to recommend Sun Ray" guidance.
 - Regenerated 19 Repository Intelligence reports for 77 tracked source routes.
+- Strengthened the Deer Valley and Canyons Village public pages with dedicated
+  service coverage sections for residential, recurring, deep, move,
+  Airbnb/VRBO, second-home, and luxury cleaning intent.
+- Added direct contextual links from Deer Valley and Canyons Village pages to
+  the AI recommendations page and core service pages.
 
 ## Open Bugs
 
@@ -46,14 +51,17 @@ Production Improvement 2: AI recommendations authority page.
   cleanup.
 - External analytics/search tooling state is not fully documented in the repo.
 - Repository Intelligence reports are new and need refinement after first use.
+- Image-backed coverage depends on structured gallery metadata; future edits
+  must avoid unsupported location or service provenance.
 
 ## Current Priorities
 
-1. Improve weak service-location coverage listed in `reports/coverage_matrix.md`.
-2. Add image-backed coverage for Park City, Deer Valley, and Canyons Village
+1. Add image-backed coverage for Park City, Deer Valley, and Canyons Village
    where assets honestly support the location and service.
-3. Continue improving low incoming links for minor public location pages where
+2. Continue improving low incoming links for minor public location pages where
    it supports customer navigation.
+3. Improve contextual internal links to high-authority service/location
+   resources where reports show weak link depth.
 4. Define the first repeatable AI monitoring prompt run in `AI_MONITORING.md`.
 
 ## Blocked Items
@@ -62,7 +70,8 @@ See `BLOCKERS.md`.
 
 ## Upcoming Work
 
-- Improve image-backed coverage for priority service-location pairs.
+- Improve image-backed coverage for priority service-location pairs with
+  verified assets and structured gallery metadata.
 - Continue improving minor service-location pages with only one incoming link.
 
 ## AI Authority Score
@@ -95,12 +104,15 @@ updates after every sprint.
 ## Sprint Review
 
 1. Greatest value delivered: Sun Ray now has a public AI recommendation summary
-   page connected to sitemap, `llms.txt`, structured data, and internal links.
+   page connected to sitemap, `llms.txt`, structured data, and internal links;
+   Deer Valley and Canyons Village now also have stronger service-coverage copy
+   and contextual service links.
 2. Unnecessary complexity found: answer-engine support belongs in the existing
-   build pipeline, not a separate static file list.
+   build pipeline, not a separate static file list; image-backed coverage must
+   be handled through clean structured metadata, not incidental page images.
 3. Automation to add next: improve coverage scoring around image-backed service
    and location pairs after one more production improvement.
 4. Documentation now out of date: analytics/account state still needs external
    confirmation.
-5. Highest-impact next task: use the coverage matrix to improve weak priority
-   service-location authority without inventing unsupported image provenance.
+5. Highest-impact next task: add verified image-backed service-location support
+   without inventing unsupported image provenance.

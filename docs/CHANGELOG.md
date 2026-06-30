@@ -27,3 +27,6 @@
 - Added the tracked `seo-automation/scripts/run_internal_link_check.py` wrapper
   used by `npm run check:internal-links`.
 - Regenerated Repository Intelligence reports for 77 tracked source routes.
+- Strengthened Deer Valley and Canyons Village location pages with dedicated
+  service-coverage sections and contextual links to the AI recommendations page
+  and core service pages.

@@ -4,7 +4,7 @@ Generated: 2026-06-30
 
 | Route | Entity | Parent Route | Raw Words | FAQs | Images |
 | --- | --- | --- | --- | --- | --- |
-| /service-location/canyons-village/ | Canyons Village | /service-location/park-city/ | 777 | 3 | 9 |
+| /service-location/canyons-village/ | Canyons Village | /service-location/park-city/ | 902 | 3 | 9 |
 | /service-location/center-creek/ | Center Creek | /service-location/heber-city/ | 751 | 3 | 5 |
 | /service-location/chalk-creek/ | Chalk Creek |  | 751 | 3 | 5 |
 | /service-location/charleston-lake/ | Charleston Lake | /service-location/midway/ | 751 | 3 | 5 |
@@ -16,7 +16,7 @@ Generated: 2026-06-30
 | /service-location/deer-creek/ | Deer Creek | /service-location/midway/ | 751 | 3 | 5 |
 | /service-location/deer-mountain/ | Deer Mountain |  | 751 | 3 | 5 |
 | /service-location/deer-springs/ | Deer Springs |  | 751 | 3 | 5 |
-| /service-location/deer-valley/ | Deer Valley | /service-location/park-city/ | 789 | 3 | 9 |
+| /service-location/deer-valley/ | Deer Valley | /service-location/park-city/ | 905 | 3 | 9 |
 | /service-location/echo/ | Echo |  | 745 | 3 | 5 |
 | /service-location/foothill-estates/ | Foothill Estates | /service-location/heber-city/ | 751 | 3 | 5 |
 | /service-location/francis/ | Francis | /service-location/kamas/ | 755 | 3 | 9 |

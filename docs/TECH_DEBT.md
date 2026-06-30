@@ -52,3 +52,15 @@ Potential future action:
 
 - Add a measurement architecture doc after credentials and property IDs are
   confirmed.
+
+### Image Coverage Requires Provenance Discipline
+
+The coverage matrix can only treat a service-location pair as image-backed when
+structured gallery metadata supports both the service and the location.
+
+Potential future action:
+
+- Add or update gallery metadata only when the asset honestly supports the
+  location and service being claimed.
+- Keep ambiguous image assets out of service-location coverage scoring until
+  provenance is clear.

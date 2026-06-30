@@ -4,15 +4,18 @@ Last updated: 2026-06-30
 
 ## Immediate Next Step
 
-Improve weak priority service-location coverage using Repository Intelligence
-data.
+Improve verified image-backed service-location coverage using Repository
+Intelligence data.
 
 Recommended next task:
 
-1. Review `reports/coverage_matrix.md` and `reports/content_gap_report.md`.
-2. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County gaps
-   with honest existing assets, dedicated page copy, FAQs, or internal links.
-3. Avoid inventing photo provenance or unsupported service claims.
+1. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
+   tracked assets.
+2. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
+   gaps only where the source asset and metadata honestly support the location
+   and service.
+3. If provenance is unclear, improve customer-facing copy or internal links
+   instead of adding unsupported image metadata.
 4. Run `npm run reports:generate`, `npm run build:cloudflare`, and
    `npm run check:internal-links`.
 
@@ -29,9 +32,13 @@ At the start of a future session:
 
 ## Current Candidate Production Improvement
 
-Use the coverage matrix to strengthen priority service-location authority
-because matrix coverage remains the weakest measured authority signal.
+Use the coverage matrix and image inventory to strengthen priority
+service-location authority because matrix coverage remains the weakest measured
+authority signal.
 
 `/ai-cleaning-recommendations/` is now implemented as a public authority page
 and is linked through priority routes, sitemap output, `llms.txt`, and generated
 answer-network links.
+
+Deer Valley and Canyons Village now have stronger public service-coverage copy
+and contextual links to the AI recommendations page and core service pages.
