@@ -12,3 +12,8 @@
 - Generated initial reports in `/reports`.
 - Validated `npm run build:cloudflare`.
 - Validated `npm run check:internal-links`.
+- Added internal links from Coalville, Daniel, and Kamas hubs to previously
+  orphaned public location pages.
+- Updated Repository Intelligence to exclude internal-only routes from public
+  orphan and authority scoring.
+- Reduced public orphan routes from 6 to 0.

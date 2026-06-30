@@ -5,6 +5,7 @@
       "route": "/",
       "source": "index-gpt.html",
       "kind": "page",
+      "isPublic": true,
       "title": "Professional Home Cleaning in Park City & Heber, UT | Sun Ray Cleaning",
       "h1": "Park City, Heber and Midway homes that truly shine .",
       "rawWordCount": 1124,
@@ -144,6 +145,7 @@
       "route": "/about/",
       "source": "about-gpt.html",
       "kind": "page",
+      "isPublic": true,
       "title": "About Sun Ray Cleaning | Female-Owned Utah Cleaning Service",
       "h1": "A local cleaning team with a family touch and professional standards.",
       "rawWordCount": 729,
@@ -282,6 +284,7 @@
       "route": "/blog/",
       "source": "blog-gpt.html",
       "kind": "blog",
+      "isPublic": true,
       "title": "Sun Ray Cleaning Blog | Park City, Heber City and Midway Cleaning Guides",
       "h1": "Local cleaning guides for Utah homeowners and hosts.",
       "rawWordCount": 966,
@@ -427,6 +430,7 @@
       "route": "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
       "source": "blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026-gpt.html",
       "kind": "blog",
+      "isPublic": true,
       "title": "Complete Guide to Airbnb & VRBO Cleaning in Park City | Sun Ray Cleaning",
       "h1": "Complete Guide to Airbnb & VRBO Cleaning in Park City",
       "rawWordCount": 775,
@@ -564,6 +568,7 @@
       "route": "/blog/deer-valley-luxury-home-cleaning/",
       "source": "blog/deer-valley-luxury-home-cleaning-gpt.html",
       "kind": "blog",
+      "isPublic": true,
       "title": "Deer Valley Luxury Home Cleaning Standards Explained | Sun Ray Cleaning",
       "h1": "Deer Valley Luxury Home Cleaning Standards Explained",
       "rawWordCount": 767,
@@ -627,6 +632,7 @@
       "route": "/blog/getting-park-city-home-ready-for-summer-guests/",
       "source": "blog/getting-park-city-home-ready-for-summer-guests-gpt.html",
       "kind": "blog",
+      "isPublic": true,
       "title": "Getting Your Park City Home Ready for Summer Guests | Sun Ray Cleaning",
       "h1": "Getting Your Park City Home Ready for Summer Guests",
       "rawWordCount": 771,
@@ -692,6 +698,7 @@
       "route": "/blog/heber-city-move-in-move-out-cleaning/",
       "source": "blog/heber-city-move-in-move-out-cleaning-gpt.html",
       "kind": "blog",
+      "isPublic": true,
       "title": "Heber City Move-In/Move-Out Cleaning: What New Residents Should Know | Sun Ray Cleaning",
       "h1": "Heber City Move-In/Move-Out Cleaning: What New Residents Should Know",
       "rawWordCount": 768,
@@ -757,6 +764,7 @@
       "route": "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
       "source": "blog/how-much-does-airbnb-cleaning-cost-park-city-gpt.html",
       "kind": "blog",
+      "isPublic": true,
       "title": "How Much Does Airbnb Cleaning Cost in Park City? | Sun Ray Cleaning",
       "h1": "How Much Does Airbnb Cleaning Cost in Park City?",
       "rawWordCount": 771,
@@ -894,6 +902,7 @@
       "route": "/blog/jordanelle-vacation-rental-turnover/",
       "source": "blog/jordanelle-vacation-rental-turnover-gpt.html",
       "kind": "blog",
+      "isPublic": true,
       "title": "Jordanelle Vacation Rental Turnover: What Lakeside Owners Need | Sun Ray Cleaning",
       "h1": "Jordanelle Vacation Rental Turnover: What Lakeside Owners Need",
       "rawWordCount": 767,
@@ -957,6 +966,7 @@
       "route": "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
       "source": "blog/post-ski-season-deep-clean-park-city-rental-owners-gpt.html",
       "kind": "blog",
+      "isPublic": true,
       "title": "Post-Ski-Season Deep Clean Checklist for Park City Rentals | Sun Ray Cleaning",
       "h1": "Post-Ski-Season Deep Clean Checklist for Park City Rentals",
       "rawWordCount": 765,
@@ -1094,6 +1104,7 @@
       "route": "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
       "source": "blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners-gpt.html",
       "kind": "blog",
+      "isPublic": true,
       "title": "Red Ledges Home Cleaning: A Guide for Luxury Heber Homeowners | Sun Ray Cleaning",
       "h1": "Red Ledges Home Cleaning: A Guide for Luxury Heber Homeowners",
       "rawWordCount": 775,
@@ -1216,6 +1227,7 @@
       "route": "/contact/",
       "source": "contact-gpt.html",
       "kind": "page",
+      "isPublic": true,
       "title": "Get a Cleaning Quote | Sun Ray Cleaning",
       "h1": "Get a quick, transparent cleaning quote.",
       "rawWordCount": 752,
@@ -1354,6 +1366,7 @@
       "route": "/discounts/",
       "source": "discounts-gpt.html",
       "kind": "page",
+      "isPublic": true,
       "title": "Cleaning Discounts & Savings Programs | Sun Ray Cleaning",
       "h1": "Discount programs for recurring clients, referrals and multi-property cleans.",
       "rawWordCount": 737,
@@ -1492,6 +1505,7 @@
       "route": "/gallery/",
       "source": "gallery-gpt.html",
       "kind": "gallery",
+      "isPublic": true,
       "title": "Photo Gallery & Cleaning Portfolio | Sun Ray Cleaning",
       "h1": "Photo gallery and cleaning portfolio from real Sun Ray jobs.",
       "rawWordCount": 560,
@@ -1628,6 +1642,7 @@
       "route": "/privacy-policy/",
       "source": "privacy-policy-gpt.html",
       "kind": "page",
+      "isPublic": true,
       "title": "Privacy Policy | Sun Ray Cleaning",
       "h1": "Sun Ray Cleaning privacy policy.",
       "rawWordCount": 537,
@@ -1684,6 +1699,7 @@
       "route": "/service-areas/",
       "source": "service-areas-gpt.html",
       "kind": "areas",
+      "isPublic": true,
       "title": "Sun Ray Cleaning Service Areas in Summit and Wasatch County",
       "h1": "Sun Ray Cleaning service area hubs across Summit County and Wasatch County.",
       "rawWordCount": 832,
@@ -1821,6 +1837,7 @@
       "route": "/service-location/canyons-village/",
       "source": "service-location/canyons-village-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Canyons Village Condo and Vacation Rental Cleaning | Sun Ray Cleaning",
       "h1": "Canyons Village condo and rental cleaning for guest-ready stays.",
       "rawWordCount": 777,
@@ -1895,6 +1912,7 @@
       "route": "/service-location/center-creek/",
       "source": "service-location/center-creek-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Center Creek House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Center Creek in Daniel.",
       "rawWordCount": 751,
@@ -1966,6 +1984,7 @@
       "route": "/service-location/chalk-creek/",
       "source": "service-location/chalk-creek-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Chalk Creek House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Chalk Creek in Coalville.",
       "rawWordCount": 751,
@@ -2021,12 +2040,15 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "incomingInternalLinks": []
+      "incomingInternalLinks": [
+        "/service-location/coalville/"
+      ]
     },
     {
       "route": "/service-location/charleston-lake/",
       "source": "service-location/charleston-lake-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Charleston Lake House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Charleston Lake in Charleston.",
       "rawWordCount": 751,
@@ -2101,6 +2123,7 @@
       "route": "/service-location/charleston/",
       "source": "service-location/charleston-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Charleston House Cleaning Services | Sun Ray Cleaning",
       "h1": "House cleaning for Charleston homes, rentals and second homes.",
       "rawWordCount": 756,
@@ -2178,10 +2201,11 @@
       "route": "/service-location/coalville/",
       "source": "service-location/coalville-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Coalville House Cleaning, Ranch Cleaning and Move Cleaning | Sun Ray Cleaning",
       "h1": "Coalville cleaning for rural homes, ranch properties, and move-ready spaces.",
-      "rawWordCount": 758,
-      "builtWordCount": 1251,
+      "rawWordCount": 778,
+      "builtWordCount": 1271,
       "faqCount": 3,
       "imageCount": 9,
       "schemaTypes": [
@@ -2218,6 +2242,8 @@
         "/discounts/",
         "/gallery/",
         "/service-areas/",
+        "/service-location/chalk-creek/",
+        "/service-location/echo/",
         "/service-location/heber-city/",
         "/service-location/kamas/",
         "/service-location/midway/",
@@ -2227,6 +2253,7 @@
         "/service-location/promontory/",
         "/service-location/snyderville/",
         "/service-location/summit-county/",
+        "/service-location/wanship/",
         "/service-location/wasatch-county/",
         "/services/",
         "/services/deep-cleaning/",
@@ -2253,6 +2280,7 @@
       "route": "/service-location/daniel-ranch/",
       "source": "service-location/daniel-ranch-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Daniel Ranch House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Daniel Ranch in Daniel.",
       "rawWordCount": 751,
@@ -2308,16 +2336,19 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "incomingInternalLinks": []
+      "incomingInternalLinks": [
+        "/service-location/daniel/"
+      ]
     },
     {
       "route": "/service-location/daniel/",
       "source": "service-location/daniel-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Daniel Utah House Cleaning, Move Cleaning and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Daniel cleaning for rural homes and Heber Valley households.",
-      "rawWordCount": 763,
-      "builtWordCount": 1244,
+      "rawWordCount": 772,
+      "builtWordCount": 1253,
       "faqCount": 3,
       "imageCount": 8,
       "schemaTypes": [
@@ -2355,6 +2386,7 @@
         "/gallery/",
         "/service-areas/",
         "/service-location/center-creek/",
+        "/service-location/daniel-ranch/",
         "/service-location/heber-city/",
         "/service-location/heber-valley/",
         "/service-location/jordanelle/",
@@ -2390,6 +2422,7 @@
       "route": "/service-location/deer-creek-east/",
       "source": "service-location/deer-creek-east-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Deer Creek East House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Deer Creek East in Charleston.",
       "rawWordCount": 757,
@@ -2453,6 +2486,7 @@
       "route": "/service-location/deer-creek/",
       "source": "service-location/deer-creek-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Deer Creek House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Deer Creek in Midway.",
       "rawWordCount": 751,
@@ -2528,6 +2562,7 @@
       "route": "/service-location/deer-mountain/",
       "source": "service-location/deer-mountain-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Deer Mountain House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Deer Mountain in Kamas.",
       "rawWordCount": 751,
@@ -2582,12 +2617,15 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "incomingInternalLinks": []
+      "incomingInternalLinks": [
+        "/service-location/kamas/"
+      ]
     },
     {
       "route": "/service-location/deer-springs/",
       "source": "service-location/deer-springs-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Deer Springs House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Deer Springs in Hideout.",
       "rawWordCount": 751,
@@ -2651,6 +2689,7 @@
       "route": "/service-location/deer-valley/",
       "source": "service-location/deer-valley-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Deer Valley Luxury Home Cleaning and Turnovers | Sun Ray Cleaning",
       "h1": "Detailed Deer Valley cleaning for luxury homes and ski stays.",
       "rawWordCount": 789,
@@ -2724,6 +2763,7 @@
       "route": "/service-location/echo/",
       "source": "service-location/echo-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Echo House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Echo in Coalville.",
       "rawWordCount": 745,
@@ -2779,12 +2819,15 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "incomingInternalLinks": []
+      "incomingInternalLinks": [
+        "/service-location/coalville/"
+      ]
     },
     {
       "route": "/service-location/foothill-estates/",
       "source": "service-location/foothill-estates-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Foothill Estates House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Foothill Estates in Francis.",
       "rawWordCount": 751,
@@ -2855,6 +2898,7 @@
       "route": "/service-location/francis/",
       "source": "service-location/francis-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Francis House Cleaning Services | Sun Ray Cleaning",
       "h1": "House cleaning for Francis homes, rentals and second homes.",
       "rawWordCount": 755,
@@ -2932,6 +2976,7 @@
       "route": "/service-location/heber-city/",
       "source": "service-location/heber-city-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Heber City House Cleaning, Move Cleaning and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Heber City house cleaning for family homes, moves, and guest-ready spaces.",
       "rawWordCount": 890,
@@ -3077,6 +3122,7 @@
       "route": "/service-location/heber-valley/",
       "source": "service-location/heber-valley-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Heber Valley House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Heber Valley in Heber City.",
       "rawWordCount": 754,
@@ -3152,6 +3198,7 @@
       "route": "/service-location/henefer-valley/",
       "source": "service-location/henefer-valley-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Henefer Valley House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Henefer Valley in Henefer.",
       "rawWordCount": 751,
@@ -3215,6 +3262,7 @@
       "route": "/service-location/henefer/",
       "source": "service-location/henefer-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Henefer House Cleaning Services | Sun Ray Cleaning",
       "h1": "House cleaning for Henefer homes, rentals and second homes.",
       "rawWordCount": 750,
@@ -3278,6 +3326,7 @@
       "route": "/service-location/hideout-canyon/",
       "source": "service-location/hideout-canyon-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Hideout Canyon House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Hideout Canyon in Hideout.",
       "rawWordCount": 751,
@@ -3341,6 +3390,7 @@
       "route": "/service-location/hideout/",
       "source": "service-location/hideout-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Hideout House Cleaning Services | Sun Ray Cleaning",
       "h1": "House cleaning for Hideout homes, rentals and second homes.",
       "rawWordCount": 755,
@@ -3406,6 +3456,7 @@
       "route": "/service-location/homestead/",
       "source": "service-location/homestead-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Homestead House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Homestead in Midway.",
       "rawWordCount": 745,
@@ -3481,6 +3532,7 @@
       "route": "/service-location/interlaken/",
       "source": "service-location/interlaken-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Interlaken House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Interlaken in Midway.",
       "rawWordCount": 745,
@@ -3556,6 +3608,7 @@
       "route": "/service-location/jeremy-ranch/",
       "source": "service-location/jeremy-ranch-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Jeremy Ranch House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Jeremy Ranch in Park City.",
       "rawWordCount": 754,
@@ -3623,6 +3676,7 @@
       "route": "/service-location/jordanelle/",
       "source": "service-location/jordanelle-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Jordanelle House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Jordanelle in Heber City.",
       "rawWordCount": 748,
@@ -3699,12 +3753,13 @@
       "route": "/service-location/kamas/",
       "source": "service-location/kamas-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Kamas House Cleaning, Ranch Home Cleaning and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Kamas cleaning for rural homes, ranch properties, and everyday living.",
-      "rawWordCount": 879,
-      "builtWordCount": 1370,
+      "rawWordCount": 899,
+      "builtWordCount": 1390,
       "faqCount": 3,
-      "imageCount": 20,
+      "imageCount": 21,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
@@ -3740,6 +3795,7 @@
         "/gallery/",
         "/service-areas/",
         "/service-location/coalville/",
+        "/service-location/deer-mountain/",
         "/service-location/francis/",
         "/service-location/heber-city/",
         "/service-location/marion/",
@@ -3845,6 +3901,7 @@
       "route": "/service-location/kimball-junction/",
       "source": "service-location/kimball-junction-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Kimball Junction House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Kimball Junction in Park City.",
       "rawWordCount": 754,
@@ -3919,6 +3976,7 @@
       "route": "/service-location/little-hobble-creek/",
       "source": "service-location/little-hobble-creek-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Little Hobble Creek House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Little Hobble Creek in Wallsburg.",
       "rawWordCount": 757,
@@ -3982,6 +4040,7 @@
       "route": "/service-location/marion/",
       "source": "service-location/marion-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Marion House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Marion in Kamas.",
       "rawWordCount": 745,
@@ -4055,6 +4114,7 @@
       "route": "/service-location/midway/",
       "source": "service-location/midway-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Midway House Cleaning, Cabin Cleaning and Vacation Home Cleaning | Sun Ray Cleaning",
       "h1": "Midway cleaning for homes, cabins, and seasonal stays.",
       "rawWordCount": 871,
@@ -4203,6 +4263,7 @@
       "route": "/service-location/oakley-ranch/",
       "source": "service-location/oakley-ranch-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Oakley Ranch House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Oakley Ranch in Oakley.",
       "rawWordCount": 751,
@@ -4276,6 +4337,7 @@
       "route": "/service-location/oakley/",
       "source": "service-location/oakley-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Oakley House Cleaning, Ranch Home Cleaning and Recurring Cleaning | Sun Ray Cleaning",
       "h1": "Oakley cleaning for ranch homes, rural homes, and busy households.",
       "rawWordCount": 770,
@@ -4354,6 +4416,7 @@
       "route": "/service-location/old-town-heber/",
       "source": "service-location/old-town-heber-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Old Town Heber House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Old Town Heber in Heber City.",
       "rawWordCount": 760,
@@ -4424,6 +4487,7 @@
       "route": "/service-location/old-town-park-city/",
       "source": "service-location/old-town-park-city-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Old Town Park City Airbnb, Condo and Historic Home Cleaning | Sun Ray Cleaning",
       "h1": "Old Town Park City cleaning for historic homes and Main Street-area rentals.",
       "rawWordCount": 817,
@@ -4498,6 +4562,7 @@
       "route": "/service-location/park-city/",
       "source": "service-location/park-city-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Park City House Cleaning, Airbnb Turnovers and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Park City house cleaning for homes, rentals, and second homes.",
       "rawWordCount": 916,
@@ -4645,6 +4710,7 @@
       "route": "/service-location/park-meadows/",
       "source": "service-location/park-meadows-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Park Meadows House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Park Meadows in Park City.",
       "rawWordCount": 754,
@@ -4718,6 +4784,7 @@
       "route": "/service-location/peoa/",
       "source": "service-location/peoa-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Peoa House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Peoa in Oakley.",
       "rawWordCount": 745,
@@ -4791,6 +4858,7 @@
       "route": "/service-location/pinebrook/",
       "source": "service-location/pinebrook-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Pinebrook House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Pinebrook in Park City.",
       "rawWordCount": 748,
@@ -4861,6 +4929,7 @@
       "route": "/service-location/promontory/",
       "source": "service-location/promontory-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Promontory House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Promontory in Park City.",
       "rawWordCount": 748,
@@ -4932,6 +5001,7 @@
       "route": "/service-location/prospector/",
       "source": "service-location/prospector-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Prospector House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Prospector in Park City.",
       "rawWordCount": 748,
@@ -5005,6 +5075,7 @@
       "route": "/service-location/red-ledges/",
       "source": "service-location/red-ledges-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Red Ledges House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Red Ledges in Heber City.",
       "rawWordCount": 754,
@@ -5081,6 +5152,7 @@
       "route": "/service-location/salt-lake-county/",
       "source": "service-location/salt-lake-county-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Salt Lake County House Cleaning Services | Sun Ray Cleaning",
       "h1": "Residential cleaning for Salt Lake County homes, condos and townhomes.",
       "rawWordCount": 821,
@@ -5149,6 +5221,7 @@
       "route": "/service-location/samarkand/",
       "source": "service-location/samarkand-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Samarkand House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Samarkand in Kamas.",
       "rawWordCount": 745,
@@ -5217,6 +5290,7 @@
       "route": "/service-location/snyderville/",
       "source": "service-location/snyderville-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Snyderville House Cleaning and Recurring Cleaning | Sun Ray Cleaning",
       "h1": "Snyderville cleaning for residential and commuter-area homes.",
       "rawWordCount": 786,
@@ -5298,6 +5372,7 @@
       "route": "/service-location/summit-county/",
       "source": "service-location/summit-county-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Summit County House Cleaning, Vacation Rental Cleaning and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Summit County cleaning from Park City to Kamas, Oakley, and Coalville.",
       "rawWordCount": 917,
@@ -5444,6 +5519,7 @@
       "route": "/service-location/swiss-mountain/",
       "source": "service-location/swiss-mountain-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Swiss Mountain House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Swiss Mountain in Midway.",
       "rawWordCount": 751,
@@ -5519,6 +5595,7 @@
       "route": "/service-location/timber-lakes/",
       "source": "service-location/timber-lakes-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Timber Lakes House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Timber Lakes in Heber City.",
       "rawWordCount": 754,
@@ -5593,6 +5670,7 @@
       "route": "/service-location/wallsburg/",
       "source": "service-location/wallsburg-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Wallsburg House Cleaning Services | Sun Ray Cleaning",
       "h1": "House cleaning for Wallsburg homes, rentals and second homes.",
       "rawWordCount": 751,
@@ -5661,6 +5739,7 @@
       "route": "/service-location/wanship/",
       "source": "service-location/wanship-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Wanship House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Wanship in Coalville.",
       "rawWordCount": 745,
@@ -5716,12 +5795,15 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "incomingInternalLinks": []
+      "incomingInternalLinks": [
+        "/service-location/coalville/"
+      ]
     },
     {
       "route": "/service-location/wasatch-county/",
       "source": "service-location/wasatch-county-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Wasatch County House Cleaning, Move Cleaning and Vacation Home Cleaning | Sun Ray Cleaning",
       "h1": "Wasatch County cleaning for Heber City, Midway, Daniel, and nearby homes.",
       "rawWordCount": 907,
@@ -5865,6 +5947,7 @@
       "route": "/service-location/wasatch-mountain/",
       "source": "service-location/wasatch-mountain-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Wasatch Mountain House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Wasatch Mountain in Midway.",
       "rawWordCount": 751,
@@ -5940,6 +6023,7 @@
       "route": "/service-location/weber-canyon/",
       "source": "service-location/weber-canyon-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Weber Canyon House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Weber Canyon in Oakley.",
       "rawWordCount": 751,
@@ -6013,6 +6097,7 @@
       "route": "/service-location/wild-willow/",
       "source": "service-location/wild-willow-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Wild Willow House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Wild Willow in Francis.",
       "rawWordCount": 751,
@@ -6076,6 +6161,7 @@
       "route": "/service-location/woodland/",
       "source": "service-location/woodland-gpt.html",
       "kind": "location",
+      "isPublic": true,
       "title": "Woodland House Cleaning | Sun Ray Cleaning",
       "h1": "Home cleaning for Woodland in Kamas.",
       "rawWordCount": 745,
@@ -6149,6 +6235,7 @@
       "route": "/service-section-mockups/",
       "source": "service-section-mockups-gpt.html",
       "kind": "page",
+      "isPublic": false,
       "title": "Service Section Mockups | Sun Ray Cleaning",
       "h1": "Elegant service chooser ideas for the FAQ lead-in.",
       "rawWordCount": 510,
@@ -6205,6 +6292,7 @@
       "route": "/services/",
       "source": "services-gpt.html",
       "kind": "service",
+      "isPublic": true,
       "title": "Residential Cleaning Services | Sun Ray Cleaning",
       "h1": "Residential cleaning services for fresh, comfortable homes.",
       "rawWordCount": 758,
@@ -6343,6 +6431,7 @@
       "route": "/services/deep-cleaning/",
       "source": "services/deep-cleaning-gpt.html",
       "kind": "service",
+      "isPublic": true,
       "title": "Deep cleaning | Sun Ray Cleaning",
       "h1": "A detailed reset for homes that need more than maintenance.",
       "rawWordCount": 744,
@@ -6482,6 +6571,7 @@
       "route": "/services/move-in-move-out-cleaning/",
       "source": "services/move-in-move-out-cleaning-gpt.html",
       "kind": "service",
+      "isPublic": true,
       "title": "Move-in and move-out cleaning | Sun Ray Cleaning",
       "h1": "Move-ready cleaning for buyers, sellers, renters, landlords and agents.",
       "rawWordCount": 758,
@@ -6622,6 +6712,7 @@
       "route": "/services/recurring-cleaning/",
       "source": "services/recurring-cleaning-gpt.html",
       "kind": "service",
+      "isPublic": true,
       "title": "Recurring cleaning | Sun Ray Cleaning",
       "h1": "Weekly, biweekly and monthly cleaning that keeps your home comfortable.",
       "rawWordCount": 745,
@@ -6762,6 +6853,7 @@
       "route": "/services/short-term-rental-cleaning/",
       "source": "services/short-term-rental-cleaning-gpt.html",
       "kind": "service",
+      "isPublic": true,
       "title": "Short-term rental cleaning | Sun Ray Cleaning",
       "h1": "Guest-ready Airbnb and VRBO cleaning for Park City rentals.",
       "rawWordCount": 776,
@@ -6901,6 +6993,7 @@
       "route": "/specials/",
       "source": "specials-gpt.html",
       "kind": "page",
+      "isPublic": true,
       "title": "House Cleaning Specials & Current Offers | Sun Ray Cleaning",
       "h1": "Current cleaning specials for homes, hosts and move dates.",
       "rawWordCount": 750,
@@ -7039,6 +7132,7 @@
       "route": "/terms-and-conditions/",
       "source": "terms-and-conditions-gpt.html",
       "kind": "page",
+      "isPublic": true,
       "title": "Terms and Conditions | Sun Ray Cleaning",
       "h1": "Sun Ray Cleaning terms and conditions.",
       "rawWordCount": 898,
@@ -9244,6 +9338,26 @@
       "faqPageCount": 0
     },
     {
+      "entity": "Chalk Creek",
+      "pages": [
+        "/service-location/chalk-creek/",
+        "/service-location/coalville/"
+      ],
+      "pageCount": 2,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Daniel Ranch",
+      "pages": [
+        "/service-location/daniel-ranch/",
+        "/service-location/daniel/"
+      ],
+      "pageCount": 2,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
       "entity": "Deer Creek East",
       "pages": [
         "/service-location/charleston/",
@@ -9254,10 +9368,30 @@
       "faqPageCount": 0
     },
     {
+      "entity": "Deer Mountain",
+      "pages": [
+        "/service-location/deer-mountain/",
+        "/service-location/kamas/"
+      ],
+      "pageCount": 2,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
       "entity": "Deer Springs",
       "pages": [
         "/service-location/deer-springs/",
         "/service-location/hideout/"
+      ],
+      "pageCount": 2,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Echo",
+      "pages": [
+        "/service-location/coalville/",
+        "/service-location/echo/"
       ],
       "pageCount": 2,
       "imageCount": 0,
@@ -9384,6 +9518,16 @@
       "faqPageCount": 0
     },
     {
+      "entity": "Wanship",
+      "pages": [
+        "/service-location/coalville/",
+        "/service-location/wanship/"
+      ],
+      "pageCount": 2,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
       "entity": "Wasatch Mountain",
       "pages": [
         "/service-location/midway/",
@@ -9421,51 +9565,6 @@
       ],
       "pageCount": 2,
       "imageCount": 2,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Chalk Creek",
-      "pages": [
-        "/service-location/chalk-creek/"
-      ],
-      "pageCount": 1,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Daniel Ranch",
-      "pages": [
-        "/service-location/daniel-ranch/"
-      ],
-      "pageCount": 1,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Deer Mountain",
-      "pages": [
-        "/service-location/deer-mountain/"
-      ],
-      "pageCount": 1,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Echo",
-      "pages": [
-        "/service-location/echo/"
-      ],
-      "pageCount": 1,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Wanship",
-      "pages": [
-        "/service-location/wanship/"
-      ],
-      "pageCount": 1,
-      "imageCount": 0,
       "faqPageCount": 0
     },
     {

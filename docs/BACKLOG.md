@@ -29,16 +29,22 @@ Validation:
 
 ### Fix Orphan And Low-Link Routes
 
-Status: queued.
+Status: partially completed.
 
 Value: direct website quality and AI authority improvement.
 
-Work:
+Completed:
 
-- Review `reports/orphan_pages.md`.
-- Add appropriate parent, sibling, footer, or contextual links.
-- Determine whether `/service-section-mockups/` should remain internal-only.
-- Regenerate reports and validate link checks.
+- Public orphan routes reduced from 6 to 0.
+- Coalville now links to Chalk Creek, Echo, and Wanship.
+- Daniel now links to Daniel Ranch.
+- Kamas now links to Deer Mountain.
+- `/service-section-mockups/` is treated as an internal-only route in reports.
+
+Remaining work:
+
+- Improve low incoming links for minor pages where it supports customer
+  navigation.
 
 ### Verify AI Recommendations Page Status
 
@@ -57,7 +63,7 @@ Work:
 
 ### Use Reports To Ship First Production Improvement
 
-Status: queued.
+Status: completed.
 
 Value: turns intelligence into public website progress.
 
@@ -67,6 +73,19 @@ Work:
 - Pick one service-location authority gap.
 - Improve page copy, FAQ, schema, images, or internal links.
 - Validate build and reports.
+
+### Improve Low Incoming Links For Authority Articles
+
+Status: queued.
+
+Value: stronger AI citation paths and better crawl support.
+
+Work:
+
+- Improve internal links to Deer Valley luxury home cleaning and Jordanelle
+  vacation rental turnover articles.
+- Prefer contextual links from related location and service pages.
+- Validate with Repository Intelligence reports.
 
 ### Improve Weak Image-Backed Coverage
 

@@ -4,14 +4,7 @@ Generated: 2026-06-30
 
 ## Detected Signals
 
-| Route | Signals |
-| --- | --- |
-| /service-location/chalk-creek/ | orphan |
-| /service-location/daniel-ranch/ | orphan |
-| /service-location/deer-mountain/ | orphan |
-| /service-location/echo/ | orphan |
-| /service-location/wanship/ | orphan |
-| /service-section-mockups/ | orphan |
+No rows.
 
 ## Standing Debt
 

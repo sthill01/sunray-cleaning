@@ -20,8 +20,8 @@ Opportunities are findings that could make Sun Ray stronger. Move items into
 
 - Improve dedicated coverage for Deer Valley luxury cleaning.
 - Improve dedicated coverage for Canyons Village vacation rental cleaning.
-- Fix or intentionally retire orphan location pages: Chalk Creek, Daniel Ranch,
-  Deer Mountain, Echo, and Wanship.
+- Continue improving low-link minor location pages now that public orphan routes
+  are fixed.
 - Build Wasatch County service coverage around Heber City, Midway, Red Ledges,
   and Jordanelle.
 - Build Summit County service coverage around Park City, Kamas, Oakley, and

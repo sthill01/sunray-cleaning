@@ -3,9 +3,9 @@
 Generated: 2026-06-30
 
 - Source route count: 79
+- Public source route count: 78
 - Existing build output route files: 80
 - Cloudflare output directory exists: True
-- Git status entries at report time: 96
 
 ## Package Scripts
 

@@ -42,8 +42,12 @@ Generated: 2026-06-30
 | Swiss Mountain | 3 | 0 | 0 | /gallery/, /service-location/midway/, /service-location/swiss-mountain/ |
 | Wallsburg | 3 | 0 | 0 | /service-location/little-hobble-creek/, /service-location/wallsburg/, /service-location/wasatch-county/ |
 | Woodland | 3 | 0 | 0 | /gallery/, /service-location/kamas/, /service-location/woodland/ |
+| Chalk Creek | 2 | 0 | 0 | /service-location/chalk-creek/, /service-location/coalville/ |
+| Daniel Ranch | 2 | 0 | 0 | /service-location/daniel-ranch/, /service-location/daniel/ |
 | Deer Creek East | 2 | 0 | 0 | /service-location/charleston/, /service-location/deer-creek-east/ |
+| Deer Mountain | 2 | 0 | 0 | /service-location/deer-mountain/, /service-location/kamas/ |
 | Deer Springs | 2 | 0 | 0 | /service-location/deer-springs/, /service-location/hideout/ |
+| Echo | 2 | 0 | 0 | /service-location/coalville/, /service-location/echo/ |
 | Henefer | 2 | 0 | 0 | /service-location/henefer-valley/, /service-location/henefer/ |
 | Henefer Valley | 2 | 0 | 0 | /service-location/henefer-valley/, /service-location/henefer/ |
 | Hideout Canyon | 2 | 0 | 0 | /service-location/hideout-canyon/, /service-location/hideout/ |
@@ -56,15 +60,11 @@ Generated: 2026-06-30
 | Promontory | 2 | 0 | 0 | /service-location/promontory/, /service-location/summit-county/ |
 | Prospector | 2 | 0 | 0 | /service-location/park-city/, /service-location/prospector/ |
 | Samarkand | 2 | 0 | 0 | /service-location/midway/, /service-location/samarkand/ |
+| Wanship | 2 | 0 | 0 | /service-location/coalville/, /service-location/wanship/ |
 | Wasatch Mountain | 2 | 0 | 0 | /service-location/midway/, /service-location/wasatch-mountain/ |
 | Weber Canyon | 2 | 0 | 0 | /service-location/kamas/, /service-location/weber-canyon/ |
 | Wild Willow | 2 | 0 | 0 | /service-location/francis/, /service-location/wild-willow/ |
 | move-in cleaning | 2 | 2 | 0 | /blog/heber-city-move-in-move-out-cleaning/, /service-location/daniel/ |
-| Chalk Creek | 1 | 0 | 0 | /service-location/chalk-creek/ |
-| Daniel Ranch | 1 | 0 | 0 | /service-location/daniel-ranch/ |
-| Deer Mountain | 1 | 0 | 0 | /service-location/deer-mountain/ |
-| Echo | 1 | 0 | 0 | /service-location/echo/ |
-| Wanship | 1 | 0 | 0 | /service-location/wanship/ |
 | pet-safe cleaning | 1 | 0 | 0 | / |
 | eco-friendly cleaning | 0 | 0 | 0 |  |
 | residential house cleaning | 0 | 2 | 0 |  |

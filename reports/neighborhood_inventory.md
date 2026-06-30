@@ -9,9 +9,9 @@ Generated: 2026-06-30
 | /service-location/chalk-creek/ | Chalk Creek |  | 751 | 3 | 5 |
 | /service-location/charleston-lake/ | Charleston Lake | /service-location/midway/ | 751 | 3 | 5 |
 | /service-location/charleston/ | Charleston | /service-location/midway/ | 756 | 3 | 9 |
-| /service-location/coalville/ | Coalville | /service-location/summit-county/ | 758 | 3 | 9 |
+| /service-location/coalville/ | Coalville | /service-location/summit-county/ | 778 | 3 | 9 |
 | /service-location/daniel-ranch/ | Daniel Ranch |  | 751 | 3 | 5 |
-| /service-location/daniel/ | Daniel | /service-location/wasatch-county/ | 763 | 3 | 8 |
+| /service-location/daniel/ | Daniel | /service-location/wasatch-county/ | 772 | 3 | 8 |
 | /service-location/deer-creek-east/ | Deer Creek East |  | 757 | 3 | 5 |
 | /service-location/deer-creek/ | Deer Creek | /service-location/midway/ | 751 | 3 | 5 |
 | /service-location/deer-mountain/ | Deer Mountain |  | 751 | 3 | 5 |
@@ -30,7 +30,7 @@ Generated: 2026-06-30
 | /service-location/interlaken/ | Interlaken | /service-location/midway/ | 745 | 3 | 6 |
 | /service-location/jeremy-ranch/ | Jeremy Ranch | /service-location/summit-county/ | 754 | 3 | 5 |
 | /service-location/jordanelle/ | Jordanelle | /service-location/wasatch-county/ | 748 | 3 | 5 |
-| /service-location/kamas/ | Kamas | /service-location/summit-county/ | 879 | 3 | 20 |
+| /service-location/kamas/ | Kamas | /service-location/summit-county/ | 899 | 3 | 21 |
 | /service-location/kimball-junction/ | Kimball Junction | /service-location/park-city/ | 754 | 3 | 5 |
 | /service-location/little-hobble-creek/ | Little Hobble Creek |  | 757 | 3 | 5 |
 | /service-location/marion/ | Marion | /service-location/kamas/ | 745 | 3 | 5 |

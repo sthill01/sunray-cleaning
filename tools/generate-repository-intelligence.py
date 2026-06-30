@@ -4,7 +4,6 @@ import html
 import json
 import re
 import runpy
-import subprocess
 from collections import Counter
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -305,27 +304,12 @@ def load_json(path: Path, fallback: object) -> object:
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
-def git_status_lines() -> list[str]:
-    try:
-        result = subprocess.run(
-            ["git", "status", "--short"],
-            cwd=ROOT,
-            check=False,
-            capture_output=True,
-            text=True,
-        )
-    except OSError:
-        return []
-    if result.returncode != 0:
-        return []
-    return [line for line in result.stdout.splitlines() if line.strip()]
-
-
 def build_pages(context: dict[str, object]) -> list[dict[str, object]]:
     route_map_func = context["build_route_map"]
     rewrite_links = context["rewrite_links"]
     inject_seo = context["inject_seo_enhancements"]
     route_map: dict[str, str] = route_map_func()
+    internal_only_routes = set(str(route) for route in context.get("INTERNAL_ONLY_ROUTES", set()))
     pages: list[dict[str, object]] = []
 
     for source_rel, route in sorted(route_map.items(), key=lambda item: item[1]):
@@ -347,6 +331,7 @@ def build_pages(context: dict[str, object]) -> list[dict[str, object]]:
                 "route": route,
                 "source": source_rel,
                 "kind": page_kind(route, context),
+                "is_public": route not in internal_only_routes,
                 "label": route_label(route, context),
                 "title": parser.title or raw_parser.title,
                 "description": normalize_text(description),
@@ -516,6 +501,7 @@ def generate_route_inventory(pages: list[dict[str, object]], outgoing: dict[str,
         [
             page["route"],
             page["kind"],
+            page["is_public"],
             page["source"],
             page["title"],
             page["h1"],
@@ -535,6 +521,7 @@ def generate_route_inventory(pages: list[dict[str, object]], outgoing: dict[str,
             [
                 "Route",
                 "Type",
+                "Public",
                 "Source",
                 "Title",
                 "H1",
@@ -713,7 +700,9 @@ def generate_internal_link_reports(pages: list[dict[str, object]], outgoing: dic
     orphan_rows = [
         [route, len(outgoing.get(route, []))]
         for route, sources in sorted(incoming.items())
-        if not sources and route != "/"
+        if not sources
+        and route != "/"
+        and any(str(page["route"]) == route and bool(page["is_public"]) for page in pages)
     ]
     write_report(
         "internal_links.md",
@@ -804,10 +793,15 @@ def generate_content_gap_report(
         if data["status"] in {"gap", "weak"}
     ]
     no_faq = [[page["route"], page["kind"], page["title"]] for page in pages if not page["faq_count"]]
+    no_faq = [
+        [page["route"], page["kind"], page["title"]]
+        for page in pages
+        if page["is_public"] and not page["faq_count"]
+    ]
     low_inlinks = [
         [page["route"], page["kind"], len(incoming[str(page["route"])]), page["title"]]
         for page in pages
-        if str(page["route"]) != "/" and len(incoming[str(page["route"])]) <= 1
+        if page["is_public"] and str(page["route"]) != "/" and len(incoming[str(page["route"])]) <= 1
     ]
     write_report(
         "content_gap_report.md",
@@ -826,6 +820,7 @@ def generate_authority_report(
     matrix: dict[str, dict[str, dict[str, object]]],
     incoming: dict[str, list[str]],
 ) -> None:
+    pages = [page for page in pages if page["is_public"]]
     total = max(len(pages), 1)
     metadata_rate = sum(1 for page in pages if page["title"] and page["description"] and page["h1"]) / total
     schema_rate = sum(1 for page in pages if page["schema_types"]) / total
@@ -865,14 +860,14 @@ def generate_build_report(pages: list[dict[str, object]]) -> None:
     scripts = package.get("scripts", {}) if isinstance(package, dict) else {}
     output = ROOT / "cloudflare-preview"
     generated_routes = list(output.glob("**/index.html")) if output.exists() else []
-    status = git_status_lines()
     write_report(
         "build_report.md",
         report_header("Build Report")
         + f"- Source route count: {len(pages)}\n"
+        + f"- Public source route count: {sum(1 for page in pages if page['is_public'])}\n"
         + f"- Existing build output route files: {len(generated_routes)}\n"
         + f"- Cloudflare output directory exists: {output.exists()}\n"
-        + f"- Git status entries at report time: {len(status)}\n\n"
+        + "\n"
         + "## Package Scripts\n\n"
         + md_table(["Script", "Command"], [[key, value] for key, value in scripts.items()])
         + "\n## Page Build Simulation Errors\n\n"
@@ -903,6 +898,8 @@ def generate_automation_report() -> None:
 def generate_technical_debt_report(pages: list[dict[str, object]], incoming: dict[str, list[str]]) -> None:
     detected = []
     for page in pages:
+        if not page["is_public"]:
+            continue
         issues = []
         if not page["title"]:
             issues.append("missing title")
@@ -1031,6 +1028,7 @@ def main() -> None:
                     "route": page["route"],
                     "source": page["source"],
                     "kind": page["kind"],
+                    "isPublic": page["is_public"],
                     "title": page["title"],
                     "h1": page["h1"],
                     "rawWordCount": page["raw_word_count"],
