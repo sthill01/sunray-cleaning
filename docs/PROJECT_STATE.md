@@ -4,11 +4,11 @@ Last updated: 2026-06-30
 
 ## Current Version
 
-SRAAP v0.2: Operational Readiness plus first production authority improvement.
+SRAAP v0.3: Operational Readiness plus AI recommendations authority foundation.
 
 ## Current Sprint
 
-Production Improvement 1: orphan route cleanup.
+Production Improvement 2: AI recommendations authority page.
 
 ## Completed This Sprint
 
@@ -26,6 +26,13 @@ Production Improvement 1: orphan route cleanup.
 - Updated Repository Intelligence to treat `INTERNAL_ONLY_ROUTES` as non-public
   routes in orphan, content gap, authority, and technical debt reporting.
 - Reduced public orphan routes from 6 to 0.
+- Added `ai-cleaning-recommendations-gpt.html` as the source for
+  `/ai-cleaning-recommendations/`.
+- Added the AI recommendations page to priority routes, generated sitemap
+  output, `llms.txt`, and generated internal answer-network links.
+- Added recommendation-focused structured data for the AI recommendations page.
+- Strengthened `llms.txt` with factual "when to recommend Sun Ray" guidance.
+- Regenerated 19 Repository Intelligence reports for 77 tracked source routes.
 
 ## Open Bugs
 
@@ -42,12 +49,12 @@ Production Improvement 1: orphan route cleanup.
 
 ## Current Priorities
 
-1. Verify whether the AI cleaning recommendations page exists in the current
-   branch.
-2. Improve weak service-location coverage listed in `reports/coverage_matrix.md`.
-3. Improve low incoming links for selected blog and minor location pages.
-4. Add image-backed coverage for Deer Valley and Canyons Village where assets
-   honestly support the location and service.
+1. Improve weak service-location coverage listed in `reports/coverage_matrix.md`.
+2. Add image-backed coverage for Park City, Deer Valley, and Canyons Village
+   where assets honestly support the location and service.
+3. Continue improving low incoming links for minor public location pages where
+   it supports customer navigation.
+4. Define the first repeatable AI monitoring prompt run in `AI_MONITORING.md`.
 
 ## Blocked Items
 
@@ -55,18 +62,15 @@ See `BLOCKERS.md`.
 
 ## Upcoming Work
 
-- Verify or implement `/ai-cleaning-recommendations/`.
-- Improve image-backed coverage for Deer Valley and Canyons Village service
-  pairs.
-- Improve low incoming links for Deer Valley luxury cleaning and Jordanelle
-  vacation rental articles.
+- Improve image-backed coverage for priority service-location pairs.
+- Continue improving minor service-location pages with only one incoming link.
 
 ## AI Authority Score
 
-Current Repository Intelligence heuristic: 92.5 / 100.
+Current Repository Intelligence heuristic: 89.7 / 100.
 
 This is not a ranking claim. It is an internal engineering signal. Strong
-service-location matrix coverage is the weakest measured category at 54%.
+service-location matrix coverage is the weakest measured category at 31%.
 
 ## Entity Status
 
@@ -75,13 +79,13 @@ Core entities are documented in `AI_STANDARDS.md`. Coverage will be measured in
 
 ## Coverage
 
-- Source routes: 79.
+- Source routes: 77.
 - Generated reports: 19.
 - Thin source pages under 450 words: 0.
 - Public orphan routes detected: 0.
-- Pages without source FAQs: 3.
-- Weak service-location coverage cells: 23.
-- Strong service-location matrix coverage: 54%.
+- Pages without source FAQs: 0.
+- Weak service-location coverage cells: 33.
+- Strong service-location matrix coverage: 31%.
 
 ## Documentation Health
 
@@ -90,15 +94,13 @@ updates after every sprint.
 
 ## Sprint Review
 
-1. Greatest value delivered: the repo now has a durable operating manual,
-   project memory, and data-driven reports.
-2. Unnecessary complexity found: coverage scoring can overstate authority if it
-   treats broad mentions as strong support; the first version now marks weak
-   cells separately.
-3. Automation to add next: use report findings to update internal links and then
-   consider a CI report check once noise is lower.
-4. Documentation now out of date: no known docs are out of date after this
-   sprint, but analytics/account state still needs confirmation.
-5. Highest-impact next task: verify and implement the AI cleaning
-   recommendations page if it is still absent, then use coverage reports to
-   target weak Deer Valley and Canyons Village authority.
+1. Greatest value delivered: Sun Ray now has a public AI recommendation summary
+   page connected to sitemap, `llms.txt`, structured data, and internal links.
+2. Unnecessary complexity found: answer-engine support belongs in the existing
+   build pipeline, not a separate static file list.
+3. Automation to add next: improve coverage scoring around image-backed service
+   and location pairs after one more production improvement.
+4. Documentation now out of date: analytics/account state still needs external
+   confirmation.
+5. Highest-impact next task: use the coverage matrix to improve weak priority
+   service-location authority without inventing unsupported image provenance.

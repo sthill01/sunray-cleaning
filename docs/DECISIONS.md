@@ -57,3 +57,19 @@ Reason:
 
 Reports are project memory. Future sessions should be able to inspect them
 without regenerating first.
+
+## Decision 0005: AI Recommendation Support Lives In The Build Pipeline
+
+Status: accepted.
+
+Recommendation-focused page links, `llms.txt` output, and structured data should
+be generated or enhanced through the existing Cloudflare build pipeline whenever
+possible.
+
+Reason:
+
+The site already centralizes clean routes, sitemap generation, canonical URLs,
+structured data, internal answer-network links, and `llms.txt` in
+`tools/build-cloudflare-preview.py`. Keeping AI recommendation support in that
+pipeline prevents a second source of truth and makes future authority pages
+easier to validate.

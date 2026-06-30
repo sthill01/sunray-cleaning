@@ -3,6 +3,7 @@
     "Residential": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/getting-park-city-home-ready-for-summer-guests/",
@@ -30,12 +31,13 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 12,
-      "status": "strong"
+      "imageCount": 0,
+      "status": "weak"
     },
     "Airbnb/VRBO": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/getting-park-city-home-ready-for-summer-guests/",
@@ -63,12 +65,13 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 7,
+      "imageCount": 2,
       "status": "strong"
     },
     "Deep cleaning": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/getting-park-city-home-ready-for-summer-guests/",
@@ -96,12 +99,13 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 6,
+      "imageCount": 2,
       "status": "strong"
     },
     "Recurring": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/getting-park-city-home-ready-for-summer-guests/",
@@ -129,12 +133,13 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 1,
-      "status": "strong"
+      "imageCount": 0,
+      "status": "weak"
     },
     "Move-in/out": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/getting-park-city-home-ready-for-summer-guests/",
@@ -162,25 +167,27 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 1,
-      "status": "strong"
+      "imageCount": 0,
+      "status": "weak"
     },
     "Luxury": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/service-location/deer-valley/",
         "/service-location/park-city/",
         "/service-location/salt-lake-county/"
       ],
-      "imageCount": 1,
-      "status": "strong"
+      "imageCount": 0,
+      "status": "weak"
     }
   },
   "Heber City": {
     "Residential": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/heber-city-move-in-move-out-cleaning/",
         "/discounts/",
@@ -200,12 +207,13 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 7,
+      "imageCount": 2,
       "status": "strong"
     },
     "Airbnb/VRBO": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/heber-city-move-in-move-out-cleaning/",
         "/discounts/",
@@ -231,6 +239,7 @@
     "Deep cleaning": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/heber-city-move-in-move-out-cleaning/",
         "/discounts/",
@@ -250,12 +259,13 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 2,
-      "status": "strong"
+      "imageCount": 0,
+      "status": "weak"
     },
     "Recurring": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/heber-city-move-in-move-out-cleaning/",
         "/discounts/",
@@ -281,6 +291,7 @@
     "Move-in/out": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/heber-city-move-in-move-out-cleaning/",
         "/discounts/",
@@ -306,17 +317,19 @@
     "Luxury": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/service-location/salt-lake-county/"
       ],
-      "imageCount": 1,
-      "status": "strong"
+      "imageCount": 0,
+      "status": "weak"
     }
   },
   "Midway": {
     "Residential": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/discounts/",
         "/service-areas/",
@@ -334,12 +347,13 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 5,
+      "imageCount": 2,
       "status": "strong"
     },
     "Airbnb/VRBO": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/discounts/",
         "/service-areas/",
@@ -357,12 +371,13 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 1,
-      "status": "strong"
+      "imageCount": 0,
+      "status": "weak"
     },
     "Deep cleaning": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/discounts/",
         "/service-areas/",
@@ -386,6 +401,7 @@
     "Recurring": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/discounts/",
         "/service-areas/",
@@ -403,12 +419,13 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 2,
+      "imageCount": 1,
       "status": "strong"
     },
     "Move-in/out": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/discounts/",
         "/service-areas/",
@@ -432,6 +449,7 @@
     "Luxury": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/"
       ],
       "imageCount": 0,
@@ -441,6 +459,7 @@
   "Kamas": {
     "Residential": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/service-areas/",
         "/service-location/deer-mountain/",
@@ -455,6 +474,7 @@
     },
     "Airbnb/VRBO": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/service-areas/",
         "/service-location/deer-mountain/",
@@ -469,6 +489,7 @@
     },
     "Deep cleaning": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/service-areas/",
         "/service-location/deer-mountain/",
@@ -483,6 +504,7 @@
     },
     "Recurring": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/service-areas/",
         "/service-location/deer-mountain/",
@@ -497,6 +519,7 @@
     },
     "Move-in/out": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/service-areas/",
         "/service-location/deer-mountain/",
@@ -511,6 +534,7 @@
     },
     "Luxury": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/"
       ],
       "imageCount": 0,
@@ -520,6 +544,7 @@
   "Deer Valley": {
     "Residential": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/deer-valley-luxury-home-cleaning/",
         "/service-location/deer-valley/",
@@ -530,6 +555,7 @@
     },
     "Airbnb/VRBO": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/deer-valley-luxury-home-cleaning/",
         "/service-location/deer-valley/",
@@ -540,6 +566,7 @@
     },
     "Deep cleaning": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/deer-valley-luxury-home-cleaning/",
         "/service-location/deer-valley/",
@@ -550,6 +577,7 @@
     },
     "Recurring": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/deer-valley-luxury-home-cleaning/",
         "/service-location/deer-valley/",
@@ -560,6 +588,7 @@
     },
     "Move-in/out": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/deer-valley-luxury-home-cleaning/",
         "/service-location/deer-valley/",
@@ -570,6 +599,7 @@
     },
     "Luxury": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/deer-valley-luxury-home-cleaning/",
         "/service-location/deer-valley/",
@@ -582,6 +612,7 @@
   "Canyons Village": {
     "Residential": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
@@ -590,6 +621,7 @@
     },
     "Airbnb/VRBO": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
@@ -598,6 +630,7 @@
     },
     "Deep cleaning": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
@@ -606,6 +639,7 @@
     },
     "Recurring": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
@@ -614,6 +648,7 @@
     },
     "Move-in/out": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
@@ -622,6 +657,7 @@
     },
     "Luxury": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/service-location/park-city/"
       ],
       "imageCount": 0,
@@ -631,6 +667,7 @@
   "Summit County": {
     "Residential": {
       "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/service-areas/",
         "/service-location/coalville/",
@@ -639,50 +676,12 @@
         "/service-location/snyderville/",
         "/service-location/summit-county/"
       ],
-      "imageCount": 22,
+      "imageCount": 1,
       "status": "strong"
     },
     "Airbnb/VRBO": {
       "pages": [
-        "/blog/",
-        "/service-areas/",
-        "/service-location/coalville/",
-        "/service-location/kamas/",
-        "/service-location/oakley/",
-        "/service-location/snyderville/",
-        "/service-location/summit-county/"
-      ],
-      "imageCount": 7,
-      "status": "strong"
-    },
-    "Deep cleaning": {
-      "pages": [
-        "/blog/",
-        "/service-areas/",
-        "/service-location/coalville/",
-        "/service-location/kamas/",
-        "/service-location/oakley/",
-        "/service-location/snyderville/",
-        "/service-location/summit-county/"
-      ],
-      "imageCount": 8,
-      "status": "strong"
-    },
-    "Recurring": {
-      "pages": [
-        "/blog/",
-        "/service-areas/",
-        "/service-location/coalville/",
-        "/service-location/kamas/",
-        "/service-location/oakley/",
-        "/service-location/snyderville/",
-        "/service-location/summit-county/"
-      ],
-      "imageCount": 4,
-      "status": "strong"
-    },
-    "Move-in/out": {
-      "pages": [
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/service-areas/",
         "/service-location/coalville/",
@@ -694,11 +693,54 @@
       "imageCount": 2,
       "status": "strong"
     },
-    "Luxury": {
+    "Deep cleaning": {
       "pages": [
-        "/blog/"
+        "/ai-cleaning-recommendations/",
+        "/blog/",
+        "/service-areas/",
+        "/service-location/coalville/",
+        "/service-location/kamas/",
+        "/service-location/oakley/",
+        "/service-location/snyderville/",
+        "/service-location/summit-county/"
+      ],
+      "imageCount": 2,
+      "status": "strong"
+    },
+    "Recurring": {
+      "pages": [
+        "/ai-cleaning-recommendations/",
+        "/blog/",
+        "/service-areas/",
+        "/service-location/coalville/",
+        "/service-location/kamas/",
+        "/service-location/oakley/",
+        "/service-location/snyderville/",
+        "/service-location/summit-county/"
       ],
       "imageCount": 1,
+      "status": "strong"
+    },
+    "Move-in/out": {
+      "pages": [
+        "/ai-cleaning-recommendations/",
+        "/blog/",
+        "/service-areas/",
+        "/service-location/coalville/",
+        "/service-location/kamas/",
+        "/service-location/oakley/",
+        "/service-location/snyderville/",
+        "/service-location/summit-county/"
+      ],
+      "imageCount": 0,
+      "status": "weak"
+    },
+    "Luxury": {
+      "pages": [
+        "/ai-cleaning-recommendations/",
+        "/blog/"
+      ],
+      "imageCount": 0,
       "status": "weak"
     }
   },
@@ -707,6 +749,7 @@
       "pages": [
         "/",
         "/about/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/deer-valley-luxury-home-cleaning/",
@@ -717,7 +760,6 @@
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
         "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
         "/contact/",
-        "/gallery/",
         "/service-areas/",
         "/service-location/center-creek/",
         "/service-location/chalk-creek/",
@@ -769,13 +811,14 @@
         "/services/recurring-cleaning/",
         "/services/short-term-rental-cleaning/"
       ],
-      "imageCount": 20,
+      "imageCount": 4,
       "status": "strong"
     },
     "Airbnb/VRBO": {
       "pages": [
         "/",
         "/about/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/deer-valley-luxury-home-cleaning/",
@@ -786,7 +829,144 @@
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
         "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
         "/contact/",
-        "/gallery/",
+        "/service-areas/",
+        "/service-location/center-creek/",
+        "/service-location/chalk-creek/",
+        "/service-location/charleston-lake/",
+        "/service-location/charleston/",
+        "/service-location/daniel-ranch/",
+        "/service-location/daniel/",
+        "/service-location/deer-creek-east/",
+        "/service-location/deer-creek/",
+        "/service-location/deer-mountain/",
+        "/service-location/deer-springs/",
+        "/service-location/echo/",
+        "/service-location/foothill-estates/",
+        "/service-location/francis/",
+        "/service-location/heber-valley/",
+        "/service-location/henefer-valley/",
+        "/service-location/henefer/",
+        "/service-location/hideout-canyon/",
+        "/service-location/hideout/",
+        "/service-location/homestead/",
+        "/service-location/interlaken/",
+        "/service-location/jeremy-ranch/",
+        "/service-location/jordanelle/",
+        "/service-location/kimball-junction/",
+        "/service-location/little-hobble-creek/",
+        "/service-location/marion/",
+        "/service-location/oakley-ranch/",
+        "/service-location/old-town-heber/",
+        "/service-location/park-meadows/",
+        "/service-location/peoa/",
+        "/service-location/pinebrook/",
+        "/service-location/promontory/",
+        "/service-location/prospector/",
+        "/service-location/red-ledges/",
+        "/service-location/salt-lake-county/",
+        "/service-location/samarkand/",
+        "/service-location/swiss-mountain/",
+        "/service-location/timber-lakes/",
+        "/service-location/wallsburg/",
+        "/service-location/wanship/",
+        "/service-location/wasatch-county/",
+        "/service-location/wasatch-mountain/",
+        "/service-location/weber-canyon/",
+        "/service-location/wild-willow/",
+        "/service-location/woodland/",
+        "/services/",
+        "/services/deep-cleaning/",
+        "/services/move-in-move-out-cleaning/",
+        "/services/recurring-cleaning/",
+        "/services/short-term-rental-cleaning/"
+      ],
+      "imageCount": 0,
+      "status": "weak"
+    },
+    "Deep cleaning": {
+      "pages": [
+        "/",
+        "/about/",
+        "/ai-cleaning-recommendations/",
+        "/blog/",
+        "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+        "/blog/deer-valley-luxury-home-cleaning/",
+        "/blog/getting-park-city-home-ready-for-summer-guests/",
+        "/blog/heber-city-move-in-move-out-cleaning/",
+        "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
+        "/blog/jordanelle-vacation-rental-turnover/",
+        "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
+        "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
+        "/contact/",
+        "/service-areas/",
+        "/service-location/center-creek/",
+        "/service-location/chalk-creek/",
+        "/service-location/charleston-lake/",
+        "/service-location/charleston/",
+        "/service-location/daniel-ranch/",
+        "/service-location/daniel/",
+        "/service-location/deer-creek-east/",
+        "/service-location/deer-creek/",
+        "/service-location/deer-mountain/",
+        "/service-location/deer-springs/",
+        "/service-location/echo/",
+        "/service-location/foothill-estates/",
+        "/service-location/francis/",
+        "/service-location/heber-valley/",
+        "/service-location/henefer-valley/",
+        "/service-location/henefer/",
+        "/service-location/hideout-canyon/",
+        "/service-location/hideout/",
+        "/service-location/homestead/",
+        "/service-location/interlaken/",
+        "/service-location/jeremy-ranch/",
+        "/service-location/jordanelle/",
+        "/service-location/kimball-junction/",
+        "/service-location/little-hobble-creek/",
+        "/service-location/marion/",
+        "/service-location/oakley-ranch/",
+        "/service-location/old-town-heber/",
+        "/service-location/park-meadows/",
+        "/service-location/peoa/",
+        "/service-location/pinebrook/",
+        "/service-location/promontory/",
+        "/service-location/prospector/",
+        "/service-location/red-ledges/",
+        "/service-location/salt-lake-county/",
+        "/service-location/samarkand/",
+        "/service-location/swiss-mountain/",
+        "/service-location/timber-lakes/",
+        "/service-location/wallsburg/",
+        "/service-location/wanship/",
+        "/service-location/wasatch-county/",
+        "/service-location/wasatch-mountain/",
+        "/service-location/weber-canyon/",
+        "/service-location/wild-willow/",
+        "/service-location/woodland/",
+        "/services/",
+        "/services/deep-cleaning/",
+        "/services/move-in-move-out-cleaning/",
+        "/services/recurring-cleaning/",
+        "/services/short-term-rental-cleaning/"
+      ],
+      "imageCount": 0,
+      "status": "weak"
+    },
+    "Recurring": {
+      "pages": [
+        "/",
+        "/about/",
+        "/ai-cleaning-recommendations/",
+        "/blog/",
+        "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+        "/blog/deer-valley-luxury-home-cleaning/",
+        "/blog/getting-park-city-home-ready-for-summer-guests/",
+        "/blog/heber-city-move-in-move-out-cleaning/",
+        "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
+        "/blog/jordanelle-vacation-rental-turnover/",
+        "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
+        "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
+        "/contact/",
         "/service-areas/",
         "/service-location/center-creek/",
         "/service-location/chalk-creek/",
@@ -841,148 +1021,11 @@
       "imageCount": 1,
       "status": "strong"
     },
-    "Deep cleaning": {
-      "pages": [
-        "/",
-        "/about/",
-        "/blog/",
-        "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
-        "/blog/deer-valley-luxury-home-cleaning/",
-        "/blog/getting-park-city-home-ready-for-summer-guests/",
-        "/blog/heber-city-move-in-move-out-cleaning/",
-        "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
-        "/blog/jordanelle-vacation-rental-turnover/",
-        "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
-        "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
-        "/contact/",
-        "/gallery/",
-        "/service-areas/",
-        "/service-location/center-creek/",
-        "/service-location/chalk-creek/",
-        "/service-location/charleston-lake/",
-        "/service-location/charleston/",
-        "/service-location/daniel-ranch/",
-        "/service-location/daniel/",
-        "/service-location/deer-creek-east/",
-        "/service-location/deer-creek/",
-        "/service-location/deer-mountain/",
-        "/service-location/deer-springs/",
-        "/service-location/echo/",
-        "/service-location/foothill-estates/",
-        "/service-location/francis/",
-        "/service-location/heber-valley/",
-        "/service-location/henefer-valley/",
-        "/service-location/henefer/",
-        "/service-location/hideout-canyon/",
-        "/service-location/hideout/",
-        "/service-location/homestead/",
-        "/service-location/interlaken/",
-        "/service-location/jeremy-ranch/",
-        "/service-location/jordanelle/",
-        "/service-location/kimball-junction/",
-        "/service-location/little-hobble-creek/",
-        "/service-location/marion/",
-        "/service-location/oakley-ranch/",
-        "/service-location/old-town-heber/",
-        "/service-location/park-meadows/",
-        "/service-location/peoa/",
-        "/service-location/pinebrook/",
-        "/service-location/promontory/",
-        "/service-location/prospector/",
-        "/service-location/red-ledges/",
-        "/service-location/salt-lake-county/",
-        "/service-location/samarkand/",
-        "/service-location/swiss-mountain/",
-        "/service-location/timber-lakes/",
-        "/service-location/wallsburg/",
-        "/service-location/wanship/",
-        "/service-location/wasatch-county/",
-        "/service-location/wasatch-mountain/",
-        "/service-location/weber-canyon/",
-        "/service-location/wild-willow/",
-        "/service-location/woodland/",
-        "/services/",
-        "/services/deep-cleaning/",
-        "/services/move-in-move-out-cleaning/",
-        "/services/recurring-cleaning/",
-        "/services/short-term-rental-cleaning/"
-      ],
-      "imageCount": 6,
-      "status": "strong"
-    },
-    "Recurring": {
-      "pages": [
-        "/",
-        "/about/",
-        "/blog/",
-        "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
-        "/blog/deer-valley-luxury-home-cleaning/",
-        "/blog/getting-park-city-home-ready-for-summer-guests/",
-        "/blog/heber-city-move-in-move-out-cleaning/",
-        "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
-        "/blog/jordanelle-vacation-rental-turnover/",
-        "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
-        "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
-        "/contact/",
-        "/gallery/",
-        "/service-areas/",
-        "/service-location/center-creek/",
-        "/service-location/chalk-creek/",
-        "/service-location/charleston-lake/",
-        "/service-location/charleston/",
-        "/service-location/daniel-ranch/",
-        "/service-location/daniel/",
-        "/service-location/deer-creek-east/",
-        "/service-location/deer-creek/",
-        "/service-location/deer-mountain/",
-        "/service-location/deer-springs/",
-        "/service-location/echo/",
-        "/service-location/foothill-estates/",
-        "/service-location/francis/",
-        "/service-location/heber-valley/",
-        "/service-location/henefer-valley/",
-        "/service-location/henefer/",
-        "/service-location/hideout-canyon/",
-        "/service-location/hideout/",
-        "/service-location/homestead/",
-        "/service-location/interlaken/",
-        "/service-location/jeremy-ranch/",
-        "/service-location/jordanelle/",
-        "/service-location/kimball-junction/",
-        "/service-location/little-hobble-creek/",
-        "/service-location/marion/",
-        "/service-location/oakley-ranch/",
-        "/service-location/old-town-heber/",
-        "/service-location/park-meadows/",
-        "/service-location/peoa/",
-        "/service-location/pinebrook/",
-        "/service-location/promontory/",
-        "/service-location/prospector/",
-        "/service-location/red-ledges/",
-        "/service-location/salt-lake-county/",
-        "/service-location/samarkand/",
-        "/service-location/swiss-mountain/",
-        "/service-location/timber-lakes/",
-        "/service-location/wallsburg/",
-        "/service-location/wanship/",
-        "/service-location/wasatch-county/",
-        "/service-location/wasatch-mountain/",
-        "/service-location/weber-canyon/",
-        "/service-location/wild-willow/",
-        "/service-location/woodland/",
-        "/services/",
-        "/services/deep-cleaning/",
-        "/services/move-in-move-out-cleaning/",
-        "/services/recurring-cleaning/",
-        "/services/short-term-rental-cleaning/"
-      ],
-      "imageCount": 5,
-      "status": "strong"
-    },
     "Move-in/out": {
       "pages": [
         "/",
         "/about/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/deer-valley-luxury-home-cleaning/",
@@ -993,7 +1036,6 @@
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
         "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
         "/contact/",
-        "/gallery/",
         "/service-areas/",
         "/service-location/center-creek/",
         "/service-location/chalk-creek/",
@@ -1051,13 +1093,14 @@
     "Luxury": {
       "pages": [
         "/",
+        "/ai-cleaning-recommendations/",
         "/blog/",
         "/blog/deer-valley-luxury-home-cleaning/",
         "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
         "/service-location/salt-lake-county/"
       ],
-      "imageCount": 2,
-      "status": "strong"
+      "imageCount": 0,
+      "status": "weak"
     }
   }
 }

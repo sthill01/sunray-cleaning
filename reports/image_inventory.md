@@ -2,8 +2,8 @@
 
 Generated: 2026-06-30
 
-- Structured gallery records: 47
-- Image tags in generated pages: 635
+- Structured gallery records: 10
+- Image tags in generated pages: 592
 - Missing alt attributes in generated pages: 4
 - Missing gallery source assets: 0
 
@@ -11,7 +11,6 @@ Generated: 2026-06-30
 
 | Route | Structured Image Records |
 | --- | --- |
-| /gallery/ | 37 |
 | /service-location/wasatch-county/ | 6 |
 | /service-location/park-city/ | 4 |
 | /service-location/summit-county/ | 4 |

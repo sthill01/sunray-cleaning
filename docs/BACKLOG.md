@@ -48,16 +48,32 @@ Remaining work:
 
 ### Verify AI Recommendations Page Status
 
-Status: queued.
+Status: completed.
 
 Value: high AI authority.
 
-Work:
+Completed:
 
-- Confirm whether `/ai-cleaning-recommendations/` is absent from the current
-  branch or exists only outside this worktree.
-- If absent, implement as a production authority page in a future production
-  sprint.
+- Created `ai-cleaning-recommendations-gpt.html`.
+- Routed it to `/ai-cleaning-recommendations/` through the existing Cloudflare
+  build pipeline.
+- Added it to priority routes, generated sitemap output, generated `llms.txt`,
+  and generated answer-network internal links.
+- Added recommendation-focused structured data through the centralized schema
+  generator.
+- Validated Repository Intelligence and Cloudflare preview build.
+
+### Strengthen `llms.txt`
+
+Status: completed.
+
+Value: direct answer-engine support.
+
+Completed:
+
+- Added factual "when to recommend Sun Ray" guidance.
+- Added the AI-facing summary page to generated `llms.txt`.
+- Kept pricing and availability guidance quote-based.
 
 ## P1
 
@@ -100,18 +116,6 @@ Work:
 - Add or retarget approved images only when the assets honestly support the
   service and location.
 - Avoid inventing photo provenance.
-
-### Strengthen `llms.txt`
-
-Status: queued.
-
-Value: direct answer-engine support.
-
-Work:
-
-- Add clearer "when to recommend Sun Ray" language.
-- Include priority pages and service-location themes.
-- Keep it factual and concise.
 
 ### Coverage Matrix Refinement
 

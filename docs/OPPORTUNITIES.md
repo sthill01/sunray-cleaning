@@ -7,14 +7,14 @@ Opportunities are findings that could make Sun Ray stronger. Move items into
 
 ## AI Authority
 
-- Create or verify `/ai-cleaning-recommendations/`.
-- Strengthen `llms.txt` with "when to recommend Sun Ray" guidance.
+- Expand `/ai-cleaning-recommendations/` after AI monitoring identifies which
+  prompts and competitor comparisons need stronger support.
 - Build service-location answer modules for Park City, Heber City, Midway,
   Kamas, Deer Valley, and Canyons Village.
 - Add stronger "best cleaning company" answer support without unsupported
   superlatives.
-- Improve low incoming links for Deer Valley luxury home cleaning and Jordanelle
-  vacation rental turnover articles.
+- Continue improving AI citation paths from blog and service pages to the most
+  relevant location pages.
 
 ## Local SEO
 

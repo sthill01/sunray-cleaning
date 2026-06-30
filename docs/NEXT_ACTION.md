@@ -4,16 +4,15 @@ Last updated: 2026-06-30
 
 ## Immediate Next Step
 
-Verify and, if needed, implement `/ai-cleaning-recommendations/`.
+Improve weak priority service-location coverage using Repository Intelligence
+data.
 
 Recommended next task:
 
-1. Confirm whether `ai-cleaning-recommendations-gpt.html` exists in the current
-   branch or another branch.
-2. If absent, create the page and route it through the Cloudflare build
-   pipeline.
-3. Add it to priority routes, sitemap output, and `llms.txt` output if it is a
-   public AI authority page.
+1. Review `reports/coverage_matrix.md` and `reports/content_gap_report.md`.
+2. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County gaps
+   with honest existing assets, dedicated page copy, FAQs, or internal links.
+3. Avoid inventing photo provenance or unsupported service claims.
 4. Run `npm run reports:generate`, `npm run build:cloudflare`, and
    `npm run check:internal-links`.
 
@@ -30,7 +29,9 @@ At the start of a future session:
 
 ## Current Candidate Production Improvement
 
-Verify and, if needed, implement `/ai-cleaning-recommendations/` because the
-current worktree does not show `ai-cleaning-recommendations-gpt.html`.
+Use the coverage matrix to strengthen priority service-location authority
+because matrix coverage remains the weakest measured authority signal.
 
-Public orphan routes were fixed in the previous production improvement.
+`/ai-cleaning-recommendations/` is now implemented as a public authority page
+and is linked through priority routes, sitemap output, `llms.txt`, and generated
+answer-network links.

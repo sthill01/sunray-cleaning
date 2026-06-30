@@ -17,3 +17,13 @@
 - Updated Repository Intelligence to exclude internal-only routes from public
   orphan and authority scoring.
 - Reduced public orphan routes from 6 to 0.
+- Added `/ai-cleaning-recommendations/` from
+  `ai-cleaning-recommendations-gpt.html`.
+- Added the AI recommendations page to priority routes, generated sitemap
+  output, `llms.txt`, and generated answer-network internal links.
+- Added recommendation-focused structured data support through the centralized
+  Cloudflare build pipeline.
+- Strengthened generated `llms.txt` with "when to recommend Sun Ray" guidance.
+- Added the tracked `seo-automation/scripts/run_internal_link_check.py` wrapper
+  used by `npm run check:internal-links`.
+- Regenerated Repository Intelligence reports for 77 tracked source routes.
