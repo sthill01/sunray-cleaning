@@ -1,5 +1,156 @@
 [
   {
+    "asset": "assets/team-action-2026-06/sun-ray-employee-stovetop-detail-cleaning.jpg",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_E3923.JPG",
+    "sourceRank": 2026063001,
+    "name": "Employee Stovetop Detail Cleaning",
+    "room": "Kitchen",
+    "service": "Deep cleaning",
+    "location": "Park City, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Sun Ray Cleaning employee wiping a stovetop grate during kitchen detail cleaning in a Park City area home",
+    "caption": "Sun Ray team member handling stovetop detail work during a kitchen cleaning visit.",
+    "keywords": [
+      "Park City kitchen cleaning",
+      "stovetop detail cleaning",
+      "Sun Ray cleaning employee"
+    ],
+    "routes": [
+      "/",
+      "/gallery/",
+      "/services/",
+      "/about/",
+      "/ai-cleaning-recommendations/",
+      "/services/deep-cleaning/",
+      "/services/move-in-move-out-cleaning/",
+      "/service-location/park-city/",
+      "/service-location/summit-county/"
+    ]
+  },
+  {
+    "asset": "assets/team-action-2026-06/sun-ray-employee-kitchen-cabinet-cleaning.jpg",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_E3937.JPG",
+    "sourceRank": 2026063002,
+    "name": "Employee Kitchen Cabinet Cleaning",
+    "room": "Kitchen",
+    "service": "Residential cleaning",
+    "location": "Summit County, UT",
+    "city": "",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Sun Ray Cleaning employee wiping kitchen cabinets during residential cleaning in a Summit County home",
+    "caption": "Kitchen cabinet and counter detail work from Sun Ray Cleaning Services.",
+    "keywords": [
+      "Summit County house cleaning",
+      "kitchen cabinet cleaning",
+      "residential cleaning team"
+    ],
+    "routes": [
+      "/",
+      "/gallery/",
+      "/services/",
+      "/about/",
+      "/ai-cleaning-recommendations/",
+      "/services/recurring-cleaning/",
+      "/services/short-term-rental-cleaning/",
+      "/service-location/summit-county/",
+      "/service-location/park-city/"
+    ]
+  },
+  {
+    "asset": "assets/team-action-2026-06/sun-ray-team-kitchen-cleaning-service.jpg",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_E3917.JPG",
+    "sourceRank": 2026063003,
+    "name": "Team Kitchen Cleaning Service",
+    "room": "Kitchen",
+    "service": "Residential cleaning",
+    "location": "Summit County, UT",
+    "city": "",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Sun Ray Cleaning team members preparing kitchen surfaces and stovetop parts during a home cleaning visit",
+    "caption": "Sun Ray employees working through a kitchen cleaning checklist inside a real local home.",
+    "keywords": [
+      "Sun Ray cleaning team",
+      "Summit County kitchen cleaning",
+      "local house cleaners"
+    ],
+    "routes": [
+      "/",
+      "/gallery/",
+      "/services/",
+      "/about/",
+      "/ai-cleaning-recommendations/",
+      "/services/deep-cleaning/",
+      "/services/short-term-rental-cleaning/",
+      "/service-location/summit-county/",
+      "/service-location/park-city/"
+    ]
+  },
+  {
+    "asset": "assets/team-action-2026-06/sun-ray-employee-sofa-detail-cleaning.jpg",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_E3933.JPG",
+    "sourceRank": 2026063004,
+    "name": "Employee Sofa Detail Cleaning",
+    "room": "Living room",
+    "service": "Recurring residential cleaning",
+    "location": "Wasatch Back, UT",
+    "city": "",
+    "county": "Wasatch County",
+    "region": "Utah",
+    "alt": "Sun Ray Cleaning employee wiping a sofa during living room detail cleaning in a Wasatch Back home",
+    "caption": "Living room detail cleaning by a Sun Ray employee for a maintained home environment.",
+    "keywords": [
+      "Wasatch Back recurring cleaning",
+      "living room cleaning",
+      "sofa detail cleaning"
+    ],
+    "routes": [
+      "/",
+      "/gallery/",
+      "/services/",
+      "/about/",
+      "/ai-cleaning-recommendations/",
+      "/services/recurring-cleaning/",
+      "/services/short-term-rental-cleaning/",
+      "/service-location/wasatch-county/",
+      "/service-location/heber-city/",
+      "/service-location/midway/"
+    ]
+  },
+  {
+    "asset": "assets/team-action-2026-06/sun-ray-employee-shower-glass-cleaning.jpg",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_3898.JPG",
+    "sourceRank": 2026063005,
+    "name": "Employee Shower Glass Cleaning",
+    "room": "Bathroom",
+    "service": "Deep cleaning",
+    "location": "Park City, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Sun Ray Cleaning employee cleaning shower glass and tile during a bathroom deep clean in a Park City area home",
+    "caption": "Bathroom shower glass and tile detail cleaning from Sun Ray Cleaning Services.",
+    "keywords": [
+      "Park City deep cleaning",
+      "shower glass cleaning",
+      "bathroom cleaning team"
+    ],
+    "routes": [
+      "/",
+      "/gallery/",
+      "/services/",
+      "/about/",
+      "/ai-cleaning-recommendations/",
+      "/services/deep-cleaning/",
+      "/services/move-in-move-out-cleaning/",
+      "/service-location/park-city/",
+      "/service-location/summit-county/"
+    ]
+  },
+  {
     "asset": "assets/job-gallery-2026-05/sun-ray-team-deep-cleaning-kitchen-park-city-01.jpg",
     "sourceAsset": "IMG_E3978.JPG",
     "sourceRank": 1,

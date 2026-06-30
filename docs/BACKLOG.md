@@ -49,6 +49,16 @@ Validation: Run against current repo and commit the script plus first report.
 
 Production improvement requirement: Each reporting sprint must also improve at least one production page or create an implementation-ready production improvement from report findings.
 
+### P1: Employee Action Photo Integration
+
+Status: Completed
+
+Outcome: Real Sun Ray employee-cleaning images are optimized, named for search/entity context, wired into priority pages, and registered in the job gallery data model.
+
+Why it matters: Real team imagery strengthens trust, local brand authenticity, AI entity understanding, and customer confidence versus room-only photography.
+
+Validation: Build, internal-link check, and repository intelligence rerun.
+
 ### P1: Strengthen Midway Move-Out Cleaning Coverage
 
 Status: Planned

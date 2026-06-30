@@ -51,6 +51,7 @@ Safety note: Must be factual, fair, and avoid unsupported competitor claims.
 - Build `llms.txt` coverage validation.
 - Build AI authority score from measurable components.
 - Calibrate prompt coverage scoring against production search intent and avoid over-relying on boilerplate mentions.
+- Add lightweight photo-library classification for employee-action photos, privacy risk, room type, service fit, and best route placement.
 
 ## Revenue Opportunities
 

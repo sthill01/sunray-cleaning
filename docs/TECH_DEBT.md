@@ -42,6 +42,14 @@ Status: First-pass coverage matrices now exist in `reports/coverage_matrices.md`
 
 Desired direction: Use the low-confidence prompt families to drive production improvements.
 
+### Photo Library Classification Not Automated
+
+Area: Image selection and metadata.
+
+Risk: The external Sun Ray photo library has many usable images, but identifying employee-action shots, privacy-sensitive backgrounds, room type, and service fit is still manual.
+
+Desired direction: Add lightweight image inventory metadata or a reviewed candidate list before scaling broader photo placement.
+
 ### Initial Repository Intelligence Findings
 
 Area: Reports baseline.

@@ -6,7 +6,7 @@ This file is SRAAP's live project memory. Update it at the end of every sprint a
 
 ## Current Version
 
-SRAAP Version 2.3 - Repository Intelligence baseline.
+SRAAP Version 2.4 - Employee-action trust imagery.
 
 ## Current Branch
 
@@ -30,6 +30,7 @@ Use the first Repository Intelligence Layer reports to drive the next production
 - Continuous Engineering directive accepted: repository intelligence must serve the production website.
 - First Repository Intelligence generator and `/reports` baseline.
 - Production-facing AI recommendations page trust-signal improvement.
+- Employee-action photo assets integrated into homepage, services, gallery, AI recommendation content, and the job gallery data model.
 
 ## Open Bugs
 
@@ -44,6 +45,7 @@ Use the first Repository Intelligence Layer reports to drive the next production
 - First-pass coverage matrices exist, but they need production use and calibration.
 - Initial reports found 5 orphan sitemap-listed location pages, 8 image references missing alt text, and 1 thin content candidate on `/reviews/`.
 - Initial AI authority scoring found lower confidence for luxury cleaning in Deer Valley, move-out cleaning in Midway, and recurring cleaning in Kamas.
+- Employee-action image selection from the external Sun Ray photo library is still manual; future automation could classify people-cleaning shots, privacy risk, room type, and service fit.
 - Pre-existing dirty/untracked blog, Webflow, and SEO automation files exist in the working tree and should not be mixed into governance commits.
 
 ## Current Priorities

@@ -4,6 +4,12 @@ All notable SRAAP governance and platform changes should be recorded here.
 
 ## 2026-06-30
 
+### Employee Action Photo Integration
+
+- Added five optimized employee-cleaning photos under `assets/team-action-2026-06/`.
+- Integrated employee-action imagery into homepage, services hub, about page, gallery, AI recommendations page, and core service pages.
+- Registered the new image assets in `data/job-gallery.json` so generated route galleries and future repository intelligence can use them.
+
 ### Repository Intelligence Layer
 
 - Accepted the Continuous Engineering directive and added the rule that repository intelligence must serve the production website.
