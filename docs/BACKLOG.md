@@ -143,6 +143,18 @@ Completed:
 - Added contextual links to the AI recommendations page and core service pages.
 - Regenerated Repository Intelligence from a clean staged-index export.
 
+### Fix Homepage Service Icon Alt Text
+
+Status: completed.
+
+Value: public website accessibility and image inventory quality.
+
+Completed:
+
+- Added descriptive alt text to the four homepage service icon images.
+- Reduced missing generated image alt attributes from 4 to 0.
+- Regenerated Repository Intelligence from a clean staged-index export.
+
 ### Coverage Matrix Refinement
 
 Status: queued.

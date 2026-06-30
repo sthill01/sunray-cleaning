@@ -4,7 +4,7 @@ Generated: 2026-06-30
 
 - Structured gallery records: 12
 - Image tags in generated pages: 596
-- Missing alt attributes in generated pages: 4
+- Missing alt attributes in generated pages: 0
 - Missing gallery source assets: 0
 
 ## Gallery Route Coverage
@@ -49,12 +49,7 @@ Generated: 2026-06-30
 
 ## Missing Alt Attributes
 
-| Route | Image |
-| --- | --- |
-| / | /assets/icon-short-term.svg |
-| / | /assets/icon-recurring.svg |
-| / | /assets/icon-broom.svg |
-| / | /assets/icon-move.svg |
+No rows.
 
 ## Missing Gallery Assets
 

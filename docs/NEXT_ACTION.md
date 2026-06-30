@@ -4,21 +4,20 @@ Last updated: 2026-06-30
 
 ## Immediate Next Step
 
-Fix the missing homepage icon alt attributes, then continue verified
-image-backed service-location coverage using Repository Intelligence data.
+Continue verified image-backed service-location coverage using Repository
+Intelligence data, or improve low-link minor location pages when image
+provenance is not clear.
 
 Recommended next task:
 
-1. Review `reports/image_inventory.md` and fix the four missing homepage icon
-   alt attributes if those images are not intentionally decorative.
-2. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
+1. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
    tracked assets.
-3. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
+2. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
    gaps only where the source asset and metadata honestly support the location
    and service.
-4. If provenance is unclear, improve customer-facing copy or internal links
+3. If provenance is unclear, improve customer-facing copy or internal links
    instead of adding unsupported image metadata.
-5. Run `npm run reports:generate`, `npm run build:cloudflare`, and
+4. Run `npm run reports:generate`, `npm run build:cloudflare`, and
    `npm run check:internal-links`.
 
 ## Session Startup Protocol
@@ -48,3 +47,6 @@ and contextual links to the AI recommendations page and core service pages.
 Park City residential cleaning and move-in/move-out cleaning now have verified
 structured image support in the gallery metadata. Remaining image gaps should
 only be closed when asset provenance is clear.
+
+The homepage service icons now have descriptive alt text, and the image
+inventory reports 0 missing generated image alt attributes.
