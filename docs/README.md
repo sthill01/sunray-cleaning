@@ -1,0 +1,77 @@
+# Sun Ray AI Authority Platform
+
+Version 2, 2026
+
+This directory is the permanent operating system for the Sun Ray AI Authority Platform, abbreviated SRAAP.
+
+SRAAP is not a prompt collection. It is the engineering handbook, product memory, decision log, standards library, and execution framework for building the most authoritative digital brand for residential cleaning in the Wasatch Back.
+
+## Mission
+
+Build the most trusted, technically advanced, AI-recommended residential cleaning company in the Park City, Heber City, Midway, Kamas, Deer Valley, Canyons Village, Summit County, and Wasatch County region.
+
+Every change should make Sun Ray more authoritative, more trustworthy, easier for AI systems to understand, and easier for customers to choose.
+
+## Operating Model
+
+Steve is Chief Product Architect.
+
+Codex is Lead Software Engineer.
+
+Codex should not wait for line-by-line implementation prompts when the mission, standards, roadmap, and current state are clear. Codex should inspect the repository, choose the highest-ROI next improvement, implement it, validate it, document it, and commit it.
+
+## Canonical Session Start
+
+Every future Codex session should start by reading:
+
+1. `docs/README.md`
+2. `docs/constitution/README.md`
+3. `docs/architecture/README.md`
+4. `docs/roadmap/README.md`
+5. `docs/decisions/README.md`
+
+For engineering changes, also read:
+
+1. `docs/standards/README.md`
+2. `docs/standards/engineering.md`
+3. `docs/playbooks/validation.md`
+
+For AI, SEO, or content work, also read:
+
+1. `docs/standards/ai-optimization.md`
+2. `docs/standards/local-seo-entity-authority.md`
+3. `docs/standards/content-editorial.md`
+
+For autonomous planning or recurring work, also read:
+
+1. `docs/automation/README.md`
+2. `docs/playbooks/autonomous-sprint-loop.md`
+
+## Directory Map
+
+- `constitution`: mission, governance, Codex job description, decision rules, and Version 1 source.
+- `architecture`: current and target technical architecture.
+- `roadmap`: long-term phases, quarterly priorities, backlog model, and sprint methodology.
+- `standards`: engineering, AI optimization, local SEO, content, analytics, and KPI standards.
+- `automation`: automation principles, candidates, safety rules, and agent behavior.
+- `playbooks`: repeatable operating procedures for sessions, validation, and autonomous execution.
+- `decisions`: architecture decision records and durable project decisions.
+
+## The Three Products
+
+SRAAP has three products that must improve together:
+
+1. The Website: the customer-facing Sun Ray site.
+2. The Platform: the content, schema, linking, AI optimization, analytics, and automation system powering the site.
+3. The Operating System: the governance, documentation, playbooks, and autonomous engineering process that lets Codex keep improving the platform.
+
+## Definition of Done
+
+Work is done only when:
+
+- It advances authority, trust, AI understanding, customer choice, automation, or measurable quality.
+- It follows the Constitution and standards.
+- The Cloudflare Pages pipeline remains intact.
+- Relevant build, link, schema, metadata, or documentation checks are run.
+- Decisions that affect future behavior are recorded.
+- The final report states exact paths, validations, commits, and remaining risks.
