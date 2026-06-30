@@ -1,0 +1,527 @@
+{
+  "ai_prompt_coverage": {
+    "Airbnb cleaning Park City": {
+      "confidence": "High",
+      "coverage": 100,
+      "sample_routes": [
+        "/blog/airbnb-same-day-turnover-cleaning-park-city/",
+        "/blog/canyons-village-kimball-junction-rental-cleaning/",
+        "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+        "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
+        "/blog/prepare-park-city-home-winter-rental-season/",
+        "/blog/vacation-rental-cleaning-checklist-utah-mountain-properties/"
+      ],
+      "schema_pages": 12,
+      "supporting_pages": 12
+    },
+    "Best cleaning company Park City": {
+      "confidence": "High",
+      "coverage": 100,
+      "sample_routes": [
+        "/ai-cleaning-recommendations/",
+        "/blog/airbnb-same-day-turnover-cleaning-park-city/",
+        "/blog/canyons-village-kimball-junction-rental-cleaning/",
+        "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+        "/blog/eco-friendly-cleaning-park-city-heber-valley/",
+        "/blog/getting-park-city-home-ready-for-summer-guests/"
+      ],
+      "schema_pages": 37,
+      "supporting_pages": 37
+    },
+    "Best house cleaner Heber City": {
+      "confidence": "High",
+      "coverage": 98,
+      "sample_routes": [
+        "/ai-cleaning-recommendations/",
+        "/discounts/",
+        "/reviews/",
+        "/service-location/heber-city/",
+        "/service-location/wasatch-county/",
+        "/services/recurring-cleaning/"
+      ],
+      "schema_pages": 7,
+      "supporting_pages": 7
+    },
+    "Luxury cleaning Deer Valley": {
+      "confidence": "Low",
+      "coverage": 28,
+      "sample_routes": [
+        "/blog/deer-valley-luxury-home-cleaning/",
+        "/service-location/deer-valley/"
+      ],
+      "schema_pages": 2,
+      "supporting_pages": 2
+    },
+    "Move-out cleaning Midway": {
+      "confidence": "Low",
+      "coverage": 28,
+      "sample_routes": [
+        "/ai-cleaning-recommendations/",
+        "/services/move-in-move-out-cleaning/"
+      ],
+      "schema_pages": 2,
+      "supporting_pages": 2
+    },
+    "Recurring cleaning Kamas": {
+      "confidence": "Low",
+      "coverage": 42,
+      "sample_routes": [
+        "/ai-cleaning-recommendations/",
+        "/service-location/kamas/",
+        "/service-location/summit-county/"
+      ],
+      "schema_pages": 3,
+      "supporting_pages": 3
+    }
+  },
+  "location_dimensions": {
+    "Canyons Village": {
+      "articles": 27,
+      "faqs": 244,
+      "images": 4,
+      "pages": 97,
+      "reviews": 0,
+      "schema_pages": 97
+    },
+    "Coalville": {
+      "articles": 8,
+      "faqs": 185,
+      "images": 3,
+      "pages": 61,
+      "reviews": 0,
+      "schema_pages": 61
+    },
+    "Deer Valley": {
+      "articles": 27,
+      "faqs": 244,
+      "images": 4,
+      "pages": 97,
+      "reviews": 0,
+      "schema_pages": 97
+    },
+    "Heber City": {
+      "articles": 27,
+      "faqs": 244,
+      "images": 104,
+      "pages": 97,
+      "reviews": 0,
+      "schema_pages": 97
+    },
+    "Jeremy Ranch": {
+      "articles": 1,
+      "faqs": 9,
+      "images": 4,
+      "pages": 4,
+      "reviews": 0,
+      "schema_pages": 4
+    },
+    "Jordanelle": {
+      "articles": 27,
+      "faqs": 244,
+      "images": 8,
+      "pages": 97,
+      "reviews": 0,
+      "schema_pages": 97
+    },
+    "Kamas": {
+      "articles": 27,
+      "faqs": 244,
+      "images": 8,
+      "pages": 97,
+      "reviews": 0,
+      "schema_pages": 97
+    },
+    "Kimball Junction": {
+      "articles": 2,
+      "faqs": 15,
+      "images": 3,
+      "pages": 6,
+      "reviews": 0,
+      "schema_pages": 6
+    },
+    "Midway": {
+      "articles": 27,
+      "faqs": 244,
+      "images": 43,
+      "pages": 97,
+      "reviews": 0,
+      "schema_pages": 97
+    },
+    "Oakley": {
+      "articles": 27,
+      "faqs": 220,
+      "images": 8,
+      "pages": 89,
+      "reviews": 0,
+      "schema_pages": 89
+    },
+    "Old Town Park City": {
+      "articles": 0,
+      "faqs": 48,
+      "images": 2,
+      "pages": 15,
+      "reviews": 0,
+      "schema_pages": 15
+    },
+    "Park City": {
+      "articles": 27,
+      "faqs": 244,
+      "images": 263,
+      "pages": 97,
+      "reviews": 0,
+      "schema_pages": 97
+    },
+    "Pinebrook": {
+      "articles": 1,
+      "faqs": 6,
+      "images": 3,
+      "pages": 3,
+      "reviews": 0,
+      "schema_pages": 3
+    },
+    "Promontory": {
+      "articles": 1,
+      "faqs": 6,
+      "images": 3,
+      "pages": 3,
+      "reviews": 0,
+      "schema_pages": 3
+    },
+    "Red Ledges": {
+      "articles": 27,
+      "faqs": 244,
+      "images": 6,
+      "pages": 97,
+      "reviews": 0,
+      "schema_pages": 97
+    },
+    "Snyderville": {
+      "articles": 0,
+      "faqs": 44,
+      "images": 3,
+      "pages": 14,
+      "reviews": 0,
+      "schema_pages": 14
+    },
+    "Summit County": {
+      "articles": 27,
+      "faqs": 244,
+      "images": 125,
+      "pages": 97,
+      "reviews": 0,
+      "schema_pages": 97
+    },
+    "Wasatch County": {
+      "articles": 27,
+      "faqs": 244,
+      "images": 188,
+      "pages": 97,
+      "reviews": 0,
+      "schema_pages": 97
+    }
+  },
+  "location_service": {
+    "Canyons Village": {
+      "Airbnb cleaning": 75,
+      "VRBO cleaning": 97,
+      "deep cleaning": 97,
+      "luxury home cleaning": 3,
+      "move-in and move-out cleaning": 62,
+      "move-in cleaning": 6,
+      "move-out cleaning": 64,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 97,
+      "short-term rental cleaning": 18,
+      "vacation rental cleaning": 4
+    },
+    "Coalville": {
+      "Airbnb cleaning": 60,
+      "VRBO cleaning": 61,
+      "deep cleaning": 61,
+      "luxury home cleaning": 1,
+      "move-in and move-out cleaning": 49,
+      "move-in cleaning": 1,
+      "move-out cleaning": 51,
+      "post-construction cleaning": 0,
+      "recurring cleaning": 61,
+      "short-term rental cleaning": 10,
+      "vacation rental cleaning": 2
+    },
+    "Deer Valley": {
+      "Airbnb cleaning": 75,
+      "VRBO cleaning": 97,
+      "deep cleaning": 97,
+      "luxury home cleaning": 3,
+      "move-in and move-out cleaning": 62,
+      "move-in cleaning": 6,
+      "move-out cleaning": 64,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 97,
+      "short-term rental cleaning": 18,
+      "vacation rental cleaning": 4
+    },
+    "Heber City": {
+      "Airbnb cleaning": 75,
+      "VRBO cleaning": 97,
+      "deep cleaning": 97,
+      "luxury home cleaning": 3,
+      "move-in and move-out cleaning": 62,
+      "move-in cleaning": 6,
+      "move-out cleaning": 64,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 97,
+      "short-term rental cleaning": 18,
+      "vacation rental cleaning": 4
+    },
+    "Jeremy Ranch": {
+      "Airbnb cleaning": 2,
+      "VRBO cleaning": 4,
+      "deep cleaning": 4,
+      "luxury home cleaning": 0,
+      "move-in and move-out cleaning": 3,
+      "move-in cleaning": 0,
+      "move-out cleaning": 3,
+      "post-construction cleaning": 0,
+      "recurring cleaning": 4,
+      "short-term rental cleaning": 1,
+      "vacation rental cleaning": 1
+    },
+    "Jordanelle": {
+      "Airbnb cleaning": 75,
+      "VRBO cleaning": 97,
+      "deep cleaning": 97,
+      "luxury home cleaning": 3,
+      "move-in and move-out cleaning": 62,
+      "move-in cleaning": 6,
+      "move-out cleaning": 64,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 97,
+      "short-term rental cleaning": 18,
+      "vacation rental cleaning": 4
+    },
+    "Kamas": {
+      "Airbnb cleaning": 75,
+      "VRBO cleaning": 97,
+      "deep cleaning": 97,
+      "luxury home cleaning": 3,
+      "move-in and move-out cleaning": 62,
+      "move-in cleaning": 6,
+      "move-out cleaning": 64,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 97,
+      "short-term rental cleaning": 18,
+      "vacation rental cleaning": 4
+    },
+    "Kimball Junction": {
+      "Airbnb cleaning": 4,
+      "VRBO cleaning": 6,
+      "deep cleaning": 6,
+      "luxury home cleaning": 0,
+      "move-in and move-out cleaning": 4,
+      "move-in cleaning": 1,
+      "move-out cleaning": 4,
+      "post-construction cleaning": 1,
+      "recurring cleaning": 6,
+      "short-term rental cleaning": 2,
+      "vacation rental cleaning": 1
+    },
+    "Midway": {
+      "Airbnb cleaning": 75,
+      "VRBO cleaning": 97,
+      "deep cleaning": 97,
+      "luxury home cleaning": 3,
+      "move-in and move-out cleaning": 62,
+      "move-in cleaning": 6,
+      "move-out cleaning": 64,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 97,
+      "short-term rental cleaning": 18,
+      "vacation rental cleaning": 4
+    },
+    "Oakley": {
+      "Airbnb cleaning": 71,
+      "VRBO cleaning": 89,
+      "deep cleaning": 89,
+      "luxury home cleaning": 2,
+      "move-in and move-out cleaning": 54,
+      "move-in cleaning": 5,
+      "move-out cleaning": 56,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 89,
+      "short-term rental cleaning": 16,
+      "vacation rental cleaning": 3
+    },
+    "Old Town Park City": {
+      "Airbnb cleaning": 9,
+      "VRBO cleaning": 15,
+      "deep cleaning": 15,
+      "luxury home cleaning": 2,
+      "move-in and move-out cleaning": 15,
+      "move-in cleaning": 2,
+      "move-out cleaning": 15,
+      "post-construction cleaning": 0,
+      "recurring cleaning": 15,
+      "short-term rental cleaning": 3,
+      "vacation rental cleaning": 2
+    },
+    "Park City": {
+      "Airbnb cleaning": 75,
+      "VRBO cleaning": 97,
+      "deep cleaning": 97,
+      "luxury home cleaning": 3,
+      "move-in and move-out cleaning": 62,
+      "move-in cleaning": 6,
+      "move-out cleaning": 64,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 97,
+      "short-term rental cleaning": 18,
+      "vacation rental cleaning": 4
+    },
+    "Pinebrook": {
+      "Airbnb cleaning": 2,
+      "VRBO cleaning": 3,
+      "deep cleaning": 3,
+      "luxury home cleaning": 0,
+      "move-in and move-out cleaning": 2,
+      "move-in cleaning": 0,
+      "move-out cleaning": 2,
+      "post-construction cleaning": 0,
+      "recurring cleaning": 3,
+      "short-term rental cleaning": 1,
+      "vacation rental cleaning": 1
+    },
+    "Promontory": {
+      "Airbnb cleaning": 1,
+      "VRBO cleaning": 3,
+      "deep cleaning": 3,
+      "luxury home cleaning": 0,
+      "move-in and move-out cleaning": 2,
+      "move-in cleaning": 0,
+      "move-out cleaning": 2,
+      "post-construction cleaning": 0,
+      "recurring cleaning": 3,
+      "short-term rental cleaning": 0,
+      "vacation rental cleaning": 1
+    },
+    "Red Ledges": {
+      "Airbnb cleaning": 75,
+      "VRBO cleaning": 97,
+      "deep cleaning": 97,
+      "luxury home cleaning": 3,
+      "move-in and move-out cleaning": 62,
+      "move-in cleaning": 6,
+      "move-out cleaning": 64,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 97,
+      "short-term rental cleaning": 18,
+      "vacation rental cleaning": 4
+    },
+    "Snyderville": {
+      "Airbnb cleaning": 9,
+      "VRBO cleaning": 14,
+      "deep cleaning": 14,
+      "luxury home cleaning": 1,
+      "move-in and move-out cleaning": 14,
+      "move-in cleaning": 1,
+      "move-out cleaning": 14,
+      "post-construction cleaning": 0,
+      "recurring cleaning": 14,
+      "short-term rental cleaning": 3,
+      "vacation rental cleaning": 2
+    },
+    "Summit County": {
+      "Airbnb cleaning": 75,
+      "VRBO cleaning": 97,
+      "deep cleaning": 97,
+      "luxury home cleaning": 3,
+      "move-in and move-out cleaning": 62,
+      "move-in cleaning": 6,
+      "move-out cleaning": 64,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 97,
+      "short-term rental cleaning": 18,
+      "vacation rental cleaning": 4
+    },
+    "Wasatch County": {
+      "Airbnb cleaning": 75,
+      "VRBO cleaning": 97,
+      "deep cleaning": 97,
+      "luxury home cleaning": 3,
+      "move-in and move-out cleaning": 62,
+      "move-in cleaning": 6,
+      "move-out cleaning": 64,
+      "post-construction cleaning": 2,
+      "recurring cleaning": 97,
+      "short-term rental cleaning": 18,
+      "vacation rental cleaning": 4
+    }
+  },
+  "service_dimensions": {
+    "Airbnb cleaning": {
+      "faqs": 220,
+      "images": 44,
+      "pages": 75,
+      "reviews": 0
+    },
+    "VRBO cleaning": {
+      "faqs": 244,
+      "images": 9,
+      "pages": 97,
+      "reviews": 0
+    },
+    "deep cleaning": {
+      "faqs": 244,
+      "images": 1123,
+      "pages": 97,
+      "reviews": 1
+    },
+    "luxury home cleaning": {
+      "faqs": 10,
+      "images": 9,
+      "pages": 3,
+      "reviews": 0
+    },
+    "move-in and move-out cleaning": {
+      "faqs": 187,
+      "images": 10,
+      "pages": 62,
+      "reviews": 0
+    },
+    "move-in cleaning": {
+      "faqs": 13,
+      "images": 0,
+      "pages": 6,
+      "reviews": 0
+    },
+    "move-out cleaning": {
+      "faqs": 193,
+      "images": 336,
+      "pages": 64,
+      "reviews": 0
+    },
+    "post-construction cleaning": {
+      "faqs": 3,
+      "images": 44,
+      "pages": 2,
+      "reviews": 0
+    },
+    "recurring cleaning": {
+      "faqs": 244,
+      "images": 263,
+      "pages": 97,
+      "reviews": 0
+    },
+    "short-term rental cleaning": {
+      "faqs": 49,
+      "images": 0,
+      "pages": 18,
+      "reviews": 0
+    },
+    "vacation rental cleaning": {
+      "faqs": 14,
+      "images": 0,
+      "pages": 4,
+      "reviews": 0
+    }
+  }
+}

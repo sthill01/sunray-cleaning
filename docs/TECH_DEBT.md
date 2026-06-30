@@ -20,7 +20,9 @@ Area: Sitewide route and content map.
 
 Risk: It is hard to see coverage, orphan pages, schema gaps, metadata gaps, and `llms.txt` gaps without manual inspection.
 
-Desired direction: Build route and content inventory automation.
+Status: First-pass repository intelligence reports now exist in `reports/`.
+
+Desired direction: Use the reports for production decisions before expanding reporting depth.
 
 ### AI Visibility Not Baselined
 
@@ -36,7 +38,22 @@ Area: Services, locations, property types, and prompt families.
 
 Risk: The site may have strong individual pages but weak service-location coverage patterns.
 
-Desired direction: Build a coverage matrix after route inventory exists.
+Status: First-pass coverage matrices now exist in `reports/coverage_matrices.md` and `reports/coverage_matrices.json`.
+
+Desired direction: Use the low-confidence prompt families to drive production improvements.
+
+### Initial Repository Intelligence Findings
+
+Area: Reports baseline.
+
+Findings:
+
+- 5 orphan sitemap-listed location pages.
+- 8 public-page image references missing alt text.
+- 1 thin content candidate on `/reviews/`.
+- Low-confidence AI prompt support for Deer Valley luxury cleaning, Midway move-out cleaning, and Kamas recurring cleaning.
+
+Desired direction: Fix production gaps before adding more reporting surfaces.
 
 ### Working Tree Has Pre-Existing Dirty Files
 

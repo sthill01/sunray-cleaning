@@ -9,6 +9,7 @@ All notable SRAAP governance and platform changes should be recorded here.
 - Accepted the Continuous Engineering directive and added the rule that repository intelligence must serve the production website.
 - Added the first repository intelligence generator entry point.
 - Improved the AI cleaning recommendations page with review, gallery, and quote trust signals.
+- Generated the first `/reports` baseline, including route, schema, image, FAQ, entity, coverage, authority, technical debt, and knowledge graph reports.
 
 ### Initialization Protocol Adoption
 

@@ -6,7 +6,7 @@ This file is SRAAP's live project memory. Update it at the end of every sprint a
 
 ## Current Version
 
-SRAAP Version 2.3 - Repository Intelligence Layer in progress.
+SRAAP Version 2.3 - Repository Intelligence baseline.
 
 ## Current Branch
 
@@ -18,7 +18,7 @@ Phase 1 - Repository Intelligence Layer and production improvement.
 
 ## Current Objective
 
-Build the first Repository Intelligence Layer reports and pair them with a production-facing AI recommendations page improvement.
+Use the first Repository Intelligence Layer reports to drive the next production website improvement.
 
 ## Completed Features
 
@@ -28,6 +28,8 @@ Build the first Repository Intelligence Layer reports and pair them with a produ
 - Phase 0 flat docs cockpit.
 - Mandatory Initialization Protocol converted from PDF into repo-owned documentation and verified against the Word source file.
 - Continuous Engineering directive accepted: repository intelligence must serve the production website.
+- First Repository Intelligence generator and `/reports` baseline.
+- Production-facing AI recommendations page trust-signal improvement.
 
 ## Open Bugs
 
@@ -37,18 +39,20 @@ Build the first Repository Intelligence Layer reports and pair them with a produ
 ## Known Technical Debt
 
 - `tools/build-cloudflare-preview.py` is a high-complexity protected surface.
-- Route, metadata, schema, sitemap, and `llms.txt` behavior should become easier to audit through structured reports.
+- Route, metadata, schema, sitemap, and `llms.txt` behavior now have a first-pass report baseline, but report precision should continue improving.
 - AI visibility is not yet tracked with a durable baseline.
-- Content coverage is not yet mapped across service, location, property type, and prompt families.
+- First-pass coverage matrices exist, but they need production use and calibration.
+- Initial reports found 5 orphan sitemap-listed location pages, 8 image references missing alt text, and 1 thin content candidate on `/reviews/`.
+- Initial AI authority scoring found lower confidence for luxury cleaning in Deer Valley, move-out cleaning in Midway, and recurring cleaning in Kamas.
 - Pre-existing dirty/untracked blog, Webflow, and SEO automation files exist in the working tree and should not be mixed into governance commits.
 
 ## Current Priorities
 
-1. Build route and content inventory automation.
-2. Build schema, metadata, and internal-link coverage reports.
-3. Create entity taxonomy.
-4. Establish AI monitoring baseline.
-5. Add documentation-health automation so startup docs stay aligned.
+1. Strengthen a production page or link path for Midway move-out cleaning.
+2. Improve Deer Valley luxury cleaning and Kamas recurring cleaning coverage.
+3. Fix orphan location pages or add relevant internal links.
+4. Improve `/reviews/` content depth and image alt coverage where appropriate.
+5. Refine repository intelligence scoring only when it changes production priorities.
 
 ## Blocked Items
 
@@ -65,9 +69,10 @@ Build the first Repository Intelligence Layer reports and pair them with a produ
 
 ## AI Authority Score
 
-Baseline not yet measured.
+First-pass baseline generated in `reports/authority_report.md`.
 
-A future score should include route coverage, schema coverage, `llms.txt` coverage, internal-link strength, content depth, local entity clarity, prompt visibility, and citation presence.
+- High confidence: Best cleaning company Park City, Airbnb cleaning Park City, best house cleaner Heber City.
+- Low confidence: Luxury cleaning Deer Valley, move-out cleaning Midway, recurring cleaning Kamas.
 
 ## Entity Status
 
@@ -82,7 +87,7 @@ The entity taxonomy still needs a structured map and coverage audit.
 
 ## Coverage
 
-Current coverage includes service pages, location pages, blog guides, and the AI recommendations page. Exact coverage needs to be measured by inventory automation.
+Current report baseline detected 97 public routes, 5 service pages, 55 location pages, 27 article pages, 97 schema-covered pages, 244 FAQ items, and 1,161 public-page image references.
 
 ## Documentation Health
 

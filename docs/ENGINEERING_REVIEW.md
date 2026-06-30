@@ -8,23 +8,23 @@ This file stores the latest end-of-sprint engineering review. Update it at every
 
 ### 1. What delivered the most value?
 
-The most valuable shift is the balance rule: repository intelligence can guide engineering decisions, but the production website remains the product.
+The most valuable delivery is the first report baseline paired with a production improvement on the AI recommendations page. The reports now identify concrete production gaps instead of creating reporting for its own sake.
 
 ### 2. What caused unnecessary complexity?
 
-The risk is over-investing in internal reports. The first layer should stay lightweight and should produce a production-facing improvement in the same sprint.
+The first authority scoring pass was too generous because generated sitewide content inflated prompt support. The generator was calibrated to use source-page title, description, H1, and route for prompt coverage.
 
 ### 3. What can be automated before next sprint?
 
-Repository intelligence generation can be automated through `cmd /c npm run reports:intelligence`.
+Repository intelligence generation can be automated through `cmd /c npm run reports:intelligence`. Future automation should focus on reducing orphan pages and improving low-confidence prompt families.
 
 ### 4. What documentation is now out of date?
 
-The roadmap and backlog now need to keep reporting work subordinate to website quality and AI authority work.
+The docs now need to stay aligned with the production-first guardrail: use reports to choose website improvements before adding more internal reporting.
 
 ### 5. What is the single highest-impact task for the next sprint?
 
-Use the reports to select the next production website improvement.
+Strengthen Midway move-out cleaning coverage, then rerun repository intelligence to confirm improvement.
 
 ## Review Rule
 

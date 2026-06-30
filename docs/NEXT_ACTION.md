@@ -6,7 +6,7 @@ This file tells the next Codex session what to do first.
 
 ## Highest-ROI Next Action
 
-Use the first Repository Intelligence reports to choose the next production website improvement.
+Strengthen production coverage for Midway move-out cleaning using the first Repository Intelligence reports.
 
 Start by running the initialization check in `docs/INITIALIZATION_PROTOCOL.md`, then proceed if this next action is still valid.
 
@@ -26,7 +26,7 @@ Route inventory is the foundation for nearly every SRAAP improvement:
 
 Without this inventory, future work depends too much on manual inspection.
 
-The new guardrail is that reporting must translate into website quality. The next cycle should start with `reports/` and select a production improvement from the highest-value gap.
+The first `reports/authority_report.md` baseline shows low confidence for "Move-out cleaning Midway" with only two supporting pages. This is a high-intent service-location combination and should be improved before expanding internal tooling.
 
 ## Suggested Implementation
 
@@ -36,7 +36,7 @@ Run:
 cmd /c npm run reports:intelligence
 ```
 
-Then inspect:
+Inspect:
 
 - `reports/README.md`
 - `reports/content_gap_report.md`
@@ -44,11 +44,16 @@ Then inspect:
 - `reports/internal_links.md`
 - `reports/technical_debt.md`
 
-Choose one production improvement that advances website quality or AI authority before expanding internal tooling.
+Then improve one or both of:
+
+- `service-location/midway-gpt.html`
+- `services/move-in-move-out-cleaning-gpt.html`
+
+Prioritize visible copy, internal links, FAQ language, and quote-path clarity that connect Midway to move-in and move-out cleaning without inventing unsupported claims.
 
 ## Acceptance Criteria
 
-- One production improvement is selected from report findings.
+- One production improvement is implemented from report findings.
 - Findings are summarized in `PROJECT_STATE.md`, `BACKLOG.md`, `TECH_DEBT.md`, and `OPPORTUNITIES.md` as needed.
 - Relevant validation runs successfully.
 

@@ -39,7 +39,7 @@ Validation: Docs-only diff review and commit.
 
 ### P1: Route and Content Inventory Automation
 
-Status: In progress
+Status: Completed
 
 Outcome: A repeatable report listing public routes, source files, page family, title, description, canonical, sitemap status, schema presence, `llms.txt` inclusion, and key internal-link relationships.
 
@@ -48,6 +48,36 @@ Why it matters: This becomes the substrate for automated AI authority, SEO, cont
 Validation: Run against current repo and commit the script plus first report.
 
 Production improvement requirement: Each reporting sprint must also improve at least one production page or create an implementation-ready production improvement from report findings.
+
+### P1: Strengthen Midway Move-Out Cleaning Coverage
+
+Status: Planned
+
+Outcome: Improve visible copy, internal links, FAQ language, and quote-path clarity connecting Midway with move-in and move-out cleaning.
+
+Why it matters: `reports/authority_report.md` marks "Move-out cleaning Midway" as low confidence with only two supporting pages.
+
+Validation: Build, run internal-link check, rerun repository intelligence, and confirm improved supporting-page coverage.
+
+### P1: Improve Deer Valley Luxury And Kamas Recurring Coverage
+
+Status: Planned
+
+Outcome: Strengthen service-location connections for Deer Valley luxury cleaning and Kamas recurring cleaning.
+
+Why it matters: Both prompt families are low confidence in the first authority report baseline.
+
+Validation: Build, rerun repository intelligence, and confirm improved prompt support.
+
+### P1: Fix Orphan Location Pages
+
+Status: Planned
+
+Outcome: Add relevant internal links or reconsider sitemap inclusion for Chalk Creek, Daniel Ranch, Deer Mountain, Echo, and Wanship location routes.
+
+Why it matters: `reports/orphan_pages.md` found five sitemap-listed public pages with no inbound internal links.
+
+Validation: Rerun repository intelligence and confirm orphan count decreases.
 
 ### P1: Schema and Metadata Coverage Report
 

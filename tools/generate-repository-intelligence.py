@@ -163,12 +163,11 @@ def normalize_space(value: str) -> str:
     return re.sub(r"\s+", " ", unescape(value or "")).strip()
 
 
-def run_build(root: Path) -> dict[str, object]:
+def run_build(root: Path, report_date: str) -> dict[str, object]:
     command = ["cmd", "/c", "npm", "run", "build:cloudflare"] if os.name == "nt" else ["npm", "run", "build:cloudflare"]
-    started = date.today().isoformat()
     proc = subprocess.run(command, cwd=root, text=True, capture_output=True)
     return {
-        "date": started,
+        "date": report_date,
         "command": " ".join(command),
         "returncode": proc.returncode,
         "stdout_tail": "\n".join(proc.stdout.splitlines()[-20:]),
@@ -240,6 +239,12 @@ def schema_types_from_blocks(blocks: list[str]) -> list[str]:
     return sorted(found)
 
 
+def parse_html(raw: str) -> PageParser:
+    parser = PageParser()
+    parser.feed(raw)
+    return parser
+
+
 def internal_route_from_href(route: str, href: str, known_routes: set[str]) -> str:
     if not href or href.startswith(("tel:", "sms:", "mailto:", "data:", "#")):
         return ""
@@ -291,13 +296,17 @@ def load_pages(root: Path, out_root: Path) -> tuple[list[PageInfo], dict[str, ob
     for html_file in html_files:
         route = route_from_output(out_root, html_file)
         raw = html_file.read_text(encoding="utf-8", errors="ignore")
-        parser = PageParser()
-        parser.feed(raw)
-        visible = normalize_space(" ".join(parser.visible_text))
+        parser = parse_html(raw)
+        source_file = source_for_route(root, route)
+        content_parser = parser
+        if source_file and (root / source_file).exists():
+            source_raw = (root / source_file).read_text(encoding="utf-8-sig", errors="ignore")
+            content_parser = parse_html(source_raw)
+        visible = normalize_space(" ".join(content_parser.visible_text))
         page = PageInfo(
             route=route,
             output_file=html_file.relative_to(root).as_posix(),
-            source_file=source_for_route(root, route),
+            source_file=source_file,
             family=family_for_route(route),
             title=normalize_space(parser.title),
             description=normalize_space(parser.description),
@@ -308,7 +317,7 @@ def load_pages(root: Path, out_root: Path) -> tuple[list[PageInfo], dict[str, ob
             links=parser.links,
             images=parser.images,
             schema_types=schema_types_from_blocks(parser.schema_blocks),
-            faq_count=parser.faq_count,
+            faq_count=content_parser.faq_count,
             summary_text=visible[:5000],
             in_sitemap=route in sitemap,
             in_llms=(route in llms_text),
@@ -408,9 +417,9 @@ def score_prompt(prompt_terms: list[str], pages: list[PageInfo]) -> dict[str, ob
     supporting_pages: list[PageInfo] = []
     required = [term.lower() for term in prompt_terms]
     for page in pages:
-        haystack = " ".join([page.title, page.description, page.h1, page.summary_text]).lower()
+        haystack = " ".join([page.route, page.title, page.description, page.h1]).lower()
         matched = sum(1 for term in required if term in haystack)
-        if matched >= max(1, len(required) // 2):
+        if required and required[0] in haystack and matched >= max(2, len(required) // 2):
             supporting_pages.append(page)
     schema_complete = sum(1 for page in supporting_pages if page.schema_types)
     score = min(100, int((len(supporting_pages) * 8) + (schema_complete * 6)))
@@ -424,7 +433,7 @@ def score_prompt(prompt_terms: list[str], pages: list[PageInfo]) -> dict[str, ob
     }
 
 
-def generate_reports(root: Path, reports_dir: Path, pages: list[PageInfo], build: dict[str, object], platform: dict[str, object], reviews: dict[str, object]) -> None:
+def generate_reports(root: Path, reports_dir: Path, pages: list[PageInfo], build: dict[str, object], platform: dict[str, object], reviews: dict[str, object], report_date: str) -> None:
     reports_dir.mkdir(parents=True, exist_ok=True)
     graph = build_graph_and_matrices(pages, reviews)
     public_pages = [page for page in pages if page.family != "internal"]
@@ -450,7 +459,7 @@ def generate_reports(root: Path, reports_dir: Path, pages: list[PageInfo], build
     prompt_scores = {prompt: score_prompt(terms, public_pages) for prompt, terms in PROMPT_FAMILIES}
 
     snapshot = {
-        "generated_date": date.today().isoformat(),
+        "generated_date": report_date,
         "root": str(root),
         "build": build,
         "totals": {
@@ -505,7 +514,7 @@ def generate_reports(root: Path, reports_dir: Path, pages: list[PageInfo], build
         reports_dir / "README.md",
         f"""# Repository Intelligence Reports
 
-Generated: {date.today().isoformat()}
+Generated: {report_date}
 
 These reports are internal steering tools for SRAAP. They exist to improve the production Sun Ray website, not to replace production work.
 
@@ -803,6 +812,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--root", default=".", help="Repository root to inspect.")
     parser.add_argument("--reports-dir", default="", help="Output reports directory. Defaults to <root>/reports.")
     parser.add_argument("--skip-build", action="store_true", help="Skip npm run build:cloudflare and inspect existing cloudflare-preview.")
+    parser.add_argument("--report-date", default=date.today().isoformat(), help="Date to stamp into generated reports.")
     return parser.parse_args()
 
 
@@ -812,9 +822,9 @@ def main() -> int:
     reports_dir = Path(args.reports_dir).resolve() if args.reports_dir else root / "reports"
     out_root = root / "cloudflare-preview"
 
-    build = {"date": date.today().isoformat(), "command": "skipped", "returncode": 0, "stdout_tail": "", "stderr_tail": ""}
+    build = {"date": args.report_date, "command": "skipped", "returncode": 0, "stdout_tail": "", "stderr_tail": ""}
     if not args.skip_build:
-        build = run_build(root)
+        build = run_build(root, args.report_date)
         if int(build["returncode"]) != 0:
             reports_dir.mkdir(parents=True, exist_ok=True)
             write(reports_dir / "build_report.md", "# Build Health\n\nBuild failed before repository intelligence could be generated.\n")
@@ -827,7 +837,7 @@ def main() -> int:
 
     pages, platform = load_pages(root, out_root)
     reviews = load_reviews(root)
-    generate_reports(root, reports_dir, pages, build, platform, reviews)
+    generate_reports(root, reports_dir, pages, build, platform, reviews, args.report_date)
     print(f"Generated repository intelligence reports in {reports_dir}")
     return 0
 

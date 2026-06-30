@@ -6,7 +6,7 @@ This file tracks external dependencies that Codex cannot legally or technically 
 
 ## Active Blockers
 
-No active blocker prevents current Phase 0 documentation work.
+No active blocker prevents current Repository Intelligence or production-improvement work.
 
 ## Expected Future External Dependencies
 

@@ -6,6 +6,12 @@ This file tracks authority, revenue, automation, and product opportunities disco
 
 ## High-Potential Authority Opportunities
 
+### Midway Move-Out Cleaning Coverage
+
+Why it matters: The first Repository Intelligence baseline marks "Move-out cleaning Midway" as low confidence. This is a high-intent service-location query with clear revenue potential.
+
+Likely supporting pages: Midway location page, move-in and move-out cleaning service page, Heber Valley move cleaning guide, quote page.
+
 ### Deer Valley Luxury Cleaning Hub
 
 Why it matters: Deer Valley aligns with luxury home cleaning, second-home care, high trust expectations, and AI prompts with strong commercial intent.
@@ -17,6 +23,12 @@ Likely supporting pages: luxury home cleaning, recurring cleaning, deep cleaning
 Why it matters: Canyons Village aligns with turnover cleaning, guest readiness, resort-area rentals, and property manager needs.
 
 Likely supporting pages: vacation rental cleaning, recurring cleaning, deep cleaning, Park City location content, checklist content.
+
+### Kamas Recurring Cleaning Coverage
+
+Why it matters: The first Repository Intelligence baseline marks "Recurring cleaning Kamas" as low confidence. This is a practical local service query that can be strengthened with service-location copy and internal links.
+
+Likely supporting pages: Kamas location page, recurring cleaning service page, Summit County hub, quote page.
 
 ### Wasatch Back Cleaning Knowledge Base
 
@@ -38,6 +50,7 @@ Safety note: Must be factual, fair, and avoid unsupported competitor claims.
 - Build internal-link opportunity scoring.
 - Build `llms.txt` coverage validation.
 - Build AI authority score from measurable components.
+- Calibrate prompt coverage scoring against production search intent and avoid over-relying on boilerplate mentions.
 
 ## Revenue Opportunities
 
