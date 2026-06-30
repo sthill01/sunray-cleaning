@@ -6,7 +6,7 @@ This file is SRAAP's live project memory. Update it at the end of every sprint a
 
 ## Current Version
 
-SRAAP Version 2.1 - Operational Readiness cockpit.
+SRAAP Version 2.2 - Initialization Protocol adopted.
 
 ## Current Branch
 
@@ -26,6 +26,7 @@ Build the route and content inventory automation report described in `NEXT_ACTIO
 - Program Alpha governance handbook.
 - Constitution Version 2 expanded operating manual.
 - Phase 0 flat docs cockpit.
+- Mandatory Initialization Protocol converted from PDF into repo-owned documentation.
 
 ## Open Bugs
 
@@ -42,15 +43,15 @@ Build the route and content inventory automation report described in `NEXT_ACTIO
 
 ## Current Priorities
 
-1. Finish and commit Operational Readiness docs.
-2. Build route and content inventory automation.
-3. Build schema, metadata, and internal-link coverage reports.
-4. Create entity taxonomy.
-5. Establish AI monitoring baseline.
+1. Build route and content inventory automation.
+2. Build schema, metadata, and internal-link coverage reports.
+3. Create entity taxonomy.
+4. Establish AI monitoring baseline.
+5. Add documentation-health automation so startup docs stay aligned.
 
 ## Blocked Items
 
-- No active blocker prevents the Phase 0 docs work.
+- No active blocker prevents the Phase 1 route and content inventory work.
 - Future analytics and external monitoring work may require Google Search Console, GA4, Cloudflare, Google Business Profile, or third-party API credentials.
 
 ## Upcoming Work
@@ -84,7 +85,7 @@ Current coverage includes service pages, location pages, blog guides, and the AI
 
 ## Documentation Health
 
-Operational cockpit is in place. Future sprints should keep the flat files and expanded handbook volumes aligned.
+Operational cockpit is in place, and the mandatory initialization protocol has been added. Future sprints should keep the flat files and expanded handbook volumes aligned.
 
 ## Repo Safety Notes
 

@@ -29,6 +29,14 @@ Outcome: Flat docs exist for governance, standards, backlog, state, next action,
 
 Validation: Docs-only diff review and commit.
 
+### P0: Adopt Mandatory Initialization Protocol
+
+Status: Completed
+
+Outcome: Steve's initialization protocol is converted from PDF into `docs/INITIALIZATION_PROTOCOL.md` and wired into the canonical session-start flow.
+
+Validation: Docs-only diff review and commit.
+
 ### P1: Route and Content Inventory Automation
 
 Status: Planned

@@ -8,6 +8,8 @@ This file tells the next Codex session what to do first.
 
 Build a route and content inventory automation report for the current Cloudflare static site.
 
+Start by running the initialization check in `docs/INITIALIZATION_PROTOCOL.md`, then proceed if this next action is still valid.
+
 ## Why This Is Next
 
 Route inventory is the foundation for nearly every SRAAP improvement:

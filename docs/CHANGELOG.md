@@ -4,6 +4,12 @@ All notable SRAAP governance and platform changes should be recorded here.
 
 ## 2026-06-30
 
+### Initialization Protocol Adoption
+
+- Added `docs/INITIALIZATION_PROTOCOL.md` from Steve's initialization protocol PDF.
+- Updated `docs/README.md` and `docs/playbooks/session-start.md` so future sessions start with the mandatory protocol.
+- Updated project state and sprint docs to reflect SRAAP Version 2.2.
+
 ### Phase 0 Operational Readiness
 
 - Added Phase 0 Operational Readiness cockpit files under `docs/`.

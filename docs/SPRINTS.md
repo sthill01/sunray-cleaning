@@ -10,13 +10,14 @@ SRAAP should be managed as an autonomous engineering program, not isolated promp
 
 Every sprint should follow:
 
-1. Audit.
-2. Prioritize.
-3. Implement.
-4. Validate.
-5. Commit.
-6. Document.
-7. Plan next.
+1. Initialize using `docs/INITIALIZATION_PROTOCOL.md`.
+2. Audit.
+3. Prioritize.
+4. Implement.
+5. Validate.
+6. Commit.
+7. Document.
+8. Plan next.
 
 ## Next Sprint
 
@@ -57,6 +58,10 @@ At the end of every sprint, Codex should answer:
 The latest review belongs in `ENGINEERING_REVIEW.md`.
 
 ## Completed Sprints
+
+### Initialization Protocol Adoption
+
+Outcome: Converted Steve's mandatory initialization protocol from PDF into repo-owned documentation and wired it into the canonical session-start flow.
 
 ### Phase 0: Operational Readiness
 

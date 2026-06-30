@@ -51,6 +51,12 @@ Status: Accepted
 
 Chat context is temporary. Durable strategy, project state, next actions, blockers, ideas, technical debt, opportunities, AI monitoring, and sprint reviews belong in `docs/`.
 
+### DEC-0005: Initialization Protocol Is Mandatory Before Major Work
+
+Status: Accepted
+
+Codex must run the startup check in `docs/INITIALIZATION_PROTOCOL.md` before major new features, sprints, automation, or architecture changes. Full Phase 0 repository intelligence does not need to be repeated unless architecture, hosting, build, or operating model changes materially.
+
 ## Pending Decisions
 
 - Whether to add CI checks for build, link validation, and schema coverage.

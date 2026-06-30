@@ -8,11 +8,11 @@ This file stores the latest end-of-sprint engineering review. Update it at every
 
 ### 1. What delivered the most value?
 
-Creating the flat docs cockpit gives future Codex sessions a stable operating surface: current state, next action, blockers, backlog, standards, and opportunities are now durable in the repository.
+Creating the flat docs cockpit and adopting the mandatory initialization protocol gives future Codex sessions a stable operating surface: startup rules, current state, next action, blockers, backlog, standards, and opportunities are now durable in the repository.
 
 ### 2. What caused unnecessary complexity?
 
-The repository already had expanded handbook folders, so the new flat files needed to become a daily-read cockpit rather than a competing documentation tree.
+The repository already had expanded handbook folders, so the flat files and initialization protocol needed to become a daily-read cockpit rather than a competing documentation tree.
 
 ### 3. What can be automated before next sprint?
 

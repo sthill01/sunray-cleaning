@@ -25,12 +25,13 @@ Codex should not wait for line-by-line implementation prompts when the mission, 
 Every future Codex session should start by reading:
 
 1. `docs/README.md`
-2. `docs/NEXT_ACTION.md`
-3. `docs/PROJECT_STATE.md`
-4. `docs/BLOCKERS.md`
-5. `docs/CONSTITUTION.md`
-6. `docs/ROADMAP.md`
-7. `docs/ARCHITECTURE.md`
+2. `docs/INITIALIZATION_PROTOCOL.md`
+3. `docs/NEXT_ACTION.md`
+4. `docs/PROJECT_STATE.md`
+5. `docs/BLOCKERS.md`
+6. `docs/CONSTITUTION.md`
+7. `docs/ROADMAP.md`
+8. `docs/ARCHITECTURE.md`
 
 For engineering changes, also read:
 
@@ -56,6 +57,7 @@ For autonomous planning or recurring work, also read:
 
 The flat files in this directory are the daily operating cockpit. They should be short enough to read at the start of every session and specific enough to guide autonomous execution.
 
+- `INITIALIZATION_PROTOCOL.md`: mandatory startup protocol before major work.
 - `CONSTITUTION.md`: mission, roles, authority principles, and non-negotiable rules.
 - `ROADMAP.md`: phases, milestones, and current strategic direction.
 - `ARCHITECTURE.md`: current system, protected surfaces, and target architecture.
