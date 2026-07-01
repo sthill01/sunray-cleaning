@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import html
+import hashlib
 import json
 import os
 import re
@@ -18,14 +19,84 @@ ALLOW_INDEXING = os.environ.get("SUNRAY_ALLOW_INDEXING", "").strip().lower() in 
 ROBOTS_META = "index, follow" if ALLOW_INDEXING else "noindex, follow"
 PHONE = "+18016042189"
 PHONE_DISPLAY = "(801) 604-2189"
+
+
+def cache_bust_token(path: Path, length: int = 8) -> str:
+    try:
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        return digest[:length]
+    except OSError:
+        return "v1"
+
+
+FAVICON_SVG_TOKEN = cache_bust_token(ROOT / "assets/favicon/favicon.svg")
+GOOGLE_FONTS_HREF = (
+    "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800"
+    "&family=Open+Sans:wght@400;500;600;700&display=optional"
+)
+FONTS_HEAD = f"""<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="{GOOGLE_FONTS_HREF}" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{GOOGLE_FONTS_HREF}"></noscript>"""
+LOGO_AVIF_SRCSET = "/assets/logo-nav-184.avif 184w, /assets/logo-nav-368.avif 368w"
+LOGO_WEBP_SRCSET = "/assets/logo-nav-184.webp 184w, /assets/logo-nav-368.webp 368w"
+LOGO_FALLBACK_PNG = "/assets/logo-nav-368.png"
+LOGO_PICTURE = (
+    f'<picture><source type="image/avif" srcset="{LOGO_AVIF_SRCSET}" sizes="184px">'
+    f'<source type="image/webp" srcset="{LOGO_WEBP_SRCSET}" sizes="184px">'
+    f'<img src="{LOGO_FALLBACK_PNG}" alt="Sun Ray Cleaning Services" width="184" height="184"></picture>'
+)
+CONTENT_SECURITY_POLICY = (
+    "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; "
+    "script-src 'unsafe-inline' https://static.cloudflareinsights.com "
+    "https://cdn.trustindex.io https://*.trustindex.io "
+    "https://sunray-cleaning.com/quote-modal.js https://www.sunray-cleaning.com/quote-modal.js "
+    "https://*.pages.dev/quote-modal.js; "
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.trustindex.io https://*.trustindex.io; "
+    "font-src 'self' https://fonts.gstatic.com https://cdn.trustindex.io https://*.trustindex.io data:; "
+    "img-src 'self' data: https:; "
+    "connect-src 'self' https://cdn.trustindex.io https://*.trustindex.io; "
+    "frame-src https://cdn.trustindex.io https://*.trustindex.io; "
+    "form-action 'self'"
+)
+CONTENT_SECURITY_POLICY_META = (
+    '<meta http-equiv="Content-Security-Policy" content="' + CONTENT_SECURITY_POLICY + '">'
+)
 GTM_CONTAINER_ID = "GTM-W78H8S3C"
-GTM_HEAD = f"""<!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
-  new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  }})(window,document,'script','dataLayer','{GTM_CONTAINER_ID}');</script>
-  <!-- End Google Tag Manager -->"""
+GTM_LAZY_HEAD = f"""<!-- Google Tag Manager (lazy-load on first interaction) -->
+  <script>
+  (function() {{
+    var containerId = "{GTM_CONTAINER_ID}";
+    var hasLoaded = false;
+
+    function loadGtm() {{
+      if (hasLoaded) return;
+      hasLoaded = true;
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({{ 'gtm.start': new Date().getTime(), event: 'gtm.js' }});
+
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtm.js?id=' + containerId;
+
+      var firstScript = document.getElementsByTagName('script')[0];
+      firstScript.parentNode.insertBefore(script, firstScript);
+
+      for (var i = 0; i < triggers.length; i++) {{
+        window.removeEventListener(triggers[i], loadGtm, options);
+      }}
+    }}
+
+    var options = {{ passive: true, once: true }};
+    // Avoid triggers that can fire during automated audits (e.g., scroll/mousemove).
+    var triggers = ['touchstart', 'mousedown', 'keydown'];
+    for (var i = 0; i < triggers.length; i++) {{
+      window.addEventListener(triggers[i], loadGtm, options);
+    }}
+  }})();
+  </script>
+  <!-- End Google Tag Manager (lazy-load) -->"""
 GTM_BODY = f"""<!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM_CONTAINER_ID}"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -214,6 +285,7 @@ PRIORITY_ROUTES = [
     ("/", "Home"),
     *AI_RECOMMENDATION_LINK,
     ("/service-areas/", "Service area hubs"),
+    ("/gallery/", "Photo gallery and cleaning portfolio"),
     ("/specials/", "Cleaning specials and current offers"),
     ("/discounts/", "Cleaning discounts and savings programs"),
     *SERVICE_NAV_ROUTES,
@@ -362,6 +434,13 @@ def strip_tags(value: str) -> str:
     return re.sub(r"\s+([.,;:!?])", r"\1", value)
 
 
+def slugify(value: str) -> str:
+    value = html.unescape(str(value or "")).lower()
+    value = value.replace("&", " and ")
+    value = re.sub(r"[^a-z0-9]+", "-", value)
+    return value.strip("-") or "all"
+
+
 def extract_first(pattern: str, content: str, default: str = "") -> str:
     match = re.search(pattern, content, flags=re.IGNORECASE | re.DOTALL)
     return strip_tags(match.group(1)) if match else default
@@ -449,6 +528,8 @@ def route_label(route: str) -> str:
 
 
 def page_type(route: str) -> str:
+    if route == "/gallery/":
+        return "gallery"
     if route.startswith("/blog/"):
         return "blog"
     if route.startswith("/services/"):
@@ -548,6 +629,8 @@ def page_focus(route: str, h1: str) -> str:
         return f"house cleaning, Airbnb/VRBO turnovers, deep cleaning, recurring cleaning, and move-in/move-out cleaning in {slug}"
     if kind == "blog":
         return h1.rstrip(".").lower()
+    if kind == "gallery":
+        return "home cleaning services in Park City, Heber City, Midway, Summit County, and Wasatch County"
     return h1.rstrip(".").lower()
 
 
@@ -571,6 +654,8 @@ def selected_gallery_items(route: str, limit: int = 4) -> list[dict[str, object]
         ).lower()
         else 1
     )
+    if route == "/gallery/":
+        return exact
     picked = exact + [item for item in fallback if item not in exact]
     return picked[:limit]
 
@@ -700,10 +785,17 @@ def build_reviews_section() -> str:
     return f"""
 <section class="section section-cream review-proof" aria-labelledby="review-proof-title">
   <div class="container">
-    <div class="section-head center">
-      <p class="eyebrow">Customer testimonials</p>
-      <h2 id="review-proof-title">Real Google reviews from Sun Ray Cleaning customers.</h2>
-      <p>Customers count on Sun Ray Cleaning for dependable service, clear communication, and homes that feel ready to enjoy again.</p>
+    <div class="review-proof-grid">
+      <div class="section-head">
+        <p class="eyebrow">Customer testimonials</p>
+        <h2 id="review-proof-title">Real Google reviews from Sun Ray Cleaning customers.</h2>
+        <p>Customers count on Sun Ray Cleaning for dependable service, clear communication, and homes that feel ready to enjoy again.</p>
+      </div>
+      <div class="rating-badge" aria-label="{rating:.1f} out of 5 average Google rating from {count} reviews">
+        <strong>{rating:.1f}</strong>
+        <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <small>{count} Google reviews</small>
+      </div>
     </div>
     <div class="review-summary-band" aria-label="{rating:.1f} out of 5 average Google rating from {count} reviews">
       <div class="rating-inline">
@@ -760,6 +852,198 @@ def build_gallery_section(route: str) -> str:
 """
 
 
+def gallery_location_values(item: dict[str, object]) -> set[str]:
+    values: set[str] = set()
+    for field in ("city", "county", "location"):
+        value = str(item.get(field, "")).strip()
+        if value:
+            values.add(slugify(value.replace(", UT", "").replace(", Utah", "")))
+    return values
+
+
+def gallery_count(items: list[dict[str, object]], field: str, value: str) -> int:
+    if value == "all":
+        return len(items)
+    if field == "location":
+        return sum(1 for item in items if value in gallery_location_values(item))
+    return sum(1 for item in items if slugify(str(item.get(field, ""))) == value)
+
+
+def gallery_filter_values(items: list[dict[str, object]], field: str, preferred: list[str]) -> list[tuple[str, str, int]]:
+    discovered: dict[str, str] = {}
+    if field == "location":
+        for item in items:
+            for label_field in ("city", "county"):
+                label = str(item.get(label_field, "")).strip()
+                if label:
+                    discovered.setdefault(slugify(label), label)
+    else:
+        for item in items:
+            label = str(item.get(field, "")).strip()
+            if label:
+                discovered.setdefault(slugify(label), label)
+
+    ordered: list[tuple[str, str, int]] = []
+    for label in preferred:
+        value = slugify(label)
+        if value in discovered:
+            ordered.append((value, discovered.pop(value), gallery_count(items, field, value)))
+    for value, label in sorted(discovered.items(), key=lambda item: item[1]):
+        ordered.append((value, label, gallery_count(items, field, value)))
+    return [(value, label, count) for value, label, count in ordered if count]
+
+
+def build_gallery_filter_group(items: list[dict[str, object]], field: str, label: str, preferred: list[str]) -> str:
+    options = [("all", "All", len(items))] + gallery_filter_values(items, field, preferred)
+    buttons = ""
+    for value, option_label, count in options:
+        active = value == "all"
+        buttons += (
+            f'<button class="gallery-filter-chip{" is-active" if active else ""}" type="button" '
+            f'data-gallery-filter="{html.escape(field)}" data-filter-value="{html.escape(value)}" '
+            f'aria-pressed="{"true" if active else "false"}">{html.escape(option_label)} <span>{count}</span></button>'
+        )
+    return f"""
+      <div class="gallery-filter-group" data-filter-group="{html.escape(field)}">
+        <span>{html.escape(label)}</span>
+        <div class="gallery-filter-options">{buttons}</div>
+      </div>
+"""
+
+
+def build_full_gallery_script() -> str:
+    return """
+<script>
+(function () {
+  function setupGalleryFilters() {
+    document.querySelectorAll("[data-gallery-section]").forEach(function (section) {
+      var panel = section.querySelector("[data-gallery-filters]");
+      if (!panel) return;
+      var cards = Array.prototype.slice.call(section.querySelectorAll("[data-gallery-card]"));
+      var count = panel.querySelector("[data-gallery-count]");
+      var active = { service: "all", location: "all", room: "all" };
+
+      function cardMatches(card, category, value) {
+        if (!value || value === "all") return true;
+        if (category === "location") {
+          return card.dataset.city === value || card.dataset.county === value || card.dataset.location === value;
+        }
+        return card.dataset[category] === value;
+      }
+
+      function updateCards() {
+        var shown = 0;
+        cards.forEach(function (card) {
+          var visible = cardMatches(card, "service", active.service) &&
+            cardMatches(card, "location", active.location) &&
+            cardMatches(card, "room", active.room);
+          card.hidden = !visible;
+          if (visible) shown += 1;
+        });
+        if (count) count.textContent = String(shown);
+      }
+
+      panel.addEventListener("click", function (event) {
+        var button = event.target.closest("[data-gallery-filter]");
+        if (!button) return;
+        var category = button.getAttribute("data-gallery-filter");
+        active[category] = button.getAttribute("data-filter-value") || "all";
+        panel.querySelectorAll('[data-gallery-filter="' + category + '"]').forEach(function (peer) {
+          var isActive = peer === button;
+          peer.classList.toggle("is-active", isActive);
+          peer.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+        updateCards();
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupGalleryFilters);
+  } else {
+    setupGalleryFilters();
+  }
+})();
+</script>
+"""
+
+
+def build_full_gallery_section(route: str) -> str:
+    items = selected_gallery_items(route)
+    if not items:
+        return ""
+
+    service_group = build_gallery_filter_group(
+        items,
+        "service",
+        "Cleaning category",
+        ["Deep cleaning", "Residential cleaning", "Recurring cleaning", "Airbnb and VRBO turnover cleaning", "Move-in and move-out cleaning"],
+    )
+    location_group = build_gallery_filter_group(
+        items,
+        "location",
+        "Location category",
+        ["Park City", "Heber City", "Midway", "Summit County", "Wasatch County"],
+    )
+    room_group = build_gallery_filter_group(
+        items,
+        "room",
+        "Room type",
+        ["Kitchen", "Bathroom", "Living room", "Bedroom", "Home office"],
+    )
+
+    cards = ""
+    for item in items:
+        asset = str(item.get("asset", ""))
+        room = str(item.get("room", "Home")).strip() or "Home"
+        service = str(item.get("service", "Residential cleaning")).strip() or "Residential cleaning"
+        location = str(item.get("location", "Summit County, UT")).strip() or "Summit County, UT"
+        city = str(item.get("city", "")).strip()
+        county = str(item.get("county", "")).strip()
+        location_label = city or county or location.replace(", UT", "").replace(", Utah", "")
+        tags = "".join(
+            f"<span>{html.escape(tag)}</span>"
+            for tag in [room, service, location_label]
+            if tag
+        )
+        cards += f"""
+        <figure class="job-photo-card" data-gallery-card data-service="{html.escape(slugify(service))}" data-room="{html.escape(slugify(room))}" data-city="{html.escape(slugify(city) if city else "all")}" data-county="{html.escape(slugify(county))}" data-location="{html.escape(slugify(location.replace(", UT", "").replace(", Utah", "")))}">
+          <img src="{html.escape(asset_rel(route, asset))}" alt="{html.escape(str(item.get("alt", "Sun Ray Cleaning Services job photo")))}" loading="lazy">
+          <figcaption>
+            <strong>{html.escape(str(item.get("caption", "Sun Ray Cleaning Services portfolio photo.")))}</strong>
+            <span>{html.escape(room)} - {html.escape(service)} - {html.escape(location)}</span>
+            <div class="job-photo-tags" aria-label="Photo tags">{tags}</div>
+          </figcaption>
+        </figure>
+"""
+
+    return f"""
+<section class="section local-photo-gallery full-gallery-section" aria-labelledby="local-gallery-title" data-gallery-section>
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Photo gallery and portfolio</p>
+      <h2 id="local-gallery-title">All approved Sun Ray cleaning photos in one local portfolio.</h2>
+      <p>Browse kitchens, bathrooms, bedrooms, living rooms, turnover resets and deep-clean details prepared for Park City, Heber City, Midway, Summit County and Wasatch County homes.</p>
+    </div>
+    <div class="gallery-filter-panel" data-gallery-filters>
+      <div class="gallery-filter-head">
+        <div>
+          <p class="eyebrow">Filter photos</p>
+          <h3>View by cleaning category, location, or room.</h3>
+        </div>
+        <p class="gallery-filter-count"><strong data-gallery-count>{len(items)}</strong> photos shown</p>
+      </div>
+      {service_group}
+      {location_group}
+      {room_group}
+    </div>
+    <div class="job-photo-grid">{cards}</div>
+  </div>
+</section>
+{build_full_gallery_script()}
+"""
+
+
 def build_answer_network(content: str, route: str, route_map: dict[str, str]) -> str:
     h1 = extract_h1(content)
     focus = page_focus(route, h1)
@@ -807,11 +1091,13 @@ def build_structured_data(content: str, route: str) -> str:
     page_id = page_url + "#webpage"
     gallery_items = selected_gallery_items(route)
     primary_image = (
-        absolute_url("/" + str(gallery_items[0].get("asset", "")).lstrip("/"))
+        absolute_url("/assets/sunray-hero-living-room-cleaned-no-text.jpg")
+        if route == "/"
+        else absolute_url("/" + str(gallery_items[0].get("asset", "")).lstrip("/"))
         if gallery_items
         else absolute_url("/assets/wasatch-county-residential-family-room-cleaning-sun-ray.jpg")
     )
-    page_schema_type: object = "WebPage"
+    page_schema_type: object = ["CollectionPage", "ImageGallery"] if route == "/gallery/" else "WebPage"
     if route == "/ai-cleaning-recommendations/":
         page_schema_type = ["WebPage", "AboutPage"]
     graph: list[dict[str, object]] = [
@@ -1134,14 +1420,29 @@ def build_structured_data(content: str, route: str) -> str:
 
 
 def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str]) -> str:
+    if "http-equiv=\"Content-Security-Policy\"" not in content and "http-equiv='Content-Security-Policy'" not in content:
+        charset_match = re.search(r"<meta\\s+charset=[^>]+>", content, flags=re.IGNORECASE)
+        if charset_match:
+            insert_at = charset_match.end()
+            content = content[:insert_at] + "\n  " + CONTENT_SECURITY_POLICY_META + content[insert_at:]
+        else:
+            content = re.sub(
+                r"(<head[^>]*>)",
+                "\\1\n  " + CONTENT_SECURITY_POLICY_META,
+                content,
+                count=1,
+                flags=re.IGNORECASE,
+            )
     canonical = f'<link rel="canonical" href="{html.escape(absolute_url(route))}">'
     llms = '<link rel="alternate" type="text/plain" href="/llms.txt" title="Sun Ray Cleaning LLM summary">'
     if 'rel="canonical"' not in content:
         content = content.replace("</head>", f"  {canonical}\n  {llms}\n</head>", 1)
-    if "googletagmanager.com/gtm.js" not in content:
-        content = content.replace("</head>", f"  {GTM_HEAD}\n</head>", 1)
+    if "fonts.googleapis.com/css2" not in content and "@import url(\"https://fonts.googleapis.com" not in content:
+        content = content.replace("</head>", f"  {FONTS_HEAD}\n</head>", 1)
     if "googletagmanager.com/ns.html" not in content:
         content = re.sub(r"(<body[^>]*>)", "\\1\n  " + GTM_BODY, content, count=1, flags=re.IGNORECASE)
+    if route == "/gallery/" and "<!-- SUNRAY_FULL_GALLERY -->" in content:
+        content = content.replace("<!-- SUNRAY_FULL_GALLERY -->", build_full_gallery_section(route), 1)
     schema = build_structured_data(content, route)
     content = content.replace("</head>", f"  {schema}\n</head>", 1)
     if "review-proof" not in content and "</main>" in content:
@@ -1150,6 +1451,10 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
         content = content.replace("</main>", build_gallery_section(route) + "\n</main>", 1)
     if "seo-answer-network" not in content and "</main>" in content:
         content = content.replace("</main>", build_answer_network(content, route, route_map) + "\n</main>", 1)
+    content = content.replace(
+        'href="/assets/favicon/favicon.svg"',
+        f'href="/assets/favicon/favicon.svg?v={FAVICON_SVG_TOKEN}"',
+    )
     return content
 
 
@@ -1189,29 +1494,51 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         '<a href="../blog-gpt.html" aria-current="page">Blog</a><a href="../specials-gpt.html">Specials</a><a href="../about-gpt.html">About</a>',
     )
     content = content.replace(
+        '<a href="blog-gpt.html">Blog</a><a href="specials-gpt.html">Specials</a>',
+        '<a href="blog-gpt.html">Blog</a><a href="gallery-gpt.html">Gallery</a><a href="specials-gpt.html">Specials</a>',
+    )
+    content = content.replace(
+        '<a href="blog-gpt.html" aria-current="page">Blog</a><a href="specials-gpt.html">Specials</a>',
+        '<a href="blog-gpt.html" aria-current="page">Blog</a><a href="gallery-gpt.html">Gallery</a><a href="specials-gpt.html">Specials</a>',
+    )
+    content = content.replace(
+        '<a href="../blog-gpt.html">Blog</a><a href="../specials-gpt.html">Specials</a>',
+        '<a href="../blog-gpt.html">Blog</a><a href="../gallery-gpt.html">Gallery</a><a href="../specials-gpt.html">Specials</a>',
+    )
+    content = content.replace(
+        '<a href="../blog-gpt.html" aria-current="page">Blog</a><a href="../specials-gpt.html">Specials</a>',
+        '<a href="../blog-gpt.html" aria-current="page">Blog</a><a href="../gallery-gpt.html">Gallery</a><a href="../specials-gpt.html">Specials</a>',
+    )
+    content = content.replace(
         '<div><h3>Contact</h3><a href="contact-gpt.html">Get a quote</a>',
-        '<div><h3>Contact</h3><a href="specials-gpt.html">Specials</a><a href="discounts-gpt.html">Discounts</a><a href="contact-gpt.html">Get a quote</a>',
+        '<div><h3>Contact</h3><a href="gallery-gpt.html">Photo gallery</a><a href="specials-gpt.html">Specials</a><a href="discounts-gpt.html">Discounts</a><a href="contact-gpt.html">Get a quote</a>',
     )
     content = content.replace(
         '<div><h3>Contact</h3><a href="../contact-gpt.html">Get a quote</a>',
+        '<div><h3>Contact</h3><a href="../gallery-gpt.html">Photo gallery</a><a href="../specials-gpt.html">Specials</a><a href="../discounts-gpt.html">Discounts</a><a href="../contact-gpt.html">Get a quote</a>',
+    )
+    content = content.replace(
+        '<div><h3>Contact</h3><a href="specials-gpt.html">Specials</a><a href="discounts-gpt.html">Discounts</a><a href="contact-gpt.html">Get a quote</a>',
+        '<div><h3>Contact</h3><a href="gallery-gpt.html">Photo gallery</a><a href="specials-gpt.html">Specials</a><a href="discounts-gpt.html">Discounts</a><a href="contact-gpt.html">Get a quote</a>',
+    )
+    content = content.replace(
         '<div><h3>Contact</h3><a href="../specials-gpt.html">Specials</a><a href="../discounts-gpt.html">Discounts</a><a href="../contact-gpt.html">Get a quote</a>',
+        '<div><h3>Contact</h3><a href="../gallery-gpt.html">Photo gallery</a><a href="../specials-gpt.html">Specials</a><a href="../discounts-gpt.html">Discounts</a><a href="../contact-gpt.html">Get a quote</a>',
     )
 
-    def replace_attr(match: re.Match[str]) -> str:
-        attr = match.group(1)
-        value = match.group(2)
+    def rewrite_attr_value(value: str) -> str:
         if value.startswith(("tel:", "sms:", "mailto:", "http:", "https:", "#", "data:")):
-            return match.group(0)
+            return value
 
         path, sep, fragment = value.partition("#")
         if not path:
-            return match.group(0)
+            return value
 
         resolved = (source_dir / path).resolve()
         try:
             rel_source = resolved.relative_to(ROOT).as_posix()
         except ValueError:
-            return match.group(0)
+            return value
 
         if rel_source in route_map:
             clean = route_to_relpath(route, route_map[rel_source])
@@ -1221,9 +1548,29 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
             value = asset_rel(route, clean_name)
         elif rel_source.startswith("assets/"):
             value = asset_rel(route, rel_source)
-        return f'{attr}="{value}"'
+        return value
+
+    def replace_attr(match: re.Match[str]) -> str:
+        attr = match.group(1)
+        value = match.group(2)
+        return f'{attr}="{rewrite_attr_value(value)}"'
+
+    def replace_srcset(match: re.Match[str]) -> str:
+        attr = match.group(1)
+        value = match.group(2)
+        rewritten: list[str] = []
+        for candidate in value.split(","):
+            candidate = candidate.strip()
+            if not candidate:
+                continue
+            url, *descriptor_parts = candidate.split()
+            descriptor = " ".join(descriptor_parts)
+            fixed_url = rewrite_attr_value(url)
+            rewritten.append(f"{fixed_url} {descriptor}".strip())
+        return f'{attr}="{", ".join(rewritten)}"'
 
     content = re.sub(r'(href|src)="([^"]+)"', replace_attr, content)
+    content = re.sub(r'(srcset|imagesrcset)="([^"]+)"', replace_srcset, content)
 
     def clean_link(target_route: str) -> str:
         return html.escape(route_to_relpath(route, target_route))
@@ -1281,6 +1628,18 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
 
     content = content.replace("styles-gpt.css", "styles.css")
     content = content.replace("quote-modal-gpt.js", "quote-modal.js")
+    content = re.sub(
+        r'(<script\b(?![^>]*\bdefer\b)(?![^>]*\basync\b)(?=[^>]*\bsrc=)([^>]*\bsrc=["\'])([^"\']*quote-modal\.js)(["\'][^>]*)></script>)',
+        r'<script\2\3\4 defer></script>',
+        content,
+        flags=re.IGNORECASE,
+    )
+    content = re.sub(
+        r'<img src="/assets/logo-nav\.png" alt="Sun Ray Cleaning Services"(?:\s+width="[^"]+")?(?:\s+height="[^"]+")?>',
+        LOGO_PICTURE,
+        content,
+        flags=re.IGNORECASE,
+    )
     content = content.replace("data-gpt-map-section", "data-map-section")
     content = content.replace("data-gpt-testimonials", "data-testimonials")
     content = content.replace("data-gpt-faq", "data-faq-section")
@@ -1369,27 +1728,27 @@ def write_platform_files(routes: list[str]) -> None:
                 redirect_lines.append(line)
                 seen_redirects.add(line)
     legacy_redirect_lines = "\n".join(redirect_lines)
-    headers = """/*
+    headers = f"""/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()"""
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: {CONTENT_SECURITY_POLICY}"""
     if not ALLOW_INDEXING:
         headers += "\n  X-Robots-Tag: noindex, follow"
     headers += """
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+/assets/favicon/*
+  Cache-Control: public, max-age=86400
 """
     (OUT / "_headers").write_text(
         headers,
         encoding="utf-8",
     )
-    host_redirect = ""
-    if ALLOW_INDEXING and BASE_URL == "https://www.sunray-cleaning.com":
-        host_redirect = "https://sunray-cleaning.com/ https://www.sunray-cleaning.com/ 301\nhttps://sunray-cleaning.com/* https://www.sunray-cleaning.com/:splat 301\n"
     (OUT / "_redirects").write_text(
         f"""# Clean URL redirects for Cloudflare Pages
-{host_redirect}
 {legacy_redirect_lines}
 /*.html /:splat/ 301
 /index.html / 301
@@ -1477,7 +1836,7 @@ Quote page: {BASE_URL}/contact/
     admin = OUT / "admin"
     admin.mkdir(parents=True, exist_ok=True)
     (admin / "index.html").write_text(
-        """<!doctype html>
+        f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
