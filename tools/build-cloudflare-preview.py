@@ -361,8 +361,61 @@ REVIEWS = load_json(
         "featuredReviews": [],
     },
 )
+TRUSTINDEX_WIDGET_ID = "6cd0f19720d6425ad7461ea011a"
+TRUSTINDEX_LOADER_SRC = f"https://cdn.trustindex.io/loader.js?{TRUSTINDEX_WIDGET_ID}"
 BASE_JOB_GALLERY = load_json(DATA / "job-gallery.json", [])
 SOCIAL_GALLERY = load_json(DATA / "social-gallery.json", {"items": []})
+
+
+def review_rating_value() -> float:
+    return float(REVIEWS.get("ratingValue", 5.0))
+
+
+def review_count_value() -> int:
+    return int(REVIEWS.get("reviewCount", 50))
+
+
+def build_header_review_pill() -> str:
+    rating = review_rating_value()
+    return (
+        f'<a class="header-review-pill" href="#reviews" aria-label="{rating:.1f} Google rating, verified by Trustindex">'
+        f'<span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>'
+        f'<strong>{rating:.1f}</strong><small>Google</small></a>'
+    )
+
+
+def build_footer_trust_row() -> str:
+    rating = review_rating_value()
+    count = review_count_value()
+    return f"""
+<div class="container footer-trust-row" aria-label="{rating:.1f} Google rating from {count} reviews, verified by Trustindex">
+  <a class="footer-trust-badge" href="#reviews">
+    <span class="footer-trust-score">{rating:.1f}</span>
+    <span class="footer-trust-copy">
+      <strong>Google-rated local cleaning</strong>
+      <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <small>{count} Google reviews verified by Trustindex</small>
+    </span>
+  </a>
+  <span class="footer-trust-note">Trusted for Park City, Heber City, Midway, Summit County and Wasatch County homes.</span>
+</div>
+"""
+
+
+def inject_review_badge_placements(content: str) -> str:
+    if "header-review-pill" not in content and '<header class="site-header"' in content:
+        content = content.replace(
+            '</nav><a class="button button-yellow"',
+            '</nav>' + build_header_review_pill() + '<a class="button button-yellow"',
+            1,
+        )
+    if "footer-trust-row" not in content and "</footer>" in content:
+        footer_row = build_footer_trust_row()
+        if '<div class="container footer-bottom">' in content:
+            content = content.replace('<div class="container footer-bottom">', footer_row + '<div class="container footer-bottom">', 1)
+        else:
+            content = content.replace("</footer>", footer_row + "</footer>", 1)
+    return content
 
 
 def approved_social_gallery_items() -> list[dict[str, object]]:
@@ -783,7 +836,7 @@ def build_reviews_section() -> str:
         <article class="review-proof-card"><h3>Consistent home care</h3><p>From Park City rentals to Heber City and Midway homes, the team focuses on reliable work and thoughtful details.</p></article>
         """
     return f"""
-<section class="section section-cream review-proof" aria-labelledby="review-proof-title">
+<section id="reviews" class="section section-cream review-proof" aria-labelledby="review-proof-title">
   <div class="container">
     <div class="review-proof-grid">
       <div class="section-head">
@@ -1441,6 +1494,7 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
         content = content.replace("</head>", f"  {FONTS_HEAD}\n</head>", 1)
     if "googletagmanager.com/ns.html" not in content:
         content = re.sub(r"(<body[^>]*>)", "\\1\n  " + GTM_BODY, content, count=1, flags=re.IGNORECASE)
+    content = inject_review_badge_placements(content)
     if route == "/gallery/" and "<!-- SUNRAY_FULL_GALLERY -->" in content:
         content = content.replace("<!-- SUNRAY_FULL_GALLERY -->", build_full_gallery_section(route), 1)
     schema = build_structured_data(content, route)
