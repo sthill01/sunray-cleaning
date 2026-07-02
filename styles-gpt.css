@@ -1539,6 +1539,30 @@ p {
   gap: 12px;
 }
 
+.rating-google-mark {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--stone-100);
+  border-radius: 999px;
+  background: var(--white);
+  box-shadow: 0 8px 18px rgba(31, 58, 104, 0.1);
+  line-height: 1;
+}
+
+.rating-google-mark.small {
+  width: 38px;
+  height: 38px;
+}
+
+.review-google-icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
 .rating-inline strong {
   color: var(--ink);
   font-family: var(--heading);
@@ -1589,6 +1613,13 @@ p {
   color: var(--yellow-deep);
   font-size: 1.25rem;
   letter-spacing: 0.08em;
+}
+
+.rating-badge .rating-google-mark,
+.rating-inline .rating-google-mark {
+  color: inherit;
+  font-size: 1rem;
+  letter-spacing: 0;
 }
 
 .rating-badge small {

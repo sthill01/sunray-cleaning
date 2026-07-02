@@ -1,41 +1,43 @@
 # Entity Inventory
 
-Generated: 2026-06-30
+Generated: 2026-07-02
 
 | Entity | Pages | Images | FAQ Pages | Sample Routes |
 | --- | --- | --- | --- | --- |
-| Airbnb cleaning | 77 | 1 | 46 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Canyons Village | 77 | 0 | 2 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Deer Valley | 77 | 0 | 2 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Heber City | 77 | 3 | 10 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Homestead | 77 | 1 | 0 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Interlaken | 77 | 1 | 0 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Jordanelle | 77 | 0 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Kamas | 77 | 1 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Midway | 77 | 2 | 11 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Park City | 77 | 6 | 15 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Red Ledges | 77 | 0 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Summit County | 77 | 7 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| VRBO cleaning | 77 | 1 | 0 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Wasatch County | 77 | 5 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| deep cleaning | 77 | 2 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| recurring cleaning | 77 | 1 | 4 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Deer Creek | 76 | 0 | 0 | /, /about/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/, /blog/how-much-does-airbnb-cleaning-cost-park-city/ |
-| Timber Lakes | 76 | 0 | 0 | /, /about/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/, /blog/how-much-does-airbnb-cleaning-cost-park-city/ |
-| Oakley | 69 | 1 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| Heber Valley | 65 | 1 | 0 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| move-out cleaning | 65 | 3 | 2 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/heber-city-move-in-move-out-cleaning/, /contact/, /service-areas/, /service-location/canyons-village/ |
-| Coalville | 64 | 1 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Canyons Village | 81 | 0 | 2 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Deer Valley | 81 | 0 | 2 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Heber City | 81 | 8 | 10 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Homestead | 81 | 1 | 0 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Interlaken | 81 | 1 | 0 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Jordanelle | 81 | 0 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Kamas | 81 | 1 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Midway | 81 | 5 | 11 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Park City | 81 | 16 | 16 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Red Ledges | 81 | 0 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Summit County | 81 | 26 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| VRBO cleaning | 81 | 1 | 0 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Wasatch County | 81 | 21 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| deep cleaning | 81 | 14 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| recurring cleaning | 81 | 8 | 4 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Airbnb cleaning | 79 | 1 | 47 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Deer Creek | 78 | 0 | 0 | /, /about/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/, /blog/how-much-does-airbnb-cleaning-cost-park-city/ |
+| Timber Lakes | 78 | 0 | 0 | /, /about/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/, /blog/how-much-does-airbnb-cleaning-cost-park-city/ |
+| Oakley | 73 | 1 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Heber Valley | 67 | 1 | 0 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| Coalville | 66 | 1 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| move-out cleaning | 65 | 4 | 2 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/heber-city-move-in-move-out-cleaning/, /contact/, /service-areas/, /service-location/canyons-village/ |
 | Hideout | 63 | 0 | 0 | /, /about/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/, /blog/how-much-does-airbnb-cleaning-cost-park-city/ |
-| Daniel | 17 | 1 | 1 | /ai-cleaning-recommendations/, /service-areas/, /service-location/canyons-village/, /service-location/center-creek/, /service-location/coalville/, /service-location/daniel-ranch/, /service-location/daniel/, /service-location/deer-valley/ |
-| Old Town Park City | 15 | 0 | 1 | /ai-cleaning-recommendations/, /service-areas/, /service-location/canyons-village/, /service-location/coalville/, /service-location/daniel/, /service-location/deer-valley/, /service-location/heber-city/, /service-location/kamas/ |
+| Daniel | 21 | 1 | 1 | /ai-cleaning-recommendations/, /gallery/, /privacy-policy/, /reviews/, /service-areas/, /service-location/canyons-village/, /service-location/center-creek/, /service-location/coalville/ |
+| Old Town Park City | 19 | 0 | 1 | /ai-cleaning-recommendations/, /gallery/, /privacy-policy/, /reviews/, /service-areas/, /service-location/canyons-village/, /service-location/coalville/, /service-location/daniel/ |
 | Salt Lake County | 14 | 0 | 1 | /, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/, /blog/how-much-does-airbnb-cleaning-cost-park-city/, /blog/jordanelle-vacation-rental-turnover/, /blog/post-ski-season-deep-clean-park-city-rental-owners/ |
 | Snyderville | 14 | 1 | 1 | /service-areas/, /service-location/canyons-village/, /service-location/coalville/, /service-location/daniel/, /service-location/deer-valley/, /service-location/heber-city/, /service-location/kamas/, /service-location/midway/ |
+| Francis | 7 | 0 | 0 | /gallery/, /reviews/, /service-areas/, /service-location/foothill-estates/, /service-location/francis/, /service-location/kamas/, /service-location/wild-willow/ |
 | Charleston | 5 | 0 | 0 | /service-areas/, /service-location/charleston-lake/, /service-location/charleston/, /service-location/deer-creek-east/, /service-location/midway/ |
-| Francis | 5 | 0 | 0 | /service-areas/, /service-location/foothill-estates/, /service-location/francis/, /service-location/kamas/, /service-location/wild-willow/ |
+| Swiss Mountain | 5 | 0 | 0 | /ai-cleaning-recommendations/, /gallery/, /reviews/, /service-location/midway/, /service-location/swiss-mountain/ |
 | luxury home cleaning | 5 | 0 | 1 | /ai-cleaning-recommendations/, /blog/, /blog/deer-valley-luxury-home-cleaning/, /service-location/deer-valley/, /service-location/park-city/ |
 | Center Creek | 4 | 0 | 0 | /service-location/center-creek/, /service-location/daniel/, /service-location/heber-city/, /service-location/wasatch-county/ |
 | Kimball Junction | 4 | 0 | 1 | /service-location/canyons-village/, /service-location/kimball-junction/, /service-location/park-city/, /service-location/snyderville/ |
+| Woodland | 4 | 0 | 0 | /gallery/, /reviews/, /service-location/kamas/, /service-location/woodland/ |
 | Chalk Creek | 3 | 0 | 0 | /service-areas/, /service-location/chalk-creek/, /service-location/coalville/ |
 | Charleston Lake | 3 | 0 | 0 | /service-location/charleston-lake/, /service-location/charleston/, /service-location/midway/ |
 | Daniel Ranch | 3 | 0 | 0 | /service-areas/, /service-location/daniel-ranch/, /service-location/daniel/ |
@@ -51,11 +53,10 @@ Generated: 2026-06-30
 | Little Hobble Creek | 3 | 0 | 0 | /service-areas/, /service-location/little-hobble-creek/, /service-location/wallsburg/ |
 | Old Town Heber | 3 | 0 | 0 | /service-location/heber-city/, /service-location/old-town-heber/, /service-location/wasatch-county/ |
 | Samarkand | 3 | 0 | 0 | /service-areas/, /service-location/midway/, /service-location/samarkand/ |
-| Swiss Mountain | 3 | 0 | 0 | /ai-cleaning-recommendations/, /service-location/midway/, /service-location/swiss-mountain/ |
 | Wallsburg | 3 | 0 | 0 | /service-location/little-hobble-creek/, /service-location/wallsburg/, /service-location/wasatch-county/ |
 | Wanship | 3 | 0 | 0 | /service-areas/, /service-location/coalville/, /service-location/wanship/ |
 | Wild Willow | 3 | 0 | 0 | /service-areas/, /service-location/francis/, /service-location/wild-willow/ |
-| move-in cleaning | 3 | 3 | 0 | /ai-cleaning-recommendations/, /blog/heber-city-move-in-move-out-cleaning/, /service-location/daniel/ |
+| move-in cleaning | 3 | 2 | 0 | /ai-cleaning-recommendations/, /blog/heber-city-move-in-move-out-cleaning/, /service-location/daniel/ |
 | Marion | 2 | 0 | 0 | /service-location/kamas/, /service-location/marion/ |
 | Oakley Ranch | 2 | 0 | 0 | /service-location/kamas/, /service-location/oakley-ranch/ |
 | Park Meadows | 2 | 0 | 0 | /service-location/park-city/, /service-location/park-meadows/ |
@@ -65,8 +66,7 @@ Generated: 2026-06-30
 | Prospector | 2 | 0 | 0 | /service-location/park-city/, /service-location/prospector/ |
 | Wasatch Mountain | 2 | 0 | 0 | /service-location/midway/, /service-location/wasatch-mountain/ |
 | Weber Canyon | 2 | 0 | 0 | /service-location/kamas/, /service-location/weber-canyon/ |
-| Woodland | 2 | 0 | 0 | /service-location/kamas/, /service-location/woodland/ |
 | pet-safe cleaning | 2 | 0 | 0 | /, /ai-cleaning-recommendations/ |
 | eco-friendly cleaning | 1 | 0 | 0 | /ai-cleaning-recommendations/ |
-| residential house cleaning | 1 | 3 | 0 | /ai-cleaning-recommendations/ |
+| residential house cleaning | 1 | 2 | 0 | /ai-cleaning-recommendations/ |
 | short-term rental turnover cleaning | 1 | 0 | 0 | /ai-cleaning-recommendations/ |

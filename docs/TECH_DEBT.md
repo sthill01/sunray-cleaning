@@ -1,6 +1,6 @@
 # Technical Debt
 
-Last updated: 2026-06-30
+Last updated: 2026-07-02
 
 ## Known Debt
 
@@ -43,15 +43,15 @@ Potential future action:
 - Keep report generation deterministic.
 - Add CI or pre-commit checks only when report noise is under control.
 
-### External Measurement State Is Unclear
+### External Measurement And Crawler State Is Unclear
 
-The repo does not yet fully document GA4, Google Search Console, Cloudflare, or
-AI monitoring state.
+The repo does not yet fully document GA4, Google Search Console, Cloudflare,
+Cloudflare AI Crawl Control, or AI monitoring state.
 
 Potential future action:
 
-- Add a measurement architecture doc after credentials and property IDs are
-  confirmed.
+- Add a measurement architecture doc after credentials, property IDs, and
+  crawler-policy decisions are confirmed.
 
 ### Image Coverage Requires Provenance Discipline
 

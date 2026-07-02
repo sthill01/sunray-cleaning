@@ -112,6 +112,10 @@
       "label": "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
       "type": "Route"
     },
+    "route_gallery": {
+      "label": "/gallery/",
+      "type": "Route"
+    },
     "route_service-location-canyons-village": {
       "label": "/service-location/canyons-village/",
       "type": "Route"
@@ -392,12 +396,152 @@
       "label": "heber-city-residential-kitchen-cleaning-sun-ray.jpg",
       "type": "Image"
     },
-    "image_park-city-residential-kitchen-cleaning-may-6-sun-ray": {
-      "label": "park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+    "image_sun-ray-team-deep-cleaning-kitchen-park-city-01": {
+      "label": "sun-ray-team-deep-cleaning-kitchen-park-city-01.jpg",
       "type": "Image"
     },
-    "image_park-city-move-clean-empty-room-may-6-sun-ray": {
-      "label": "park-city-move-clean-empty-room-may-6-sun-ray.jpg",
+    "image_sun-ray-cleaning-team-modern-kitchen-island-02": {
+      "label": "sun-ray-cleaning-team-modern-kitchen-island-02.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-kitchen-island-polish-after-cleaning-03": {
+      "label": "sun-ray-kitchen-island-polish-after-cleaning-03.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-team-kitchen-turnover-cleaning-04": {
+      "label": "sun-ray-team-kitchen-turnover-cleaning-04.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-elegant-living-room-after-cleaning-05": {
+      "label": "sun-ray-elegant-living-room-after-cleaning-05.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-warm-kitchen-after-cleaning-06": {
+      "label": "sun-ray-warm-kitchen-after-cleaning-06.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-bathroom-vanity-detail-cleaning-07": {
+      "label": "sun-ray-bathroom-vanity-detail-cleaning-07.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-team-bathroom-vanity-cleaning-08": {
+      "label": "sun-ray-team-bathroom-vanity-cleaning-08.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-living-room-fireplace-after-cleaning-09": {
+      "label": "sun-ray-living-room-fireplace-after-cleaning-09.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-bright-white-kitchen-after-cleaning-10": {
+      "label": "sun-ray-bright-white-kitchen-after-cleaning-10.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-living-room-detail-after-cleaning-11": {
+      "label": "sun-ray-living-room-detail-after-cleaning-11.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-bedroom-reset-after-cleaning-12": {
+      "label": "sun-ray-bedroom-reset-after-cleaning-12.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-guest-bedroom-turnover-detail-13": {
+      "label": "sun-ray-guest-bedroom-turnover-detail-13.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-luxury-bedroom-cleaning-after-14": {
+      "label": "sun-ray-luxury-bedroom-cleaning-after-14.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-clean-cooktop-white-kitchen-detail-15": {
+      "label": "sun-ray-clean-cooktop-white-kitchen-detail-15.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-polished-kitchen-sink-after-cleaning-16": {
+      "label": "sun-ray-polished-kitchen-sink-after-cleaning-16.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-cleaner-wiping-whiteboard-detail-17": {
+      "label": "sun-ray-cleaner-wiping-whiteboard-detail-17.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-stovetop-detail-cleaning-action-18": {
+      "label": "sun-ray-stovetop-detail-cleaning-action-18.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-team-kitchen-stovetop-cleaning-19": {
+      "label": "sun-ray-team-kitchen-stovetop-cleaning-19.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-bedroom-vacuuming-cleaning-action-20": {
+      "label": "sun-ray-bedroom-vacuuming-cleaning-action-20.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-shower-cleaning-action-21": {
+      "label": "sun-ray-shower-cleaning-action-21.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-sofa-vacuuming-living-room-22": {
+      "label": "sun-ray-sofa-vacuuming-living-room-22.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-bedroom-dresser-dusting-cleaning-23": {
+      "label": "sun-ray-bedroom-dresser-dusting-cleaning-23.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-stovetop-cleaning-modern-kitchen-24": {
+      "label": "sun-ray-stovetop-cleaning-modern-kitchen-24.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-clean-cooktop-detail-after-cleaning-25": {
+      "label": "sun-ray-clean-cooktop-detail-after-cleaning-25.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-stovetop-detail-cleaning-closeup-26": {
+      "label": "sun-ray-stovetop-detail-cleaning-closeup-26.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-kitchen-sink-floral-detail-27": {
+      "label": "sun-ray-kitchen-sink-floral-detail-27.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-modern-white-kitchen-polished-counters-28": {
+      "label": "sun-ray-modern-white-kitchen-polished-counters-28.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-cozy-living-room-after-cleaning-29": {
+      "label": "sun-ray-cozy-living-room-after-cleaning-29.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-sectional-living-room-after-cleaning-30": {
+      "label": "sun-ray-sectional-living-room-after-cleaning-30.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-bathroom-vanity-after-cleaning-31": {
+      "label": "sun-ray-bathroom-vanity-after-cleaning-31.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-white-kitchen-after-cleaning-32": {
+      "label": "sun-ray-white-kitchen-after-cleaning-32.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-bathroom-vanity-and-tub-detail-33": {
+      "label": "sun-ray-bathroom-vanity-and-tub-detail-33.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-modern-kitchen-deep-cleaning-34": {
+      "label": "sun-ray-modern-kitchen-deep-cleaning-34.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-bright-bathroom-after-cleaning-35": {
+      "label": "sun-ray-bright-bathroom-after-cleaning-35.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-luxury-kitchen-cleaning-36": {
+      "label": "sun-ray-luxury-kitchen-cleaning-36.jpg",
+      "type": "Image"
+    },
+    "image_sun-ray-luxury-bathtub-detail-cleaning-37": {
+      "label": "sun-ray-luxury-bathtub-detail-cleaning-37.jpg",
       "type": "Image"
     }
   },
@@ -445,6 +589,11 @@
     [
       "content",
       "route_blog-red-ledges-home-cleaning-guide-luxury-heber-homeowners",
+      "contains"
+    ],
+    [
+      "content",
+      "route_gallery",
       "contains"
     ],
     [
@@ -838,36 +987,6 @@
       "depicts"
     ],
     [
-      "image_park-city-move-clean-empty-room-may-6-sun-ray",
-      "location_park-city",
-      "depicts"
-    ],
-    [
-      "image_park-city-move-clean-empty-room-may-6-sun-ray",
-      "location_summit-county",
-      "depicts"
-    ],
-    [
-      "image_park-city-move-clean-empty-room-may-6-sun-ray",
-      "service_move-in-out",
-      "depicts"
-    ],
-    [
-      "image_park-city-residential-kitchen-cleaning-may-6-sun-ray",
-      "location_park-city",
-      "depicts"
-    ],
-    [
-      "image_park-city-residential-kitchen-cleaning-may-6-sun-ray",
-      "location_summit-county",
-      "depicts"
-    ],
-    [
-      "image_park-city-residential-kitchen-cleaning-may-6-sun-ray",
-      "service_residential",
-      "depicts"
-    ],
-    [
       "image_park-city-vrbo-living-room-turnover-cleaning-sun-ray",
       "location_park-city",
       "depicts"
@@ -914,6 +1033,626 @@
     ],
     [
       "image_summit-county-recurring-kitchen-cleaning-sun-ray",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bathroom-vanity-after-cleaning-31",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bathroom-vanity-after-cleaning-31",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bathroom-vanity-and-tub-detail-33",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bathroom-vanity-and-tub-detail-33",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bathroom-vanity-and-tub-detail-33",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bathroom-vanity-detail-cleaning-07",
+      "location_heber-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bathroom-vanity-detail-cleaning-07",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bathroom-vanity-detail-cleaning-07",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bathroom-vanity-detail-cleaning-07",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-dresser-dusting-cleaning-23",
+      "location_midway",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-dresser-dusting-cleaning-23",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-dresser-dusting-cleaning-23",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-dresser-dusting-cleaning-23",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-reset-after-cleaning-12",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-reset-after-cleaning-12",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-reset-after-cleaning-12",
+      "service_airbnb-vrbo",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-reset-after-cleaning-12",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-vacuuming-cleaning-action-20",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-vacuuming-cleaning-action-20",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bedroom-vacuuming-cleaning-action-20",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-bathroom-after-cleaning-35",
+      "location_heber-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-bathroom-after-cleaning-35",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-bathroom-after-cleaning-35",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-white-kitchen-after-cleaning-10",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-white-kitchen-after-cleaning-10",
+      "service_move-in-out",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-white-kitchen-after-cleaning-10",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-detail-after-cleaning-25",
+      "location_heber-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-detail-after-cleaning-25",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-detail-after-cleaning-25",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-detail-after-cleaning-25",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-white-kitchen-detail-15",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-white-kitchen-detail-15",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-white-kitchen-detail-15",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-cleaner-wiping-whiteboard-detail-17",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-cleaner-wiping-whiteboard-detail-17",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-cleaner-wiping-whiteboard-detail-17",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-cleaning-team-modern-kitchen-island-02",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-cleaning-team-modern-kitchen-island-02",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-cozy-living-room-after-cleaning-29",
+      "location_heber-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-cozy-living-room-after-cleaning-29",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-cozy-living-room-after-cleaning-29",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-elegant-living-room-after-cleaning-05",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-elegant-living-room-after-cleaning-05",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-guest-bedroom-turnover-detail-13",
+      "location_midway",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-guest-bedroom-turnover-detail-13",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-guest-bedroom-turnover-detail-13",
+      "service_airbnb-vrbo",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-guest-bedroom-turnover-detail-13",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-kitchen-island-polish-after-cleaning-03",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-kitchen-island-polish-after-cleaning-03",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-kitchen-island-polish-after-cleaning-03",
+      "service_airbnb-vrbo",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-kitchen-island-polish-after-cleaning-03",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-kitchen-sink-floral-detail-27",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-kitchen-sink-floral-detail-27",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-living-room-detail-after-cleaning-11",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-living-room-detail-after-cleaning-11",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-living-room-detail-after-cleaning-11",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-living-room-fireplace-after-cleaning-09",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-living-room-fireplace-after-cleaning-09",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-living-room-fireplace-after-cleaning-09",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-bathtub-detail-cleaning-37",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-bathtub-detail-cleaning-37",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-bathtub-detail-cleaning-37",
+      "service_luxury",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-bathtub-detail-cleaning-37",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-bedroom-cleaning-after-14",
+      "location_heber-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-bedroom-cleaning-after-14",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-bedroom-cleaning-after-14",
+      "service_luxury",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-bedroom-cleaning-after-14",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-kitchen-cleaning-36",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-kitchen-cleaning-36",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-kitchen-cleaning-36",
+      "service_airbnb-vrbo",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-kitchen-cleaning-36",
+      "service_luxury",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-luxury-kitchen-cleaning-36",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-modern-kitchen-deep-cleaning-34",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-modern-kitchen-deep-cleaning-34",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-modern-kitchen-deep-cleaning-34",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-modern-kitchen-deep-cleaning-34",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-modern-white-kitchen-polished-counters-28",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-modern-white-kitchen-polished-counters-28",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-modern-white-kitchen-polished-counters-28",
+      "service_move-in-out",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-modern-white-kitchen-polished-counters-28",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-kitchen-sink-after-cleaning-16",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-kitchen-sink-after-cleaning-16",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-kitchen-sink-after-cleaning-16",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-kitchen-sink-after-cleaning-16",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-sectional-living-room-after-cleaning-30",
+      "location_midway",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-sectional-living-room-after-cleaning-30",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-sectional-living-room-after-cleaning-30",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-shower-cleaning-action-21",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-shower-cleaning-action-21",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-shower-cleaning-action-21",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-shower-cleaning-action-21",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-sofa-vacuuming-living-room-22",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-sofa-vacuuming-living-room-22",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-sofa-vacuuming-living-room-22",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-cleaning-modern-kitchen-24",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-cleaning-modern-kitchen-24",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-cleaning-modern-kitchen-24",
+      "service_airbnb-vrbo",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-cleaning-modern-kitchen-24",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-detail-cleaning-action-18",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-detail-cleaning-action-18",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-detail-cleaning-action-18",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-detail-cleaning-action-18",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-detail-cleaning-closeup-26",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-detail-cleaning-closeup-26",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-detail-cleaning-closeup-26",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-bathroom-vanity-cleaning-08",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-bathroom-vanity-cleaning-08",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-bathroom-vanity-cleaning-08",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-deep-cleaning-kitchen-park-city-01",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-deep-cleaning-kitchen-park-city-01",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-deep-cleaning-kitchen-park-city-01",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-deep-cleaning-kitchen-park-city-01",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-stovetop-cleaning-19",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-stovetop-cleaning-19",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-stovetop-cleaning-19",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-turnover-cleaning-04",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-turnover-cleaning-04",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-turnover-cleaning-04",
+      "service_airbnb-vrbo",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-turnover-cleaning-04",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-warm-kitchen-after-cleaning-06",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-warm-kitchen-after-cleaning-06",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-warm-kitchen-after-cleaning-06",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-white-kitchen-after-cleaning-32",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-white-kitchen-after-cleaning-32",
       "service_residential",
       "depicts"
     ],
@@ -1019,16 +1758,6 @@
     ],
     [
       "proof",
-      "image_park-city-move-clean-empty-room-may-6-sun-ray",
-      "contains"
-    ],
-    [
-      "proof",
-      "image_park-city-residential-kitchen-cleaning-may-6-sun-ray",
-      "contains"
-    ],
-    [
-      "proof",
       "image_park-city-vrbo-living-room-turnover-cleaning-sun-ray",
       "contains"
     ],
@@ -1040,6 +1769,191 @@
     [
       "proof",
       "image_summit-county-recurring-kitchen-cleaning-sun-ray",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-bathroom-vanity-after-cleaning-31",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-bathroom-vanity-and-tub-detail-33",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-bathroom-vanity-detail-cleaning-07",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-bedroom-dresser-dusting-cleaning-23",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-bedroom-reset-after-cleaning-12",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-bedroom-vacuuming-cleaning-action-20",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-bright-bathroom-after-cleaning-35",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-bright-white-kitchen-after-cleaning-10",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-clean-cooktop-detail-after-cleaning-25",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-clean-cooktop-white-kitchen-detail-15",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-cleaner-wiping-whiteboard-detail-17",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-cleaning-team-modern-kitchen-island-02",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-cozy-living-room-after-cleaning-29",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-elegant-living-room-after-cleaning-05",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-guest-bedroom-turnover-detail-13",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-kitchen-island-polish-after-cleaning-03",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-kitchen-sink-floral-detail-27",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-living-room-detail-after-cleaning-11",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-living-room-fireplace-after-cleaning-09",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-luxury-bathtub-detail-cleaning-37",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-luxury-bedroom-cleaning-after-14",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-luxury-kitchen-cleaning-36",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-modern-kitchen-deep-cleaning-34",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-modern-white-kitchen-polished-counters-28",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-polished-kitchen-sink-after-cleaning-16",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-sectional-living-room-after-cleaning-30",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-shower-cleaning-action-21",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-sofa-vacuuming-living-room-22",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-stovetop-cleaning-modern-kitchen-24",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-stovetop-detail-cleaning-action-18",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-stovetop-detail-cleaning-closeup-26",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-team-bathroom-vanity-cleaning-08",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-team-deep-cleaning-kitchen-park-city-01",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-team-kitchen-stovetop-cleaning-19",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-team-kitchen-turnover-cleaning-04",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-warm-kitchen-after-cleaning-06",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-white-kitchen-after-cleaning-32",
       "contains"
     ],
     [
@@ -1649,6 +2563,71 @@
     ],
     [
       "route_blog-red-ledges-home-cleaning-guide-luxury-heber-homeowners",
+      "service_residential",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "location_canyons-village",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "location_deer-valley",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "location_heber-city",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "location_kamas",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "location_midway",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "location_park-city",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "location_summit-county",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "location_wasatch-county",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "service_airbnb-vrbo",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "service_deep-cleaning",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "service_move-in-out",
+      "mentions"
+    ],
+    [
+      "route_gallery",
+      "service_recurring",
+      "mentions"
+    ],
+    [
+      "route_gallery",
       "service_residential",
       "mentions"
     ],

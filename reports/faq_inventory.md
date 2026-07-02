@@ -1,6 +1,6 @@
 # FAQ Inventory
 
-Generated: 2026-06-30
+Generated: 2026-07-02
 
 | Route | FAQ Count | Sample Questions |
 | --- | --- | --- |
@@ -18,6 +18,9 @@ Generated: 2026-06-30
 | /blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |
 | /contact/ | 3 | What areas does Sun Ray Cleaning serve? / Can I request a quote online? / Do you offer recurring, deep, move and Airbnb cleaning? |
 | /discounts/ | 4 | Do weekly or biweekly cleaning clients get a discount? / Does Sun Ray Cleaning have referral discounts? / Are there discounts for Airbnb hosts with multiple properties? |
+| /gallery/ | 0 |  |
+| /privacy-policy/ | 0 |  |
+| /reviews/ | 4 | What do Sun Ray Cleaning customers mention most often in reviews? / Are the reviews useful for comparing Park City and Heber cleaning companies? / Do Sun Ray reviews mention vacation rental or Airbnb cleaning? |
 | /service-areas/ | 5 | What main service area hubs does Sun Ray Cleaning serve? / Can I book Airbnb or VRBO turnover cleaning in these service areas? / Do you offer recurring cleaning outside Park City? |
 | /service-location/canyons-village/ | 3 | Does Sun Ray Cleaning handle Canyons Village condo turnovers? / Can Sun Ray Cleaning help during ski season? / Do you clean both rentals and second homes in Canyons Village? |
 | /service-location/center-creek/ | 3 | What areas does Sun Ray Cleaning serve? / Can I request a quote online? / Do you offer recurring, deep, move and Airbnb cleaning? |
@@ -81,3 +84,4 @@ Generated: 2026-06-30
 | /services/recurring-cleaning/ | 3 | How much does this service cost? / Can this be scheduled as recurring service? / Do you offer eco-friendly product options? |
 | /services/short-term-rental-cleaning/ | 3 | How much does this service cost? / Can this be scheduled as recurring service? / Do you offer eco-friendly product options? |
 | /specials/ | 4 | Does Sun Ray Cleaning offer discounts for first-time customers? / Are recurring cleaning specials available in Park City, Heber City and Midway? / Do you publish exact coupon amounts online? |
+| /terms-and-conditions/ | 0 |  |

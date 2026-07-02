@@ -1,6 +1,6 @@
 # Sprints
 
-Date: 2026-06-30
+Date: 2026-07-02
 
 SRAAP uses continuous engineering rather than isolated task prompts. Each sprint
 should leave the repository easier to understand and more valuable.

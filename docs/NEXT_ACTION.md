@@ -1,24 +1,26 @@
 # Next Action
 
-Last updated: 2026-06-30
+Last updated: 2026-07-02
 
 ## Immediate Next Step
 
-Clear the Cloudflare custom-domain cache/indexability blocker before doing more
-production SEO work. The latest Pages production deployment is correct, but
-`www.sunray-cleaning.com` is still serving an older cached preview-style
-artifact with `noindex` headers and preview-domain canonicals.
+Resolve or intentionally document the Cloudflare Managed Content AI-crawler
+policy before treating AI monitoring as fully representative. Current live
+checks show the custom domain is serving canonical production pages, but
+`robots.txt` still disallows several major AI crawlers through Cloudflare's
+managed robots block.
 
 Recommended next task:
 
-1. In Cloudflare, purge cache for `sunray-cleaning.com` or provide a token with
-   Zone Cache Purge permission.
-2. Recheck `https://www.sunray-cleaning.com/service-location/deer-valley/` for
-   `x-robots-tag`, canonical URL, and the Deer Valley luxury guide link.
-3. Recheck `https://www.sunray-cleaning.com/service-location/jordanelle/` for
-   canonical URL and the Jordanelle turnover guide link.
-4. After the custom domain serves the production artifact, run Baseline Run 001
-   from `docs/AI_MONITORING.md`.
+1. In Cloudflare, review AI Crawl Control / managed robots settings for
+   `sunray-cleaning.com`.
+2. Decide whether to allow or continue blocking GPTBot, ClaudeBot,
+   Google-Extended, CCBot, Bytespider, Applebot-Extended, and related AI
+   crawlers.
+3. Recheck `https://www.sunray-cleaning.com/robots.txt` after the setting is
+   changed or intentionally left restricted.
+4. Run Baseline Run 001 from `docs/AI_MONITORING.md` only after the crawler
+   policy is confirmed.
 5. Record Sun Ray mentions, competitors, citations, missing facts, and follow-up
    work without claiming ranking improvement until outputs are logged.
 6. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
@@ -57,8 +59,8 @@ Park City residential cleaning and move-in/move-out cleaning now have verified
 structured image support in the gallery metadata. Remaining image gaps should
 only be closed when asset provenance is clear.
 
-The homepage service icons now have descriptive alt text, and the image
-inventory reports 0 missing generated image alt attributes.
+The homepage service icons have descriptive alt text, and the image inventory
+reports 0 missing generated image alt attributes.
 
 The service-area hub now links to 13 smaller community pages, and the content
 gap report shows no low incoming public location routes.
@@ -69,3 +71,7 @@ Jordanelle vacation rental turnover guide now has 5 incoming links.
 The AI recommendations page now includes direct answer-ready local match copy
 for Park City, Heber City, Midway, Deer Valley, Canyons Village, Airbnb/VRBO,
 luxury, and move-out cleaning prompts, and it now has 8 source FAQs.
+
+The reviews page now includes stronger local trust copy, four source FAQs,
+generated FAQPage schema, visible Google-style review marks, and no thin-content
+technical debt signal.

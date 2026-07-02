@@ -1,36 +1,38 @@
 # Schema Inventory
 
-Generated: 2026-06-30
+Generated: 2026-07-02
 
 ## Type Summary
 
 | Schema Type | Page Count |
 | --- | --- |
-| AdministrativeArea | 77 |
-| AggregateRating | 77 |
-| BreadcrumbList | 77 |
-| City | 77 |
-| HouseCleaningService | 77 |
-| ImageObject | 77 |
-| ListItem | 77 |
-| LocalBusiness | 77 |
-| OpeningHoursSpecification | 77 |
-| Person | 77 |
-| Place | 77 |
-| PostalAddress | 77 |
-| Rating | 77 |
-| Review | 77 |
-| Service | 77 |
-| Thing | 77 |
-| WebPage | 77 |
-| WebSite | 77 |
-| Answer | 76 |
-| FAQPage | 76 |
-| Question | 76 |
+| AdministrativeArea | 81 |
+| AggregateRating | 81 |
+| BreadcrumbList | 81 |
+| City | 81 |
+| HouseCleaningService | 81 |
+| ImageObject | 81 |
+| ListItem | 81 |
+| LocalBusiness | 81 |
+| OpeningHoursSpecification | 81 |
+| Person | 81 |
+| Place | 81 |
+| PostalAddress | 81 |
+| Rating | 81 |
+| Review | 81 |
+| Service | 81 |
+| Thing | 81 |
+| WebSite | 81 |
+| WebPage | 80 |
+| Answer | 77 |
+| FAQPage | 77 |
+| Question | 77 |
 | BlogPosting | 9 |
 | ItemList | 2 |
 | AboutPage | 1 |
 | Blog | 1 |
+| CollectionPage | 1 |
+| ImageGallery | 1 |
 
 ## Route Detail
 
@@ -50,6 +52,9 @@ Generated: 2026-06-30
 | /blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/ | 1 | AdministrativeArea, AggregateRating, Answer, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /contact/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /discounts/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
+| /gallery/ | 1 | AdministrativeArea, AggregateRating, BreadcrumbList, City, CollectionPage, HouseCleaningService, ImageGallery, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebSite |
+| /privacy-policy/ | 1 | AdministrativeArea, AggregateRating, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
+| /reviews/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /service-areas/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /service-location/canyons-village/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /service-location/center-creek/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
@@ -113,3 +118,4 @@ Generated: 2026-06-30
 | /services/recurring-cleaning/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /services/short-term-rental-cleaning/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /specials/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
+| /terms-and-conditions/ | 1 | AdministrativeArea, AggregateRating, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |

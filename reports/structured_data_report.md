@@ -1,6 +1,6 @@
 # Structured Data Report
 
-Generated: 2026-06-30
+Generated: 2026-07-02
 
 Every generated public route should include JSON-LD from the build pipeline.
 
@@ -20,6 +20,9 @@ Every generated public route should include JSON-LD from the build pipeline.
 | /blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/ | True | True | True | True | True | True |
 | /contact/ | True | True | True | False | True | True |
 | /discounts/ | True | True | True | False | True | True |
+| /gallery/ | True | False | True | False | True | True |
+| /privacy-policy/ | True | False | True | False | True | True |
+| /reviews/ | True | True | True | False | True | True |
 | /service-areas/ | True | True | True | False | True | True |
 | /service-location/canyons-village/ | True | True | True | False | True | True |
 | /service-location/center-creek/ | True | True | True | False | True | True |
@@ -83,3 +86,4 @@ Every generated public route should include JSON-LD from the build pipeline.
 | /services/recurring-cleaning/ | True | True | True | False | True | True |
 | /services/short-term-rental-cleaning/ | True | True | True | False | True | True |
 | /specials/ | True | True | True | False | True | True |
+| /terms-and-conditions/ | True | False | True | False | True | True |

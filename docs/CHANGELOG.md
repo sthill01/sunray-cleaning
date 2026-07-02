@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-02
+
+- Verified that priority custom-domain pages now return current canonical
+  production pages without the stale `x-robots-tag` blocker seen earlier.
+- Documented Cloudflare Managed Content / AI Crawl Control as the remaining
+  external AI-crawler blocker.
+- Strengthened `/reviews/` with local review-trust context, customer decision
+  copy, and four review FAQs.
+- Added generated Google-style marks to the reviews rating badge and summary
+  band.
+- Restored descriptive homepage service-icon alt text.
+- Regenerated Repository Intelligence reports for 81 routes.
+- Confirmed no thin-content rows, 0 public orphan pages, 0 missing generated
+  image alt attributes, `/reviews/` FAQPage schema, and a 92.6 internal AI
+  Authority heuristic score.
+
 ## 2026-06-30
 
 - Created the SRAAP operating manual in `/docs`.

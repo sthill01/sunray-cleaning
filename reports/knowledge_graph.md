@@ -1,6 +1,6 @@
 # Knowledge Graph
 
-Generated: 2026-06-30
+Generated: 2026-07-02
 
 ```mermaid
 flowchart TD
@@ -10,11 +10,46 @@ flowchart TD
   image_midway-recurring-bedroom-cleaning-sun-ray["midway-recurring-bedroom-cleaning-sun-ray.jpg"]
   image_park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray["park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg"]
   image_park-city-deep-cleaning-bathroom-detail-sun-ray["park-city-deep-cleaning-bathroom-detail-sun-ray.jpg"]
-  image_park-city-move-clean-empty-room-may-6-sun-ray["park-city-move-clean-empty-room-may-6-sun-ray.jpg"]
-  image_park-city-residential-kitchen-cleaning-may-6-sun-ray["park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg"]
   image_park-city-vrbo-living-room-turnover-cleaning-sun-ray["park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg"]
   image_summit-county-deep-cleaning-shower-detail-sun-ray["summit-county-deep-cleaning-shower-detail-sun-ray.jpg"]
   image_summit-county-recurring-kitchen-cleaning-sun-ray["summit-county-recurring-kitchen-cleaning-sun-ray.jpg"]
+  image_sun-ray-bathroom-vanity-after-cleaning-31["sun-ray-bathroom-vanity-after-cleaning-31.jpg"]
+  image_sun-ray-bathroom-vanity-and-tub-detail-33["sun-ray-bathroom-vanity-and-tub-detail-33.jpg"]
+  image_sun-ray-bathroom-vanity-detail-cleaning-07["sun-ray-bathroom-vanity-detail-cleaning-07.jpg"]
+  image_sun-ray-bedroom-dresser-dusting-cleaning-23["sun-ray-bedroom-dresser-dusting-cleaning-23.jpg"]
+  image_sun-ray-bedroom-reset-after-cleaning-12["sun-ray-bedroom-reset-after-cleaning-12.jpg"]
+  image_sun-ray-bedroom-vacuuming-cleaning-action-20["sun-ray-bedroom-vacuuming-cleaning-action-20.jpg"]
+  image_sun-ray-bright-bathroom-after-cleaning-35["sun-ray-bright-bathroom-after-cleaning-35.jpg"]
+  image_sun-ray-bright-white-kitchen-after-cleaning-10["sun-ray-bright-white-kitchen-after-cleaning-10.jpg"]
+  image_sun-ray-clean-cooktop-detail-after-cleaning-25["sun-ray-clean-cooktop-detail-after-cleaning-25.jpg"]
+  image_sun-ray-clean-cooktop-white-kitchen-detail-15["sun-ray-clean-cooktop-white-kitchen-detail-15.jpg"]
+  image_sun-ray-cleaner-wiping-whiteboard-detail-17["sun-ray-cleaner-wiping-whiteboard-detail-17.jpg"]
+  image_sun-ray-cleaning-team-modern-kitchen-island-02["sun-ray-cleaning-team-modern-kitchen-island-02.jpg"]
+  image_sun-ray-cozy-living-room-after-cleaning-29["sun-ray-cozy-living-room-after-cleaning-29.jpg"]
+  image_sun-ray-elegant-living-room-after-cleaning-05["sun-ray-elegant-living-room-after-cleaning-05.jpg"]
+  image_sun-ray-guest-bedroom-turnover-detail-13["sun-ray-guest-bedroom-turnover-detail-13.jpg"]
+  image_sun-ray-kitchen-island-polish-after-cleaning-03["sun-ray-kitchen-island-polish-after-cleaning-03.jpg"]
+  image_sun-ray-kitchen-sink-floral-detail-27["sun-ray-kitchen-sink-floral-detail-27.jpg"]
+  image_sun-ray-living-room-detail-after-cleaning-11["sun-ray-living-room-detail-after-cleaning-11.jpg"]
+  image_sun-ray-living-room-fireplace-after-cleaning-09["sun-ray-living-room-fireplace-after-cleaning-09.jpg"]
+  image_sun-ray-luxury-bathtub-detail-cleaning-37["sun-ray-luxury-bathtub-detail-cleaning-37.jpg"]
+  image_sun-ray-luxury-bedroom-cleaning-after-14["sun-ray-luxury-bedroom-cleaning-after-14.jpg"]
+  image_sun-ray-luxury-kitchen-cleaning-36["sun-ray-luxury-kitchen-cleaning-36.jpg"]
+  image_sun-ray-modern-kitchen-deep-cleaning-34["sun-ray-modern-kitchen-deep-cleaning-34.jpg"]
+  image_sun-ray-modern-white-kitchen-polished-counters-28["sun-ray-modern-white-kitchen-polished-counters-28.jpg"]
+  image_sun-ray-polished-kitchen-sink-after-cleaning-16["sun-ray-polished-kitchen-sink-after-cleaning-16.jpg"]
+  image_sun-ray-sectional-living-room-after-cleaning-30["sun-ray-sectional-living-room-after-cleaning-30.jpg"]
+  image_sun-ray-shower-cleaning-action-21["sun-ray-shower-cleaning-action-21.jpg"]
+  image_sun-ray-sofa-vacuuming-living-room-22["sun-ray-sofa-vacuuming-living-room-22.jpg"]
+  image_sun-ray-stovetop-cleaning-modern-kitchen-24["sun-ray-stovetop-cleaning-modern-kitchen-24.jpg"]
+  image_sun-ray-stovetop-detail-cleaning-action-18["sun-ray-stovetop-detail-cleaning-action-18.jpg"]
+  image_sun-ray-stovetop-detail-cleaning-closeup-26["sun-ray-stovetop-detail-cleaning-closeup-26.jpg"]
+  image_sun-ray-team-bathroom-vanity-cleaning-08["sun-ray-team-bathroom-vanity-cleaning-08.jpg"]
+  image_sun-ray-team-deep-cleaning-kitchen-park-city-01["sun-ray-team-deep-cleaning-kitchen-park-city-01.jpg"]
+  image_sun-ray-team-kitchen-stovetop-cleaning-19["sun-ray-team-kitchen-stovetop-cleaning-19.jpg"]
+  image_sun-ray-team-kitchen-turnover-cleaning-04["sun-ray-team-kitchen-turnover-cleaning-04.jpg"]
+  image_sun-ray-warm-kitchen-after-cleaning-06["sun-ray-warm-kitchen-after-cleaning-06.jpg"]
+  image_sun-ray-white-kitchen-after-cleaning-32["sun-ray-white-kitchen-after-cleaning-32.jpg"]
   image_wasatch-county-move-in-entry-kitchen-cleaning-sun-ray["wasatch-county-move-in-entry-kitchen-cleaning-sun-ray.jpg"]
   image_wasatch-county-residential-family-room-cleaning-sun-ray["wasatch-county-residential-family-room-cleaning-sun-ray.jpg"]
   location_canyons-village["Canyons Village"]
@@ -36,6 +71,7 @@ flowchart TD
   route_blog-jordanelle-vacation-rental-turnover["/blog/jordanelle-vacation-rental-turnover/"]
   route_blog-post-ski-season-deep-clean-park-city-rental-owners["/blog/post-ski-season-deep-clean-park-city-rental-owners/"]
   route_blog-red-ledges-home-cleaning-guide-luxury-heber-homeowners["/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/"]
+  route_gallery["/gallery/"]
   route_service-location-canyons-village["/service-location/canyons-village/"]
   route_service-location-center-creek["/service-location/center-creek/"]
   route_service-location-chalk-creek["/service-location/chalk-creek/"]
@@ -113,6 +149,7 @@ flowchart TD
   content -- contains --> route_blog-jordanelle-vacation-rental-turnover
   content -- contains --> route_blog-post-ski-season-deep-clean-park-city-rental-owners
   content -- contains --> route_blog-red-ledges-home-cleaning-guide-luxury-heber-homeowners
+  content -- contains --> route_gallery
   content -- contains --> route_service-location-canyons-village
   content -- contains --> route_service-location-center-creek
   content -- contains --> route_service-location-chalk-creek
@@ -191,12 +228,6 @@ flowchart TD
   image_park-city-deep-cleaning-bathroom-detail-sun-ray -- depicts --> location_park-city
   image_park-city-deep-cleaning-bathroom-detail-sun-ray -- depicts --> location_summit-county
   image_park-city-deep-cleaning-bathroom-detail-sun-ray -- depicts --> service_deep-cleaning
-  image_park-city-move-clean-empty-room-may-6-sun-ray -- depicts --> location_park-city
-  image_park-city-move-clean-empty-room-may-6-sun-ray -- depicts --> location_summit-county
-  image_park-city-move-clean-empty-room-may-6-sun-ray -- depicts --> service_move-in-out
-  image_park-city-residential-kitchen-cleaning-may-6-sun-ray -- depicts --> location_park-city
-  image_park-city-residential-kitchen-cleaning-may-6-sun-ray -- depicts --> location_summit-county
-  image_park-city-residential-kitchen-cleaning-may-6-sun-ray -- depicts --> service_residential
   image_park-city-vrbo-living-room-turnover-cleaning-sun-ray -- depicts --> location_park-city
   image_park-city-vrbo-living-room-turnover-cleaning-sun-ray -- depicts --> location_summit-county
   image_park-city-vrbo-living-room-turnover-cleaning-sun-ray -- depicts --> service_airbnb-vrbo
@@ -207,6 +238,130 @@ flowchart TD
   image_summit-county-recurring-kitchen-cleaning-sun-ray -- depicts --> location_summit-county
   image_summit-county-recurring-kitchen-cleaning-sun-ray -- depicts --> service_recurring
   image_summit-county-recurring-kitchen-cleaning-sun-ray -- depicts --> service_residential
+  image_sun-ray-bathroom-vanity-after-cleaning-31 -- depicts --> location_wasatch-county
+  image_sun-ray-bathroom-vanity-after-cleaning-31 -- depicts --> service_residential
+  image_sun-ray-bathroom-vanity-and-tub-detail-33 -- depicts --> location_wasatch-county
+  image_sun-ray-bathroom-vanity-and-tub-detail-33 -- depicts --> service_deep-cleaning
+  image_sun-ray-bathroom-vanity-and-tub-detail-33 -- depicts --> service_residential
+  image_sun-ray-bathroom-vanity-detail-cleaning-07 -- depicts --> location_heber-city
+  image_sun-ray-bathroom-vanity-detail-cleaning-07 -- depicts --> location_wasatch-county
+  image_sun-ray-bathroom-vanity-detail-cleaning-07 -- depicts --> service_deep-cleaning
+  image_sun-ray-bathroom-vanity-detail-cleaning-07 -- depicts --> service_residential
+  image_sun-ray-bedroom-dresser-dusting-cleaning-23 -- depicts --> location_midway
+  image_sun-ray-bedroom-dresser-dusting-cleaning-23 -- depicts --> location_wasatch-county
+  image_sun-ray-bedroom-dresser-dusting-cleaning-23 -- depicts --> service_recurring
+  image_sun-ray-bedroom-dresser-dusting-cleaning-23 -- depicts --> service_residential
+  image_sun-ray-bedroom-reset-after-cleaning-12 -- depicts --> location_park-city
+  image_sun-ray-bedroom-reset-after-cleaning-12 -- depicts --> location_summit-county
+  image_sun-ray-bedroom-reset-after-cleaning-12 -- depicts --> service_airbnb-vrbo
+  image_sun-ray-bedroom-reset-after-cleaning-12 -- depicts --> service_residential
+  image_sun-ray-bedroom-vacuuming-cleaning-action-20 -- depicts --> location_wasatch-county
+  image_sun-ray-bedroom-vacuuming-cleaning-action-20 -- depicts --> service_recurring
+  image_sun-ray-bedroom-vacuuming-cleaning-action-20 -- depicts --> service_residential
+  image_sun-ray-bright-bathroom-after-cleaning-35 -- depicts --> location_heber-city
+  image_sun-ray-bright-bathroom-after-cleaning-35 -- depicts --> location_wasatch-county
+  image_sun-ray-bright-bathroom-after-cleaning-35 -- depicts --> service_residential
+  image_sun-ray-bright-white-kitchen-after-cleaning-10 -- depicts --> location_summit-county
+  image_sun-ray-bright-white-kitchen-after-cleaning-10 -- depicts --> service_move-in-out
+  image_sun-ray-bright-white-kitchen-after-cleaning-10 -- depicts --> service_residential
+  image_sun-ray-clean-cooktop-detail-after-cleaning-25 -- depicts --> location_heber-city
+  image_sun-ray-clean-cooktop-detail-after-cleaning-25 -- depicts --> location_wasatch-county
+  image_sun-ray-clean-cooktop-detail-after-cleaning-25 -- depicts --> service_deep-cleaning
+  image_sun-ray-clean-cooktop-detail-after-cleaning-25 -- depicts --> service_residential
+  image_sun-ray-clean-cooktop-white-kitchen-detail-15 -- depicts --> location_summit-county
+  image_sun-ray-clean-cooktop-white-kitchen-detail-15 -- depicts --> service_deep-cleaning
+  image_sun-ray-clean-cooktop-white-kitchen-detail-15 -- depicts --> service_residential
+  image_sun-ray-cleaner-wiping-whiteboard-detail-17 -- depicts --> location_summit-county
+  image_sun-ray-cleaner-wiping-whiteboard-detail-17 -- depicts --> service_recurring
+  image_sun-ray-cleaner-wiping-whiteboard-detail-17 -- depicts --> service_residential
+  image_sun-ray-cleaning-team-modern-kitchen-island-02 -- depicts --> location_summit-county
+  image_sun-ray-cleaning-team-modern-kitchen-island-02 -- depicts --> service_residential
+  image_sun-ray-cozy-living-room-after-cleaning-29 -- depicts --> location_heber-city
+  image_sun-ray-cozy-living-room-after-cleaning-29 -- depicts --> location_wasatch-county
+  image_sun-ray-cozy-living-room-after-cleaning-29 -- depicts --> service_residential
+  image_sun-ray-elegant-living-room-after-cleaning-05 -- depicts --> location_summit-county
+  image_sun-ray-elegant-living-room-after-cleaning-05 -- depicts --> service_residential
+  image_sun-ray-guest-bedroom-turnover-detail-13 -- depicts --> location_midway
+  image_sun-ray-guest-bedroom-turnover-detail-13 -- depicts --> location_wasatch-county
+  image_sun-ray-guest-bedroom-turnover-detail-13 -- depicts --> service_airbnb-vrbo
+  image_sun-ray-guest-bedroom-turnover-detail-13 -- depicts --> service_residential
+  image_sun-ray-kitchen-island-polish-after-cleaning-03 -- depicts --> location_park-city
+  image_sun-ray-kitchen-island-polish-after-cleaning-03 -- depicts --> location_summit-county
+  image_sun-ray-kitchen-island-polish-after-cleaning-03 -- depicts --> service_airbnb-vrbo
+  image_sun-ray-kitchen-island-polish-after-cleaning-03 -- depicts --> service_residential
+  image_sun-ray-kitchen-sink-floral-detail-27 -- depicts --> location_summit-county
+  image_sun-ray-kitchen-sink-floral-detail-27 -- depicts --> service_residential
+  image_sun-ray-living-room-detail-after-cleaning-11 -- depicts --> location_wasatch-county
+  image_sun-ray-living-room-detail-after-cleaning-11 -- depicts --> service_recurring
+  image_sun-ray-living-room-detail-after-cleaning-11 -- depicts --> service_residential
+  image_sun-ray-living-room-fireplace-after-cleaning-09 -- depicts --> location_park-city
+  image_sun-ray-living-room-fireplace-after-cleaning-09 -- depicts --> location_summit-county
+  image_sun-ray-living-room-fireplace-after-cleaning-09 -- depicts --> service_residential
+  image_sun-ray-luxury-bathtub-detail-cleaning-37 -- depicts --> location_wasatch-county
+  image_sun-ray-luxury-bathtub-detail-cleaning-37 -- depicts --> service_deep-cleaning
+  image_sun-ray-luxury-bathtub-detail-cleaning-37 -- depicts --> service_luxury
+  image_sun-ray-luxury-bathtub-detail-cleaning-37 -- depicts --> service_residential
+  image_sun-ray-luxury-bedroom-cleaning-after-14 -- depicts --> location_heber-city
+  image_sun-ray-luxury-bedroom-cleaning-after-14 -- depicts --> location_wasatch-county
+  image_sun-ray-luxury-bedroom-cleaning-after-14 -- depicts --> service_luxury
+  image_sun-ray-luxury-bedroom-cleaning-after-14 -- depicts --> service_residential
+  image_sun-ray-luxury-kitchen-cleaning-36 -- depicts --> location_park-city
+  image_sun-ray-luxury-kitchen-cleaning-36 -- depicts --> location_summit-county
+  image_sun-ray-luxury-kitchen-cleaning-36 -- depicts --> service_airbnb-vrbo
+  image_sun-ray-luxury-kitchen-cleaning-36 -- depicts --> service_luxury
+  image_sun-ray-luxury-kitchen-cleaning-36 -- depicts --> service_residential
+  image_sun-ray-modern-kitchen-deep-cleaning-34 -- depicts --> location_park-city
+  image_sun-ray-modern-kitchen-deep-cleaning-34 -- depicts --> location_summit-county
+  image_sun-ray-modern-kitchen-deep-cleaning-34 -- depicts --> service_deep-cleaning
+  image_sun-ray-modern-kitchen-deep-cleaning-34 -- depicts --> service_residential
+  image_sun-ray-modern-white-kitchen-polished-counters-28 -- depicts --> location_park-city
+  image_sun-ray-modern-white-kitchen-polished-counters-28 -- depicts --> location_summit-county
+  image_sun-ray-modern-white-kitchen-polished-counters-28 -- depicts --> service_move-in-out
+  image_sun-ray-modern-white-kitchen-polished-counters-28 -- depicts --> service_residential
+  image_sun-ray-polished-kitchen-sink-after-cleaning-16 -- depicts --> location_park-city
+  image_sun-ray-polished-kitchen-sink-after-cleaning-16 -- depicts --> location_summit-county
+  image_sun-ray-polished-kitchen-sink-after-cleaning-16 -- depicts --> service_recurring
+  image_sun-ray-polished-kitchen-sink-after-cleaning-16 -- depicts --> service_residential
+  image_sun-ray-sectional-living-room-after-cleaning-30 -- depicts --> location_midway
+  image_sun-ray-sectional-living-room-after-cleaning-30 -- depicts --> location_wasatch-county
+  image_sun-ray-sectional-living-room-after-cleaning-30 -- depicts --> service_residential
+  image_sun-ray-shower-cleaning-action-21 -- depicts --> location_park-city
+  image_sun-ray-shower-cleaning-action-21 -- depicts --> location_summit-county
+  image_sun-ray-shower-cleaning-action-21 -- depicts --> service_deep-cleaning
+  image_sun-ray-shower-cleaning-action-21 -- depicts --> service_residential
+  image_sun-ray-sofa-vacuuming-living-room-22 -- depicts --> location_summit-county
+  image_sun-ray-sofa-vacuuming-living-room-22 -- depicts --> service_recurring
+  image_sun-ray-sofa-vacuuming-living-room-22 -- depicts --> service_residential
+  image_sun-ray-stovetop-cleaning-modern-kitchen-24 -- depicts --> location_park-city
+  image_sun-ray-stovetop-cleaning-modern-kitchen-24 -- depicts --> location_summit-county
+  image_sun-ray-stovetop-cleaning-modern-kitchen-24 -- depicts --> service_airbnb-vrbo
+  image_sun-ray-stovetop-cleaning-modern-kitchen-24 -- depicts --> service_residential
+  image_sun-ray-stovetop-detail-cleaning-action-18 -- depicts --> location_park-city
+  image_sun-ray-stovetop-detail-cleaning-action-18 -- depicts --> location_summit-county
+  image_sun-ray-stovetop-detail-cleaning-action-18 -- depicts --> service_deep-cleaning
+  image_sun-ray-stovetop-detail-cleaning-action-18 -- depicts --> service_residential
+  image_sun-ray-stovetop-detail-cleaning-closeup-26 -- depicts --> location_wasatch-county
+  image_sun-ray-stovetop-detail-cleaning-closeup-26 -- depicts --> service_deep-cleaning
+  image_sun-ray-stovetop-detail-cleaning-closeup-26 -- depicts --> service_residential
+  image_sun-ray-team-bathroom-vanity-cleaning-08 -- depicts --> location_wasatch-county
+  image_sun-ray-team-bathroom-vanity-cleaning-08 -- depicts --> service_deep-cleaning
+  image_sun-ray-team-bathroom-vanity-cleaning-08 -- depicts --> service_residential
+  image_sun-ray-team-deep-cleaning-kitchen-park-city-01 -- depicts --> location_park-city
+  image_sun-ray-team-deep-cleaning-kitchen-park-city-01 -- depicts --> location_summit-county
+  image_sun-ray-team-deep-cleaning-kitchen-park-city-01 -- depicts --> service_deep-cleaning
+  image_sun-ray-team-deep-cleaning-kitchen-park-city-01 -- depicts --> service_residential
+  image_sun-ray-team-kitchen-stovetop-cleaning-19 -- depicts --> location_summit-county
+  image_sun-ray-team-kitchen-stovetop-cleaning-19 -- depicts --> service_deep-cleaning
+  image_sun-ray-team-kitchen-stovetop-cleaning-19 -- depicts --> service_residential
+  image_sun-ray-team-kitchen-turnover-cleaning-04 -- depicts --> location_park-city
+  image_sun-ray-team-kitchen-turnover-cleaning-04 -- depicts --> location_summit-county
+  image_sun-ray-team-kitchen-turnover-cleaning-04 -- depicts --> service_airbnb-vrbo
+  image_sun-ray-team-kitchen-turnover-cleaning-04 -- depicts --> service_residential
+  image_sun-ray-warm-kitchen-after-cleaning-06 -- depicts --> location_wasatch-county
+  image_sun-ray-warm-kitchen-after-cleaning-06 -- depicts --> service_recurring
+  image_sun-ray-warm-kitchen-after-cleaning-06 -- depicts --> service_residential
+  image_sun-ray-white-kitchen-after-cleaning-32 -- depicts --> location_summit-county
+  image_sun-ray-white-kitchen-after-cleaning-32 -- depicts --> service_residential
   image_wasatch-county-move-in-entry-kitchen-cleaning-sun-ray -- depicts --> location_heber-city
   image_wasatch-county-move-in-entry-kitchen-cleaning-sun-ray -- depicts --> location_wasatch-county
   image_wasatch-county-move-in-entry-kitchen-cleaning-sun-ray -- depicts --> service_luxury
@@ -227,11 +382,46 @@ flowchart TD
   proof -- contains --> image_midway-recurring-bedroom-cleaning-sun-ray
   proof -- contains --> image_park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray
   proof -- contains --> image_park-city-deep-cleaning-bathroom-detail-sun-ray
-  proof -- contains --> image_park-city-move-clean-empty-room-may-6-sun-ray
-  proof -- contains --> image_park-city-residential-kitchen-cleaning-may-6-sun-ray
   proof -- contains --> image_park-city-vrbo-living-room-turnover-cleaning-sun-ray
   proof -- contains --> image_summit-county-deep-cleaning-shower-detail-sun-ray
   proof -- contains --> image_summit-county-recurring-kitchen-cleaning-sun-ray
+  proof -- contains --> image_sun-ray-bathroom-vanity-after-cleaning-31
+  proof -- contains --> image_sun-ray-bathroom-vanity-and-tub-detail-33
+  proof -- contains --> image_sun-ray-bathroom-vanity-detail-cleaning-07
+  proof -- contains --> image_sun-ray-bedroom-dresser-dusting-cleaning-23
+  proof -- contains --> image_sun-ray-bedroom-reset-after-cleaning-12
+  proof -- contains --> image_sun-ray-bedroom-vacuuming-cleaning-action-20
+  proof -- contains --> image_sun-ray-bright-bathroom-after-cleaning-35
+  proof -- contains --> image_sun-ray-bright-white-kitchen-after-cleaning-10
+  proof -- contains --> image_sun-ray-clean-cooktop-detail-after-cleaning-25
+  proof -- contains --> image_sun-ray-clean-cooktop-white-kitchen-detail-15
+  proof -- contains --> image_sun-ray-cleaner-wiping-whiteboard-detail-17
+  proof -- contains --> image_sun-ray-cleaning-team-modern-kitchen-island-02
+  proof -- contains --> image_sun-ray-cozy-living-room-after-cleaning-29
+  proof -- contains --> image_sun-ray-elegant-living-room-after-cleaning-05
+  proof -- contains --> image_sun-ray-guest-bedroom-turnover-detail-13
+  proof -- contains --> image_sun-ray-kitchen-island-polish-after-cleaning-03
+  proof -- contains --> image_sun-ray-kitchen-sink-floral-detail-27
+  proof -- contains --> image_sun-ray-living-room-detail-after-cleaning-11
+  proof -- contains --> image_sun-ray-living-room-fireplace-after-cleaning-09
+  proof -- contains --> image_sun-ray-luxury-bathtub-detail-cleaning-37
+  proof -- contains --> image_sun-ray-luxury-bedroom-cleaning-after-14
+  proof -- contains --> image_sun-ray-luxury-kitchen-cleaning-36
+  proof -- contains --> image_sun-ray-modern-kitchen-deep-cleaning-34
+  proof -- contains --> image_sun-ray-modern-white-kitchen-polished-counters-28
+  proof -- contains --> image_sun-ray-polished-kitchen-sink-after-cleaning-16
+  proof -- contains --> image_sun-ray-sectional-living-room-after-cleaning-30
+  proof -- contains --> image_sun-ray-shower-cleaning-action-21
+  proof -- contains --> image_sun-ray-sofa-vacuuming-living-room-22
+  proof -- contains --> image_sun-ray-stovetop-cleaning-modern-kitchen-24
+  proof -- contains --> image_sun-ray-stovetop-detail-cleaning-action-18
+  proof -- contains --> image_sun-ray-stovetop-detail-cleaning-closeup-26
+  proof -- contains --> image_sun-ray-team-bathroom-vanity-cleaning-08
+  proof -- contains --> image_sun-ray-team-deep-cleaning-kitchen-park-city-01
+  proof -- contains --> image_sun-ray-team-kitchen-stovetop-cleaning-19
+  proof -- contains --> image_sun-ray-team-kitchen-turnover-cleaning-04
+  proof -- contains --> image_sun-ray-warm-kitchen-after-cleaning-06
+  proof -- contains --> image_sun-ray-white-kitchen-after-cleaning-32
   proof -- contains --> image_wasatch-county-move-in-entry-kitchen-cleaning-sun-ray
   proof -- contains --> image_wasatch-county-residential-family-room-cleaning-sun-ray
   route_blog -- mentions --> location_canyons-village
@@ -354,6 +544,19 @@ flowchart TD
   route_blog-red-ledges-home-cleaning-guide-luxury-heber-homeowners -- mentions --> service_move-in-out
   route_blog-red-ledges-home-cleaning-guide-luxury-heber-homeowners -- mentions --> service_recurring
   route_blog-red-ledges-home-cleaning-guide-luxury-heber-homeowners -- mentions --> service_residential
+  route_gallery -- mentions --> location_canyons-village
+  route_gallery -- mentions --> location_deer-valley
+  route_gallery -- mentions --> location_heber-city
+  route_gallery -- mentions --> location_kamas
+  route_gallery -- mentions --> location_midway
+  route_gallery -- mentions --> location_park-city
+  route_gallery -- mentions --> location_summit-county
+  route_gallery -- mentions --> location_wasatch-county
+  route_gallery -- mentions --> service_airbnb-vrbo
+  route_gallery -- mentions --> service_deep-cleaning
+  route_gallery -- mentions --> service_move-in-out
+  route_gallery -- mentions --> service_recurring
+  route_gallery -- mentions --> service_residential
   route_service-location-canyons-village -- mentions --> location_canyons-village
   route_service-location-canyons-village -- mentions --> location_deer-valley
   route_service-location-canyons-village -- mentions --> location_heber-city

@@ -1,9 +1,9 @@
 # Image Inventory
 
-Generated: 2026-06-30
+Generated: 2026-07-02
 
-- Structured gallery records: 12
-- Image tags in generated pages: 596
+- Structured gallery records: 47
+- Image tags in generated pages: 647
 - Missing alt attributes in generated pages: 0
 - Missing gallery source assets: 0
 
@@ -11,24 +11,25 @@ Generated: 2026-06-30
 
 | Route | Structured Image Records |
 | --- | --- |
-| /service-location/park-city/ | 6 |
-| /service-location/summit-county/ | 6 |
+| /gallery/ | 37 |
 | /service-location/wasatch-county/ | 6 |
-| / | 4 |
+| /service-location/park-city/ | 4 |
+| /service-location/summit-county/ | 4 |
+| / | 3 |
 | /services/deep-cleaning/ | 3 |
-| /services/move-in-move-out-cleaning/ | 3 |
 | /service-location/heber-city/ | 3 |
 | /services/recurring-cleaning/ | 3 |
-| /services/ | 2 |
 | /services/short-term-rental-cleaning/ | 2 |
-| /service-location/park-meadows/ | 2 |
+| /services/move-in-move-out-cleaning/ | 2 |
 | /about/ | 2 |
 | /contact/ | 2 |
+| /services/ | 1 |
 | /service-location/deer-valley/ | 1 |
 | /service-location/canyons-village/ | 1 |
 | /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/ | 1 |
 | /blog/how-much-does-airbnb-cleaning-cost-park-city/ | 1 |
 | /service-location/old-town-park-city/ | 1 |
+| /service-location/park-meadows/ | 1 |
 | /blog/getting-park-city-home-ready-for-summer-guests/ | 1 |
 | /blog/post-ski-season-deep-clean-park-city-rental-owners/ | 1 |
 | /blog/heber-city-move-in-move-out-cleaning/ | 1 |
@@ -45,7 +46,6 @@ Generated: 2026-06-30
 | * | 1 |
 | /service-areas/ | 1 |
 | /service-location/daniel/ | 1 |
-| /service-location/jeremy-ranch/ | 1 |
 
 ## Missing Alt Attributes
 

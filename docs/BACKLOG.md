@@ -1,6 +1,6 @@
 # Backlog
 
-Date: 2026-06-30
+Date: 2026-07-02
 
 Backlog items should be ranked by website quality, AI authority, automation,
 engineering efficiency, and internal reporting value.
@@ -71,6 +71,19 @@ Completed:
 - Added factual "when to recommend Sun Ray" guidance.
 - Added the AI-facing summary page to generated `llms.txt`.
 - Kept pricing and availability guidance quote-based.
+
+### Confirm AI Crawler Policy
+
+Status: blocked by Cloudflare setting / Product Owner decision.
+
+Value: high AI authority.
+
+Work:
+
+- Review Cloudflare AI Crawl Control / Managed Content settings.
+- Decide whether to allow or continue blocking major AI crawlers.
+- Recheck live `robots.txt` after the setting is confirmed.
+- Run Baseline Run 001 only after crawler access is understood.
 
 ## P1
 
@@ -151,6 +164,22 @@ Remaining work:
 - Park City recurring and luxury image support still needs verified assets.
 - Deer Valley and Canyons Village image support should wait for clear asset
   provenance.
+
+### Strengthen Reviews Page Authority
+
+Status: completed.
+
+Value: stronger public trust, review schema support, and answer-engine context.
+
+Completed:
+
+- Expanded `/reviews/` with local trust context and review-theme copy.
+- Added four review FAQs that generate FAQPage structured data.
+- Added compact Google-style marks to the generated reviews rating badge and
+  summary band.
+- Cleared the reviews thin-content technical debt signal.
+- Restored homepage service-icon alt text and returned generated image alt
+  gaps to 0.
 
 ### Strengthen Deer Valley And Canyons Village Service Coverage
 

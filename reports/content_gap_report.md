@@ -1,20 +1,15 @@
 # Content Gap Report
 
-Generated: 2026-06-30
+Generated: 2026-07-02
 
 ## Coverage Gaps And Weak Cells
 
 | Location | Service | Status | Pages | Images |
 | --- | --- | --- | --- | --- |
-| Park City | Recurring | weak | 28 | 0 |
-| Park City | Luxury | weak | 6 | 0 |
-| Heber City | Airbnb/VRBO | weak | 20 | 0 |
-| Heber City | Deep cleaning | weak | 20 | 0 |
-| Heber City | Recurring | weak | 20 | 0 |
-| Heber City | Luxury | weak | 4 | 0 |
-| Midway | Airbnb/VRBO | weak | 18 | 0 |
-| Midway | Deep cleaning | weak | 18 | 0 |
-| Midway | Move-in/out | weak | 18 | 0 |
+| Heber City | Airbnb/VRBO | weak | 21 | 0 |
+| Heber City | Recurring | weak | 21 | 0 |
+| Midway | Deep cleaning | weak | 19 | 0 |
+| Midway | Move-in/out | weak | 19 | 0 |
 | Midway | Luxury | weak | 3 | 0 |
 | Kamas | Airbnb/VRBO | weak | 9 | 0 |
 | Kamas | Deep cleaning | weak | 9 | 0 |
@@ -32,15 +27,19 @@ Generated: 2026-06-30
 | Canyons Village | Recurring | weak | 3 | 0 |
 | Canyons Village | Move-in/out | weak | 3 | 0 |
 | Canyons Village | Luxury | weak | 2 | 0 |
-| Summit County | Luxury | weak | 2 | 0 |
-| Wasatch County | Airbnb/VRBO | weak | 63 | 0 |
-| Wasatch County | Deep cleaning | weak | 63 | 0 |
-| Wasatch County | Luxury | weak | 6 | 0 |
+| Summit County | Luxury | weak | 2 | 1 |
 
 ## Pages Without Source FAQs
 
-No rows.
+| Route | Type | Title |
+| --- | --- | --- |
+| /gallery/ | gallery | Photo Gallery & Cleaning Portfolio \| Sun Ray Cleaning |
+| /privacy-policy/ | page | Privacy Policy \| Sun Ray Cleaning |
+| /terms-and-conditions/ | page | Terms and Conditions \| Sun Ray Cleaning |
 
 ## Low Incoming Link Routes
 
-No rows.
+| Route | Type | In Links | Title |
+| --- | --- | --- | --- |
+| /privacy-policy/ | page | 1 | Privacy Policy \| Sun Ray Cleaning |
+| /terms-and-conditions/ | page | 1 | Terms and Conditions \| Sun Ray Cleaning |

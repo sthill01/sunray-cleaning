@@ -1,14 +1,14 @@
 # Project State
 
-Last updated: 2026-06-30
+Last updated: 2026-07-02
 
 ## Current Version
 
-SRAAP v0.3: Operational Readiness plus AI recommendations authority foundation.
+SRAAP v0.4: Operational Readiness, AI recommendations foundation, and review authority trust layer.
 
 ## Current Sprint
 
-Production Improvement 8: answer-ready AI recommendation coverage.
+Production Improvement 9: review authority and trust-signal strengthening.
 
 ## Completed This Sprint
 
@@ -62,12 +62,22 @@ Production Improvement 8: answer-ready AI recommendation coverage.
   structured data.
 - Defined Baseline Run 001 in `AI_MONITORING.md` so future AI visibility checks
   have a repeatable prompt set and capture format.
+- Verified the custom domain is serving current production pages with canonical
+  `www.sunray-cleaning.com` URLs and no stale `x-robots-tag` header on priority
+  checks.
+- Strengthened `/reviews/` with additional local trust context, review-theme
+  copy, and four customer-facing review FAQs.
+- Added generated Google-style review marks to the reviews rating badge and
+  summary band while keeping the Trustindex verification language compact.
+- Restored descriptive homepage service-icon alt text so the generated image
+  inventory reports 0 missing alt attributes.
+- Regenerated Repository Intelligence reports for 81 routes.
 
 ## Open Bugs
 
-- The latest `sunray-cleaning-staging` Pages production deployment is correct,
-  but `www.sunray-cleaning.com` is still serving an older cached preview-style
-  artifact at the Cloudflare zone layer. See `BLOCKERS.md`.
+- Cloudflare Managed Content in `robots.txt` still disallows several AI
+  crawlers including GPTBot, ClaudeBot, Google-Extended, CCBot, Bytespider, and
+  Applebot-Extended. See `BLOCKERS.md`.
 
 ## Known Technical Debt
 
@@ -82,9 +92,10 @@ Production Improvement 8: answer-ready AI recommendation coverage.
 
 ## Current Priorities
 
-1. Clear the Cloudflare custom-domain cache/indexability blocker.
-2. Run Baseline Run 001 from `AI_MONITORING.md` after the custom domain serves
-   the current production artifact.
+1. Resolve the Cloudflare Managed Content AI-crawler policy if the business
+   wants major AI crawlers to access the site.
+2. Run Baseline Run 001 from `AI_MONITORING.md` after the crawler policy is
+   confirmed or intentionally left restricted.
 3. Keep production deploys on `npm run build:production` /
    `npm run deploy:production`.
 
@@ -96,16 +107,16 @@ See `BLOCKERS.md`.
 
 - Improve image-backed coverage for priority service-location pairs with
   verified assets and structured gallery metadata.
-- Run and record the first repeatable AI monitoring baseline after production
-  indexability is confirmed.
+- Run and record the first repeatable AI monitoring baseline after AI-crawler
+  policy is confirmed.
 - Review verified asset provenance for the next image-backed coverage pass.
 
 ## AI Authority Score
 
-Current Repository Intelligence heuristic: 90.6 / 100.
+Current Repository Intelligence heuristic: 92.6 / 100.
 
 This is not a ranking claim. It is an internal engineering signal. Strong
-service-location matrix coverage is the weakest measured category at 38%.
+service-location matrix coverage remains the weakest measured category at 54%.
 
 ## Entity Status
 
@@ -114,20 +125,21 @@ Core entities are documented in `AI_STANDARDS.md`. Coverage will be measured in
 
 ## Coverage
 
-- Source routes: 77.
+- Source routes: 81.
 - Generated reports: 19.
 - Thin source pages under 450 words: 0.
 - Public orphan routes detected: 0.
-- Pages without source FAQs: 0.
-- Low incoming public location routes: 0.
-- Structured gallery records: 12.
+- Pages without source FAQs: 3.
+- Low incoming public location routes: 2 legal/support pages.
+- Structured gallery records: 47.
 - Missing generated image alt attributes: 0.
-- Weak service-location coverage cells: 30.
-- Strong service-location matrix coverage: 38%.
+- Weak service-location coverage cells: 22.
+- Strong service-location matrix coverage: 54%.
 - Deer Valley luxury guide incoming links: 4.
 - Jordanelle turnover guide incoming links: 5.
 - AI recommendations page source FAQs: 8.
 - AI recommendations page raw source words: 1,352.
+- Reviews page source FAQs: 4.
 
 ## Documentation Health
 
@@ -136,20 +148,17 @@ updates after every sprint.
 
 ## Sprint Review
 
-1. Greatest value delivered: Sun Ray now has a public AI recommendation summary
-   page connected to sitemap, `llms.txt`, structured data, internal links, and
-   direct answer-ready local match copy for priority recommendation searches;
-   Deer Valley and Canyons Village now also have stronger service-coverage copy
-   and contextual service links; Park City residential and move-cleaning
-   coverage now has verified structured image support; smaller community pages
-   now have service-area hub links; and two under-linked authority articles now
-   have stronger contextual paths from matching location pages.
-2. Unnecessary complexity found: answer-engine support belongs in the existing
-   build pipeline, not a separate static file list; image-backed coverage must
-   be handled through clean structured metadata, not incidental page images.
-3. Automation to add next: convert Baseline Run 001 into a repeatable
-   semi-automated evidence log once account/tool access is available.
-4. Documentation now out of date: analytics/account state still needs external
-   confirmation.
-5. Highest-impact next task: clear the Cloudflare cache blocker, confirm the
-   custom domain is indexable, then run the first AI monitoring baseline.
+1. Greatest value delivered: the reviews page now works as a stronger trust
+   and answer-engine asset with richer local context, customer review FAQs,
+   generated FAQ schema, visible Google-style review marks, and no thin-content
+   technical debt signal.
+2. Unnecessary complexity found: the build pipeline already centralizes review
+   data and schema well enough; the immediate win was improving the source page
+   and generated presentation rather than creating a separate review subsystem.
+3. Automation to add next: make the Google Business Profile review import
+   refreshable once API credentials or an approved export workflow exists.
+4. Documentation now out of date: analytics/account state and Cloudflare
+   AI-crawler policy still need external confirmation.
+5. Highest-impact next task: decide whether to allow major AI crawlers in
+   Cloudflare Managed Content, then run Baseline Run 001 or continue verified
+   image-backed coverage for priority location-service pairs.

@@ -1,16 +1,22 @@
 # Blockers
 
-Last updated: 2026-06-30
+Last updated: 2026-07-02
 
 ## Immediate Blockers
 
-- Cloudflare zone cache for `www.sunray-cleaning.com` is serving an older
-  preview-style artifact with `x-robots-tag: noindex, follow` and preview-domain
-  canonicals even after a successful production Pages deployment. The local
-  Wrangler token can list the zone but does not have permission to purge cache
-  through the Cloudflare API. Product Owner should purge Cloudflare cache for
-  `sunray-cleaning.com` or provide a Cloudflare API token with Zone Cache Purge
-  permission.
+- Cloudflare Managed Content / AI Crawl Control currently writes `robots.txt`
+  rules that disallow several major AI crawlers, including GPTBot, ClaudeBot,
+  Google-Extended, CCBot, Bytespider, and Applebot-Extended. Product Owner
+  should decide whether Sun Ray wants these crawlers allowed for AI authority
+  work, then update the Cloudflare setting or confirm that the restriction is
+  intentional.
+
+## Recently Cleared
+
+- The old custom-domain stale-cache blocker appears cleared. July 2 live probes
+  showed priority pages on `www.sunray-cleaning.com` returning current
+  production pages with canonical `www.sunray-cleaning.com` URLs and no
+  `x-robots-tag` header in the checked responses.
 
 ## External Items To Confirm Later
 
