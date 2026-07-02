@@ -2713,13 +2713,41 @@ p {
     padding: 10px 0;
   }
 
+  .brand {
+    order: 1;
+  }
+
   .brand img {
     width: 118px;
   }
 
+  .header-review-pill {
+    order: 2;
+    display: inline-flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    min-width: 0;
+    max-width: 170px;
+    min-height: 36px;
+    padding: 6px 9px;
+    gap: 6px;
+    font-size: 0.72rem;
+  }
+
+  .header-review-pill span {
+    font-size: 0.62rem;
+    letter-spacing: 0;
+  }
+
+  .header-review-pill small {
+    font-size: 0.66rem;
+  }
+
   .mobile-menu-toggle {
+    order: 3;
     display: inline-flex;
     flex: 0 0 44px;
+    margin-left: 0;
   }
 
   .nav-row > .button {
@@ -2812,6 +2840,21 @@ p {
     min-height: 42px;
     margin-top: 6px;
     padding: 10px 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .brand img {
+    width: 108px;
+  }
+
+  .header-review-pill {
+    max-width: 142px;
+    padding-inline: 8px;
+  }
+
+  .header-review-pill small {
+    display: none;
   }
 }
 
