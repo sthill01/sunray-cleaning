@@ -580,6 +580,7 @@ p {
   border-radius: 16px;
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(8px);
+  overflow: hidden;
 }
 
 .hero-google-mark {
@@ -669,10 +670,13 @@ p {
 .quote-card {
   right: 22px;
   top: 22px;
+  z-index: 4;
   max-width: 300px;
   padding: 18px 20px;
   border: 1px solid var(--stone-100);
   border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
 }
 
 .quote-card strong {
