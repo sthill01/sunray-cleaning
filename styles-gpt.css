@@ -565,26 +565,71 @@ p {
   line-height: 1.35;
 }
 
-.trustindex-review-badge {
-  display: block;
-  min-width: min(100%, 250px);
-  max-width: 340px;
-}
-
-.trustindex-review-badge > * {
-  max-width: 100%;
-}
-
-.trustindex-review-badge noscript span {
-  color: var(--navy);
-  font-weight: 800;
-}
-
 .hero-trustindex-overlay {
   position: absolute;
-  left: 24px;
-  bottom: 24px;
+  left: 22px;
+  bottom: 22px;
   z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(292px, calc(100% - 44px));
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(31, 58, 104, 0.12);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(8px);
+}
+
+.hero-google-mark {
+  display: grid;
+  flex: 0 0 48px;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: #4285f4;
+  background:
+    linear-gradient(90deg, #4285f4 0 25%, #34a853 25% 50%, #fbbc05 50% 75%, #ea4335 75%) bottom / 100% 4px no-repeat,
+    var(--white);
+  border-radius: 999px;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hero-trustindex-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hero-trustindex-copy strong {
+  color: var(--navy);
+  font-family: var(--display);
+  font-size: 0.98rem;
+  line-height: 1.1;
+}
+
+.hero-trustindex-copy small {
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero-trustindex-stars {
+  color: var(--yellow-deep);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.hero-trustindex-stars strong {
+  color: var(--navy);
+  font-size: 0.9rem;
 }
 
 .hero-media,
@@ -622,9 +667,9 @@ p {
 }
 
 .quote-card {
-  right: -14px;
-  bottom: -24px;
-  max-width: 340px;
+  right: 22px;
+  top: 22px;
+  max-width: 300px;
   padding: 18px 20px;
   border: 1px solid var(--stone-100);
   border-radius: 20px;
@@ -2455,8 +2500,9 @@ p {
   }
 
   .quote-card {
-    position: relative;
+    position: static;
     right: auto;
+    top: auto;
     bottom: auto;
     margin-top: 14px;
     max-width: none;
@@ -2465,7 +2511,7 @@ p {
   .hero-trustindex-overlay {
     left: 16px;
     right: 16px;
-    bottom: 16px;
+    bottom: 148px;
     max-width: calc(100% - 32px);
   }
 
