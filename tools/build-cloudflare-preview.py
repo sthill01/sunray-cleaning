@@ -284,6 +284,7 @@ for parent_route, child_routes in LOCATION_CHILD_ROUTES.items():
 PRIORITY_ROUTES = [
     ("/", "Home"),
     *AI_RECOMMENDATION_LINK,
+    ("/reviews/", "Google reviews and customer testimonials"),
     ("/service-areas/", "Service area hubs"),
     ("/gallery/", "Photo gallery and cleaning portfolio"),
     ("/specials/", "Cleaning specials and current offers"),
@@ -375,11 +376,26 @@ def review_count_value() -> int:
     return int(REVIEWS.get("reviewCount", 50))
 
 
+def google_g_svg() -> str:
+    return (
+        '<svg class="google-g" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+        '<path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>'
+        '<path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>'
+        '<path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.84z"/>'
+        '<path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06L5.84 9.9C6.71 7.31 9.14 5.38 12 5.38z"/>'
+        "</svg>"
+    )
+
+
+def google_review_chip(label: str = "Google reviews") -> str:
+    return f'<span class="google-review-chip">{google_g_svg()}<span>{html.escape(label)}</span></span>'
+
+
 def build_header_review_pill() -> str:
     rating = review_rating_value()
     return (
-        f'<a class="header-review-pill" href="#reviews" aria-label="{rating:.1f} Google rating, verified by Trustindex">'
-        f'<span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>'
+        f'<a class="header-review-pill" href="/reviews/" aria-label="{rating:.1f} Google rating, verified by Trustindex">'
+        f'{google_g_svg()}<span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>'
         f'<strong>{rating:.1f}</strong><small>Google</small></a>'
     )
 
@@ -389,7 +405,8 @@ def build_footer_trust_row() -> str:
     count = review_count_value()
     return f"""
 <div class="container footer-trust-row" aria-label="{rating:.1f} Google rating from {count} reviews, verified by Trustindex">
-  <a class="footer-trust-badge" href="#reviews">
+  <a class="footer-trust-badge" href="/reviews/">
+    {google_g_svg()}
     <span class="footer-trust-score">{rating:.1f}</span>
     <span class="footer-trust-copy">
       <strong>Google-rated local cleaning</strong>
@@ -792,7 +809,7 @@ def review_excerpt(text: str, max_chars: int = 230) -> str:
     return html.escape(shortened + "...")
 
 
-def build_reviews_section() -> str:
+def build_reviews_section(full_page: bool = False) -> str:
     source = REVIEWS.get("sourceName", "Google Business Profile")
     rating = float(REVIEWS.get("ratingValue", 5.0))
     count = int(REVIEWS.get("reviewCount", 50))
@@ -815,10 +832,22 @@ def build_reviews_section() -> str:
         if profile_url
         else ""
     )
+    read_all_button = "" if full_page else '<a class="button button-outline review-google-link" href="/reviews/">Read all reviews</a>'
+    quote_button = '<a class="button button-yellow review-google-link" href="/contact/#quote-form" data-open-quote>Get a quote</a>' if full_page else ""
+    section_class = "section section-cream review-proof review-page-proof" if full_page else "section section-cream review-proof"
+    eyebrow = "Google reviews" if full_page else "Customer testimonials"
+    title = "Sun Ray Cleaning Google reviews and customer testimonials." if full_page else "Real Google reviews from Sun Ray Cleaning customers."
+    intro = (
+        "Read approved Google review excerpts from homeowners, hosts, and local customers who trust Sun Ray Cleaning for communication, detail, flexibility, and clean homes across the Wasatch Back."
+        if full_page
+        else "Customers count on Sun Ray Cleaning for dependable service, clear communication, and homes that feel ready to enjoy again."
+    )
+    cards_to_show = featured if full_page else featured[:7]
+    excerpt_length = 520 if full_page else 230
     review_cards = ""
     if featured:
-        for review in featured[:7]:
-            text = review_excerpt(str(review.get("text", "")))
+        for review in cards_to_show:
+            text = review_excerpt(str(review.get("text", "")), max_chars=excerpt_length)
             author = html.escape(str(review.get("author", "Google reviewer")))
             photo = str(review.get("profilePhotoUrl", ""))
             review_rating = review.get("rating", 5)
@@ -835,31 +864,44 @@ def build_reviews_section() -> str:
         <article class="review-proof-card"><h3>Clear communication</h3><p>Customers choose Sun Ray for friendly updates, no-surprise quotes, and cleaning plans that match each home.</p></article>
         <article class="review-proof-card"><h3>Consistent home care</h3><p>From Park City rentals to Heber City and Midway homes, the team focuses on reliable work and thoughtful details.</p></article>
         """
+    page_note = (
+        f'<p class="review-source-note review-page-note">Showing {len(cards_to_show)} approved review excerpts currently stored from {html.escape(str(source))}. Full review-count summary: {count} Google reviews.</p>'
+        if full_page
+        else ""
+    )
     return f"""
-<section id="reviews" class="section section-cream review-proof" aria-labelledby="review-proof-title">
+<section id="reviews" class="{section_class}" aria-labelledby="review-proof-title">
   <div class="container">
     <div class="review-proof-grid">
       <div class="section-head">
-        <p class="eyebrow">Customer testimonials</p>
-        <h2 id="review-proof-title">Real Google reviews from Sun Ray Cleaning customers.</h2>
-        <p>Customers count on Sun Ray Cleaning for dependable service, clear communication, and homes that feel ready to enjoy again.</p>
+        <p class="eyebrow">{eyebrow}</p>
+        <h2 id="review-proof-title">{title}</h2>
+        <p>{intro}</p>
+        {page_note}
       </div>
       <div class="rating-badge" aria-label="{rating:.1f} out of 5 average Google rating from {count} reviews">
+        {google_review_chip()}
         <strong>{rating:.1f}</strong>
         <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <small>{count} Google reviews</small>
       </div>
     </div>
     <div class="review-summary-band" aria-label="{rating:.1f} out of 5 average Google rating from {count} reviews">
-      <div class="rating-inline">
-        <strong>{rating:.1f}</strong>
-        <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <small>({count} Google reviews)</small>
+      <div class="google-rating-lockup">
+        {google_review_chip("Verified Google rating")}
+        <div class="rating-inline">
+          <strong>{rating:.1f}</strong>
+          <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <small>({count} Google reviews)</small>
+        </div>
       </div>
       {profile_button}
+      {read_all_button}
+      {quote_button}
     </div>
     <div class="review-wall-grid">
       <article class="review-summary-card">
+        {google_review_chip("Review highlights")}
         <div class="review-stars" aria-label="{rating:.1f} out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <h3>Review highlights</h3>
         <ul class="review-highlights">{highlight_items}</ul>
@@ -1497,6 +1539,8 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
     content = inject_review_badge_placements(content)
     if route == "/gallery/" and "<!-- SUNRAY_FULL_GALLERY -->" in content:
         content = content.replace("<!-- SUNRAY_FULL_GALLERY -->", build_full_gallery_section(route), 1)
+    if route == "/reviews/" and "<!-- SUNRAY_FULL_REVIEWS -->" in content:
+        content = content.replace("<!-- SUNRAY_FULL_REVIEWS -->", build_reviews_section(full_page=True), 1)
     schema = build_structured_data(content, route)
     content = content.replace("</head>", f"  {schema}\n</head>", 1)
     if "review-proof" not in content and "</main>" in content:

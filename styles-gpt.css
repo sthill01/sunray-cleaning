@@ -343,6 +343,17 @@ p {
   white-space: nowrap;
 }
 
+.google-g {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+}
+
+.header-review-pill .google-g {
+  width: 18px;
+  height: 18px;
+}
+
 .header-review-pill span {
   color: var(--yellow-deep);
   font-size: 0.72rem;
@@ -1463,6 +1474,10 @@ p {
   margin-bottom: 28px;
 }
 
+.review-proof {
+  scroll-margin-top: 150px;
+}
+
 .review-proof-grid .section-head {
   margin-bottom: 0;
 }
@@ -1478,6 +1493,38 @@ p {
   border-radius: var(--radius-md);
   background: var(--white);
   box-shadow: var(--shadow-soft);
+}
+
+.google-review-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 7px 11px;
+  color: var(--navy);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(31, 58, 104, 0.12);
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(31, 58, 104, 0.08);
+  font-family: var(--display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.google-review-chip span {
+  color: var(--navy);
+  font-size: inherit;
+  letter-spacing: 0;
+}
+
+.google-rating-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 .rating-inline {
@@ -1536,6 +1583,12 @@ p {
   color: var(--yellow-deep);
   font-size: 1.25rem;
   letter-spacing: 0.08em;
+}
+
+.rating-badge .google-review-chip span {
+  color: var(--navy);
+  font-size: inherit;
+  letter-spacing: 0;
 }
 
 .rating-badge small {
@@ -1662,6 +1715,18 @@ p {
   background: var(--cream);
 }
 
+.review-page-proof .review-proof-grid {
+  align-items: start;
+}
+
+.review-page-proof .review-card-stack {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.review-page-note {
+  max-width: 720px;
+}
+
 .job-photo-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1710,6 +1775,14 @@ p {
   max-width: 680px;
   margin-inline: auto;
   color: var(--navy-soft);
+}
+
+.section-navy.cta-band p {
+  color: var(--white);
+}
+
+.section-navy.cta-band .eyebrow {
+  color: var(--yellow);
 }
 
 .site-footer {
@@ -1764,9 +1837,17 @@ p {
 .footer-trust-badge {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   color: var(--white);
   text-decoration: none;
+}
+
+.footer-trust-badge .google-g {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--white);
 }
 
 .footer-trust-score {
@@ -2351,6 +2432,10 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .review-page-proof .review-card-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hero-media img,
   .page-hero-media img {
     height: 430px;
@@ -2452,6 +2537,10 @@ p {
   .field-grid,
   .photo-grid,
   .review-card-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .review-page-proof .review-card-stack {
     grid-template-columns: 1fr;
   }
 
