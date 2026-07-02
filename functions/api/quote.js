@@ -1,63 +1,72 @@
+const SUCCESS_MESSAGE =
+  "Thanks. Sun Ray has your cleaning details and will follow up using the contact information you shared.";
+const FORWARDING_ERROR_MESSAGE =
+  "Something went wrong while forwarding your request. Please call or text (801) 604-2189 and we will help right away.";
+
 export async function onRequestPost(context) {
   const wantsJson = context.request.headers.get("accept")?.includes("application/json");
-  const quote = await parseQuoteRequest(context.request);
-  const payload = {
-    ...quote,
-    submittedAt: new Date().toISOString(),
-    source: "sunray-cloudflare-pages",
-    pageUrl: context.request.headers.get("referer") || "",
-  };
+  let quote;
 
-  if (context.env.SUNRAY_QUOTE_WEBHOOK_URL) {
-    const webhookResponse = await fetch(context.env.SUNRAY_QUOTE_WEBHOOK_URL, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(payload),
+  try {
+    quote = await parseQuoteRequest(context.request);
+  } catch (error) {
+    console.warn("Sun Ray quote parse failed", error?.message || error);
+    return quoteResponse({
+      wantsJson,
+      status: 400,
+      ok: false,
+      title: "Quote request is missing details",
+      message:
+        "Please check the form details and try again, or call or text (801) 604-2189 and we will help right away.",
     });
+  }
 
-    if (!webhookResponse.ok) {
-      return quoteResponse({
-        wantsJson,
-        status: 502,
-        ok: false,
-        title: "Quote request could not be forwarded",
-        message:
-          "Something went wrong while forwarding your request. Please call or text (801) 604-2189 and we will help right away.",
-      });
-    }
+  const spamCheck = await evaluateQuoteRequest(context.request, context.env, quote);
+  if (!spamCheck.ok) {
+    console.warn("Sun Ray quote blocked", {
+      reasons: spamCheck.reasons,
+      score: spamCheck.score,
+      ip: getClientIp(context.request) ? "present" : "missing",
+    });
 
     return quoteResponse({
       wantsJson,
       status: 200,
       ok: true,
       title: "Quote request received",
-      message:
-        "Thanks. Sun Ray has your cleaning details and will follow up using the contact information you shared.",
+      message: SUCCESS_MESSAGE,
+      trackConversion: false,
     });
   }
 
-  if (!context.env.RESEND_API_KEY) {
+  const cleanQuote = cleanQuotePayload(quote);
+  const payload = {
+    ...cleanQuote,
+    submittedAt: new Date().toISOString(),
+    source: "sunray-cloudflare-pages",
+    pageUrl: context.request.headers.get("referer") || "",
+  };
+
+  const delivery = await deliverQuote(context.env, payload);
+
+  if (delivery.missingConfig) {
     return quoteResponse({
       wantsJson,
       status: 503,
       ok: false,
       title: "Quote forwarding is not configured yet",
       message:
-        "This form is ready, but email forwarding needs RESEND_API_KEY or SUNRAY_QUOTE_WEBHOOK_URL in Cloudflare Pages. Please call or text (801) 604-2189 for live scheduling.",
+        "This form is ready, but quote forwarding needs RESEND_API_KEY, SUNRAY_QUOTE_WEBHOOK_URL, or SUNRAY_QUOTE_SHEETS_WEBHOOK_URL in Cloudflare Pages. Please call or text (801) 604-2189 for live scheduling.",
     });
   }
 
-  const emailResponse = await sendQuoteEmail(context.env, payload);
-
-  if (!emailResponse.ok) {
-    console.error("Sun Ray quote email failed", emailResponse.status, await safeResponseText(emailResponse));
+  if (!delivery.ok) {
     return quoteResponse({
       wantsJson,
       status: 502,
       ok: false,
       title: "Quote request could not be forwarded",
-      message:
-        "Something went wrong while forwarding your request. Please call or text (801) 604-2189 and we will help right away.",
+      message: FORWARDING_ERROR_MESSAGE,
     });
   }
 
@@ -66,8 +75,7 @@ export async function onRequestPost(context) {
     status: 200,
     ok: true,
     title: "Quote request received",
-    message:
-      "Thanks. Sun Ray has your cleaning details and will follow up using the contact information you shared.",
+    message: SUCCESS_MESSAGE,
   });
 }
 
@@ -75,12 +83,13 @@ export async function onRequestGet(context) {
   return Response.redirect(new URL("/", context.request.url).toString(), 302);
 }
 
-function quoteResponse({ wantsJson, status, ok, title, message }) {
+function quoteResponse({ wantsJson, status, ok, title, message, trackConversion = ok }) {
   if (wantsJson) {
     return Response.json(
       {
         ok,
         message,
+        trackConversion,
       },
       {
         status,
@@ -163,6 +172,314 @@ async function sendQuoteEmail(env, payload) {
   });
 }
 
+async function deliverQuote(env, payload) {
+  const webhookTargets = getWebhookTargets(env);
+  const webhookResults = [];
+  let emailOk = false;
+  let emailConfigured = Boolean(env.RESEND_API_KEY);
+
+  if (emailConfigured) {
+    const emailResponse = await sendQuoteEmail(env, payload);
+    emailOk = emailResponse.ok;
+
+    if (!emailResponse.ok) {
+      console.error("Sun Ray quote email failed", emailResponse.status, await safeResponseText(emailResponse));
+    }
+  }
+
+  for (const target of webhookTargets) {
+    webhookResults.push(await sendQuoteWebhook(target, payload));
+  }
+
+  const webhookOk = webhookResults.some((result) => result.ok);
+  webhookResults
+    .filter((result) => !result.ok)
+    .forEach((result) => {
+      console.error("Sun Ray quote webhook failed", result.name, result.status || "", result.error || "");
+    });
+
+  return {
+    ok: emailOk || webhookOk,
+    missingConfig: !emailConfigured && webhookTargets.length === 0,
+  };
+}
+
+function getWebhookTargets(env) {
+  const seen = new Set();
+  return [
+    { name: "SUNRAY_QUOTE_WEBHOOK_URL", url: env.SUNRAY_QUOTE_WEBHOOK_URL },
+    { name: "SUNRAY_QUOTE_SHEETS_WEBHOOK_URL", url: env.SUNRAY_QUOTE_SHEETS_WEBHOOK_URL },
+  ].filter((target) => {
+    const url = String(target.url || "").trim();
+    if (!url || seen.has(url)) return false;
+    seen.add(url);
+    target.url = url;
+    return true;
+  });
+}
+
+async function sendQuoteWebhook(target, payload) {
+  try {
+    const response = await fetch(target.url, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    return response.ok
+      ? { ok: true, name: target.name, status: response.status }
+      : { ok: false, name: target.name, status: response.status, error: await safeResponseText(response) };
+  } catch (error) {
+    return { ok: false, name: target.name, error: error?.message || String(error) };
+  }
+}
+
+async function evaluateQuoteRequest(request, env, quote) {
+  const reasons = [];
+  let score = 0;
+
+  if (hasFilledHoneypot(quote)) {
+    return { ok: false, score: 10, reasons: ["honeypot"] };
+  }
+
+  if (!hasTrustedReferer(request)) {
+    score += 2;
+    reasons.push("untrusted_referer");
+  }
+
+  const turnstile = await verifyTurnstileIfConfigured(request, env, quote);
+  if (!turnstile.ok) {
+    return { ok: false, score: 10, reasons: [turnstile.reason] };
+  }
+
+  const rateLimit = await checkRateLimit(request, env);
+  if (!rateLimit.ok) {
+    return { ok: false, score: 10, reasons: [rateLimit.reason] };
+  }
+
+  const content = scoreQuoteContent(quote);
+  score += content.score;
+  reasons.push(...content.reasons);
+
+  return {
+    ok: score < 4,
+    score,
+    reasons,
+  };
+}
+
+function cleanQuotePayload(quote) {
+  const internalFields = new Set([
+    "_gotcha",
+    "bot-field",
+    "business-url",
+    "cf-turnstile-response",
+    "company-website",
+    "form-started-at",
+    "submission-elapsed-ms",
+    "turnstileToken",
+    "url",
+    "website",
+  ]);
+
+  return Object.fromEntries(Object.entries(quote).filter(([key]) => !internalFields.has(key)));
+}
+
+function hasFilledHoneypot(quote) {
+  return ["_gotcha", "bot-field", "business-url", "company-website", "url", "website"].some((key) =>
+    String(quote[key] || "").trim(),
+  );
+}
+
+function hasTrustedReferer(request) {
+  const referer = request.headers.get("referer") || "";
+  if (!referer) return true;
+
+  try {
+    const hostname = new URL(referer).hostname.toLowerCase();
+    return (
+      hostname === "sunray-cleaning.com" ||
+      hostname === "www.sunray-cleaning.com" ||
+      hostname.endsWith(".pages.dev") ||
+      hostname === "localhost" ||
+      hostname === "127.0.0.1"
+    );
+  } catch {
+    return false;
+  }
+}
+
+async function verifyTurnstileIfConfigured(request, env, quote) {
+  if (!env.TURNSTILE_SECRET_KEY) {
+    return { ok: true };
+  }
+
+  const token = String(quote["cf-turnstile-response"] || quote.turnstileToken || "").trim();
+  if (!token) {
+    return { ok: false, reason: "missing_turnstile" };
+  }
+
+  const formData = new FormData();
+  formData.append("secret", env.TURNSTILE_SECRET_KEY);
+  formData.append("response", token);
+
+  const clientIp = getClientIp(request);
+  if (clientIp) {
+    formData.append("remoteip", clientIp);
+  }
+
+  try {
+    const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: formData,
+    });
+    const result = await response.json();
+    return result.success ? { ok: true } : { ok: false, reason: "failed_turnstile" };
+  } catch (error) {
+    console.error("Sun Ray Turnstile verification failed", error?.message || error);
+    return { ok: false, reason: "turnstile_error" };
+  }
+}
+
+async function checkRateLimit(request, env) {
+  const store = env.SUNRAY_QUOTE_RATE_LIMIT;
+  if (!store || typeof store.get !== "function" || typeof store.put !== "function") {
+    return { ok: true };
+  }
+
+  const clientIp = getClientIp(request);
+  if (!clientIp) {
+    return { ok: true };
+  }
+
+  const bucket = Math.floor(Date.now() / 3600000);
+  const key = `quote:${bucket}:${await sha256(clientIp)}`;
+  const current = Number.parseInt((await store.get(key)) || "0", 10);
+
+  if (current >= 3) {
+    return { ok: false, reason: "rate_limited" };
+  }
+
+  await store.put(key, String(current + 1), { expirationTtl: 7200 });
+  return { ok: true };
+}
+
+function getClientIp(request) {
+  return request.headers.get("cf-connecting-ip") || request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "";
+}
+
+async function sha256(value) {
+  const input = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", input);
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("")
+    .slice(0, 24);
+}
+
+function scoreQuoteContent(quote) {
+  const reasons = [];
+  let score = 0;
+  const serviceArea = normalizedValue(quote["service-area"] || quote.city || quote.location);
+  const notes = normalizedValue(quote.notes || quote.message);
+  const homeSize = normalizedValue(quote["home-size"]);
+  const combinedText = normalizedValue(Object.values(quote).join(" "));
+  const marketingHits = [
+    "ai visibility",
+    "backlink",
+    "digital marketing",
+    "guest post",
+    "hire seo geek",
+    "lead generation",
+    "more leads",
+    "quick seo questionnaire",
+    "rank higher",
+    "sales",
+    "search traffic",
+    "seo",
+    "supersupportstaff",
+    "traffic growth",
+    "visibility and targeting",
+  ].filter((term) => combinedText.includes(term));
+
+  if (hasUrl(notes) || hasUrl(homeSize) || hasUrl(serviceArea)) {
+    score += 4;
+    reasons.push("url_in_quote");
+  }
+
+  if (marketingHits.length >= 2) {
+    score += 4;
+    reasons.push("marketing_pitch");
+  } else if (marketingHits.length === 1) {
+    score += 1;
+    reasons.push("marketing_keyword");
+  }
+
+  if (serviceArea && !isLikelyServiceArea(serviceArea) && (marketingHits.length || hasUrl(notes))) {
+    score += 2;
+    reasons.push("non_local_marketing");
+  }
+
+  if (notes.length > 1200) {
+    score += 1;
+    reasons.push("long_notes");
+  }
+
+  const elapsedMs = Number.parseInt(String(quote["submission-elapsed-ms"] || ""), 10);
+  if (Number.isFinite(elapsedMs) && elapsedMs > 0 && elapsedMs < 2000) {
+    score += 2;
+    reasons.push("fast_submit");
+  }
+
+  const email = String(quote.email || "").trim();
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    score += 2;
+    reasons.push("invalid_email");
+  }
+
+  const phoneDigits = String(quote.phone || "").replace(/\D/g, "");
+  if (phoneDigits && phoneDigits.length < 7) {
+    score += 1;
+    reasons.push("short_phone");
+  }
+
+  return { score, reasons };
+}
+
+function normalizedValue(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function hasUrl(value) {
+  return /https?:\/\/|www\.|[a-z0-9-]+\.(com|net|org|io|co|biz|info|ru|cn|xyz|top|site|online|click|link|me)(\/|\b)/i.test(
+    value,
+  );
+}
+
+function isLikelyServiceArea(value) {
+  return [
+    "canyons",
+    "coalville",
+    "deer valley",
+    "heber",
+    "hideout",
+    "jordanelle",
+    "kamas",
+    "kimball junction",
+    "midway",
+    "oakley",
+    "park city",
+    "salt lake",
+    "snyderville",
+    "summit",
+    "utah",
+    "wasatch",
+  ].some((area) => value.includes(area));
+}
+
 function buildSubject(payload) {
   const area = payload["service-area"] || payload.city || payload.location || "";
   const service = payload["service-type"] || payload.service || "Quote request";
@@ -181,6 +498,23 @@ function buildEmailBody(payload) {
     "preferred-timing": "Preferred timing",
     notes: "Notes",
     message: "Message",
+    gclid: "GCLID",
+    gbraid: "GBRAID",
+    wbraid: "WBRAID",
+    msclkid: "Microsoft Click ID",
+    fbclid: "Facebook Click ID",
+    ttclid: "TikTok Click ID",
+    li_fat_id: "LinkedIn Click ID",
+    utm_source: "UTM source",
+    utm_medium: "UTM medium",
+    utm_campaign: "UTM campaign",
+    utm_term: "UTM term",
+    utm_content: "UTM content",
+    utm_id: "UTM ID",
+    first_landing_page: "First landing page",
+    landing_page: "Landing page",
+    referrer: "Referrer",
+    attribution_updated_at: "Attribution updated at",
     pageUrl: "Page URL",
     submittedAt: "Submitted at",
   };
