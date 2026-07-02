@@ -589,15 +589,15 @@ p {
   place-items: center;
   width: 48px;
   height: 48px;
-  color: #4285f4;
-  background:
-    linear-gradient(90deg, #4285f4 0 25%, #34a853 25% 50%, #fbbc05 50% 75%, #ea4335 75%) bottom / 100% 4px no-repeat,
-    var(--white);
+  background: var(--white);
   border-radius: 999px;
-  font-family: Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: 800;
   line-height: 1;
+}
+
+.hero-google-icon {
+  display: block;
+  width: 34px;
+  height: 34px;
 }
 
 .hero-trustindex-copy {
