@@ -343,17 +343,6 @@ p {
   white-space: nowrap;
 }
 
-.google-g {
-  flex: 0 0 auto;
-  width: 22px;
-  height: 22px;
-}
-
-.header-review-pill .google-g {
-  width: 18px;
-  height: 18px;
-}
-
 .header-review-pill span {
   color: var(--yellow-deep);
   font-size: 0.72rem;
@@ -1495,38 +1484,6 @@ p {
   box-shadow: var(--shadow-soft);
 }
 
-.google-review-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  padding: 7px 11px;
-  color: var(--navy);
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(31, 58, 104, 0.12);
-  border-radius: 999px;
-  box-shadow: 0 8px 22px rgba(31, 58, 104, 0.08);
-  font-family: var(--display);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 1;
-}
-
-.google-review-chip span {
-  color: var(--navy);
-  font-size: inherit;
-  letter-spacing: 0;
-}
-
-.google-rating-lockup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
 .rating-inline {
   display: flex;
   align-items: center;
@@ -1583,12 +1540,6 @@ p {
   color: var(--yellow-deep);
   font-size: 1.25rem;
   letter-spacing: 0.08em;
-}
-
-.rating-badge .google-review-chip span {
-  color: var(--navy);
-  font-size: inherit;
-  letter-spacing: 0;
 }
 
 .rating-badge small {
@@ -1840,14 +1791,6 @@ p {
   gap: 12px;
   color: var(--white);
   text-decoration: none;
-}
-
-.footer-trust-badge .google-g {
-  width: 24px;
-  height: 24px;
-  padding: 4px;
-  border-radius: 999px;
-  background: var(--white);
 }
 
 .footer-trust-score {
