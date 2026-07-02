@@ -18,6 +18,7 @@ Cloudflare Pages settings:
 - Preview project name: `sunray-cleaning-preview`
 - Quote form webhook variable: `SUNRAY_QUOTE_WEBHOOK_URL`
 - Optional Google Sheets export webhook variable: `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
+- Optional filtered-spam audit webhook variable: `SUNRAY_QUOTE_SPAM_WEBHOOK_URL`
 
 The generated preview intentionally uses `noindex` headers and robots rules until it is promoted from preview to production.
 
@@ -36,6 +37,7 @@ Production Cloudflare Pages settings:
 - Production canonical base URL: `https://www.sunray-cleaning.com`
 - Required environment variable for quote forwarding: `RESEND_API_KEY`, `SUNRAY_QUOTE_WEBHOOK_URL`, or `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
 - Optional Google Sheets export webhook variable: `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
+- Optional filtered-spam audit webhook variable: `SUNRAY_QUOTE_SPAM_WEBHOOK_URL`
 - Google Tag Manager container: `GTM-W78H8S3C`
 
 The production build sets crawlable robots metadata, removes the preview `X-Robots-Tag: noindex` header, writes a crawlable `robots.txt`, and generates sitemap/canonical URLs for `https://www.sunray-cleaning.com`. Attach `www.sunray-cleaning.com` as the primary Cloudflare Pages custom domain and redirect `sunray-cleaning.com` to `www.sunray-cleaning.com`.
@@ -47,12 +49,15 @@ Cloudflare preview forms post to `/api/quote`. The form forwards valid submissio
 - `RESEND_API_KEY` sends the quote notification email.
 - `SUNRAY_QUOTE_WEBHOOK_URL` sends the full JSON payload to CRM or automation.
 - `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` sends the same JSON payload to the Google Sheets lead log webhook.
+- `SUNRAY_QUOTE_SPAM_WEBHOOK_URL` sends filtered spam to an audit webhook without emailing, notifying sales, or firing conversion tracking.
 
 Webhook delivery is additive, so a Sheets export can run alongside inbox notifications.
 
 If all delivery paths are missing or unavailable, the form shows an error and keeps the phone/SMS fallback visible: `(801) 604-2189`.
 
 The runtime quote script captures `gclid`, `gbraid`, `wbraid`, `msclkid`, `fbclid`, `ttclid`, `li_fat_id`, UTM fields, landing page, first landing page and referrer into hidden form fields. The Google Sheets Apps Script template lives at `integrations/google-sheets-lead-webhook.gs`; paste it into the Apps Script editor for the lead log spreadsheet, deploy it as a web app, and save the deployment URL as `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` in Cloudflare.
+
+Filtered spam is blocked from normal delivery but can be audited. Paste the updated Apps Script template, redeploy the Apps Script web app, then save the same `/exec` URL as `SUNRAY_QUOTE_SPAM_WEBHOOK_URL` in Cloudflare. The script routes normal leads to `Leads` and filtered spam to `Filtered Spam` with score, reasons and a review note.
 
 ## Google Tag Manager conversion tracking
 

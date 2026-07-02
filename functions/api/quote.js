@@ -23,6 +23,15 @@ export async function onRequestPost(context) {
 
   const spamCheck = await evaluateQuoteRequest(context.request, context.env, quote);
   if (!spamCheck.ok) {
+    const spamAudit = await deliverSpamAudit(
+      context.env,
+      buildSpamAuditPayload(quote, context.request, "sunray-cloudflare-pages", spamCheck),
+    );
+
+    if (!spamAudit.ok && !spamAudit.missingConfig) {
+      console.error("Sun Ray spam audit delivery failed");
+    }
+
     console.warn("Sun Ray quote blocked", {
       reasons: spamCheck.reasons,
       score: spamCheck.score,
@@ -39,13 +48,7 @@ export async function onRequestPost(context) {
     });
   }
 
-  const cleanQuote = cleanQuotePayload(quote);
-  const payload = {
-    ...cleanQuote,
-    submittedAt: new Date().toISOString(),
-    source: "sunray-cloudflare-pages",
-    pageUrl: context.request.headers.get("referer") || "",
-  };
+  const payload = buildQuotePayload(quote, context.request, "sunray-cloudflare-pages");
 
   const delivery = await deliverQuote(context.env, payload);
 
@@ -204,6 +207,38 @@ async function deliverQuote(env, payload) {
   };
 }
 
+async function deliverSpamAudit(env, payload) {
+  const webhookTargets = getSpamAuditTargets(env);
+  const webhookResults = [];
+
+  for (const target of webhookTargets) {
+    webhookResults.push(await sendQuoteWebhook(target, payload));
+  }
+
+  const webhookOk = webhookResults.some((result) => result.ok);
+  webhookResults
+    .filter((result) => !result.ok)
+    .forEach((result) => {
+      console.error("Sun Ray spam audit webhook failed", result.name, result.status || "", result.error || "");
+    });
+
+  return {
+    ok: webhookOk,
+    missingConfig: webhookTargets.length === 0,
+  };
+}
+
+function getSpamAuditTargets(env) {
+  const seen = new Set();
+  return [{ name: "SUNRAY_QUOTE_SPAM_WEBHOOK_URL", url: env.SUNRAY_QUOTE_SPAM_WEBHOOK_URL }].filter((target) => {
+    const url = String(target.url || "").trim();
+    if (!url || seen.has(url)) return false;
+    seen.add(url);
+    target.url = url;
+    return true;
+  });
+}
+
 function getWebhookTargets(env) {
   const seen = new Set();
   return [
@@ -283,6 +318,26 @@ function cleanQuotePayload(quote) {
   ]);
 
   return Object.fromEntries(Object.entries(quote).filter(([key]) => !internalFields.has(key)));
+}
+
+function buildQuotePayload(quote, request, source) {
+  return {
+    ...cleanQuotePayload(quote),
+    submittedAt: new Date().toISOString(),
+    source,
+    pageUrl: request.headers.get("referer") || "",
+  };
+}
+
+function buildSpamAuditPayload(quote, request, source, spamCheck) {
+  return {
+    ...buildQuotePayload(quote, request, source),
+    filteredAsSpam: true,
+    spamStatus: "Filtered before email or conversion tracking",
+    spamScore: spamCheck.score,
+    spamReasons: spamCheck.reasons.join(", "),
+    spamReviewNote: "Review this row before treating it as confirmed spam.",
+  };
 }
 
 function hasFilledHoneypot(quote) {
