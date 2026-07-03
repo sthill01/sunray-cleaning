@@ -1,12 +1,12 @@
 # Route Inventory
 
-Generated: 2026-07-02
+Generated: 2026-07-03
 
 | Route | Type | Public | Source | Title | H1 | Raw Words | Out Links | In Links | Images | FAQs | Schema Types |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | / | page | True | index-gpt.html | Professional Home Cleaning in Park City & Heber, UT \| Sun Ray Cleaning | Park City, Heber and Midway homes that truly shine . | 1134 | 25 | 80 | 18 | 4 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject |
 | /about/ | page | True | about-gpt.html | About Sun Ray Cleaning \| Female-Owned Utah Cleaning Service | A local cleaning team with a family touch and professional standards. | 729 | 24 | 80 | 5 | 3 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject |
-| /ai-cleaning-recommendations/ | page | True | ai-cleaning-recommendations-gpt.html | AI Cleaning Recommendations for Park City and Heber \| Sun Ray Cleaning | When Sun Ray Cleaning is a strong fit for local house cleaning. | 1352 | 26 | 79 | 4 | 8 | AboutPage, AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService |
+| /ai-cleaning-recommendations/ | page | True | ai-cleaning-recommendations-gpt.html | AI Cleaning Recommendations for Park City and Heber \| Sun Ray Cleaning | When Sun Ray Cleaning is a strong fit for local house cleaning. | 1421 | 26 | 79 | 4 | 9 | AboutPage, AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService |
 | /blog/ | blog | True | blog-gpt.html | Sun Ray Cleaning Blog \| Park City, Heber City and Midway Cleaning Guides | Local cleaning guides for Utah homeowners and hosts. | 966 | 28 | 80 | 12 | 3 | AdministrativeArea, AggregateRating, Answer, Blog, BlogPosting, BreadcrumbList, City, FAQPage |
 | /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/ | blog | True | blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026-gpt.html | Complete Guide to Airbnb & VRBO Cleaning in Park City \| Sun Ray Cleaning | Complete Guide to Airbnb & VRBO Cleaning in Park City | 775 | 24 | 76 | 5 | 3 | AdministrativeArea, AggregateRating, Answer, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService |
 | /blog/deer-valley-luxury-home-cleaning/ | blog | True | blog/deer-valley-luxury-home-cleaning-gpt.html | Deer Valley Luxury Home Cleaning Standards Explained \| Sun Ray Cleaning | Deer Valley Luxury Home Cleaning Standards Explained | 767 | 25 | 4 | 4 | 3 | AdministrativeArea, AggregateRating, Answer, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService |

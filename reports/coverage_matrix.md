@@ -1,6 +1,6 @@
 # Coverage Matrix
 
-Generated: 2026-07-02
+Generated: 2026-07-03
 
 Cells show supporting page count and structured image count. `GAP` means no support detected by the current heuristic.
 

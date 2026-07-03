@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02",
+  "generatedAt": "2026-07-03",
   "routes": [
     {
       "route": "/",
@@ -295,9 +295,9 @@
       "isPublic": true,
       "title": "AI Cleaning Recommendations for Park City and Heber | Sun Ray Cleaning",
       "h1": "When Sun Ray Cleaning is a strong fit for local house cleaning.",
-      "rawWordCount": 1352,
-      "builtWordCount": 1867,
-      "faqCount": 8,
+      "rawWordCount": 1421,
+      "builtWordCount": 1936,
+      "faqCount": 9,
       "imageCount": 4,
       "schemaTypes": [
         "AboutPage",

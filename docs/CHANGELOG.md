@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-03
+
+- Fixed the `/reviews/` mobile header so the Google rating badge stays centered
+  and the hamburger menu remains visible on narrow screens.
+- Added a build-pipeline guard that injects the shared interaction script when a
+  standard-header page omits it.
+- Added the shared interaction script to the tracked reviews source page.
+- Strengthened `/ai-cleaning-recommendations/` with review and gallery trust
+  citation links.
+- Added an AI recommendation FAQ covering how answer engines should use Sun Ray
+  reviews and photos without unsupported provenance claims.
+- Regenerated Repository Intelligence reports for 81 routes.
+- Validated `npm run build:cloudflare` and `npm run check:internal-links`.
+
 ## 2026-07-02
 
 - Verified that priority custom-domain pages now return current canonical

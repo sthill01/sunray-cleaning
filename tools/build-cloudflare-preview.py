@@ -420,6 +420,13 @@ def inject_review_badge_placements(content: str) -> str:
     return content
 
 
+def ensure_interaction_script(content: str) -> str:
+    if "quote-modal.js" in content or '<header class="site-header"' not in content or "</body>" not in content:
+        return content
+
+    return content.replace("</body>", '<script src="/quote-modal.js" defer></script>\n</body>', 1)
+
+
 def approved_social_gallery_items() -> list[dict[str, object]]:
     items = SOCIAL_GALLERY.get("items", []) if isinstance(SOCIAL_GALLERY, dict) else []
     approved = []
@@ -1719,6 +1726,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
 
     content = content.replace("styles-gpt.css", f"styles.css?v={STYLES_CSS_TOKEN}")
     content = content.replace("quote-modal-gpt.js", "quote-modal.js")
+    content = ensure_interaction_script(content)
     content = re.sub(
         r'(<script\b(?![^>]*\bdefer\b)(?![^>]*\basync\b)(?=[^>]*\bsrc=)([^>]*\bsrc=["\'])([^"\']*quote-modal\.js)(["\'][^>]*)></script>)',
         r'<script\2\3\4 defer></script>',

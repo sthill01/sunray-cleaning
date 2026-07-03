@@ -1,14 +1,14 @@
 # Project State
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 ## Current Version
 
-SRAAP v0.4: Operational Readiness, AI recommendations foundation, and review authority trust layer.
+SRAAP v0.4: Operational Readiness, AI recommendations foundation, review authority, and mobile trust navigation.
 
 ## Current Sprint
 
-Production Improvement 9: review authority and trust-signal strengthening.
+Production Improvement 10: mobile trust navigation and AI citation-path strengthening.
 
 ## Completed This Sprint
 
@@ -72,6 +72,16 @@ Production Improvement 9: review authority and trust-signal strengthening.
 - Restored descriptive homepage service-icon alt text so the generated image
   inventory reports 0 missing alt attributes.
 - Regenerated Repository Intelligence reports for 81 routes.
+- Fixed the `/reviews/` mobile header so the Google rating badge sits in the
+  center slot and the hamburger menu remains visible on narrow screens.
+- Added a build-pipeline guard that injects the shared interaction script on
+  standard-header pages that are missing it, preventing source-page omissions
+  from disabling mobile navigation.
+- Added the shared interaction script to the tracked reviews source page.
+- Strengthened `/ai-cleaning-recommendations/` by linking its trust citation
+  paths to `/reviews/` and `/gallery/`.
+- Added an AI recommendation FAQ explaining how answer engines should use Sun
+  Ray reviews and photo proof without overstating unsupported provenance.
 
 ## Open Bugs
 
@@ -137,8 +147,8 @@ Core entities are documented in `AI_STANDARDS.md`. Coverage will be measured in
 - Strong service-location matrix coverage: 54%.
 - Deer Valley luxury guide incoming links: 4.
 - Jordanelle turnover guide incoming links: 5.
-- AI recommendations page source FAQs: 8.
-- AI recommendations page raw source words: 1,352.
+- AI recommendations page source FAQs: 9.
+- AI recommendations page raw source words: 1,421.
 - Reviews page source FAQs: 4.
 
 ## Documentation Health
@@ -148,17 +158,17 @@ updates after every sprint.
 
 ## Sprint Review
 
-1. Greatest value delivered: the reviews page now works as a stronger trust
-   and answer-engine asset with richer local context, customer review FAQs,
-   generated FAQ schema, visible Google-style review marks, and no thin-content
-   technical debt signal.
-2. Unnecessary complexity found: the build pipeline already centralizes review
-   data and schema well enough; the immediate win was improving the source page
-   and generated presentation rather than creating a separate review subsystem.
-3. Automation to add next: make the Google Business Profile review import
-   refreshable once API credentials or an approved export workflow exists.
+1. Greatest value delivered: the reviews-page mobile trust badge now preserves
+   the hamburger menu, and the AI recommendations page now points answer engines
+   to the strongest trust assets: reviews and gallery proof.
+2. Unnecessary complexity found: the immediate bug was caused by a missing
+   shared interaction script on one source page, so a small build guard was
+   better than duplicating header markup across pages.
+3. Automation to add next: decide whether the untracked `gallery-gpt.html`
+   should become an official tracked source page before closing the gallery FAQ
+   gap.
 4. Documentation now out of date: analytics/account state and Cloudflare
    AI-crawler policy still need external confirmation.
-5. Highest-impact next task: decide whether to allow major AI crawlers in
-   Cloudflare Managed Content, then run Baseline Run 001 or continue verified
-   image-backed coverage for priority location-service pairs.
+5. Highest-impact next task: resolve the Cloudflare AI-crawler policy, then
+   either run Baseline Run 001 or intentionally officialize the gallery source
+   page and add portfolio FAQs.

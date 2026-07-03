@@ -1,6 +1,6 @@
 # Entity Inventory
 
-Generated: 2026-07-02
+Generated: 2026-07-03
 
 | Entity | Pages | Images | FAQ Pages | Sample Routes |
 | --- | --- | --- | --- | --- |

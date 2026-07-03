@@ -1,6 +1,6 @@
 # Structured Data Report
 
-Generated: 2026-07-02
+Generated: 2026-07-03
 
 Every generated public route should include JSON-LD from the build pipeline.
 

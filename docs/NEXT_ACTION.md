@@ -1,6 +1,6 @@
 # Next Action
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 ## Immediate Next Step
 
@@ -23,12 +23,14 @@ Recommended next task:
    policy is confirmed.
 5. Record Sun Ray mentions, competitors, citations, missing facts, and follow-up
    work without claiming ranking improvement until outputs are logged.
-6. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
+6. Decide whether the currently untracked `gallery-gpt.html` should become an
+   official tracked source page before closing the `/gallery/` FAQ gap.
+7. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
    tracked assets before the next image-backed coverage pass.
-7. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
+8. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
    gaps only where the source asset and metadata honestly support the location
    and service.
-8. Run `npm run reports:generate`, `npm run build:cloudflare`, and
+9. Run `npm run reports:generate`, `npm run build:cloudflare`, and
    `npm run check:internal-links`.
 
 ## Session Startup Protocol
@@ -75,3 +77,11 @@ luxury, and move-out cleaning prompts, and it now has 8 source FAQs.
 The reviews page now includes stronger local trust copy, four source FAQs,
 generated FAQPage schema, visible Google-style review marks, and no thin-content
 technical debt signal.
+
+The reviews-page mobile header now keeps the Google rating badge centered and
+the hamburger menu visible. The build pipeline now injects the shared
+interaction script when a standard-header page omits it.
+
+The AI recommendations page now links answer engines to both the reviews page
+and photo gallery as trust citation paths, and it has 9 source FAQs including
+guidance for using reviews and photos without unsupported provenance claims.
