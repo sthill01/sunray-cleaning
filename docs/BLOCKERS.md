@@ -4,12 +4,6 @@ Last updated: 2026-07-03
 
 ## Immediate Blockers
 
-- Cloudflare Managed Content / AI Crawl Control currently writes `robots.txt`
-  rules that disallow several major AI crawlers, including GPTBot, ClaudeBot,
-  Google-Extended, CCBot, Bytespider, and Applebot-Extended. Product Owner
-  should decide whether Sun Ray wants these crawlers allowed for AI authority
-  work, then update the Cloudflare setting or confirm that the restriction is
-  intentional.
 - Turno.com marketplace registration is a high-ROI external task from
   `SEO-90-PLUS-ACTION-PLAN.md`. Product Owner must create or verify the
   business profile. Codex can document and link the profile after the public
@@ -21,6 +15,11 @@ Last updated: 2026-07-03
   showed priority pages on `www.sunray-cleaning.com` returning current
   production pages with canonical `www.sunray-cleaning.com` URLs and no
   `x-robots-tag` header in the checked responses.
+- Cloudflare AI Crawl Control is no longer treated as an immediate blocker.
+  July 3 screenshots showed major AI crawler block toggles off. The 1-hour view
+  showed allowed activity for Claude-SearchBot, ChatGPT-User, Googlebot, and
+  OAI-SearchBot. GPTBot had no requests in the selected window, which should be
+  monitored but is not proof of blocking.
 
 ## External Items To Confirm Later
 
@@ -35,6 +34,8 @@ or measurement work:
 - Final business confirmation of service areas, business hours, and any service
   exclusions.
 - Approval process for sensitive customer-facing claims.
+- Cloudflare AI Crawl Control and live `robots.txt` should be rechecked over
+  24-hour and 7-day windows before recording Baseline Run 001.
 
 ## Rule
 

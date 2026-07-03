@@ -311,6 +311,7 @@ PRIORITY_ROUTES = [
     ("/discounts/", "Cleaning discounts and savings programs"),
     *SERVICE_NAV_ROUTES,
     *MAIN_AREA_ROUTES,
+    ("/airbnb-cleaning-park-city/", "Park City Airbnb cleaning landing page"),
     ("/blog/how-much-does-airbnb-cleaning-cost-park-city/", "Park City Airbnb cleaning costs"),
     ("/blog/what-does-deep-clean-include-room-by-room/", "Room-by-room deep cleaning guide"),
     ("/blog/recurring-vs-deep-cleaning-which-service-need/", "Recurring vs deep cleaning guide"),
@@ -1295,13 +1296,18 @@ def build_structured_data(content: str, route: str) -> str:
     organization_id = absolute_url("/#organization")
     page_id = page_url + "#webpage"
     gallery_items = selected_gallery_items(route)
-    primary_image = (
-        absolute_url("/assets/sunray-hero-living-room-cleaned-no-text.jpg")
-        if route == "/"
-        else absolute_url("/" + str(gallery_items[0].get("asset", "")).lstrip("/"))
-        if gallery_items
-        else absolute_url("/assets/wasatch-county-residential-family-room-cleaning-sun-ray.jpg")
-    )
+    if route == "/airbnb-cleaning-park-city/":
+        primary_image = absolute_url(
+            "/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg"
+        )
+    else:
+        primary_image = (
+            absolute_url("/assets/sunray-hero-living-room-cleaned-no-text.jpg")
+            if route == "/"
+            else absolute_url("/" + str(gallery_items[0].get("asset", "")).lstrip("/"))
+            if gallery_items
+            else absolute_url("/assets/wasatch-county-residential-family-room-cleaning-sun-ray.jpg")
+        )
     page_schema_type: object = ["CollectionPage", "ImageGallery"] if route == "/gallery/" else "WebPage"
     if route == "/ai-cleaning-recommendations/":
         page_schema_type = ["WebPage", "AboutPage"]
@@ -1374,6 +1380,50 @@ def build_structured_data(content: str, route: str) -> str:
                 "areaServed": [{"@type": "Place", "name": area} for area in CORE_AREAS],
                 "description": description,
                 "url": page_url,
+            }
+        )
+    if route == "/airbnb-cleaning-park-city/":
+        graph.append(
+            {
+                "@type": "Service",
+                "@id": page_url + "#park-city-airbnb-cleaning-service",
+                "name": "Park City Airbnb and VRBO turnover cleaning",
+                "serviceType": "Short-term rental turnover cleaning",
+                "provider": {"@id": organization_id},
+                "url": page_url,
+                "description": description,
+                "areaServed": [
+                    {"@type": "Place", "name": area}
+                    for area in [
+                        "Park City UT",
+                        "Old Town Park City UT",
+                        "Deer Valley UT",
+                        "Canyons Village UT",
+                        "Park Meadows UT",
+                        "Prospector UT",
+                        "Kimball Junction UT",
+                        "Snyderville UT",
+                        "Summit County UT",
+                    ]
+                ],
+                "audience": [
+                    {"@type": "Audience", "audienceType": "Park City Airbnb hosts"},
+                    {"@type": "Audience", "audienceType": "Park City VRBO owners"},
+                    {"@type": "Audience", "audienceType": "Short-term rental property managers"},
+                    {"@type": "Audience", "audienceType": "Second-home owners"},
+                ],
+                "offers": {
+                    "@type": "Offer",
+                    "url": page_url,
+                    "priceCurrency": "USD",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "priceCurrency": "USD",
+                        "minPrice": 119,
+                        "description": "Starting planning price; final quote depends on home size, bedrooms, bathrooms, laundry, timing, access, condition, pets, and priorities.",
+                    },
+                },
+                "image": absolute_url("/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg"),
             }
         )
     if route == "/ai-cleaning-recommendations/":

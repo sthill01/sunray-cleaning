@@ -5,26 +5,25 @@ Last updated: 2026-07-03
 ## Immediate Next Step
 
 Continue Phase 2 of `SEO-90-PLUS-ACTION-PLAN.md` with customer-facing
-authority improvements, while keeping Cloudflare AI crawler access as the
-highest-priority external blocker.
+authority improvements. The next production move is the dedicated Park City
+Airbnb cleaning page because it targets high-intent revenue, AI authority, and
+local entity clarity at the same time.
 
 Recommended next task:
 
-1. Validate and deploy the new service pricing-anchor sections on the service
-   hub and core service pages.
-2. Add real Google review proof to the homepage and reviews journey without
+1. Build `/airbnb-cleaning-park-city/` as a dedicated Park City short-term
+   rental cleaning authority page.
+2. Link it from the STR service page, Park City location page, AI
+   recommendations page, and Park City Airbnb cleaning guides.
+3. Include customer-facing proof: pricing context, FAQs, service-area language,
+   review trust, and verified cleaning photos.
+4. Add Service and FAQ structured data through the existing build pipeline.
+5. Add real Google review proof to the homepage and reviews journey without
    bloating the header or hero.
-3. Build the dedicated `/airbnb-cleaning-park-city/` landing page after the
-   current pricing-anchor pass is deployed.
-4. In Cloudflare, review AI Crawl Control / managed robots settings for
-   `sunray-cleaning.com`.
-5. Decide whether to allow or continue blocking GPTBot, ClaudeBot,
-   Google-Extended, CCBot, Bytespider, Applebot-Extended, and related AI
-   crawlers.
-6. Recheck `https://www.sunray-cleaning.com/robots.txt` after the setting is
-   changed or intentionally left restricted.
-7. Run Baseline Run 001 from `docs/AI_MONITORING.md` only after the crawler
-   policy is confirmed.
+6. Recheck Cloudflare AI Crawl Control over 24-hour and 7-day windows, plus
+   live `https://www.sunray-cleaning.com/robots.txt`.
+7. Run Baseline Run 001 from `docs/AI_MONITORING.md` after crawler access is
+   confirmed over a longer window.
 8. Record Sun Ray mentions, competitors, citations, missing facts, and follow-up
    work without claiming ranking improvement until outputs are logged.
 9. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and

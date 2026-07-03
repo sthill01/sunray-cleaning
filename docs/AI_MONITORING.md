@@ -1,6 +1,6 @@
 # AI Monitoring
 
-Last updated: 2026-06-30
+Last updated: 2026-07-03
 
 AI monitoring is not yet automated. Until it is, record manual checks here.
 
@@ -22,10 +22,12 @@ AI monitoring is not yet automated. Until it is, record manual checks here.
 
 ## Baseline Run 001
 
-Status: ready to run after the custom-domain cache blocker is cleared.
+Status: ready to run after Cloudflare crawler access and live `robots.txt` are
+confirmed over a longer window.
 
 Date window: first production check after `www.sunray-cleaning.com` serves the
-current indexed Cloudflare Pages artifact.
+current indexed Cloudflare Pages artifact and AI crawler access remains open in
+Cloudflare AI Crawl Control.
 
 Platforms:
 
@@ -59,6 +61,20 @@ Capture for each result:
 ## Baseline Results
 
 No current baseline recorded in the repo.
+
+## Crawler Access Baseline
+
+July 3 Cloudflare AI Crawl Control screenshots showed major AI crawler block
+toggles off. The 1-hour view showed allowed activity for Claude-SearchBot,
+ChatGPT-User, Googlebot, and OAI-SearchBot. GPTBot had no requests in that
+selected window, which is a monitoring signal rather than proof of blocking.
+
+Before running Baseline Run 001, recheck:
+
+- Cloudflare AI Crawl Control over 24-hour and 7-day windows.
+- Live `https://www.sunray-cleaning.com/robots.txt`.
+- Whether GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot,
+  PerplexityBot, and Googlebot are allowed or blocked.
 
 ## Monitoring Rule
 

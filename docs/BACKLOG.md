@@ -74,16 +74,27 @@ Completed:
 
 ### Confirm AI Crawler Policy
 
-Status: blocked by Cloudflare setting / Product Owner decision.
+Status: monitoring / partially confirmed.
 
 Value: high AI authority.
 
 Work:
 
-- Review Cloudflare AI Crawl Control / Managed Content settings.
-- Decide whether to allow or continue blocking major AI crawlers.
-- Recheck live `robots.txt` after the setting is confirmed.
-- Run Baseline Run 001 only after crawler access is understood.
+Completed:
+
+- Reviewed Cloudflare AI Crawl Control screenshots from July 3.
+- Confirmed major AI crawler block toggles appeared off in the visible
+  Cloudflare interface.
+- Observed allowed activity for Claude-SearchBot, ChatGPT-User, Googlebot, and
+  OAI-SearchBot in the short window shown.
+
+Remaining work:
+
+- Recheck Cloudflare AI Crawl Control over 24-hour and 7-day windows.
+- Recheck live `robots.txt` after Cloudflare Managed Content output remains
+  stable.
+- Run Baseline Run 001 only after crawler access is understood over a longer
+  window.
 
 ### SEO 90+ Phase 1 Repo-Safe Fixes
 
@@ -248,21 +259,22 @@ Work:
 
 ### SEO 90+ Phase 2 Pricing Anchors
 
-Status: in progress.
+Status: completed.
 
 Value: customer clarity, conversion support, and commercial-intent SEO.
 
-Work:
+Completed:
 
 - Add customer-facing starting-price anchors to service pages without implying
   flat guaranteed rates.
 - Keep exact quotes tied to rooms, size, condition, timing, pets, access, and
   priorities.
-- Validate build, internal links, and Repository Intelligence reports.
+- Validated build, internal links, and Repository Intelligence reports.
+- Deployed the pricing-anchor pass through Cloudflare Pages production.
 
 ### Dedicated Airbnb Cleaning Landing Page
 
-Status: queued.
+Status: in progress.
 
 Value: highest-priority short-term rental commercial intent.
 
@@ -318,5 +330,6 @@ Completed:
 
 Remaining work:
 
-- Run the baseline after the custom-domain cache blocker is cleared.
+- Run the baseline after Cloudflare crawler access and live `robots.txt` are
+  confirmed over a longer window.
 - Record results without claiming ranking improvement until outputs are logged.

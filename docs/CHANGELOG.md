@@ -2,6 +2,14 @@
 
 ## 2026-07-03
 
+- Ingested the July 3 executive project status report and updated the operating
+  docs to shift emphasis from infrastructure readiness to content depth, entity
+  authority, and customer trust proof.
+- Moved Cloudflare AI Crawl Control from immediate blocker to monitoring after
+  screenshots showed major AI crawler block toggles off and allowed activity
+  for Claude-SearchBot, ChatGPT-User, Googlebot, and OAI-SearchBot.
+- Promoted the dedicated `/airbnb-cleaning-park-city/` landing page as the next
+  production authority sprint item.
 - Added customer-facing starting-price anchors to the service hub and core
   service pages for recurring cleaning, deep cleaning, move cleaning, and
   Airbnb/VRBO turnover cleaning.

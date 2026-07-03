@@ -8,8 +8,22 @@ SRAAP v0.6: Operational Readiness, AI recommendations foundation, review authori
 
 ## Current Sprint
 
-Production Improvement 15: SEO 90+ Phase 2 pricing anchors and conversion
-context.
+Production Improvement 16: Park City Airbnb authority landing page and trust
+expansion.
+
+## Executive Status Checkpoint
+
+A July 3 executive project status report rates SRAAP at approximately 30-35%
+complete. The report grades the engineering foundation as excellent, Cloudflare
+architecture as strong, AI optimization as good, technical SEO as strong,
+content authority as moderate, entity authority as moderate, automation as
+excellent, Repository Intelligence as emerging, and AI recommendation readiness
+as moderate.
+
+The operating thesis for the next sprint is to shift from infrastructure
+maturity to undeniable authority. Every sprint should ask whether the work makes
+Sun Ray more trusted, more understandable, and easier for customers and AI
+systems to recommend.
 
 ## Completed This Sprint
 
@@ -121,12 +135,18 @@ context.
 - Added customer-facing starting-price anchor sections to the service hub and
   core service pages for recurring cleaning, deep cleaning, move cleaning, and
   Airbnb/VRBO turnover cleaning.
+- Deployed the service pricing-anchor pass to Cloudflare Pages production and
+  verified custom-domain priority pages.
+- Ingested the July 3 executive status report and moved the program focus from
+  infrastructure readiness toward content depth, entity authority, and local
+  trust proof.
+- Reviewed Cloudflare AI Crawl Control screenshots showing major AI crawler
+  block toggles off and visible allowed activity for Claude-SearchBot,
+  ChatGPT-User, Googlebot, and OAI-SearchBot. GPTBot had no requests in the
+  selected window, which is a monitoring signal rather than proof of blocking.
 
 ## Open Bugs
 
-- Cloudflare Managed Content in `robots.txt` still disallows several AI
-  crawlers including GPTBot, ClaudeBot, Google-Extended, CCBot, Bytespider, and
-  Applebot-Extended. See `BLOCKERS.md`.
 - Turno.com listing registration requires Product Owner action because it
   depends on creating or verifying a third-party marketplace profile.
 
@@ -143,13 +163,12 @@ context.
 
 ## Current Priorities
 
-1. Resolve the Cloudflare Managed Content AI-crawler policy if the business
-   wants major AI crawlers to access the site.
+1. Build and deploy the dedicated `/airbnb-cleaning-park-city/` landing page as
+   the next highest-ROI production authority improvement.
 2. Continue Phase 2 of `SEO-90-PLUS-ACTION-PLAN.md` with homepage review proof,
-   service-page conversion context, and the dedicated Airbnb cleaning landing
-   page.
-3. Run Baseline Run 001 from `AI_MONITORING.md` after the crawler policy is
-   confirmed or intentionally left restricted.
+   local citations, and third-party entity authority.
+3. Recheck Cloudflare AI Crawl Control and live `robots.txt` over 24-hour and
+   7-day windows, then run Baseline Run 001 from `AI_MONITORING.md`.
 4. Keep production deploys on `npm run build:production` /
    `npm run deploy:production`.
 
@@ -159,11 +178,12 @@ See `BLOCKERS.md`.
 
 ## Upcoming Work
 
-- Validate and deploy the service pricing-anchor pass.
-- Add real Google review proof to the homepage in a compact, trust-building way.
 - Build the dedicated `/airbnb-cleaning-park-city/` landing page.
+- Add contextual internal links from the STR service page, Park City location
+  page, AI recommendations page, and Park City Airbnb guides.
+- Add real Google review proof to the homepage in a compact, trust-building way.
 - Run and record the first repeatable AI monitoring baseline after AI-crawler
-  policy is confirmed.
+  access is confirmed over a longer Cloudflare window.
 - Review verified asset provenance for the next image-backed coverage pass.
 
 ## AI Authority Score
@@ -214,8 +234,8 @@ updates after every sprint.
 3. Automation to add next: create a repeatable image-intake script that copies,
    optimizes, captions, checks provenance, and validates approved photo batches
    into gallery data.
-4. Documentation now out of date: analytics/account state and Cloudflare
-   AI-crawler policy still need external confirmation.
-5. Highest-impact next task: resolve the Cloudflare AI-crawler policy, then
-   run Baseline Run 001 or continue filling verified image-backed coverage gaps
+4. Documentation now out of date: analytics/account state and third-party
+   citation status still need external confirmation.
+5. Highest-impact next task: build the dedicated Park City Airbnb cleaning
+   landing page, then continue filling verified image-backed coverage gaps.
    for Heber City Airbnb/VRBO, Midway, and Kamas.
