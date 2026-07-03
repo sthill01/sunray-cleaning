@@ -49,8 +49,8 @@ PAGES = [
         "description": "Park City house cleaning, Airbnb and VRBO turnovers, recurring cleaning, deep cleaning, and move cleaning for full-time homes, rentals, and second homes.",
         "h1": "Park City house cleaning for homes, rentals, and second homes.",
         "lead": "Sun Ray Cleaning helps Park City homeowners, hosts, property managers, and second-home owners keep luxury homes, condos, and rentals ready for daily life and guest arrivals.",
-        "image": "park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg",
-        "image_alt": "Guest-ready Park City living room cleaned for a VRBO turnover by Sun Ray Cleaning Services",
+        "image": "job-gallery-2026-07/sun-ray-park-city-mountain-home-living-room-hero.webp",
+        "image_alt": "Park City mountain home living room used as a Sun Ray Cleaning Services house cleaning hero image",
         "plan_title": "A cleaning plan built around Park City homes and guest schedules.",
         "plan_copy": "Park City properties often need more than a standard house clean. Ski-season dirt, summer guests, second-home gaps, and rental turnover windows all shape the right scope.",
         "plan": [

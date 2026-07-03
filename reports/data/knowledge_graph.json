@@ -356,6 +356,26 @@
       "label": "/services/short-term-rental-cleaning/",
       "type": "Route"
     },
+    "image_sun-ray-park-city-mountain-home-living-room-hero": {
+      "label": "sun-ray-park-city-mountain-home-living-room-hero.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-marble-shower-detail-cleaning": {
+      "label": "sun-ray-marble-shower-detail-cleaning.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-bathroom-sink-vanity-detail-cleaning": {
+      "label": "sun-ray-bathroom-sink-vanity-detail-cleaning.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-kitchen-sink-rose-detail-cleaning": {
+      "label": "sun-ray-kitchen-sink-rose-detail-cleaning.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-oven-before-after-detail-cleaning": {
+      "label": "sun-ray-oven-before-after-detail-cleaning.webp",
+      "type": "Image"
+    },
     "image_sun-ray-bright-white-kitchen-island-recurring-cleaning": {
       "label": "sun-ray-bright-white-kitchen-island-recurring-cleaning.webp",
       "type": "Image"
@@ -1077,6 +1097,16 @@
       "depicts"
     ],
     [
+      "image_sun-ray-bathroom-sink-vanity-detail-cleaning",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bathroom-sink-vanity-detail-cleaning",
+      "service_residential",
+      "depicts"
+    ],
+    [
       "image_sun-ray-bathroom-vanity-after-cleaning-31",
       "location_wasatch-county",
       "depicts"
@@ -1437,6 +1467,16 @@
       "depicts"
     ],
     [
+      "image_sun-ray-kitchen-sink-rose-detail-cleaning",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-kitchen-sink-rose-detail-cleaning",
+      "service_residential",
+      "depicts"
+    ],
+    [
       "image_sun-ray-living-room-detail-after-cleaning-11",
       "location_wasatch-county",
       "depicts"
@@ -1529,6 +1569,16 @@
     [
       "image_sun-ray-luxury-kitchen-cleaning-36",
       "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-marble-shower-detail-cleaning",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-marble-shower-detail-cleaning",
+      "service_recurring",
       "depicts"
     ],
     [
@@ -1613,6 +1663,36 @@
     ],
     [
       "image_sun-ray-mountain-view-move-out-cleaning",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-oven-before-after-detail-cleaning",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-oven-before-after-detail-cleaning",
+      "service_move-in-out",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-park-city-mountain-home-living-room-hero",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-park-city-mountain-home-living-room-hero",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-park-city-mountain-home-living-room-hero",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-park-city-mountain-home-living-room-hero",
       "service_residential",
       "depicts"
     ],
@@ -2058,6 +2138,11 @@
     ],
     [
       "proof",
+      "image_sun-ray-bathroom-sink-vanity-detail-cleaning",
+      "contains"
+    ],
+    [
+      "proof",
       "image_sun-ray-bathroom-vanity-after-cleaning-31",
       "contains"
     ],
@@ -2163,6 +2248,11 @@
     ],
     [
       "proof",
+      "image_sun-ray-kitchen-sink-rose-detail-cleaning",
+      "contains"
+    ],
+    [
+      "proof",
       "image_sun-ray-living-room-detail-after-cleaning-11",
       "contains"
     ],
@@ -2188,6 +2278,11 @@
     ],
     [
       "proof",
+      "image_sun-ray-marble-shower-detail-cleaning",
+      "contains"
+    ],
+    [
+      "proof",
       "image_sun-ray-modern-bathroom-detail-cleaning",
       "contains"
     ],
@@ -2204,6 +2299,16 @@
     [
       "proof",
       "image_sun-ray-mountain-view-move-out-cleaning",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-oven-before-after-detail-cleaning",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-park-city-mountain-home-living-room-hero",
       "contains"
     ],
     [

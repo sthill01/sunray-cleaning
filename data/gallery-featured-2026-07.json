@@ -1,5 +1,124 @@
 [
   {
+    "asset": "assets/job-gallery-2026-07/sun-ray-park-city-mountain-home-living-room-hero.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_3979.jpg",
+    "name": "Park City mountain home living room hero",
+    "room": "Living room",
+    "service": "Residential house cleaning",
+    "location": "Park City service area, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Park City mountain home living room used as a Sun Ray Cleaning Services house cleaning hero image",
+    "caption": "Mountain-home living room proof for Park City residential cleaning context.",
+    "keywords": [
+      "Park City house cleaning",
+      "Park City residential cleaning",
+      "mountain home cleaning",
+      "Sun Ray Cleaning Services"
+    ],
+    "routes": [
+      "/service-location/park-city/",
+      "/service-location/summit-county/",
+      "/gallery/",
+      "/services/recurring-cleaning/"
+    ]
+  },
+  {
+    "asset": "assets/job-gallery-2026-07/sun-ray-marble-shower-detail-cleaning.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/Photos-3-001 May 6 converted JPEGs/img-8706.jpg",
+    "name": "Marble shower detail cleaning",
+    "room": "Bathroom",
+    "service": "Deep cleaning",
+    "location": "Sun Ray service area, UT",
+    "city": "",
+    "county": "",
+    "region": "Utah",
+    "alt": "Marble shower with glass door after bathroom detail cleaning by Sun Ray Cleaning Services",
+    "caption": "Bathroom shower detail for deep cleaning and recurring upkeep proof.",
+    "keywords": [
+      "bathroom deep cleaning",
+      "shower cleaning",
+      "glass shower cleaning",
+      "Sun Ray Cleaning photo gallery"
+    ],
+    "routes": [
+      "/gallery/",
+      "/services/deep-cleaning/"
+    ]
+  },
+  {
+    "asset": "assets/job-gallery-2026-07/sun-ray-bathroom-sink-vanity-detail-cleaning.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/Photos-3-001 May 6 converted JPEGs/img-8567.jpg",
+    "name": "Bathroom sink vanity detail cleaning",
+    "room": "Bathroom",
+    "service": "Recurring residential cleaning",
+    "location": "Sun Ray service area, UT",
+    "city": "",
+    "county": "",
+    "region": "Utah",
+    "alt": "Clean bathroom sink and vanity detail after a Sun Ray Cleaning Services visit",
+    "caption": "Bathroom vanity detail for recurring home cleaning proof.",
+    "keywords": [
+      "bathroom sink cleaning",
+      "vanity cleaning",
+      "recurring bathroom cleaning",
+      "residential cleaning gallery"
+    ],
+    "routes": [
+      "/gallery/",
+      "/services/recurring-cleaning/",
+      "/services/deep-cleaning/"
+    ]
+  },
+  {
+    "asset": "assets/job-gallery-2026-07/sun-ray-kitchen-sink-rose-detail-cleaning.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/Photos-3-001 May 6 converted JPEGs/img-8558.jpg",
+    "name": "Kitchen sink rose detail cleaning",
+    "room": "Kitchen",
+    "service": "Recurring residential cleaning",
+    "location": "Sun Ray service area, UT",
+    "city": "",
+    "county": "",
+    "region": "Utah",
+    "alt": "Polished kitchen sink and counter with roses after residential cleaning by Sun Ray Cleaning Services",
+    "caption": "Kitchen sink and counter detail for recurring residential cleaning proof.",
+    "keywords": [
+      "kitchen sink cleaning",
+      "counter cleaning",
+      "residential kitchen cleaning",
+      "Sun Ray kitchen cleaning"
+    ],
+    "routes": [
+      "/gallery/",
+      "/services/recurring-cleaning/"
+    ]
+  },
+  {
+    "asset": "assets/job-gallery-2026-07/sun-ray-oven-before-after-detail-cleaning.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/Photos-3-001 May 6 converted JPEGs/Before and after oven cleaning.jpg",
+    "name": "Oven cleaning before and after detail",
+    "room": "Kitchen",
+    "service": "Deep cleaning",
+    "location": "Sun Ray service area, UT",
+    "city": "",
+    "county": "",
+    "region": "Utah",
+    "alt": "Before and after oven cleaning detail from a Sun Ray Cleaning Services deep clean",
+    "caption": "Oven detail proof for deep cleaning and move-ready cleaning needs.",
+    "keywords": [
+      "oven cleaning",
+      "kitchen deep cleaning",
+      "move-out cleaning",
+      "Sun Ray deep cleaning"
+    ],
+    "routes": [
+      "/gallery/",
+      "/services/deep-cleaning/",
+      "/services/move-in-move-out-cleaning/"
+    ]
+  },
+  {
     "asset": "assets/job-gallery-2026-07/sun-ray-bright-white-kitchen-island-recurring-cleaning.webp",
     "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_6219.jpg",
     "name": "Bright white kitchen island recurring cleaning",

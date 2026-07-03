@@ -2,8 +2,8 @@
 
 Generated: 2026-07-03
 
-- Structured gallery records: 63
-- Image tags in generated pages: 670
+- Structured gallery records: 68
+- Image tags in generated pages: 675
 - Missing alt attributes in generated pages: 0
 - Missing gallery source assets: 0
 
@@ -11,13 +11,13 @@ Generated: 2026-07-03
 
 | Route | Structured Image Records |
 | --- | --- |
-| /gallery/ | 47 |
+| /gallery/ | 52 |
+| /services/deep-cleaning/ | 12 |
+| /services/recurring-cleaning/ | 11 |
+| /service-location/park-city/ | 9 |
 | /service-location/wasatch-county/ | 9 |
-| /services/deep-cleaning/ | 9 |
-| /services/recurring-cleaning/ | 8 |
-| /service-location/park-city/ | 8 |
-| /service-location/summit-county/ | 7 |
-| /services/move-in-move-out-cleaning/ | 6 |
+| /service-location/summit-county/ | 8 |
+| /services/move-in-move-out-cleaning/ | 7 |
 | / | 4 |
 | /service-location/heber-city/ | 4 |
 | /service-location/deer-valley/ | 4 |
