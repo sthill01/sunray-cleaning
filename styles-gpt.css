@@ -488,6 +488,74 @@ p {
   font-family: var(--display);
 }
 
+.trustindex-badge-embed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.trustindex-badge-embed iframe {
+  max-width: 100%;
+}
+
+.hero-trustindex-badge {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 4;
+  max-width: min(86%, 330px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: scale(0.5);
+  transform-origin: top right;
+}
+
+.hero-trustindex-badge-inline {
+  position: static;
+  margin-top: 18px;
+  max-width: 330px;
+}
+
+.trustindex-badge-fallback[hidden] {
+  display: none;
+}
+
+.trustindex-badge-fallback {
+  display: grid;
+  gap: 2px;
+  min-width: 230px;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.hero-trustindex-badge .trustindex-badge-fallback {
+  padding: 10px 14px;
+  border: 1px solid rgba(31, 58, 104, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-lg);
+}
+
+.trustindex-badge-fallback strong {
+  font-family: var(--display);
+  font-size: 1rem;
+}
+
+.trustindex-badge-fallback small {
+  color: var(--stone-600);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.trustindex-fallback-stars {
+  color: var(--yellow-deep);
+  font-size: 1.08rem;
+  letter-spacing: 0.04em;
+}
+
 .quote-card span {
   display: block;
   color: var(--stone-600);
@@ -1347,11 +1415,116 @@ p {
   gap: 20px;
 }
 
+.review-proof-compact .review-wall-grid {
+  margin-top: 10px;
+}
+
+.trustindex-widget-shell {
+  margin-top: 24px;
+  min-height: 220px;
+}
+
+.trustindex-review-list-widget {
+  min-height: 720px;
+  overflow: hidden;
+}
+
+.trustindex-widget-shell iframe {
+  max-width: 100%;
+}
+
+.trustindex-widget-shell noscript {
+  display: block;
+}
+
+.review-fallback-static[hidden] {
+  display: none;
+}
+
+.review-fallback-static {
+  margin-top: 22px;
+}
+
 .review-card-stack {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
   gap: 20px;
+}
+
+.review-card-stack-wide {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reviews-page-fallback {
+  margin-top: 26px;
+}
+
+.trustindex-feature-band {
+  background: var(--white);
+}
+
+.trustindex-feature-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  align-items: center;
+  gap: clamp(24px, 5vw, 58px);
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid rgba(242, 184, 22, 0.36);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(135deg, rgba(242, 184, 22, 0.12), rgba(31, 58, 104, 0.04)),
+    var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.trustindex-feature-panel h2 {
+  max-width: 620px;
+}
+
+.trustindex-feature-panel p {
+  max-width: 680px;
+  color: var(--stone-600);
+}
+
+.trustindex-feature-badge {
+  justify-self: end;
+  min-height: 92px;
+  padding: 10px;
+  border: 1px solid rgba(31, 58, 104, 0.12);
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.footer-trustindex-badge {
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 18px;
+  padding: 8px;
+  max-width: 290px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer-trustindex-badge .trustindex-badge-fallback strong {
+  color: var(--white);
+}
+
+.footer-trustindex-badge .trustindex-badge-fallback small {
+  color: var(--stone-300);
+}
+
+.quote-trustmark {
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid rgba(242, 184, 22, 0.34);
+  border-radius: 14px;
+  background: rgba(255, 249, 234, 0.74);
+}
+
+.quote-trustmark iframe {
+  max-width: 100%;
 }
 
 .review-summary-card {
@@ -2192,6 +2365,14 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .trustindex-feature-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .trustindex-feature-badge {
+    justify-self: start;
+  }
+
   .hero-media img,
   .page-hero-media img,
   .gallery-feature-card img {
@@ -2257,6 +2438,25 @@ p {
     bottom: auto;
     margin-top: 14px;
     max-width: none;
+  }
+
+  .hero-trustindex-badge {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin-top: 14px;
+    margin-left: auto;
+    max-width: none;
+    width: max-content;
+    transform-origin: top right;
+  }
+
+  .trustindex-badge-fallback {
+    min-width: 0;
+  }
+
+  .trustindex-review-list-widget {
+    min-height: 560px;
   }
 
   .trust-grid,
