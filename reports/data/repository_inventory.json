@@ -8204,8 +8204,8 @@
       "isPublic": true,
       "title": "Residential Cleaning Services | Sun Ray Cleaning",
       "h1": "Residential cleaning services for fresh, comfortable homes.",
-      "rawWordCount": 758,
-      "builtWordCount": 1206,
+      "rawWordCount": 886,
+      "builtWordCount": 1334,
       "faqCount": 3,
       "imageCount": 15,
       "schemaTypes": [
@@ -8363,8 +8363,8 @@
       "isPublic": true,
       "title": "Deep cleaning | Sun Ray Cleaning",
       "h1": "A detailed reset for homes that need more than maintenance.",
-      "rawWordCount": 744,
-      "builtWordCount": 1213,
+      "rawWordCount": 840,
+      "builtWordCount": 1309,
       "faqCount": 3,
       "imageCount": 8,
       "schemaTypes": [
@@ -8523,8 +8523,8 @@
       "isPublic": true,
       "title": "Move-in and move-out cleaning | Sun Ray Cleaning",
       "h1": "Move-ready cleaning for buyers, sellers, renters, landlords and agents.",
-      "rawWordCount": 758,
-      "builtWordCount": 1237,
+      "rawWordCount": 859,
+      "builtWordCount": 1338,
       "faqCount": 3,
       "imageCount": 8,
       "schemaTypes": [
@@ -8684,8 +8684,8 @@
       "isPublic": true,
       "title": "Recurring cleaning | Sun Ray Cleaning",
       "h1": "Weekly, biweekly and monthly cleaning that keeps your home comfortable.",
-      "rawWordCount": 745,
-      "builtWordCount": 1217,
+      "rawWordCount": 852,
+      "builtWordCount": 1324,
       "faqCount": 3,
       "imageCount": 8,
       "schemaTypes": [
@@ -8845,8 +8845,8 @@
       "isPublic": true,
       "title": "Short-term rental cleaning | Sun Ray Cleaning",
       "h1": "Guest-ready Airbnb and VRBO cleaning for Park City rentals.",
-      "rawWordCount": 895,
-      "builtWordCount": 1382,
+      "rawWordCount": 994,
+      "builtWordCount": 1481,
       "faqCount": 5,
       "imageCount": 8,
       "schemaTypes": [
@@ -11688,6 +11688,19 @@
       "faqPageCount": 1
     },
     {
+      "entity": "short-term rental turnover cleaning",
+      "pages": [
+        "/ai-cleaning-recommendations/",
+        "/blog/canyons-village-kimball-junction-rental-cleaning/",
+        "/blog/kamas-oakley-home-cleaning-eastern-summit-county/",
+        "/blog/prepare-park-city-home-winter-rental-season/",
+        "/services/short-term-rental-cleaning/"
+      ],
+      "pageCount": 5,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
       "entity": "Center Creek",
       "pages": [
         "/service-location/center-creek/",
@@ -11718,18 +11731,6 @@
         "/blog/what-does-deep-clean-include-room-by-room/",
         "/service-location/promontory/",
         "/service-location/summit-county/"
-      ],
-      "pageCount": 4,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "short-term rental turnover cleaning",
-      "pages": [
-        "/ai-cleaning-recommendations/",
-        "/blog/canyons-village-kimball-junction-rental-cleaning/",
-        "/blog/kamas-oakley-home-cleaning-eastern-summit-county/",
-        "/blog/prepare-park-city-home-winter-rental-season/"
       ],
       "pageCount": 4,
       "imageCount": 0,

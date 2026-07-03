@@ -38,10 +38,10 @@ Generated: 2026-07-03
 | Swiss Mountain | 5 | 0 | 0 | /ai-cleaning-recommendations/, /gallery/, /reviews/, /service-location/midway/, /service-location/swiss-mountain/ |
 | Woodland | 5 | 0 | 0 | /blog/kamas-oakley-home-cleaning-eastern-summit-county/, /gallery/, /reviews/, /service-location/kamas/, /service-location/woodland/ |
 | luxury home cleaning | 5 | 2 | 1 | /ai-cleaning-recommendations/, /blog/, /blog/deer-valley-luxury-home-cleaning/, /service-location/deer-valley/, /service-location/park-city/ |
+| short-term rental turnover cleaning | 5 | 0 | 0 | /ai-cleaning-recommendations/, /blog/canyons-village-kimball-junction-rental-cleaning/, /blog/kamas-oakley-home-cleaning-eastern-summit-county/, /blog/prepare-park-city-home-winter-rental-season/, /services/short-term-rental-cleaning/ |
 | Center Creek | 4 | 0 | 0 | /service-location/center-creek/, /service-location/daniel/, /service-location/heber-city/, /service-location/wasatch-county/ |
 | Jeremy Ranch | 4 | 0 | 0 | /blog/airbnb-same-day-turnover-cleaning-park-city/, /service-location/jeremy-ranch/, /service-location/park-city/, /service-location/summit-county/ |
 | Promontory | 4 | 0 | 0 | /blog/how-to-choose-recurring-cleaning-service-park-city/, /blog/what-does-deep-clean-include-room-by-room/, /service-location/promontory/, /service-location/summit-county/ |
-| short-term rental turnover cleaning | 4 | 0 | 0 | /ai-cleaning-recommendations/, /blog/canyons-village-kimball-junction-rental-cleaning/, /blog/kamas-oakley-home-cleaning-eastern-summit-county/, /blog/prepare-park-city-home-winter-rental-season/ |
 | Chalk Creek | 3 | 0 | 0 | /service-areas/, /service-location/chalk-creek/, /service-location/coalville/ |
 | Charleston Lake | 3 | 0 | 0 | /service-location/charleston-lake/, /service-location/charleston/, /service-location/midway/ |
 | Daniel Ranch | 3 | 0 | 0 | /service-areas/, /service-location/daniel-ranch/, /service-location/daniel/ |

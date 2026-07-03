@@ -45,13 +45,11 @@ FONTS_HEAD = f"""<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="{GOOGLE_FONTS_HREF}" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{GOOGLE_FONTS_HREF}"></noscript>"""
-LOGO_AVIF_SRCSET = "/assets/logo-nav-184.avif 184w, /assets/logo-nav-368.avif 368w"
-LOGO_WEBP_SRCSET = "/assets/logo-nav-184.webp 184w, /assets/logo-nav-368.webp 368w"
+LOGO_PNG_SRCSET = "/assets/logo-nav.png 184w, /assets/logo-nav-368.png 368w"
 LOGO_FALLBACK_PNG = "/assets/logo-nav-368.png"
 LOGO_PICTURE = (
-    f'<picture><source type="image/avif" srcset="{LOGO_AVIF_SRCSET}" sizes="184px">'
-    f'<source type="image/webp" srcset="{LOGO_WEBP_SRCSET}" sizes="184px">'
-    f'<img src="{LOGO_FALLBACK_PNG}" alt="Sun Ray Cleaning Services" width="184" height="184"></picture>'
+    f'<img src="{LOGO_FALLBACK_PNG}" srcset="{LOGO_PNG_SRCSET}" sizes="184px" '
+    f'alt="Sun Ray Cleaning Services" width="184" height="184">'
 )
 CONTENT_SECURITY_POLICY = (
     "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; "

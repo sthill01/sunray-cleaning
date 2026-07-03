@@ -85,6 +85,19 @@ Work:
 - Recheck live `robots.txt` after the setting is confirmed.
 - Run Baseline Run 001 only after crawler access is understood.
 
+### SEO 90+ Phase 1 Repo-Safe Fixes
+
+Status: completed.
+
+Value: conversion quality, crawl hygiene, and short-term rental authority.
+
+Completed:
+
+- Reduced quote forms to the four highest-value fields.
+- Added seven legacy redirects.
+- Strengthened short-term rental cleaning FAQs and FAQ schema coverage.
+- Validated and deployed the changes through the Cloudflare Pages pipeline.
+
 ## P1
 
 ### Use Reports To Ship First Production Improvement
@@ -232,6 +245,34 @@ Work:
 - Improve coverage scoring to distinguish dedicated coverage from incidental
   mentions.
 - Add review and image support by location-service pair.
+
+### SEO 90+ Phase 2 Pricing Anchors
+
+Status: in progress.
+
+Value: customer clarity, conversion support, and commercial-intent SEO.
+
+Work:
+
+- Add customer-facing starting-price anchors to service pages without implying
+  flat guaranteed rates.
+- Keep exact quotes tied to rooms, size, condition, timing, pets, access, and
+  priorities.
+- Validate build, internal links, and Repository Intelligence reports.
+
+### Dedicated Airbnb Cleaning Landing Page
+
+Status: queued.
+
+Value: highest-priority short-term rental commercial intent.
+
+Work:
+
+- Build `/airbnb-cleaning-park-city/` as a dedicated Park City STR landing
+  page.
+- Reuse verified rental cleaning photos and STR FAQ/source content.
+- Add LocalBusiness, Service, FAQPage, and image-supported schema where
+  appropriate.
 
 ## P2
 

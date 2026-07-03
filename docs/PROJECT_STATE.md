@@ -8,7 +8,8 @@ SRAAP v0.6: Operational Readiness, AI recommendations foundation, review authori
 
 ## Current Sprint
 
-Production Improvement 14: SEO 90+ Phase 1 conversion and AI readiness fixes.
+Production Improvement 15: SEO 90+ Phase 2 pricing anchors and conversion
+context.
 
 ## Completed This Sprint
 
@@ -115,6 +116,11 @@ Production Improvement 14: SEO 90+ Phase 1 conversion and AI readiness fixes.
 - Started the `SEO-90-PLUS-ACTION-PLAN.md` Phase 1 repo implementation:
   simplified quote forms, added legacy redirects, strengthened short-term
   rental FAQs, and documented Turno registration as an external blocker.
+- Completed the repo-safe Phase 1 SEO 90+ implementation and deployed it:
+  simplified quote forms, legacy redirects, STR FAQ schema, and typo checks.
+- Added customer-facing starting-price anchor sections to the service hub and
+  core service pages for recurring cleaning, deep cleaning, move cleaning, and
+  Airbnb/VRBO turnover cleaning.
 
 ## Open Bugs
 
@@ -139,8 +145,9 @@ Production Improvement 14: SEO 90+ Phase 1 conversion and AI readiness fixes.
 
 1. Resolve the Cloudflare Managed Content AI-crawler policy if the business
    wants major AI crawlers to access the site.
-2. Finish repo-safe Phase 1 items from `SEO-90-PLUS-ACTION-PLAN.md` before
-   moving into larger July landing-page and content work.
+2. Continue Phase 2 of `SEO-90-PLUS-ACTION-PLAN.md` with homepage review proof,
+   service-page conversion context, and the dedicated Airbnb cleaning landing
+   page.
 3. Run Baseline Run 001 from `AI_MONITORING.md` after the crawler policy is
    confirmed or intentionally left restricted.
 4. Keep production deploys on `npm run build:production` /
@@ -152,8 +159,9 @@ See `BLOCKERS.md`.
 
 ## Upcoming Work
 
-- Complete and validate the Phase 1 SEO action plan repo changes: form
-  simplification, redirects, STR FAQ schema, and typo checks.
+- Validate and deploy the service pricing-anchor pass.
+- Add real Google review proof to the homepage in a compact, trust-building way.
+- Build the dedicated `/airbnb-cleaning-park-city/` landing page.
 - Run and record the first repeatable AI monitoring baseline after AI-crawler
   policy is confirmed.
 - Review verified asset provenance for the next image-backed coverage pass.

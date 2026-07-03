@@ -4,34 +4,38 @@ Last updated: 2026-07-03
 
 ## Immediate Next Step
 
-Complete the repo-safe Phase 1 items from `SEO-90-PLUS-ACTION-PLAN.md`, then
-recheck the Cloudflare Managed Content AI-crawler policy before treating AI
-monitoring as fully representative.
+Continue Phase 2 of `SEO-90-PLUS-ACTION-PLAN.md` with customer-facing
+authority improvements, while keeping Cloudflare AI crawler access as the
+highest-priority external blocker.
 
 Recommended next task:
 
-1. Validate and deploy the Phase 1 repo changes: simplified quote forms,
-   legacy redirects, STR FAQ schema, and typo checks.
-2. In Cloudflare, review AI Crawl Control / managed robots settings for
+1. Validate and deploy the new service pricing-anchor sections on the service
+   hub and core service pages.
+2. Add real Google review proof to the homepage and reviews journey without
+   bloating the header or hero.
+3. Build the dedicated `/airbnb-cleaning-park-city/` landing page after the
+   current pricing-anchor pass is deployed.
+4. In Cloudflare, review AI Crawl Control / managed robots settings for
    `sunray-cleaning.com`.
-3. Decide whether to allow or continue blocking GPTBot, ClaudeBot,
+5. Decide whether to allow or continue blocking GPTBot, ClaudeBot,
    Google-Extended, CCBot, Bytespider, Applebot-Extended, and related AI
    crawlers.
-4. Recheck `https://www.sunray-cleaning.com/robots.txt` after the setting is
+6. Recheck `https://www.sunray-cleaning.com/robots.txt` after the setting is
    changed or intentionally left restricted.
-5. Run Baseline Run 001 from `docs/AI_MONITORING.md` only after the crawler
+7. Run Baseline Run 001 from `docs/AI_MONITORING.md` only after the crawler
    policy is confirmed.
-6. Record Sun Ray mentions, competitors, citations, missing facts, and follow-up
+8. Record Sun Ray mentions, competitors, citations, missing facts, and follow-up
    work without claiming ranking improvement until outputs are logged.
-7. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
+9. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
    tracked assets before the next image-backed coverage pass.
-8. Prioritize Heber City, Midway, Kamas, and Summit County luxury image gaps
+10. Prioritize Heber City, Midway, Kamas, and Summit County luxury image gaps
    only where the source asset and metadata honestly support the location and
    service.
-9. Design a small image-intake automation so future approved photo batches can
+11. Design a small image-intake automation so future approved photo batches can
    be copied, optimized, captioned, added to gallery data, and validated with
    less manual effort.
-10. Run `npm run reports:generate`, `npm run build:cloudflare`, and
+12. Run `npm run reports:generate`, `npm run build:cloudflare`, and
    `npm run check:internal-links`.
 
 ## Session Startup Protocol

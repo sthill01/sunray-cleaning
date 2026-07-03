@@ -2,6 +2,11 @@
 
 ## 2026-07-03
 
+- Added customer-facing starting-price anchors to the service hub and core
+  service pages for recurring cleaning, deep cleaning, move cleaning, and
+  Airbnb/VRBO turnover cleaning.
+- Added responsive pricing-card styles so service pricing anchors remain usable
+  on desktop, tablet, and mobile layouts.
 - Updated verified Heber City recurring-cleaning image metadata in structured
   gallery data.
 - Strengthened Summit County source-page and generator copy for luxury-home
