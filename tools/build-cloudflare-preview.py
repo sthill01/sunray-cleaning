@@ -1253,26 +1253,29 @@ def build_full_gallery_section(route: str) -> str:
 def build_answer_network(content: str, route: str, route_map: dict[str, str]) -> str:
     h1 = extract_h1(content)
     focus = page_focus(route, h1)
+    focus_text = focus.rstrip(".?!")
     links = available_priority_links(route, route_map)[:16]
     link_markup = "".join(
         f'<a href="{html.escape(route_to_clean_rel(route, target))}">{html.escape(label)}</a>'
         for target, label in links
     )
     kind = page_type(route)
+    heading = f"Reliable cleaning support for {focus_text}."
     if kind == "location":
-        lead = f"If you have a home, rental, or second property that needs {focus}, Sun Ray can help you choose the right cleaning plan and request a quote quickly."
+        lead = f"If you have a home, rental, or second property that needs {focus_text}, Sun Ray can help you choose the right cleaning plan and request a quote quickly."
     elif kind == "service":
-        lead = f"Sun Ray Cleaning Services provides {focus}. Use this page to understand what is included, where the team works, and how to request a quote."
+        lead = f"Sun Ray Cleaning Services provides {focus_text}. Use this page to understand what is included, where the team works, and how to request a quote."
     elif kind == "blog":
-        lead = f"This guide helps with {focus}. When you want help with the cleaning itself, Sun Ray can match the work to your home, timing, and priorities."
+        heading = "Related cleaning support from Sun Ray."
+        lead = "This guide is written for homeowners, hosts, and property managers comparing cleaning options. When you want help with the cleaning itself, Sun Ray can match the work to your home, timing, and priorities."
     else:
-        lead = f"Sun Ray Cleaning Services helps with {focus}. Compare services, nearby areas, customer feedback, and quote options in one place."
+        lead = f"Sun Ray Cleaning Services helps with {focus_text}. Compare services, nearby areas, customer feedback, and quote options in one place."
     return f"""
 <section class="section seo-answer-network" aria-labelledby="seo-answer-title">
   <div class="container">
     <div class="section-head center">
       <p class="eyebrow">How Sun Ray helps</p>
-      <h2 id="seo-answer-title">Reliable cleaning support for {html.escape(focus)}.</h2>
+      <h2 id="seo-answer-title">{html.escape(heading)}</h2>
       <p>{html.escape(lead)}</p>
     </div>
     <div class="seo-answer-grid">
@@ -1296,10 +1299,13 @@ def build_structured_data(content: str, route: str) -> str:
     organization_id = absolute_url("/#organization")
     page_id = page_url + "#webpage"
     gallery_items = selected_gallery_items(route)
+    post_meta = BLOG_POST_SEO.get(route, {})
     if route == "/airbnb-cleaning-park-city/":
         primary_image = absolute_url(
             "/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg"
         )
+    elif post_meta.get("image"):
+        primary_image = absolute_url(str(post_meta["image"]))
     else:
         primary_image = (
             absolute_url("/assets/sunray-hero-living-room-cleaned-no-text.jpg")
@@ -1586,7 +1592,6 @@ def build_structured_data(content: str, route: str) -> str:
             }
         )
     if page_type(route) == "blog" and route != "/blog/":
-        post_meta = BLOG_POST_SEO.get(route, {})
         graph.append(
             {
                 "@type": "BlogPosting",
@@ -2033,15 +2038,38 @@ def write_platform_files(routes: list[str]) -> None:
 """,
         encoding="utf-8",
     )
-    robots_rules = "Allow: /" if ALLOW_INDEXING else "Disallow: /"
-    (OUT / "robots.txt").write_text(
-        f"""User-agent: *
-{robots_rules}
+    if ALLOW_INDEXING:
+        robots_text = f"""# Sun Ray Cleaning production crawler policy
+# Allow search engines and answer engines to discover public service, location, blog, review, and AI authority content.
+# Content signals permit search and AI answer grounding while reserving rights for model training.
+User-agent: *
+User-agent: Cloudflare-AI-Search
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Googlebot
+User-agent: Google-Extended
+User-agent: Google-CloudVertexBot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckAssistBot
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
 
 Sitemap: {BASE_URL}/sitemap.xml
-""",
-        encoding="utf-8",
-    )
+"""
+    else:
+        robots_text = f"""User-agent: *
+Disallow: /
+
+Sitemap: {BASE_URL}/sitemap.xml
+"""
+    (OUT / "robots.txt").write_text(robots_text, encoding="utf-8")
     today = date.today().isoformat()
     def sitemap_values(route: str) -> tuple[str, str]:
         if route == "/":
