@@ -6,13 +6,13 @@ Cells show supporting page count and structured image count. `GAP` means no supp
 
 | Location | Residential | Airbnb/VRBO | Deep cleaning | Recurring | Move-in/out | Luxury |
 | --- | --- | --- | --- | --- | --- | --- |
-| Park City | 40p/19i | 40p/9i | 40p/11i | 40p/4i | 40p/4i | 10p/7i |
+| Park City | 41p/19i | 41p/9i | 41p/11i | 41p/4i | 41p/4i | 10p/7i |
 | Heber City | 28p/8i | 28p/0i WEAK | 28p/2i | 28p/2i | 28p/2i | 5p/1i |
 | Midway | 25p/5i | 25p/1i | 25p/0i WEAK | 25p/2i | 25p/0i WEAK | 5p/0i WEAK |
 | Kamas | 10p/1i | 10p/0i WEAK | 10p/0i WEAK | 10p/1i | 10p/0i WEAK | 3p/0i WEAK |
-| Deer Valley | 5p/2i | 5p/1i | 5p/1i | 5p/1i | 5p/1i | 5p/3i |
-| Canyons Village | 4p/1i | 4p/1i | 4p/1i | 4p/1i | 4p/1i | 4p/2i |
-| Summit County | 12p/31i | 12p/9i | 12p/13i | 12p/7i | 12p/6i | 3p/7i |
+| Deer Valley | 6p/2i | 6p/1i | 6p/1i | 6p/1i | 6p/1i | 5p/3i |
+| Canyons Village | 5p/1i | 5p/1i | 5p/1i | 5p/1i | 5p/1i | 4p/2i |
+| Summit County | 13p/31i | 13p/9i | 13p/13i | 13p/7i | 13p/6i | 3p/7i |
 | Wasatch County | 83p/23i | 83p/1i | 83p/7i | 83p/8i | 83p/2i | 10p/2i |
 
 ## Detected Gaps

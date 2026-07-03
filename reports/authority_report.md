@@ -11,6 +11,6 @@ This score is not a ranking claim. It is a local engineering heuristic for prior
 | Metadata completeness | 100% | 20 |
 | Structured data coverage | 100% | 20 |
 | Internal link coverage | 100% | 15 |
-| Source FAQ coverage | 83% | 15 |
+| Source FAQ coverage | 84% | 15 |
 | Generated image coverage | 100% | 15 |
 | Strong service-location matrix coverage | 83% | 15 |

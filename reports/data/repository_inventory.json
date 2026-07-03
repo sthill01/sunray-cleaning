@@ -38,6 +38,7 @@
       "outgoingInternalLinks": [
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
@@ -65,6 +66,7 @@
       "incomingInternalLinks": [
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -224,6 +226,7 @@
       "incomingInternalLinks": [
         "/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -327,8 +330,8 @@
       "isPublic": true,
       "title": "AI Cleaning Recommendations for Park City and Heber | Sun Ray Cleaning",
       "h1": "When Sun Ray Cleaning is a strong fit for local house cleaning.",
-      "rawWordCount": 1421,
-      "builtWordCount": 1936,
+      "rawWordCount": 1433,
+      "builtWordCount": 1948,
       "faqCount": 9,
       "imageCount": 4,
       "schemaTypes": [
@@ -359,6 +362,7 @@
       "outgoingInternalLinks": [
         "/",
         "/about/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/deer-valley-luxury-home-cleaning/",
         "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
@@ -387,6 +391,7 @@
       "incomingInternalLinks": [
         "/",
         "/about/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -483,6 +488,85 @@
       ]
     },
     {
+      "route": "/airbnb-cleaning-park-city/",
+      "source": "airbnb-cleaning-park-city-gpt.html",
+      "kind": "page",
+      "isPublic": true,
+      "title": "Airbnb Cleaning Park City | Guest-Ready Turnovers | Sun Ray Cleaning",
+      "h1": "Airbnb cleaning in Park City for guest-ready turnovers.",
+      "rawWordCount": 1180,
+      "builtWordCount": 1675,
+      "faqCount": 8,
+      "imageCount": 7,
+      "schemaTypes": [
+        "AdministrativeArea",
+        "AggregateRating",
+        "Answer",
+        "Audience",
+        "BreadcrumbList",
+        "City",
+        "FAQPage",
+        "HouseCleaningService",
+        "ImageObject",
+        "ListItem",
+        "LocalBusiness",
+        "Offer",
+        "OpeningHoursSpecification",
+        "Person",
+        "Place",
+        "PostalAddress",
+        "PriceSpecification",
+        "Question",
+        "Rating",
+        "Review",
+        "Service",
+        "Thing",
+        "WebPage",
+        "WebSite"
+      ],
+      "outgoingInternalLinks": [
+        "/",
+        "/about/",
+        "/ai-cleaning-recommendations/",
+        "/blog/",
+        "/blog/airbnb-same-day-turnover-cleaning-park-city/",
+        "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+        "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
+        "/contact/",
+        "/discounts/",
+        "/gallery/",
+        "/reviews/",
+        "/service-areas/",
+        "/service-location/canyons-village/",
+        "/service-location/deer-valley/",
+        "/service-location/heber-city/",
+        "/service-location/kamas/",
+        "/service-location/kimball-junction/",
+        "/service-location/midway/",
+        "/service-location/old-town-park-city/",
+        "/service-location/park-city/",
+        "/service-location/park-meadows/",
+        "/service-location/prospector/",
+        "/service-location/snyderville/",
+        "/service-location/summit-county/",
+        "/service-location/wasatch-county/",
+        "/services/",
+        "/services/deep-cleaning/",
+        "/services/move-in-move-out-cleaning/",
+        "/services/recurring-cleaning/",
+        "/services/short-term-rental-cleaning/",
+        "/specials/"
+      ],
+      "incomingInternalLinks": [
+        "/",
+        "/ai-cleaning-recommendations/",
+        "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+        "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
+        "/service-location/park-city/",
+        "/services/short-term-rental-cleaning/"
+      ]
+    },
+    {
       "route": "/blog/",
       "source": "blog-gpt.html",
       "kind": "blog",
@@ -490,7 +574,7 @@
       "title": "Sun Ray Cleaning Blog | Park City, Heber City and Midway Cleaning Guides",
       "h1": "Local cleaning guides for Utah homeowners and hosts.",
       "rawWordCount": 1068,
-      "builtWordCount": 1468,
+      "builtWordCount": 1463,
       "faqCount": 3,
       "imageCount": 12,
       "schemaTypes": [
@@ -571,6 +655,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
@@ -674,7 +759,7 @@
       "title": "Airbnb Cleaning Between Same-Day Turnovers: A Park City Host's Playbook | Sun Ray Cleaning",
       "h1": "Airbnb Cleaning Between Same-Day Turnovers: A Park City Host's Playbook",
       "rawWordCount": 2722,
-      "builtWordCount": 3127,
+      "builtWordCount": 3118,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -726,7 +811,9 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/airbnb-cleaning-park-city/",
         "/blog/",
+        "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
         "/blog/vacation-rental-cleaning-checklist-utah-mountain-properties/"
       ]
     },
@@ -738,7 +825,7 @@
       "title": "Canyons Village and Kimball Junction: Short-Term Rental Cleaning Guide | Sun Ray Cleaning",
       "h1": "Canyons Village and Kimball Junction: Short-Term Rental Cleaning Guide",
       "rawWordCount": 2743,
-      "builtWordCount": 3146,
+      "builtWordCount": 3139,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -800,8 +887,8 @@
       "isPublic": true,
       "title": "Complete Guide to Airbnb & VRBO Cleaning in Park City | Sun Ray Cleaning",
       "h1": "Complete Guide to Airbnb & VRBO Cleaning in Park City",
-      "rawWordCount": 775,
-      "builtWordCount": 1195,
+      "rawWordCount": 779,
+      "builtWordCount": 1192,
       "faqCount": 3,
       "imageCount": 5,
       "schemaTypes": [
@@ -832,6 +919,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
@@ -857,6 +945,7 @@
       "incomingInternalLinks": [
         "/",
         "/about/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -959,7 +1048,7 @@
       "title": "Deer Valley Luxury Home Cleaning Standards Explained | Sun Ray Cleaning",
       "h1": "Deer Valley Luxury Home Cleaning Standards Explained",
       "rawWordCount": 767,
-      "builtWordCount": 1231,
+      "builtWordCount": 1228,
       "faqCount": 3,
       "imageCount": 7,
       "schemaTypes": [
@@ -1028,7 +1117,7 @@
       "title": "Eco-Friendly Cleaning Options for Park City and Heber Valley Homes | Sun Ray Cleaning",
       "h1": "Eco-Friendly Cleaning Options for Park City and Heber Valley Homes",
       "rawWordCount": 2593,
-      "builtWordCount": 2998,
+      "builtWordCount": 2989,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -1091,7 +1180,7 @@
       "title": "Getting Your Park City Home Ready for Summer Guests | Sun Ray Cleaning",
       "h1": "Getting Your Park City Home Ready for Summer Guests",
       "rawWordCount": 771,
-      "builtWordCount": 1191,
+      "builtWordCount": 1184,
       "faqCount": 3,
       "imageCount": 5,
       "schemaTypes": [
@@ -1159,7 +1248,7 @@
       "title": "Hard Water Cleaning Tips for Park City & Summit County Mountain Homes | Sun Ray Cleaning",
       "h1": "Hard Water Cleaning Tips for Park City & Summit County Mountain Homes",
       "rawWordCount": 2180,
-      "builtWordCount": 2587,
+      "builtWordCount": 2576,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -1222,7 +1311,7 @@
       "title": "Hard Water Cleaning Tips for Summit County and Wasatch County Homes | Sun Ray Cleaning",
       "h1": "Hard Water Cleaning Tips for Summit County and Wasatch County Homes",
       "rawWordCount": 2598,
-      "builtWordCount": 3005,
+      "builtWordCount": 2994,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -1285,7 +1374,7 @@
       "title": "Heber City Move-In/Move-Out Cleaning: What New Residents Should Know | Sun Ray Cleaning",
       "h1": "Heber City Move-In/Move-Out Cleaning: What New Residents Should Know",
       "rawWordCount": 768,
-      "builtWordCount": 1188,
+      "builtWordCount": 1179,
       "faqCount": 3,
       "imageCount": 5,
       "schemaTypes": [
@@ -1352,9 +1441,9 @@
       "isPublic": true,
       "title": "How Much Does Airbnb Cleaning Cost in Park City? | Sun Ray Cleaning",
       "h1": "How Much Does Airbnb Cleaning Cost in Park City?",
-      "rawWordCount": 771,
-      "builtWordCount": 1191,
-      "faqCount": 3,
+      "rawWordCount": 1292,
+      "builtWordCount": 1707,
+      "faqCount": 5,
       "imageCount": 5,
       "schemaTypes": [
         "AdministrativeArea",
@@ -1384,7 +1473,9 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
+        "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
         "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
@@ -1410,6 +1501,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -1512,7 +1604,7 @@
       "title": "How to Choose a Recurring Cleaning Service in Park City | Sun Ray Cleaning",
       "h1": "How to Choose a Recurring Cleaning Service in Park City",
       "rawWordCount": 2759,
-      "builtWordCount": 3164,
+      "builtWordCount": 3155,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -1575,7 +1667,7 @@
       "title": "Jordanelle and Deer Creek Cabin Cleaning for Weekend Owners | Sun Ray Cleaning",
       "h1": "Jordanelle and Deer Creek Cabin Cleaning for Weekend Owners",
       "rawWordCount": 2433,
-      "builtWordCount": 2836,
+      "builtWordCount": 2829,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -1638,7 +1730,7 @@
       "title": "Jordanelle Vacation Rental Turnover: What Lakeside Owners Need | Sun Ray Cleaning",
       "h1": "Jordanelle Vacation Rental Turnover: What Lakeside Owners Need",
       "rawWordCount": 767,
-      "builtWordCount": 1166,
+      "builtWordCount": 1161,
       "faqCount": 3,
       "imageCount": 4,
       "schemaTypes": [
@@ -1708,7 +1800,7 @@
       "title": "Kamas and Oakley Home Cleaning: Serving Eastern Summit County | Sun Ray Cleaning",
       "h1": "Kamas and Oakley Home Cleaning: Serving Eastern Summit County",
       "rawWordCount": 2254,
-      "builtWordCount": 2657,
+      "builtWordCount": 2650,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -1771,7 +1863,7 @@
       "title": "Why Local Cleaning Services Beat National Apps in Park City | Sun Ray Cleaning",
       "h1": "Why Local Cleaning Services Beat National Apps in Park City",
       "rawWordCount": 2596,
-      "builtWordCount": 3001,
+      "builtWordCount": 2992,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -1834,7 +1926,7 @@
       "title": "Midway Cleaning Services: What Homeowners in the Heber Valley Should Know | Sun Ray Cleaning",
       "h1": "Midway Cleaning Services: What Homeowners in the Heber Valley Should Know",
       "rawWordCount": 2711,
-      "builtWordCount": 3118,
+      "builtWordCount": 3107,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -1897,7 +1989,7 @@
       "title": "Move-In Cleaning Checklist for New Heber City and Midway Residents | Sun Ray Cleaning",
       "h1": "Move-In Cleaning Checklist for New Heber City and Midway Residents",
       "rawWordCount": 2751,
-      "builtWordCount": 3156,
+      "builtWordCount": 3147,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -1960,7 +2052,7 @@
       "title": "Post-Construction Cleaning for New Builds in the Heber Valley | Sun Ray Cleaning",
       "h1": "Post-Construction Cleaning for New Builds in the Heber Valley",
       "rawWordCount": 2541,
-      "builtWordCount": 2944,
+      "builtWordCount": 2937,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -2023,7 +2115,7 @@
       "title": "Post-Ski-Season Deep Clean Checklist for Park City Rentals | Sun Ray Cleaning",
       "h1": "Post-Ski-Season Deep Clean Checklist for Park City Rentals",
       "rawWordCount": 765,
-      "builtWordCount": 1197,
+      "builtWordCount": 1192,
       "faqCount": 3,
       "imageCount": 6,
       "schemaTypes": [
@@ -2182,7 +2274,7 @@
       "title": "How to Prepare Your Park City Home for Winter Rental Season | Sun Ray Cleaning",
       "h1": "How to Prepare Your Park City Home for Winter Rental Season",
       "rawWordCount": 2311,
-      "builtWordCount": 2718,
+      "builtWordCount": 2707,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -2245,7 +2337,7 @@
       "title": "Recurring vs. Deep Cleaning: Which Service Does Your Home Need? | Sun Ray Cleaning",
       "h1": "Recurring vs. Deep Cleaning: Which Service Does Your Home Need?",
       "rawWordCount": 2410,
-      "builtWordCount": 2815,
+      "builtWordCount": 2806,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -2308,7 +2400,7 @@
       "title": "Red Ledges Home Cleaning: A Guide for Luxury Heber Homeowners | Sun Ray Cleaning",
       "h1": "Red Ledges Home Cleaning: A Guide for Luxury Heber Homeowners",
       "rawWordCount": 775,
-      "builtWordCount": 1197,
+      "builtWordCount": 1188,
       "faqCount": 3,
       "imageCount": 5,
       "schemaTypes": [
@@ -2451,7 +2543,7 @@
       "title": "Spring Cleaning Guide for Park City Mountain Homes | Sun Ray Cleaning",
       "h1": "Spring Cleaning Guide for Park City Mountain Homes",
       "rawWordCount": 1883,
-      "builtWordCount": 2284,
+      "builtWordCount": 2279,
       "faqCount": 5,
       "imageCount": 4,
       "schemaTypes": [
@@ -2517,7 +2609,7 @@
       "title": "Summer Entertaining Prep: Getting Your Mountain Home Guest-Ready | Sun Ray Cleaning",
       "h1": "Summer Entertaining Prep: Getting Your Mountain Home Guest-Ready",
       "rawWordCount": 2364,
-      "builtWordCount": 2765,
+      "builtWordCount": 2760,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -2580,7 +2672,7 @@
       "title": "Ultimate Vacation Rental Cleaning Checklist for Utah Mountain Properties | Sun Ray Cleaning",
       "h1": "Ultimate Vacation Rental Cleaning Checklist for Utah Mountain Properties",
       "rawWordCount": 2125,
-      "builtWordCount": 2528,
+      "builtWordCount": 2521,
       "faqCount": 5,
       "imageCount": 4,
       "schemaTypes": [
@@ -2644,7 +2736,7 @@
       "title": "What Does a Deep Clean Include? A Room-by-Room Breakdown | Sun Ray Cleaning",
       "h1": "What Does a Deep Clean Include? A Room-by-Room Breakdown",
       "rawWordCount": 2350,
-      "builtWordCount": 2753,
+      "builtWordCount": 2746,
       "faqCount": 0,
       "imageCount": 4,
       "schemaTypes": [
@@ -2763,6 +2855,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -2922,6 +3015,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -3082,6 +3176,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -3237,6 +3332,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -3408,6 +3504,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -3571,6 +3668,7 @@
       ],
       "incomingInternalLinks": [
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/service-location/deer-valley/",
         "/service-location/kimball-junction/",
         "/service-location/old-town-park-city/",
@@ -4454,6 +4552,7 @@
       ],
       "incomingInternalLinks": [
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/service-location/canyons-village/",
         "/service-location/kimball-junction/",
         "/service-location/old-town-park-city/",
@@ -4755,6 +4854,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -5576,6 +5676,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -5739,6 +5840,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/airbnb-cleaning-park-city/",
         "/service-location/canyons-village/",
         "/service-location/deer-valley/",
         "/service-location/old-town-park-city/",
@@ -5965,6 +6067,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -6357,6 +6460,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/airbnb-cleaning-park-city/",
         "/service-location/canyons-village/",
         "/service-location/deer-valley/",
         "/service-location/kimball-junction/",
@@ -6374,8 +6478,8 @@
       "isPublic": true,
       "title": "Park City House Cleaning, Airbnb Turnovers and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Park City house cleaning for homes, rentals, and second homes.",
-      "rawWordCount": 934,
-      "builtWordCount": 1496,
+      "rawWordCount": 936,
+      "builtWordCount": 1498,
       "faqCount": 3,
       "imageCount": 22,
       "schemaTypes": [
@@ -6405,6 +6509,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/deer-valley-luxury-home-cleaning/",
@@ -6441,6 +6546,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -6604,6 +6710,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/airbnb-cleaning-park-city/",
         "/service-location/canyons-village/",
         "/service-location/deer-valley/",
         "/service-location/kimball-junction/",
@@ -6903,6 +7010,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/airbnb-cleaning-park-city/",
         "/service-location/canyons-village/",
         "/service-location/deer-valley/",
         "/service-location/kimball-junction/",
@@ -7201,6 +7309,7 @@
         "/specials/"
       ],
       "incomingInternalLinks": [
+        "/airbnb-cleaning-park-city/",
         "/service-location/canyons-village/",
         "/service-location/coalville/",
         "/service-location/deer-valley/",
@@ -7289,6 +7398,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -7747,6 +7857,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -8261,6 +8372,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -8421,6 +8533,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -8582,6 +8695,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -8743,6 +8857,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -8845,8 +8960,8 @@
       "isPublic": true,
       "title": "Short-term rental cleaning | Sun Ray Cleaning",
       "h1": "Guest-ready Airbnb and VRBO cleaning for Park City rentals.",
-      "rawWordCount": 994,
-      "builtWordCount": 1481,
+      "rawWordCount": 1021,
+      "builtWordCount": 1508,
       "faqCount": 5,
       "imageCount": 8,
       "schemaTypes": [
@@ -8876,6 +8991,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
         "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
@@ -8903,6 +9019,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -9062,6 +9179,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -9165,6 +9283,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -9260,9 +9379,9 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 3,
-      "faqPageCount": 48
+      "faqPageCount": 50
     },
     {
       "entity": "Canyons Village",
@@ -9270,6 +9389,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -9365,9 +9485,9 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 3,
-      "faqPageCount": 2
+      "faqPageCount": 3
     },
     {
       "entity": "Deer Valley",
@@ -9375,6 +9495,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -9470,9 +9591,9 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 3,
-      "faqPageCount": 2
+      "faqPageCount": 3
     },
     {
       "entity": "Heber City",
@@ -9480,6 +9601,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -9575,9 +9697,9 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 9,
-      "faqPageCount": 11
+      "faqPageCount": 10
     },
     {
       "entity": "Homestead",
@@ -9585,6 +9707,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -9680,7 +9803,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 1,
       "faqPageCount": 0
     },
@@ -9690,6 +9813,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -9785,7 +9909,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 1,
       "faqPageCount": 0
     },
@@ -9795,6 +9919,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -9890,7 +10015,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 0,
       "faqPageCount": 1
     },
@@ -9900,6 +10025,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -9995,7 +10121,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 1,
       "faqPageCount": 1
     },
@@ -10005,6 +10131,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -10100,9 +10227,9 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 5,
-      "faqPageCount": 12
+      "faqPageCount": 11
     },
     {
       "entity": "Park City",
@@ -10110,6 +10237,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -10205,9 +10333,9 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 28,
-      "faqPageCount": 19
+      "faqPageCount": 20
     },
     {
       "entity": "Red Ledges",
@@ -10215,6 +10343,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -10310,7 +10439,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 0,
       "faqPageCount": 1
     },
@@ -10320,6 +10449,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -10415,7 +10545,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 40,
       "faqPageCount": 1
     },
@@ -10425,6 +10555,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -10520,7 +10651,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 3,
       "faqPageCount": 0
     },
@@ -10530,6 +10661,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -10625,7 +10757,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 24,
       "faqPageCount": 1
     },
@@ -10635,6 +10767,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -10730,7 +10863,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 22,
       "faqPageCount": 1
     },
@@ -10740,6 +10873,7 @@
         "/",
         "/about/",
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -10835,7 +10969,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 97,
+      "pageCount": 98,
       "imageCount": 14,
       "faqPageCount": 4
     },
@@ -10844,6 +10978,7 @@
       "pages": [
         "/",
         "/about/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -10937,7 +11072,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 94,
+      "pageCount": 95,
       "imageCount": 0,
       "faqPageCount": 0
     },
@@ -10946,6 +11081,7 @@
       "pages": [
         "/",
         "/about/",
+        "/airbnb-cleaning-park-city/",
         "/blog/",
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/blog/canyons-village-kimball-junction-rental-cleaning/",
@@ -11039,7 +11175,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "pageCount": 94,
+      "pageCount": 95,
       "imageCount": 0,
       "faqPageCount": 0
     },
@@ -11499,6 +11635,7 @@
       "entity": "Daniel",
       "pages": [
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/gallery/",
         "/reviews/",
         "/service-areas/",
@@ -11518,7 +11655,7 @@
         "/service-location/summit-county/",
         "/service-location/wasatch-county/"
       ],
-      "pageCount": 19,
+      "pageCount": 20,
       "imageCount": 1,
       "faqPageCount": 1
     },
@@ -11526,6 +11663,7 @@
       "entity": "Old Town Park City",
       "pages": [
         "/ai-cleaning-recommendations/",
+        "/airbnb-cleaning-park-city/",
         "/blog/recurring-vs-deep-cleaning-which-service-need/",
         "/gallery/",
         "/reviews/",
@@ -11544,35 +11682,14 @@
         "/service-location/summit-county/",
         "/service-location/wasatch-county/"
       ],
-      "pageCount": 18,
-      "imageCount": 0,
-      "faqPageCount": 1
-    },
-    {
-      "entity": "Salt Lake County",
-      "pages": [
-        "/",
-        "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
-        "/blog/deer-valley-luxury-home-cleaning/",
-        "/blog/getting-park-city-home-ready-for-summer-guests/",
-        "/blog/heber-city-move-in-move-out-cleaning/",
-        "/blog/how-much-does-airbnb-cleaning-cost-park-city/",
-        "/blog/jordanelle-vacation-rental-turnover/",
-        "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
-        "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
-        "/service-location/salt-lake-county/",
-        "/services/deep-cleaning/",
-        "/services/move-in-move-out-cleaning/",
-        "/services/recurring-cleaning/",
-        "/services/short-term-rental-cleaning/"
-      ],
-      "pageCount": 14,
+      "pageCount": 19,
       "imageCount": 0,
       "faqPageCount": 1
     },
     {
       "entity": "Snyderville",
       "pages": [
+        "/airbnb-cleaning-park-city/",
         "/service-areas/",
         "/service-location/canyons-village/",
         "/service-location/coalville/",
@@ -11588,8 +11705,29 @@
         "/service-location/summit-county/",
         "/service-location/wasatch-county/"
       ],
-      "pageCount": 14,
+      "pageCount": 15,
       "imageCount": 1,
+      "faqPageCount": 1
+    },
+    {
+      "entity": "Salt Lake County",
+      "pages": [
+        "/",
+        "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+        "/blog/deer-valley-luxury-home-cleaning/",
+        "/blog/getting-park-city-home-ready-for-summer-guests/",
+        "/blog/heber-city-move-in-move-out-cleaning/",
+        "/blog/jordanelle-vacation-rental-turnover/",
+        "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
+        "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
+        "/service-location/salt-lake-county/",
+        "/services/deep-cleaning/",
+        "/services/move-in-move-out-cleaning/",
+        "/services/recurring-cleaning/",
+        "/services/short-term-rental-cleaning/"
+      ],
+      "pageCount": 13,
+      "imageCount": 0,
       "faqPageCount": 1
     },
     {
@@ -11623,6 +11761,20 @@
       "faqPageCount": 0
     },
     {
+      "entity": "Kimball Junction",
+      "pages": [
+        "/airbnb-cleaning-park-city/",
+        "/blog/canyons-village-kimball-junction-rental-cleaning/",
+        "/service-location/canyons-village/",
+        "/service-location/kimball-junction/",
+        "/service-location/park-city/",
+        "/service-location/snyderville/"
+      ],
+      "pageCount": 6,
+      "imageCount": 0,
+      "faqPageCount": 1
+    },
+    {
       "entity": "Charleston",
       "pages": [
         "/service-areas/",
@@ -11634,19 +11786,6 @@
       "pageCount": 5,
       "imageCount": 0,
       "faqPageCount": 0
-    },
-    {
-      "entity": "Kimball Junction",
-      "pages": [
-        "/blog/canyons-village-kimball-junction-rental-cleaning/",
-        "/service-location/canyons-village/",
-        "/service-location/kimball-junction/",
-        "/service-location/park-city/",
-        "/service-location/snyderville/"
-      ],
-      "pageCount": 5,
-      "imageCount": 0,
-      "faqPageCount": 1
     },
     {
       "entity": "Swiss Mountain",
@@ -11731,6 +11870,18 @@
         "/blog/what-does-deep-clean-include-room-by-room/",
         "/service-location/promontory/",
         "/service-location/summit-county/"
+      ],
+      "pageCount": 4,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
+      "entity": "Prospector",
+      "pages": [
+        "/airbnb-cleaning-park-city/",
+        "/blog/what-does-deep-clean-include-room-by-room/",
+        "/service-location/park-city/",
+        "/service-location/prospector/"
       ],
       "pageCount": 4,
       "imageCount": 0,
@@ -11891,6 +12042,17 @@
       "faqPageCount": 0
     },
     {
+      "entity": "Park Meadows",
+      "pages": [
+        "/airbnb-cleaning-park-city/",
+        "/service-location/park-city/",
+        "/service-location/park-meadows/"
+      ],
+      "pageCount": 3,
+      "imageCount": 0,
+      "faqPageCount": 0
+    },
+    {
       "entity": "Peoa",
       "pages": [
         "/blog/kamas-oakley-home-cleaning-eastern-summit-county/",
@@ -11907,17 +12069,6 @@
         "/blog/airbnb-same-day-turnover-cleaning-park-city/",
         "/service-location/pinebrook/",
         "/service-location/summit-county/"
-      ],
-      "pageCount": 3,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Prospector",
-      "pages": [
-        "/blog/what-does-deep-clean-include-room-by-room/",
-        "/service-location/park-city/",
-        "/service-location/prospector/"
       ],
       "pageCount": 3,
       "imageCount": 0,
@@ -11994,16 +12145,6 @@
       "pages": [
         "/service-location/kamas/",
         "/service-location/oakley-ranch/"
-      ],
-      "pageCount": 2,
-      "imageCount": 0,
-      "faqPageCount": 0
-    },
-    {
-      "entity": "Park Meadows",
-      "pages": [
-        "/service-location/park-city/",
-        "/service-location/park-meadows/"
       ],
       "pageCount": 2,
       "imageCount": 0,

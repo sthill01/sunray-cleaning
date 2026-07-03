@@ -9,6 +9,7 @@ Every generated public route should include JSON-LD from the build pipeline.
 | / | True | True | True | False | True | True |
 | /about/ | True | True | True | False | True | True |
 | /ai-cleaning-recommendations/ | True | True | True | False | True | True |
+| /airbnb-cleaning-park-city/ | True | True | True | False | True | True |
 | /blog/ | True | True | True | True | True | True |
 | /blog/airbnb-same-day-turnover-cleaning-park-city/ | True | False | True | True | True | True |
 | /blog/canyons-village-kimball-junction-rental-cleaning/ | True | False | True | True | True | True |

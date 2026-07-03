@@ -6,30 +6,33 @@ Generated: 2026-07-03
 
 | Schema Type | Page Count |
 | --- | --- |
-| AdministrativeArea | 97 |
-| AggregateRating | 97 |
-| BreadcrumbList | 97 |
-| City | 97 |
-| HouseCleaningService | 97 |
-| ImageObject | 97 |
-| ListItem | 97 |
-| LocalBusiness | 97 |
-| OpeningHoursSpecification | 97 |
-| Person | 97 |
-| Place | 97 |
-| PostalAddress | 97 |
-| Rating | 97 |
-| Review | 97 |
-| Service | 97 |
-| Thing | 97 |
-| WebSite | 97 |
-| WebPage | 96 |
-| Answer | 79 |
-| FAQPage | 79 |
-| Question | 79 |
+| AdministrativeArea | 98 |
+| AggregateRating | 98 |
+| BreadcrumbList | 98 |
+| City | 98 |
+| HouseCleaningService | 98 |
+| ImageObject | 98 |
+| ListItem | 98 |
+| LocalBusiness | 98 |
+| OpeningHoursSpecification | 98 |
+| Person | 98 |
+| Place | 98 |
+| PostalAddress | 98 |
+| Rating | 98 |
+| Review | 98 |
+| Service | 98 |
+| Thing | 98 |
+| WebSite | 98 |
+| WebPage | 97 |
+| Answer | 80 |
+| FAQPage | 80 |
+| Question | 80 |
 | BlogPosting | 27 |
 | ItemList | 2 |
 | AboutPage | 1 |
+| Audience | 1 |
+| Offer | 1 |
+| PriceSpecification | 1 |
 | Blog | 1 |
 | CollectionPage | 1 |
 | ImageGallery | 1 |
@@ -41,6 +44,7 @@ Generated: 2026-07-03
 | / | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /about/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /ai-cleaning-recommendations/ | 1 | AboutPage, AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ItemList, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
+| /airbnb-cleaning-park-city/ | 1 | AdministrativeArea, AggregateRating, Answer, Audience, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, Offer, OpeningHoursSpecification, Person, Place, PostalAddress, PriceSpecification, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/ | 1 | AdministrativeArea, AggregateRating, Answer, Blog, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ItemList, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/airbnb-same-day-turnover-cleaning-park-city/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/canyons-village-kimball-junction-rental-cleaning/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |

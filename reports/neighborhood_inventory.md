@@ -39,7 +39,7 @@ Generated: 2026-07-03
 | /service-location/oakley/ | Oakley | /service-location/summit-county/ | 770 | 3 | 9 |
 | /service-location/old-town-heber/ | Old Town Heber | /service-location/heber-city/ | 760 | 3 | 5 |
 | /service-location/old-town-park-city/ | Old Town Park City | /service-location/park-city/ | 817 | 3 | 9 |
-| /service-location/park-city/ | Park City | /service-location/summit-county/ | 934 | 3 | 22 |
+| /service-location/park-city/ | Park City | /service-location/summit-county/ | 936 | 3 | 22 |
 | /service-location/park-meadows/ | Park Meadows | /service-location/park-city/ | 754 | 3 | 6 |
 | /service-location/peoa/ | Peoa | /service-location/kamas/ | 745 | 3 | 5 |
 | /service-location/pinebrook/ | Pinebrook | /service-location/summit-county/ | 748 | 3 | 5 |

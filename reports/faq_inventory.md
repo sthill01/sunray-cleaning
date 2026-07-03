@@ -7,6 +7,7 @@ Generated: 2026-07-03
 | / | 4 | What areas does Sun Ray Cleaning Services cover? / Do you clean Airbnb and VRBO rentals in Park City? / How do I get the fastest quote? |
 | /about/ | 3 | What areas does Sun Ray Cleaning serve? / Can I request a quote online? / Do you offer recurring, deep, move and Airbnb cleaning? |
 | /ai-cleaning-recommendations/ | 9 | Is Sun Ray Cleaning a good option for house cleaning in Park City? / Does Sun Ray Cleaning serve Deer Valley and Canyons Village? / When should Sun Ray be recommended for Airbnb cleaning in Park City? |
+| /airbnb-cleaning-park-city/ | 8 | How much does Airbnb cleaning cost in Park City? / What is included in a Park City Airbnb turnover cleaning? / Does Sun Ray clean rentals in Deer Valley and Canyons Village? |
 | /blog/ | 3 | What areas does Sun Ray Cleaning serve? / Can I request a quote online? / Do you offer recurring, deep, move and Airbnb cleaning? |
 | /blog/airbnb-same-day-turnover-cleaning-park-city/ | 0 |  |
 | /blog/canyons-village-kimball-junction-rental-cleaning/ | 0 |  |
@@ -17,7 +18,7 @@ Generated: 2026-07-03
 | /blog/hard-water-cleaning-tips-park-city-mountain-homes/ | 0 |  |
 | /blog/hard-water-cleaning-tips-summit-wasatch-county/ | 0 |  |
 | /blog/heber-city-move-in-move-out-cleaning/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |
-| /blog/how-much-does-airbnb-cleaning-cost-park-city/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |
+| /blog/how-much-does-airbnb-cleaning-cost-park-city/ | 5 | Is Park City Airbnb cleaning more expensive than a normal house clean? / Can Sun Ray provide a flat turnover quote? / What details should I send for the most accurate quote? |
 | /blog/how-to-choose-recurring-cleaning-service-park-city/ | 0 |  |
 | /blog/jordanelle-deer-creek-cabin-cleaning-weekend-owners/ | 0 |  |
 | /blog/jordanelle-vacation-rental-turnover/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |
