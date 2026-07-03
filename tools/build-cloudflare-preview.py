@@ -50,14 +50,22 @@ LOGO_PICTURE = (
 CONTENT_SECURITY_POLICY = (
     "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; "
     "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com "
-    "https://cdn.trustindex.io https://*.trustindex.io "
+    "https://cdn.trustindex.io https://*.trustindex.io https://www.googletagmanager.com "
+    "https://www.google-analytics.com https://www.googleadservices.com "
+    "https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com "
+    "https://bzrcdn.openai.com "
     "https://sunray-cleaning.com/quote-modal.js https://www.sunray-cleaning.com/quote-modal.js "
     "https://*.pages.dev/quote-modal.js; "
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.trustindex.io https://*.trustindex.io; "
     "font-src 'self' https://fonts.gstatic.com https://cdn.trustindex.io https://*.trustindex.io data:; "
     "img-src 'self' data: https:; "
-    "connect-src 'self' https://cdn.trustindex.io https://*.trustindex.io; "
-    "frame-src https://cdn.trustindex.io https://*.trustindex.io; "
+    "connect-src 'self' https://cdn.trustindex.io https://*.trustindex.io "
+    "https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com "
+    "https://analytics.google.com https://www.google.com https://www.googleadservices.com "
+    "https://ad.doubleclick.net https://googleads.g.doubleclick.net https://stats.g.doubleclick.net "
+    "https://pagead2.googlesyndication.com https://bzr.openai.com; "
+    "frame-src https://cdn.trustindex.io https://*.trustindex.io https://www.googletagmanager.com "
+    "https://td.doubleclick.net https://www.google.com; "
     "form-action 'self'"
 )
 CONTENT_SECURITY_POLICY_META = (
@@ -1533,6 +1541,8 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
         content = content.replace("</head>", f"  {canonical}\n  {llms}\n</head>", 1)
     if "fonts.googleapis.com/css2" not in content and "@import url(\"https://fonts.googleapis.com" not in content:
         content = content.replace("</head>", f"  {FONTS_HEAD}\n</head>", 1)
+    if "googletagmanager.com/gtm.js" not in content:
+        content = content.replace("</head>", f"  {GTM_LAZY_HEAD}\n</head>", 1)
     if "googletagmanager.com/ns.html" not in content:
         content = re.sub(r"(<body[^>]*>)", "\\1\n  " + GTM_BODY, content, count=1, flags=re.IGNORECASE)
     content = inject_review_badge_placements(content)

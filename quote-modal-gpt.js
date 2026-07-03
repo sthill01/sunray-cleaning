@@ -1,4 +1,10 @@
 (function () {
+  var ctaEventNames = {
+    quote: "sunray_quote_cta_click",
+    call: "sunray_call_cta_click",
+    text: "sunray_text_cta_click",
+    submit: "sunray_quote_submit_click",
+  };
   var modal;
   var lastFocused;
 
@@ -51,12 +57,109 @@
     if (type === "error" && error && message) error.textContent = message;
   }
 
-  function sendLeadConversionEvent() {
+  function cleanText(element) {
+    if (!element) return "";
+    var text = element.getAttribute("aria-label") || element.textContent || element.value || "";
+    return text.replace(/\s+/g, " ").trim().slice(0, 120);
+  }
+
+  function createEventId(prefix) {
+    return prefix + "_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
+  }
+
+  function isQuoteForm(form) {
+    if (!form) return false;
+    var formName = [
+      form.getAttribute("name"),
+      form.getAttribute("data-name"),
+      form.getAttribute("id"),
+      form.className,
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+
+    return formName.indexOf("quote") !== -1 || formName.indexOf("lead") !== -1;
+  }
+
+  function getSectionLabel(element) {
+    var section = element.closest("header, footer, section, nav, [data-section], .hero-actions, .cta-actions, .form-actions");
+    if (!section) return "";
+
+    return (
+      section.getAttribute("data-section") ||
+      section.getAttribute("aria-label") ||
+      (typeof section.className === "string" ? section.className.split(/\s+/).slice(0, 3).join(" ") : "") ||
+      section.tagName.toLowerCase()
+    );
+  }
+
+  function getCtaType(element) {
+    var href = (element.getAttribute("href") || "").toLowerCase();
+    var text = cleanText(element).toLowerCase();
+    var type = (element.getAttribute("type") || "").toLowerCase();
+    var form = element.form || element.closest("form");
+
+    if ((type === "submit" || element.tagName.toLowerCase() === "button") && isQuoteForm(form)) {
+      return "submit";
+    }
+
+    if (href.indexOf("tel:") === 0) return "call";
+    if (href.indexOf("sms:") === 0) return "text";
+    if (element.hasAttribute("data-open-quote") || href.indexOf("quote-form") !== -1) return "quote";
+    if (/get (a )?quote|request.*quote|free quote|quote request|book.*clean|schedule/.test(text)) return "quote";
+
+    return "";
+  }
+
+  function pushTrackingEvent(eventName, payload) {
+    var data = {
+      event: eventName,
+      event_id: createEventId(eventName),
+      event_timeout: 1500,
+    };
+
+    Object.keys(payload || {}).forEach(function (key) {
+      data[key] = payload[key];
+    });
+
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "sunray_lead_form_submit",
+    window.dataLayer.push(data);
+  }
+
+  function trackCtaClick(element, ctaType) {
+    pushTrackingEvent(ctaEventNames[ctaType], {
+      cta_type: ctaType,
+      cta_text: cleanText(element),
+      cta_url: element.getAttribute("href") || "",
+      cta_section: getSectionLabel(element),
+      page_location: window.location.href,
+      page_title: document.title,
+      conversion_value: 1,
+      currency: "USD",
+    });
+  }
+
+  function handleCtaClick(event) {
+    if (!event.target || typeof event.target.closest !== "function") return;
+
+    var element = event.target.closest("a, button, input[type='submit']");
+    if (!element) return;
+
+    var ctaType = getCtaType(element);
+    if (!ctaType || !ctaEventNames[ctaType]) return;
+
+    trackCtaClick(element, ctaType);
+  }
+
+  function sendLeadConversionEvent() {
+    pushTrackingEvent("sunray_lead_form_submit", {
       form_name: "Sun Ray Quote Request",
       lead_type: "quote_form",
+      page_location: window.location.href,
+      page_title: document.title,
+      conversion_value: 1,
+      currency: "USD",
     });
 
     if (window.google_tag_manager || typeof window.gtag !== "function") return;
@@ -117,6 +220,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("click", handleCtaClick, true);
+
     modal = document.querySelector("[data-quote-modal]");
     document.querySelectorAll(".quote-form").forEach(function (form) {
       form.addEventListener("submit", handleQuoteSubmit);
