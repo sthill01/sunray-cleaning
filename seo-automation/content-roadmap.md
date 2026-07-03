@@ -33,3 +33,17 @@ Today is April 25, 2026. The original April 20, April 22, and April 24 publish d
 - Seasonal pages: post-ski clean, summer guest prep, pre-ski season reset, Sundance turnover.
 - Comparison pages: deep vs regular cleaning, move-in vs move-out, linen service vs on-site laundry.
 
+## LLM + Local SEO cluster pages (drafts staged in repo)
+
+These are Webflow-ready drafts created to target AI-search prompts and high-conversion local queries:
+
+- Park City STR landing page draft: `webflow-content-drafts/2026-05-15-park-city-airbnb-vrbo-turnover-cleaning.md`
+- Park City “what’s included” blog draft: `webflow-content-drafts/2026-05-15-what-is-included-turnover-cleaning-park-city.md`
+- Park City Airbnb cleaning cost blog draft: `webflow-content-drafts/2026-05-15-airbnb-cleaning-cost-park-city.md`
+- Park City deep-clean cost blog draft: `webflow-content-drafts/2026-05-15-deep-cleaning-cost-park-city.md`
+- Summit County hub page draft: `webflow-content-drafts/2026-05-15-summit-county-house-cleaning.md`
+- Wasatch County hub page draft: `webflow-content-drafts/2026-05-15-wasatch-county-house-cleaning.md`
+- Red Ledges location page draft: `webflow-content-drafts/2026-05-15-service-location-red-ledges.md`
+- Deer Valley location page draft: `webflow-content-drafts/2026-05-15-service-location-deer-valley.md`
+- Property manager vendor page draft: `webflow-content-drafts/2026-05-15-preferred-vendor-property-managers.md`
+- Move-in/move-out checklist blog draft: `webflow-content-drafts/2026-05-15-move-in-move-out-cleaning-checklist-wasatch-back.md`

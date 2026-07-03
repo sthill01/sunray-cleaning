@@ -65,6 +65,17 @@ Friday:
 - Record published URL.
 - Add follow-up tasks for backlink, GBP post, and internal-link updates.
 
+## Helpful Automations / Scripts (repo)
+
+- Internal link check (static preview): `npm run check:internal-links`
+  - Writes a dated markdown report under `seo-automation/runs/`.
+
+## Ops Files (repo)
+
+- Citation audit tracker: `seo-automation/citation-audit-tracker.md`
+- Review request templates: `seo-automation/review-request-templates.md`
+- Outreach templates (property managers / real estate): `seo-automation/outreach-templates.md`
+
 ## Quality Bar For Every Page
 
 - Local entity definition in first 100 words.
@@ -76,4 +87,3 @@ Friday:
 - Clear CTA with `(801) 604-2189`.
 - Specific local details: neighborhoods, landmarks, seasonal conditions, property types.
 - Updated date and author/business credibility block.
-
