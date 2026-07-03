@@ -376,8 +376,13 @@ def build_link_maps(pages: list[dict[str, object]]) -> tuple[dict[str, list[str]
 
 def gallery_items() -> list[dict[str, object]]:
     base = load_json(ROOT / "data" / "job-gallery.json", [])
+    featured = load_json(ROOT / "data" / "gallery-featured-2026-07.json", [])
     social = load_json(ROOT / "data" / "social-gallery.json", {"items": []})
-    items = list(base) if isinstance(base, list) else []
+    items = []
+    if isinstance(featured, list):
+        items.extend(featured)
+    if isinstance(base, list):
+        items.extend(base)
     if isinstance(social, dict):
         items.extend(
             item

@@ -32,7 +32,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 12,
+      "imageCount": 15,
       "status": "strong"
     },
     "Airbnb/VRBO": {
@@ -102,7 +102,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 6,
+      "imageCount": 9,
       "status": "strong"
     },
     "Recurring": {
@@ -137,7 +137,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 1,
+      "imageCount": 2,
       "status": "strong"
     },
     "Move-in/out": {
@@ -172,7 +172,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 1,
+      "imageCount": 2,
       "status": "strong"
     },
     "Luxury": {
@@ -184,7 +184,7 @@
         "/service-location/park-city/",
         "/service-location/salt-lake-county/"
       ],
-      "imageCount": 1,
+      "imageCount": 2,
       "status": "strong"
     }
   },
@@ -213,7 +213,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 7,
+      "imageCount": 8,
       "status": "strong"
     },
     "Airbnb/VRBO": {
@@ -692,7 +692,7 @@
         "/service-location/snyderville/",
         "/service-location/summit-county/"
       ],
-      "imageCount": 22,
+      "imageCount": 27,
       "status": "strong"
     },
     "Airbnb/VRBO": {
@@ -722,7 +722,7 @@
         "/service-location/snyderville/",
         "/service-location/summit-county/"
       ],
-      "imageCount": 8,
+      "imageCount": 11,
       "status": "strong"
     },
     "Recurring": {
@@ -737,7 +737,7 @@
         "/service-location/snyderville/",
         "/service-location/summit-county/"
       ],
-      "imageCount": 4,
+      "imageCount": 5,
       "status": "strong"
     },
     "Move-in/out": {
@@ -752,7 +752,7 @@
         "/service-location/snyderville/",
         "/service-location/summit-county/"
       ],
-      "imageCount": 2,
+      "imageCount": 4,
       "status": "strong"
     },
     "Luxury": {
@@ -760,7 +760,7 @@
         "/ai-cleaning-recommendations/",
         "/blog/"
       ],
-      "imageCount": 1,
+      "imageCount": 2,
       "status": "weak"
     }
   },
@@ -833,7 +833,7 @@
         "/services/recurring-cleaning/",
         "/services/short-term-rental-cleaning/"
       ],
-      "imageCount": 20,
+      "imageCount": 23,
       "status": "strong"
     },
     "Airbnb/VRBO": {
@@ -975,7 +975,7 @@
         "/services/recurring-cleaning/",
         "/services/short-term-rental-cleaning/"
       ],
-      "imageCount": 6,
+      "imageCount": 7,
       "status": "strong"
     },
     "Recurring": {
@@ -1046,7 +1046,7 @@
         "/services/recurring-cleaning/",
         "/services/short-term-rental-cleaning/"
       ],
-      "imageCount": 5,
+      "imageCount": 6,
       "status": "strong"
     },
     "Move-in/out": {

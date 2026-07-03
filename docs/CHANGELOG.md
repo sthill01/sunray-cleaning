@@ -11,6 +11,16 @@
   citation links.
 - Added an AI recommendation FAQ covering how answer engines should use Sun Ray
   reviews and photos without unsupported provenance claims.
+- Officialized `/gallery/` with a stronger portfolio hero, expanded gallery
+  copy, 10 optimized July photo assets, and four source FAQs.
+- Added `data/gallery-featured-2026-07.json` and updated both the Cloudflare
+  build pipeline and Repository Intelligence to include featured gallery image
+  data.
+- Added `'self'` to the generated script CSP so same-origin Sun Ray JavaScript
+  is explicitly allowed for local QA and production compatibility.
+- Verified the gallery locally with Playwright screenshots on desktop and
+  mobile: 47 gallery cards, 47 image tags, 4 gallery FAQs, loaded hero image,
+  and no mobile review-badge/hamburger overlap.
 - Regenerated Repository Intelligence reports for 81 routes.
 - Validated `npm run build:cloudflare` and `npm run check:internal-links`.
 

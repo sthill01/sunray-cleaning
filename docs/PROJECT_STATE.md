@@ -4,11 +4,11 @@ Last updated: 2026-07-03
 
 ## Current Version
 
-SRAAP v0.4: Operational Readiness, AI recommendations foundation, review authority, and mobile trust navigation.
+SRAAP v0.5: Operational Readiness, AI recommendations foundation, review authority, mobile trust navigation, and gallery proof.
 
 ## Current Sprint
 
-Production Improvement 10: mobile trust navigation and AI citation-path strengthening.
+Production Improvement 11: gallery portfolio authority and image-backed proof.
 
 ## Completed This Sprint
 
@@ -82,6 +82,20 @@ Production Improvement 10: mobile trust navigation and AI citation-path strength
   paths to `/reviews/` and `/gallery/`.
 - Added an AI recommendation FAQ explaining how answer engines should use Sun
   Ray reviews and photo proof without overstating unsupported provenance.
+- Officialized `/gallery/` as a production source page with a stronger hero,
+  real cleaning portfolio copy, and four source FAQs.
+- Added 10 optimized July gallery assets covering kitchens, living rooms,
+  bathrooms, team-in-action cleaning, stovetop detail work, move-ready spaces,
+  and mountain-view home resets.
+- Added `data/gallery-featured-2026-07.json` and updated the build pipeline so
+  the July image batch appears first in gallery output and ImageGallery schema.
+- Updated Repository Intelligence so featured gallery data is included in image
+  inventory and coverage reports.
+- Added `'self'` to the generated script CSP so same-origin Sun Ray JavaScript
+  is explicitly allowed for local QA and production compatibility.
+- Verified `/gallery/` locally with Playwright screenshots on desktop and
+  mobile: 47 visible gallery cards, 47 image tags, 4 gallery FAQs, loaded hero
+  image, and no mobile review-badge/hamburger overlap.
 
 ## Open Bugs
 
@@ -123,7 +137,7 @@ See `BLOCKERS.md`.
 
 ## AI Authority Score
 
-Current Repository Intelligence heuristic: 92.6 / 100.
+Current Repository Intelligence heuristic: 92.8 / 100.
 
 This is not a ranking claim. It is an internal engineering signal. Strong
 service-location matrix coverage remains the weakest measured category at 54%.
@@ -141,7 +155,8 @@ Core entities are documented in `AI_STANDARDS.md`. Coverage will be measured in
 - Public orphan routes detected: 0.
 - Pages without source FAQs: 3.
 - Low incoming public location routes: 2 legal/support pages.
-- Structured gallery records: 47.
+- Structured gallery records: 57.
+- `/gallery/` structured image records: 47.
 - Missing generated image alt attributes: 0.
 - Weak service-location coverage cells: 22.
 - Strong service-location matrix coverage: 54%.
@@ -150,6 +165,7 @@ Core entities are documented in `AI_STANDARDS.md`. Coverage will be measured in
 - AI recommendations page source FAQs: 9.
 - AI recommendations page raw source words: 1,421.
 - Reviews page source FAQs: 4.
+- Gallery page source FAQs: 4.
 
 ## Documentation Health
 
@@ -158,17 +174,14 @@ updates after every sprint.
 
 ## Sprint Review
 
-1. Greatest value delivered: the reviews-page mobile trust badge now preserves
-   the hamburger menu, and the AI recommendations page now points answer engines
-   to the strongest trust assets: reviews and gallery proof.
-2. Unnecessary complexity found: the immediate bug was caused by a missing
-   shared interaction script on one source page, so a small build guard was
-   better than duplicating header markup across pages.
-3. Automation to add next: decide whether the untracked `gallery-gpt.html`
-   should become an official tracked source page before closing the gallery FAQ
-   gap.
+1. Greatest value delivered: the gallery now acts as visible trust proof and
+   structured ImageGallery evidence for customers and answer engines.
+2. Unnecessary complexity found: featured gallery data must be loaded by both
+   the production build and Repository Intelligence, or reports drift from what
+   the site actually serves.
+3. Automation to add next: create a repeatable image-intake script that copies,
+   optimizes, captions, and validates approved photo batches into gallery data.
 4. Documentation now out of date: analytics/account state and Cloudflare
    AI-crawler policy still need external confirmation.
 5. Highest-impact next task: resolve the Cloudflare AI-crawler policy, then
-   either run Baseline Run 001 or intentionally officialize the gallery source
-   page and add portfolio FAQs.
+   run Baseline Run 001 or continue filling verified image-backed coverage gaps.

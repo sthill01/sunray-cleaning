@@ -18,7 +18,7 @@ Generated: 2026-07-03
 | /blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |
 | /contact/ | 3 | What areas does Sun Ray Cleaning serve? / Can I request a quote online? / Do you offer recurring, deep, move and Airbnb cleaning? |
 | /discounts/ | 4 | Do weekly or biweekly cleaning clients get a discount? / Does Sun Ray Cleaning have referral discounts? / Are there discounts for Airbnb hosts with multiple properties? |
-| /gallery/ | 0 |  |
+| /gallery/ | 4 | Are these real Sun Ray Cleaning photos? / What types of rooms are included in the gallery? / Can these photos help me choose the right cleaning service? |
 | /privacy-policy/ | 0 |  |
 | /reviews/ | 4 | What do Sun Ray Cleaning customers mention most often in reviews? / Are the reviews useful for comparing Park City and Heber cleaning companies? / Do Sun Ray reviews mention vacation rental or Airbnb cleaning? |
 | /service-areas/ | 5 | What main service area hubs does Sun Ray Cleaning serve? / Can I book Airbnb or VRBO turnover cleaning in these service areas? / Do you offer recurring cleaning outside Park City? |

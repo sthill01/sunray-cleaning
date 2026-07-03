@@ -24,9 +24,9 @@ Generated: 2026-07-03
 | Thing | 81 |
 | WebSite | 81 |
 | WebPage | 80 |
-| Answer | 77 |
-| FAQPage | 77 |
-| Question | 77 |
+| Answer | 78 |
+| FAQPage | 78 |
+| Question | 78 |
 | BlogPosting | 9 |
 | ItemList | 2 |
 | AboutPage | 1 |
@@ -52,7 +52,7 @@ Generated: 2026-07-03
 | /blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/ | 1 | AdministrativeArea, AggregateRating, Answer, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /contact/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /discounts/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
-| /gallery/ | 1 | AdministrativeArea, AggregateRating, BreadcrumbList, City, CollectionPage, HouseCleaningService, ImageGallery, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebSite |
+| /gallery/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, CollectionPage, FAQPage, HouseCleaningService, ImageGallery, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebSite |
 | /privacy-policy/ | 1 | AdministrativeArea, AggregateRating, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /reviews/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /service-areas/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |

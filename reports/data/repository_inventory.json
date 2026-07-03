@@ -9,7 +9,7 @@
       "title": "Professional Home Cleaning in Park City & Heber, UT | Sun Ray Cleaning",
       "h1": "Park City, Heber and Midway homes that truly shine .",
       "rawWordCount": 1134,
-      "builtWordCount": 1631,
+      "builtWordCount": 1630,
       "faqCount": 4,
       "imageCount": 18,
       "schemaTypes": [
@@ -153,9 +153,9 @@
       "title": "About Sun Ray Cleaning | Female-Owned Utah Cleaning Service",
       "h1": "A local cleaning team with a family touch and professional standards.",
       "rawWordCount": 729,
-      "builtWordCount": 1150,
+      "builtWordCount": 1168,
       "faqCount": 3,
-      "imageCount": 5,
+      "imageCount": 6,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
@@ -1148,9 +1148,9 @@
       "title": "Post-Ski-Season Deep Clean Checklist for Park City Rentals | Sun Ray Cleaning",
       "h1": "Post-Ski-Season Deep Clean Checklist for Park City Rentals",
       "rawWordCount": 765,
-      "builtWordCount": 1190,
+      "builtWordCount": 1207,
       "faqCount": 3,
-      "imageCount": 5,
+      "imageCount": 6,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
@@ -1699,16 +1699,18 @@
       "isPublic": true,
       "title": "Photo Gallery & Cleaning Portfolio | Sun Ray Cleaning",
       "h1": "Photo gallery and cleaning portfolio from real Sun Ray jobs.",
-      "rawWordCount": 560,
-      "builtWordCount": 1893,
-      "faqCount": 0,
-      "imageCount": 41,
+      "rawWordCount": 728,
+      "builtWordCount": 2296,
+      "faqCount": 4,
+      "imageCount": 51,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
+        "Answer",
         "BreadcrumbList",
         "City",
         "CollectionPage",
+        "FAQPage",
         "HouseCleaningService",
         "ImageGallery",
         "ImageObject",
@@ -1718,6 +1720,7 @@
         "Person",
         "Place",
         "PostalAddress",
+        "Question",
         "Rating",
         "Review",
         "Service",
@@ -2039,9 +2042,9 @@
       "title": "Sun Ray Cleaning Service Areas in Summit and Wasatch County",
       "h1": "Sun Ray Cleaning service area hubs across Summit County and Wasatch County.",
       "rawWordCount": 919,
-      "builtWordCount": 1418,
+      "builtWordCount": 1434,
       "faqCount": 5,
-      "imageCount": 14,
+      "imageCount": 15,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
@@ -3374,7 +3377,7 @@
       "title": "Heber City House Cleaning, Move Cleaning and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Heber City house cleaning for family homes, moves, and guest-ready spaces.",
       "rawWordCount": 906,
-      "builtWordCount": 1470,
+      "builtWordCount": 1469,
       "faqCount": 3,
       "imageCount": 22,
       "schemaTypes": [
@@ -5010,7 +5013,7 @@
       "title": "Park City House Cleaning, Airbnb Turnovers and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Park City house cleaning for homes, rentals, and second homes.",
       "rawWordCount": 934,
-      "builtWordCount": 1499,
+      "builtWordCount": 1500,
       "faqCount": 3,
       "imageCount": 22,
       "schemaTypes": [
@@ -6288,7 +6291,7 @@
       "title": "Wasatch County House Cleaning, Move Cleaning and Vacation Home Cleaning | Sun Ray Cleaning",
       "h1": "Wasatch County cleaning for Heber City, Midway, Daniel, and nearby homes.",
       "rawWordCount": 926,
-      "builtWordCount": 1488,
+      "builtWordCount": 1485,
       "faqCount": 3,
       "imageCount": 22,
       "schemaTypes": [
@@ -6792,9 +6795,9 @@
       "title": "Residential Cleaning Services | Sun Ray Cleaning",
       "h1": "Residential cleaning services for fresh, comfortable homes.",
       "rawWordCount": 758,
-      "builtWordCount": 1200,
+      "builtWordCount": 1216,
       "faqCount": 3,
-      "imageCount": 14,
+      "imageCount": 15,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
@@ -6935,7 +6938,7 @@
       "title": "Deep cleaning | Sun Ray Cleaning",
       "h1": "A detailed reset for homes that need more than maintenance.",
       "rawWordCount": 744,
-      "builtWordCount": 1216,
+      "builtWordCount": 1217,
       "faqCount": 3,
       "imageCount": 8,
       "schemaTypes": [
@@ -7079,9 +7082,9 @@
       "title": "Move-in and move-out cleaning | Sun Ray Cleaning",
       "h1": "Move-ready cleaning for buyers, sellers, renters, landlords and agents.",
       "rawWordCount": 758,
-      "builtWordCount": 1225,
+      "builtWordCount": 1244,
       "faqCount": 3,
-      "imageCount": 7,
+      "imageCount": 8,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
@@ -7224,7 +7227,7 @@
       "title": "Recurring cleaning | Sun Ray Cleaning",
       "h1": "Weekly, biweekly and monthly cleaning that keeps your home comfortable.",
       "rawWordCount": 745,
-      "builtWordCount": 1213,
+      "builtWordCount": 1215,
       "faqCount": 3,
       "imageCount": 8,
       "schemaTypes": [
@@ -7973,7 +7976,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 8,
+      "imageCount": 9,
       "faqPageCount": 10
     },
     {
@@ -8507,7 +8510,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 16,
+      "imageCount": 21,
       "faqPageCount": 16
     },
     {
@@ -8685,7 +8688,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 26,
+      "imageCount": 33,
       "faqPageCount": 1
     },
     {
@@ -8863,7 +8866,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 21,
+      "imageCount": 24,
       "faqPageCount": 1
     },
     {
@@ -8952,7 +8955,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 14,
+      "imageCount": 18,
       "faqPageCount": 1
     },
     {
@@ -9041,7 +9044,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 8,
+      "imageCount": 10,
       "faqPageCount": 4
     },
     {
@@ -9456,7 +9459,7 @@
         "/services/short-term-rental-cleaning/"
       ],
       "pageCount": 67,
-      "imageCount": 1,
+      "imageCount": 2,
       "faqPageCount": 0
     },
     {
@@ -9603,7 +9606,7 @@
         "/services/move-in-move-out-cleaning/"
       ],
       "pageCount": 65,
-      "imageCount": 4,
+      "imageCount": 6,
       "faqPageCount": 2
     },
     {
@@ -10073,7 +10076,7 @@
         "/service-location/daniel/"
       ],
       "pageCount": 3,
-      "imageCount": 2,
+      "imageCount": 4,
       "faqPageCount": 0
     },
     {
@@ -10191,7 +10194,7 @@
         "/ai-cleaning-recommendations/"
       ],
       "pageCount": 1,
-      "imageCount": 2,
+      "imageCount": 4,
       "faqPageCount": 0
     },
     {

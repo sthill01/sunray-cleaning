@@ -356,6 +356,46 @@
       "label": "/services/short-term-rental-cleaning/",
       "type": "Route"
     },
+    "image_sun-ray-bright-white-kitchen-island-recurring-cleaning": {
+      "label": "sun-ray-bright-white-kitchen-island-recurring-cleaning.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-green-kitchen-counter-deep-cleaning-park-city": {
+      "label": "sun-ray-green-kitchen-counter-deep-cleaning-park-city.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-polished-living-room-recurring-cleaning": {
+      "label": "sun-ray-polished-living-room-recurring-cleaning.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-bright-living-room-home-reset": {
+      "label": "sun-ray-bright-living-room-home-reset.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-team-kitchen-cleaning-in-progress": {
+      "label": "sun-ray-team-kitchen-cleaning-in-progress.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-stovetop-detail-cleaning-action": {
+      "label": "sun-ray-stovetop-detail-cleaning-action.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-modern-bathroom-detail-cleaning": {
+      "label": "sun-ray-modern-bathroom-detail-cleaning.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-polished-kitchen-sink-counter": {
+      "label": "sun-ray-polished-kitchen-sink-counter.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-clean-cooktop-counter-detail": {
+      "label": "sun-ray-clean-cooktop-counter-detail.webp",
+      "type": "Image"
+    },
+    "image_sun-ray-mountain-view-move-out-cleaning": {
+      "label": "sun-ray-mountain-view-move-out-cleaning.webp",
+      "type": "Image"
+    },
     "image_park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray": {
       "label": "park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg",
       "type": "Image"
@@ -1152,6 +1192,16 @@
       "depicts"
     ],
     [
+      "image_sun-ray-bright-living-room-home-reset",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-living-room-home-reset",
+      "service_residential",
+      "depicts"
+    ],
+    [
       "image_sun-ray-bright-white-kitchen-after-cleaning-10",
       "location_summit-county",
       "depicts"
@@ -1163,6 +1213,41 @@
     ],
     [
       "image_sun-ray-bright-white-kitchen-after-cleaning-10",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-white-kitchen-island-recurring-cleaning",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-white-kitchen-island-recurring-cleaning",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-white-kitchen-island-recurring-cleaning",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-counter-detail",
+      "location_heber-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-counter-detail",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-counter-detail",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-clean-cooktop-counter-detail",
       "service_residential",
       "depicts"
     ],
@@ -1249,6 +1334,26 @@
     [
       "image_sun-ray-elegant-living-room-after-cleaning-05",
       "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-green-kitchen-counter-deep-cleaning-park-city",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-green-kitchen-counter-deep-cleaning-park-city",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-green-kitchen-counter-deep-cleaning-park-city",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-green-kitchen-counter-deep-cleaning-park-city",
+      "service_luxury",
       "depicts"
     ],
     [
@@ -1397,6 +1502,21 @@
       "depicts"
     ],
     [
+      "image_sun-ray-modern-bathroom-detail-cleaning",
+      "location_wasatch-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-modern-bathroom-detail-cleaning",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-modern-bathroom-detail-cleaning",
+      "service_residential",
+      "depicts"
+    ],
+    [
       "image_sun-ray-modern-kitchen-deep-cleaning-34",
       "location_park-city",
       "depicts"
@@ -1437,6 +1557,26 @@
       "depicts"
     ],
     [
+      "image_sun-ray-mountain-view-move-out-cleaning",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-mountain-view-move-out-cleaning",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-mountain-view-move-out-cleaning",
+      "service_move-in-out",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-mountain-view-move-out-cleaning",
+      "service_residential",
+      "depicts"
+    ],
+    [
       "image_sun-ray-polished-kitchen-sink-after-cleaning-16",
       "location_park-city",
       "depicts"
@@ -1453,6 +1593,41 @@
     ],
     [
       "image_sun-ray-polished-kitchen-sink-after-cleaning-16",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-kitchen-sink-counter",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-kitchen-sink-counter",
+      "service_move-in-out",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-kitchen-sink-counter",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-living-room-recurring-cleaning",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-living-room-recurring-cleaning",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-living-room-recurring-cleaning",
+      "service_recurring",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-living-room-recurring-cleaning",
       "service_residential",
       "depicts"
     ],
@@ -1527,6 +1702,21 @@
       "depicts"
     ],
     [
+      "image_sun-ray-stovetop-detail-cleaning-action",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-detail-cleaning-action",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-stovetop-detail-cleaning-action",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
       "image_sun-ray-stovetop-detail-cleaning-action-18",
       "location_park-city",
       "depicts"
@@ -1593,6 +1783,26 @@
     ],
     [
       "image_sun-ray-team-deep-cleaning-kitchen-park-city-01",
+      "service_residential",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-cleaning-in-progress",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-cleaning-in-progress",
+      "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-cleaning-in-progress",
+      "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-cleaning-in-progress",
       "service_residential",
       "depicts"
     ],
@@ -1808,7 +2018,22 @@
     ],
     [
       "proof",
+      "image_sun-ray-bright-living-room-home-reset",
+      "contains"
+    ],
+    [
+      "proof",
       "image_sun-ray-bright-white-kitchen-after-cleaning-10",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-bright-white-kitchen-island-recurring-cleaning",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-clean-cooktop-counter-detail",
       "contains"
     ],
     [
@@ -1839,6 +2064,11 @@
     [
       "proof",
       "image_sun-ray-elegant-living-room-after-cleaning-05",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-green-kitchen-counter-deep-cleaning-park-city",
       "contains"
     ],
     [
@@ -1883,6 +2113,11 @@
     ],
     [
       "proof",
+      "image_sun-ray-modern-bathroom-detail-cleaning",
+      "contains"
+    ],
+    [
+      "proof",
       "image_sun-ray-modern-kitchen-deep-cleaning-34",
       "contains"
     ],
@@ -1893,7 +2128,22 @@
     ],
     [
       "proof",
+      "image_sun-ray-mountain-view-move-out-cleaning",
+      "contains"
+    ],
+    [
+      "proof",
       "image_sun-ray-polished-kitchen-sink-after-cleaning-16",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-polished-kitchen-sink-counter",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-polished-living-room-recurring-cleaning",
       "contains"
     ],
     [
@@ -1918,6 +2168,11 @@
     ],
     [
       "proof",
+      "image_sun-ray-stovetop-detail-cleaning-action",
+      "contains"
+    ],
+    [
+      "proof",
       "image_sun-ray-stovetop-detail-cleaning-action-18",
       "contains"
     ],
@@ -1934,6 +2189,11 @@
     [
       "proof",
       "image_sun-ray-team-deep-cleaning-kitchen-park-city-01",
+      "contains"
+    ],
+    [
+      "proof",
+      "image_sun-ray-team-kitchen-cleaning-in-progress",
       "contains"
     ],
     [

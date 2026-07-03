@@ -23,13 +23,14 @@ Recommended next task:
    policy is confirmed.
 5. Record Sun Ray mentions, competitors, citations, missing facts, and follow-up
    work without claiming ranking improvement until outputs are logged.
-6. Decide whether the currently untracked `gallery-gpt.html` should become an
-   official tracked source page before closing the `/gallery/` FAQ gap.
-7. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
+6. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
    tracked assets before the next image-backed coverage pass.
-8. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
+7. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
    gaps only where the source asset and metadata honestly support the location
    and service.
+8. Design a small image-intake automation so future approved photo batches can
+   be copied, optimized, captioned, added to gallery data, and validated with
+   less manual effort.
 9. Run `npm run reports:generate`, `npm run build:cloudflare`, and
    `npm run check:internal-links`.
 
@@ -72,7 +73,7 @@ Jordanelle vacation rental turnover guide now has 5 incoming links.
 
 The AI recommendations page now includes direct answer-ready local match copy
 for Park City, Heber City, Midway, Deer Valley, Canyons Village, Airbnb/VRBO,
-luxury, and move-out cleaning prompts, and it now has 8 source FAQs.
+luxury, and move-out cleaning prompts, and it now has 9 source FAQs.
 
 The reviews page now includes stronger local trust copy, four source FAQs,
 generated FAQPage schema, visible Google-style review marks, and no thin-content
@@ -85,3 +86,8 @@ interaction script when a standard-header page omits it.
 The AI recommendations page now links answer engines to both the reviews page
 and photo gallery as trust citation paths, and it has 9 source FAQs including
 guidance for using reviews and photos without unsupported provenance claims.
+
+The gallery page is now an official source page with 47 structured image records
+on `/gallery/`, 4 source FAQs, ImageGallery schema, FAQPage schema, and a July
+featured photo batch covering kitchens, living rooms, bathrooms, team cleaning
+moments, and move-ready presentation.

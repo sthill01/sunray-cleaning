@@ -27,13 +27,12 @@ Generated: 2026-07-03
 | Canyons Village | Recurring | weak | 3 | 0 |
 | Canyons Village | Move-in/out | weak | 3 | 0 |
 | Canyons Village | Luxury | weak | 2 | 0 |
-| Summit County | Luxury | weak | 2 | 1 |
+| Summit County | Luxury | weak | 2 | 2 |
 
 ## Pages Without Source FAQs
 
 | Route | Type | Title |
 | --- | --- | --- |
-| /gallery/ | gallery | Photo Gallery & Cleaning Portfolio \| Sun Ray Cleaning |
 | /privacy-policy/ | page | Privacy Policy \| Sun Ray Cleaning |
 | /terms-and-conditions/ | page | Terms and Conditions \| Sun Ray Cleaning |
 

@@ -49,7 +49,7 @@ LOGO_PICTURE = (
 )
 CONTENT_SECURITY_POLICY = (
     "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; "
-    "script-src 'unsafe-inline' https://static.cloudflareinsights.com "
+    "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com "
     "https://cdn.trustindex.io https://*.trustindex.io "
     "https://sunray-cleaning.com/quote-modal.js https://www.sunray-cleaning.com/quote-modal.js "
     "https://*.pages.dev/quote-modal.js; "
@@ -366,6 +366,7 @@ REVIEWS = load_json(
 TRUSTINDEX_WIDGET_ID = "6cd0f19720d6425ad7461ea011a"
 TRUSTINDEX_LOADER_SRC = f"https://cdn.trustindex.io/loader.js?{TRUSTINDEX_WIDGET_ID}"
 BASE_JOB_GALLERY = load_json(DATA / "job-gallery.json", [])
+FEATURED_JOB_GALLERY = load_json(DATA / "gallery-featured-2026-07.json", [])
 SOCIAL_GALLERY = load_json(DATA / "social-gallery.json", {"items": []})
 
 
@@ -450,7 +451,7 @@ def approved_social_gallery_items() -> list[dict[str, object]]:
     return approved
 
 
-JOB_GALLERY = BASE_JOB_GALLERY + approved_social_gallery_items()
+JOB_GALLERY = FEATURED_JOB_GALLERY + BASE_JOB_GALLERY + approved_social_gallery_items()
 
 
 def clean_route_for(source: Path) -> str:
