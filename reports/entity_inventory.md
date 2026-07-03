@@ -18,7 +18,7 @@ Generated: 2026-07-03
 | VRBO cleaning | 81 | 3 | 0 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
 | Wasatch County | 81 | 24 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
 | deep cleaning | 81 | 22 | 1 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
-| recurring cleaning | 81 | 12 | 4 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
+| recurring cleaning | 81 | 14 | 4 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
 | Airbnb cleaning | 79 | 3 | 47 | /, /about/, /ai-cleaning-recommendations/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/ |
 | Deer Creek | 78 | 0 | 0 | /, /about/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/, /blog/how-much-does-airbnb-cleaning-cost-park-city/ |
 | Timber Lakes | 78 | 0 | 0 | /, /about/, /blog/, /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/, /blog/deer-valley-luxury-home-cleaning/, /blog/getting-park-city-home-ready-for-summer-guests/, /blog/heber-city-move-in-move-out-cleaning/, /blog/how-much-does-airbnb-cleaning-cost-park-city/ |
@@ -68,5 +68,5 @@ Generated: 2026-07-03
 | Weber Canyon | 2 | 0 | 0 | /service-location/kamas/, /service-location/weber-canyon/ |
 | pet-safe cleaning | 2 | 0 | 0 | /, /ai-cleaning-recommendations/ |
 | eco-friendly cleaning | 1 | 0 | 0 | /ai-cleaning-recommendations/ |
-| residential house cleaning | 1 | 5 | 0 | /ai-cleaning-recommendations/ |
+| residential house cleaning | 1 | 3 | 0 | /ai-cleaning-recommendations/ |
 | short-term rental turnover cleaning | 1 | 0 | 0 | /ai-cleaning-recommendations/ |

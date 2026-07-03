@@ -49,7 +49,7 @@ Generated: 2026-07-03
 | /service-location/salt-lake-county/ | Salt Lake County |  | 821 | 3 | 5 |
 | /service-location/samarkand/ | Samarkand | /service-location/midway/ | 745 | 3 | 5 |
 | /service-location/snyderville/ | Snyderville | /service-location/summit-county/ | 786 | 3 | 9 |
-| /service-location/summit-county/ | Summit County |  | 917 | 3 | 22 |
+| /service-location/summit-county/ | Summit County |  | 921 | 3 | 22 |
 | /service-location/swiss-mountain/ | Swiss Mountain | /service-location/midway/ | 751 | 3 | 5 |
 | /service-location/timber-lakes/ | Timber Lakes | /service-location/wasatch-county/ | 754 | 3 | 5 |
 | /service-location/wallsburg/ | Wallsburg | /service-location/wasatch-county/ | 751 | 3 | 9 |

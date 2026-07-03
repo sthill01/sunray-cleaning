@@ -316,20 +316,21 @@
   {
     "asset": "assets/job-gallery-2026-07/sun-ray-clean-cooktop-counter-detail.webp",
     "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_8556-new-folder-heic.jpg",
-    "name": "Clean cooktop and counter detail",
+    "name": "Heber City recurring cooktop and counter detail",
     "room": "Kitchen",
-    "service": "Residential house cleaning",
+    "service": "Recurring residential cleaning",
     "location": "Heber Valley, UT",
     "city": "Heber City",
     "county": "Wasatch County",
     "region": "Utah",
-    "alt": "Clean cooktop and kitchen counter detail after residential house cleaning by Sun Ray Cleaning Services",
-    "caption": "Cooktop and counter detail for a clean, usable kitchen.",
+    "alt": "Clean cooktop and kitchen counter detail after recurring residential cleaning in Heber City by Sun Ray Cleaning Services",
+    "caption": "Cooktop and counter detail for a Heber City recurring home cleaning visit.",
     "keywords": [
+      "Heber City recurring cleaning",
       "Heber City house cleaning",
       "cooktop cleaning",
       "kitchen counter cleaning",
-      "Wasatch County cleaners"
+      "Wasatch County recurring cleaners"
     ],
     "routes": [
       "/gallery/",

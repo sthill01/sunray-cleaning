@@ -1247,6 +1247,7 @@ flowchart TD
   route_service-location-summit-county -- mentions --> location_wasatch-county
   route_service-location-summit-county -- mentions --> service_airbnb-vrbo
   route_service-location-summit-county -- mentions --> service_deep-cleaning
+  route_service-location-summit-county -- mentions --> service_luxury
   route_service-location-summit-county -- mentions --> service_move-in-out
   route_service-location-summit-county -- mentions --> service_recurring
   route_service-location-summit-county -- mentions --> service_residential

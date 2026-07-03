@@ -1414,7 +1414,7 @@
       "title": "Get a Cleaning Quote | Sun Ray Cleaning",
       "h1": "Get a quick, transparent cleaning quote.",
       "rawWordCount": 752,
-      "builtWordCount": 1161,
+      "builtWordCount": 1162,
       "faqCount": 3,
       "imageCount": 5,
       "schemaTypes": [
@@ -1700,7 +1700,7 @@
       "title": "Photo Gallery & Cleaning Portfolio | Sun Ray Cleaning",
       "h1": "Photo gallery and cleaning portfolio from real Sun Ray jobs.",
       "rawWordCount": 728,
-      "builtWordCount": 2425,
+      "builtWordCount": 2428,
       "faqCount": 4,
       "imageCount": 56,
       "schemaTypes": [
@@ -3377,7 +3377,7 @@
       "title": "Heber City House Cleaning, Move Cleaning and Deep Cleaning | Sun Ray Cleaning",
       "h1": "Heber City house cleaning for family homes, moves, and guest-ready spaces.",
       "rawWordCount": 906,
-      "builtWordCount": 1469,
+      "builtWordCount": 1473,
       "faqCount": 3,
       "imageCount": 22,
       "schemaTypes": [
@@ -5844,10 +5844,10 @@
       "source": "service-location/summit-county-gpt.html",
       "kind": "location",
       "isPublic": true,
-      "title": "Summit County House Cleaning, Vacation Rental Cleaning and Deep Cleaning | Sun Ray Cleaning",
+      "title": "Summit County House Cleaning, Vacation Rental Cleaning and Luxury Cleaning | Sun Ray Cleaning",
       "h1": "Summit County cleaning from Park City to Kamas, Oakley, and Coalville.",
-      "rawWordCount": 917,
-      "builtWordCount": 1476,
+      "rawWordCount": 921,
+      "builtWordCount": 1480,
       "faqCount": 3,
       "imageCount": 22,
       "schemaTypes": [
@@ -9044,7 +9044,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 12,
+      "imageCount": 14,
       "faqPageCount": 4
     },
     {
@@ -10194,7 +10194,7 @@
         "/ai-cleaning-recommendations/"
       ],
       "pageCount": 1,
-      "imageCount": 5,
+      "imageCount": 3,
       "faqPageCount": 0
     },
     {

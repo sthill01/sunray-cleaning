@@ -4,11 +4,11 @@ Last updated: 2026-07-03
 
 ## Current Version
 
-SRAAP v0.6: Operational Readiness, AI recommendations foundation, review authority, mobile trust navigation, gallery proof, and resort-area image authority.
+SRAAP v0.6: Operational Readiness, AI recommendations foundation, review authority, mobile trust navigation, gallery proof, resort-area image authority, and coverage-matrix refinement.
 
 ## Current Sprint
 
-Production Improvement 12: resort-area image-backed authority proof.
+Production Improvement 13: image-backed authority coverage refinement.
 
 ## Completed This Sprint
 
@@ -104,6 +104,14 @@ Production Improvement 12: resort-area image-backed authority proof.
   service coverage copy for luxury condo and second-home cleaning intent.
 - Improved strong service-location matrix coverage from 54% to 79% and reduced
   weak service-location coverage cells from 22 to 10.
+- Updated verified Heber City recurring-cleaning image metadata in structured
+  gallery data so recurring residential cleaning is no longer a weak
+  service-location coverage cell.
+- Strengthened the Summit County source page and generator template with
+  luxury-home cleaning language in the title, metadata, hero, and planning copy.
+- Regenerated Repository Intelligence reports for 81 routes.
+- Improved strong service-location matrix coverage from 79% to 83% and reduced
+  weak service-location coverage cells from 10 to 8.
 
 ## Open Bugs
 
@@ -145,10 +153,10 @@ See `BLOCKERS.md`.
 
 ## AI Authority Score
 
-Current Repository Intelligence heuristic: 96.5 / 100.
+Current Repository Intelligence heuristic: 97.1 / 100.
 
 This is not a ranking claim. It is an internal engineering signal. Strong
-service-location matrix coverage remains the weakest measured category at 79%.
+service-location matrix coverage remains the weakest measured category at 83%.
 
 ## Entity Status
 
@@ -163,11 +171,11 @@ Core entities are documented in `AI_STANDARDS.md`. Coverage will be measured in
 - Public orphan routes detected: 0.
 - Pages without source FAQs: 2.
 - Low incoming public location routes: 2 legal/support pages.
-- Structured gallery records: 63.
-- `/gallery/` structured image records: 47.
+- Structured gallery records: 68.
+- `/gallery/` structured image records: 52.
 - Missing generated image alt attributes: 0.
-- Weak service-location coverage cells: 10.
-- Strong service-location matrix coverage: 79%.
+- Weak service-location coverage cells: 8.
+- Strong service-location matrix coverage: 83%.
 - Deer Valley luxury guide incoming links: 4.
 - Jordanelle turnover guide incoming links: 5.
 - AI recommendations page source FAQs: 9.
@@ -182,16 +190,17 @@ updates after every sprint.
 
 ## Sprint Review
 
-1. Greatest value delivered: Deer Valley and Canyons Village now have
-   image-backed service-area proof across the high-value cleaning intents where
-   answer engines need corroborating evidence.
-2. Unnecessary complexity found: the same image record can strengthen multiple
-   service matrices, so metadata discipline matters more than adding more
-   one-off page copy.
+1. Greatest value delivered: Heber City recurring cleaning and Summit County
+   luxury cleaning now have stronger, verified support without inventing
+   unsupported location or service provenance.
+2. Unnecessary complexity found: the coverage matrix is valuable, but the raw
+   JSON shape is less readable than the markdown report, so humans should use
+   `coverage_matrix.md` first unless automation needs machine-readable detail.
 3. Automation to add next: create a repeatable image-intake script that copies,
-   optimizes, captions, and validates approved photo batches into gallery data.
+   optimizes, captions, checks provenance, and validates approved photo batches
+   into gallery data.
 4. Documentation now out of date: analytics/account state and Cloudflare
    AI-crawler policy still need external confirmation.
 5. Highest-impact next task: resolve the Cloudflare AI-crawler policy, then
    run Baseline Run 001 or continue filling verified image-backed coverage gaps
-   for Heber City, Midway, Kamas, and Summit County luxury intent.
+   for Heber City Airbnb/VRBO, Midway, and Kamas.

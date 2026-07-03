@@ -59,10 +59,14 @@ Deer Valley and Canyons Village now have stronger public service-coverage copy,
 contextual links to the AI recommendations page and core service pages, and
 structured image-backed proof across their high-value service matrix cells.
 
-The coverage matrix now shows strong service-location coverage at 79%, with 10
-weak cells remaining: Heber City Airbnb/VRBO and recurring; Midway deep,
-move-in/out, and luxury; Kamas Airbnb/VRBO, deep, move-in/out, and luxury; and
-Summit County luxury.
+The coverage matrix now shows strong service-location coverage at 83%, with 8
+weak cells remaining: Heber City Airbnb/VRBO; Midway deep, move-in/out, and
+luxury; and Kamas Airbnb/VRBO, deep, move-in/out, and luxury.
+
+Heber City recurring cleaning now has verified structured image support, and
+Summit County luxury cleaning now has stronger source-page and generator copy.
+Do not close the remaining weak cells unless the source asset and metadata
+honestly support the location and service.
 
 Park City residential cleaning and move-in/move-out cleaning now have verified
 structured image support in the gallery metadata. Remaining image gaps should
@@ -93,8 +97,8 @@ The AI recommendations page now links answer engines to both the reviews page
 and photo gallery as trust citation paths, and it has 9 source FAQs including
 guidance for using reviews and photos without unsupported provenance claims.
 
-The gallery page is now an official source page with 47 structured image records
+The gallery page is now an official source page with 52 structured image records
 on `/gallery/`, 4 source FAQs, ImageGallery schema, FAQPage schema, and a July
 featured photo batch covering kitchens, living rooms, bathrooms, team cleaning
 moments, and move-ready presentation. The full structured gallery inventory now
-contains 63 records across gallery and route-specific proof.
+contains 68 records across gallery and route-specific proof.

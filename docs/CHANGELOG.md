@@ -2,6 +2,14 @@
 
 ## 2026-07-03
 
+- Updated verified Heber City recurring-cleaning image metadata in structured
+  gallery data.
+- Strengthened Summit County source-page and generator copy for luxury-home
+  cleaning relevance.
+- Regenerated Repository Intelligence reports for 81 routes.
+- Improved the internal AI Authority heuristic to 97.1 and strong
+  service-location matrix coverage to 83%.
+- Reduced weak service-location coverage cells from 10 to 8.
 - Fixed the `/reviews/` mobile header so the Google rating badge stays centered
   and the hamburger menu remains visible on narrow screens.
 - Added a build-pipeline guard that injects the shared interaction script when a

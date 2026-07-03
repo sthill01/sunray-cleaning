@@ -244,19 +244,20 @@
   {
     "asset": "assets/heber-city-residential-kitchen-cleaning-sun-ray.jpg",
     "sourceAsset": "assets/sunray-real-kitchen-logo.jpg",
-    "name": "Heber City residential kitchen cleaning",
+    "name": "Heber City recurring residential kitchen cleaning",
     "room": "Kitchen",
-    "service": "Residential house cleaning",
+    "service": "Recurring residential cleaning",
     "location": "Heber City, UT",
     "city": "Heber City",
     "county": "Wasatch County",
     "region": "Utah",
-    "alt": "Sun Ray Cleaning branded kitchen photo for residential cleaning in Heber City Utah",
-    "caption": "Kitchen cleaning proof for Heber City residential clients.",
+    "alt": "Sun Ray Cleaning branded kitchen photo for recurring residential cleaning in Heber City Utah",
+    "caption": "Kitchen cleaning proof for Heber City recurring residential clients.",
     "keywords": [
+      "Heber City recurring cleaning",
       "Heber City house cleaning",
       "residential kitchen cleaning",
-      "Wasatch County cleaners",
+      "Wasatch County recurring cleaners",
       "Sun Ray Cleaning"
     ],
     "routes": [

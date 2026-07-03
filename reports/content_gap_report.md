@@ -7,15 +7,13 @@ Generated: 2026-07-03
 | Location | Service | Status | Pages | Images |
 | --- | --- | --- | --- | --- |
 | Heber City | Airbnb/VRBO | weak | 21 | 0 |
-| Heber City | Recurring | weak | 21 | 0 |
 | Midway | Deep cleaning | weak | 19 | 0 |
 | Midway | Move-in/out | weak | 19 | 0 |
 | Midway | Luxury | weak | 3 | 0 |
 | Kamas | Airbnb/VRBO | weak | 9 | 0 |
 | Kamas | Deep cleaning | weak | 9 | 0 |
 | Kamas | Move-in/out | weak | 9 | 0 |
-| Kamas | Luxury | weak | 2 | 0 |
-| Summit County | Luxury | weak | 2 | 7 |
+| Kamas | Luxury | weak | 3 | 0 |
 
 ## Pages Without Source FAQs
 

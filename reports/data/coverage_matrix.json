@@ -183,7 +183,8 @@
         "/service-location/canyons-village/",
         "/service-location/deer-valley/",
         "/service-location/park-city/",
-        "/service-location/salt-lake-county/"
+        "/service-location/salt-lake-county/",
+        "/service-location/summit-county/"
       ],
       "imageCount": 7,
       "status": "strong"
@@ -295,8 +296,8 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 2,
+      "status": "strong"
     },
     "Move-in/out": {
       "pages": [
@@ -551,7 +552,8 @@
     "Luxury": {
       "pages": [
         "/ai-cleaning-recommendations/",
-        "/blog/"
+        "/blog/",
+        "/service-location/summit-county/"
       ],
       "imageCount": 0,
       "status": "weak"
@@ -760,10 +762,11 @@
     "Luxury": {
       "pages": [
         "/ai-cleaning-recommendations/",
-        "/blog/"
+        "/blog/",
+        "/service-location/summit-county/"
       ],
       "imageCount": 7,
-      "status": "weak"
+      "status": "strong"
     }
   },
   "Wasatch County": {
@@ -1048,7 +1051,7 @@
         "/services/recurring-cleaning/",
         "/services/short-term-rental-cleaning/"
       ],
-      "imageCount": 6,
+      "imageCount": 8,
       "status": "strong"
     },
     "Move-in/out": {
