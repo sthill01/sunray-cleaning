@@ -22,12 +22,13 @@ AI monitoring is not yet automated. Until it is, record manual checks here.
 
 ## Baseline Run 001
 
-Status: ready to run after Cloudflare crawler access and live `robots.txt` are
-confirmed over a longer window.
+Status: blocked until the live custom-domain Cloudflare Managed `robots.txt`
+block is removed or updated.
 
 Date window: first production check after `www.sunray-cleaning.com` serves the
-current indexed Cloudflare Pages artifact and AI crawler access remains open in
-Cloudflare AI Crawl Control.
+current indexed Cloudflare Pages artifact, the live custom-domain `robots.txt`
+does not prepend AI-crawler disallow rules, and AI crawler access remains open
+in Cloudflare AI Crawl Control.
 
 Platforms:
 
@@ -64,13 +65,19 @@ No current baseline recorded in the repo.
 
 ## Crawler Access Baseline
 
-July 3 Cloudflare AI Crawl Control screenshots showed major AI crawler block
-toggles off. The 1-hour view showed allowed activity for Claude-SearchBot,
-ChatGPT-User, Googlebot, and OAI-SearchBot. GPTBot had no requests in that
-selected window, which is a monitoring signal rather than proof of blocking.
+July 3 Cloudflare AI Crawl Control screenshots showed visible allowed activity
+for Claude-SearchBot, ChatGPT-User, Googlebot, and OAI-SearchBot, but the live
+custom-domain `robots.txt` later showed Cloudflare Managed Content still
+prepending explicit `Disallow: /` groups for GPTBot, ClaudeBot,
+Google-Extended, CCBot, Bytespider, Applebot-Extended, Amazonbot, and Meta
+crawlers. The repo-generated production `robots.txt` allows priority AI and
+search crawlers, and the fresh Pages deployment URL serves that file correctly;
+the remaining issue is the Cloudflare managed layer on the custom domain.
 
 Before running Baseline Run 001, recheck:
 
+- Cloudflare Managed `robots.txt` is disabled or updated so the custom domain
+  does not prepend AI-crawler disallow rules.
 - Cloudflare AI Crawl Control over 24-hour and 7-day windows.
 - Live `https://www.sunray-cleaning.com/robots.txt`.
 - Whether GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot,

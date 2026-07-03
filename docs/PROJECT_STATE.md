@@ -140,15 +140,21 @@ systems to recommend.
 - Ingested the July 3 executive status report and moved the program focus from
   infrastructure readiness toward content depth, entity authority, and local
   trust proof.
-- Reviewed Cloudflare AI Crawl Control screenshots showing major AI crawler
-  block toggles off and visible allowed activity for Claude-SearchBot,
-  ChatGPT-User, Googlebot, and OAI-SearchBot. GPTBot had no requests in the
-  selected window, which is a monitoring signal rather than proof of blocking.
+- Published the Airbnb cleaning cost guide as a stronger human-facing authority
+  article and added production `robots.txt` support that allows priority AI and
+  search crawlers from the repo-generated Pages artifact.
+- Verified the fresh Pages deployment serves the crawler-friendly `robots.txt`,
+  but the live custom domain still has Cloudflare Managed Content prepended
+  above the repo file with AI-crawler disallow groups. This is now tracked as an
+  external Cloudflare setting blocker.
 
 ## Open Bugs
 
 - Turno.com listing registration requires Product Owner action because it
   depends on creating or verifying a third-party marketplace profile.
+- Cloudflare Managed `robots.txt` must be disabled or updated in AI Crawl
+  Control / Bot Management so the custom domain stops prepending AI-crawler
+  disallow rules above the repo-generated crawler-friendly file.
 
 ## Known Technical Debt
 
@@ -167,8 +173,9 @@ systems to recommend.
    the next highest-ROI production authority improvement.
 2. Continue Phase 2 of `SEO-90-PLUS-ACTION-PLAN.md` with homepage review proof,
    local citations, and third-party entity authority.
-3. Recheck Cloudflare AI Crawl Control and live `robots.txt` over 24-hour and
-   7-day windows, then run Baseline Run 001 from `AI_MONITORING.md`.
+3. Clear the Cloudflare Managed `robots.txt` block, then recheck Cloudflare AI
+   Crawl Control and live `robots.txt` over 24-hour and 7-day windows before
+   running Baseline Run 001 from `AI_MONITORING.md`.
 4. Keep production deploys on `npm run build:production` /
    `npm run deploy:production`.
 
@@ -182,8 +189,9 @@ See `BLOCKERS.md`.
 - Add contextual internal links from the STR service page, Park City location
   page, AI recommendations page, and Park City Airbnb guides.
 - Add real Google review proof to the homepage in a compact, trust-building way.
-- Run and record the first repeatable AI monitoring baseline after AI-crawler
-  access is confirmed over a longer Cloudflare window.
+- Run and record the first repeatable AI monitoring baseline after the
+  Cloudflare Managed `robots.txt` block is removed and AI-crawler access is
+  confirmed over a longer Cloudflare window.
 - Review verified asset provenance for the next image-backed coverage pass.
 
 ## AI Authority Score

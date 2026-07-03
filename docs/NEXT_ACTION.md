@@ -20,8 +20,10 @@ Recommended next task:
 4. Add Service and FAQ structured data through the existing build pipeline.
 5. Add real Google review proof to the homepage and reviews journey without
    bloating the header or hero.
-6. Recheck Cloudflare AI Crawl Control over 24-hour and 7-day windows, plus
-   live `https://www.sunray-cleaning.com/robots.txt`.
+6. Clear the Cloudflare Managed `robots.txt` block that is still prepending
+   AI-crawler disallow rules on the custom domain, then recheck Cloudflare AI
+   Crawl Control over 24-hour and 7-day windows plus live
+   `https://www.sunray-cleaning.com/robots.txt`.
 7. Run Baseline Run 001 from `docs/AI_MONITORING.md` after crawler access is
    confirmed over a longer window.
 8. Record Sun Ray mentions, competitors, citations, missing facts, and follow-up
@@ -105,3 +107,8 @@ on `/gallery/`, 4 source FAQs, ImageGallery schema, FAQPage schema, and a July
 featured photo batch covering kitchens, living rooms, bathrooms, team cleaning
 moments, and move-ready presentation. The full structured gallery inventory now
 contains 68 records across gallery and route-specific proof.
+
+The repo-generated production `robots.txt` now allows priority AI and search
+crawlers, but the live custom domain still has Cloudflare Managed Content
+prepended above the repo file. Treat this as the next external blocker before
+AI visibility baseline testing.
