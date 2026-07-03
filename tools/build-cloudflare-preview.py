@@ -301,6 +301,8 @@ PRIORITY_ROUTES = [
     *SERVICE_NAV_ROUTES,
     *MAIN_AREA_ROUTES,
     ("/blog/how-much-does-airbnb-cleaning-cost-park-city/", "Park City Airbnb cleaning costs"),
+    ("/blog/what-does-deep-clean-include-room-by-room/", "Room-by-room deep cleaning guide"),
+    ("/blog/recurring-vs-deep-cleaning-which-service-need/", "Recurring vs deep cleaning guide"),
     ("/contact/", "Get a cleaning quote"),
 ]
 
@@ -349,6 +351,96 @@ BLOG_POST_SEO = {
         "service": "Vacation rental turnover cleaning",
         "location": "Jordanelle, Utah",
         "image": "/assets/summit-county-deep-cleaning-shower-detail-sun-ray.jpg",
+    },
+    "/blog/airbnb-same-day-turnover-cleaning-park-city/": {
+        "service": "Same-day vacation rental turnover cleaning",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-kitchen-turnover-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/canyons-village-kimball-junction-rental-cleaning/": {
+        "service": "Vacation rental cleaning in Canyons Village and Kimball Junction",
+        "location": "Canyons Village and Kimball Junction, Utah",
+        "image": "/assets/park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg",
+    },
+    "/blog/eco-friendly-cleaning-park-city-heber-valley/": {
+        "service": "Eco-friendly cleaning for homes and rentals",
+        "location": "Park City and Heber Valley, Utah",
+        "image": "/assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/hard-water-cleaning-tips-park-city-mountain-homes/": {
+        "service": "Hard water cleaning tips for mountain homes",
+        "location": "Park City, Utah",
+        "image": "/assets/summit-county-deep-cleaning-shower-detail-sun-ray.jpg",
+    },
+    "/blog/hard-water-cleaning-tips-summit-wasatch-county/": {
+        "service": "Hard water stain removal and descaling tips",
+        "location": "Summit County and Wasatch County, Utah",
+        "image": "/assets/park-city-deep-cleaning-bathroom-detail-sun-ray.jpg",
+    },
+    "/blog/how-to-choose-recurring-cleaning-service-park-city/": {
+        "service": "Recurring cleaning service selection guide",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/jordanelle-deer-creek-cabin-cleaning-weekend-owners/": {
+        "service": "Cabin and second-home cleaning for weekend owners",
+        "location": "Jordanelle and Deer Creek, Utah",
+        "image": "/assets/heber-city-residential-kitchen-cleaning-sun-ray.jpg",
+    },
+    "/blog/kamas-oakley-home-cleaning-eastern-summit-county/": {
+        "service": "Home cleaning in Kamas and Oakley",
+        "location": "Kamas and Oakley, Utah",
+        "image": "/assets/summit-county-deep-cleaning-shower-detail-sun-ray.jpg",
+    },
+    "/blog/local-cleaning-services-vs-national-apps-park-city/": {
+        "service": "Local cleaning services vs national booking apps",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/midway-cleaning-services-heber-valley-homeowners/": {
+        "service": "Residential cleaning services for Midway homeowners",
+        "location": "Midway and Heber Valley, Utah",
+        "image": "/assets/midway-recurring-bedroom-cleaning-sun-ray.jpg",
+    },
+    "/blog/move-in-cleaning-checklist-heber-city-midway/": {
+        "service": "Move-in cleaning checklist and prep",
+        "location": "Heber City and Midway, Utah",
+        "image": "/assets/heber-city-move-out-bathroom-vanity-cleaning-sun-ray.jpg",
+    },
+    "/blog/post-construction-cleaning-new-builds-heber-valley/": {
+        "service": "Post-construction cleaning for new builds and remodels",
+        "location": "Heber Valley, Utah",
+        "image": "/assets/park-city-move-clean-empty-room-may-6-sun-ray.jpg",
+    },
+    "/blog/prepare-park-city-home-winter-rental-season/": {
+        "service": "Winter rental season prep cleaning checklist",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-kitchen-turnover-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/recurring-vs-deep-cleaning-which-service-need/": {
+        "service": "Recurring vs deep cleaning service comparison",
+        "location": "Park City, Heber City, and Midway, Utah",
+        "image": "/assets/park-city-bathroom-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/spring-cleaning-guide-park-city-mountain-homes/": {
+        "service": "Spring cleaning deep clean checklist",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-open-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/summer-entertaining-prep-mountain-home-guest-ready/": {
+        "service": "Guest-ready cleaning prep for summer entertaining",
+        "location": "Park City, Heber City, and Midway, Utah",
+        "image": "/assets/park-city-open-kitchen-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/vacation-rental-cleaning-checklist-utah-mountain-properties/": {
+        "service": "Vacation rental cleaning checklist for mountain properties",
+        "location": "Park City, Heber City, and Midway, Utah",
+        "image": "/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg",
+    },
+    "/blog/what-does-deep-clean-include-room-by-room/": {
+        "service": "Deep cleaning room-by-room scope guide",
+        "location": "Park City, Heber City, and Midway, Utah",
+        "image": "/assets/park-city-deep-cleaning-bathroom-detail-sun-ray.jpg",
     },
 }
 
