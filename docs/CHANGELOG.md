@@ -23,6 +23,12 @@
   and no mobile review-badge/hamburger overlap.
 - Regenerated Repository Intelligence reports for 81 routes.
 - Validated `npm run build:cloudflare` and `npm run check:internal-links`.
+- Added six route-specific structured gallery proof records for Deer Valley and
+  Canyons Village service-area authority.
+- Strengthened Canyons Village luxury condo and second-home cleaning copy in
+  the page title, metadata, hero, and service coverage section.
+- Improved strong service-location matrix coverage from 54% to 79% and reduced
+  weak service-location coverage cells from 22 to 10.
 
 ## 2026-07-02
 

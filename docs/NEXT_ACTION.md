@@ -25,9 +25,9 @@ Recommended next task:
    work without claiming ranking improvement until outputs are logged.
 6. Review `reports/coverage_matrix.md`, `reports/image_inventory.md`, and
    tracked assets before the next image-backed coverage pass.
-7. Prioritize Park City, Deer Valley, Canyons Village, and Wasatch County image
-   gaps only where the source asset and metadata honestly support the location
-   and service.
+7. Prioritize Heber City, Midway, Kamas, and Summit County luxury image gaps
+   only where the source asset and metadata honestly support the location and
+   service.
 8. Design a small image-intake automation so future approved photo batches can
    be copied, optimized, captioned, added to gallery data, and validated with
    less manual effort.
@@ -55,8 +55,14 @@ authority signal.
 and is linked through priority routes, sitemap output, `llms.txt`, and generated
 answer-network links.
 
-Deer Valley and Canyons Village now have stronger public service-coverage copy
-and contextual links to the AI recommendations page and core service pages.
+Deer Valley and Canyons Village now have stronger public service-coverage copy,
+contextual links to the AI recommendations page and core service pages, and
+structured image-backed proof across their high-value service matrix cells.
+
+The coverage matrix now shows strong service-location coverage at 79%, with 10
+weak cells remaining: Heber City Airbnb/VRBO and recurring; Midway deep,
+move-in/out, and luxury; Kamas Airbnb/VRBO, deep, move-in/out, and luxury; and
+Summit County luxury.
 
 Park City residential cleaning and move-in/move-out cleaning now have verified
 structured image support in the gallery metadata. Remaining image gaps should
@@ -90,4 +96,5 @@ guidance for using reviews and photos without unsupported provenance claims.
 The gallery page is now an official source page with 47 structured image records
 on `/gallery/`, 4 source FAQs, ImageGallery schema, FAQPage schema, and a July
 featured photo batch covering kitchens, living rooms, bathrooms, team cleaning
-moments, and move-ready presentation.
+moments, and move-ready presentation. The full structured gallery inventory now
+contains 63 records across gallery and route-specific proof.

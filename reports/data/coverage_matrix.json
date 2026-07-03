@@ -32,7 +32,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 15,
+      "imageCount": 18,
       "status": "strong"
     },
     "Airbnb/VRBO": {
@@ -67,7 +67,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 7,
+      "imageCount": 9,
       "status": "strong"
     },
     "Deep cleaning": {
@@ -102,7 +102,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 9,
+      "imageCount": 11,
       "status": "strong"
     },
     "Recurring": {
@@ -137,7 +137,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 2,
+      "imageCount": 4,
       "status": "strong"
     },
     "Move-in/out": {
@@ -172,7 +172,7 @@
         "/services/short-term-rental-cleaning/",
         "/specials/"
       ],
-      "imageCount": 2,
+      "imageCount": 4,
       "status": "strong"
     },
     "Luxury": {
@@ -180,11 +180,12 @@
         "/",
         "/ai-cleaning-recommendations/",
         "/blog/",
+        "/service-location/canyons-village/",
         "/service-location/deer-valley/",
         "/service-location/park-city/",
         "/service-location/salt-lake-county/"
       ],
-      "imageCount": 2,
+      "imageCount": 7,
       "status": "strong"
     }
   },
@@ -565,8 +566,8 @@
         "/service-location/deer-valley/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 2,
+      "status": "strong"
     },
     "Airbnb/VRBO": {
       "pages": [
@@ -576,8 +577,8 @@
         "/service-location/deer-valley/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 1,
+      "status": "strong"
     },
     "Deep cleaning": {
       "pages": [
@@ -587,8 +588,8 @@
         "/service-location/deer-valley/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 1,
+      "status": "strong"
     },
     "Recurring": {
       "pages": [
@@ -598,8 +599,8 @@
         "/service-location/deer-valley/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 1,
+      "status": "strong"
     },
     "Move-in/out": {
       "pages": [
@@ -609,8 +610,8 @@
         "/service-location/deer-valley/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 1,
+      "status": "strong"
     },
     "Luxury": {
       "pages": [
@@ -620,8 +621,8 @@
         "/service-location/deer-valley/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 3,
+      "status": "strong"
     }
   },
   "Canyons Village": {
@@ -631,8 +632,8 @@
         "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 1,
+      "status": "strong"
     },
     "Airbnb/VRBO": {
       "pages": [
@@ -640,8 +641,8 @@
         "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 1,
+      "status": "strong"
     },
     "Deep cleaning": {
       "pages": [
@@ -649,8 +650,8 @@
         "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 1,
+      "status": "strong"
     },
     "Recurring": {
       "pages": [
@@ -658,8 +659,8 @@
         "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 1,
+      "status": "strong"
     },
     "Move-in/out": {
       "pages": [
@@ -667,16 +668,17 @@
         "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 1,
+      "status": "strong"
     },
     "Luxury": {
       "pages": [
         "/ai-cleaning-recommendations/",
+        "/service-location/canyons-village/",
         "/service-location/park-city/"
       ],
-      "imageCount": 0,
-      "status": "weak"
+      "imageCount": 2,
+      "status": "strong"
     }
   },
   "Summit County": {
@@ -692,7 +694,7 @@
         "/service-location/snyderville/",
         "/service-location/summit-county/"
       ],
-      "imageCount": 27,
+      "imageCount": 30,
       "status": "strong"
     },
     "Airbnb/VRBO": {
@@ -707,7 +709,7 @@
         "/service-location/snyderville/",
         "/service-location/summit-county/"
       ],
-      "imageCount": 7,
+      "imageCount": 9,
       "status": "strong"
     },
     "Deep cleaning": {
@@ -722,7 +724,7 @@
         "/service-location/snyderville/",
         "/service-location/summit-county/"
       ],
-      "imageCount": 11,
+      "imageCount": 13,
       "status": "strong"
     },
     "Recurring": {
@@ -737,7 +739,7 @@
         "/service-location/snyderville/",
         "/service-location/summit-county/"
       ],
-      "imageCount": 5,
+      "imageCount": 7,
       "status": "strong"
     },
     "Move-in/out": {
@@ -752,7 +754,7 @@
         "/service-location/snyderville/",
         "/service-location/summit-county/"
       ],
-      "imageCount": 4,
+      "imageCount": 6,
       "status": "strong"
     },
     "Luxury": {
@@ -760,7 +762,7 @@
         "/ai-cleaning-recommendations/",
         "/blog/"
       ],
-      "imageCount": 2,
+      "imageCount": 7,
       "status": "weak"
     }
   },

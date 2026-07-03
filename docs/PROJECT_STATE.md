@@ -4,11 +4,11 @@ Last updated: 2026-07-03
 
 ## Current Version
 
-SRAAP v0.5: Operational Readiness, AI recommendations foundation, review authority, mobile trust navigation, and gallery proof.
+SRAAP v0.6: Operational Readiness, AI recommendations foundation, review authority, mobile trust navigation, gallery proof, and resort-area image authority.
 
 ## Current Sprint
 
-Production Improvement 11: gallery portfolio authority and image-backed proof.
+Production Improvement 12: resort-area image-backed authority proof.
 
 ## Completed This Sprint
 
@@ -96,6 +96,14 @@ Production Improvement 11: gallery portfolio authority and image-backed proof.
 - Verified `/gallery/` locally with Playwright screenshots on desktop and
   mobile: 47 visible gallery cards, 47 image tags, 4 gallery FAQs, loaded hero
   image, and no mobile review-badge/hamburger overlap.
+- Added six service-area proof records to structured gallery data for Deer
+  Valley and Canyons Village coverage across residential, Airbnb/VRBO, deep
+  cleaning, recurring cleaning, move-in/out cleaning, and luxury cleaning
+  intent.
+- Strengthened the Canyons Village source page title, metadata, hero copy, and
+  service coverage copy for luxury condo and second-home cleaning intent.
+- Improved strong service-location matrix coverage from 54% to 79% and reduced
+  weak service-location coverage cells from 22 to 10.
 
 ## Open Bugs
 
@@ -137,10 +145,10 @@ See `BLOCKERS.md`.
 
 ## AI Authority Score
 
-Current Repository Intelligence heuristic: 92.8 / 100.
+Current Repository Intelligence heuristic: 96.5 / 100.
 
 This is not a ranking claim. It is an internal engineering signal. Strong
-service-location matrix coverage remains the weakest measured category at 54%.
+service-location matrix coverage remains the weakest measured category at 79%.
 
 ## Entity Status
 
@@ -153,13 +161,13 @@ Core entities are documented in `AI_STANDARDS.md`. Coverage will be measured in
 - Generated reports: 19.
 - Thin source pages under 450 words: 0.
 - Public orphan routes detected: 0.
-- Pages without source FAQs: 3.
+- Pages without source FAQs: 2.
 - Low incoming public location routes: 2 legal/support pages.
-- Structured gallery records: 57.
+- Structured gallery records: 63.
 - `/gallery/` structured image records: 47.
 - Missing generated image alt attributes: 0.
-- Weak service-location coverage cells: 22.
-- Strong service-location matrix coverage: 54%.
+- Weak service-location coverage cells: 10.
+- Strong service-location matrix coverage: 79%.
 - Deer Valley luxury guide incoming links: 4.
 - Jordanelle turnover guide incoming links: 5.
 - AI recommendations page source FAQs: 9.
@@ -174,14 +182,16 @@ updates after every sprint.
 
 ## Sprint Review
 
-1. Greatest value delivered: the gallery now acts as visible trust proof and
-   structured ImageGallery evidence for customers and answer engines.
-2. Unnecessary complexity found: featured gallery data must be loaded by both
-   the production build and Repository Intelligence, or reports drift from what
-   the site actually serves.
+1. Greatest value delivered: Deer Valley and Canyons Village now have
+   image-backed service-area proof across the high-value cleaning intents where
+   answer engines need corroborating evidence.
+2. Unnecessary complexity found: the same image record can strengthen multiple
+   service matrices, so metadata discipline matters more than adding more
+   one-off page copy.
 3. Automation to add next: create a repeatable image-intake script that copies,
    optimizes, captions, and validates approved photo batches into gallery data.
 4. Documentation now out of date: analytics/account state and Cloudflare
    AI-crawler policy still need external confirmation.
 5. Highest-impact next task: resolve the Cloudflare AI-crawler policy, then
-   run Baseline Run 001 or continue filling verified image-backed coverage gaps.
+   run Baseline Run 001 or continue filling verified image-backed coverage gaps
+   for Heber City, Midway, Kamas, and Summit County luxury intent.

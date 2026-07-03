@@ -732,9 +732,9 @@
       "title": "Deer Valley Luxury Home Cleaning Standards Explained | Sun Ray Cleaning",
       "h1": "Deer Valley Luxury Home Cleaning Standards Explained",
       "rawWordCount": 767,
-      "builtWordCount": 1174,
+      "builtWordCount": 1241,
       "faqCount": 3,
-      "imageCount": 4,
+      "imageCount": 7,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
@@ -2194,12 +2194,12 @@
       "source": "service-location/canyons-village-gpt.html",
       "kind": "location",
       "isPublic": true,
-      "title": "Canyons Village Condo and Vacation Rental Cleaning | Sun Ray Cleaning",
-      "h1": "Canyons Village condo and rental cleaning for guest-ready stays.",
-      "rawWordCount": 902,
-      "builtWordCount": 1435,
+      "title": "Canyons Village Luxury Condo and Vacation Rental Cleaning | Sun Ray Cleaning",
+      "h1": "Canyons Village luxury condo and rental cleaning for guest-ready stays.",
+      "rawWordCount": 909,
+      "builtWordCount": 1489,
       "faqCount": 3,
-      "imageCount": 9,
+      "imageCount": 11,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
@@ -3079,9 +3079,9 @@
       "title": "Deer Valley Luxury Home Cleaning and Turnovers | Sun Ray Cleaning",
       "h1": "Detailed Deer Valley cleaning for luxury homes and ski stays.",
       "rawWordCount": 909,
-      "builtWordCount": 1442,
+      "builtWordCount": 1492,
       "faqCount": 3,
-      "imageCount": 9,
+      "imageCount": 11,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
@@ -6938,7 +6938,7 @@
       "title": "Deep cleaning | Sun Ray Cleaning",
       "h1": "A detailed reset for homes that need more than maintenance.",
       "rawWordCount": 744,
-      "builtWordCount": 1217,
+      "builtWordCount": 1223,
       "faqCount": 3,
       "imageCount": 8,
       "schemaTypes": [
@@ -7082,7 +7082,7 @@
       "title": "Move-in and move-out cleaning | Sun Ray Cleaning",
       "h1": "Move-ready cleaning for buyers, sellers, renters, landlords and agents.",
       "rawWordCount": 758,
-      "builtWordCount": 1244,
+      "builtWordCount": 1247,
       "faqCount": 3,
       "imageCount": 8,
       "schemaTypes": [
@@ -7227,7 +7227,7 @@
       "title": "Recurring cleaning | Sun Ray Cleaning",
       "h1": "Weekly, biweekly and monthly cleaning that keeps your home comfortable.",
       "rawWordCount": 745,
-      "builtWordCount": 1215,
+      "builtWordCount": 1223,
       "faqCount": 3,
       "imageCount": 8,
       "schemaTypes": [
@@ -7372,9 +7372,9 @@
       "title": "Short-term rental cleaning | Sun Ray Cleaning",
       "h1": "Guest-ready Airbnb and VRBO cleaning for Park City rentals.",
       "rawWordCount": 776,
-      "builtWordCount": 1241,
+      "builtWordCount": 1273,
       "faqCount": 3,
-      "imageCount": 7,
+      "imageCount": 8,
       "schemaTypes": [
         "AdministrativeArea",
         "AggregateRating",
@@ -7798,7 +7798,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 0,
+      "imageCount": 3,
       "faqPageCount": 2
     },
     {
@@ -7887,7 +7887,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 0,
+      "imageCount": 3,
       "faqPageCount": 2
     },
     {
@@ -8510,7 +8510,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 21,
+      "imageCount": 27,
       "faqPageCount": 16
     },
     {
@@ -8688,7 +8688,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 33,
+      "imageCount": 39,
       "faqPageCount": 1
     },
     {
@@ -8777,7 +8777,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 1,
+      "imageCount": 3,
       "faqPageCount": 0
     },
     {
@@ -8955,7 +8955,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 18,
+      "imageCount": 20,
       "faqPageCount": 1
     },
     {
@@ -9044,7 +9044,7 @@
         "/terms-and-conditions/"
       ],
       "pageCount": 81,
-      "imageCount": 10,
+      "imageCount": 12,
       "faqPageCount": 4
     },
     {
@@ -9131,7 +9131,7 @@
         "/specials/"
       ],
       "pageCount": 79,
-      "imageCount": 1,
+      "imageCount": 3,
       "faqPageCount": 47
     },
     {
@@ -9606,7 +9606,7 @@
         "/services/move-in-move-out-cleaning/"
       ],
       "pageCount": 65,
-      "imageCount": 6,
+      "imageCount": 8,
       "faqPageCount": 2
     },
     {
@@ -9831,7 +9831,7 @@
         "/service-location/park-city/"
       ],
       "pageCount": 5,
-      "imageCount": 0,
+      "imageCount": 2,
       "faqPageCount": 1
     },
     {
@@ -10076,7 +10076,7 @@
         "/service-location/daniel/"
       ],
       "pageCount": 3,
-      "imageCount": 4,
+      "imageCount": 6,
       "faqPageCount": 0
     },
     {

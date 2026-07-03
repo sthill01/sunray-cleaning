@@ -271,7 +271,11 @@ flowchart TD
   image_sun-ray-bright-bathroom-after-cleaning-35 -- depicts --> location_heber-city
   image_sun-ray-bright-bathroom-after-cleaning-35 -- depicts --> location_wasatch-county
   image_sun-ray-bright-bathroom-after-cleaning-35 -- depicts --> service_residential
+  image_sun-ray-bright-living-room-home-reset -- depicts --> location_canyons-village
+  image_sun-ray-bright-living-room-home-reset -- depicts --> location_park-city
   image_sun-ray-bright-living-room-home-reset -- depicts --> location_summit-county
+  image_sun-ray-bright-living-room-home-reset -- depicts --> service_luxury
+  image_sun-ray-bright-living-room-home-reset -- depicts --> service_recurring
   image_sun-ray-bright-living-room-home-reset -- depicts --> service_residential
   image_sun-ray-bright-white-kitchen-after-cleaning-10 -- depicts --> location_summit-county
   image_sun-ray-bright-white-kitchen-after-cleaning-10 -- depicts --> service_move-in-out
@@ -300,8 +304,10 @@ flowchart TD
   image_sun-ray-cozy-living-room-after-cleaning-29 -- depicts --> service_residential
   image_sun-ray-elegant-living-room-after-cleaning-05 -- depicts --> location_summit-county
   image_sun-ray-elegant-living-room-after-cleaning-05 -- depicts --> service_residential
+  image_sun-ray-green-kitchen-counter-deep-cleaning-park-city -- depicts --> location_canyons-village
   image_sun-ray-green-kitchen-counter-deep-cleaning-park-city -- depicts --> location_park-city
   image_sun-ray-green-kitchen-counter-deep-cleaning-park-city -- depicts --> location_summit-county
+  image_sun-ray-green-kitchen-counter-deep-cleaning-park-city -- depicts --> service_airbnb-vrbo
   image_sun-ray-green-kitchen-counter-deep-cleaning-park-city -- depicts --> service_deep-cleaning
   image_sun-ray-green-kitchen-counter-deep-cleaning-park-city -- depicts --> service_luxury
   image_sun-ray-guest-bedroom-turnover-detail-13 -- depicts --> location_midway
@@ -344,19 +350,25 @@ flowchart TD
   image_sun-ray-modern-white-kitchen-polished-counters-28 -- depicts --> location_summit-county
   image_sun-ray-modern-white-kitchen-polished-counters-28 -- depicts --> service_move-in-out
   image_sun-ray-modern-white-kitchen-polished-counters-28 -- depicts --> service_residential
+  image_sun-ray-mountain-view-move-out-cleaning -- depicts --> location_deer-valley
   image_sun-ray-mountain-view-move-out-cleaning -- depicts --> location_park-city
   image_sun-ray-mountain-view-move-out-cleaning -- depicts --> location_summit-county
+  image_sun-ray-mountain-view-move-out-cleaning -- depicts --> service_luxury
   image_sun-ray-mountain-view-move-out-cleaning -- depicts --> service_move-in-out
   image_sun-ray-mountain-view-move-out-cleaning -- depicts --> service_residential
   image_sun-ray-polished-kitchen-sink-after-cleaning-16 -- depicts --> location_park-city
   image_sun-ray-polished-kitchen-sink-after-cleaning-16 -- depicts --> location_summit-county
   image_sun-ray-polished-kitchen-sink-after-cleaning-16 -- depicts --> service_recurring
   image_sun-ray-polished-kitchen-sink-after-cleaning-16 -- depicts --> service_residential
+  image_sun-ray-polished-kitchen-sink-counter -- depicts --> location_canyons-village
+  image_sun-ray-polished-kitchen-sink-counter -- depicts --> location_park-city
   image_sun-ray-polished-kitchen-sink-counter -- depicts --> location_summit-county
   image_sun-ray-polished-kitchen-sink-counter -- depicts --> service_move-in-out
   image_sun-ray-polished-kitchen-sink-counter -- depicts --> service_residential
+  image_sun-ray-polished-living-room-recurring-cleaning -- depicts --> location_deer-valley
   image_sun-ray-polished-living-room-recurring-cleaning -- depicts --> location_park-city
   image_sun-ray-polished-living-room-recurring-cleaning -- depicts --> location_summit-county
+  image_sun-ray-polished-living-room-recurring-cleaning -- depicts --> service_luxury
   image_sun-ray-polished-living-room-recurring-cleaning -- depicts --> service_recurring
   image_sun-ray-polished-living-room-recurring-cleaning -- depicts --> service_residential
   image_sun-ray-sectional-living-room-after-cleaning-30 -- depicts --> location_midway
@@ -390,9 +402,12 @@ flowchart TD
   image_sun-ray-team-deep-cleaning-kitchen-park-city-01 -- depicts --> location_summit-county
   image_sun-ray-team-deep-cleaning-kitchen-park-city-01 -- depicts --> service_deep-cleaning
   image_sun-ray-team-deep-cleaning-kitchen-park-city-01 -- depicts --> service_residential
+  image_sun-ray-team-kitchen-cleaning-in-progress -- depicts --> location_deer-valley
   image_sun-ray-team-kitchen-cleaning-in-progress -- depicts --> location_park-city
   image_sun-ray-team-kitchen-cleaning-in-progress -- depicts --> location_summit-county
+  image_sun-ray-team-kitchen-cleaning-in-progress -- depicts --> service_airbnb-vrbo
   image_sun-ray-team-kitchen-cleaning-in-progress -- depicts --> service_deep-cleaning
+  image_sun-ray-team-kitchen-cleaning-in-progress -- depicts --> service_luxury
   image_sun-ray-team-kitchen-cleaning-in-progress -- depicts --> service_residential
   image_sun-ray-team-kitchen-stovetop-cleaning-19 -- depicts --> location_summit-county
   image_sun-ray-team-kitchen-stovetop-cleaning-19 -- depicts --> service_deep-cleaning
@@ -621,6 +636,7 @@ flowchart TD
   route_service-location-canyons-village -- mentions --> location_wasatch-county
   route_service-location-canyons-village -- mentions --> service_airbnb-vrbo
   route_service-location-canyons-village -- mentions --> service_deep-cleaning
+  route_service-location-canyons-village -- mentions --> service_luxury
   route_service-location-canyons-village -- mentions --> service_move-in-out
   route_service-location-canyons-village -- mentions --> service_recurring
   route_service-location-canyons-village -- mentions --> service_residential

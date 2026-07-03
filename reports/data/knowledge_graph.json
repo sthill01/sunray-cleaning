@@ -1193,7 +1193,27 @@
     ],
     [
       "image_sun-ray-bright-living-room-home-reset",
+      "location_canyons-village",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-living-room-home-reset",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-living-room-home-reset",
       "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-living-room-home-reset",
+      "service_luxury",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-bright-living-room-home-reset",
+      "service_recurring",
       "depicts"
     ],
     [
@@ -1338,12 +1358,22 @@
     ],
     [
       "image_sun-ray-green-kitchen-counter-deep-cleaning-park-city",
+      "location_canyons-village",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-green-kitchen-counter-deep-cleaning-park-city",
       "location_park-city",
       "depicts"
     ],
     [
       "image_sun-ray-green-kitchen-counter-deep-cleaning-park-city",
       "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-green-kitchen-counter-deep-cleaning-park-city",
+      "service_airbnb-vrbo",
       "depicts"
     ],
     [
@@ -1558,12 +1588,22 @@
     ],
     [
       "image_sun-ray-mountain-view-move-out-cleaning",
+      "location_deer-valley",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-mountain-view-move-out-cleaning",
       "location_park-city",
       "depicts"
     ],
     [
       "image_sun-ray-mountain-view-move-out-cleaning",
       "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-mountain-view-move-out-cleaning",
+      "service_luxury",
       "depicts"
     ],
     [
@@ -1598,6 +1638,16 @@
     ],
     [
       "image_sun-ray-polished-kitchen-sink-counter",
+      "location_canyons-village",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-kitchen-sink-counter",
+      "location_park-city",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-kitchen-sink-counter",
       "location_summit-county",
       "depicts"
     ],
@@ -1613,12 +1663,22 @@
     ],
     [
       "image_sun-ray-polished-living-room-recurring-cleaning",
+      "location_deer-valley",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-living-room-recurring-cleaning",
       "location_park-city",
       "depicts"
     ],
     [
       "image_sun-ray-polished-living-room-recurring-cleaning",
       "location_summit-county",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-polished-living-room-recurring-cleaning",
+      "service_luxury",
       "depicts"
     ],
     [
@@ -1788,6 +1848,11 @@
     ],
     [
       "image_sun-ray-team-kitchen-cleaning-in-progress",
+      "location_deer-valley",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-cleaning-in-progress",
       "location_park-city",
       "depicts"
     ],
@@ -1798,7 +1863,17 @@
     ],
     [
       "image_sun-ray-team-kitchen-cleaning-in-progress",
+      "service_airbnb-vrbo",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-cleaning-in-progress",
       "service_deep-cleaning",
+      "depicts"
+    ],
+    [
+      "image_sun-ray-team-kitchen-cleaning-in-progress",
+      "service_luxury",
       "depicts"
     ],
     [
@@ -2939,6 +3014,11 @@
     [
       "route_service-location-canyons-village",
       "service_deep-cleaning",
+      "mentions"
+    ],
+    [
+      "route_service-location-canyons-village",
+      "service_luxury",
       "mentions"
     ],
     [

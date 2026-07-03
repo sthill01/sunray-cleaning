@@ -15,19 +15,7 @@ Generated: 2026-07-03
 | Kamas | Deep cleaning | weak | 9 | 0 |
 | Kamas | Move-in/out | weak | 9 | 0 |
 | Kamas | Luxury | weak | 2 | 0 |
-| Deer Valley | Residential | weak | 5 | 0 |
-| Deer Valley | Airbnb/VRBO | weak | 5 | 0 |
-| Deer Valley | Deep cleaning | weak | 5 | 0 |
-| Deer Valley | Recurring | weak | 5 | 0 |
-| Deer Valley | Move-in/out | weak | 5 | 0 |
-| Deer Valley | Luxury | weak | 5 | 0 |
-| Canyons Village | Residential | weak | 3 | 0 |
-| Canyons Village | Airbnb/VRBO | weak | 3 | 0 |
-| Canyons Village | Deep cleaning | weak | 3 | 0 |
-| Canyons Village | Recurring | weak | 3 | 0 |
-| Canyons Village | Move-in/out | weak | 3 | 0 |
-| Canyons Village | Luxury | weak | 2 | 0 |
-| Summit County | Luxury | weak | 2 | 2 |
+| Summit County | Luxury | weak | 2 | 7 |
 
 ## Pages Without Source FAQs
 

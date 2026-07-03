@@ -2,8 +2,8 @@
 
 Generated: 2026-07-03
 
-- Structured gallery records: 57
-- Image tags in generated pages: 662
+- Structured gallery records: 63
+- Image tags in generated pages: 670
 - Missing alt attributes in generated pages: 0
 - Missing gallery source assets: 0
 
@@ -13,21 +13,22 @@ Generated: 2026-07-03
 | --- | --- |
 | /gallery/ | 47 |
 | /service-location/wasatch-county/ | 9 |
+| /services/deep-cleaning/ | 9 |
+| /services/recurring-cleaning/ | 8 |
 | /service-location/park-city/ | 8 |
-| /services/deep-cleaning/ | 7 |
 | /service-location/summit-county/ | 7 |
-| /services/recurring-cleaning/ | 6 |
+| /services/move-in-move-out-cleaning/ | 6 |
 | / | 4 |
-| /services/move-in-move-out-cleaning/ | 4 |
 | /service-location/heber-city/ | 4 |
+| /service-location/deer-valley/ | 4 |
+| /services/short-term-rental-cleaning/ | 4 |
+| /service-location/canyons-village/ | 4 |
 | /about/ | 3 |
+| /blog/deer-valley-luxury-home-cleaning/ | 3 |
 | /services/ | 2 |
 | /service-areas/ | 2 |
 | /blog/post-ski-season-deep-clean-park-city-rental-owners/ | 2 |
-| /services/short-term-rental-cleaning/ | 2 |
 | /contact/ | 2 |
-| /service-location/deer-valley/ | 1 |
-| /service-location/canyons-village/ | 1 |
 | /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/ | 1 |
 | /blog/how-much-does-airbnb-cleaning-cost-park-city/ | 1 |
 | /service-location/old-town-park-city/ | 1 |

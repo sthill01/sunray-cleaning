@@ -243,5 +243,150 @@
       "/service-location/park-city/",
       "/service-location/summit-county/"
     ]
+  },
+  {
+    "asset": "assets/job-gallery-2026-07/sun-ray-polished-living-room-recurring-cleaning.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_7154.jpg",
+    "name": "Deer Valley luxury recurring residential cleaning proof",
+    "room": "Living room",
+    "service": "Luxury recurring residential cleaning",
+    "location": "Deer Valley service area, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Polished living room photo used as Deer Valley service-area proof for luxury recurring residential cleaning by Sun Ray Cleaning Services",
+    "caption": "Luxury living-space reset for Deer Valley recurring home cleaning context.",
+    "keywords": [
+      "Deer Valley luxury home cleaning",
+      "Deer Valley recurring cleaning",
+      "Deer Valley residential cleaning",
+      "Park City resort-area house cleaning"
+    ],
+    "routes": [
+      "/service-location/deer-valley/",
+      "/services/recurring-cleaning/",
+      "/blog/deer-valley-luxury-home-cleaning/"
+    ]
+  },
+  {
+    "asset": "assets/job-gallery-2026-07/sun-ray-team-kitchen-cleaning-in-progress.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_E3918.JPG",
+    "name": "Deer Valley luxury vacation rental deep cleaning proof",
+    "room": "Kitchen",
+    "service": "Luxury Airbnb and VRBO turnover deep cleaning",
+    "location": "Deer Valley service area, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Sun Ray Cleaning team kitchen photo used as Deer Valley service-area proof for luxury Airbnb VRBO turnover and deep cleaning",
+    "caption": "Team kitchen detail work for Deer Valley luxury rental and deep-cleaning context.",
+    "keywords": [
+      "Deer Valley Airbnb cleaning",
+      "Deer Valley VRBO cleaning",
+      "Deer Valley vacation rental cleaning",
+      "Deer Valley deep cleaning",
+      "luxury turnover cleaning"
+    ],
+    "routes": [
+      "/service-location/deer-valley/",
+      "/services/short-term-rental-cleaning/",
+      "/services/deep-cleaning/",
+      "/blog/deer-valley-luxury-home-cleaning/"
+    ]
+  },
+  {
+    "asset": "assets/job-gallery-2026-07/sun-ray-mountain-view-move-out-cleaning.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_8383-new-folder-heic.jpg",
+    "name": "Deer Valley luxury move-in move-out cleaning proof",
+    "room": "Living room",
+    "service": "Luxury move-in and move-out cleaning",
+    "location": "Deer Valley service area, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Mountain-view room photo used as Deer Valley service-area proof for luxury move-in and move-out cleaning by Sun Ray Cleaning Services",
+    "caption": "Move-ready mountain-home reset for Deer Valley luxury cleaning context.",
+    "keywords": [
+      "Deer Valley move-out cleaning",
+      "Deer Valley move-in cleaning",
+      "luxury move cleaning",
+      "Park City mountain home cleaning"
+    ],
+    "routes": [
+      "/service-location/deer-valley/",
+      "/services/move-in-move-out-cleaning/",
+      "/blog/deer-valley-luxury-home-cleaning/"
+    ]
+  },
+  {
+    "asset": "assets/job-gallery-2026-07/sun-ray-green-kitchen-counter-deep-cleaning-park-city.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_7034.jpg",
+    "name": "Canyons Village luxury vacation rental deep cleaning proof",
+    "room": "Kitchen",
+    "service": "Luxury Airbnb and VRBO turnover deep cleaning",
+    "location": "Canyons Village service area, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Polished kitchen photo used as Canyons Village service-area proof for luxury Airbnb VRBO turnover and deep cleaning by Sun Ray Cleaning Services",
+    "caption": "Kitchen detail proof for Canyons Village luxury rental and deep-cleaning context.",
+    "keywords": [
+      "Canyons Village Airbnb cleaning",
+      "Canyons Village VRBO cleaning",
+      "Canyons Village vacation rental cleaning",
+      "Canyons Village deep cleaning",
+      "luxury condo cleaning"
+    ],
+    "routes": [
+      "/service-location/canyons-village/",
+      "/services/short-term-rental-cleaning/",
+      "/services/deep-cleaning/"
+    ]
+  },
+  {
+    "asset": "assets/job-gallery-2026-07/sun-ray-bright-living-room-home-reset.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_7212.jpg",
+    "name": "Canyons Village luxury recurring residential cleaning proof",
+    "room": "Living room",
+    "service": "Luxury recurring residential cleaning",
+    "location": "Canyons Village service area, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Bright living room photo used as Canyons Village service-area proof for luxury recurring residential cleaning by Sun Ray Cleaning Services",
+    "caption": "Bright living-room reset for Canyons Village recurring luxury home cleaning context.",
+    "keywords": [
+      "Canyons Village residential cleaning",
+      "Canyons Village recurring cleaning",
+      "Canyons Village luxury cleaning",
+      "Park City resort condo cleaning"
+    ],
+    "routes": [
+      "/service-location/canyons-village/",
+      "/services/recurring-cleaning/"
+    ]
+  },
+  {
+    "asset": "assets/job-gallery-2026-07/sun-ray-polished-kitchen-sink-counter.webp",
+    "sourceAsset": "Sunray_photo_library/sunray_images_processed/IMG_8382-new-folder-heic.jpg",
+    "name": "Canyons Village move-in move-out cleaning proof",
+    "room": "Kitchen",
+    "service": "Move-in and move-out cleaning",
+    "location": "Canyons Village service area, UT",
+    "city": "Park City",
+    "county": "Summit County",
+    "region": "Utah",
+    "alt": "Polished kitchen sink photo used as Canyons Village service-area proof for move-in and move-out cleaning by Sun Ray Cleaning Services",
+    "caption": "Move-ready kitchen detail for Canyons Village cleaning context.",
+    "keywords": [
+      "Canyons Village move-out cleaning",
+      "Canyons Village move-in cleaning",
+      "Canyons Village condo cleaning",
+      "Park City move-ready cleaning"
+    ],
+    "routes": [
+      "/service-location/canyons-village/",
+      "/services/move-in-move-out-cleaning/"
+    ]
   }
 ]
