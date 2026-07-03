@@ -19,6 +19,12 @@ ALLOW_INDEXING = os.environ.get("SUNRAY_ALLOW_INDEXING", "").strip().lower() in 
 ROBOTS_META = "index, follow" if ALLOW_INDEXING else "noindex, follow"
 PHONE = "+18016042189"
 PHONE_DISPLAY = "(801) 604-2189"
+QUOTE_FIELD_GRID = """<div class="field-grid">
+    <label class="field">First name<input name="first-name" type="text" autocomplete="given-name" required placeholder="Jane"></label>
+    <label class="field">Phone<input name="phone" type="tel" autocomplete="tel" required placeholder="(801) 555-0123"></label>
+    <label class="field full">Street address<input name="street-address" type="text" autocomplete="street-address" required placeholder="123 Main St, Park City"></label>
+    <label class="field full">Service type<select name="service-type" required><option value="">Choose one</option><option>Recurring cleaning</option><option>Deep clean</option><option>Airbnb / VRBO turnover</option><option>Move-in / move-out</option><option>Not sure yet</option></select></label>
+  </div>"""
 
 
 def cache_bust_token(path: Path, length: int = 8) -> str:
@@ -122,9 +128,12 @@ LEGACY_REDIRECTS = {
     "/blog/cleaning-services-pricing": "/services/",
     "/blog/cleaning-tips-tricks": "/blog/",
     "/blog/complete-guide-airbnb-vrbo-cleaning-park-city": "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+    "/blog/airbnb-cleaning": "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/",
+    "/blog/deep-clean": "/services/deep-cleaning/",
     "/blog/downtown-salt-lake-cleaning": "/service-location/salt-lake-county/",
     "/blog/draper-utah-cleaning": "/service-location/salt-lake-county/",
     "/blog/green-cleaning-eco-friendly-practices": "/services/recurring-cleaning/",
+    "/blog/heber-cleaning": "/service-location/heber-city/",
     "/blog/heber-city-home-cleaning": "/service-location/heber-city/",
     "/blog/heber-city-residential-cleaning": "/service-location/heber-city/",
     "/blog/home-maintenance-preventive-care": "/services/recurring-cleaning/",
@@ -138,8 +147,10 @@ LEGACY_REDIRECTS = {
     "/blog/midway-utah-cleaning-experts": "/service-location/midway/",
     "/blog/millcreek-utah-cleaning": "/service-location/salt-lake-county/",
     "/blog/mountain-home-cleaning-challenges": "/services/deep-cleaning/",
+    "/blog/move-out": "/services/move-in-move-out-cleaning/",
     "/blog/murray-utah-cleaning": "/service-location/salt-lake-county/",
     "/blog/organization-decluttering": "/blog/",
+    "/blog/park-city-cleaning": "/service-location/park-city/",
     "/blog/park-city-cleaning-services": "/service-location/park-city/",
     "/blog/park-city-home-cleaning": "/service-location/park-city/",
     "/blog/park-city-summer-guest-ready-checklist": "/blog/getting-park-city-home-ready-for-summer-guests/",
@@ -147,10 +158,12 @@ LEGACY_REDIRECTS = {
     "/blog/post-ski-season-deep-clean-checklist-park-city": "/blog/post-ski-season-deep-clean-park-city-rental-owners/",
     "/blog/real-estate-move-in-move-out-cleaning": "/services/move-in-move-out-cleaning/",
     "/blog/red-ledges-home-cleaning": "/blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/",
+    "/blog/recurring": "/services/recurring-cleaning/",
     "/blog/salt-lake-valley-home-cleaning": "/service-location/salt-lake-county/",
     "/blog/seasonal-cleaning-guides": "/services/deep-cleaning/",
     "/blog/south-jordan-cleaning": "/service-location/salt-lake-county/",
     "/blog/vacation-seasonal-home-care": "/services/short-term-rental-cleaning/",
+    "/blog/vacation-rental": "/services/short-term-rental-cleaning/",
     "/blog/window-glass-cleaning-essentials": "/blog/",
     "/cleaning-services/deep-cleaning": "/services/deep-cleaning/",
     "/cleaning-services/short-term-rentals": "/services/short-term-rental-cleaning/",
@@ -1860,6 +1873,21 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     content = content.replace(
         "Webflow-ready form markup. In this static preview, call or text (801) 604-2189 for live scheduling.",
         "Prefer to talk now? Call or text (801) 604-2189.",
+    )
+    content = re.sub(
+        r'(<form class="quote-form"[^>]*>\s*)<div class="field-grid">.*?</div>\s*<div class="form-note">',
+        lambda match: match.group(1) + QUOTE_FIELD_GRID + "\n  <div class=\"form-note\">",
+        content,
+        flags=re.DOTALL,
+    )
+    content = content.replace("Request my quote", "Book a free estimate")
+    content = content.replace(
+        "Share your city or neighborhood, home size, timing and priorities. Sun Ray uses those details to give a practical quote without surprise add-ons.",
+        "Share your name, phone, address and service type. Sun Ray will follow up with a practical estimate without surprise add-ons.",
+    )
+    content = content.replace(
+        "Share your city or neighborhood, home size, timing, and priorities. Sun Ray uses those details to give a practical quote without surprise add-ons.",
+        "Share your name, phone, address, and service type. Sun Ray will follow up with a practical estimate without surprise add-ons.",
     )
     content = content.replace(
         'aria-label="Stylized map of Sun Ray Cleaning service areas"',

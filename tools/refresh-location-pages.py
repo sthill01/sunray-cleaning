@@ -740,7 +740,7 @@ def quote_modal() -> str:
       <aside class="quote-modal-copy">
         <p class="eyebrow">Get a transparent quote</p>
         <h2 id="quote-modal-title">Tell us what your home needs.</h2>
-        <p>Share your city or neighborhood, home size, timing, and priorities. Sun Ray uses those details to give a practical quote without surprise add-ons.</p>
+        <p>Share your name, phone, address, and service type. Sun Ray will follow up with a practical estimate without surprise add-ons.</p>
         <ul class="check-list">
           <li><div><strong>No-surprise pricing</strong><span>Quotes are based on real rooms, condition, and service type.</span></div></li>
           <li><div><strong>Eco and pet-safe options</strong><span>Helpful for families, hosts, and second homes.</span></div></li>
@@ -752,17 +752,13 @@ def quote_modal() -> str:
           <div class="field-grid">
             <label class="field">First name<input name="first-name" type="text" autocomplete="given-name" required placeholder="Jane"></label>
             <label class="field">Phone<input name="phone" type="tel" autocomplete="tel" required placeholder="(801) 555-0123"></label>
-            <label class="field">Email optional<input name="email" type="email" autocomplete="email" placeholder="you@example.com"></label>
-            <label class="field">City or neighborhood<input name="service-area" type="text" required placeholder="Park City, Heber, Midway..."></label>
-            <label class="field">Service type<select name="service-type" required><option value="">Choose one</option><option>Recurring cleaning</option><option>Deep clean</option><option>Move-in / move-out</option><option>Airbnb / VRBO turnover</option><option>Not sure yet</option></select></label>
-            <label class="field">Home size<input name="home-size" type="text" required placeholder="3 bed / 2 bath or 2,000 sq ft"></label>
-            <label class="field full">Preferred timing<input name="preferred-timing" type="text" placeholder="This week, next turnover, before move-in..."></label>
-            <label class="field full">Notes<textarea name="notes" placeholder="Pets, access, current condition, guest timing, product preferences..."></textarea></label>
+            <label class="field full">Street address<input name="street-address" type="text" autocomplete="street-address" required placeholder="123 Main St, Park City"></label>
+            <label class="field full">Service type<select name="service-type" required><option value="">Choose one</option><option>Recurring cleaning</option><option>Deep clean</option><option>Airbnb / VRBO turnover</option><option>Move-in / move-out</option><option>Not sure yet</option></select></label>
           </div>
           <div class="form-note">Webflow-ready form markup. In this static preview, call or text (801) 604-2189 for live scheduling.</div>
           <div class="form-success" role="status">Thanks. Your quote request was received.</div>
           <div class="form-error" role="alert">Something went wrong. Please call or text (801) 604-2189.</div>
-          <div class="form-actions"><button class="button button-yellow" type="submit">Request my quote</button><a class="button button-outline" href="sms:+18016042189">Text instead</a></div>
+          <div class="form-actions"><button class="button button-yellow" type="submit">Book a free estimate</button><a class="button button-outline" href="sms:+18016042189">Text instead</a></div>
         </form>
       </div>
     </div>

@@ -1,6 +1,6 @@
 # Blockers
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 ## Immediate Blockers
 
@@ -10,6 +10,10 @@ Last updated: 2026-07-02
   should decide whether Sun Ray wants these crawlers allowed for AI authority
   work, then update the Cloudflare setting or confirm that the restriction is
   intentional.
+- Turno.com marketplace registration is a high-ROI external task from
+  `SEO-90-PLUS-ACTION-PLAN.md`. Product Owner must create or verify the
+  business profile. Codex can document and link the profile after the public
+  profile URL exists.
 
 ## Recently Cleared
 

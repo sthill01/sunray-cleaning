@@ -3,7 +3,7 @@
 Generated: 2026-07-03
 
 - Structured gallery records: 68
-- Image tags in generated pages: 675
+- Image tags in generated pages: 741
 - Missing alt attributes in generated pages: 0
 - Missing gallery source assets: 0
 

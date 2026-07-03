@@ -8,7 +8,7 @@ SRAAP v0.6: Operational Readiness, AI recommendations foundation, review authori
 
 ## Current Sprint
 
-Production Improvement 13: image-backed authority coverage refinement.
+Production Improvement 14: SEO 90+ Phase 1 conversion and AI readiness fixes.
 
 ## Completed This Sprint
 
@@ -112,12 +112,17 @@ Production Improvement 13: image-backed authority coverage refinement.
 - Regenerated Repository Intelligence reports for 81 routes.
 - Improved strong service-location matrix coverage from 79% to 83% and reduced
   weak service-location coverage cells from 10 to 8.
+- Started the `SEO-90-PLUS-ACTION-PLAN.md` Phase 1 repo implementation:
+  simplified quote forms, added legacy redirects, strengthened short-term
+  rental FAQs, and documented Turno registration as an external blocker.
 
 ## Open Bugs
 
 - Cloudflare Managed Content in `robots.txt` still disallows several AI
   crawlers including GPTBot, ClaudeBot, Google-Extended, CCBot, Bytespider, and
   Applebot-Extended. See `BLOCKERS.md`.
+- Turno.com listing registration requires Product Owner action because it
+  depends on creating or verifying a third-party marketplace profile.
 
 ## Known Technical Debt
 
@@ -134,9 +139,11 @@ Production Improvement 13: image-backed authority coverage refinement.
 
 1. Resolve the Cloudflare Managed Content AI-crawler policy if the business
    wants major AI crawlers to access the site.
-2. Run Baseline Run 001 from `AI_MONITORING.md` after the crawler policy is
+2. Finish repo-safe Phase 1 items from `SEO-90-PLUS-ACTION-PLAN.md` before
+   moving into larger July landing-page and content work.
+3. Run Baseline Run 001 from `AI_MONITORING.md` after the crawler policy is
    confirmed or intentionally left restricted.
-3. Keep production deploys on `npm run build:production` /
+4. Keep production deploys on `npm run build:production` /
    `npm run deploy:production`.
 
 ## Blocked Items
@@ -145,8 +152,8 @@ See `BLOCKERS.md`.
 
 ## Upcoming Work
 
-- Improve image-backed coverage for priority service-location pairs with
-  verified assets and structured gallery metadata.
+- Complete and validate the Phase 1 SEO action plan repo changes: form
+  simplification, redirects, STR FAQ schema, and typo checks.
 - Run and record the first repeatable AI monitoring baseline after AI-crawler
   policy is confirmed.
 - Review verified asset provenance for the next image-backed coverage pass.

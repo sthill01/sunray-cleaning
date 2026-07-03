@@ -30,5 +30,4 @@ Generated: 2026-07-03
 | audit-webflow-migration-routes.py |
 | build-cloudflare-preview.py |
 | generate-repository-intelligence.py |
-| optimize_images.py |
 | refresh-location-pages.py |
