@@ -1,10 +1,10 @@
 # Build Report
 
-Generated: 2026-07-03
+Generated: 2026-07-04
 
-- Source route count: 98
-- Public source route count: 97
-- Existing build output route files: 99
+- Source route count: 102
+- Public source route count: 101
+- Existing build output route files: 103
 - Cloudflare output directory exists: True
 
 ## Package Scripts

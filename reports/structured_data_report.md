@@ -1,6 +1,6 @@
 # Structured Data Report
 
-Generated: 2026-07-03
+Generated: 2026-07-04
 
 Every generated public route should include JSON-LD from the build pipeline.
 
@@ -12,7 +12,9 @@ Every generated public route should include JSON-LD from the build pipeline.
 | /airbnb-cleaning-park-city/ | True | True | True | False | True | True |
 | /blog/ | True | True | True | True | True | True |
 | /blog/airbnb-same-day-turnover-cleaning-park-city/ | True | False | True | True | True | True |
+| /blog/behind-the-scenes-summer-turnover-cleaning-park-city/ | True | False | True | True | True | True |
 | /blog/canyons-village-kimball-junction-rental-cleaning/ | True | False | True | True | True | True |
+| /blog/cleaning-services-midway-utah/ | True | False | True | True | True | True |
 | /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/ | True | True | True | True | True | True |
 | /blog/deer-valley-luxury-home-cleaning/ | True | True | True | True | True | True |
 | /blog/eco-friendly-cleaning-park-city-heber-valley/ | True | False | True | True | True | True |
@@ -28,6 +30,7 @@ Every generated public route should include JSON-LD from the build pipeline.
 | /blog/local-cleaning-services-vs-national-apps-park-city/ | True | False | True | True | True | True |
 | /blog/midway-cleaning-services-heber-valley-homeowners/ | True | False | True | True | True | True |
 | /blog/move-in-cleaning-checklist-heber-city-midway/ | True | False | True | True | True | True |
+| /blog/move-in-move-out-cleaning-park-city-heber-valley/ | True | False | True | True | True | True |
 | /blog/post-construction-cleaning-new-builds-heber-valley/ | True | False | True | True | True | True |
 | /blog/post-ski-season-deep-clean-park-city-rental-owners/ | True | True | True | True | True | True |
 | /blog/prepare-park-city-home-winter-rental-season/ | True | False | True | True | True | True |
@@ -35,6 +38,7 @@ Every generated public route should include JSON-LD from the build pipeline.
 | /blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/ | True | True | True | True | True | True |
 | /blog/spring-cleaning-guide-park-city-mountain-homes/ | True | True | True | True | True | True |
 | /blog/summer-entertaining-prep-mountain-home-guest-ready/ | True | False | True | True | True | True |
+| /blog/summer-rental-season-prep-checklist-park-city-heber-valley/ | True | False | True | True | True | True |
 | /blog/vacation-rental-cleaning-checklist-utah-mountain-properties/ | True | False | True | True | True | True |
 | /blog/what-does-deep-clean-include-room-by-room/ | True | False | True | True | True | True |
 | /contact/ | True | True | True | False | True | True |

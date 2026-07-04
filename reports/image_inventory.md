@@ -1,9 +1,9 @@
 # Image Inventory
 
-Generated: 2026-07-03
+Generated: 2026-07-04
 
 - Structured gallery records: 68
-- Image tags in generated pages: 748
+- Image tags in generated pages: 752
 - Missing alt attributes in generated pages: 0
 - Missing gallery source assets: 0
 

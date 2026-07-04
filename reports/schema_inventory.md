@@ -1,33 +1,33 @@
 # Schema Inventory
 
-Generated: 2026-07-03
+Generated: 2026-07-04
 
 ## Type Summary
 
 | Schema Type | Page Count |
 | --- | --- |
-| AdministrativeArea | 98 |
-| AggregateRating | 98 |
-| BreadcrumbList | 98 |
-| City | 98 |
-| HouseCleaningService | 98 |
-| ImageObject | 98 |
-| ListItem | 98 |
-| LocalBusiness | 98 |
-| OpeningHoursSpecification | 98 |
-| Person | 98 |
-| Place | 98 |
-| PostalAddress | 98 |
-| Rating | 98 |
-| Review | 98 |
-| Service | 98 |
-| Thing | 98 |
-| WebSite | 98 |
-| WebPage | 97 |
+| AdministrativeArea | 102 |
+| AggregateRating | 102 |
+| BreadcrumbList | 102 |
+| City | 102 |
+| HouseCleaningService | 102 |
+| ImageObject | 102 |
+| ListItem | 102 |
+| LocalBusiness | 102 |
+| OpeningHoursSpecification | 102 |
+| Person | 102 |
+| Place | 102 |
+| PostalAddress | 102 |
+| Rating | 102 |
+| Review | 102 |
+| Service | 102 |
+| Thing | 102 |
+| WebSite | 102 |
+| WebPage | 101 |
 | Answer | 80 |
 | FAQPage | 80 |
 | Question | 80 |
-| BlogPosting | 27 |
+| BlogPosting | 31 |
 | ItemList | 2 |
 | AboutPage | 1 |
 | Audience | 1 |
@@ -47,7 +47,9 @@ Generated: 2026-07-03
 | /airbnb-cleaning-park-city/ | 1 | AdministrativeArea, AggregateRating, Answer, Audience, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, Offer, OpeningHoursSpecification, Person, Place, PostalAddress, PriceSpecification, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/ | 1 | AdministrativeArea, AggregateRating, Answer, Blog, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ItemList, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/airbnb-same-day-turnover-cleaning-park-city/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
+| /blog/behind-the-scenes-summer-turnover-cleaning-park-city/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/canyons-village-kimball-junction-rental-cleaning/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
+| /blog/cleaning-services-midway-utah/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/ | 1 | AdministrativeArea, AggregateRating, Answer, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/deer-valley-luxury-home-cleaning/ | 1 | AdministrativeArea, AggregateRating, Answer, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/eco-friendly-cleaning-park-city-heber-valley/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
@@ -63,6 +65,7 @@ Generated: 2026-07-03
 | /blog/local-cleaning-services-vs-national-apps-park-city/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/midway-cleaning-services-heber-valley-homeowners/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/move-in-cleaning-checklist-heber-city-midway/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
+| /blog/move-in-move-out-cleaning-park-city-heber-valley/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/post-construction-cleaning-new-builds-heber-valley/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/post-ski-season-deep-clean-park-city-rental-owners/ | 1 | AdministrativeArea, AggregateRating, Answer, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/prepare-park-city-home-winter-rental-season/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
@@ -70,6 +73,7 @@ Generated: 2026-07-03
 | /blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/ | 1 | AdministrativeArea, AggregateRating, Answer, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/spring-cleaning-guide-park-city-mountain-homes/ | 1 | AdministrativeArea, AggregateRating, Answer, BlogPosting, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/summer-entertaining-prep-mountain-home-guest-ready/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
+| /blog/summer-rental-season-prep-checklist-park-city-heber-valley/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/vacation-rental-cleaning-checklist-utah-mountain-properties/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /blog/what-does-deep-clean-include-room-by-room/ | 1 | AdministrativeArea, AggregateRating, BlogPosting, BreadcrumbList, City, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Rating, Review, Service, Thing, WebPage, WebSite |
 | /contact/ | 1 | AdministrativeArea, AggregateRating, Answer, BreadcrumbList, City, FAQPage, HouseCleaningService, ImageObject, ListItem, LocalBusiness, OpeningHoursSpecification, Person, Place, PostalAddress, Question, Rating, Review, Service, Thing, WebPage, WebSite |

@@ -312,6 +312,10 @@ PRIORITY_ROUTES = [
     *SERVICE_NAV_ROUTES,
     *MAIN_AREA_ROUTES,
     ("/airbnb-cleaning-park-city/", "Park City Airbnb cleaning landing page"),
+    ("/blog/behind-the-scenes-summer-turnover-cleaning-park-city/", "Park City summer turnover cleaning operations"),
+    ("/blog/cleaning-services-midway-utah/", "Midway Utah cleaning services guide"),
+    ("/blog/move-in-move-out-cleaning-park-city-heber-valley/", "Park City and Heber Valley move-in move-out cleaning guide"),
+    ("/blog/summer-rental-season-prep-checklist-park-city-heber-valley/", "Park City and Heber Valley summer rental prep checklist"),
     ("/blog/how-much-does-airbnb-cleaning-cost-park-city/", "Park City Airbnb cleaning costs"),
     ("/blog/what-does-deep-clean-include-room-by-room/", "Room-by-room deep cleaning guide"),
     ("/blog/recurring-vs-deep-cleaning-which-service-need/", "Recurring vs deep cleaning guide"),
@@ -324,6 +328,26 @@ for child_routes in LOCATION_CHILD_ROUTES.values():
         LINK_LABELS.setdefault(child_route, child_label)
 
 BLOG_POST_SEO = {
+    "/blog/behind-the-scenes-summer-turnover-cleaning-park-city/": {
+        "service": "Peak summer vacation rental turnovers",
+        "location": "Park City / Heber Valley, Utah",
+        "image": "/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg",
+    },
+    "/blog/cleaning-services-midway-utah/": {
+        "service": "Midway cleaning services",
+        "location": "Midway / Heber Valley, Utah",
+        "image": "/assets/midway-recurring-bedroom-cleaning-sun-ray.jpg",
+    },
+    "/blog/move-in-move-out-cleaning-park-city-heber-valley/": {
+        "service": "Move-in and move-out cleaning",
+        "location": "Park City / Heber Valley, Utah",
+        "image": "/assets/heber-city-move-out-bathroom-vanity-cleaning-sun-ray.jpg",
+    },
+    "/blog/summer-rental-season-prep-checklist-park-city-heber-valley/": {
+        "service": "Summer rental season turnover prep",
+        "location": "Park City / Heber Valley, Utah",
+        "image": "/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg",
+    },
     "/blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/": {
         "service": "Airbnb and VRBO turnover cleaning",
         "location": "Park City, Utah",

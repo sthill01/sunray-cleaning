@@ -1,6 +1,6 @@
 # FAQ Inventory
 
-Generated: 2026-07-03
+Generated: 2026-07-04
 
 | Route | FAQ Count | Sample Questions |
 | --- | --- | --- |
@@ -10,7 +10,9 @@ Generated: 2026-07-03
 | /airbnb-cleaning-park-city/ | 8 | How much does Airbnb cleaning cost in Park City? / What is included in a Park City Airbnb turnover cleaning? / Does Sun Ray clean rentals in Deer Valley and Canyons Village? |
 | /blog/ | 3 | What areas does Sun Ray Cleaning serve? / Can I request a quote online? / Do you offer recurring, deep, move and Airbnb cleaning? |
 | /blog/airbnb-same-day-turnover-cleaning-park-city/ | 0 |  |
+| /blog/behind-the-scenes-summer-turnover-cleaning-park-city/ | 0 |  |
 | /blog/canyons-village-kimball-junction-rental-cleaning/ | 0 |  |
+| /blog/cleaning-services-midway-utah/ | 0 |  |
 | /blog/complete-guide-airbnb-vrbo-cleaning-park-city-2026/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |
 | /blog/deer-valley-luxury-home-cleaning/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |
 | /blog/eco-friendly-cleaning-park-city-heber-valley/ | 0 |  |
@@ -26,6 +28,7 @@ Generated: 2026-07-03
 | /blog/local-cleaning-services-vs-national-apps-park-city/ | 0 |  |
 | /blog/midway-cleaning-services-heber-valley-homeowners/ | 0 |  |
 | /blog/move-in-cleaning-checklist-heber-city-midway/ | 0 |  |
+| /blog/move-in-move-out-cleaning-park-city-heber-valley/ | 0 |  |
 | /blog/post-construction-cleaning-new-builds-heber-valley/ | 0 |  |
 | /blog/post-ski-season-deep-clean-park-city-rental-owners/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |
 | /blog/prepare-park-city-home-winter-rental-season/ | 0 |  |
@@ -33,6 +36,7 @@ Generated: 2026-07-03
 | /blog/red-ledges-home-cleaning-guide-luxury-heber-homeowners/ | 3 | How do I get a quote from Sun Ray? / Does Sun Ray serve Park City, Heber City and Midway? / Can I ask for eco-friendly products? |
 | /blog/spring-cleaning-guide-park-city-mountain-homes/ | 5 | When is the best time for spring cleaning in Park City? / How is a spring deep clean different from regular cleaning? / Do you offer spring cleaning for Airbnb and VRBO rentals? |
 | /blog/summer-entertaining-prep-mountain-home-guest-ready/ | 0 |  |
+| /blog/summer-rental-season-prep-checklist-park-city-heber-valley/ | 0 |  |
 | /blog/vacation-rental-cleaning-checklist-utah-mountain-properties/ | 5 | How long should a vacation rental turnover cleaning take? / What should I inspect after a cleaning team finishes? / How much does professional vacation rental cleaning cost in Park City? |
 | /blog/what-does-deep-clean-include-room-by-room/ | 0 |  |
 | /contact/ | 3 | What areas does Sun Ray Cleaning serve? / Can I request a quote online? / Do you offer recurring, deep, move and Airbnb cleaning? |
