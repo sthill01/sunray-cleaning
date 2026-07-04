@@ -1328,6 +1328,10 @@ def build_structured_data(content: str, route: str) -> str:
         primary_image = absolute_url(
             "/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg"
         )
+    elif route == "/service-areas/":
+        primary_image = absolute_url(
+            "/assets/sun-ray-shower-glass-cleaning-service-areas-hero.jpg"
+        )
     elif post_meta.get("image"):
         primary_image = absolute_url(str(post_meta["image"]))
     else:

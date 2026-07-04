@@ -942,7 +942,7 @@ def service_area_hub() -> str:
         <p class="lead">Find the right local page for residential cleaning, Airbnb and VRBO turnovers, deep cleaning, recurring cleaning, move cleaning, second-home care, and rural-home cleaning.</p>
         <div class="hero-actions"><a class="button button-yellow" href="contact-gpt.html#quote-form" data-open-quote>Get a quote</a><a class="button button-outline" href="sms:+18016042189">Text (801) 604-2189</a></div>
       </div>
-      <div class="page-hero-media"><img src="assets/wasatch-county-residential-family-room-cleaning-sun-ray.jpg" alt="Sun Ray Cleaning residential service area across Summit County and Wasatch County"></div>
+      <div class="page-hero-media"><img src="assets/sun-ray-shower-glass-cleaning-service-areas-hero.jpg" alt="Sun Ray Cleaning team cleaning shower glass for a Summit County and Wasatch County home"></div>
     </div>
   </section>
 
