@@ -2162,7 +2162,7 @@ Quote page: {BASE_URL}/contact/
         encoding="utf-8",
     )
     (OUT / "auth.md").write_text(
-        f"""# Agent Authentication
+        f"""# auth.md
 
 Sun Ray Cleaning Services does not offer public agent registration, OAuth, or a
 protected API. All useful content is public.
