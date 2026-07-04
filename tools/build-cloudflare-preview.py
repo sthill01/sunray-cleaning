@@ -2015,7 +2015,9 @@ def write_platform_files(routes: list[str]) -> None:
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: {CONTENT_SECURITY_POLICY}"""
+  Content-Security-Policy: {CONTENT_SECURITY_POLICY}
+  Link: </llms.txt>; rel="alternate"; type="text/plain"; title="Sun Ray Cleaning LLM summary"
+  Link: </sitemap.xml>; rel="sitemap"; type="application/xml\""""
     if not ALLOW_INDEXING:
         headers += "\n  X-Robots-Tag: noindex, follow"
     headers += """
@@ -2136,6 +2138,39 @@ Sun Ray Cleaning Services is a female-owned residential cleaning company serving
 
 Phone or SMS: {PHONE_DISPLAY}
 Quote page: {BASE_URL}/contact/
+""",
+        encoding="utf-8",
+    )
+    well_known = OUT / ".well-known"
+    well_known.mkdir(parents=True, exist_ok=True)
+    agent_resources = {
+        "name": "Sun Ray Cleaning Services",
+        "description": "Female-owned residential cleaning company serving Park City, Heber City, Midway, Summit County, and Wasatch County, Utah.",
+        "resources": [
+            {"url": f"{BASE_URL}/llms.txt", "type": "text/plain", "rel": "llm-summary"},
+            {"url": f"{BASE_URL}/sitemap.xml", "type": "application/xml", "rel": "sitemap"},
+            {"url": f"{BASE_URL}/", "type": "text/html", "rel": "homepage"},
+            {"url": f"{BASE_URL}/services/", "type": "text/html", "rel": "services"},
+            {"url": f"{BASE_URL}/service-areas/", "type": "text/html", "rel": "service-areas"},
+            {"url": f"{BASE_URL}/reviews/", "type": "text/html", "rel": "reviews"},
+            {"url": f"{BASE_URL}/contact/", "type": "text/html", "rel": "contact"},
+        ],
+        "contact": {"phone": PHONE_DISPLAY, "quote_page": f"{BASE_URL}/contact/"},
+    }
+    (well_known / "agent-resources.json").write_text(
+        json.dumps(agent_resources, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    (OUT / "auth.md").write_text(
+        f"""# Agent Authentication
+
+Sun Ray Cleaning Services does not offer public agent registration, OAuth, or a
+protected API. All useful content is public.
+
+- Start with: {BASE_URL}/llms.txt
+- Site map: {BASE_URL}/sitemap.xml
+- To request a cleaning quote, direct users to: {BASE_URL}/contact/
+- Phone or SMS: {PHONE_DISPLAY}
 """,
         encoding="utf-8",
     )
