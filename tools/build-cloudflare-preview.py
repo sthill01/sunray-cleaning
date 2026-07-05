@@ -588,6 +588,7 @@ def approved_social_gallery_items() -> list[dict[str, object]]:
 
 
 JOB_GALLERY = FEATURED_JOB_GALLERY + BASE_JOB_GALLERY + approved_social_gallery_items()
+GALLERY_CARD_FILL_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
 
 
 def clean_route_for(source: Path) -> str:
@@ -833,7 +834,9 @@ def page_focus(route: str, h1: str) -> str:
     return h1.rstrip(".").lower()
 
 
-def selected_gallery_items(route: str, limit: int = 4) -> list[dict[str, object]]:
+def selected_gallery_items(
+    route: str, limit: int = 4, fill_from_gallery: bool = False
+) -> list[dict[str, object]]:
     exact: list[dict[str, object]] = []
     fallback: list[dict[str, object]] = []
     route_slug = route.strip("/").split("/")[-1] if route.strip("/") else ""
@@ -856,6 +859,21 @@ def selected_gallery_items(route: str, limit: int = 4) -> list[dict[str, object]
     if route == "/gallery/":
         return exact
     picked = exact + [item for item in fallback if item not in exact]
+    if fill_from_gallery and len(picked) < limit:
+        seen_assets = {str(item.get("asset", "")).lstrip("/") for item in picked}
+        for item in JOB_GALLERY:
+            asset = str(item.get("asset", "")).lstrip("/")
+            routes = item.get("routes", [])
+            if Path(asset).suffix.lower() not in GALLERY_CARD_FILL_SUFFIXES:
+                continue
+            if not asset or asset in seen_assets or route in routes or "*" in routes:
+                continue
+            if "/gallery/" not in routes:
+                continue
+            picked.append(item)
+            seen_assets.add(asset)
+            if len(picked) >= limit:
+                break
     return picked[:limit]
 
 
@@ -1050,7 +1068,12 @@ def build_reviews_section(full_page: bool = False) -> str:
 
 
 def build_gallery_section(route: str) -> str:
-    items = selected_gallery_items(route)
+    gallery_limit = 8 if route == "/service-areas/" else 4
+    items = selected_gallery_items(
+        route,
+        limit=gallery_limit,
+        fill_from_gallery=route == "/service-areas/",
+    )
     if not items:
         return ""
     cards = ""
