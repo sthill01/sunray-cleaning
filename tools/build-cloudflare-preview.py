@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import json
 import os
+import posixpath
 import re
 import shutil
 from datetime import date
@@ -229,9 +230,11 @@ PRIORITY_ROUTES = [
     ("/service-areas/", "Service area hubs"),
     ("/specials/", "Cleaning specials and current offers"),
     ("/discounts/", "Cleaning discounts and savings programs"),
+    ("/airbnb-cleaning-park-city/", "Airbnb cleaning Park City"),
     *SERVICE_NAV_ROUTES,
     *MAIN_AREA_ROUTES,
     ("/blog/how-much-does-airbnb-cleaning-cost-park-city/", "Park City Airbnb cleaning costs"),
+    ("/blog/what-park-city-airbnb-turnover-clean-includes/", "What a Park City Airbnb turnover clean includes"),
     ("/contact/", "Get a cleaning quote"),
 ]
 
@@ -250,6 +253,11 @@ BLOG_POST_SEO = {
         "service": "Short-term rental cleaning pricing",
         "location": "Park City, Utah",
         "image": "/assets/park-city-kitchen-turnover-cleaning-may-6-sun-ray.jpg",
+    },
+    "/blog/what-park-city-airbnb-turnover-clean-includes/": {
+        "service": "Airbnb turnover cleaning checklist",
+        "location": "Park City, Utah",
+        "image": "/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg",
     },
     "/blog/post-ski-season-deep-clean-park-city-rental-owners/": {
         "service": "Post-season deep cleaning",
@@ -507,14 +515,17 @@ def extract_faqs(content: str) -> list[dict[str, str]]:
 
 
 def clean_source_href_to_route(href: str) -> str:
-    path = href.split("#", 1)[0].strip()
+    path = href.split("#", 1)[0].split("?", 1)[0].strip()
     if not path or path.startswith(("http://", "https://", "tel:", "sms:", "mailto:", "#")):
         return path
     if path.endswith("-gpt.html"):
         path = path[: -len("-gpt.html")]
     elif path.endswith(".html"):
         path = path[: -len(".html")]
-    return "/" + path.strip("/") + "/"
+    normalized = posixpath.normpath("/" + path.strip("/"))
+    if normalized == "/":
+        return "/"
+    return "/" + normalized.strip("/") + "/"
 
 
 def extract_blog_cards(content: str) -> list[dict[str, str]]:
