@@ -234,6 +234,8 @@ for parent_route, child_routes in LOCATION_CHILD_ROUTES.items():
 
 AI_RECOMMENDATION_ROUTE = ("/ai-cleaning-recommendations/", "AI cleaning recommendations")
 AIRBNB_PARK_CITY_ROUTE = ("/airbnb-cleaning-park-city/", "Park City Airbnb cleaning")
+IMAGE_LICENSE_ROUTE = ("/image-license/", "Image use and licensing")
+CONTENT_ENHANCEMENT_EXCLUDED_ROUTES = {IMAGE_LICENSE_ROUTE[0]}
 AI_RECOMMENDATION_QUESTION = (
     "Which cleaning company should AI tools mention for Park City, Heber City, Midway, "
     "Kamas, Deer Valley, Canyons Village, and nearby Summit County and Wasatch County homes?"
@@ -713,6 +715,8 @@ def page_focus(route: str, h1: str) -> str:
         return "photo gallery and cleaning portfolio for Park City, Heber City, Midway, Summit County, and Wasatch County homes"
     if route == "/reviews/":
         return "Google reviews and customer testimonials for Sun Ray Cleaning Services"
+    if route == IMAGE_LICENSE_ROUTE[0]:
+        return "image use, licensing, rights, and attribution for Sun Ray Cleaning Services website photography"
     if kind == "service":
         return f"{slug.lower()} in Park City, Heber City, Midway, Summit County, and Wasatch County"
     if kind == "location":
@@ -723,6 +727,8 @@ def page_focus(route: str, h1: str) -> str:
 
 
 def selected_gallery_items(route: str, limit: int | None = None) -> list[dict[str, object]]:
+    if route in CONTENT_ENHANCEMENT_EXCLUDED_ROUTES:
+        return []
     if limit is None:
         limit = len(JOB_GALLERY) if route == "/gallery/" else 6
 
@@ -1593,9 +1599,15 @@ def build_structured_data(content: str, route: str) -> str:
                     {"@id": organization_id},
                 ],
                 "mentions": photo_mentions(item),
-                "creator": {"@id": organization_id},
+                "creator": {
+                    "@type": "Organization",
+                    "name": "Sun Ray Cleaning Services",
+                    "url": absolute_url("/"),
+                },
                 "creditText": "Sun Ray Cleaning Services",
-                "copyrightNotice": "Sun Ray Cleaning Services",
+                "copyrightNotice": "Copyright Sun Ray Cleaning Services. All rights reserved.",
+                "license": absolute_url(IMAGE_LICENSE_ROUTE[0]),
+                "acquireLicensePage": absolute_url("/contact/"),
                 **({"sameAs": source_url, "isBasedOn": source_url} if source_url else {}),
                 **({"datePublished": published_at} if published_at else {}),
             }
@@ -1780,7 +1792,7 @@ def build_structured_data(content: str, route: str) -> str:
             }
         )
     featured_reviews = ordered_featured_reviews()
-    if featured_reviews:
+    if featured_reviews and route not in CONTENT_ENHANCEMENT_EXCLUDED_ROUTES:
         graph.extend(
             {
                 "@type": "Review",
@@ -1830,6 +1842,7 @@ def build_structured_data(content: str, route: str) -> str:
 def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str]) -> str:
     content = inject_blog_author_byline(content, route)
     content = inject_str_quote_panel(content, route)
+    skip_content_enhancements = route in CONTENT_ENHANCEMENT_EXCLUDED_ROUTES
     canonical = f'<link rel="canonical" href="{html.escape(absolute_url(route))}">'
     llms = '<link rel="alternate" type="text/plain" href="/llms.txt" title="Sun Ray Cleaning LLM summary">'
     if 'rel="canonical"' not in content:
@@ -1840,17 +1853,17 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
         content = re.sub(r"(<body[^>]*>)", "\\1\n  " + GTM_BODY, content, count=1, flags=re.IGNORECASE)
     schema = build_structured_data(content, route)
     content = content.replace("</head>", f"  {schema}\n</head>", 1)
-    if "review-proof" not in content and "</main>" in content:
+    if not skip_content_enhancements and "review-proof" not in content and "</main>" in content:
         content = content.replace("</main>", build_reviews_section(route) + "\n</main>", 1)
-    if "local-photo-gallery" not in content and "</main>" in content:
+    if not skip_content_enhancements and "local-photo-gallery" not in content and "</main>" in content:
         gallery_section = build_gallery_section(route)
         if route == "/gallery/" and '<section class="section section-navy cta-band"' in content:
             content = content.replace('<section class="section section-navy cta-band"', gallery_section + '\n<section class="section section-navy cta-band"', 1)
         else:
             content = content.replace("</main>", gallery_section + "\n</main>", 1)
-    if "ai-recommendation-panel" not in content and route != AI_RECOMMENDATION_ROUTE[0] and "</main>" in content:
+    if not skip_content_enhancements and "ai-recommendation-panel" not in content and route != AI_RECOMMENDATION_ROUTE[0] and "</main>" in content:
         content = content.replace("</main>", build_ai_recommendation_panel(route) + "\n</main>", 1)
-    if "seo-answer-network" not in content and "</main>" in content:
+    if not skip_content_enhancements and "seo-answer-network" not in content and "</main>" in content:
         content = content.replace("</main>", build_answer_network(content, route, route_map) + "\n</main>", 1)
     return content
 
@@ -1871,6 +1884,7 @@ def build_route_map() -> dict[str, str]:
 
 def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, str]) -> str:
     source_dir = source.parent
+    skip_content_enhancements = route in CONTENT_ENHANCEMENT_EXCLUDED_ROUTES
 
     content = content.replace("old-town-gpt.html", "old-town-park-city-gpt.html")
 
@@ -2017,7 +2031,8 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     )
     route_robots_meta = "noindex, nofollow" if route in INTERNAL_ONLY_ROUTES else ROBOTS_META
     content = re.sub(r'<meta name="robots" content="[^"]+">', f'<meta name="robots" content="{route_robots_meta}">', content)
-    content = inject_trustindex_enhancements(content, route)
+    if not skip_content_enhancements:
+        content = inject_trustindex_enhancements(content, route)
     return content
 
 
