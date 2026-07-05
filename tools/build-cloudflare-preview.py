@@ -1242,7 +1242,9 @@ def build_gallery_section(route: str) -> str:
         )
         cards += f"""
         <figure class="job-photo-card" {card_attrs}>
-          <img src="{html.escape(asset_src)}" alt="{alt}" loading="lazy">
+          <div class="job-photo-media">
+            <img src="{html.escape(asset_src)}" alt="{alt}" loading="lazy">
+          </div>
           <figcaption>
             <strong>{caption}</strong>
             <span>{room} - {service} - {location}</span>
