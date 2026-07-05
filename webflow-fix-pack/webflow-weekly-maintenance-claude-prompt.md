@@ -12,6 +12,101 @@ Preserve the brand name exactly: Sun Ray Cleaning.
 Return a concise change log and a manual review checklist.
 ```
 
+## Prompt J - Stage Red Ledges CMS blog draft
+
+```text
+Create or update a Webflow CMS blog draft for Sun Ray Cleaning using the Red Ledges markdown I paste next.
+Do not publish production.
+
+Use this slug:
+red-ledges-home-cleaning-guide-luxury-heber-homeowners
+
+Before applying changes:
+- Confirm the Webflow site and CMS collection item you are editing.
+- Confirm whether a live or draft item already exists for this slug.
+- Preserve the brand name exactly: Sun Ray Cleaning.
+
+CMS requirements:
+- Preserve the H1, H2s, FAQs, internal links, and phone CTA.
+- Add the SEO title and meta description from the draft.
+- Add or confirm the hero image and alt text.
+- Add FAQ schema only for the visible FAQ section.
+- Ensure exactly one H1.
+- Keep links pointed at current Webflow routes, especially /services/recurring-cleaning, /services/deep-cleaning, /services/short-term-rental-cleaning, /service-location/heber-city, and /service-location/wasatch-county.
+
+After staging:
+- Report whether the item is draft or published.
+- List missing CMS fields, broken links, schema issues, and manual review items.
+- Do not publish production unless I explicitly approve it.
+```
+
+---
+
+## Prompt K - Prepare Park City deep vs recurring draft decision
+
+```text
+Audit the next Sun Ray Cleaning blog item: Park City Deep Cleaning vs. Recurring Cleaning.
+Do not publish production.
+
+Current planning title:
+Park City Deep Cleaning vs. Recurring Cleaning: Which Service Do You Need?
+
+Before making changes:
+- Confirm whether Webflow already has a CMS item for this topic.
+- Report the current slug if it exists.
+- Compare it against these possible slugs:
+  - /blog/park-city-deep-cleaning-vs-recurring-cleaning/
+  - /blog/recurring-vs-deep-cleaning-which-service-need/
+
+Recommend whether to keep the existing slug or update it for Park City search intent. If a slug change is recommended, ask before changing and include the redirect needed from the old slug to the new slug.
+
+Then prepare the draft fields:
+- SEO title under about 60 characters when practical.
+- Meta description around 140-160 characters.
+- Internal links to /services/deep-cleaning, /services/recurring-cleaning, /service-location/park-city, /service-location/heber-city, and /service-location/midway where natural.
+- FAQ schema only if visible FAQs exist.
+
+Return a concise staging checklist and do not publish production unless I explicitly approve it.
+```
+
+---
+
+## Prompt L - Stage Park City deep vs recurring CMS draft
+
+```text
+Create or update a Webflow CMS blog draft for Sun Ray Cleaning using the Park City deep-cleaning-vs-recurring markdown I paste next.
+Do not publish production.
+
+Before applying changes:
+- Confirm the Webflow site and CMS collection item you are editing.
+- Confirm whether a live or draft item already exists for either of these routes:
+  - /blog/park-city-deep-cleaning-vs-recurring-cleaning/
+  - /blog/recurring-vs-deep-cleaning-which-service-need/
+- If both exist, stop and report the duplicate-risk before editing.
+- Preserve the brand name exactly: Sun Ray Cleaning.
+
+Preferred calendar slug:
+park-city-deep-cleaning-vs-recurring-cleaning
+
+Existing repo/live route found during the 2026-06-24 prep run:
+recurring-vs-deep-cleaning-which-service-need
+
+If changing the slug, ask before applying it and list the needed 301 redirect from the old route to the new route.
+
+CMS requirements:
+- Preserve the H1, H2s, FAQs, internal links, and phone CTA.
+- Add the SEO title and meta description from the draft.
+- Use or confirm the hero image: assets/park-city-deep-cleaning-bathroom-detail-sun-ray.jpg.
+- Add FAQ schema only for the visible FAQ section.
+- Ensure exactly one H1.
+- Keep links pointed at current Webflow routes, especially /services/deep-cleaning, /services/recurring-cleaning, /services/move-in-move-out-cleaning, /service-location/park-city, /service-location/heber-city, and /service-location/midway.
+
+After staging:
+- Report whether the item is draft or published.
+- List missing CMS fields, broken links, schema issues, redirect needs, and manual review items.
+- Do not publish production unless I explicitly approve it.
+```
+
 ---
 
 ## Prompt A - Indexing (sitemap + robots) + redirect safety
@@ -20,6 +115,7 @@ Return a concise change log and a manual review checklist.
 Audit this Webflow site's indexing setup and redirect hygiene:
 
 1) Confirm whether the auto-generated sitemap is enabled. Report the exact live sitemap URL (www vs non-www).
+   - Also confirm whether core service pages appear in the sitemap (example targets: /services/deep-cleaning, /services/short-term-rental-cleaning).
 2) Inspect robots.txt. Ensure it allows crawling and includes a Sitemap line that matches the canonical domain.
 3) Open the Redirects manager and instruct me how to export redirects BEFORE importing a CSV.
 4) After export, I will merge in new redirect rows (I will provide the merged CSV). Tell me how to import it back safely.
@@ -74,7 +170,8 @@ Audit this page for trust proof:
    A) embed a reviews widget (what vendor options exist and what approvals are needed)
    B) manually add 6-10 owner-approved review excerpts across site sections
 
-Do not fabricate testimonials or star ratings. Ask before adding any review text.
+Do not fabricate testimonials, star ratings, review counts, or dates. Ask before adding any review text.
+If you propose displaying a rating or review count, ask me to confirm the exact current values from Google Business Profile first.
 ```
 
 ---
@@ -182,4 +279,64 @@ Requested slug (draft): /park-city-airbnb-vrbo-turnover-cleaning
 
 Ask before applying any edits or creating the page.
 Return a concise change log and a manual review checklist.
+```
+
+---
+
+## Prompt M - Production crawl-control repair
+
+```text
+Audit and repair the production crawl-control setup for Sun Ray Cleaning.
+
+Known live issues from the 2026-07-01 read-only check:
+- https://www.sunray-cleaning.com/ returned x-robots-tag: noindex, follow.
+- https://www.sunray-cleaning.com/robots.txt included a final User-agent: * / Disallow: / block.
+- robots.txt pointed the Sitemap line to https://sunray-cleaning-preview.pages.dev/sitemap.xml.
+- https://www.sunray-cleaning.com/sitemap.xml returned preview-domain loc values.
+- Cloudflare Managed Content rules disallowed ClaudeBot, GPTBot, Google-Extended, CCBot, and related crawlers.
+
+Tasks:
+1) Confirm whether the noindex header is coming from Webflow, Cloudflare Pages, Cloudflare Rules, _headers, or another layer.
+2) Confirm the intended canonical domain is https://www.sunray-cleaning.com.
+3) Replace production robots/sitemap behavior so normal search crawlers can index the site and sitemap loc values use the www production domain.
+4) Separate the AI-crawler policy decision from ordinary search indexing; do not change Cloudflare Managed Content rules until I approve the policy.
+5) After any approved change, purge or bypass cache and recheck:
+   - curl -I https://www.sunray-cleaning.com/
+   - curl https://www.sunray-cleaning.com/robots.txt
+   - curl https://www.sunray-cleaning.com/sitemap.xml
+
+Do not publish production, change Cloudflare settings, or purge cache until I explicitly approve each action.
+Return the exact setting changed, the before/after evidence, and any remaining blocker.
+```
+
+---
+
+## Prompt N - Convert new summer turnover source into a CMS draft
+
+```text
+Prepare a Webflow CMS draft from the source article I paste next:
+"Behind the Scenes: How Sun Ray Handles Peak Summer Turnover Season in Park City"
+
+Do not publish production.
+
+Suggested slug:
+behind-the-scenes-summer-turnover-cleaning-park-city
+
+Before applying changes:
+- Confirm whether a CMS item already exists for this slug.
+- Confirm the Webflow site and CMS collection item you are editing.
+- Preserve the brand name exactly: Sun Ray Cleaning.
+
+CMS requirements:
+- Preserve the H1, H2s, body copy, internal links, and CTA.
+- Add an SEO title under about 60 characters when practical.
+- Add a meta description around 140-160 characters.
+- Recommend one hero image concept and alt text from approved Sun Ray assets.
+- Add FAQ schema only if visible FAQs exist in the pasted copy.
+- Ensure exactly one H1.
+
+After staging:
+- Report whether the item is draft or published.
+- List missing CMS fields, broken links, schema issues, redirect needs, and manual review items.
+- Do not publish production unless I explicitly approve it.
 ```

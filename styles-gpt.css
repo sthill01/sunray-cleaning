@@ -2108,6 +2108,20 @@ p {
   margin: 18px 0 0;
 }
 
+.post-author-byline {
+  margin: 12px 0 0;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.post-author-byline span {
+  color: var(--navy);
+}
+
+.str-quote-panel .info-card {
+  align-self: stretch;
+}
+
 .map-card {
   position: relative;
   overflow: hidden;
