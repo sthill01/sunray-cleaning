@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap");
-
 :root {
   --yellow: #f2b816;
   --yellow-deep: #e0a80c;
@@ -17,8 +15,8 @@
   --white: #ffffff;
   --success: #3f8f4a;
   --danger: #c24a3b;
-  --display: "Poppins", "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --body: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --shadow-sm: 0 2px 6px rgba(20, 40, 73, 0.08);
   --shadow-md: 0 8px 20px rgba(20, 40, 73, 0.1);
   --shadow-lg: 0 24px 54px rgba(20, 40, 73, 0.15);
@@ -167,6 +165,10 @@ p {
   align-items: center;
   flex: 0 0 auto;
   text-decoration: none;
+}
+
+.brand picture {
+  display: inline-flex;
 }
 
 .brand img {
@@ -724,6 +726,19 @@ p {
   border-radius: 20px 20px 0 0;
 }
 
+.info-card > picture {
+  display: block;
+  overflow: hidden;
+  margin: -26px -26px 22px;
+  border-radius: 20px 20px 0 0;
+}
+
+.info-card > picture .card-image {
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+}
+
 .service-image-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -749,10 +764,13 @@ p {
   text-decoration: none;
 }
 
-.service-image-panel img {
+.service-image-panel picture {
   position: absolute;
   inset: 0;
   z-index: -2;
+}
+
+.service-image-panel img {
   width: 100%;
   height: 100%;
   max-width: none;
@@ -1143,6 +1161,14 @@ p {
   gap: 14px;
 }
 
+.hero-media picture,
+.page-hero-media picture,
+.gallery-feature-card picture,
+.photo-grid picture {
+  display: block;
+  height: 100%;
+}
+
 .photo-grid img {
   width: 100%;
   height: 100%;
@@ -1152,7 +1178,7 @@ p {
   box-shadow: var(--shadow-sm);
 }
 
-.photo-grid img:first-child {
+.photo-grid picture:first-child {
   grid-row: span 2;
 }
 
@@ -1687,6 +1713,10 @@ p {
   display: none;
 }
 
+.job-photo-card picture {
+  display: block;
+}
+
 .job-photo-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -1891,7 +1921,8 @@ p {
   gap: 30px;
 }
 
-.footer-grid > div > img {
+.footer-grid > div > img,
+.footer-grid > div > picture > img {
   width: 190px;
   margin-bottom: 16px;
   filter: brightness(0) invert(1);
@@ -2655,6 +2686,15 @@ p {
   .card-image {
     width: calc(100% + 44px);
     margin: -22px -22px 20px;
+  }
+
+  .info-card > picture {
+    margin: -22px -22px 20px;
+  }
+
+  .info-card > picture .card-image {
+    width: 100%;
+    margin: 0;
   }
 
   .blog-card {

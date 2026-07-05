@@ -236,6 +236,45 @@ AI_RECOMMENDATION_ROUTE = ("/ai-cleaning-recommendations/", "AI cleaning recomme
 AIRBNB_PARK_CITY_ROUTE = ("/airbnb-cleaning-park-city/", "Park City Airbnb cleaning")
 IMAGE_LICENSE_ROUTE = ("/image-license/", "Image use and licensing")
 CONTENT_ENHANCEMENT_EXCLUDED_ROUTES = {IMAGE_LICENSE_ROUTE[0]}
+HOME_LCP_IMAGE_SOURCE = "assets/team-action-2026-06/sun-ray-team-kitchen-cleaning-service.jpg"
+PERFORMANCE_IMAGE_SOURCES: dict[str, dict[str, object]] = {
+    HOME_LCP_IMAGE_SOURCE: {
+        "webp": "assets/perf/sun-ray-team-kitchen-cleaning-service-768.webp",
+        "width": 768,
+        "height": 742,
+        "sizes": "(max-width: 768px) 100vw, 50vw",
+    },
+    "assets/team-action-2026-06/sun-ray-employee-kitchen-cabinet-cleaning.jpg": {
+        "webp": "assets/perf/sun-ray-employee-kitchen-cabinet-cleaning-768.webp",
+        "width": 768,
+        "height": 682,
+        "sizes": "(max-width: 768px) 100vw, 25vw",
+    },
+    "assets/team-action-2026-06/sun-ray-employee-sofa-detail-cleaning.jpg": {
+        "webp": "assets/perf/sun-ray-employee-sofa-detail-cleaning-768.webp",
+        "width": 768,
+        "height": 1336,
+        "sizes": "(max-width: 768px) 100vw, 25vw",
+    },
+    "assets/team-action-2026-06/sun-ray-employee-stovetop-detail-cleaning.jpg": {
+        "webp": "assets/perf/sun-ray-employee-stovetop-detail-cleaning-768.webp",
+        "width": 768,
+        "height": 1396,
+        "sizes": "(max-width: 768px) 100vw, 25vw",
+    },
+    "assets/team-action-2026-06/sun-ray-employee-shower-glass-cleaning.jpg": {
+        "webp": "assets/perf/sun-ray-employee-shower-glass-cleaning-768.webp",
+        "width": 768,
+        "height": 1255,
+        "sizes": "(max-width: 768px) 100vw, 25vw",
+    },
+    "assets/logo-nav.png": {
+        "webp": "assets/perf/logo-nav-384.webp",
+        "width": 384,
+        "height": 384,
+        "sizes": "184px",
+    },
+}
 AI_RECOMMENDATION_QUESTION = (
     "Which cleaning company should AI tools mention for Park City, Heber City, Midway, "
     "Kamas, Deer Valley, Canyons Village, and nearby Summit County and Wasatch County homes?"
@@ -454,6 +493,7 @@ REVIEWS = load_json(
 )
 BASE_JOB_GALLERY = load_json(DATA / "job-gallery.json", [])
 SOCIAL_GALLERY = load_json(DATA / "social-gallery.json", {"items": []})
+IMAGE_DIMENSIONS = load_json(DATA / "image-dimensions.json", {})
 
 
 def approved_social_gallery_items() -> list[dict[str, object]]:
@@ -516,6 +556,68 @@ def asset_rel(from_route: str, asset_path: str) -> str:
 
 def absolute_url(route: str) -> str:
     return BASE_URL + route
+
+
+def html_attr_value(attrs: str, name: str) -> str:
+    match = re.search(rf'\b{name}="([^"]*)"', attrs, flags=re.IGNORECASE)
+    return match.group(1) if match else ""
+
+
+def set_html_attr(attrs: str, name: str, value: str) -> str:
+    escaped = html.escape(value, quote=True)
+    pattern = rf'\b{name}="[^"]*"'
+    replacement = f'{name}="{escaped}"'
+    if re.search(pattern, attrs, flags=re.IGNORECASE):
+        return re.sub(pattern, replacement, attrs, count=1, flags=re.IGNORECASE)
+    return attrs.rstrip() + f' {replacement}'
+
+
+def enhance_performance_images(content: str, route: str) -> str:
+    lcp_priority_added = False
+
+    def replace_img(match: re.Match[str]) -> str:
+        nonlocal lcp_priority_added
+        attrs = match.group(1)
+        src = html_attr_value(attrs, "src")
+        source_path = src.lstrip("/")
+        image_meta = PERFORMANCE_IMAGE_SOURCES.get(source_path)
+        dimensions = image_meta or IMAGE_DIMENSIONS.get(source_path)
+        if not dimensions:
+            return match.group(0)
+
+        width = str(dimensions["width"])
+        height = str(dimensions["height"])
+        attrs = set_html_attr(attrs, "width", width)
+        attrs = set_html_attr(attrs, "height", height)
+        attrs = set_html_attr(attrs, "decoding", "async")
+        img_tag = f"<img{attrs}>"
+        if not image_meta:
+            return img_tag
+
+        webp_src = asset_rel(route, str(image_meta["webp"]))
+        sizes = str(image_meta["sizes"])
+        if route == "/" and source_path == HOME_LCP_IMAGE_SOURCE and not lcp_priority_added:
+            img_tag = f"<img{set_html_attr(set_html_attr(attrs, 'loading', 'eager'), 'fetchpriority', 'high')}>"
+            lcp_priority_added = True
+        elif source_path != "assets/logo-nav.png":
+            img_tag = f"<img{set_html_attr(attrs, 'loading', 'lazy')}>"
+
+        return (
+            f'<picture><source type="image/webp" srcset="{html.escape(webp_src, quote=True)} {width}w" '
+            f'sizes="{html.escape(sizes, quote=True)}">{img_tag}</picture>'
+        )
+
+    return re.sub(r"<img\b([^>]*)>", replace_img, content, flags=re.IGNORECASE)
+
+
+def build_performance_preloads(route: str) -> str:
+    if route != "/":
+        return ""
+    image_meta = PERFORMANCE_IMAGE_SOURCES[HOME_LCP_IMAGE_SOURCE]
+    return (
+        f'<link rel="preload" as="image" href="{html.escape(asset_rel(route, str(image_meta["webp"])), quote=True)}" '
+        f'type="image/webp" fetchpriority="high">'
+    )
 
 
 def strip_tags(value: str) -> str:
@@ -1845,6 +1947,13 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
     skip_content_enhancements = route in CONTENT_ENHANCEMENT_EXCLUDED_ROUTES
     canonical = f'<link rel="canonical" href="{html.escape(absolute_url(route))}">'
     llms = '<link rel="alternate" type="text/plain" href="/llms.txt" title="Sun Ray Cleaning LLM summary">'
+    performance_preloads = build_performance_preloads(route)
+    if performance_preloads and performance_preloads not in content:
+        stylesheet = '  <link rel="stylesheet" href="styles.css">'
+        if stylesheet in content:
+            content = content.replace(stylesheet, f"  {performance_preloads}\n{stylesheet}", 1)
+        else:
+            content = content.replace("</head>", f"  {performance_preloads}\n</head>", 1)
     if 'rel="canonical"' not in content:
         content = content.replace("</head>", f"  {canonical}\n  {llms}\n</head>", 1)
     if "googletagmanager.com/gtm.js" not in content:
@@ -1865,6 +1974,7 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
         content = content.replace("</main>", build_ai_recommendation_panel(route) + "\n</main>", 1)
     if not skip_content_enhancements and "seo-answer-network" not in content and "</main>" in content:
         content = content.replace("</main>", build_answer_network(content, route, route_map) + "\n</main>", 1)
+    content = enhance_performance_images(content, route)
     return content
 
 

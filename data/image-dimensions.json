@@ -1,0 +1,990 @@
+{
+  "assets/facebook/sunray-facebook-cover.jpg": {
+    "height": 315,
+    "width": 851
+  },
+  "assets/facebook/sunray-facebook-profile.png": {
+    "height": 1024,
+    "width": 1024
+  },
+  "assets/favicon/android-chrome-192x192.png": {
+    "height": 192,
+    "width": 192
+  },
+  "assets/favicon/android-chrome-512x512.png": {
+    "height": 512,
+    "width": 512
+  },
+  "assets/favicon/apple-touch-icon.png": {
+    "height": 180,
+    "width": 180
+  },
+  "assets/favicon/favicon-16x16.png": {
+    "height": 16,
+    "width": 16
+  },
+  "assets/favicon/favicon-32x32.png": {
+    "height": 32,
+    "width": 32
+  },
+  "assets/favicon/favicon.svg": {
+    "height": 512,
+    "width": 512
+  },
+  "assets/heber-city-move-out-bathroom-vanity-cleaning-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/heber-city-residential-kitchen-cleaning-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/icon-broom.svg": {
+    "height": 46,
+    "width": 46
+  },
+  "assets/icon-move.svg": {
+    "height": 46,
+    "width": 46
+  },
+  "assets/icon-recurring.svg": {
+    "height": 46,
+    "width": 46
+  },
+  "assets/icon-short-term.svg": {
+    "height": 46,
+    "width": 46
+  },
+  "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-after-cleaning-31.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-and-tub-detail-33.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-bathroom-vanity-detail-cleaning-07.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-bedroom-dresser-dusting-cleaning-23.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-bedroom-reset-after-cleaning-12.jpg": {
+    "height": 1012,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-bedroom-vacuuming-cleaning-action-20.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-bright-bathroom-after-cleaning-35.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-bright-white-kitchen-after-cleaning-10.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-clean-cooktop-detail-after-cleaning-25.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-clean-cooktop-white-kitchen-detail-15.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-cleaner-wiping-whiteboard-detail-17.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-cleaning-team-modern-kitchen-island-02.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-cozy-living-room-after-cleaning-29.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-elegant-living-room-after-cleaning-05.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-guest-bedroom-turnover-detail-13.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-kitchen-island-polish-after-cleaning-03.jpg": {
+    "height": 1012,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-kitchen-sink-floral-detail-27.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-living-room-detail-after-cleaning-11.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-living-room-fireplace-after-cleaning-09.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-luxury-bathtub-detail-cleaning-37.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-luxury-bedroom-cleaning-after-14.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-luxury-kitchen-cleaning-36.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-modern-kitchen-deep-cleaning-34.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-modern-white-kitchen-polished-counters-28.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-polished-kitchen-sink-after-cleaning-16.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-sectional-living-room-after-cleaning-30.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-shower-cleaning-action-21.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-sofa-vacuuming-living-room-22.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-stovetop-cleaning-modern-kitchen-24.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-stovetop-detail-cleaning-action-18.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-stovetop-detail-cleaning-closeup-26.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-team-bathroom-vanity-cleaning-08.jpg": {
+    "height": 1012,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-team-deep-cleaning-kitchen-park-city-01.jpg": {
+    "height": 1012,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-team-kitchen-stovetop-cleaning-19.jpg": {
+    "height": 1800,
+    "width": 1350
+  },
+  "assets/job-gallery-2026-05/sun-ray-team-kitchen-turnover-cleaning-04.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-warm-kitchen-after-cleaning-06.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/job-gallery-2026-05/sun-ray-white-kitchen-after-cleaning-32.jpg": {
+    "height": 1350,
+    "width": 1800
+  },
+  "assets/logo-nav.png": {
+    "height": 500,
+    "width": 500
+  },
+  "assets/logo-primary.png": {
+    "height": 1563,
+    "width": 1563
+  },
+  "assets/midway-recurring-bedroom-cleaning-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/park-city-bathroom-cleaning-may-6-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/park-city-deep-cleaning-bathroom-detail-sun-ray.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/park-city-kitchen-turnover-cleaning-may-6-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/park-city-move-clean-empty-room-may-6-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/park-city-open-kitchen-cleaning-may-6-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/perf/logo-nav-384.webp": {
+    "height": 384,
+    "width": 384
+  },
+  "assets/perf/sun-ray-employee-kitchen-cabinet-cleaning-768.webp": {
+    "height": 682,
+    "width": 768
+  },
+  "assets/perf/sun-ray-employee-shower-glass-cleaning-768.webp": {
+    "height": 1255,
+    "width": 768
+  },
+  "assets/perf/sun-ray-employee-sofa-detail-cleaning-768.webp": {
+    "height": 1336,
+    "width": 768
+  },
+  "assets/perf/sun-ray-employee-stovetop-detail-cleaning-768.webp": {
+    "height": 1396,
+    "width": 768
+  },
+  "assets/perf/sun-ray-team-kitchen-cleaning-service-768.webp": {
+    "height": 742,
+    "width": 768
+  },
+  "assets/photo-about-owner.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/photo-bathroom-service.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/photo-bedroom.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/photo-condo.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/photo-extras.jpg": {
+    "height": 4096,
+    "width": 2304
+  },
+  "assets/photo-green-cleaning.jpg": {
+    "height": 2886,
+    "width": 4025
+  },
+  "assets/photo-hero.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/photo-kitchen.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/photo-services-hero.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/photo-sofa-set.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/photo-team-working.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-bathroom-vanity-after-cleaning-31-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-bathroom-vanity-and-tub-detail-33-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-bathroom-vanity-detail-cleaning-07-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-bedroom-dresser-dusting-cleaning-23-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-bedroom-reset-after-cleaning-12-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-bedroom-vacuuming-cleaning-action-20-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-bright-bathroom-after-cleaning-35-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-bright-white-kitchen-after-cleaning-10-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-clean-cooktop-detail-after-cleaning-25-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-clean-cooktop-white-kitchen-detail-15-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-cleaner-wiping-whiteboard-detail-17-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-cleaning-team-modern-kitchen-island-02-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-cozy-living-room-after-cleaning-29-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-elegant-living-room-after-cleaning-05-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-guest-bedroom-turnover-detail-13-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-kitchen-island-polish-after-cleaning-03-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-kitchen-sink-floral-detail-27-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-living-room-detail-after-cleaning-11-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-living-room-fireplace-after-cleaning-09-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-luxury-bathtub-detail-cleaning-37-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-luxury-bedroom-cleaning-after-14-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-luxury-kitchen-cleaning-36-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-modern-kitchen-deep-cleaning-34-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-modern-white-kitchen-polished-counters-28-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-polished-kitchen-sink-after-cleaning-16-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-sectional-living-room-after-cleaning-30-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-shower-cleaning-action-21-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-sofa-vacuuming-living-room-22-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-stovetop-cleaning-modern-kitchen-24-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-stovetop-detail-cleaning-action-18-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-stovetop-detail-cleaning-closeup-26-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-team-bathroom-vanity-cleaning-08-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-team-deep-cleaning-kitchen-park-city-01-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-team-kitchen-stovetop-cleaning-19-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-team-kitchen-turnover-cleaning-04-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-warm-kitchen-after-cleaning-06-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/portrait/sun-ray-white-kitchen-after-cleaning-32-portrait.jpg": {
+    "height": 1350,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-bathroom-vanity-after-cleaning-31-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-bathroom-vanity-and-tub-detail-33-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-bathroom-vanity-detail-cleaning-07-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-bedroom-dresser-dusting-cleaning-23-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-bedroom-reset-after-cleaning-12-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-bedroom-vacuuming-cleaning-action-20-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-bright-bathroom-after-cleaning-35-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-bright-white-kitchen-after-cleaning-10-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-clean-cooktop-detail-after-cleaning-25-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-clean-cooktop-white-kitchen-detail-15-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-cleaner-wiping-whiteboard-detail-17-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-cleaning-team-modern-kitchen-island-02-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-cozy-living-room-after-cleaning-29-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-elegant-living-room-after-cleaning-05-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-guest-bedroom-turnover-detail-13-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-kitchen-island-polish-after-cleaning-03-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-kitchen-sink-floral-detail-27-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-living-room-detail-after-cleaning-11-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-living-room-fireplace-after-cleaning-09-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-luxury-bathtub-detail-cleaning-37-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-luxury-bedroom-cleaning-after-14-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-luxury-kitchen-cleaning-36-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-modern-kitchen-deep-cleaning-34-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-modern-white-kitchen-polished-counters-28-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-polished-kitchen-sink-after-cleaning-16-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-sectional-living-room-after-cleaning-30-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-shower-cleaning-action-21-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-sofa-vacuuming-living-room-22-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-stovetop-cleaning-modern-kitchen-24-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-stovetop-detail-cleaning-action-18-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-stovetop-detail-cleaning-closeup-26-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-team-bathroom-vanity-cleaning-08-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-team-deep-cleaning-kitchen-park-city-01-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-team-kitchen-stovetop-cleaning-19-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-team-kitchen-turnover-cleaning-04-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-warm-kitchen-after-cleaning-06-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/social-ready-2026-05/square/sun-ray-white-kitchen-after-cleaning-32-square.jpg": {
+    "height": 1080,
+    "width": 1080
+  },
+  "assets/summit-county-deep-cleaning-shower-detail-sun-ray.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/summit-county-recurring-kitchen-cleaning-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/summit-wasatch-service-area-map.jpg": {
+    "height": 760,
+    "width": 1200
+  },
+  "assets/sun-ray-bathroom-sink-detail-after-cleaning-22.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sun-ray-bathroom-vanity-shower-cleaning-20.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-bright-bathroom-after-cleaning-17.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-bright-living-room-after-cleaning-summit-wasatch-02-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sun-ray-bright-living-room-after-cleaning-summit-wasatch-02.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-clean-bathroom-after-service-21.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sun-ray-clean-bathroom-vanity-and-tub-18.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-clean-bedroom-recurring-service-23.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-clean-cooktop-detail-14.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sun-ray-clean-kitchen-sink-luxury-detail-13.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sun-ray-cleaner-polishing-kitchen-sink-29.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-cleaning-team-at-work-kitchen-28.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-double-vanity-bathroom-cleaning-16.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-elegant-dining-room-after-cleaning-06.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-elegant-living-room-cleaning-summit-wasatch-01-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sun-ray-elegant-living-room-cleaning-summit-wasatch-01.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-fresh-bedroom-after-cleaning-24.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-guest-bedroom-turnover-cleaning-25.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-kitchen-island-after-cleaning-10.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-living-room-detail-after-cleaning-05.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-luxury-bathtub-detail-cleaning-19.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sun-ray-luxury-bedroom-cleaning-detail-26.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-luxury-kitchen-cleaning-09-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sun-ray-luxury-kitchen-cleaning-09.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-modern-kitchen-deep-cleaning-08-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sun-ray-modern-kitchen-deep-cleaning-08.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-open-concept-living-room-cleaning-04-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sun-ray-open-concept-living-room-cleaning-04.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sun-ray-polished-kitchen-sink-counters-11.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sun-ray-stainless-kitchen-sink-detail-12.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-stovetop-detail-cleaning-action-30.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sun-ray-team-kitchen-cleaning-action-27.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sun-ray-vacation-rental-living-room-turnover-03-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sun-ray-vacation-rental-living-room-turnover-03.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sun-ray-warm-kitchen-cleaning-15.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sun-ray-white-kitchen-after-cleaning-summit-wasatch-07-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sun-ray-white-kitchen-after-cleaning-summit-wasatch-07.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant-hero/sun-ray-bright-living-room-after-cleaning-summit-wasatch-02-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sunray-elegant-hero/sun-ray-elegant-living-room-cleaning-summit-wasatch-01-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sunray-elegant-hero/sun-ray-luxury-kitchen-cleaning-09-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sunray-elegant-hero/sun-ray-modern-kitchen-deep-cleaning-08-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sunray-elegant-hero/sun-ray-open-concept-living-room-cleaning-04-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sunray-elegant-hero/sun-ray-vacation-rental-living-room-turnover-03-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sunray-elegant-hero/sun-ray-white-kitchen-after-cleaning-summit-wasatch-07-hero-16x9.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sunray-elegant/sun-ray-bathroom-sink-detail-after-cleaning-22.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-elegant/sun-ray-bathroom-vanity-shower-cleaning-20.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-bright-bathroom-after-cleaning-17.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-bright-living-room-after-cleaning-summit-wasatch-02.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-clean-bathroom-after-service-21.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-elegant/sun-ray-clean-bathroom-vanity-and-tub-18.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-clean-bedroom-recurring-service-23.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-clean-cooktop-detail-14.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-elegant/sun-ray-clean-kitchen-sink-luxury-detail-13.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-elegant/sun-ray-cleaner-polishing-kitchen-sink-29.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-cleaning-team-at-work-kitchen-28.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-double-vanity-bathroom-cleaning-16.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-elegant-dining-room-after-cleaning-06.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-elegant-living-room-cleaning-summit-wasatch-01.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-fresh-bedroom-after-cleaning-24.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-guest-bedroom-turnover-cleaning-25.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-kitchen-island-after-cleaning-10.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-living-room-detail-after-cleaning-05.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-luxury-bathtub-detail-cleaning-19.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-elegant/sun-ray-luxury-bedroom-cleaning-detail-26.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-luxury-kitchen-cleaning-09.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-modern-kitchen-deep-cleaning-08.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-open-concept-living-room-cleaning-04.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-elegant/sun-ray-polished-kitchen-sink-counters-11.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-elegant/sun-ray-stainless-kitchen-sink-detail-12.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-stovetop-detail-cleaning-action-30.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-elegant/sun-ray-team-kitchen-cleaning-action-27.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-elegant/sun-ray-vacation-rental-living-room-turnover-03.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-elegant/sun-ray-warm-kitchen-cleaning-15.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-elegant/sun-ray-white-kitchen-after-cleaning-summit-wasatch-07.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-real-bathroom-vanity.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sunray-real-bedroom.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-real-entry-kitchen.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sunray-real-family-room.jpg": {
+    "height": 1080,
+    "width": 1920
+  },
+  "assets/sunray-real-kitchen-cleaned.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-real-kitchen-island.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-real-kitchen-logo.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-real-living-room.jpg": {
+    "height": 2200,
+    "width": 1650
+  },
+  "assets/sunray-team-bathroom-cleaning.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/sunray-team-shower-cleaning.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/team-action-2026-06/sun-ray-employee-kitchen-cabinet-cleaning.jpg": {
+    "height": 1110,
+    "width": 1250
+  },
+  "assets/team-action-2026-06/sun-ray-employee-shower-glass-cleaning.jpg": {
+    "height": 1600,
+    "width": 979
+  },
+  "assets/team-action-2026-06/sun-ray-employee-sofa-detail-cleaning.jpg": {
+    "height": 1600,
+    "width": 920
+  },
+  "assets/team-action-2026-06/sun-ray-employee-stovetop-detail-cleaning.jpg": {
+    "height": 1600,
+    "width": 880
+  },
+  "assets/team-action-2026-06/sun-ray-team-kitchen-cleaning-service.jpg": {
+    "height": 1207,
+    "width": 1250
+  },
+  "assets/wasatch-county-move-in-entry-kitchen-cleaning-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  },
+  "assets/wasatch-county-residential-family-room-cleaning-sun-ray.jpg": {
+    "height": 1650,
+    "width": 2200
+  }
+}
