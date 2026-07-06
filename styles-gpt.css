@@ -1033,6 +1033,22 @@ p {
   padding: 0;
 }
 
+.blog-card:not(:has(.blog-card-image)) {
+  gap: 12px;
+  padding: 26px;
+}
+
+.blog-card:not(:has(.blog-card-image)) h3,
+.blog-card:not(:has(.blog-card-image)) p {
+  margin: 0;
+}
+
+.blog-card > .learn {
+  display: inline-flex;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
 .blog-card-image {
   display: block;
   width: 100%;
@@ -2585,6 +2601,10 @@ p {
 
   .blog-card {
     padding: 0;
+  }
+
+  .blog-card:not(:has(.blog-card-image)) {
+    padding: 22px;
   }
 
   .blog-card-body {
