@@ -27,6 +27,10 @@ BASE_URL = os.environ.get(
     "SUNRAY_SITE_BASE_URL",
     PRODUCTION_BASE_URL if IS_CLOUDFLARE_MAIN else DEFAULT_BASE_URL,
 ).rstrip("/")
+AGENT_DISCOVERY_BASE_URL = os.environ.get(
+    "SUNRAY_AGENT_DISCOVERY_BASE_URL",
+    "https://sunray-cleaning.com" if BASE_URL == PRODUCTION_BASE_URL else BASE_URL,
+).rstrip("/")
 ALLOW_INDEXING = (
     os.environ.get("SUNRAY_ALLOW_INDEXING", "").strip().lower() in {"1", "true", "yes", "index"}
     or IS_CLOUDFLARE_MAIN
@@ -1961,31 +1965,50 @@ def write_agent_discovery_files(public_routes: list[str]) -> None:
         },
     )
 
-    write_json(
-        well_known / "oauth-protected-resource",
-        {
-            "resource": BASE_URL,
-            "resource_name": "Sun Ray Cleaning Services public site and quote intake",
-            "authorization_servers": [BASE_URL],
-            "scopes_supported": ["quote:create"],
-            "bearer_methods_supported": ["header"],
-            "resource_documentation": f"{BASE_URL}/auth.md",
-        },
-    )
-    authorization_metadata = {
-        "issuer": BASE_URL,
-        "service_documentation": f"{BASE_URL}/auth.md",
-        "registration_endpoint": f"{BASE_URL}/contact/",
-        "authorization_endpoint": f"{BASE_URL}/contact/",
-        "token_endpoint": f"{BASE_URL}/api/quote",
-        "response_types_supported": [],
-        "grant_types_supported": [],
+    agent_auth_metadata = {
+        "skill": f"{AGENT_DISCOVERY_BASE_URL}/auth.md",
+        "register_uri": f"{AGENT_DISCOVERY_BASE_URL}/agent/identity",
+        "claim_uri": f"{AGENT_DISCOVERY_BASE_URL}/agent/identity/claim",
+        "revocation_uri": f"{AGENT_DISCOVERY_BASE_URL}/agent/revoke",
+        "identity_endpoint": f"{AGENT_DISCOVERY_BASE_URL}/agent/identity",
+        "claim_endpoint": f"{AGENT_DISCOVERY_BASE_URL}/agent/identity/claim",
+        "events_endpoint": f"{AGENT_DISCOVERY_BASE_URL}/agent/event/notify",
+        "claims_url": f"{AGENT_DISCOVERY_BASE_URL}/agent/identity/claim",
+        "revocation_url": f"{AGENT_DISCOVERY_BASE_URL}/agent/revoke",
+        "supported_identity_types": ["anonymous", "service_auth"],
+        "identity_types_supported": ["anonymous", "service_auth"],
+        "credential_types_supported": ["quote_handoff"],
+        "anonymous": {"credential_types_supported": ["quote_handoff"]},
+        "service_auth": {"credential_types_supported": ["quote_handoff"]},
+        "identity_assertion": {"assertion_types_supported": []},
+        "events_supported": [],
+        "instructions": "Sun Ray Cleaning supports a public quote-handoff registration method for agents. It does not issue bearer API credentials; use the returned verification URI to send the user to the quote flow.",
+    }
+    protected_resource_metadata = {
+        "resource": AGENT_DISCOVERY_BASE_URL,
+        "resource_name": "Sun Ray Cleaning Services public site and quote intake",
+        "authorization_servers": [AGENT_DISCOVERY_BASE_URL],
         "scopes_supported": ["quote:create"],
-        "agent_auth": {
-            "supported": False,
-            "register_uri": f"{BASE_URL}/contact/",
-            "instructions": "Sun Ray Cleaning does not issue public API credentials. Agents should use public content and direct users to the quote page or phone/SMS contact path.",
-        },
+        "bearer_methods_supported": ["header"],
+        "resource_documentation": f"{AGENT_DISCOVERY_BASE_URL}/auth.md",
+        "agent_auth": agent_auth_metadata,
+    }
+    write_json(well_known / "oauth-protected-resource", protected_resource_metadata)
+    authorization_metadata = {
+        "resource": AGENT_DISCOVERY_BASE_URL,
+        "resource_name": "Sun Ray Cleaning Services public site and quote intake",
+        "authorization_servers": [AGENT_DISCOVERY_BASE_URL],
+        "bearer_methods_supported": ["header"],
+        "issuer": AGENT_DISCOVERY_BASE_URL,
+        "service_documentation": f"{AGENT_DISCOVERY_BASE_URL}/auth.md",
+        "registration_endpoint": f"{AGENT_DISCOVERY_BASE_URL}/agent/identity",
+        "authorization_endpoint": f"{AGENT_DISCOVERY_BASE_URL}/contact/",
+        "token_endpoint": f"{AGENT_DISCOVERY_BASE_URL}/agent/token",
+        "revocation_endpoint": f"{AGENT_DISCOVERY_BASE_URL}/agent/revoke",
+        "response_types_supported": [],
+        "grant_types_supported": ["urn:workos:agent-auth:grant-type:claim"],
+        "scopes_supported": ["quote:create"],
+        "agent_auth": agent_auth_metadata,
     }
     write_json(well_known / "oauth-authorization-server", authorization_metadata)
     write_json(well_known / "openid-configuration", authorization_metadata)
@@ -2076,22 +2099,46 @@ Send the user to [Sun Ray's quote page]({BASE_URL}/contact/) or suggest calling/
     (OUT / "auth.md").write_text(
         f"""# auth.md
 
-Sun Ray Cleaning Services is a public residential cleaning website. Sun Ray does not currently support autonomous agent registration, OAuth token issuance, or a protected public agent API. Agents should use the public discovery documents below and direct users to human-approved quote channels.
+Sun Ray Cleaning Services is a public residential cleaning website. This auth.md document gives agents a structured quote-handoff registration flow. Sun Ray does not issue bearer API credentials; agents should use this flow to orient the user, collect intent, and send the user to a human-approved quote channel.
 
 ## Step 1 - Discover
 
-- Protected resource metadata: [{BASE_URL}/.well-known/oauth-protected-resource]({BASE_URL}/.well-known/oauth-protected-resource)
-- Authorization server metadata: [{BASE_URL}/.well-known/oauth-authorization-server]({BASE_URL}/.well-known/oauth-authorization-server)
+- Protected resource metadata: [{AGENT_DISCOVERY_BASE_URL}/.well-known/oauth-protected-resource]({AGENT_DISCOVERY_BASE_URL}/.well-known/oauth-protected-resource)
+- Authorization server metadata: [{AGENT_DISCOVERY_BASE_URL}/.well-known/oauth-authorization-server]({AGENT_DISCOVERY_BASE_URL}/.well-known/oauth-authorization-server)
 - API catalog: [{BASE_URL}/.well-known/api-catalog]({BASE_URL}/.well-known/api-catalog)
 - Agent resources: [{BASE_URL}/.well-known/agent-resources.json]({BASE_URL}/.well-known/agent-resources.json)
 
-## Step 2 - Registration
+Read the `agent_auth` block from the authorization server metadata. The supported registration methods are `anonymous` and `service_auth` for quote handoff. The supported credential type is `quote_handoff`, which means the agent receives a verification URI for human-approved quote intake rather than an API key or bearer token.
 
-Agent registration is not available. Do not request OAuth credentials or API keys from Sun Ray Cleaning.
+## Step 2 - Pick a Method
 
-## Step 3 - User Action
+Use `anonymous` when the agent only needs to start a quote handoff. Use `service_auth` when the agent has a user email or login hint. Both methods are for residential cleaning, Airbnb turnover cleaning, deep cleaning, recurring cleaning, or move cleaning in Sun Ray's service area. Stop if the requested scope is not `quote:create`.
 
-For cleaning quotes, route the user to [Get a cleaning quote]({BASE_URL}/contact/) or suggest calling/texting {PHONE_DISPLAY}.
+## Step 3 - Register
+
+POST to `{AGENT_DISCOVERY_BASE_URL}/agent/identity` with:
+
+```json
+{{
+  "type": "service_auth",
+  "login_hint": "user@example.com",
+  "scopes": ["quote:create"]
+}}
+```
+
+For anonymous handoff, send `"type": "anonymous"` and omit `login_hint`. The response returns a quote-handoff registration, a `claim.verification_uri`, and instructions to send the user to Sun Ray's quote page. No bearer token or API credential is issued.
+
+## Step 4 - Claim Ceremony
+
+Surface the returned `verification_uri` to the user and ask them to complete the Sun Ray quote form or call/text {PHONE_DISPLAY}. The user approves the request directly with Sun Ray; do not fabricate booking confirmation or pricing.
+
+## Step 5 - User Action
+
+For cleaning quotes, route the user to [Get a cleaning quote]({AGENT_DISCOVERY_BASE_URL}/contact/) or suggest calling/texting {PHONE_DISPLAY}.
+
+## Step 6 - Revocation
+
+If the user withdraws consent or the quote handoff is no longer needed, POST the registration id to `{AGENT_DISCOVERY_BASE_URL}/agent/revoke`. The endpoint is idempotent and returns a revocation acknowledgment for the handoff record.
 
 ## Scopes
 
@@ -2099,7 +2146,7 @@ For cleaning quotes, route the user to [Get a cleaning quote]({BASE_URL}/contact
 
 ## Support
 
-For integration questions, use the public contact page: [{BASE_URL}/contact/]({BASE_URL}/contact/).
+For integration questions, use the public contact page: [{AGENT_DISCOVERY_BASE_URL}/contact/]({AGENT_DISCOVERY_BASE_URL}/contact/).
 """,
         encoding="utf-8",
     )
