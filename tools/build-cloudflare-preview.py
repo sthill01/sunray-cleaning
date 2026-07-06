@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import html
+import hashlib
 import json
 import os
 import posixpath
@@ -48,6 +49,13 @@ GTM_BODY = f"""<!-- Google Tag Manager (noscript) -->
 TRUSTINDEX_HERO_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?6cd0f19720d6425ad7461ea011a"
 TRUSTINDEX_REVIEWS_LIST_SCRIPT = "https://cdn.trustindex.io/loader.js?d4ea3017201f425a6276a60d5ef"
 TRUSTINDEX_FORM_TRUSTMARK_SCRIPT = "https://cdn.trustindex.io/loader-cert.js?6d94b5a7228542333c86bb33560"
+
+
+def cache_bust_token(path: Path) -> str:
+    return hashlib.md5(path.read_bytes()).hexdigest()[:8]
+
+
+STYLES_CSS_TOKEN = cache_bust_token(ROOT / "styles-gpt.css")
 
 LEGACY_REDIRECTS = {
     "/about-us": "/about/",
@@ -1671,6 +1679,8 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         elif rel_source in {"styles-gpt.css", "quote-modal-gpt.js"}:
             clean_name = "styles.css" if rel_source == "styles-gpt.css" else "quote-modal.js"
             value = asset_rel(route, clean_name)
+            if clean_name == "styles.css":
+                value = f"{value}?v={STYLES_CSS_TOKEN}"
         elif rel_source.startswith("assets/"):
             value = asset_rel(route, rel_source)
         return f'{attr}="{value}"'
@@ -1731,7 +1741,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         flags=re.IGNORECASE | re.DOTALL,
     )
 
-    content = content.replace("styles-gpt.css", "styles.css")
+    content = content.replace("styles-gpt.css", f"styles.css?v={STYLES_CSS_TOKEN}")
     content = content.replace("quote-modal-gpt.js", "quote-modal.js")
     content = content.replace("data-gpt-map-section", "data-map-section")
     content = content.replace("data-gpt-testimonials", "data-testimonials")
