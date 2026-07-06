@@ -295,7 +295,7 @@ BLOG_POST_SEO = {
     "/blog/deer-valley-luxury-home-cleaning/": {
         "service": "Luxury home cleaning",
         "location": "Deer Valley, Utah",
-        "image": "/assets/park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg",
+        "image": "/assets/sun-ray-blog-photo-img-6432.jpg",
     },
     "/blog/jordanelle-vacation-rental-turnover/": {
         "service": "Vacation rental turnover cleaning",
@@ -320,7 +320,7 @@ BLOG_POST_SEO = {
     "/blog/hard-water-cleaning-tips-summit-wasatch-county/": {
         "service": "Hard water stain removal and descaling",
         "location": "Summit County / Wasatch County, Utah",
-        "image": "/assets/park-city-deep-cleaning-bathroom-detail-sun-ray.jpg",
+        "image": "/assets/sun-ray-blog-photo-img-6614.jpg",
     },
     "/blog/hard-water-cleaning-tips-park-city-mountain-homes/": {
         "service": "Hard water stain removal and descaling",
@@ -330,7 +330,7 @@ BLOG_POST_SEO = {
     "/blog/how-to-choose-recurring-cleaning-service-park-city/": {
         "service": "Recurring house cleaning service selection",
         "location": "Park City, Utah",
-        "image": "/assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+        "image": "/assets/sun-ray-blog-photo-img-6672.jpg",
     },
     "/blog/jordanelle-deer-creek-cabin-cleaning-weekend-owners/": {
         "service": "Cabin and second-home cleaning",
@@ -345,7 +345,7 @@ BLOG_POST_SEO = {
     "/blog/local-cleaning-services-vs-national-apps-park-city/": {
         "service": "Local cleaning services vs national apps",
         "location": "Park City, Utah",
-        "image": "/assets/park-city-residential-kitchen-cleaning-may-6-sun-ray.jpg",
+        "image": "/assets/sun-ray-brown-leather-living-room-after-cleaning-summit-wasatch.jpg",
     },
     "/blog/midway-cleaning-services-heber-valley-homeowners/": {
         "service": "Midway home cleaning services",
@@ -355,7 +355,7 @@ BLOG_POST_SEO = {
     "/blog/move-in-cleaning-checklist-heber-city-midway/": {
         "service": "Move-in cleaning checklist",
         "location": "Heber City / Midway, Utah",
-        "image": "/assets/heber-city-move-out-bathroom-vanity-cleaning-sun-ray.jpg",
+        "image": "/assets/sun-ray-blog-photo-img-6295.jpg",
     },
     "/blog/post-construction-cleaning-new-builds-heber-valley/": {
         "service": "Post-construction cleaning",
