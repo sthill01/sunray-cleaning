@@ -1442,15 +1442,21 @@ p {
 .trustindex-widget-shell {
   margin-top: 24px;
   min-height: 220px;
+  overflow: visible;
 }
 
 .trustindex-review-list-widget {
-  min-height: 720px;
-  overflow: hidden;
+  min-height: 860px;
+  padding-bottom: 72px;
+  overflow: visible;
 }
 
 .trustindex-widget-shell iframe {
   max-width: 100%;
+}
+
+.trustindex-review-list-widget iframe {
+  min-height: 860px !important;
 }
 
 .trustindex-widget-shell noscript {
@@ -2487,7 +2493,8 @@ p {
   }
 
   .trustindex-review-list-widget {
-    min-height: 560px;
+    min-height: 760px;
+    padding-bottom: 72px;
   }
 
   .trust-grid,
