@@ -1207,7 +1207,15 @@ def trustindex_fallback_script() -> str:
 def inject_hero_review_badge(content: str) -> str:
     if "hero-trustindex-badge" in content:
         return content
-    badge = build_trustindex_badge("hero-trustindex-badge")
+    badge = (
+        '<a class="google-review-badge hero-trustindex-badge" '
+        'href="https://www.google.com/search?q=Sun+Ray+Cleaning+Services+reviews" '
+        'target="_blank" rel="noopener" '
+        'aria-label="Sun Ray Cleaning Google reviews, 5.0 Top Rated Service 2026">'
+        '<span class="review-google-mark" aria-hidden="true">G</span>'
+        '<span class="review-badge-copy"><span><span class="google-review-stars" aria-hidden="true">★★★★★</span> 5.0</span>'
+        '<strong>Top Rated Service 2026</strong><small>verified by Trustindex</small></span></a>'
+    )
     media_count = 0
     for pattern in (
         r'(<div class="page-hero-media">\s*<img\b[^>]*>)',
@@ -1222,7 +1230,7 @@ def inject_hero_review_badge(content: str) -> str:
         media_count += count
     if media_count:
         return content
-    inline_badge = build_trustindex_badge("hero-trustindex-badge hero-trustindex-badge-inline")
+    inline_badge = badge.replace("hero-trustindex-badge", "hero-trustindex-badge hero-trustindex-badge-inline", 1)
     content, _count = re.subn(
         r'(<div class="hero-actions">.*?</div>)',
         lambda match: match.group(1) + inline_badge,
@@ -1763,22 +1771,6 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
 
     def clean_link(target_route: str) -> str:
         return html.escape(route_to_relpath(route, target_route))
-
-    if 'class="brand-group"' not in content:
-        review_badge = (
-            '<a class="header-review-badge" href="https://www.google.com/search?q=Sun+Ray+Cleaning+Services+reviews" '
-            'target="_blank" rel="noopener" aria-label="Sun Ray Cleaning Google reviews, 5.0 Top Rated Service 2026">'
-            '<span class="review-google-mark" aria-hidden="true">G</span>'
-            '<span class="review-badge-copy"><span><span class="header-review-stars" aria-hidden="true">★★★★★</span> 5.0</span>'
-            '<strong>Top Rated Service 2026</strong><small>verified by Trustindex</small></span></a>'
-        )
-        content = re.sub(
-            r'(<a class="brand" href="[^"]+" aria-label="Sun Ray Cleaning home"><img src="[^"]+" alt="Sun Ray Cleaning Services"></a>)',
-            r'<div class="brand-group">\1' + review_badge + r"</div>",
-            content,
-            count=1,
-            flags=re.IGNORECASE,
-        )
 
     if 'class="header-actions"' not in content:
         text_cta = '<a class="button button-outline header-text-cta" href="sms:+18016042189">Text for pricing</a>'
