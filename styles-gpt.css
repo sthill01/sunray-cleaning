@@ -583,9 +583,9 @@ p {
 .hero-trustindex-badge {
   position: absolute;
   right: 24px;
-  bottom: -26px;
+  top: 24px;
   z-index: 4;
-  transform-origin: bottom right;
+  transform-origin: top right;
 }
 
 .hero-trustindex-badge-inline {
@@ -2557,28 +2557,23 @@ p {
     border-radius: 20px;
   }
 
-  .hero-media,
-  .page-hero-media {
-    margin-bottom: 70px;
-  }
-
   .quote-card {
     position: relative;
     right: auto;
     bottom: auto;
-    margin-top: 64px;
+    margin-top: 14px;
     max-width: none;
   }
 
   .hero-trustindex-badge {
     position: absolute;
-    right: auto;
-    top: auto;
-    left: 50%;
-    bottom: -42px;
+    right: 14px;
+    top: 14px;
+    left: auto;
+    bottom: auto;
     width: 184px;
-    transform: translateX(-50%);
-    transform-origin: center;
+    transform: none;
+    transform-origin: top right;
   }
 
   .trustindex-review-list-widget {
