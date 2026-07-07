@@ -2419,7 +2419,26 @@ p {
   }
 
   .button {
-    width: 100%;
+    width: auto;
+    min-width: 178px;
+    max-width: min(100%, 270px);
+  }
+
+  .nav-row > .button,
+  .hero-actions .button,
+  .cta-actions .button,
+  .form-actions .button {
+    flex: 0 1 auto;
+  }
+
+  .hero-actions,
+  .form-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cta-band .cta-actions {
+    align-items: center;
   }
 
   .hero-copy,
