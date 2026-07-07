@@ -369,6 +369,25 @@
     updateAttributionFromPage();
     document.addEventListener("click", handleCtaClick, true);
 
+    document.querySelectorAll(".site-header").forEach(function (header) {
+      var toggle = header.querySelector(".nav-toggle");
+      var nav = header.querySelector(".nav-links");
+      if (!toggle || !nav) return;
+
+      toggle.addEventListener("click", function () {
+        var isOpen = header.classList.toggle("is-menu-open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      });
+
+      nav.addEventListener("click", function (event) {
+        if (!event.target.closest("a")) return;
+        header.classList.remove("is-menu-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      });
+    });
+
     modal = document.querySelector("[data-quote-modal]");
     document.querySelectorAll(".quote-form").forEach(function (form) {
       ensureSpamTrapFields(form);

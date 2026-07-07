@@ -212,7 +212,7 @@ p {
 .header-actions {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   flex: 0 0 auto;
 }
 
@@ -228,6 +228,49 @@ p {
   font-family: var(--display);
   font-size: 0.92rem;
   font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 42px;
+  padding: 0;
+  border: 2px solid var(--navy);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.nav-toggle span:nth-child(1) {
+  transform: translateY(-7px);
+}
+
+.nav-toggle span:nth-child(3) {
+  transform: translateY(7px);
+}
+
+.site-header.is-menu-open .nav-toggle span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.site-header.is-menu-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header.is-menu-open .nav-toggle span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 .nav-item {
@@ -2379,23 +2422,60 @@ p {
 
 @media (max-width: 1080px) {
   .nav-row {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 16px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 12px 16px;
+    min-height: 0;
+    padding: 10px 0 12px;
+  }
+
+  .brand img {
+    width: 148px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    position: relative;
+    justify-self: end;
   }
 
   .nav-links {
+    grid-column: 1 / -1;
+    display: none;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    padding: 8px 0 2px;
+    font-size: 0.9rem;
+  }
+
+  .site-header.is-menu-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links > a,
+  .nav-drop-toggle {
+    padding: 7px 0;
+  }
+
+  .nav-item {
+    width: 100%;
   }
 
   .nav-dropdown {
     position: static;
     display: none;
     width: 100%;
-    margin-top: 10px;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin: 2px 0 6px;
+    padding: 8px 10px;
     opacity: 1;
     transform: none;
+    box-shadow: none;
   }
 
   .nav-dropdown::before {
@@ -2405,6 +2485,11 @@ p {
   .nav-item:hover .nav-dropdown,
   .nav-item:focus-within .nav-dropdown {
     display: grid;
+  }
+
+  .header-actions {
+    grid-column: 1 / -1;
+    gap: 14px;
   }
 
   .hero-grid,
@@ -2507,17 +2592,33 @@ p {
   }
 
   .brand img {
-    width: 170px;
+    width: 136px;
+  }
+
+  .nav-row {
+    gap: 10px 12px;
+    padding: 8px 0 10px;
   }
 
   .nav-links {
-    gap: 12px 16px;
-    font-size: 0.9rem;
+    gap: 2px;
+    font-size: 0.86rem;
+  }
+
+  .nav-links > a,
+  .nav-drop-toggle {
+    padding: 6px 0;
+  }
+
+  .nav-toggle {
+    width: 42px;
+    height: 38px;
+    border-radius: 10px;
   }
 
   .button {
     width: auto;
-    min-width: 178px;
+    min-width: 136px;
     max-width: min(100%, 270px);
   }
 
@@ -2525,7 +2626,7 @@ p {
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
   }
 
   .header-text-cta {
@@ -2538,15 +2639,18 @@ p {
   .form-actions .button {
     flex: 0 1 auto;
     width: fit-content;
-    min-width: 150px;
-    max-width: min(100%, 210px);
+    min-width: 136px;
+    max-width: min(100%, 190px);
+    padding-inline: 18px;
   }
 
   .hero-actions,
+  .cta-actions,
   .form-actions {
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 12px;
   }
 
   .cta-band .cta-actions {

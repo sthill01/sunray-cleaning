@@ -1790,6 +1790,15 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     def clean_link(target_route: str) -> str:
         return html.escape(route_to_relpath(route, target_route))
 
+    if 'class="nav-toggle"' not in content:
+        content = re.sub(
+            r'(<a class="brand"[^>]*>.*?</a>)',
+            r'\1<button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>',
+            content,
+            count=1,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+
     if 'class="header-actions"' not in content:
         text_cta = '<a class="button button-outline header-text-cta" href="sms:+18016042189">Text for pricing</a>'
         content = re.sub(
