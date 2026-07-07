@@ -2701,10 +2701,18 @@ p {
     top: 12px;
     left: auto;
     bottom: auto;
-    width: min(58%, 210px);
+    width: 186px;
     max-width: calc(100% - 24px);
-    max-height: 64px;
+    min-height: 52px;
+    max-height: 58px;
     transform: none;
+    transform-origin: top right;
+  }
+
+  .hero-trustindex-badge iframe {
+    width: 320px !important;
+    max-width: none;
+    transform: scale(0.58);
     transform-origin: top right;
   }
 
