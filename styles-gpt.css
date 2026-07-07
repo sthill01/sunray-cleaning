@@ -156,6 +156,29 @@ p {
   max-width: 100%;
 }
 
+.utility-review-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-left: auto;
+  color: var(--white);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.utility-google-word {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.utility-review-stars {
+  color: var(--yellow);
+  letter-spacing: 1px;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -525,11 +548,16 @@ p {
 
 .hero-trustindex-badge {
   position: absolute;
-  right: 24px;
-  top: 24px;
+  right: 18px;
+  top: 18px;
+  bottom: auto;
+  left: auto;
   z-index: 4;
-  width: min(50%, 260px);
+  width: 250px;
+  max-width: calc(100% - 36px);
   min-height: 58px;
+  max-height: 70px;
+  pointer-events: none;
   transform-origin: top right;
 }
 
@@ -2462,6 +2490,10 @@ p {
     width: min(100%, 250px);
   }
 
+  .utility-review-badge {
+    margin-left: 0;
+  }
+
   .brand img {
     width: 170px;
   }
@@ -2549,11 +2581,13 @@ p {
 
   .hero-trustindex-badge {
     position: absolute;
-    right: 14px;
-    top: 14px;
+    right: 12px;
+    top: 12px;
     left: auto;
     bottom: auto;
-    width: min(52%, 220px);
+    width: min(58%, 210px);
+    max-width: calc(100% - 24px);
+    max-height: 64px;
     transform: none;
     transform-origin: top right;
   }

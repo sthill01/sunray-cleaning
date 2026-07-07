@@ -1156,7 +1156,15 @@ def build_trustindex_badge(extra_class: str = "", script_url: str = TRUSTINDEX_H
 
 
 def build_ribbon_trust_badge() -> str:
-    return build_trustindex_badge("utility-trustindex-badge", TRUSTINDEX_RIBBON_BADGE_SCRIPT)
+    return """
+<div class="utility-review-badge" aria-label="Google 5.0 rating from 49 reviews">
+  <span class="utility-google-word">Google</span>
+  <span class="utility-review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+  <strong>5.0</strong>
+  <span>|</span>
+  <strong>49 reviews</strong>
+</div>
+"""
 
 
 def build_form_trustmark() -> str:
