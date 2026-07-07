@@ -589,6 +589,76 @@ p {
   max-width: 100%;
 }
 
+.hero-review-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  width: 250px;
+  max-width: calc(100% - 36px);
+  overflow: hidden;
+  border: 1px solid rgba(31, 58, 104, 0.12);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-md);
+  color: var(--navy);
+  line-height: 1.05;
+  pointer-events: none;
+}
+
+.hero-review-google {
+  display: grid;
+  flex: 0 0 68px;
+  min-height: 58px;
+  place-items: center;
+  border-right: 1px solid rgba(31, 58, 104, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 2.65rem;
+  font-weight: 800;
+  line-height: 1;
+  background: conic-gradient(from -45deg, #4285f4 0 25%, #34a853 0 50%, #fbbc05 0 75%, #ea4335 0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-review-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 9px 12px 9px 13px;
+  font-size: 0.84rem;
+}
+
+.hero-review-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.hero-review-stars {
+  color: var(--yellow-deep);
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-review-copy strong {
+  color: var(--navy);
+  font-family: var(--display);
+  font-size: 0.86rem;
+  line-height: 1.05;
+}
+
+.hero-review-copy small {
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
 .hero-trustindex-badge {
   position: absolute;
   right: 18px;
@@ -2714,6 +2784,38 @@ p {
     max-width: none;
     transform: scale(0.58);
     transform-origin: top right;
+  }
+
+  .hero-review-badge {
+    top: 12px;
+    right: 12px;
+    width: 180px;
+    max-width: calc(100% - 24px);
+    border-radius: 11px;
+  }
+
+  .hero-review-google {
+    flex-basis: 48px;
+    min-height: 45px;
+    font-size: 2rem;
+  }
+
+  .hero-review-copy {
+    gap: 1px;
+    padding: 7px 8px;
+    font-size: 0.7rem;
+  }
+
+  .hero-review-stars {
+    font-size: 0.72rem;
+  }
+
+  .hero-review-copy strong {
+    font-size: 0.7rem;
+  }
+
+  .hero-review-copy small {
+    font-size: 0.57rem;
   }
 
   .trustindex-review-list-widget {

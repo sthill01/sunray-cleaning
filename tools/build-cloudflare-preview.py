@@ -1167,6 +1167,19 @@ def build_ribbon_trust_badge() -> str:
 """
 
 
+def build_hero_review_badge() -> str:
+    return """
+<div class="hero-review-badge" aria-label="Google 5.0 Top Rated Service 2026 verified by Trustindex">
+  <span class="hero-review-google" aria-hidden="true">G</span>
+  <span class="hero-review-copy">
+    <span class="hero-review-line"><span class="hero-review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <strong>5.0</strong></span>
+    <strong>Top Rated Service 2026</strong>
+    <small>verified by Trustindex &#9432;</small>
+  </span>
+</div>
+"""
+
+
 def build_form_trustmark() -> str:
     return f"""
 <div class="quote-trustmark" aria-label="Sun Ray Cleaning trustmark powered by Trustindex">
@@ -1218,9 +1231,9 @@ def trustindex_fallback_script() -> str:
 
 
 def inject_hero_review_badge(content: str) -> str:
-    if "hero-trustindex-badge" in content:
+    if "hero-review-badge" in content or "hero-trustindex-badge" in content:
         return content
-    badge = build_trustindex_badge("hero-trustindex-badge", TRUSTINDEX_HERO_BADGE_SCRIPT)
+    badge = build_hero_review_badge()
     media_count = 0
     for pattern in (
         r'(<div class="page-hero-media">\s*<img\b[^>]*>)',
@@ -1235,10 +1248,9 @@ def inject_hero_review_badge(content: str) -> str:
         media_count += count
     if media_count:
         return content
-    inline_badge = badge.replace("hero-trustindex-badge", "hero-trustindex-badge hero-trustindex-badge-inline", 1)
     content, _count = re.subn(
         r'(<div class="hero-actions">.*?</div>)',
-        lambda match: match.group(1) + inline_badge,
+        lambda match: match.group(1) + badge,
         content,
         count=1,
         flags=re.IGNORECASE | re.DOTALL,
