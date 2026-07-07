@@ -170,9 +170,96 @@ p {
   text-decoration: none;
 }
 
+.brand-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  flex: 0 0 auto;
+}
+
 .brand img {
   width: 184px;
   height: auto;
+}
+
+.header-review-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 184px;
+  min-height: 50px;
+  padding: 8px 10px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--stone-100);
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(20, 40, 73, 0.1);
+  text-decoration: none;
+}
+
+.header-review-badge:hover {
+  color: var(--ink);
+}
+
+.review-google-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  color: #4285f4;
+  background: var(--white);
+  font-family: Arial, sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.review-badge-copy {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.review-badge-copy span {
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.review-badge-copy strong {
+  color: var(--ink);
+  font-size: 0.66rem;
+  white-space: nowrap;
+}
+
+.review-badge-copy small {
+  color: var(--stone-600);
+  font-size: 0.58rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.header-review-stars {
+  color: var(--yellow-deep);
+  letter-spacing: 0;
+}
+
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.header-text-cta {
+  display: none;
 }
 
 .nav-links {
@@ -2413,6 +2500,17 @@ p {
     width: 170px;
   }
 
+  .brand-group {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-review-badge {
+    width: 184px;
+    min-height: 50px;
+  }
+
   .nav-links {
     gap: 12px 16px;
     font-size: 0.9rem;
@@ -2424,7 +2522,17 @@ p {
     max-width: min(100%, 270px);
   }
 
-  .nav-row > .button,
+  .header-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header-text-cta {
+    display: inline-flex;
+  }
+
+  .header-actions .button,
   .hero-actions .button,
   .cta-actions .button,
   .form-actions .button {
