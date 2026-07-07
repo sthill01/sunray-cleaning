@@ -55,6 +55,7 @@ FONT_RESOURCE_HINTS = f"""  <link rel="preconnect" href="https://fonts.googleapi
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="{FONT_STYLESHEET}">"""
 TRUSTINDEX_HERO_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?6cd0f19720d6425ad7461ea011a"
+TRUSTINDEX_RIBBON_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?dad74f2761b80044eb16aaf0876"
 TRUSTINDEX_REVIEWS_LIST_SCRIPT = "https://cdn.trustindex.io/loader.js?d4ea3017201f425a6276a60d5ef"
 TRUSTINDEX_FORM_TRUSTMARK_SCRIPT = "https://cdn.trustindex.io/loader-cert.js?6d94b5a7228542333c86bb33560"
 AGENT_WEBMCP_SCRIPT = """  <script type="module" data-agent-webmcp>
@@ -1138,13 +1139,13 @@ def build_full_reviews_section(route: str) -> str:
 """
 
 
-def build_trustindex_badge(extra_class: str = "") -> str:
+def build_trustindex_badge(extra_class: str = "", script_url: str = TRUSTINDEX_HERO_BADGE_SCRIPT) -> str:
     classes = "trustindex-badge-embed"
     if extra_class:
         classes += f" {extra_class}"
     return f"""
 <div class="{classes}" data-trustindex-badge aria-label="5 star Google reviews verified by Trustindex">
-  <script defer async src="{TRUSTINDEX_HERO_BADGE_SCRIPT}"></script>
+  <script defer async src="{script_url}"></script>
   <div class="trustindex-badge-fallback" data-trustindex-fallback hidden>
     <span class="trustindex-fallback-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
     <strong>5.0 Google Reviews</strong>
@@ -1152,6 +1153,10 @@ def build_trustindex_badge(extra_class: str = "") -> str:
   </div>
 </div>
 """
+
+
+def build_ribbon_trust_badge() -> str:
+    return build_trustindex_badge("utility-trustindex-badge", TRUSTINDEX_RIBBON_BADGE_SCRIPT)
 
 
 def build_form_trustmark() -> str:
@@ -1207,15 +1212,7 @@ def trustindex_fallback_script() -> str:
 def inject_hero_review_badge(content: str) -> str:
     if "hero-trustindex-badge" in content:
         return content
-    badge = (
-        '<a class="google-review-badge hero-trustindex-badge" '
-        'href="https://www.google.com/search?q=Sun+Ray+Cleaning+Services+reviews" '
-        'target="_blank" rel="noopener" '
-        'aria-label="Sun Ray Cleaning Google reviews, 5.0 Top Rated Service 2026">'
-        '<span class="review-google-mark" aria-hidden="true">G</span>'
-        '<span class="review-badge-copy"><span><span class="google-review-stars" aria-hidden="true">★★★★★</span> 5.0</span>'
-        '<strong>Top Rated Service 2026</strong><small>verified by Trustindex</small></span></a>'
-    )
+    badge = build_trustindex_badge("hero-trustindex-badge", TRUSTINDEX_HERO_BADGE_SCRIPT)
     media_count = 0
     for pattern in (
         r'(<div class="page-hero-media">\s*<img\b[^>]*>)',
@@ -1257,7 +1254,19 @@ def inject_footer_trust_badge(content: str) -> str:
         return content
     return re.sub(
         r'(<footer class="site-footer"><div class="container footer-grid"><div>.*?<p>.*?</p>)',
-        lambda match: match.group(1) + build_trustindex_badge("footer-trustindex-badge"),
+        lambda match: match.group(1) + build_trustindex_badge("footer-trustindex-badge", TRUSTINDEX_RIBBON_BADGE_SCRIPT),
+        content,
+        count=1,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+
+def inject_utility_trust_badge(content: str) -> str:
+    if "utility-trustindex-badge" in content:
+        return content
+    return re.sub(
+        r'(<div class="utility-bar"><div class="container"><span>.*?</span><a href="tel:\+18016042189">Call or text \(801\) 604-2189</a>)(</div></div>)',
+        lambda match: match.group(1) + build_ribbon_trust_badge() + match.group(2),
         content,
         count=1,
         flags=re.IGNORECASE | re.DOTALL,
@@ -1279,6 +1288,7 @@ def inject_prominent_trust_section(content: str, route: str) -> str:
 def inject_trustindex_enhancements(content: str, route: str) -> str:
     if route == "/reviews/":
         content = content.replace('<div data-sunray-full-reviews></div>', build_full_reviews_section(route))
+    content = inject_utility_trust_badge(content)
     content = inject_hero_review_badge(content)
     content = inject_prominent_trust_section(content, route)
     content = inject_quote_form_trustmarks(content)

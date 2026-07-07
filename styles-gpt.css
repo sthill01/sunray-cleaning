@@ -145,6 +145,17 @@ p {
   white-space: nowrap;
 }
 
+.utility-trustindex-badge {
+  flex: 0 0 auto;
+  width: min(100%, 250px);
+  min-height: 42px;
+  overflow: hidden;
+}
+
+.utility-trustindex-badge iframe {
+  max-width: 100%;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -173,75 +184,6 @@ p {
 .brand img {
   width: 184px;
   height: auto;
-}
-
-.google-review-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  width: 184px;
-  min-height: 50px;
-  padding: 8px 10px;
-  color: var(--ink);
-  background: var(--white);
-  border: 1px solid var(--stone-100);
-  border-radius: 10px;
-  box-shadow: 0 8px 22px rgba(20, 40, 73, 0.1);
-  text-decoration: none;
-}
-
-.google-review-badge:hover {
-  color: var(--ink);
-}
-
-.review-google-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  color: #4285f4;
-  background: var(--white);
-  font-family: Arial, sans-serif;
-  font-size: 1.45rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.review-badge-copy {
-  display: grid;
-  gap: 1px;
-  min-width: 0;
-  color: var(--ink);
-  font-family: var(--display);
-  font-size: 0.68rem;
-  font-weight: 800;
-  line-height: 1.05;
-}
-
-.review-badge-copy span {
-  color: var(--ink);
-  white-space: nowrap;
-}
-
-.review-badge-copy strong {
-  color: var(--ink);
-  font-size: 0.66rem;
-  white-space: nowrap;
-}
-
-.review-badge-copy small {
-  color: var(--stone-600);
-  font-size: 0.58rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.google-review-stars {
-  color: var(--yellow-deep);
-  letter-spacing: 0;
 }
 
 .header-actions {
@@ -574,6 +516,7 @@ p {
   align-items: center;
   justify-content: center;
   max-width: 100%;
+  overflow: hidden;
 }
 
 .trustindex-badge-embed iframe {
@@ -585,6 +528,8 @@ p {
   right: 24px;
   top: 24px;
   z-index: 4;
+  width: min(50%, 260px);
+  min-height: 58px;
   transform-origin: top right;
 }
 
@@ -1104,6 +1049,32 @@ p {
   padding: 0;
 }
 
+.blog-card > .tag {
+  align-self: flex-start;
+  margin: 24px 26px 0;
+}
+
+.blog-card > h3 {
+  margin: 0;
+  padding: 0 26px;
+}
+
+.blog-card > p {
+  margin: 0;
+  padding: 0 26px;
+}
+
+.blog-card > .learn {
+  align-self: flex-start;
+  margin: 0 26px 24px;
+}
+
+.blog-card > .tag + h3,
+.blog-card > h3 + p,
+.blog-card > p + .learn {
+  margin-top: 12px;
+}
+
 .blog-card-image {
   display: block;
   width: 100%;
@@ -1576,18 +1547,22 @@ p {
   align-items: flex-start;
   justify-content: flex-start;
   margin-top: 18px;
-  padding: 8px;
-  max-width: 290px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
+  width: min(100%, 320px);
+  min-height: 78px;
+  padding: 0;
+  background: transparent;
 }
 
-.footer-trustindex-badge .trustindex-badge-fallback strong {
-  color: var(--white);
+.footer-trustindex-badge iframe {
+  max-width: 100%;
 }
 
-.footer-trustindex-badge .trustindex-badge-fallback small {
-  color: var(--stone-300);
+.footer-trustindex-badge .trustindex-badge-fallback {
+  min-width: 0;
+  padding: 10px 12px;
+  color: var(--ink);
+  background: var(--white);
+  border-radius: 12px;
 }
 
 .quote-trustmark {
@@ -2483,6 +2458,10 @@ p {
     padding: 8px 0;
   }
 
+  .utility-trustindex-badge {
+    width: min(100%, 250px);
+  }
+
   .brand img {
     width: 170px;
   }
@@ -2499,9 +2478,10 @@ p {
   }
 
   .header-actions {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .header-text-cta {
@@ -2514,13 +2494,15 @@ p {
   .form-actions .button {
     flex: 0 1 auto;
     width: fit-content;
-    max-width: min(100%, 236px);
+    min-width: 150px;
+    max-width: min(100%, 210px);
   }
 
   .hero-actions,
   .form-actions {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .cta-band .cta-actions {
@@ -2571,7 +2553,7 @@ p {
     top: 14px;
     left: auto;
     bottom: auto;
-    width: 184px;
+    width: min(52%, 220px);
     transform: none;
     transform-origin: top right;
   }
@@ -2691,6 +2673,19 @@ p {
 
   .blog-card {
     padding: 0;
+  }
+
+  .blog-card > .tag {
+    margin: 22px 22px 0;
+  }
+
+  .blog-card > h3,
+  .blog-card > p {
+    padding-inline: 22px;
+  }
+
+  .blog-card > .learn {
+    margin: 0 22px 22px;
   }
 
   .blog-card-body {
