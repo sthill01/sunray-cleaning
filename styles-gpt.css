@@ -561,6 +561,18 @@ p {
   transform-origin: top right;
 }
 
+.hero-trustindex-badge,
+.hero-trustindex-badge > div,
+.hero-trustindex-badge iframe {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.hero-trustindex-badge > div {
+  padding: 0 !important;
+  border: 0 !important;
+}
+
 .hero-trustindex-badge-inline {
   position: static;
   margin-top: 18px;
