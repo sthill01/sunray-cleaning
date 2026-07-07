@@ -2429,6 +2429,8 @@ p {
   .cta-actions .button,
   .form-actions .button {
     flex: 0 1 auto;
+    width: fit-content;
+    max-width: min(100%, 236px);
   }
 
   .hero-actions,
