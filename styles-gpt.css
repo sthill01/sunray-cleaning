@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap");
-
 :root {
   --yellow: #f2b816;
   --yellow-deep: #e0a80c;
@@ -17,6 +15,8 @@
   --white: #ffffff;
   --success: #3f8f4a;
   --danger: #c24a3b;
+  --system-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --system-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --display: "Poppins", "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --body: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --shadow-sm: 0 2px 6px rgba(20, 40, 73, 0.08);
@@ -85,6 +85,7 @@ h1 {
   margin-bottom: 22px;
   font-size: clamp(2.55rem, 5.4vw, 4.9rem);
   font-weight: 800;
+  text-wrap: balance;
 }
 
 h2 {
@@ -2419,6 +2420,25 @@ p {
 
   .button {
     width: 100%;
+  }
+
+  .hero-copy,
+  .hero-copy .eyebrow,
+  .hero-copy h1,
+  .hero-copy .lead,
+  .hero-copy .button,
+  .hero-copy .trust-dots {
+    font-family: var(--system-display);
+  }
+
+  .hero-copy h1 {
+    min-height: 4.48em;
+    font-size: clamp(2.55rem, 10.8vw, 3.28rem);
+    line-height: 1.12;
+  }
+
+  .hero-copy .lead {
+    font-family: var(--system-body);
   }
 
   .seo-link-cluster {

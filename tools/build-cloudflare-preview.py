@@ -50,6 +50,10 @@ GTM_BODY = f"""<!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM_CONTAINER_ID}"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->"""
+FONT_STYLESHEET = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=optional"
+FONT_RESOURCE_HINTS = f"""  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="{FONT_STYLESHEET}">"""
 TRUSTINDEX_HERO_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?6cd0f19720d6425ad7461ea011a"
 TRUSTINDEX_REVIEWS_LIST_SCRIPT = "https://cdn.trustindex.io/loader.js?d4ea3017201f425a6276a60d5ef"
 TRUSTINDEX_FORM_TRUSTMARK_SCRIPT = "https://cdn.trustindex.io/loader-cert.js?6d94b5a7228542333c86bb33560"
@@ -93,6 +97,21 @@ AGENT_WEBMCP_SCRIPT = """  <script type="module" data-agent-webmcp>
     });
   }
   </script>"""
+
+
+def inject_font_resource_hints(content: str) -> str:
+    if FONT_STYLESHEET in content:
+        return content
+    root_stylesheet_link = '<link rel="stylesheet" href="/styles.css">'
+    stylesheet_link = '<link rel="stylesheet" href="styles.css">'
+    nested_stylesheet_link = '<link rel="stylesheet" href="../styles.css">'
+    if root_stylesheet_link in content:
+        return content.replace(root_stylesheet_link, FONT_RESOURCE_HINTS + "\n  " + root_stylesheet_link, 1)
+    if stylesheet_link in content:
+        return content.replace(stylesheet_link, FONT_RESOURCE_HINTS + "\n  " + stylesheet_link, 1)
+    if nested_stylesheet_link in content:
+        return content.replace(nested_stylesheet_link, FONT_RESOURCE_HINTS + "\n  " + nested_stylesheet_link, 1)
+    return content.replace("</head>", FONT_RESOURCE_HINTS + "\n</head>", 1)
 
 LEGACY_REDIRECTS = {
     "/about-us": "/about/",
@@ -1798,6 +1817,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
 
     content = content.replace("styles-gpt.css", "styles.css")
     content = content.replace("quote-modal-gpt.js", "quote-modal.js")
+    content = inject_font_resource_hints(content)
     content = content.replace("data-gpt-map-section", "data-map-section")
     content = content.replace("data-gpt-testimonials", "data-testimonials")
     content = content.replace("data-gpt-faq", "data-faq-section")
