@@ -58,6 +58,27 @@ TRUSTINDEX_HERO_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?6cd0f19720d6
 TRUSTINDEX_RIBBON_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?dad74f2761b80044eb16aaf0876"
 TRUSTINDEX_REVIEWS_LIST_SCRIPT = "https://cdn.trustindex.io/loader.js?d4ea3017201f425a6276a60d5ef"
 TRUSTINDEX_FORM_TRUSTMARK_SCRIPT = "https://cdn.trustindex.io/loader-cert.js?6d94b5a7228542333c86bb33560"
+RESPONSIVE_IMAGE_WIDTHS = (384, 672, 960)
+RESPONSIVE_IMAGE_DIMENSIONS = {
+    "sun-ray-elegant-living-room-cleaning-summit-wasatch-01-hero-16x9.jpg": (1920, 1080),
+    "summit-county-deep-cleaning-shower-detail-sun-ray.jpg": (1650, 2200),
+    "wasatch-county-move-in-entry-kitchen-cleaning-sun-ray.jpg": (2200, 1650),
+    "midway-recurring-bedroom-cleaning-sun-ray.jpg": (2200, 1650),
+    "park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg": (2200, 1650),
+    "sun-ray-cleaner-polishing-kitchen-sink-29.jpg": (2200, 1650),
+    "sun-ray-kitchen-island-after-cleaning-10.jpg": (2200, 1650),
+    "sun-ray-luxury-bedroom-cleaning-detail-26.jpg": (2200, 1650),
+}
+RESPONSIVE_IMAGE_SIZES = {
+    "sun-ray-elegant-living-room-cleaning-summit-wasatch-01-hero-16x9.jpg": "(max-width: 680px) 100vw, 50vw",
+    "summit-county-deep-cleaning-shower-detail-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
+    "wasatch-county-move-in-entry-kitchen-cleaning-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
+    "midway-recurring-bedroom-cleaning-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
+    "park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
+    "sun-ray-cleaner-polishing-kitchen-sink-29.jpg": "(max-width: 680px) 33vw, 16vw",
+    "sun-ray-kitchen-island-after-cleaning-10.jpg": "(max-width: 680px) 33vw, 16vw",
+    "sun-ray-luxury-bedroom-cleaning-detail-26.jpg": "(max-width: 680px) 33vw, 16vw",
+}
 AGENT_WEBMCP_SCRIPT = """  <script type="module" data-agent-webmcp>
   const sunRayQuoteTool = {
     name: "request_sun_ray_cleaning_quote",
@@ -101,18 +122,8 @@ AGENT_WEBMCP_SCRIPT = """  <script type="module" data-agent-webmcp>
 
 
 def inject_font_resource_hints(content: str) -> str:
-    if FONT_STYLESHEET in content:
-        return content
-    root_stylesheet_link = '<link rel="stylesheet" href="/styles.css">'
-    stylesheet_link = '<link rel="stylesheet" href="styles.css">'
-    nested_stylesheet_link = '<link rel="stylesheet" href="../styles.css">'
-    if root_stylesheet_link in content:
-        return content.replace(root_stylesheet_link, FONT_RESOURCE_HINTS + "\n  " + root_stylesheet_link, 1)
-    if stylesheet_link in content:
-        return content.replace(stylesheet_link, FONT_RESOURCE_HINTS + "\n  " + stylesheet_link, 1)
-    if nested_stylesheet_link in content:
-        return content.replace(nested_stylesheet_link, FONT_RESOURCE_HINTS + "\n  " + nested_stylesheet_link, 1)
-    return content.replace("</head>", FONT_RESOURCE_HINTS + "\n</head>", 1)
+    # Keep first render off the Google Fonts critical path; CSS variables fall back to system fonts.
+    return content
 
 LEGACY_REDIRECTS = {
     "/about-us": "/about/",
@@ -1318,6 +1329,55 @@ def inject_trustindex_enhancements(content: str, route: str) -> str:
     return content
 
 
+def inject_responsive_images(content: str, route: str) -> str:
+    def get_attr(attrs: str, name: str) -> str:
+        match = re.search(rf'\s{name}="([^"]*)"', attrs, flags=re.IGNORECASE)
+        return match.group(1) if match else ""
+
+    def set_attr(attrs: str, name: str, value: str) -> str:
+        escaped = html.escape(value, quote=True)
+        if re.search(rf'\s{name}="[^"]*"', attrs, flags=re.IGNORECASE):
+            return re.sub(rf'\s{name}="[^"]*"', f' {name}="{escaped}"', attrs, count=1, flags=re.IGNORECASE)
+        return attrs.rstrip() + f' {name}="{escaped}"'
+
+    def basename_from_src(src: str) -> str:
+        return posixpath.basename(src.split("?", 1)[0])
+
+    def responsive_src_for(filename: str, width: int) -> str:
+        stem = filename.rsplit(".", 1)[0]
+        return asset_rel(route, f"assets/responsive/{stem}-{width}w.webp")
+
+    def replace_img(match: re.Match[str]) -> str:
+        attrs = match.group(1)
+        src = get_attr(attrs, "src")
+        filename = basename_from_src(src)
+        if filename not in RESPONSIVE_IMAGE_DIMENSIONS:
+            return match.group(0)
+        if "<picture" in content[max(0, match.start() - 80):match.start()].lower():
+            return match.group(0)
+
+        original_width, original_height = RESPONSIVE_IMAGE_DIMENSIONS[filename]
+        nearby_prefix = content[max(0, match.start() - 180):match.start()].lower()
+        is_hero_image = "hero-media" in nearby_prefix or "page-hero-media" in nearby_prefix
+        attrs = set_attr(attrs, "width", str(original_width))
+        attrs = set_attr(attrs, "height", str(original_height))
+        attrs = set_attr(attrs, "decoding", "async")
+        if is_hero_image:
+            attrs = set_attr(attrs, "fetchpriority", "high")
+        elif not get_attr(attrs, "loading"):
+            attrs = set_attr(attrs, "loading", "lazy")
+
+        srcset = ", ".join(
+            f"{html.escape(responsive_src_for(filename, width), quote=True)} {width}w"
+            for width in RESPONSIVE_IMAGE_WIDTHS
+            if width <= original_width
+        )
+        sizes = html.escape(RESPONSIVE_IMAGE_SIZES[filename], quote=True)
+        return f'<picture><source type="image/webp" srcset="{srcset}" sizes="{sizes}"><img{attrs}></picture>'
+
+    return re.sub(r'<img\b([^>]*)>', replace_img, content, flags=re.IGNORECASE)
+
+
 def build_gallery_section(route: str) -> str:
     items = selected_gallery_items(route)
     if not items:
@@ -1909,6 +1969,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     )
     content = re.sub(r'<meta name="robots" content="[^"]+">', f'<meta name="robots" content="{ROBOTS_META}">', content)
     content = inject_trustindex_enhancements(content, route)
+    content = inject_responsive_images(content, route)
     return content
 
 
