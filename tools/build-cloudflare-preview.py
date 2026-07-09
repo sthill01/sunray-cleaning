@@ -66,6 +66,7 @@ RESPONSIVE_IMAGE_DIMENSIONS = {
     "wasatch-county-move-in-entry-kitchen-cleaning-sun-ray.jpg": (2200, 1650),
     "midway-recurring-bedroom-cleaning-sun-ray.jpg": (2200, 1650),
     "park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg": (2200, 1650),
+    "park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg": (1650, 2200),
     "sun-ray-cleaner-polishing-kitchen-sink-29.jpg": (2200, 1650),
     "sun-ray-kitchen-island-after-cleaning-10.jpg": (2200, 1650),
     "sun-ray-luxury-bedroom-cleaning-detail-26.jpg": (2200, 1650),
@@ -76,6 +77,7 @@ RESPONSIVE_IMAGE_SIZES = {
     "wasatch-county-move-in-entry-kitchen-cleaning-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
     "midway-recurring-bedroom-cleaning-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
     "park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
+    "park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
     "sun-ray-cleaner-polishing-kitchen-sink-29.jpg": "(max-width: 680px) 33vw, 16vw",
     "sun-ray-kitchen-island-after-cleaning-10.jpg": "(max-width: 680px) 33vw, 16vw",
     "sun-ray-luxury-bedroom-cleaning-detail-26.jpg": "(max-width: 680px) 33vw, 16vw",
@@ -1379,6 +1381,29 @@ def inject_responsive_images(content: str, route: str) -> str:
     return re.sub(r'<img\b([^>]*)>', replace_img, content, flags=re.IGNORECASE)
 
 
+def swap_short_term_rental_tile_image(content: str) -> str:
+    replacement_image = "/assets/park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg"
+    replacement_alt = "Living room reset for Airbnb and VRBO turnover cleaning"
+
+    def replace_panel(match: re.Match[str]) -> str:
+        panel = match.group(0)
+        panel = re.sub(
+            r'src="/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray\.jpg"',
+            f'src="{replacement_image}"',
+            panel,
+            count=1,
+        )
+        panel = re.sub(r'alt="[^"]*"', f'alt="{replacement_alt}"', panel, count=1)
+        return panel
+
+    return re.sub(
+        r'<a class="service-image-panel" href="[^"]*short-term-rental-cleaning/".*?</a>',
+        replace_panel,
+        content,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+
 def build_gallery_section(route: str) -> str:
     items = selected_gallery_items(route)
     if not items:
@@ -1972,6 +1997,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     )
     content = re.sub(r'<meta name="robots" content="[^"]+">', f'<meta name="robots" content="{ROBOTS_META}">', content)
     content = inject_trustindex_enhancements(content, route)
+    content = swap_short_term_rental_tile_image(content)
     content = inject_responsive_images(content, route)
     return content
 
