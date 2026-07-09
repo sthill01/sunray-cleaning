@@ -2674,7 +2674,7 @@ p {
   }
 
   .hero-review-badge {
-    top: 82px;
+    top: 58%;
   }
 
   .hero-media img,
@@ -2846,7 +2846,7 @@ p {
   }
 
   .hero-review-badge {
-    top: 82px;
+    top: 58%;
     right: 12px;
     width: 180px;
     max-width: calc(100% - 24px);
