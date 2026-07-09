@@ -67,6 +67,7 @@ RESPONSIVE_IMAGE_DIMENSIONS = {
     "midway-recurring-bedroom-cleaning-sun-ray.jpg": (2200, 1650),
     "park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg": (2200, 1650),
     "park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg": (1650, 2200),
+    "sun-ray-short-term-rental-bedroom-turnover-cleaning.jpg": (4032, 3024),
     "sun-ray-cleaner-polishing-kitchen-sink-29.jpg": (2200, 1650),
     "sun-ray-kitchen-island-after-cleaning-10.jpg": (2200, 1650),
     "sun-ray-luxury-bedroom-cleaning-detail-26.jpg": (2200, 1650),
@@ -78,6 +79,7 @@ RESPONSIVE_IMAGE_SIZES = {
     "midway-recurring-bedroom-cleaning-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
     "park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
     "park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg": "(max-width: 680px) 50vw, 25vw",
+    "sun-ray-short-term-rental-bedroom-turnover-cleaning.jpg": "(max-width: 680px) 50vw, 25vw",
     "sun-ray-cleaner-polishing-kitchen-sink-29.jpg": "(max-width: 680px) 33vw, 16vw",
     "sun-ray-kitchen-island-after-cleaning-10.jpg": "(max-width: 680px) 33vw, 16vw",
     "sun-ray-luxury-bedroom-cleaning-detail-26.jpg": "(max-width: 680px) 33vw, 16vw",
@@ -1382,8 +1384,8 @@ def inject_responsive_images(content: str, route: str) -> str:
 
 
 def swap_short_term_rental_tile_image(content: str) -> str:
-    replacement_image = "/assets/park-city-vrbo-living-room-turnover-cleaning-sun-ray.jpg"
-    replacement_alt = "Living room reset for Airbnb and VRBO turnover cleaning"
+    replacement_image = "/assets/sun-ray-short-term-rental-bedroom-turnover-cleaning.jpg"
+    replacement_alt = "Bedroom prepared for Airbnb and VRBO turnover cleaning"
 
     def replace_panel(match: re.Match[str]) -> str:
         panel = match.group(0)
