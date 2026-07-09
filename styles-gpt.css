@@ -2673,6 +2673,10 @@ p {
     justify-self: start;
   }
 
+  .hero-review-badge {
+    top: 82px;
+  }
+
   .hero-media img,
   .page-hero-media img,
   .gallery-feature-card img {

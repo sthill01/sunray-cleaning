@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import html
 import hashlib
@@ -58,6 +58,7 @@ TRUSTINDEX_HERO_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?6cd0f19720d6
 TRUSTINDEX_RIBBON_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?dad74f2761b80044eb16aaf0876"
 TRUSTINDEX_REVIEWS_LIST_SCRIPT = "https://cdn.trustindex.io/loader.js?d4ea3017201f425a6276a60d5ef"
 TRUSTINDEX_FORM_TRUSTMARK_SCRIPT = "https://cdn.trustindex.io/loader-cert.js?6d94b5a7228542333c86bb33560"
+STYLE_ASSET_VERSION = "20260708-hero-gap"
 RESPONSIVE_IMAGE_WIDTHS = (384, 672, 960)
 RESPONSIVE_IMAGE_DIMENSIONS = {
     "sun-ray-elegant-living-room-cleaning-summit-wasatch-01-hero-16x9.jpg": (1920, 1080),
@@ -1853,6 +1854,8 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         elif rel_source in {"styles-gpt.css", "quote-modal-gpt.js"}:
             clean_name = "styles.css" if rel_source == "styles-gpt.css" else "quote-modal.js"
             value = asset_rel(route, clean_name)
+            if clean_name == "styles.css":
+                value += f"?v={STYLE_ASSET_VERSION}"
         elif rel_source.startswith("assets/"):
             value = asset_rel(route, rel_source)
         return f'{attr}="{value}"'
@@ -1932,7 +1935,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         flags=re.IGNORECASE | re.DOTALL,
     )
 
-    content = content.replace("styles-gpt.css", "styles.css")
+    content = content.replace("styles-gpt.css", f"styles.css?v={STYLE_ASSET_VERSION}")
     content = content.replace("quote-modal-gpt.js", "quote-modal.js")
     content = inject_font_resource_hints(content)
     content = content.replace("data-gpt-map-section", "data-map-section")
@@ -1951,7 +1954,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     content = content.replace("local SEO posts", "local cleaning guides")
     content = content.replace('method="post" action="#"', 'method="post" action="/api/quote"')
     content = content.replace(
-        "Webflow-ready form markup. In this static preview, call or text (801) 604-2189 for live scheduling.",
+        "production-ready form markup. In this static preview, call or text (801) 604-2189 for live scheduling.",
         "Prefer to talk now? Call or text (801) 604-2189.",
     )
     content = content.replace(
@@ -1963,7 +1966,7 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         "<title id=\"map-title\">Sun Ray Cleaning service area map for Summit County and Wasatch County</title>",
     )
     content = re.sub(
-        r'<text x="58" y="394" fill="#6b6558" font-family="Open Sans, Arial" font-size="13">Stylized service map for planning and Webflow preview\.</text>',
+        r'<text x="58" y="394" fill="#6b6558" font-family="Open Sans, Arial" font-size="13">Stylized service map for planning and static preview\.</text>',
         "",
         content,
     )
