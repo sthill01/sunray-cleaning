@@ -360,6 +360,11 @@ BLOG_POST_SEO = {
         "location": "Park City / Heber Valley, Utah",
         "image": "/assets/park-city-airbnb-vrbo-kitchen-island-turnover-cleaning-sun-ray.jpg",
     },
+    "/blog/summer-dust-pollen-smoke-cleaning-tips-park-city/": {
+        "service": "Summer mountain home cleaning",
+        "location": "Park City / Heber City / Midway, Utah",
+        "image": "/assets/sun-ray-bright-living-room-after-cleaning-summit-wasatch-02.jpg",
+    },
     "/blog/post-ski-season-deep-clean-park-city-rental-owners/": {
         "service": "Post-season deep cleaning",
         "location": "Park City, Utah",
