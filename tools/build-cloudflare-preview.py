@@ -2002,6 +2002,10 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         "<title id=\"map-title\">Sun Ray Cleaning service area map</title>",
         "<title id=\"map-title\">Sun Ray Cleaning service area map for Summit County and Wasatch County</title>",
     )
+    content = content.replace(
+        "Stylized service map for planning and Webflow preview.",
+        "Sun Ray Cleaning service area overview.",
+    )
     content = re.sub(
         r'<text x="58" y="394" fill="#6b6558" font-family="Open Sans, Arial" font-size="13">Stylized service map for planning and static preview\.</text>',
         "",
@@ -2437,6 +2441,40 @@ Disallow: /
 Sitemap: {BASE_URL}/sitemap.xml
 """
     (OUT / "robots.txt").write_text(robots_text, encoding="utf-8")
+    (OUT / "404.html").write_text(
+        """<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1f3a68">
+  <title>Page Not Found | Sun Ray Cleaning</title>
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Page not found</p>
+        <h1>That page is not available.</h1>
+        <p class="lead">The address may be incorrect, or the page may have moved. You can return home or request a cleaning quote.</p>
+        <div class="hero-actions">
+          <a class="button button-yellow" href="/">Return home</a>
+          <a class="button button-outline" href="/contact/">Request a quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+""",
+        encoding="utf-8",
+    )
     today = date.today().isoformat()
     def sitemap_values(route: str) -> tuple[str, str]:
         if route == "/":

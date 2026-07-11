@@ -9,6 +9,8 @@
     "photos:validate": "python scripts/import-local-gallery.py --validate-only",
     "photos:dry-run": "python scripts/import-local-gallery.py --dry-run",
     "photos:test": "python -m unittest discover -s tests -p test_import_local_gallery.py",
+    "site:test": "python -m unittest discover -s tests -p test_site_build.py",
+    "test": "python -m unittest discover -s tests -p test_*.py",
     "build:cloudflare": "python tools/build-cloudflare-preview.py",
     "build:production": "node -e \"process.env.SUNRAY_SITE_BASE_URL='https://www.sunray-cleaning.com';process.env.SUNRAY_ALLOW_INDEXING='1';require('child_process').spawnSync('python',['tools/build-cloudflare-preview.py'],{stdio:'inherit',env:process.env});\"",
     "deploy:preview": "npx wrangler pages deploy cloudflare-preview --project-name sunray-cleaning-preview"
