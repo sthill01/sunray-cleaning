@@ -43,10 +43,11 @@ Sun Ray Cleaning Services is a female-owned residential cleaning company serving
 
 export async function onRequest(context) {
   const { request, env } = context;
+  const url = new URL(request.url);
   const method = request.method.toUpperCase();
   const accept = request.headers.get("accept") || "";
 
-  if ((method === "GET" || method === "HEAD") && wantsMarkdown(accept)) {
+  if (url.pathname === "/" && (method === "GET" || method === "HEAD") && wantsMarkdown(accept)) {
     const headers = discoveryHeaders("text/markdown; charset=utf-8");
     headers.set("vary", "Accept");
     headers.set("x-markdown-source", "/");

@@ -24,9 +24,26 @@ export default {
       });
     }
 
+    if (url.pathname === "/404" || url.pathname === "/404/") {
+      return serveNotFoundPage(request, env);
+    }
+
     return env.ASSETS.fetch(request);
   },
 };
+
+async function serveNotFoundPage(request, env) {
+  const assetUrl = new URL("/__sunray_custom_404__", request.url);
+  const assetRequest = new Request(assetUrl, request);
+  const assetResponse = await env.ASSETS.fetch(assetRequest);
+  const headers = new Headers(assetResponse.headers);
+  headers.set("x-robots-tag", "noindex, nofollow");
+
+  return new Response(request.method === "HEAD" ? null : assetResponse.body, {
+    status: 404,
+    headers,
+  });
+}
 
 const SUCCESS_MESSAGE =
   "Thanks. Sun Ray has your cleaning details and will follow up using the contact information you shared.";
