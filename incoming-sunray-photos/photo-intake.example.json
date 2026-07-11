@@ -1,0 +1,29 @@
+{
+  "batch": {
+    "id": "2026-07-13-kamas-oakley-kitchen",
+    "approvedBy": "Sun Ray owner",
+    "consentConfirmed": true,
+    "privacyChecked": true
+  },
+  "photos": [
+    {
+      "file": "kamas-kitchen-recurring-cleaning-01.jpg",
+      "jobId": "internal-job-id-only",
+      "approved": true,
+      "consentConfirmed": true,
+      "privacyChecked": true,
+      "locationVerified": true,
+      "containsSensitiveDetails": false,
+      "city": "Kamas",
+      "county": "Summit County",
+      "region": "Utah",
+      "service": "Recurring residential cleaning",
+      "room": "Kitchen",
+      "caption": "Recurring kitchen cleaning completed for a verified Kamas service-area home.",
+      "alt": "Clean kitchen after recurring house cleaning by Sun Ray Cleaning Services in Kamas, Utah",
+      "routes": [
+        "/blog/kamas-oakley-recurring-kitchen-cleaning/"
+      ]
+    }
+  ]
+}

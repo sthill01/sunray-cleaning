@@ -440,6 +440,11 @@ BLOG_POST_SEO = {
         "location": "Kamas / Oakley (Summit County), Utah",
         "image": "/assets/summit-county-deep-cleaning-shower-detail-sun-ray.jpg",
     },
+    "/blog/kamas-oakley-recurring-kitchen-cleaning/": {
+        "service": "Recurring residential kitchen cleaning",
+        "location": "Kamas / Oakley (Summit County), Utah",
+        "image": "/assets/summit-county-recurring-kitchen-cleaning-sun-ray.jpg",
+    },
     "/blog/local-cleaning-services-vs-national-apps-park-city/": {
         "service": "Local cleaning services vs national apps",
         "location": "Park City, Utah",
