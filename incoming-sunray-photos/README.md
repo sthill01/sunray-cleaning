@@ -1,13 +1,21 @@
 # Incoming Sun Ray Photos
 
-Drop new approved cleaning photos in this folder when you want the Friday 2:00 AM Mountain Time gallery automation to add them to the website.
+Place only customer-approved job photos in this folder. Every photo batch must include a `photo-intake.json` copied from `photo-intake.example.json`.
 
-Recommended filename pattern:
+The importer no longer assigns a city, service, consent status, or approval status from a filename. Those facts must be verified in the manifest before a photo can enter the public gallery.
 
-```text
-park-city-kitchen-deep-clean-2026-05-15.jpg
-heber-city-bathroom-recurring-cleaning.jpg
-midway-airbnb-turnover-bedroom.jpg
-```
+## Required workflow
 
-The importer reads the folder path and filename to infer room, service, city, county, alt text, captions, and route links. Committing a photo here means it is approved to publish on the website gallery.
+1. Copy approved images into this folder or a batch subfolder.
+2. Copy `photo-intake.example.json` to `photo-intake.json`.
+3. Add one manifest record for every image.
+4. Confirm customer consent, the broad city/county, service type, and privacy review.
+5. Run `npm run photos:validate`.
+6. Review the generated records with `npm run photos:dry-run`.
+7. Run `npm run import:local-gallery` only after validation passes.
+
+## Privacy rules
+
+Do not upload family photos, client names, exact addresses, mail, documents, keys, door or access codes, license plates, security panels, or identifiable exterior views. The public record stores only city-or-county-level location information.
+
+The importer converts approved images to optimized JPEG files and strips source EXIF metadata during conversion. Imported social copy remains in `draft` status until it is posted manually.
