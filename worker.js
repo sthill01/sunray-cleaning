@@ -54,6 +54,7 @@ const DEFAULT_QUOTE_EMAIL_RECIPIENTS = [
   "sunrayservices17@gmail.com",
   "sthill01@gmail.com",
 ];
+const DEFAULT_SMS_RECIPIENTS = ["+18016042189"];
 const MOUNTAIN_TIME_ZONE = "America/Denver";
 
 async function handleQuotePost(request, env) {
@@ -109,7 +110,7 @@ async function handleQuotePost(request, env) {
       ok: false,
       title: "Quote forwarding is not configured yet",
       message:
-        "This form is ready, but quote forwarding needs email, push, or webhook delivery configured in Cloudflare. Please call or text (801) 604-2189 for live scheduling.",
+        "This form is ready, but quote forwarding needs email, push, SMS, or webhook delivery configured in Cloudflare. Please call or text (801) 604-2189 for live scheduling.",
     });
   }
 
@@ -187,11 +188,14 @@ function isPushoverConfigured(env) {
   return Boolean(env.SUNRAY_PUSHOVER_APP_TOKEN && env.SUNRAY_PUSHOVER_GROUP_KEY);
 }
 
+function isClickSendConfigured(env) {
+  return Boolean(env.CLICKSEND_USERNAME && env.CLICKSEND_API_KEY);
+}
+
 async function sendQuotePushNotification(env, payload) {
   const body = new URLSearchParams({
     token: String(env.SUNRAY_PUSHOVER_APP_TOKEN),
     user: String(env.SUNRAY_PUSHOVER_GROUP_KEY),
-    title: "New Sun Ray website lead",
     message: buildPushMessage(payload),
     priority: String(env.SUNRAY_PUSHOVER_PRIORITY || "1"),
     sound: String(env.SUNRAY_PUSHOVER_SOUND || "cashregister"),
@@ -209,17 +213,55 @@ function buildPushMessage(payload) {
     ["Name", payload["first-name"] || payload.name],
     ["Phone", payload.phone],
     ["Email", payload.email],
-    ["City", payload["service-area"] || payload.city || payload.location],
     ["Service", payload["service-type"] || payload.service],
-    ["Timing", payload["preferred-timing"]],
-    ["Submitted", formatMountainTime(payload.submittedAt)],
+    ["UTM source", payload.utm_source],
+    ["Location", payload["service-area"] || payload.city || payload.location],
+    ["Notes", payload.notes || payload.message],
   ];
 
-  return fields
-    .filter(([, value]) => String(value || "").trim())
-    .map(([label, value]) => `${label}: ${String(value).trim()}`)
+  return [
+    "New website lead",
+    ...fields.map(([label, value]) => `${label}: ${formatAlertValue(value)}`),
+  ]
     .join("\n")
     .slice(0, 1024);
+}
+
+function formatAlertValue(value) {
+  const normalized = String(value || "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return normalized || "Not provided";
+}
+
+function getSmsRecipients(env) {
+  const configuredRecipients = String(env.SUNRAY_SMS_TO_NUMBERS || "")
+    .split(/[;,\n]/)
+    .map((recipient) => recipient.trim())
+    .filter(Boolean);
+
+  return [...new Set(configuredRecipients.length ? configuredRecipients : DEFAULT_SMS_RECIPIENTS)];
+}
+
+async function sendQuoteSms(env, payload) {
+  const authorization = btoa(`${env.CLICKSEND_USERNAME}:${env.CLICKSEND_API_KEY}`);
+  const message = buildPushMessage(payload);
+  const body = {
+    messages: getSmsRecipients(env).map((recipient) => ({
+      source: "sunray-website",
+      body: message,
+      to: recipient,
+    })),
+  };
+
+  return fetch("https://rest.clicksend.com/v3/sms/send", {
+    method: "POST",
+    headers: {
+      authorization: `Basic ${authorization}`,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
 }
 
 async function deliverQuote(env, payload) {
@@ -228,7 +270,9 @@ async function deliverQuote(env, payload) {
   let emailOk = false;
   const emailConfigured = Boolean(env.RESEND_API_KEY);
   const pushConfigured = isPushoverConfigured(env);
+  const smsConfigured = isClickSendConfigured(env);
   let pushOk = false;
+  let smsOk = false;
 
   if (emailConfigured) {
     const emailResponse = await sendQuoteEmail(env, payload);
@@ -252,6 +296,19 @@ async function deliverQuote(env, payload) {
     }
   }
 
+  if (smsConfigured) {
+    try {
+      const smsResponse = await sendQuoteSms(env, payload);
+      smsOk = smsResponse.ok;
+
+      if (!smsResponse.ok) {
+        console.error("Sun Ray quote SMS failed", smsResponse.status, await safeResponseText(smsResponse));
+      }
+    } catch (error) {
+      console.error("Sun Ray quote SMS failed", error?.message || error);
+    }
+  }
+
   for (const target of webhookTargets) {
     webhookResults.push(await sendQuoteWebhook(target, payload));
   }
@@ -264,8 +321,8 @@ async function deliverQuote(env, payload) {
     });
 
   return {
-    ok: emailOk || pushOk || webhookOk,
-    missingConfig: !emailConfigured && !pushConfigured && webhookTargets.length === 0,
+    ok: emailOk || pushOk || smsOk || webhookOk,
+    missingConfig: !emailConfigured && !pushConfigured && !smsConfigured && webhookTargets.length === 0,
   };
 }
 

@@ -21,6 +21,7 @@ Cloudflare Pages settings:
 - Optional filtered-spam audit webhook variable: `SUNRAY_QUOTE_SPAM_WEBHOOK_URL`
 - Optional comma-separated quote recipients: `SUNRAY_QUOTE_TO_EMAILS`
 - Optional Pushover credentials: `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY`
+- Optional ClickSend SMS credentials: `CLICKSEND_USERNAME` and `CLICKSEND_API_KEY`
 
 The generated preview intentionally uses `noindex` headers and robots rules until it is promoted from preview to production.
 
@@ -37,9 +38,10 @@ Production Cloudflare Pages settings:
 - Build command: `npm run build:production`
 - Build output directory: `cloudflare-preview`
 - Production canonical base URL: `https://www.sunray-cleaning.com`
-- Required delivery configuration for quote forwarding: Resend, Pushover, or a quote webhook
+- Required delivery configuration for quote forwarding: Resend, Pushover, ClickSend SMS, or a quote webhook
 - Optional comma-separated quote recipients: `SUNRAY_QUOTE_TO_EMAILS`
 - Optional Pushover credentials: `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY`
+- Optional ClickSend SMS credentials: `CLICKSEND_USERNAME` and `CLICKSEND_API_KEY`
 - Optional Google Sheets export webhook variable: `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
 - Optional filtered-spam audit webhook variable: `SUNRAY_QUOTE_SPAM_WEBHOOK_URL`
 - Google Tag Manager container: `GTM-W78H8S3C`
@@ -53,6 +55,7 @@ Cloudflare preview forms post to `/api/quote`. The form forwards valid submissio
 - `RESEND_API_KEY` sends the quote notification email.
 - `SUNRAY_QUOTE_TO_EMAILS` accepts comma-, semicolon-, or newline-separated recipients. Without an override, legitimate leads email `cyntyahill@gmail.com`, `sunrayservices17@gmail.com`, and `sthill01@gmail.com`.
 - `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY` send a high-priority Pushover alert to the Sun Ray delivery group. Use `SUNRAY_PUSHOVER_PRIORITY` and `SUNRAY_PUSHOVER_SOUND` to override the defaults of `1` and `cashregister`.
+- `CLICKSEND_USERNAME` and `CLICKSEND_API_KEY` send the same ordered alert as carrier SMS. `SUNRAY_SMS_TO_NUMBERS` optionally accepts comma-, semicolon-, or newline-separated E.164 numbers; it defaults to `+18016042189`.
 - `SUNRAY_QUOTE_WEBHOOK_URL` sends the full JSON payload to CRM or automation.
 - `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` sends the same JSON payload to the Google Sheets lead log webhook.
 - `SUNRAY_QUOTE_SPAM_WEBHOOK_URL` sends filtered spam to an audit webhook without emailing, notifying sales, or firing conversion tracking.
@@ -67,9 +70,20 @@ Pushover setup:
 4. Store the token and group key in the Cloudflare project as encrypted secrets named `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY`.
 5. Submit one labeled test lead and verify that the three emails, `Leads` row, and group push arrive. Submit a honeypot test separately and verify that it appears only in `Filtered Spam`.
 
-The Pushover path runs only after the quote passes the spam checks. Filtered submissions never call Resend or Pushover.
+The notification paths run only after the quote passes the spam checks. Filtered submissions never call Resend, Pushover, or ClickSend.
 
-Quote payloads retain their original UTC `submittedAt` value for webhook and spreadsheet auditing. Email and Pushover notifications display that value in `America/Denver` Mountain Time, including the correct `MST` or `MDT` daylight-saving abbreviation.
+Quote payloads retain their original UTC `submittedAt` value for webhook and spreadsheet auditing. Email notifications display that value in `America/Denver` Mountain Time, including the correct `MST` or `MDT` daylight-saving abbreviation.
+
+The phone alert message begins with `New website lead`, followed by name, phone, email, service, UTM source, location, and notes in that exact order. Pushover delivers this as an app notification to its delivery group. When ClickSend credentials are configured, the same content is sent as carrier SMS to `+1 801-604-2189` by default.
+
+ClickSend SMS setup:
+
+1. Create a ClickSend account and open `API Credentials` in its dashboard.
+2. Store the API username and API key in Cloudflare as encrypted secrets named `CLICKSEND_USERNAME` and `CLICKSEND_API_KEY`.
+3. Optionally set `SUNRAY_SMS_TO_NUMBERS` when more recipients are needed. Use full E.164 numbers such as `+18016042189`.
+4. Submit one labeled test lead and confirm the API response in Cloudflare logs and the message on the recipient phone before treating SMS as live.
+
+Long alert text can be billed as multiple SMS message parts. Keep form notes concise where possible.
 
 If all delivery paths are missing or unavailable, the form shows an error and keeps the phone/SMS fallback visible: `(801) 604-2189`.
 

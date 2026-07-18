@@ -46,11 +46,13 @@ const handlers = [
 ];
 
 for (const handler of handlers) {
-  test(`${handler.name} sends legitimate leads to three emails, Pushover, and Sheets`, async () => {
+  test(`${handler.name} sends legitimate leads to email, Pushover, SMS, and Sheets`, async () => {
     const module = await importSource(handler.source);
     const calls = installFetchRecorder();
     const env = {
       RESEND_API_KEY: "resend-test-key",
+      CLICKSEND_USERNAME: "clicksend-user",
+      CLICKSEND_API_KEY: "clicksend-key",
       SUNRAY_PUSHOVER_APP_TOKEN: "pushover-app-token",
       SUNRAY_PUSHOVER_GROUP_KEY: "pushover-group-key",
       SUNRAY_QUOTE_SHEETS_WEBHOOK_URL: "https://sheets.example/leads",
@@ -63,6 +65,8 @@ for (const handler of handlers) {
       "service-area": "Heber City",
       "service-type": "Deep clean",
       "preferred-timing": "Next week",
+      utm_source: "google",
+      notes: "Please call after 3 PM.",
     };
 
     const response = await handler.run(module, makeRequest(payload), env);
@@ -76,6 +80,7 @@ for (const handler of handlers) {
       [
         "https://api.resend.com/emails",
         "https://api.pushover.net/1/messages.json",
+        "https://rest.clicksend.com/v3/sms/send",
         "https://sheets.example/leads",
       ],
     );
@@ -84,7 +89,7 @@ for (const handler of handlers) {
     assert.deepEqual(resendBody.to, defaultRecipients);
     assert.equal(resendBody.reply_to, "lead@example.com");
 
-    const sheetBody = JSON.parse(calls[2].init.body);
+    const sheetBody = JSON.parse(calls[3].init.body);
     const expectedMountainTime = new Intl.DateTimeFormat("en-US", {
       timeZone: "America/Denver",
       year: "numeric",
@@ -105,17 +110,38 @@ for (const handler of handlers) {
     assert.equal(pushBody.get("user"), "pushover-group-key");
     assert.equal(pushBody.get("priority"), "1");
     assert.equal(pushBody.get("sound"), "cashregister");
-    assert.match(pushBody.get("message"), /Name: Test Lead/);
-    assert.match(pushBody.get("message"), /Phone: \+1 435-555-0100/);
-    assert.match(pushBody.get("message"), /City: Heber City/);
-    assert.match(pushBody.get("message"), new RegExp(`Submitted: ${expectedMountainTime.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}`));
+    const expectedAlert = [
+      "New website lead",
+      "Name: Test Lead",
+      "Phone: +1 435-555-0100",
+      "Email: lead@example.com",
+      "Service: Deep clean",
+      "UTM source: google",
+      "Location: Heber City",
+      "Notes: Please call after 3 PM.",
+    ].join("\n");
+    assert.equal(pushBody.get("message"), expectedAlert);
+
+    const smsBody = JSON.parse(calls[2].init.body);
+    assert.equal(calls[2].init.headers.authorization, `Basic ${Buffer.from("clicksend-user:clicksend-key").toString("base64")}`);
+    assert.deepEqual(smsBody, {
+      messages: [
+        {
+          source: "sunray-website",
+          body: expectedAlert,
+          to: "+18016042189",
+        },
+      ],
+    });
   });
 
-  test(`${handler.name} keeps filtered spam out of email and Pushover`, async () => {
+  test(`${handler.name} keeps filtered spam out of email, Pushover, and SMS`, async () => {
     const module = await importSource(handler.source);
     const calls = installFetchRecorder();
     const env = {
       RESEND_API_KEY: "resend-test-key",
+      CLICKSEND_USERNAME: "clicksend-user",
+      CLICKSEND_API_KEY: "clicksend-key",
       SUNRAY_PUSHOVER_APP_TOKEN: "pushover-app-token",
       SUNRAY_PUSHOVER_GROUP_KEY: "pushover-group-key",
       SUNRAY_QUOTE_SHEETS_WEBHOOK_URL: "https://sheets.example/leads",
