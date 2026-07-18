@@ -19,6 +19,8 @@ Cloudflare Pages settings:
 - Quote form webhook variable: `SUNRAY_QUOTE_WEBHOOK_URL`
 - Optional Google Sheets export webhook variable: `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
 - Optional filtered-spam audit webhook variable: `SUNRAY_QUOTE_SPAM_WEBHOOK_URL`
+- Optional comma-separated quote recipients: `SUNRAY_QUOTE_TO_EMAILS`
+- Optional Pushover credentials: `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY`
 
 The generated preview intentionally uses `noindex` headers and robots rules until it is promoted from preview to production.
 
@@ -35,7 +37,9 @@ Production Cloudflare Pages settings:
 - Build command: `npm run build:production`
 - Build output directory: `cloudflare-preview`
 - Production canonical base URL: `https://www.sunray-cleaning.com`
-- Required environment variable for quote forwarding: `RESEND_API_KEY`, `SUNRAY_QUOTE_WEBHOOK_URL`, or `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
+- Required delivery configuration for quote forwarding: Resend, Pushover, or a quote webhook
+- Optional comma-separated quote recipients: `SUNRAY_QUOTE_TO_EMAILS`
+- Optional Pushover credentials: `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY`
 - Optional Google Sheets export webhook variable: `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
 - Optional filtered-spam audit webhook variable: `SUNRAY_QUOTE_SPAM_WEBHOOK_URL`
 - Google Tag Manager container: `GTM-W78H8S3C`
@@ -47,11 +51,23 @@ The production build sets crawlable robots metadata, removes the preview `X-Robo
 Cloudflare preview forms post to `/api/quote`. The form forwards valid submissions through the configured delivery paths:
 
 - `RESEND_API_KEY` sends the quote notification email.
+- `SUNRAY_QUOTE_TO_EMAILS` accepts comma-, semicolon-, or newline-separated recipients. Without an override, legitimate leads email `cyntyahill@gmail.com`, `sunrayservices17@gmail.com`, and `sthill01@gmail.com`.
+- `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY` send a high-priority Pushover alert to the Sun Ray delivery group. Use `SUNRAY_PUSHOVER_PRIORITY` and `SUNRAY_PUSHOVER_SOUND` to override the defaults of `1` and `cashregister`.
 - `SUNRAY_QUOTE_WEBHOOK_URL` sends the full JSON payload to CRM or automation.
 - `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` sends the same JSON payload to the Google Sheets lead log webhook.
 - `SUNRAY_QUOTE_SPAM_WEBHOOK_URL` sends filtered spam to an audit webhook without emailing, notifying sales, or firing conversion tracking.
 
 Webhook delivery is additive, so a Sheets export can run alongside inbox notifications.
+
+Pushover setup:
+
+1. Install Pushover on each phone and activate each user's license.
+2. Register a `Sun Ray Leads` Pushover application and copy its API token.
+3. Create a delivery group containing each Sun Ray recipient and copy the group key.
+4. Store the token and group key in the Cloudflare project as encrypted secrets named `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY`.
+5. Submit one labeled test lead and verify that the three emails, `Leads` row, and group push arrive. Submit a honeypot test separately and verify that it appears only in `Filtered Spam`.
+
+The Pushover path runs only after the quote passes the spam checks. Filtered submissions never call Resend or Pushover.
 
 If all delivery paths are missing or unavailable, the form shows an error and keeps the phone/SMS fallback visible: `(801) 604-2189`.
 
