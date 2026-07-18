@@ -208,6 +208,8 @@ CORE_AREAS = [
 
 CORE_TOPICS = [
     "residential house cleaning",
+    "second-home cleaning",
+    "owner-arrival cleaning",
     "Airbnb cleaning",
     "VRBO cleaning",
     "short-term rental turnover cleaning",
@@ -221,6 +223,7 @@ CORE_TOPICS = [
 
 SERVICE_NAV_ROUTES = [
     ("/services/", "All cleaning services"),
+    ("/second-home-cleaning-park-city/", "Second-home cleaning Park City"),
     ("/services/short-term-rental-cleaning/", "Airbnb and VRBO cleaning"),
     ("/services/deep-cleaning/", "Deep cleaning"),
     ("/services/recurring-cleaning/", "Recurring house cleaning"),
@@ -675,6 +678,8 @@ def route_label(route: str) -> str:
 
 
 def page_type(route: str) -> str:
+    if route in {"/airbnb-cleaning-park-city/", "/second-home-cleaning-park-city/"}:
+        return "service"
     if route.startswith("/blog/"):
         return "blog"
     if route.startswith("/services/"):
@@ -2479,7 +2484,7 @@ Sitemap: {BASE_URL}/sitemap.xml
     def sitemap_values(route: str) -> tuple[str, str]:
         if route == "/":
             return "weekly", "1.0"
-        if route.startswith(("/services/", "/service-location/")):
+        if page_type(route) in {"service", "location"}:
             return "weekly", "0.9"
         if route.startswith("/blog/"):
             return "monthly", "0.75"

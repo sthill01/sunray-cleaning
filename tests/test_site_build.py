@@ -50,6 +50,23 @@ class SiteBuildTests(unittest.TestCase):
         self.assertNotIn("pages.dev", sitemap)
         self.assertGreaterEqual(sitemap.count("<loc>"), 100)
 
+    def test_second_home_lead_page_is_discoverable_and_answer_ready(self):
+        page = (OUTPUT / "second-home-cleaning-park-city" / "index.html").read_text(encoding="utf-8")
+        home = (OUTPUT / "index.html").read_text(encoding="utf-8")
+        park_city = (OUTPUT / "service-location" / "park-city" / "index.html").read_text(encoding="utf-8")
+        sitemap = (OUTPUT / "sitemap.xml").read_text(encoding="utf-8")
+        llms = (OUTPUT / "llms.txt").read_text(encoding="utf-8")
+
+        self.assertIn('<link rel="canonical" href="https://www.sunray-cleaning.com/second-home-cleaning-park-city/">', page)
+        self.assertIn('<meta name="robots" content="index, follow">', page)
+        self.assertIn('"@type":"Service"', page)
+        self.assertIn('"@type":"FAQPage"', page)
+        self.assertIn("Does this service include property management or home-watch inspections?", page)
+        self.assertIn("second-home-cleaning-park-city", home)
+        self.assertIn("second-home-cleaning-park-city", park_city)
+        self.assertIn("https://www.sunray-cleaning.com/second-home-cleaning-park-city/", sitemap)
+        self.assertIn("Second-home cleaning Park City", llms)
+
     def test_generated_pages_do_not_expose_webflow_preview_copy(self):
         offenders = []
         for path in OUTPUT.rglob("*.html"):
