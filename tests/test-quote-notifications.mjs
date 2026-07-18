@@ -3,7 +3,13 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
-const defaultRecipients = ["cyntyahill@gmail.com", "sunrayservices17@gmail.com", "sthill01@gmail.com"];
+const defaultRecipients = [
+  "quotes@sunray-cleaning.com",
+  "cyntya@sunray-cleaning.com",
+  "cyntyahill@gmail.com",
+  "sunrayservices17@gmail.com",
+  "sthill01@gmail.com",
+];
 
 async function importSource(relativePath) {
   const source = await readFile(new URL(relativePath, root), "utf8");
@@ -51,8 +57,8 @@ for (const handler of handlers) {
     const calls = installFetchRecorder();
     const env = {
       RESEND_API_KEY: "resend-test-key",
-      CLICKSEND_USERNAME: "clicksend-user",
-      CLICKSEND_API_KEY: "clicksend-key",
+      BREVO_API_KEY: "brevo-api-key",
+      BREVO_SMS_SENDER: "SunRay",
       SUNRAY_PUSHOVER_APP_TOKEN: "pushover-app-token",
       SUNRAY_PUSHOVER_GROUP_KEY: "pushover-group-key",
       SUNRAY_QUOTE_SHEETS_WEBHOOK_URL: "https://sheets.example/leads",
@@ -80,7 +86,8 @@ for (const handler of handlers) {
       [
         "https://api.resend.com/emails",
         "https://api.pushover.net/1/messages.json",
-        "https://rest.clicksend.com/v3/sms/send",
+        "https://api.brevo.com/v3/transactionalSMS/send",
+        "https://api.brevo.com/v3/transactionalSMS/send",
         "https://sheets.example/leads",
       ],
     );
@@ -89,7 +96,7 @@ for (const handler of handlers) {
     assert.deepEqual(resendBody.to, defaultRecipients);
     assert.equal(resendBody.reply_to, "lead@example.com");
 
-    const sheetBody = JSON.parse(calls[3].init.body);
+    const sheetBody = JSON.parse(calls[4].init.body);
     const expectedMountainTime = new Intl.DateTimeFormat("en-US", {
       timeZone: "America/Denver",
       year: "numeric",
@@ -122,22 +129,24 @@ for (const handler of handlers) {
     ].join("\n");
     assert.equal(pushBody.get("message"), expectedAlert);
 
-    const smsBody = JSON.parse(calls[2].init.body);
-    assert.equal(calls[2].init.headers.authorization, `Basic ${Buffer.from("clicksend-user:clicksend-key").toString("base64")}`);
-    assert.deepEqual(smsBody, {
-      messages: [
-        {
-          source: "sunray-website",
-          body: expectedAlert,
-          to: "+18016042189",
-        },
-        {
-          source: "sunray-website",
-          body: expectedAlert,
-          to: "+18018501253",
-        },
-      ],
-    });
+    const smsBodies = calls.slice(2, 4).map((call) => JSON.parse(call.init.body));
+    assert.equal(calls[2].init.headers["api-key"], "brevo-api-key");
+    assert.deepEqual(smsBodies, [
+      {
+        sender: "SunRay",
+        recipient: "18016042189",
+        content: expectedAlert,
+        type: "transactional",
+        tag: "website-lead",
+      },
+      {
+        sender: "SunRay",
+        recipient: "18018501253",
+        content: expectedAlert,
+        type: "transactional",
+        tag: "website-lead",
+      },
+    ]);
   });
 
   test(`${handler.name} keeps filtered spam out of email, Pushover, and SMS`, async () => {
@@ -145,8 +154,8 @@ for (const handler of handlers) {
     const calls = installFetchRecorder();
     const env = {
       RESEND_API_KEY: "resend-test-key",
-      CLICKSEND_USERNAME: "clicksend-user",
-      CLICKSEND_API_KEY: "clicksend-key",
+      BREVO_API_KEY: "brevo-api-key",
+      BREVO_SMS_SENDER: "SunRay",
       SUNRAY_PUSHOVER_APP_TOKEN: "pushover-app-token",
       SUNRAY_PUSHOVER_GROUP_KEY: "pushover-group-key",
       SUNRAY_QUOTE_SHEETS_WEBHOOK_URL: "https://sheets.example/leads",

@@ -3,6 +3,8 @@ const SUCCESS_MESSAGE =
 const FORWARDING_ERROR_MESSAGE =
   "Something went wrong while forwarding your request. Please call or text (801) 604-2189 and we will help right away.";
 const DEFAULT_QUOTE_EMAIL_RECIPIENTS = [
+  "quotes@sunray-cleaning.com",
+  "cyntya@sunray-cleaning.com",
   "cyntyahill@gmail.com",
   "sunrayservices17@gmail.com",
   "sthill01@gmail.com",
@@ -195,8 +197,8 @@ function isPushoverConfigured(env) {
   return Boolean(env.SUNRAY_PUSHOVER_APP_TOKEN && env.SUNRAY_PUSHOVER_GROUP_KEY);
 }
 
-function isClickSendConfigured(env) {
-  return Boolean(env.CLICKSEND_USERNAME && env.CLICKSEND_API_KEY);
+function isBrevoConfigured(env) {
+  return Boolean(env.BREVO_API_KEY && env.BREVO_SMS_SENDER);
 }
 
 async function sendQuotePushNotification(env, payload) {
@@ -251,24 +253,28 @@ function getSmsRecipients(env) {
 }
 
 async function sendQuoteSms(env, payload) {
-  const authorization = btoa(`${env.CLICKSEND_USERNAME}:${env.CLICKSEND_API_KEY}`);
   const message = buildPushMessage(payload);
-  const body = {
-    messages: getSmsRecipients(env).map((recipient) => ({
-      source: "sunray-website",
-      body: message,
-      to: recipient,
-    })),
-  };
+  const responses = await Promise.all(
+    getSmsRecipients(env).map((recipient) =>
+      fetch("https://api.brevo.com/v3/transactionalSMS/send", {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "api-key": String(env.BREVO_API_KEY),
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          sender: String(env.BREVO_SMS_SENDER),
+          recipient: String(recipient).replace(/\D/g, ""),
+          content: message,
+          type: "transactional",
+          tag: "website-lead",
+        }),
+      }),
+    ),
+  );
 
-  return fetch("https://rest.clicksend.com/v3/sms/send", {
-    method: "POST",
-    headers: {
-      authorization: `Basic ${authorization}`,
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
+  return responses.find((response) => !response.ok) || Response.json({ ok: true });
 }
 
 async function deliverQuote(env, payload) {
@@ -277,7 +283,7 @@ async function deliverQuote(env, payload) {
   let emailOk = false;
   const emailConfigured = Boolean(env.RESEND_API_KEY);
   const pushConfigured = isPushoverConfigured(env);
-  const smsConfigured = isClickSendConfigured(env);
+  const smsConfigured = isBrevoConfigured(env);
   let pushOk = false;
   let smsOk = false;
 
