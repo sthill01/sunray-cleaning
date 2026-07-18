@@ -55,7 +55,7 @@ Cloudflare preview forms post to `/api/quote`. The form forwards valid submissio
 - `RESEND_API_KEY` sends the quote notification email.
 - `SUNRAY_QUOTE_TO_EMAILS` accepts comma-, semicolon-, or newline-separated recipients. Without an override, legitimate leads email `cyntyahill@gmail.com`, `sunrayservices17@gmail.com`, and `sthill01@gmail.com`.
 - `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY` send a high-priority Pushover alert to the Sun Ray delivery group. Use `SUNRAY_PUSHOVER_PRIORITY` and `SUNRAY_PUSHOVER_SOUND` to override the defaults of `1` and `cashregister`.
-- `CLICKSEND_USERNAME` and `CLICKSEND_API_KEY` send the same ordered alert as carrier SMS. `SUNRAY_SMS_TO_NUMBERS` optionally accepts comma-, semicolon-, or newline-separated E.164 numbers; it defaults to `+18016042189`.
+- `CLICKSEND_USERNAME` and `CLICKSEND_API_KEY` send the same ordered alert as carrier SMS. `SUNRAY_SMS_TO_NUMBERS` optionally accepts comma-, semicolon-, or newline-separated E.164 numbers; it defaults to Cynthia at `+18016042189` and Steve at `+18018501253`.
 - `SUNRAY_QUOTE_WEBHOOK_URL` sends the full JSON payload to CRM or automation.
 - `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` sends the same JSON payload to the Google Sheets lead log webhook.
 - `SUNRAY_QUOTE_SPAM_WEBHOOK_URL` sends filtered spam to an audit webhook without emailing, notifying sales, or firing conversion tracking.
@@ -74,7 +74,7 @@ The notification paths run only after the quote passes the spam checks. Filtered
 
 Quote payloads retain their original UTC `submittedAt` value for webhook and spreadsheet auditing. Email notifications display that value in `America/Denver` Mountain Time, including the correct `MST` or `MDT` daylight-saving abbreviation.
 
-The phone alert message begins with `New website lead`, followed by name, phone, email, service, UTM source, location, and notes in that exact order. Pushover delivers this as an app notification to its delivery group. When ClickSend credentials are configured, the same content is sent as carrier SMS to `+1 801-604-2189` by default.
+The phone alert message begins with `New website lead`, followed by name, phone, email, service, UTM source, location, and notes in that exact order. Pushover delivers this as an app notification to its delivery group. When ClickSend credentials are configured, the same content is sent as carrier SMS to Cynthia at `+1 801-604-2189` and Steve at `+1 801-850-1253` by default.
 
 ClickSend SMS setup:
 

@@ -131,6 +131,11 @@ for (const handler of handlers) {
           body: expectedAlert,
           to: "+18016042189",
         },
+        {
+          source: "sunray-website",
+          body: expectedAlert,
+          to: "+18018501253",
+        },
       ],
     });
   });

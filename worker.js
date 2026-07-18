@@ -54,7 +54,7 @@ const DEFAULT_QUOTE_EMAIL_RECIPIENTS = [
   "sunrayservices17@gmail.com",
   "sthill01@gmail.com",
 ];
-const DEFAULT_SMS_RECIPIENTS = ["+18016042189"];
+const DEFAULT_SMS_RECIPIENTS = ["+18016042189", "+18018501253"];
 const MOUNTAIN_TIME_ZONE = "America/Denver";
 
 async function handleQuotePost(request, env) {
