@@ -19,6 +19,9 @@ Cloudflare Pages settings:
 - Quote form webhook variable: `SUNRAY_QUOTE_WEBHOOK_URL`
 - Optional Google Sheets export webhook variable: `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
 - Optional filtered-spam audit webhook variable: `SUNRAY_QUOTE_SPAM_WEBHOOK_URL`
+- Optional comma-separated quote recipients: `SUNRAY_QUOTE_TO_EMAILS`
+- Optional Pushover credentials: `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY`
+- Optional Brevo SMS configuration: `BREVO_API_KEY` and `BREVO_SMS_SENDER`
 
 The generated preview intentionally uses `noindex` headers and robots rules until it is promoted from preview to production.
 
@@ -35,7 +38,10 @@ Production Cloudflare Pages settings:
 - Build command: `npm run build:production`
 - Build output directory: `cloudflare-preview`
 - Production canonical base URL: `https://www.sunray-cleaning.com`
-- Required environment variable for quote forwarding: `RESEND_API_KEY`, `SUNRAY_QUOTE_WEBHOOK_URL`, or `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
+- Required delivery configuration for quote forwarding: Resend, Pushover, Brevo SMS, or a quote webhook
+- Optional comma-separated quote recipients: `SUNRAY_QUOTE_TO_EMAILS`
+- Optional Pushover credentials: `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY`
+- Optional Brevo SMS configuration: `BREVO_API_KEY` and `BREVO_SMS_SENDER`
 - Optional Google Sheets export webhook variable: `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL`
 - Optional filtered-spam audit webhook variable: `SUNRAY_QUOTE_SPAM_WEBHOOK_URL`
 - Google Tag Manager container: `GTM-W78H8S3C`
@@ -47,11 +53,39 @@ The production build sets crawlable robots metadata, removes the preview `X-Robo
 Cloudflare preview forms post to `/api/quote`. The form forwards valid submissions through the configured delivery paths:
 
 - `RESEND_API_KEY` sends the quote notification email.
+- `SUNRAY_QUOTE_TO_EMAILS` accepts comma-, semicolon-, or newline-separated recipients. Without an override, legitimate leads email `quotes@sunray-cleaning.com`, `cyntya@sunray-cleaning.com`, `cyntyahill@gmail.com`, `sunrayservices17@gmail.com`, and `sthill01@gmail.com`.
+- `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY` send a high-priority Pushover alert to the Sun Ray delivery group. Use `SUNRAY_PUSHOVER_PRIORITY` and `SUNRAY_PUSHOVER_SOUND` to override the defaults of `1` and `cashregister`.
+- `BREVO_API_KEY` and `BREVO_SMS_SENDER` send the same ordered alert through Brevo Transactional SMS. `SUNRAY_SMS_TO_NUMBERS` optionally accepts comma-, semicolon-, or newline-separated E.164 numbers; it defaults to Cynthia at `+18016042189` and Steve at `+18018501253`.
 - `SUNRAY_QUOTE_WEBHOOK_URL` sends the full JSON payload to CRM or automation.
 - `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` sends the same JSON payload to the Google Sheets lead log webhook.
 - `SUNRAY_QUOTE_SPAM_WEBHOOK_URL` sends filtered spam to an audit webhook without emailing, notifying sales, or firing conversion tracking.
 
 Webhook delivery is additive, so a Sheets export can run alongside inbox notifications.
+
+Pushover setup:
+
+1. Install Pushover on each phone and activate each user's license.
+2. Register a `Sun Ray Leads` Pushover application and copy its API token.
+3. Create a delivery group containing each Sun Ray recipient and copy the group key.
+4. Store the token and group key in the Cloudflare project as encrypted secrets named `SUNRAY_PUSHOVER_APP_TOKEN` and `SUNRAY_PUSHOVER_GROUP_KEY`.
+5. Submit one labeled test lead and verify delivery to the five configured email recipients, the `Leads` row, and the group push. Submit a honeypot test separately and verify that it appears only in `Filtered Spam`.
+
+The notification paths run only after the quote passes the spam checks. Filtered submissions never call Resend, Pushover, or Brevo.
+
+Quote payloads retain their original UTC `submittedAt` value for webhook and spreadsheet auditing. Email notifications display that value in `America/Denver` Mountain Time, including the correct `MST` or `MDT` daylight-saving abbreviation.
+
+The phone alert message begins with `New website lead`, followed by name, phone, email, service, UTM source, location, and notes in that exact order. Pushover delivers this as an app notification to its delivery group. When Brevo credentials are configured, the same content is sent as carrier SMS to Cynthia at `+1 801-604-2189` and Steve at `+1 801-850-1253` by default.
+
+Brevo SMS setup:
+
+1. In Brevo, buy SMS credits and complete the required US toll-free-number registration. Wait until the sender is approved before treating SMS as available.
+2. Open `SMTP & API` in Brevo settings and create an API key for the website integration.
+3. Store the API key in Cloudflare as the encrypted secret `BREVO_API_KEY`. Do not commit it or paste it into issue/chat history.
+4. Set `BREVO_SMS_SENDER` to the approved Brevo Sender ID or toll-free sender value associated with the account.
+5. Optionally set `SUNRAY_SMS_TO_NUMBERS` when more recipients are needed. Use full E.164 numbers such as `+18016042189`.
+6. Submit one labeled test lead and confirm both Brevo transactional logs and delivery on each recipient phone before treating SMS as live.
+
+Long alert text can be billed as multiple SMS message parts. Keep form notes concise where possible.
 
 If all delivery paths are missing or unavailable, the form shows an error and keeps the phone/SMS fallback visible: `(801) 604-2189`.
 
