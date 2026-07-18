@@ -69,6 +69,8 @@ Pushover setup:
 
 The Pushover path runs only after the quote passes the spam checks. Filtered submissions never call Resend or Pushover.
 
+Quote payloads retain their original UTC `submittedAt` value for webhook and spreadsheet auditing. Email and Pushover notifications display that value in `America/Denver` Mountain Time, including the correct `MST` or `MDT` daylight-saving abbreviation.
+
 If all delivery paths are missing or unavailable, the form shows an error and keeps the phone/SMS fallback visible: `(801) 604-2189`.
 
 The runtime quote script captures `gclid`, `gbraid`, `wbraid`, `msclkid`, `fbclid`, `ttclid`, `li_fat_id`, UTM fields, landing page, first landing page and referrer into hidden form fields. The Google Sheets Apps Script template lives at `integrations/google-sheets-lead-webhook.gs`; paste it into the Apps Script editor for the lead log spreadsheet, deploy it as a web app, and save the deployment URL as `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` in Cloudflare.

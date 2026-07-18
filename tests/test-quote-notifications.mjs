@@ -84,6 +84,22 @@ for (const handler of handlers) {
     assert.deepEqual(resendBody.to, defaultRecipients);
     assert.equal(resendBody.reply_to, "lead@example.com");
 
+    const sheetBody = JSON.parse(calls[2].init.body);
+    const expectedMountainTime = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Denver",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      second: "2-digit",
+      timeZoneName: "short",
+    }).format(new Date(sheetBody.submittedAt));
+    assert.match(
+      resendBody.text,
+      new RegExp(`Submitted at \\(Mountain Time\\): ${expectedMountainTime.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}`),
+    );
+
     const pushBody = new URLSearchParams(String(calls[1].init.body));
     assert.equal(pushBody.get("token"), "pushover-app-token");
     assert.equal(pushBody.get("user"), "pushover-group-key");
@@ -92,6 +108,7 @@ for (const handler of handlers) {
     assert.match(pushBody.get("message"), /Name: Test Lead/);
     assert.match(pushBody.get("message"), /Phone: \+1 435-555-0100/);
     assert.match(pushBody.get("message"), /City: Heber City/);
+    assert.match(pushBody.get("message"), new RegExp(`Submitted: ${expectedMountainTime.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}`));
   });
 
   test(`${handler.name} keeps filtered spam out of email and Pushover`, async () => {

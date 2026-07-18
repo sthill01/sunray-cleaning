@@ -54,6 +54,7 @@ const DEFAULT_QUOTE_EMAIL_RECIPIENTS = [
   "sunrayservices17@gmail.com",
   "sthill01@gmail.com",
 ];
+const MOUNTAIN_TIME_ZONE = "America/Denver";
 
 async function handleQuotePost(request, env) {
   const wantsJson = request.headers.get("accept")?.includes("application/json");
@@ -211,6 +212,7 @@ function buildPushMessage(payload) {
     ["City", payload["service-area"] || payload.city || payload.location],
     ["Service", payload["service-type"] || payload.service],
     ["Timing", payload["preferred-timing"]],
+    ["Submitted", formatMountainTime(payload.submittedAt)],
   ];
 
   return fields
@@ -631,14 +633,15 @@ function buildEmailBody(payload) {
     referrer: "Referrer",
     attribution_updated_at: "Attribution updated at",
     pageUrl: "Page URL",
-    submittedAt: "Submitted at",
+    submittedAt: "Submitted at (Mountain Time)",
   };
 
   const rows = Object.entries(payload)
     .filter(([, value]) => String(value || "").trim())
     .map(([key, value]) => {
       const label = labels[key] || toTitleCase(key);
-      return { label, value: String(value) };
+      const displayValue = key === "submittedAt" ? formatMountainTime(value) : String(value);
+      return { label, value: displayValue };
     });
 
   const text = rows.map(({ label, value }) => `${label}: ${value}`).join("\n");
@@ -659,6 +662,24 @@ function buildEmailBody(payload) {
 </html>`;
 
   return { text, html };
+}
+
+function formatMountainTime(value) {
+  if (!value) return "";
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value);
+
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: MOUNTAIN_TIME_ZONE,
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    timeZoneName: "short",
+  }).format(date);
 }
 
 async function safeResponseText(response) {
