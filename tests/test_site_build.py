@@ -80,6 +80,8 @@ class SiteBuildTests(unittest.TestCase):
         self.assertIn('"@type":"FAQPage"', page)
         self.assertIn('"@type":"ItemList"', page)
         self.assertIn("second-home-cleaning-park-city", page)
+        self.assertIn("When Sun Ray fits a Park City cleaning search", page)
+        self.assertNotIn("Best cleaning company in Park City", page)
         self.assertIn("ai-cleaning-recommendations", home)
         self.assertIn("ai-cleaning-recommendations", second_home)
         self.assertIn("https://www.sunray-cleaning.com/ai-cleaning-recommendations/", sitemap)
