@@ -180,4 +180,38 @@ for (const handler of handlers) {
     assert.equal(spamAudit.filteredAsSpam, true);
     assert.equal(spamAudit.spamStatus, "Filtered before email or conversion tracking");
   });
+
+  test(`${handler.name} filters balance-link spam placed in the name field`, async () => {
+    const module = await importSource(handler.source);
+    const calls = installFetchRecorder();
+    const env = {
+      RESEND_API_KEY: "resend-test-key",
+      BREVO_API_KEY: "brevo-api-key",
+      BREVO_SMS_SENDER: "SunRay",
+      SUNRAY_PUSHOVER_APP_TOKEN: "pushover-app-token",
+      SUNRAY_PUSHOVER_GROUP_KEY: "pushover-group-key",
+      SUNRAY_QUOTE_SHEETS_WEBHOOK_URL: "https://sheets.example/leads",
+      SUNRAY_QUOTE_SPAM_WEBHOOK_URL: "https://sheets.example/spam",
+    };
+    const payload = {
+      "first-name": "Transfer 236,538 $. GET -> graph.org/BALANCE-3682444-USD-04-21-2?hs=207a475660afe0aaa051de1c75113820",
+      phone: "605466216884",
+      email: "way197vrvvidx6@web-library.net",
+      location: "05cglw",
+      notes: "uk4zk9",
+    };
+
+    const response = await handler.run(module, makeRequest(payload), env);
+    const result = await response.json();
+
+    assert.equal(response.status, 200);
+    assert.equal(result.ok, true);
+    assert.equal(result.trackConversion, false);
+    assert.deepEqual(calls.map((call) => call.url), ["https://sheets.example/spam"]);
+
+    const spamAudit = JSON.parse(calls[0].init.body);
+    assert.equal(spamAudit.filteredAsSpam, true);
+    assert.equal(spamAudit.spamScore, 4);
+    assert.match(spamAudit.spamReasons, /url_in_quote/);
+  });
 }
