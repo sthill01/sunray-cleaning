@@ -562,8 +562,20 @@ function scoreQuoteContent(quote) {
   let score = 0;
   const serviceArea = normalizedValue(quote["service-area"] || quote.city || quote.location);
   const notes = normalizedValue(quote.notes || quote.message);
-  const homeSize = normalizedValue(quote["home-size"]);
   const combinedText = normalizedValue(Object.values(quote).join(" "));
+  const customerTextFields = [
+    quote["first-name"],
+    quote.name,
+    quote["service-area"],
+    quote.city,
+    quote.location,
+    quote["service-type"],
+    quote.service,
+    quote["home-size"],
+    quote["preferred-timing"],
+    quote.notes,
+    quote.message,
+  ].map(normalizedValue);
   const marketingHits = [
     "ai visibility",
     "backlink",
@@ -582,7 +594,7 @@ function scoreQuoteContent(quote) {
     "visibility and targeting",
   ].filter((term) => combinedText.includes(term));
 
-  if (hasUrl(notes) || hasUrl(homeSize) || hasUrl(serviceArea)) {
+  if (customerTextFields.some(hasUrl)) {
     score += 4;
     reasons.push("url_in_quote");
   }
