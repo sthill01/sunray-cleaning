@@ -355,6 +355,11 @@ BLOG_POST_SEO = {
         "location": "Park City / Heber Valley, Utah",
         "image": "/assets/heber-city-move-out-bathroom-vanity-cleaning-sun-ray.jpg",
     },
+    "/blog/wasatch-county-move-in-cleaning-summer-relocations/": {
+        "service": "Move-in cleaning",
+        "location": "Wasatch County / Heber City / Midway, Utah",
+        "image": "/assets/wasatch-county-move-in-entry-kitchen-cleaning-sun-ray.jpg",
+    },
     "/blog/summer-rental-season-prep-checklist-park-city-heber-valley/": {
         "service": "Summer rental season turnover prep",
         "location": "Park City / Heber Valley, Utah",
