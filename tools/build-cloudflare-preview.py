@@ -58,7 +58,7 @@ TRUSTINDEX_HERO_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?6cd0f19720d6
 TRUSTINDEX_RIBBON_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?dad74f2761b80044eb16aaf0876"
 TRUSTINDEX_REVIEWS_LIST_SCRIPT = "https://cdn.trustindex.io/loader.js?d4ea3017201f425a6276a60d5ef"
 TRUSTINDEX_FORM_TRUSTMARK_SCRIPT = "https://cdn.trustindex.io/loader-cert.js?6d94b5a7228542333c86bb33560"
-STYLE_ASSET_VERSION = "20260708-hero-badge-low"
+STYLE_ASSET_VERSION = "20260721-footer-badge-fix"
 RESPONSIVE_IMAGE_WIDTHS = (384, 672, 960)
 RESPONSIVE_IMAGE_DIMENSIONS = {
     "sun-ray-elegant-living-room-cleaning-summit-wasatch-01-hero-16x9.jpg": (1920, 1080),

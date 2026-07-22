@@ -43,6 +43,7 @@ class SiteBuildTests(unittest.TestCase):
 
         self.assertIn('<meta name="robots" content="index, follow">', home)
         self.assertIn('<link rel="canonical" href="https://www.sunray-cleaning.com/">', home)
+        self.assertIn('href="/styles.css?v=20260721-footer-badge-fix"', home)
         self.assertNotIn("X-Robots-Tag: noindex", headers)
         self.assertIn("/about-us /about/ 301", redirects)
         self.assertIn("Allow: /", robots)
