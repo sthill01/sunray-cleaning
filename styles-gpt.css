@@ -700,7 +700,7 @@ p {
 }
 
 .trustindex-badge-fallback[hidden] {
-  display: none;
+  display: none !important;
 }
 
 .trustindex-badge-fallback {

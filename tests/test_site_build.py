@@ -59,6 +59,11 @@ class SiteBuildTests(unittest.TestCase):
 
         self.assertEqual([], offenders)
 
+    def test_hidden_trustindex_fallback_cannot_override_its_hidden_state(self):
+        styles = (OUTPUT / "styles.css").read_text(encoding="utf-8")
+
+        self.assertIn(".trustindex-badge-fallback[hidden] {\n  display: none !important;\n}", styles)
+
     def test_worker_static_assets_use_a_real_404(self):
         config = (ROOT / "wrangler.worker.toml").read_text(encoding="utf-8")
         self.assertIn('not_found_handling = "404-page"', config)
