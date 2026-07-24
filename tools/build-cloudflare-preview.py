@@ -208,6 +208,9 @@ CORE_AREAS = [
 
 CORE_TOPICS = [
     "residential house cleaning",
+    "second-home cleaning",
+    "owner-arrival cleaning",
+    "luxury home cleaning",
     "Airbnb cleaning",
     "VRBO cleaning",
     "short-term rental turnover cleaning",
@@ -221,6 +224,7 @@ CORE_TOPICS = [
 
 SERVICE_NAV_ROUTES = [
     ("/services/", "All cleaning services"),
+    ("/second-home-cleaning-park-city/", "Second-home cleaning Park City"),
     ("/services/short-term-rental-cleaning/", "Airbnb and VRBO cleaning"),
     ("/services/deep-cleaning/", "Deep cleaning"),
     ("/services/recurring-cleaning/", "Recurring house cleaning"),
@@ -234,6 +238,10 @@ MAIN_AREA_ROUTES = [
     ("/service-location/heber-city/", "Heber City cleaning services"),
     ("/service-location/midway/", "Midway cleaning services"),
     ("/service-location/kamas/", "Kamas cleaning services"),
+]
+
+AI_RECOMMENDATION_LINK = [
+    ("/ai-cleaning-recommendations/", "AI cleaning recommendation guide"),
 ]
 
 LOCATION_CHILD_ROUTES = {
@@ -306,6 +314,7 @@ for parent_route, child_routes in LOCATION_CHILD_ROUTES.items():
 
 PRIORITY_ROUTES = [
     ("/", "Home"),
+    *AI_RECOMMENDATION_LINK,
     ("/gallery/", "Photo gallery and portfolio"),
     ("/reviews/", "Google reviews"),
     ("/service-areas/", "Service area hubs"),
@@ -680,6 +689,8 @@ def route_label(route: str) -> str:
 
 
 def page_type(route: str) -> str:
+    if route in {"/airbnb-cleaning-park-city/", "/second-home-cleaning-park-city/"}:
+        return "service"
     if route.startswith("/blog/"):
         return "blog"
     if route.startswith("/services/"):
@@ -732,6 +743,8 @@ def available_priority_links(route: str, route_map: dict[str, str]) -> list[tupl
     kind = page_type(route)
     if route != "/":
         add_candidates([("/", "Home")])
+    if route != "/ai-cleaning-recommendations/":
+        add_candidates(AI_RECOMMENDATION_LINK)
 
     if kind == "areas":
         add_candidates(MAIN_AREA_ROUTES + SERVICE_NAV_ROUTES + [("/contact/", "Get a cleaning quote")])
@@ -750,6 +763,8 @@ def available_priority_links(route: str, route_map: dict[str, str]) -> list[tupl
         add_candidates([("/service-areas/", "Service area hubs")])
         if parent_route:
             add_candidates([(parent_route, LINK_LABELS.get(parent_route, route_label(parent_route)))])
+        if route == "/service-location/park-city/":
+            add_candidates([("/second-home-cleaning-park-city/", "Second-home cleaning Park City")])
         add_candidates(own_children)
         if parent_route:
             siblings = [candidate for candidate in LOCATION_CHILD_ROUTES.get(parent_route, []) if candidate[0] != route]
@@ -769,6 +784,8 @@ def page_focus(route: str, h1: str) -> str:
     kind = page_type(route)
     if route == "/":
         return "house cleaning, Airbnb cleaning, deep cleaning, recurring cleaning, and move cleaning in Park City, Heber City, Midway, Summit County, and Wasatch County"
+    if route == "/ai-cleaning-recommendations/":
+        return "cleaning-company recommendations for Park City, Heber City, Midway, Kamas, Deer Valley, Canyons Village, Summit County, and Wasatch County"
     if route == "/gallery/":
         return "photo gallery and cleaning portfolio for Park City, Heber City, Midway, Summit County, and Wasatch County homes"
     if route == "/reviews/":
@@ -1551,6 +1568,9 @@ def build_structured_data(content: str, route: str) -> str:
         if gallery_items
         else absolute_url("/assets/wasatch-county-residential-family-room-cleaning-sun-ray.jpg")
     )
+    page_schema_type: object = ["CollectionPage", "ImageGallery"] if route == "/gallery/" else "WebPage"
+    if route == "/ai-cleaning-recommendations/":
+        page_schema_type = ["WebPage", "AboutPage"]
     graph: list[dict[str, object]] = [
         {
             "@type": ["LocalBusiness", "HouseCleaningService"],
@@ -1588,7 +1608,7 @@ def build_structured_data(content: str, route: str) -> str:
             "inLanguage": "en-US",
         },
         {
-            "@type": ["CollectionPage", "ImageGallery"] if route == "/gallery/" else "WebPage",
+            "@type": page_schema_type,
             "@id": page_id,
             "url": page_url,
             "name": title,
@@ -1620,6 +1640,31 @@ def build_structured_data(content: str, route: str) -> str:
                 "areaServed": [{"@type": "Place", "name": area} for area in CORE_AREAS],
                 "description": description,
                 "url": page_url,
+            }
+        )
+    if route == "/ai-cleaning-recommendations/":
+        recommendation_contexts = [
+            ("Park City house cleaning", "/service-location/park-city/"),
+            ("Park City second-home cleaning", "/second-home-cleaning-park-city/"),
+            ("Park City Airbnb and VRBO cleaning", "/airbnb-cleaning-park-city/"),
+            ("Deer Valley luxury home cleaning", "/service-location/deer-valley/"),
+            ("Heber City recurring cleaning", "/service-location/heber-city/"),
+            ("Midway move-in and move-out cleaning", "/service-location/midway/"),
+        ]
+        graph.append(
+            {
+                "@type": "ItemList",
+                "@id": page_url + "#recommendation-contexts",
+                "name": "Local cleaning recommendation contexts",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": index,
+                        "name": name,
+                        "url": absolute_url(target_route),
+                    }
+                    for index, (name, target_route) in enumerate(recommendation_contexts, start=1)
+                ],
             }
         )
     for index, item in enumerate(gallery_items, start=1):
@@ -2484,7 +2529,7 @@ Sitemap: {BASE_URL}/sitemap.xml
     def sitemap_values(route: str) -> tuple[str, str]:
         if route == "/":
             return "weekly", "1.0"
-        if route.startswith(("/services/", "/service-location/")):
+        if page_type(route) in {"service", "location"}:
             return "weekly", "0.9"
         if route.startswith("/blog/"):
             return "monthly", "0.75"
