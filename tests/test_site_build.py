@@ -43,7 +43,7 @@ class SiteBuildTests(unittest.TestCase):
 
         self.assertIn('<meta name="robots" content="index, follow">', home)
         self.assertIn('<link rel="canonical" href="https://www.sunray-cleaning.com/">', home)
-        self.assertIn('href="/styles.css?v=20260721-footer-badge-fix"', home)
+        self.assertIn('href="/styles.css?v=20260812-mobile-readability"', home)
         self.assertNotIn("X-Robots-Tag: noindex", headers)
         self.assertIn("/about-us /about/ 301", redirects)
         self.assertIn("Allow: /", robots)
@@ -92,10 +92,31 @@ class SiteBuildTests(unittest.TestCase):
         offenders = []
         for path in OUTPUT.rglob("*.html"):
             content = path.read_text(encoding="utf-8")
-            if "Webflow preview" in content or "planning and Webflow" in content:
+            if any(
+                phrase in content
+                for phrase in (
+                    "Webflow preview",
+                    "planning and Webflow",
+                    "Webflow-ready form markup",
+                    "In this static preview",
+                    "Cloudflare preview",
+                    "AI-search crawlers",
+                )
+            ):
                 offenders.append(str(path.relative_to(OUTPUT)))
 
         self.assertEqual([], offenders)
+
+    def test_mobile_navigation_resets_dropdown_transform_and_has_touch_targets(self):
+        styles = (OUTPUT / "styles.css").read_text(encoding="utf-8")
+        script = (OUTPUT / "quote-modal.js").read_text(encoding="utf-8")
+        home = (OUTPUT / "index.html").read_text(encoding="utf-8")
+
+        self.assertIn(".nav-item.is-submenu-open .nav-dropdown", styles)
+        self.assertIn("transform: none;", styles)
+        self.assertIn("min-height: 44px;", styles)
+        self.assertIn('window.matchMedia("(max-width: 1080px)")', script)
+        self.assertIn('aria-haspopup="true" aria-expanded="false"', home)
 
     def test_hidden_trustindex_fallback_cannot_override_its_hidden_state(self):
         styles = (OUTPUT / "styles.css").read_text(encoding="utf-8")
