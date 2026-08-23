@@ -67,6 +67,25 @@
     if (type === "error" && error && message) error.textContent = message;
   }
 
+  function isValidUsPhoneNumber(value) {
+    var digits = String(value || "").replace(/\D/g, "");
+    return digits.length === 10 || (digits.length === 11 && digits.charAt(0) === "1");
+  }
+
+  function validatePhoneField(form) {
+    var phone = form.querySelector('input[name="phone"]');
+    if (!phone) return true;
+
+    phone.setCustomValidity("");
+    if (isValidUsPhoneNumber(phone.value)) return true;
+
+    var message = "Please enter a 10-digit U.S. phone number.";
+    phone.setCustomValidity(message);
+    phone.reportValidity();
+    setFormState(form, "error", message);
+    return false;
+  }
+
   function cleanText(element) {
     if (!element) return "";
     var text = element.getAttribute("aria-label") || element.textContent || element.value || "";
@@ -316,6 +335,7 @@
     if (!action || action === "#") return;
 
     event.preventDefault();
+    if (!validatePhoneField(form)) return;
     ensureSpamTrapFields(form);
     ensureAttributionFields(form);
     updateSpamTrapTiming(form);
@@ -392,6 +412,14 @@
     document.querySelectorAll(".quote-form").forEach(function (form) {
       ensureSpamTrapFields(form);
       ensureAttributionFields(form);
+      var phone = form.querySelector('input[name="phone"]');
+      if (phone) {
+        phone.setAttribute("inputmode", "tel");
+        phone.setAttribute("title", "Enter a 10-digit U.S. phone number");
+        phone.addEventListener("input", function () {
+          phone.setCustomValidity("");
+        });
+      }
       form.addEventListener("submit", handleQuoteSubmit);
     });
 

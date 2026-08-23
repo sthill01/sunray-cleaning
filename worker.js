@@ -1,3 +1,5 @@
+import { getHighConfidenceSpamReasons } from "./quote-spam-rules.js";
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -563,19 +565,7 @@ function scoreQuoteContent(quote) {
   const serviceArea = normalizedValue(quote["service-area"] || quote.city || quote.location);
   const notes = normalizedValue(quote.notes || quote.message);
   const combinedText = normalizedValue(Object.values(quote).join(" "));
-  const customerTextFields = [
-    quote["first-name"],
-    quote.name,
-    quote["service-area"],
-    quote.city,
-    quote.location,
-    quote["service-type"],
-    quote.service,
-    quote["home-size"],
-    quote["preferred-timing"],
-    quote.notes,
-    quote.message,
-  ].map(normalizedValue);
+  const highConfidenceReasons = getHighConfidenceSpamReasons(quote);
   const marketingHits = [
     "ai visibility",
     "backlink",
@@ -594,9 +584,9 @@ function scoreQuoteContent(quote) {
     "visibility and targeting",
   ].filter((term) => combinedText.includes(term));
 
-  if (customerTextFields.some(hasUrl)) {
+  if (highConfidenceReasons.length) {
     score += 4;
-    reasons.push("url_in_quote");
+    reasons.push(...highConfidenceReasons);
   }
 
   if (marketingHits.length >= 2) {
