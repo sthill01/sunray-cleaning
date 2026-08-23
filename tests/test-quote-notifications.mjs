@@ -1,5 +1,4 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
@@ -12,9 +11,9 @@ const defaultRecipients = [
 ];
 
 async function importSource(relativePath) {
-  const source = await readFile(new URL(relativePath, root), "utf8");
-  const encoded = Buffer.from(source).toString("base64");
-  return import(`data:text/javascript;base64,${encoded}#${Date.now()}-${Math.random()}`);
+  const sourceUrl = new URL(relativePath, root);
+  sourceUrl.searchParams.set("test", `${Date.now()}-${Math.random()}`);
+  return import(sourceUrl.href);
 }
 
 function makeRequest(payload) {
@@ -214,4 +213,121 @@ for (const handler of handlers) {
     assert.equal(spamAudit.spamScore, 4);
     assert.match(spamAudit.spamReasons, /url_in_quote/);
   });
+
+  test(`${handler.name} filters the Hawaiian-language lead reported on August 23`, async () => {
+    const module = await importSource(handler.source);
+    const calls = installFetchRecorder();
+    const env = {
+      RESEND_API_KEY: "resend-test-key",
+      BREVO_API_KEY: "brevo-api-key",
+      BREVO_SMS_SENDER: "SunRay",
+      SUNRAY_PUSHOVER_APP_TOKEN: "pushover-app-token",
+      SUNRAY_PUSHOVER_GROUP_KEY: "pushover-group-key",
+      SUNRAY_QUOTE_SHEETS_WEBHOOK_URL: "https://sheets.example/leads",
+      SUNRAY_QUOTE_SPAM_WEBHOOK_URL: "https://sheets.example/spam",
+    };
+    const payload = {
+      "first-name": "RobertTig",
+      phone: "85286775818",
+      email: "henrydixon487@gmail.com",
+      "service-type": "Airbnb / VRBO turnover",
+      notes: "Aloha, makemake wau eʻike i kāu kumukūʻai.",
+    };
+
+    const response = await handler.run(module, makeRequest(payload), env);
+    const result = await response.json();
+
+    assert.equal(response.status, 200);
+    assert.equal(result.ok, true);
+    assert.equal(result.trackConversion, false);
+    assert.deepEqual(calls.map((call) => call.url), ["https://sheets.example/spam"]);
+
+    const spamAudit = JSON.parse(calls[0].init.body);
+    assert.equal(spamAudit.filteredAsSpam, true);
+    assert.match(spamAudit.spamReasons, /message_not_english_or_spanish/);
+  });
+
+  test(`${handler.name} filters non-US 11-digit phone numbers`, async () => {
+    const module = await importSource(handler.source);
+    const calls = installFetchRecorder();
+    const env = {
+      RESEND_API_KEY: "resend-test-key",
+      BREVO_API_KEY: "brevo-api-key",
+      BREVO_SMS_SENDER: "SunRay",
+      SUNRAY_PUSHOVER_APP_TOKEN: "pushover-app-token",
+      SUNRAY_PUSHOVER_GROUP_KEY: "pushover-group-key",
+      SUNRAY_QUOTE_SHEETS_WEBHOOK_URL: "https://sheets.example/leads",
+      SUNRAY_QUOTE_SPAM_WEBHOOK_URL: "https://sheets.example/spam",
+    };
+    const payload = {
+      "first-name": "Robert",
+      phone: "85286775818",
+      email: "robert@example.com",
+      "service-area": "Park City",
+      "service-type": "Airbnb / VRBO turnover",
+      notes: "Please call me about cleaning next week.",
+    };
+
+    const response = await handler.run(module, makeRequest(payload), env);
+    const result = await response.json();
+
+    assert.equal(response.status, 200);
+    assert.equal(result.ok, true);
+    assert.equal(result.trackConversion, false);
+    assert.deepEqual(calls.map((call) => call.url), ["https://sheets.example/spam"]);
+
+    const spamAudit = JSON.parse(calls[0].init.body);
+    assert.match(spamAudit.spamReasons, /invalid_us_phone/);
+  });
 }
+
+test("Pages middleware blocks the Hawaiian-language regression without calling the quote handler", async () => {
+  const module = await importSource("functions/api/_middleware.js");
+  let nextCalls = 0;
+  const request = makeRequest({
+    "first-name": "RobertTig",
+    phone: "85286775818",
+    email: "henrydixon487@gmail.com",
+    "service-type": "Airbnb / VRBO turnover",
+    notes: "Aloha, makemake wau eʻike i kāu kumukūʻai.",
+  });
+
+  const response = await module.onRequest({
+    request,
+    next() {
+      nextCalls += 1;
+      return Response.json({ passedMiddleware: true });
+    },
+  });
+  const result = await response.json();
+
+  assert.equal(nextCalls, 0);
+  assert.equal(result.ok, true);
+  assert.equal(result.trackConversion, false);
+});
+
+test("Pages middleware blocks a non-US 11-digit phone number", async () => {
+  const module = await importSource("functions/api/_middleware.js");
+  let nextCalls = 0;
+  const request = makeRequest({
+    "first-name": "Robert",
+    phone: "85286775818",
+    email: "robert@example.com",
+    "service-area": "Park City",
+    "service-type": "Airbnb / VRBO turnover",
+    notes: "Please call me about cleaning next week.",
+  });
+
+  const response = await module.onRequest({
+    request,
+    next() {
+      nextCalls += 1;
+      return Response.json({ passedMiddleware: true });
+    },
+  });
+  const result = await response.json();
+
+  assert.equal(nextCalls, 0);
+  assert.equal(result.ok, true);
+  assert.equal(result.trackConversion, false);
+});
