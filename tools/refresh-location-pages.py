@@ -740,7 +740,7 @@ def quote_modal() -> str:
       <aside class="quote-modal-copy">
         <p class="eyebrow">Get a transparent quote</p>
         <h2 id="quote-modal-title">Tell us what your home needs.</h2>
-        <p>Share your city or neighborhood, home size, timing, and priorities. Sun Ray uses those details to give a practical quote without surprise add-ons.</p>
+        <p>Share your location, home size, service type, timing, and priorities. Sun Ray uses those details to scope the work and prepare your quote.</p>
         <ul class="check-list">
           <li><div><strong>No-surprise pricing</strong><span>Quotes are based on real rooms, condition, and service type.</span></div></li>
           <li><div><strong>Eco and pet-safe options</strong><span>Helpful for families, hosts, and second homes.</span></div></li>
@@ -759,7 +759,7 @@ def quote_modal() -> str:
             <label class="field full">Preferred timing<input name="preferred-timing" type="text" placeholder="This week, next turnover, before move-in..."></label>
             <label class="field full">Notes<textarea name="notes" placeholder="Pets, access, current condition, guest timing, product preferences..."></textarea></label>
           </div>
-          <div class="form-note">Webflow-ready form markup. In this static preview, call or text (801) 604-2189 for live scheduling.</div>
+          <div class="form-note">For faster help with timing or service questions, call or text (801) 604-2189.</div>
           <div class="form-success" role="status">Thanks. Your quote request was received.</div>
           <div class="form-error" role="alert">Something went wrong. Please call or text (801) 604-2189.</div>
           <div class="form-actions"><button class="button button-yellow" type="submit">Request my quote</button><a class="button button-outline" href="sms:+18016042189">Text instead</a></div>
@@ -824,8 +824,8 @@ def page_html(page: dict[str, object]) -> str:
         <ul class="check-list">{plan_items}</ul>
       </div>
       <div class="info-card">
-        <h3>Best fit services</h3>
-        <p>Share the location, service type, home size, timing, pets, access details, and current condition. Sun Ray will match the quote to the real cleaning need.</p>
+        <h3>What helps us quote</h3>
+        <p>Share the location, service type, home size, timing, pets, access details, and current condition. Those details help Sun Ray scope the right cleaning plan.</p>
         <div class="pill-row"><a href="../services/recurring-cleaning-gpt.html">Recurring</a><a href="../services/deep-cleaning-gpt.html">Deep clean</a><a href="../services/short-term-rental-cleaning-gpt.html">Turnovers</a><a href="../services/move-in-move-out-cleaning-gpt.html">Move clean</a></div>
       </div>
     </div>
@@ -850,7 +850,7 @@ def page_html(page: dict[str, object]) -> str:
       <div>
         <p class="eyebrow">Service area links</p>
         <h2>Nearby Sun Ray Cleaning pages.</h2>
-        <p>These internal links keep the main city, neighborhood, and county pages connected for visitors, Google, and AI-search crawlers.</p>
+        <p>Use the closest city, neighborhood, or county page to see local services and request an accurate quote.</p>
       </div>
       <div class="info-card"><h3>Related locations</h3><div class="pill-row">{pill_links(page["nearby"])}</div></div>
     </div>
@@ -952,7 +952,7 @@ def service_area_hub() -> str:
 
   <section class="section">
     <div class="container">
-      <div class="section-head center"><p class="eyebrow">Primary location pages</p><h2>The requested Sun Ray location set.</h2><p>These are the main city, neighborhood, and county routes for the Cloudflare preview.</p></div>
+      <div class="section-head center"><p class="eyebrow">Primary location pages</p><h2>Choose the area closest to your home.</h2><p>Start with a city, neighborhood, or county page for local service details, then share the exact address when requesting a quote.</p></div>
       <div class="area-list">{area_links(all_primary, "service-location/")}</div>
     </div>
   </section>

@@ -58,7 +58,7 @@ TRUSTINDEX_HERO_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?6cd0f19720d6
 TRUSTINDEX_RIBBON_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?dad74f2761b80044eb16aaf0876"
 TRUSTINDEX_REVIEWS_LIST_SCRIPT = "https://cdn.trustindex.io/loader.js?d4ea3017201f425a6276a60d5ef"
 TRUSTINDEX_FORM_TRUSTMARK_SCRIPT = "https://cdn.trustindex.io/loader-cert.js?6d94b5a7228542333c86bb33560"
-STYLE_ASSET_VERSION = "20260721-footer-badge-fix"
+STYLE_ASSET_VERSION = "20260812-mobile-readability"
 RESPONSIVE_IMAGE_WIDTHS = (384, 672, 960)
 RESPONSIVE_IMAGE_DIMENSIONS = {
     "sun-ray-elegant-living-room-cleaning-summit-wasatch-01-hero-16x9.jpg": (1920, 1080),
@@ -1999,6 +1999,11 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         count=1,
         flags=re.IGNORECASE | re.DOTALL,
     )
+    content = re.sub(
+        r'class="nav-drop-toggle"(?![^>]*aria-haspopup)',
+        'class="nav-drop-toggle" aria-haspopup="true" aria-expanded="false"',
+        content,
+    )
 
     footer_area_links = (
         '<div><h3>Areas</h3>'
@@ -2042,6 +2047,19 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     content = content.replace("Preview of ", "")
     content = content.replace("Preview for ", "")
     content = content.replace("this preview page", "this page")
+    content = content.replace(
+        "Webflow-ready form markup. In this static preview, call or text (801) 604-2189 for live scheduling.",
+        "For faster help with timing or service questions, call or text (801) 604-2189.",
+    )
+    content = content.replace(
+        "Each location page is written around the neighborhoods, cleaning needs and search intent that matter locally.",
+        "Choose the closest area to see local services, home types and scheduling details.",
+    )
+    content = content.replace(
+        "These internal links keep the main city, neighborhood, and county pages connected for visitors, Google, and AI-search crawlers.",
+        "Use the closest city, neighborhood or county page to see local services and request an accurate quote.",
+    )
+    content = re.sub(r'<span class="tag">\s*Preview\s*</span>', '', content, flags=re.IGNORECASE)
     content = content.replace("Not on this page.", "Not as a fixed coupon amount online.")
     content = content.replace("local SEO posts", "local cleaning guides")
     content = content.replace('method="post" action="#"', 'method="post" action="/api/quote"')
