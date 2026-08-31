@@ -162,6 +162,41 @@
     return formName.indexOf("quote") !== -1 || formName.indexOf("lead") !== -1;
   }
 
+  function ensureLeadSourceField(form) {
+    if (!isQuoteForm(form) || form.querySelector('[name="how-heard"]')) return;
+
+    var grid = form.querySelector(".field-grid");
+    if (!grid) return;
+
+    var label = document.createElement("label");
+    label.className = "field full";
+    label.appendChild(document.createTextNode("How did you hear about us? optional"));
+
+    var select = document.createElement("select");
+    select.setAttribute("name", "how-heard");
+    [
+      ["", "Choose one"],
+      ["Google Search or Maps", "Google Search or Maps"],
+      ["Google ad", "Google ad"],
+      ["ChatGPT", "ChatGPT"],
+      ["Gemini", "Gemini"],
+      ["Claude", "Claude"],
+      ["Perplexity", "Perplexity"],
+      ["Brave Search", "Brave Search"],
+      ["Facebook or Instagram", "Facebook or Instagram"],
+      ["Referral", "Referral"],
+      ["Other", "Other"],
+    ].forEach(function (optionData) {
+      var option = document.createElement("option");
+      option.value = optionData[0];
+      option.textContent = optionData[1];
+      select.appendChild(option);
+    });
+
+    label.appendChild(select);
+    grid.appendChild(label);
+  }
+
   function ensureSpamTrapFields(form) {
     if (!isQuoteForm(form)) return;
 
@@ -326,6 +361,9 @@
       if (value) payload[fieldName] = value;
     });
 
+    var howHeard = form ? form.querySelector('[name="how-heard"]') : null;
+    if (howHeard && howHeard.value) payload.self_reported_source = howHeard.value;
+
     pushTrackingEvent("sunray_lead_form_submit", payload);
   }
 
@@ -410,6 +448,7 @@
 
     modal = document.querySelector("[data-quote-modal]");
     document.querySelectorAll(".quote-form").forEach(function (form) {
+      ensureLeadSourceField(form);
       ensureSpamTrapFields(form);
       ensureAttributionFields(form);
       var phone = form.querySelector('input[name="phone"]');
