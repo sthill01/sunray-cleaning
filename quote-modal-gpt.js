@@ -5,14 +5,41 @@
     text: "sunray_text_cta_click",
     submit: "sunray_quote_submit_click",
   };
-  var attributionStorageKey = "sunray_attribution_v1";
+  var attributionStorageKey = "sunray_attribution_v2";
+  var legacyAttributionStorageKey = "sunray_attribution_v1";
+  var attributionSessionStorageKey = "sunray_attribution_session_v1";
+  var attributionTtlMs = 90 * 24 * 60 * 60 * 1000;
   var clickIdFieldNames = ["gclid", "gbraid", "wbraid", "msclkid", "fbclid", "ttclid", "li_fat_id"];
   var utmFieldNames = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_id"];
-  var attributionFieldNames = clickIdFieldNames.concat(utmFieldNames, [
+  var valueTrackFieldNames = [
+    "campaign_id",
+    "ad_group_id",
+    "asset_group_id",
+    "creative_id",
+    "match_type",
+    "network",
+    "device",
+  ];
+  var marketingFieldNames = clickIdFieldNames.concat(utmFieldNames, valueTrackFieldNames);
+  var firstTouchMarketingFieldNames = marketingFieldNames.map(function (fieldName) {
+    return "first_touch_" + fieldName;
+  });
+  var latestTouchMarketingFieldNames = marketingFieldNames.map(function (fieldName) {
+    return "latest_touch_" + fieldName;
+  });
+  var attributionFieldNames = marketingFieldNames.concat(firstTouchMarketingFieldNames, latestTouchMarketingFieldNames, [
     "first_landing_page",
     "landing_page",
     "referrer",
     "attribution_updated_at",
+    "attribution_session_id",
+    "attribution_expires_at",
+    "first_touch_landing_page",
+    "first_touch_referrer",
+    "first_touch_at",
+    "latest_touch_landing_page",
+    "latest_touch_referrer",
+    "latest_touch_at",
   ]);
   var modal;
   var lastFocused;
@@ -105,7 +132,27 @@
 
   function readStoredAttribution() {
     try {
-      return JSON.parse(window.localStorage.getItem(attributionStorageKey) || "{}") || {};
+      var serialized =
+        window.localStorage.getItem(attributionStorageKey) ||
+        window.localStorage.getItem(legacyAttributionStorageKey) ||
+        "{}";
+      var stored = JSON.parse(serialized) || {};
+      var expiryValue = stored.attribution_expires_at;
+      var updatedAt = Date.parse(stored.attribution_updated_at || "");
+      var expiresAt = Date.parse(expiryValue || "");
+
+      if (!Number.isFinite(expiresAt) && Number.isFinite(updatedAt)) {
+        expiresAt = updatedAt + attributionTtlMs;
+        stored.attribution_expires_at = new Date(expiresAt).toISOString();
+      }
+
+      if (Number.isFinite(expiresAt) && expiresAt <= Date.now()) {
+        window.localStorage.removeItem(attributionStorageKey);
+        window.localStorage.removeItem(legacyAttributionStorageKey);
+        return {};
+      }
+
+      return stored;
     } catch (error) {
       return {};
     }
@@ -114,34 +161,87 @@
   function writeStoredAttribution(attribution) {
     try {
       window.localStorage.setItem(attributionStorageKey, JSON.stringify(attribution));
+      window.localStorage.removeItem(legacyAttributionStorageKey);
     } catch (error) {
       // Storage can be unavailable in private or restricted browser contexts.
+    }
+  }
+
+  function getAttributionSessionId() {
+    try {
+      var sessionId = window.sessionStorage.getItem(attributionSessionStorageKey);
+      if (!sessionId) {
+        sessionId = createEventId("session");
+        window.sessionStorage.setItem(attributionSessionStorageKey, sessionId);
+      }
+      return sessionId;
+    } catch (error) {
+      return createEventId("session");
     }
   }
 
   function updateAttributionFromPage() {
     var stored = readStoredAttribution();
     var params = new URLSearchParams(window.location.search || "");
+    var pageMarketing = {};
     var hasNewClickData = false;
+    var now = Date.now();
+    var nowIso = new Date(now).toISOString();
+    var currentPage = sanitizeAttributionValue(window.location.href, 1000);
+    var currentReferrer = sanitizeAttributionValue(document.referrer, 1000);
+    var sessionId = getAttributionSessionId();
 
-    clickIdFieldNames.concat(utmFieldNames).forEach(function (fieldName) {
+    marketingFieldNames.forEach(function (fieldName) {
       var value = sanitizeAttributionValue(params.get(fieldName), 500);
       if (value) {
-        stored[fieldName] = value;
+        pageMarketing[fieldName] = value;
         hasNewClickData = true;
       }
     });
 
-    if (!stored.first_landing_page || hasNewClickData) {
-      stored.first_landing_page = sanitizeAttributionValue(window.location.href, 1000);
+    if (!stored.first_touch_at) {
+      stored.first_touch_at = stored.attribution_updated_at || nowIso;
+      stored.first_touch_landing_page = stored.first_landing_page || currentPage;
+      stored.first_touch_referrer = stored.referrer || currentReferrer;
+      marketingFieldNames.forEach(function (fieldName) {
+        stored["first_touch_" + fieldName] = sanitizeAttributionValue(
+          stored["first_touch_" + fieldName] || stored[fieldName] || pageMarketing[fieldName],
+          500
+        );
+      });
     }
 
-    if (!stored.referrer && document.referrer) {
-      stored.referrer = sanitizeAttributionValue(document.referrer, 1000);
+    if (!stored.latest_touch_at) {
+      stored.latest_touch_at = stored.attribution_updated_at || stored.first_touch_at || nowIso;
+      stored.latest_touch_landing_page = stored.landing_page || stored.first_touch_landing_page || currentPage;
+      stored.latest_touch_referrer = stored.referrer || currentReferrer;
+      marketingFieldNames.forEach(function (fieldName) {
+        var legacyValue = sanitizeAttributionValue(stored[fieldName], 500);
+        stored["latest_touch_" + fieldName] = legacyValue;
+      });
     }
 
-    stored.landing_page = sanitizeAttributionValue(window.location.href, 1000);
-    stored.attribution_updated_at = new Date().toISOString();
+    if (hasNewClickData) {
+      stored.latest_touch_at = nowIso;
+      stored.latest_touch_landing_page = currentPage;
+      stored.latest_touch_referrer = currentReferrer;
+      marketingFieldNames.forEach(function (fieldName) {
+        var latestValue = sanitizeAttributionValue(pageMarketing[fieldName], 500);
+        stored["latest_touch_" + fieldName] = latestValue;
+        // Keep the original flat fields as latest-touch aliases for compatibility.
+        // Assigning every field clears stale values that are absent from the new click.
+        stored[fieldName] = latestValue;
+      });
+      stored.attribution_expires_at = new Date(now + attributionTtlMs).toISOString();
+    } else if (!stored.attribution_expires_at) {
+      stored.attribution_expires_at = new Date(now + attributionTtlMs).toISOString();
+    }
+
+    stored.first_landing_page = stored.first_touch_landing_page || currentPage;
+    stored.landing_page = currentPage;
+    stored.referrer = stored.first_touch_referrer || currentReferrer;
+    stored.attribution_updated_at = nowIso;
+    stored.attribution_session_id = sessionId;
     currentAttribution = stored;
     writeStoredAttribution(stored);
     return stored;
@@ -270,10 +370,10 @@
     return "";
   }
 
-  function pushTrackingEvent(eventName, payload) {
+  function pushTrackingEvent(eventName, payload, eventId) {
     var data = {
       event: eventName,
-      event_id: createEventId(eventName),
+      event_id: sanitizeAttributionValue(eventId, 200) || createEventId(eventName),
       event_timeout: 1500,
     };
 
@@ -310,8 +410,9 @@
     trackCtaClick(element, ctaType);
   }
 
-  function sendLeadConversionEvent(form) {
+  function sendLeadConversionEvent(form, leadId) {
     var payload = {
+      lead_id: leadId || "",
       form_name: "Sun Ray Quote Request",
       lead_type: "quote_form",
       page_location: window.location.href,
@@ -320,13 +421,13 @@
       currency: "USD",
     };
 
-    clickIdFieldNames.concat(utmFieldNames).forEach(function (fieldName) {
+    marketingFieldNames.forEach(function (fieldName) {
       var field = form ? form.querySelector('input[name="' + fieldName + '"]') : null;
       var value = field ? field.value : currentAttribution[fieldName];
       if (value) payload[fieldName] = value;
     });
 
-    pushTrackingEvent("sunray_lead_form_submit", payload);
+    pushTrackingEvent("sunray_lead_form_submit", payload, leadId);
   }
 
   function handleQuoteSubmit(event) {
@@ -367,7 +468,7 @@
       .then(function (payload) {
         setFormState(form, "success", payload.message || "Thanks. Your quote request was received.");
         if (payload.trackConversion !== false) {
-          sendLeadConversionEvent(form);
+          sendLeadConversionEvent(form, payload.leadId);
         }
         form.reset();
         var startedAt = form.querySelector('input[name="form-started-at"]');
