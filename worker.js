@@ -81,7 +81,8 @@ async function handleQuotePost(request, env) {
 
   const spamCheck = await evaluateQuoteRequest(request, env, quote);
   if (!spamCheck.ok) {
-    const spamAudit = await deliverSpamAudit(env, buildSpamAuditPayload(quote, request, "sunray-cloudflare-worker", spamCheck));
+    const spamPayload = buildSpamAuditPayload(quote, request, "sunray-cloudflare-worker", spamCheck);
+    const spamAudit = await deliverSpamAudit(env, spamPayload);
 
     if (!spamAudit.ok && !spamAudit.missingConfig) {
       console.error("Sun Ray spam audit delivery failed");
@@ -100,6 +101,7 @@ async function handleQuotePost(request, env) {
       title: "Quote request received",
       message: SUCCESS_MESSAGE,
       trackConversion: false,
+      leadId: spamPayload.leadId,
     });
   }
 
@@ -115,6 +117,8 @@ async function handleQuotePost(request, env) {
       title: "Quote forwarding is not configured yet",
       message:
         "This form is ready, but quote forwarding needs email, push, SMS, or webhook delivery configured in Cloudflare. Please call or text (801) 604-2189 for live scheduling.",
+      leadId: payload.leadId,
+      sheetRecorded: delivery.sheetRecorded,
     });
   }
 
@@ -125,6 +129,8 @@ async function handleQuotePost(request, env) {
       ok: false,
       title: "Quote request could not be forwarded",
       message: FORWARDING_ERROR_MESSAGE,
+      leadId: payload.leadId,
+      sheetRecorded: delivery.sheetRecorded,
     });
   }
 
@@ -134,6 +140,8 @@ async function handleQuotePost(request, env) {
     ok: true,
     title: "Quote request received",
     message: SUCCESS_MESSAGE,
+    leadId: delivery.leadId,
+    sheetRecorded: delivery.sheetRecorded,
   });
 }
 
@@ -318,10 +326,15 @@ async function deliverQuote(env, payload) {
   }
 
   for (const target of webhookTargets) {
-    webhookResults.push(await sendQuoteWebhook(target, payload));
+    let result = await sendQuoteWebhook(target, payload);
+    if (!result.ok && target.name === "SUNRAY_QUOTE_SHEETS_WEBHOOK_URL") {
+      result = { ...(await sendQuoteWebhook(target, payload)), retried: true };
+    }
+    webhookResults.push(result);
   }
 
   const webhookOk = webhookResults.some((result) => result.ok);
+  const sheetResult = webhookResults.find((result) => result.name === "SUNRAY_QUOTE_SHEETS_WEBHOOK_URL");
   webhookResults
     .filter((result) => !result.ok)
     .forEach((result) => {
@@ -331,6 +344,8 @@ async function deliverQuote(env, payload) {
   return {
     ok: emailOk || pushOk || smsOk || webhookOk,
     missingConfig: !emailConfigured && !pushConfigured && !smsConfigured && webhookTargets.length === 0,
+    sheetRecorded: sheetResult ? sheetResult.ok : false,
+    leadId: sheetResult && sheetResult.leadId ? sheetResult.leadId : payload.leadId,
   };
 }
 
@@ -387,10 +402,53 @@ async function sendQuoteWebhook(target, payload) {
       headers: { "content-type": "application/json" },
       body: JSON.stringify(payload),
     });
+    const responseText = await safeResponseText(response);
 
-    return response.ok
-      ? { ok: true, name: target.name, status: response.status }
-      : { ok: false, name: target.name, status: response.status, error: await safeResponseText(response) };
+    if (!response.ok) {
+      return { ok: false, name: target.name, status: response.status, error: responseText };
+    }
+
+    const isSheetsWebhook = target.name === "SUNRAY_QUOTE_SHEETS_WEBHOOK_URL";
+    let acknowledgement = null;
+    if (responseText) {
+      try {
+        acknowledgement = JSON.parse(responseText);
+        if (acknowledgement && acknowledgement.ok === false) {
+          return {
+            ok: false,
+            name: target.name,
+            status: response.status,
+            error: String(acknowledgement.error || "Webhook returned ok:false"),
+          };
+        }
+      } catch {
+        if (isSheetsWebhook) {
+          return {
+            ok: false,
+            name: target.name,
+            status: response.status,
+            error: "Sheets webhook returned a non-JSON acknowledgement",
+          };
+        }
+      }
+    }
+
+    if (isSheetsWebhook && (!acknowledgement || acknowledgement.ok !== true || !acknowledgement.leadId)) {
+      return {
+        ok: false,
+        name: target.name,
+        status: response.status,
+        error: "Sheets webhook acknowledgement must include ok:true and leadId",
+      };
+    }
+
+    return {
+      ok: true,
+      name: target.name,
+      status: response.status,
+      duplicate: Boolean(acknowledgement && acknowledgement.duplicate),
+      leadId: acknowledgement && acknowledgement.leadId ? String(acknowledgement.leadId) : "",
+    };
   } catch (error) {
     return { ok: false, name: target.name, error: error?.message || String(error) };
   }
@@ -450,10 +508,15 @@ function cleanQuotePayload(quote) {
 function buildQuotePayload(quote, request, source) {
   return {
     ...cleanQuotePayload(quote),
+    leadId: createLeadId(),
     submittedAt: new Date().toISOString(),
     source,
     pageUrl: request.headers.get("referer") || "",
   };
+}
+
+function createLeadId() {
+  return `sr_${crypto.randomUUID()}`;
 }
 
 function buildSpamAuditPayload(quote, request, source, spamCheck) {
@@ -670,6 +733,7 @@ function buildSubject(payload) {
 
 function buildEmailBody(payload) {
   const labels = {
+    leadId: "Lead ID",
     "first-name": "First name",
     name: "Name",
     phone: "Phone",
@@ -758,13 +822,24 @@ function toTitleCase(value) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
-function quoteResponse({ wantsJson, status, ok, title, message, trackConversion = ok }) {
+function quoteResponse({
+  wantsJson,
+  status,
+  ok,
+  title,
+  message,
+  trackConversion = ok,
+  leadId = "",
+  sheetRecorded = null,
+}) {
   if (wantsJson) {
     return Response.json(
       {
         ok,
         message,
         trackConversion,
+        ...(leadId ? { leadId } : {}),
+        ...(typeof sheetRecorded === "boolean" ? { sheetRecorded } : {}),
       },
       {
         status,

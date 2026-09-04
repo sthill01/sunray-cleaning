@@ -31,6 +31,7 @@ Each event can include these parameters:
 | Parameter | Meaning |
 | --- | --- |
 | `event_id` | Unique event ID for dedupe/debugging |
+| `lead_id` | Immutable server-generated Lead ID; equals `event_id` for a successful quote lead |
 | `cta_type` | `quote`, `call`, `text`, or `submit` |
 | `cta_text` | Button/link text or aria label |
 | `cta_url` | Link href, such as `tel:+18016042189` |
@@ -49,6 +50,7 @@ Create these Data Layer Variables:
 | GTM variable | Data layer variable name |
 | --- | --- |
 | `DLV - event_id` | `event_id` |
+| `DLV - lead_id` | `lead_id` |
 | `DLV - cta_type` | `cta_type` |
 | `DLV - cta_text` | `cta_text` |
 | `DLV - cta_url` | `cta_url` |
@@ -124,6 +126,18 @@ Use these Google Ads tag fields:
 - Transaction ID: `{{DLV - event_id}}`
 
 For lead conversions, set counting to **One** in Google Ads.
+
+## Lead ledger reconciliation
+
+The quote API creates one immutable `leadId`, sends it to the Sheets webhook, returns it to the browser, and uses it as the successful lead event's `event_id`. Use that identifier to reconcile the raw lead ledger, GTM Preview, GA4, and Google Ads without matching on name or phone.
+
+The runtime also captures these query parameters when the Google Ads final URL suffix supplies them:
+
+- Click IDs: `gclid`, `gbraid`, `wbraid`
+- UTMs: `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`, `utm_id`
+- ValueTrack detail: `campaign_id`, `ad_group_id`, `asset_group_id`, `creative_id`, `match_type`, `network`, `device`
+
+Store stable numeric identifiers in the ID fields. `utm_term` is the advertising keyword value supplied by the URL template, not a guaranteed copy of the customer's actual search query; use the Google Ads Search terms report for query-level review. First-touch and latest-touch values are stored separately, while the original flat fields remain latest-touch aliases for compatibility.
 
 ## GTM Preview QA
 

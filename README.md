@@ -61,6 +61,7 @@ Cloudflare preview forms post to `/api/quote`. The form forwards valid submissio
 - `SUNRAY_QUOTE_SPAM_WEBHOOK_URL` sends filtered spam to an audit webhook without emailing, notifying sales, or firing conversion tracking.
 
 Webhook delivery is additive, so a Sheets export can run alongside inbox notifications.
+The Sheets target must acknowledge JSON `{ "ok": true, "leadId": "..." }`; a plain 2xx response or `{ "ok": false }` is treated as failure and retried once with the same Lead ID. If email, push, SMS, or another webhook delivered the lead but Sheets still failed, the form remains successful and returns `sheetRecorded: false` so logs and monitoring do not claim ledger durability.
 
 Pushover setup:
 
@@ -72,7 +73,7 @@ Pushover setup:
 
 The notification paths run only after the quote passes the spam checks. Filtered submissions never call Resend, Pushover, or Brevo.
 
-Quote payloads retain their original UTC `submittedAt` value for webhook and spreadsheet auditing. Email notifications display that value in `America/Denver` Mountain Time, including the correct `MST` or `MDT` daylight-saving abbreviation.
+Quote payloads retain their server-generated UTC `submittedAt` value and immutable `leadId` for webhook, spreadsheet, and conversion reconciliation. Email notifications display the timestamp in `America/Denver` Mountain Time, including the correct `MST` or `MDT` daylight-saving abbreviation. The Sheets template stores `Submitted At` as a native date, preserves the raw UTC ISO value, and adds Mountain-time timestamp, date, and time columns for analysis.
 
 The phone alert message begins with `New website lead`, followed by name, phone, email, service, UTM source, location, and notes in that exact order. Pushover delivers this as an app notification to its delivery group. When Brevo credentials are configured, the same content is sent as carrier SMS to Cynthia at `+1 801-604-2189` and Steve at `+1 801-850-1253` by default.
 
@@ -89,9 +90,11 @@ Long alert text can be billed as multiple SMS message parts. Keep form notes con
 
 If all delivery paths are missing or unavailable, the form shows an error and keeps the phone/SMS fallback visible: `(801) 604-2189`.
 
-The runtime quote script captures `gclid`, `gbraid`, `wbraid`, `msclkid`, `fbclid`, `ttclid`, `li_fat_id`, UTM fields, landing page, first landing page and referrer into hidden form fields. The Google Sheets Apps Script template lives at `integrations/google-sheets-lead-webhook.gs`; paste it into the Apps Script editor for the lead log spreadsheet, deploy it as a web app, and save the deployment URL as `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` in Cloudflare.
+The runtime quote script captures `gclid`, `gbraid`, `wbraid`, `msclkid`, `fbclid`, `ttclid`, `li_fat_id`, UTM fields, and the explicit ValueTrack fields `campaign_id`, `ad_group_id`, `asset_group_id`, `creative_id`, `match_type`, `network`, and `device`. Attribution is retained for 90 days, tagged with a browser-session ID, and stored as separate first-touch and latest-touch values. A new tagged click replaces the complete latest-touch marketing set so missing parameters cannot inherit stale values from an earlier campaign.
 
-Filtered spam is blocked from normal delivery but can be audited. Paste the updated Apps Script template, redeploy the Apps Script web app, then save the same `/exec` URL as `SUNRAY_QUOTE_SPAM_WEBHOOK_URL` in Cloudflare. The script routes normal leads to `Leads` and filtered spam to `Filtered Spam` with score, reasons and a review note.
+The Google Sheets Apps Script template lives at `integrations/google-sheets-lead-webhook.gs`. Before deployment, replace `SET_IN_DEPLOYED_CODE_GS` with the target spreadsheet ID in the private Apps Script editor; do not commit the live ID. Run `setupLeadSheets()` once to create or extend headers without rewriting existing columns, then deploy the script as a web app and save the `/exec` URL as `SUNRAY_QUOTE_SHEETS_WEBHOOK_URL` in Cloudflare. A side-effect-free `GET` to the deployment reports the schema and whether the target sheet exists. Lead writes are locked and deduplicated by Lead ID, with a 10-minute normalized contact/detail fingerprint as a secondary guard.
+
+Filtered spam is blocked from normal delivery but can be audited. Paste the updated Apps Script template, redeploy the Apps Script web app, then save the same `/exec` URL as `SUNRAY_QUOTE_SPAM_WEBHOOK_URL` in Cloudflare. The script routes new normal leads to the canonical `Lead Ledger` tab and filtered spam to `Filtered Spam` with score, reasons and a review note; the legacy `Leads` tab and its historical rows remain untouched.
 
 ## Google Tag Manager conversion tracking
 
