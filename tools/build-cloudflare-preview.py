@@ -334,6 +334,11 @@ for child_routes in LOCATION_CHILD_ROUTES.values():
         LINK_LABELS.setdefault(child_route, child_label)
 
 BLOG_POST_SEO = {
+    "/blog/fall-cleaning-checklist-before-first-snow-park-city-heber/": {
+        "service": "Residential, deep, and recurring cleaning",
+        "location": "Park City / Heber City / Midway, Utah",
+        "image": "/assets/wasatch-county-residential-family-room-cleaning-sun-ray.jpg",
+    },
     "/blog/pre-fall-cleaning-plan-park-city-heber-midway/": {
         "service": "Residential, deep, and recurring cleaning",
         "location": "Park City / Heber City / Midway, Utah",
