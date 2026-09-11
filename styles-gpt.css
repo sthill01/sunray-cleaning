@@ -31,6 +31,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 112px;
 }
 
 body {
@@ -79,6 +80,7 @@ h4 {
   font-family: var(--display);
   line-height: 1.08;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 h1 {
@@ -282,6 +284,11 @@ p {
   text-decoration: none;
 }
 
+.nav-links > a,
+.nav-drop-toggle {
+  min-height: 44px;
+}
+
 .nav-drop-toggle {
   display: inline-flex;
   align-items: center;
@@ -336,7 +343,10 @@ p {
 }
 
 .nav-dropdown a {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 44px;
   padding: 10px 12px;
   border-radius: 12px;
 }
@@ -379,6 +389,7 @@ p {
   font-weight: 800;
   text-align: center;
   text-decoration: none;
+  overflow-wrap: anywhere;
   transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease, color 150ms ease, border-color 150ms ease;
 }
 
@@ -2239,6 +2250,7 @@ p {
   justify-content: center;
   padding: 24px;
   background: rgba(20, 40, 73, 0.68);
+  overscroll-behavior: contain;
 }
 
 .modal-backdrop.is-open {
@@ -2249,7 +2261,9 @@ p {
   position: relative;
   width: min(980px, 100%);
   max-height: min(90vh, 820px);
+  max-height: min(90dvh, 820px);
   overflow: auto;
+  overscroll-behavior: contain;
   background: var(--cream);
   border-radius: 28px;
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
@@ -2292,8 +2306,8 @@ p {
   z-index: 2;
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   color: var(--navy);
   background: var(--white);
   border: 1px solid var(--stone-100);
@@ -2579,11 +2593,18 @@ p {
 
   .site-header.is-menu-open .nav-links {
     display: flex;
+    max-height: calc(100dvh - 190px);
+    padding-right: 4px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .nav-links > a,
   .nav-drop-toggle {
-    padding: 7px 0;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 9px 0;
   }
 
   .nav-item {
@@ -2608,8 +2629,10 @@ p {
   }
 
   .nav-item:hover .nav-dropdown,
-  .nav-item:focus-within .nav-dropdown {
+  .nav-item:focus-within .nav-dropdown,
+  .nav-item.is-submenu-open .nav-dropdown {
     display: grid;
+    transform: none;
   }
 
   .header-actions {
@@ -2736,7 +2759,8 @@ p {
 
   .nav-links > a,
   .nav-drop-toggle {
-    padding: 6px 0;
+    min-height: 44px;
+    padding: 9px 0;
   }
 
   .nav-toggle {
@@ -3013,6 +3037,11 @@ p {
 
   .modal-backdrop {
     padding: 12px;
+  }
+
+  .quote-modal {
+    max-height: calc(100dvh - 24px);
+    border-radius: 20px;
   }
 
   .quote-modal-copy,
