@@ -76,6 +76,7 @@ for (const handler of handlers) {
       "service-area": "Heber City",
       "service-type": "Deep clean",
       "preferred-timing": "Next week",
+      "how-heard": "ChatGPT",
       utm_source: "google",
       notes: "Please call after 3 PM.",
     };
@@ -104,6 +105,8 @@ for (const handler of handlers) {
     assert.equal(resendBody.reply_to, "lead@example.com");
 
     const sheetBody = JSON.parse(calls[4].init.body);
+    assert.equal(sheetBody["how-heard"], "ChatGPT");
+    assert.match(resendBody.text, /How did you hear about us\?: ChatGPT/);
     assert.equal(sheetBody.leadId, result.leadId);
     assert.notEqual(sheetBody.leadId, payload.leadId);
     assert.equal(new Date(sheetBody.submittedAt).toISOString(), sheetBody.submittedAt);
@@ -133,6 +136,7 @@ for (const handler of handlers) {
       "Phone: +1 435-555-0100",
       "Email: lead@example.com",
       "Service: Deep clean",
+      "How heard: ChatGPT",
       "UTM source: google",
       "Location: Heber City",
       "Notes: Please call after 3 PM.",
