@@ -120,3 +120,10 @@ test("the successful form response supplies the immutable Lead ID to GTM", () =>
   assert.match(source, /pushTrackingEvent\("sunray_lead_form_submit", payload, leadId\)/);
   assert.match(source, /event_id: sanitizeAttributionValue\(eventId, 200\)/);
 });
+
+test("quote forms capture and report an optional self-reported lead source", () => {
+  assert.match(source, /select\.setAttribute\("name", "how-heard"\)/);
+  assert.match(source, /\["ChatGPT", "ChatGPT"\]/);
+  assert.match(source, /payload\.self_reported_source = howHeard\.value/);
+  assert.match(source, /ensureLeadSourceField\(form\)/);
+});

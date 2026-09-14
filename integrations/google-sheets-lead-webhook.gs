@@ -36,6 +36,7 @@ const LEGACY_LEAD_FIELDS = [
   { key: "utm_id", label: "UTM ID" },
   { key: "source", label: "Source" },
   { key: "attribution_updated_at", label: "Attribution Updated At" },
+  { key: "how-heard", label: "How Did You Hear About Us?" },
 ];
 
 const LEGACY_SPAM_FIELDS = [
@@ -74,6 +75,7 @@ const LEGACY_SPAM_FIELDS = [
   { key: "source", label: "Source" },
   { key: "attribution_updated_at", label: "Attribution Updated At" },
   { key: "filteredAsSpam", label: "Filtered As Spam" },
+  { key: "how-heard", label: "How Did You Hear About Us?" },
 ];
 
 const VALUE_TRACK_FIELDS = [
