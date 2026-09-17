@@ -812,7 +812,7 @@ def page_focus(route: str, h1: str) -> str:
 
 def selected_gallery_items(route: str, limit: int | None = None) -> list[dict[str, object]]:
     if limit is None:
-        limit = len(JOB_GALLERY) if route == "/gallery/" else 6
+        limit = len(JOB_GALLERY) if route == "/gallery/" else (3 if route in INTENT_FOCUSED_ROUTES else 6)
 
     exact: list[dict[str, object]] = []
     fallback: list[dict[str, object]] = []

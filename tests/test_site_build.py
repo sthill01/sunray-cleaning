@@ -110,6 +110,7 @@ class SiteBuildTests(unittest.TestCase):
                 self.assertIn("data-open-quote", content)
                 self.assertIn("review-proof", content)
                 self.assertIn("local-photo-gallery", content)
+                self.assertEqual(3, content.count('class="job-photo-card"'))
                 self.assertNotIn("seo-answer-network", content)
                 self.assertNotIn("data-map-section", content)
 
