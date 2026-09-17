@@ -123,8 +123,19 @@ const PHASE_ONE_FIELDS = [
   TOUCH_MARKETING_FIELDS.map((field) => ({ key: `latest_touch_${field.key}`, label: `Latest Touch ${field.label}` })),
 );
 
-const LEAD_FIELDS = LEGACY_LEAD_FIELDS.concat(PHASE_ONE_FIELDS);
-const SPAM_FIELDS = LEGACY_SPAM_FIELDS.concat(PHASE_ONE_FIELDS);
+const ACQUISITION_FIELDS = [
+  { key: "acquisition_channel", label: "Acquisition Channel (Observed)" },
+  { key: "acquisition_source", label: "Acquisition Source (Observed)" },
+  { key: "acquisition_evidence", label: "Acquisition Evidence" },
+];
+const AI_MEASUREMENT_FIELDS = [{ key: "how-heard", label: "How Did You Hear About Us?" }].concat(
+  ACQUISITION_FIELDS,
+  ACQUISITION_FIELDS.map((field) => ({ key: `first_touch_${field.key}`, label: `First Touch ${field.label}` })),
+  ACQUISITION_FIELDS.map((field) => ({ key: `latest_touch_${field.key}`, label: `Latest Touch ${field.label}` })),
+);
+
+const LEAD_FIELDS = LEGACY_LEAD_FIELDS.concat(PHASE_ONE_FIELDS, AI_MEASUREMENT_FIELDS);
+const SPAM_FIELDS = LEGACY_SPAM_FIELDS.concat(PHASE_ONE_FIELDS, AI_MEASUREMENT_FIELDS);
 
 function doPost(event) {
   const lock = LockService.getScriptLock();
