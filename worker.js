@@ -502,7 +502,17 @@ function cleanQuotePayload(quote) {
     "website",
   ]);
 
-  return Object.fromEntries(Object.entries(quote).filter(([key]) => !internalFields.has(key)));
+  const cleaned = Object.fromEntries(Object.entries(quote).filter(([key]) => !internalFields.has(key)));
+  for (const field of ["referrer", "first_touch_referrer", "latest_touch_referrer"]) {
+    if (!(field in cleaned)) continue;
+    try {
+      const referrer = new URL(cleaned[field]);
+      cleaned[field] = /^https?:$/.test(referrer.protocol) ? `${referrer.origin}/` : "";
+    } catch {
+      cleaned[field] = "";
+    }
+  }
+  return cleaned;
 }
 
 function buildQuotePayload(quote, request, source) {
@@ -742,6 +752,10 @@ function buildEmailBody(payload) {
     "service-type": "Service type",
     "home-size": "Home size",
     "preferred-timing": "Preferred timing",
+    "how-heard": "How did you hear about us?",
+    acquisition_channel: "Acquisition channel (observed)",
+    acquisition_source: "Acquisition source (observed)",
+    acquisition_evidence: "Acquisition evidence",
     notes: "Notes",
     message: "Message",
     gclid: "GCLID",

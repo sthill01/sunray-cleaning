@@ -21,13 +21,17 @@
     "device",
   ];
   var marketingFieldNames = clickIdFieldNames.concat(utmFieldNames, valueTrackFieldNames);
+  var acquisitionFieldNames = ["acquisition_channel", "acquisition_source", "acquisition_evidence"];
   var firstTouchMarketingFieldNames = marketingFieldNames.map(function (fieldName) {
     return "first_touch_" + fieldName;
   });
   var latestTouchMarketingFieldNames = marketingFieldNames.map(function (fieldName) {
     return "latest_touch_" + fieldName;
   });
-  var attributionFieldNames = marketingFieldNames.concat(firstTouchMarketingFieldNames, latestTouchMarketingFieldNames, [
+  var attributionFieldNames = marketingFieldNames.concat(firstTouchMarketingFieldNames, latestTouchMarketingFieldNames,
+    acquisitionFieldNames,
+    acquisitionFieldNames.map(function (fieldName) { return "first_touch_" + fieldName; }),
+    acquisitionFieldNames.map(function (fieldName) { return "latest_touch_" + fieldName; }), [
     "first_landing_page",
     "landing_page",
     "referrer",
@@ -130,6 +134,92 @@
       .slice(0, maxLength || 1000);
   }
 
+  function referrerOrigin(value) {
+    try {
+      var parsed = new URL(value);
+      // Conversation paths and query strings may contain private information.
+      return /^https?:$/.test(parsed.protocol) ? parsed.origin + "/" : "";
+    } catch (error) {
+      return "";
+    }
+  }
+
+  function referrerHost(value) {
+    try {
+      return new URL(referrerOrigin(value)).hostname.toLowerCase().replace(/^www\./, "");
+    } catch (error) {
+      return "";
+    }
+  }
+
+  function isExternalReferrer(value) {
+    var host = referrerHost(value);
+    return Boolean(host && host !== referrerHost(window.location.href) && host !== "sunray-cleaning.com");
+  }
+
+  function aiSource(value) {
+    var source = String(value || "").toLowerCase().replace(/^www\./, "");
+    var sources = {
+      "chatgpt": "chatgpt", "chatgpt.com": "chatgpt", "chat.openai.com": "chatgpt",
+      "openai": "chatgpt", "openai.com": "chatgpt",
+      "perplexity": "perplexity", "perplexity.ai": "perplexity",
+      "claude": "claude", "claude.ai": "claude",
+      "gemini": "gemini", "gemini.google.com": "gemini",
+      "copilot": "copilot", "copilot.microsoft.com": "copilot",
+    };
+    return Object.prototype.hasOwnProperty.call(sources, source) ? sources[source] : "";
+  }
+
+  function classifyAcquisition(marketing, referrer) {
+    var source = String(marketing.utm_source || "").toLowerCase();
+    var medium = String(marketing.utm_medium || "").toLowerCase();
+    var paid = /^(cpc|ppc|paid|paidsearch|paid_search|paid_social|paidsocial|display|cpm|cpa|cpv|retargeting)$/.test(medium);
+    var ai = aiSource(source);
+    var google = /^(google|google\.com|googleads|google_ads|adwords)$/.test(source);
+    var safeSource = /^[a-z0-9][a-z0-9_.-]{0,99}$/.test(source) ? source : "other";
+    var result = function (channel, provider, evidence) {
+      return { acquisition_channel: channel, acquisition_source: provider, acquisition_evidence: evidence };
+    };
+
+    // A Google click ID is stronger paid evidence than the referring website.
+    if (marketing.gclid || marketing.gbraid || marketing.wbraid) return result("paid_google", "google", "google_click_id");
+    if (paid) {
+      if (ai === "chatgpt") return result("paid_openai", "chatgpt", "paid_utm");
+      if (google) return result("paid_google", "google", "paid_utm");
+      return result("paid_other", ai || safeSource, "paid_utm");
+    }
+    if (ai) return result("ai_referral", ai, "utm_source");
+    if (google && medium === "organic") return result("organic_search", "google", "utm_source_medium");
+    if (Object.keys(marketing).some(function (key) { return Boolean(marketing[key]); })) {
+      return result("tagged_other", safeSource, "campaign_parameters");
+    }
+    if (isExternalReferrer(referrer)) {
+      var host = referrerHost(referrer);
+      var referringAi = aiSource(host);
+      if (referringAi) return result("ai_referral", referringAi, "referrer");
+      var searchSources = {
+        "google.com": "google", "bing.com": "bing", "search.yahoo.com": "yahoo",
+        "duckduckgo.com": "duckduckgo", "search.brave.com": "brave",
+      };
+      if (Object.prototype.hasOwnProperty.call(searchSources, host)) return result("organic_search", searchSources[host], "referrer");
+      return result("referral", host, "referrer");
+    }
+    return result("direct_or_unknown", "unknown", "none");
+  }
+
+  function populateAcquisition(attribution) {
+    ["first_touch_", "latest_touch_"].forEach(function (prefix) {
+      var marketing = {};
+      marketingFieldNames.forEach(function (fieldName) { marketing[fieldName] = attribution[prefix + fieldName] || ""; });
+      attribution[prefix + "referrer"] = referrerOrigin(attribution[prefix + "referrer"]);
+      var classification = classifyAcquisition(marketing, attribution[prefix + "referrer"]);
+      acquisitionFieldNames.forEach(function (fieldName) {
+        attribution[prefix + fieldName] = classification[fieldName];
+        if (prefix === "latest_touch_") attribution[fieldName] = classification[fieldName];
+      });
+    });
+  }
+
   function readStoredAttribution() {
     try {
       var serialized =
@@ -188,7 +278,7 @@
     var now = Date.now();
     var nowIso = new Date(now).toISOString();
     var currentPage = sanitizeAttributionValue(window.location.href, 1000);
-    var currentReferrer = sanitizeAttributionValue(document.referrer, 1000);
+    var currentReferrer = referrerOrigin(document.referrer);
     var sessionId = getAttributionSessionId();
 
     marketingFieldNames.forEach(function (fieldName) {
@@ -221,7 +311,7 @@
       });
     }
 
-    if (hasNewClickData) {
+    if (hasNewClickData || isExternalReferrer(currentReferrer)) {
       stored.latest_touch_at = nowIso;
       stored.latest_touch_landing_page = currentPage;
       stored.latest_touch_referrer = currentReferrer;
@@ -239,7 +329,8 @@
 
     stored.first_landing_page = stored.first_touch_landing_page || currentPage;
     stored.landing_page = currentPage;
-    stored.referrer = stored.first_touch_referrer || currentReferrer;
+    populateAcquisition(stored);
+    stored.referrer = referrerOrigin(stored.first_touch_referrer || currentReferrer);
     stored.attribution_updated_at = nowIso;
     stored.attribution_session_id = sessionId;
     currentAttribution = stored;
@@ -260,6 +351,39 @@
       .toLowerCase();
 
     return formName.indexOf("quote") !== -1 || formName.indexOf("lead") !== -1;
+  }
+
+  function ensureLeadSourceField(form) {
+    if (!isQuoteForm(form) || form.querySelector('[name="how-heard"]')) return;
+    var grid = form.querySelector(".field-grid");
+    if (!grid) return;
+    var label = document.createElement("label");
+    label.className = "field full";
+    label.appendChild(document.createTextNode("How did you hear about us? optional"));
+    var select = document.createElement("select");
+    select.setAttribute("name", "how-heard");
+    [
+      ["", "Choose one"],
+      ["Google Search or Maps", "Google Search or Maps"],
+      ["Google ad", "Google ad"],
+      ["ChatGPT", "ChatGPT"],
+      ["ChatGPT ad", "ChatGPT ad"],
+      ["Gemini", "Gemini"],
+      ["Claude", "Claude"],
+      ["Perplexity", "Perplexity"],
+      ["Copilot", "Copilot"],
+      ["Brave Search", "Brave Search"],
+      ["Facebook or Instagram", "Facebook or Instagram"],
+      ["Referral", "Referral"],
+      ["Other", "Other"],
+    ].forEach(function (optionData) {
+      var option = document.createElement("option");
+      option.value = optionData[0];
+      option.textContent = optionData[1];
+      select.appendChild(option);
+    });
+    label.appendChild(select);
+    grid.appendChild(label);
   }
 
   function ensureSpamTrapFields(form) {
@@ -421,12 +545,14 @@
       currency: "USD",
     };
 
-    marketingFieldNames.forEach(function (fieldName) {
+    marketingFieldNames.concat(acquisitionFieldNames).forEach(function (fieldName) {
       var field = form ? form.querySelector('input[name="' + fieldName + '"]') : null;
       var value = field ? field.value : currentAttribution[fieldName];
       if (value) payload[fieldName] = value;
     });
 
+    var howHeard = form ? form.querySelector('[name="how-heard"]') : null;
+    if (howHeard && howHeard.value) payload.self_reported_source = howHeard.value;
     pushTrackingEvent("sunray_lead_form_submit", payload, leadId);
   }
 
@@ -511,6 +637,7 @@
 
     modal = document.querySelector("[data-quote-modal]");
     document.querySelectorAll(".quote-form").forEach(function (form) {
+      ensureLeadSourceField(form);
       ensureSpamTrapFields(form);
       ensureAttributionFields(form);
       var phone = form.querySelector('input[name="phone"]');

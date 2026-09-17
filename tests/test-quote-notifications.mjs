@@ -76,7 +76,17 @@ for (const handler of handlers) {
       "service-area": "Heber City",
       "service-type": "Deep clean",
       "preferred-timing": "Next week",
+      "how-heard": "ChatGPT",
       utm_source: "google",
+      acquisition_channel: "paid_google",
+      acquisition_source: "google",
+      acquisition_evidence: "google_click_id",
+      first_touch_acquisition_channel: "ai_referral",
+      first_touch_acquisition_source: "chatgpt",
+      first_touch_acquisition_evidence: "referrer",
+      referrer: "https://chatgpt.com/c/private-conversation?email=private@example.com",
+      first_touch_referrer: "https://chatgpt.com/c/private-conversation?email=private@example.com",
+      latest_touch_referrer: "https://www.google.com/search?q=private-search",
       notes: "Please call after 3 PM.",
     };
 
@@ -104,6 +114,14 @@ for (const handler of handlers) {
     assert.equal(resendBody.reply_to, "lead@example.com");
 
     const sheetBody = JSON.parse(calls[4].init.body);
+    assert.equal(sheetBody["how-heard"], "ChatGPT");
+    assert.equal(sheetBody.acquisition_channel, "paid_google");
+    assert.equal(sheetBody.first_touch_acquisition_channel, "ai_referral");
+    assert.equal(sheetBody.first_touch_referrer, "https://chatgpt.com/");
+    assert.equal(sheetBody.latest_touch_referrer, "https://www.google.com/");
+    assert.match(resendBody.text, /How did you hear about us\?: ChatGPT/);
+    assert.match(resendBody.text, /Acquisition channel \(observed\): paid_google/);
+    assert.ok(!JSON.stringify(calls).includes("private-"));
     assert.equal(sheetBody.leadId, result.leadId);
     assert.notEqual(sheetBody.leadId, payload.leadId);
     assert.equal(new Date(sheetBody.submittedAt).toISOString(), sheetBody.submittedAt);

@@ -1054,7 +1054,18 @@ def build_review_cards(limit: int | None = 3) -> str:
         photo = str(review.get("profilePhotoUrl", ""))
         review_rating = review.get("rating", 5)
         star_markup = "&#9733;" * int(review_rating)
-        date_text = html.escape(str(review.get("dateText", "")))
+        # Relative ages copied from screenshots become misleading as the site ages.
+        # Manual source dates are approximate; do not present them as exact days.
+        date_text = ""
+        try:
+            review_date = date.fromisoformat(str(review.get("createTime", ""))[:10])
+            if str(review.get("reviewId", "")).startswith("manual-"):
+                date_text = review_date.strftime("%B %Y") + " (approx.)"
+            else:
+                date_text = review_date.strftime("%B %d, %Y")
+        except ValueError:
+            pass
+        date_text = html.escape(date_text)
         photo_markup = ""
         if photo:
             photo_markup = f'<img class="reviewer-photo" src="{html.escape(photo)}" alt="{author} Google review profile photo" loading="lazy">'
@@ -1549,7 +1560,7 @@ def build_answer_network(content: str, route: str, route_map: dict[str, str]) ->
   <div class="container">
     <div class="section-head center">
       <p class="eyebrow">How Sun Ray helps</p>
-      <h2 id="seo-answer-title">Reliable cleaning support for {html.escape(focus)}.</h2>
+      <h2 id="seo-answer-title">Plan your cleaning with Sun Ray</h2>
       <p>{html.escape(lead)}</p>
     </div>
     <div class="seo-answer-grid">
@@ -2054,6 +2065,11 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
         "production-ready form markup. In this static preview, call or text (801) 604-2189 for live scheduling.",
         "Prefer to talk now? Call or text (801) 604-2189.",
     )
+    content = content.replace(
+        "Webflow-ready form markup. In this static preview, call or text (801) 604-2189 for live scheduling.",
+        "Prefer to talk now? Call or text (801) 604-2189.",
+    )
+    content = content.replace('<span class="tag">Preview</span>', "")
     content = content.replace(
         'aria-label="Stylized map of Sun Ray Cleaning service areas"',
         'aria-label="Sun Ray Cleaning service area map for Summit County and Wasatch County"',

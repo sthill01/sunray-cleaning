@@ -97,6 +97,24 @@ test("fingerprint dedupe catches the same lead in the short window", () => {
   );
 });
 
+test("AI acquisition and self-report fields map to distinct additive ledger columns", () => {
+  const headers = Array.from(helpers.LEAD_FIELDS, (field) => field.label);
+  const payload = {
+    leadId: "sr_ai_test", "how-heard": "ChatGPT",
+    acquisition_channel: "paid_google", acquisition_source: "google", acquisition_evidence: "google_click_id",
+    first_touch_acquisition_channel: "ai_referral", first_touch_acquisition_source: "chatgpt",
+    first_touch_acquisition_evidence: "referrer",
+    latest_touch_acquisition_channel: "paid_google", latest_touch_acquisition_source: "google",
+    latest_touch_acquisition_evidence: "google_click_id",
+  };
+  const row = helpers.buildRow(headers, helpers.LEAD_FIELDS, payload, new Date("2026-09-07T18:00:00.000Z"), "fingerprint");
+  assert.equal(row[headers.indexOf("How Did You Hear About Us?")], "ChatGPT");
+  assert.equal(row[headers.indexOf("Acquisition Channel (Observed)")], "paid_google");
+  assert.equal(row[headers.indexOf("First Touch Acquisition Channel (Observed)")], "ai_referral");
+  assert.equal(row[headers.indexOf("Latest Touch Acquisition Channel (Observed)")], "paid_google");
+  assert.equal(new Set(headers).size, headers.length);
+});
+
 test("Lead ID dedupe is exact and independent of the fingerprint", () => {
   const headers = ["Lead ID", "Dedupe Fingerprint", "Submitted At"];
   const sheet = {
