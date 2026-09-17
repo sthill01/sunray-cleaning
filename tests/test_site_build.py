@@ -119,6 +119,7 @@ class SiteBuildTests(unittest.TestCase):
         self.assertNotIn("highest-demand services match the local market", home)
         self.assertNotIn("search intent that matter locally", home)
         self.assertIn("What affects recurring-cleaning pricing?", recurring)
+        self.assertIn('services/deep-cleaning/">compare one-time deep cleaning</a>', recurring)
         self.assertIn("seo-answer-network", other_service)
 
     def test_hidden_trustindex_fallback_cannot_override_its_hidden_state(self):
