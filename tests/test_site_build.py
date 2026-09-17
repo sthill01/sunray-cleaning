@@ -97,6 +97,32 @@ class SiteBuildTests(unittest.TestCase):
 
         self.assertEqual([], offenders)
 
+    def test_buyer_intent_pages_keep_answers_and_proof_without_generic_sections(self):
+        pages = {
+            "index.html": "Park City &amp; Heber Valley <span class=\"accent\">home cleaning.</span>",
+            "services/deep-cleaning/index.html": "Deep cleaning for Park City, Heber and Midway homes.",
+            "services/recurring-cleaning/index.html": "Recurring cleaning for Park City, Heber City and Midway homes.",
+        }
+        for relative_path, heading in pages.items():
+            with self.subTest(page=relative_path):
+                content = (OUTPUT / relative_path).read_text(encoding="utf-8")
+                self.assertIn(heading, content)
+                self.assertIn("data-open-quote", content)
+                self.assertIn("review-proof", content)
+                self.assertIn("local-photo-gallery", content)
+                self.assertEqual(3, content.count('class="job-photo-card"'))
+                self.assertNotIn("seo-answer-network", content)
+                self.assertNotIn("data-map-section", content)
+
+        home = (OUTPUT / "index.html").read_text(encoding="utf-8")
+        recurring = (OUTPUT / "services/recurring-cleaning/index.html").read_text(encoding="utf-8")
+        other_service = (OUTPUT / "services/move-in-move-out-cleaning/index.html").read_text(encoding="utf-8")
+        self.assertNotIn("highest-demand services match the local market", home)
+        self.assertNotIn("search intent that matter locally", home)
+        self.assertIn("What affects recurring-cleaning pricing?", recurring)
+        self.assertIn('services/deep-cleaning/">compare one-time deep cleaning</a>', recurring)
+        self.assertIn("seo-answer-network", other_service)
+
     def test_hidden_trustindex_fallback_cannot_override_its_hidden_state(self):
         styles = (OUTPUT / "styles.css").read_text(encoding="utf-8")
 

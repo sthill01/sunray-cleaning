@@ -59,6 +59,7 @@ TRUSTINDEX_RIBBON_BADGE_SCRIPT = "https://cdn.trustindex.io/loader.js?dad74f2761
 TRUSTINDEX_REVIEWS_LIST_SCRIPT = "https://cdn.trustindex.io/loader.js?d4ea3017201f425a6276a60d5ef"
 TRUSTINDEX_FORM_TRUSTMARK_SCRIPT = "https://cdn.trustindex.io/loader-cert.js?6d94b5a7228542333c86bb33560"
 STYLE_ASSET_VERSION = "20260721-footer-badge-fix"
+INTENT_FOCUSED_ROUTES = frozenset({"/", "/services/deep-cleaning/", "/services/recurring-cleaning/"})
 RESPONSIVE_IMAGE_WIDTHS = (384, 672, 960)
 RESPONSIVE_IMAGE_DIMENSIONS = {
     "sun-ray-elegant-living-room-cleaning-summit-wasatch-01-hero-16x9.jpg": (1920, 1080),
@@ -811,7 +812,7 @@ def page_focus(route: str, h1: str) -> str:
 
 def selected_gallery_items(route: str, limit: int | None = None) -> list[dict[str, object]]:
     if limit is None:
-        limit = len(JOB_GALLERY) if route == "/gallery/" else 6
+        limit = len(JOB_GALLERY) if route == "/gallery/" else (3 if route in INTENT_FOCUSED_ROUTES else 6)
 
     exact: list[dict[str, object]] = []
     fallback: list[dict[str, object]] = []
@@ -1889,7 +1890,7 @@ def inject_seo_enhancements(content: str, route: str, route_map: dict[str, str])
             content = content.replace('<section class="section section-navy cta-band"', gallery_section + '\n<section class="section section-navy cta-band"', 1)
         else:
             content = content.replace("</main>", gallery_section + "\n</main>", 1)
-    if "seo-answer-network" not in content and "</main>" in content:
+    if route not in INTENT_FOCUSED_ROUTES and "seo-answer-network" not in content and "</main>" in content:
         content = content.replace("</main>", build_answer_network(content, route, route_map) + "\n</main>", 1)
     if route == "/" and "data-agent-webmcp" not in content:
         content = content.replace("</body>", AGENT_WEBMCP_SCRIPT + "\n</body>", 1)
@@ -2047,6 +2048,16 @@ def rewrite_links(content: str, source: Path, route: str, route_map: dict[str, s
     content = content.replace("quote-modal-gpt.js", "quote-modal.js")
     content = inject_font_resource_hints(content)
     content = content.replace("data-gpt-map-section", "data-map-section")
+    if route in INTENT_FOCUSED_ROUTES:
+        # These buyer-intent pages already have useful service and area links.
+        # The preview map repeats them without adding booking information.
+        content = re.sub(
+            r'<section\b[^>]*\bdata-map-section\b[^>]*>.*?</section>\s*',
+            "",
+            content,
+            count=1,
+            flags=re.DOTALL,
+        )
     content = content.replace("data-gpt-testimonials", "data-testimonials")
     content = content.replace("data-gpt-faq", "data-faq-section")
     content = content.replace("GPT preview of ", "")
